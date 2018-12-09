@@ -7,9 +7,55 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Sun, 09 Dec 2018 15:55:24 +0800</lastBuildDate>
     
 	<atom:link href="https://szthanatos.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Docker</title>
+      <link>https://szthanatos.github.io/tags/docker/</link>
+      <pubDate>Sun, 09 Dec 2018 15:55:24 +0800</pubDate>
+      
+      <guid>https://szthanatos.github.io/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>HBase</title>
+      <link>https://szthanatos.github.io/tags/hbase/</link>
+      <pubDate>Sun, 09 Dec 2018 16:19:27 +0800</pubDate>
+      
+      <guid>https://szthanatos.github.io/tags/hbase/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>https://szthanatos.github.io/tags/hugo/</link>
+      <pubDate>Sun, 09 Dec 2018 16:34:42 +0800</pubDate>
+      
+      <guid>https://szthanatos.github.io/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Intro</title>
+      <link>https://szthanatos.github.io/tags/intro/</link>
+      <pubDate>Sun, 09 Dec 2018 15:55:32 +0800</pubDate>
+      
+      <guid>https://szthanatos.github.io/tags/intro/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kafka</title>
+      <link>https://szthanatos.github.io/tags/kafka/</link>
+      <pubDate>Sun, 09 Dec 2018 15:55:32 +0800</pubDate>
+      
+      <guid>https://szthanatos.github.io/tags/kafka/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

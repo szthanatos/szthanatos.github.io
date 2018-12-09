@@ -4,6 +4,78 @@
     
     <url>
     
+      <loc>https://szthanatos.github.io/post/academic_hugo/</loc>
+      <lastmod>2018-12-09T16:34:42+08:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://szthanatos.github.io/post/hbase_design/</loc>
+      <lastmod>2018-12-09T16:19:27+08:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://szthanatos.github.io/topic/kafka_intro/</loc>
+      <lastmod>2018-12-09T15:55:32+08:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://szthanatos.github.io/topic/docker_intro/</loc>
+      <lastmod>2018-12-09T15:55:24+08:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://szthanatos.github.io/post/kafka/update/</loc>
+      <lastmod>2018-12-09T15:19:52+08:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://szthanatos.github.io/post/kafka/install/</loc>
+      <lastmod>2018-12-06T10:09:46+08:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://szthanatos.github.io/post/docker/ecology/</loc>
+      <lastmod>2018-12-06T10:06:06+08:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://szthanatos.github.io/post/docker/basis/</loc>
+      <lastmod>2018-12-05T22:17:22+08:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://szthanatos.github.io/post/palantir_intro/</loc>
+      <lastmod>2018-12-05T17:09:21+08:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>https://szthanatos.github.io/post/</loc>
       <lastmod>2017-01-01T00:00:00+08:00</lastmod>
     </url>
@@ -36,6 +108,78 @@
     
     <url>
     
+      <loc>https://szthanatos.github.io/categories/database/</loc>
+      <lastmod>2018-12-09T16:19:27+08:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://szthanatos.github.io/categories/docker/</loc>
+      <lastmod>2018-12-09T15:55:24+08:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://szthanatos.github.io/tags/docker/</loc>
+      <lastmod>2018-12-09T15:55:24+08:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://szthanatos.github.io/tags/hbase/</loc>
+      <lastmod>2018-12-09T16:19:27+08:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://szthanatos.github.io/tags/hugo/</loc>
+      <lastmod>2018-12-09T16:34:42+08:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://szthanatos.github.io/tags/intro/</loc>
+      <lastmod>2018-12-09T15:55:32+08:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://szthanatos.github.io/categories/kafka/</loc>
+      <lastmod>2018-12-09T15:55:32+08:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://szthanatos.github.io/tags/kafka/</loc>
+      <lastmod>2018-12-09T15:55:32+08:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>https://szthanatos.github.io/</loc>
       <lastmod>2017-10-15T00:00:00+08:00</lastmod>
       <priority>0</priority>
@@ -54,6 +198,16 @@
     <url>
     
       <loc>https://szthanatos.github.io/tags/</loc>
+      <lastmod>2018-12-09T15:55:24+08:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://szthanatos.github.io/topic/</loc>
+      <lastmod>2018-12-09T15:55:32+08:00</lastmod>
       <priority>0</priority>
     </url>
     

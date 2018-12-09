@@ -11,5 +11,32 @@
 	<atom:link href="https://szthanatos.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>DataBase</title>
+      <link>https://szthanatos.github.io/categories/database/</link>
+      <pubDate>Sun, 09 Dec 2018 16:19:27 +0800</pubDate>
+      
+      <guid>https://szthanatos.github.io/categories/database/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Docker</title>
+      <link>https://szthanatos.github.io/categories/docker/</link>
+      <pubDate>Sun, 09 Dec 2018 15:55:24 +0800</pubDate>
+      
+      <guid>https://szthanatos.github.io/categories/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kafka</title>
+      <link>https://szthanatos.github.io/categories/kafka/</link>
+      <pubDate>Sun, 09 Dec 2018 15:55:32 +0800</pubDate>
+      
+      <guid>https://szthanatos.github.io/categories/kafka/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

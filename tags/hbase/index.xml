@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>HBase on Kryptonite Lab</title>
+    <link>https://szthanatos.github.io/tags/hbase/</link>
+    <description>Recent content in HBase on Kryptonite Lab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Sun, 09 Dec 2018 16:19:27 +0800</lastBuildDate>
+    
+	<atom:link href="https://szthanatos.github.io/tags/hbase/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>hbase表设计风格指南</title>
+      <link>https://szthanatos.github.io/post/hbase_design/</link>
+      <pubDate>Sun, 09 Dec 2018 16:19:27 +0800</pubDate>
+      
+      <guid>https://szthanatos.github.io/post/hbase_design/</guid>
+      <description>简介 一般原则 命名空间(NameSpace) 命名规范 示例 表(Table) 命名规范 示例 行键(Rowkey) 命名规范 示例 注意 慎重将时间戳直接放入行</description>
+    </item>
+    
+  </channel>
+</rss>

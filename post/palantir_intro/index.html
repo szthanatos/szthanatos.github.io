@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 3.2.0">
+  <meta name="generator" content="Hugo 0.52" />
+  <meta name="author" content="Lex Wayne">
+
+  
+  
+  
+  
+    
+  
+  <meta name="description" content="简介 Palantir是全球第一大大数据公司。曾经的全球四大独角兽之一（其它三家是Uber，Airbnb和小米）。中文名帕兰提尔，源于《指环王">
+
+  
+  <link rel="alternate" hreflang="zh-cn" href="https://szthanatos.github.io/post/palantir_intro/">
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#2962ff">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" crossorigin="anonymous">
+        
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono">
+  
+
+  <link rel="stylesheet" href="/styles.css">
+  
+
+  
+  
+  
+
+  
+  <link rel="alternate" href="https://szthanatos.github.io/index.xml" type="application/rss+xml" title="Kryptonite Lab">
+  <link rel="feed" href="https://szthanatos.github.io/index.xml" type="application/rss+xml" title="Kryptonite Lab">
+  
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="https://szthanatos.github.io/post/palantir_intro/">
+
+  
+  
+  
+  
+    
+  
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="og:site_name" content="Kryptonite Lab">
+  <meta property="og:url" content="https://szthanatos.github.io/post/palantir_intro/">
+  <meta property="og:title" content="Palantir一分钟印象 | Kryptonite Lab">
+  <meta property="og:description" content="简介 Palantir是全球第一大大数据公司。曾经的全球四大独角兽之一（其它三家是Uber，Airbnb和小米）。中文名帕兰提尔，源于《指环王"><meta property="og:image" content="https://szthanatos.github.io/img/Palantir_logo.png">
+  <meta property="og:locale" content="zh-cn">
+  
+  <meta property="article:published_time" content="2018-12-05T17:09:21&#43;08:00">
+  
+  <meta property="article:modified_time" content="2018-12-05T17:09:21&#43;08:00">
+  
+
+  
+
+  
+
+  <title>Palantir一分钟印象 | Kryptonite Lab</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1></h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="搜索..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/">Kryptonite Lab</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="切换导航">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav ml-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#hero">
+            
+            <span>主页</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#posts">
+            
+            <span>文章</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#projects">
+            
+            <span>专题</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+
+
+
+
+
+
+
+<div class="article-header">
+  
+  
+  <img src="/img/Palantir_logo.png" class="article-banner" itemprop="image" alt="">
+  
+
+  
+</div>
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1 itemprop="name">Palantir一分钟印象</h1>
+
+  
+
+  
+    
+
+<div class="article-metadata">
+
+  
+  
+  <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Lex Wayne">
+  </span>
+  
+
+  <span class="article-date">
+    
+    <meta content="2018-12-05 17:09:21 &#43;0800 DST" itemprop="datePublished">
+    <time datetime="2018-12-05 17:09:21 &#43;0800 DST" itemprop="dateModified">
+      Dec 5, 2018
+    </time>
+  </span>
+  <span itemscope itemprop="publisher" itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Lex Wayne">
+  </span>
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    5 分钟阅读时间
+  </span>
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+<h2 id="简介">简介</h2>
+
+<p>Palantir是全球第一大<code>大数据公司</code>。曾经的全球四大独角兽之一（其它三家是Uber，Airbnb和小米）。中文名帕兰提尔，源于《指环王》中邪恶巫师萨鲁曼使用的可穿越时空、洞悉世间一切的水晶球(Palantiri)。主要客户为政府机构和金融机构。</p>
+
+<p>最出名的案例是以大数据技术帮助美国军方成功定位和击毙基地组织首脑本·拉登，以及协助多家银行追回了纳斯达克前主席麦道夫Bernie Madoff的庞氏骗局中所隐藏起来的数十亿美元巨款。</p>
+
+<hr />
+
+<h2 id="最新情况">最新情况</h2>
+
+<ul>
+<li><p><strong>2018年10月29日</strong>，Palantir正在建立ICE的案例管理软件 —— <a href="http://aldianews.com/articles/politics/immigration/technology-companies-are-ices-dark-allies/54287" target="_blank">AL DIA News</a></p></li>
+
+<li><p><strong>2018年10月23日</strong>，亚马逊、微软、Palantir等科技公司在特朗普的移民法案中起到重要作用 —— <a href="https://www.commondreams.org/news/2018/10/23/amazon-microsoft-and-palantir-among-tech-giants-making-huge-profits-trumps" target="_blank">Common Dreams</a></p></li>
+
+<li><p><strong>2018年10月19日</strong>，Palantir或明年上市，估值达410亿美元 —— <a href="https://www.vanityfair.com/news/2018/10/palantir-peter-thiels-all-seeing-eye-looks-to-a-41-billion-dollar-ipo" target="_blank">MAYA KOSOFF</a></p></li>
+
+<li><p><strong>2018年09月14日</strong>，美国陆军决议中止对Palantir2.06亿美元的采购合同 —— <a href="https://www.law360.com/articles/1082813/army-wrongly-ignored-palantir-in-206m-deal-fed-circ-says" target="_blank">LAW 360</a></p></li>
+
+<li><p><strong>2018年03月14日</strong>，雷神、Palantir 拿下美国陆军8.76亿美元合同 —— <a href="https://www.reuters.com/article/us-raytheon-pentagon/raytheon-palantir-win-876-million-u-s-defense-contract-pentagon-idUSKCN1GL2HR" target="_blank">reuters</a></p></li>
+
+<li><p><strong>2018年03月02日</strong>，传Palantir在新奥尔良秘密测试犯罪预测技术，最神秘的独角兽再陷隐私风波 —— <a href="https://www.lieyunwang.com/archives/416481" target="_blank">猎云网</a></p></li>
+
+<li><p>Palantir发布<a href="https://www.palantir.com/philanthropy-engineering/annual-report/2017/" target="_blank">2017年度报告</a> 重点提到在哈维飓风的救援以及灾后重建工作，以及帮助世界粮食计划署运输食品以对抗饥饿的工作中所起到的作用。</p></li>
+</ul>
+
+<hr />
+
+<h2 id="创始人">创始人</h2>
+
+<h4 id="peter-thiel">Peter Thiel</h4>
+
+<p>斯坦福本科及法学院JD的高材生，《从0到1》的作者。创立了Clarium Capital、Founders Fund、Valar Ventures、、Mithril Capital Management等多支基金。Paypal创始人之一并出任 CEO。2002年paypal被收购之后，以投资人身份投资包括Facebook、Asana、Quora、LinkedIn、Yelp、Yammer在内的诸多当今一线公司。号称硅谷创投教父。</p>
+
+<h4 id="alex-karp-ceo">Alex Karp (CEO)</h4>
+
+<p>哈佛本科毕业，斯坦福法学JD学位，德国法兰克福大学新古典社会理论方向博士学位，师从本世纪最伟大的哲学家之一哈贝马斯。早年继承家产后成为硅谷著名投资人，并在伦敦创立Caedmon Group基金管理投资。目前坚持保持单身，热爱气功、游泳以及与员工讲马克思还有带领员工在硅谷打太极。Peter Thiel在斯坦福的室友。</p>
+
+<h4 id="joe-lonsdale">Joe Lonsdale</h4>
+
+<p>斯坦福计算机系毕业。除Palantir外，还曾创办另外两家高科技公司，和硅谷最大的面向亚洲的风投基金Formation8、 8vc。管理着5000亿美元财富。此外，还是《福布斯》评选出的12位行业未来之星之一，还被美国媒体评为硅谷排名第二的天使投资人。</p>
+
+<h4 id="stephen-cohen">Stephen Cohen</h4>
+
+<p>毕业于斯坦福计算机系的高级工程师。</p>
+
+<h4 id="nathan-gettings">Nathan Gettings</h4>
+
+<p>来自于PayPal的的高级工程师。在PayPal负责风险和研发的总监，曾以开发了反欺诈的系统而闻名于世。</p>
+
+<hr />
+
+<h2 id="发展历程">发展历程</h2>
+
+<ul>
+<li>2004年Palantir公司创立于加利福尼亚州帕洛阿尔托。创业初期Palantir并不被人看好，融资过程也是屡屡受阻，包括红杉资本，凯鹏华盈两大VC基金都不看好Palantir的发展。经过多次奔走博弈，最终，Palantir赢得了CIA的创投基金的2轮投资，从而走上了发展的正轨。</li>
+<li>2004到2009年，Palantir主要业务还是服务于美国政府部门，提供情报分析，防欺诈、反恐等服务。</li>
+<li>2010年，Palantir开始提供企业服务，实现业务多元化。</li>
+<li>2010年7月，当时已经拥有250位工程师的Palantir完成9000万美元的D轮融资，估值达到7.35亿美元。</li>
+<li>2011年5月6日，融资5000万美元，累计融资额达到了1.75亿美元。</li>
+<li>2011年10月7日，融资7000万美元，估值25亿美元。</li>
+<li>2013年9月29日，融资1.96亿美元，估值60亿美元。</li>
+<li>2013年12月，Palantir新一轮融资1.075亿美元，同时估值达到90亿美元。此时Palantir的年收入已经超过4.5亿美元。</li>
+<li>2014年11月，Palantir再拿到5亿美元投资，企业用户突破14000家，估值达到了150亿美元。</li>
+<li>2015年年底，Palantir获得8.8亿美元的融资，市值达到200亿美元。成为继 Uber、小米、Airbnb 之后，全球估值第四高的创业公司。（截至2018年11月最后一笔融资）</li>
+<li>2016年2月，收购Kimono Labs</li>
+<li>2016年5月，Buzzfeed爆料,数司百名员工离职，多个重要客户不再续约。</li>
+<li>2016年8月，Palantir收购数据可视化公司Silk。</li>
+<li>2018年10月，Palantir预备明年下半年上市，公司估值或将达410亿美元
+<br /></li>
+</ul>
+
+<hr />
+
+<h2 id="产品内容">产品内容</h2>
+
+<h3 id="官方主页-home-palantir-https-www-palantir-com">官方主页： <a href="https://www.palantir.com/" target="_blank">Home | Palantir</a></h3>
+
+<h3 id="产品线">产品线</h3>
+
+<p>目前Palantir仅保留两条产品线：</p>
+
+<ul>
+<li><p><strong><a href="https://www.palantir.com/palantir-gotham/" target="_blank">Palantir Gotham</a></strong> 一个集成，管理，保护和分析多来源的企业数据的复合平台。命名来源于蝙蝠侠所在的哥谭市。作为后端，Gotham平台可用于集成许多不同的数据源，以进行安全的协作分析；也可以存储企业的各类建模分析数据，充当企业知识库。而在前端, Gotham平台提供了一套针对语义，时间，地理空间和全文分析的分析工具集合。为Gotham提供支撑的子产品包括：</p>
+
+<ul>
+<li><strong>PHOENIX</strong> 支持PB级的数万亿条记录进行亚秒级查询的集群数据库；</li>
+<li><strong>RAPTOR</strong> 提供对外部数据源进行联合查询,并实时加入数据库的检索工具；</li>
+<li><strong>SEARCH</strong> 提供对系统中结构化和非结构化数据的全文检索的搜索引擎；</li>
+<li><strong>HORIZON</strong> 允许用户在数十亿个对象中查询并在约10秒内收到结果的,类Spark设计的内存数据库；</li>
+<li><strong>DYNAMIC ONTOLOGY</strong> 高度灵活和动态的数据建模工具；</li>
+<li><strong>REVISIONING DATABASE</strong> RevDB是Gotham平台的持久化数据管理工具，类似Zookeeper之于Hadoop；</li>
+<li><strong>ATLASDB</strong> 作为RevDB的具体数据存储单元，结合了NoSQL数据存储的简单性和可扩展性与传统SQL数据库的事务安全性和一致性；</li>
+<li><strong>NEXUS PEERING</strong> 分布式系统平台，上面的各个组件都建立在这个平台之上；</li>
+</ul></li>
+
+<li><p><strong><a href="https://www.palantir.com/palantir-foundry/" target="_blank">Palantir Foundry</a></strong> ：数据集成/分析平台，将后端的数据存储和前端的数据分析打通，让任何人都能连接到不同数据源轻松进行建模分析。</p></li>
+</ul>
+
+<h3 id="解决方案">解决方案</h3>
+
+<p>Palantir面向以下领域直接提供解决方案：</p>
+
+<ul>
+<li><strong><a href="https://www.palantir.com/solutions/automotive" target="_blank">汽车制造业</a></strong></li>
+<li><strong><a href="https://www.palantir.com/solutions/cyber/" target="_blank">网络安全</a></strong></li>
+<li><strong><a href="https://www.palantir.com/solutions/financial-compliance/" target="_blank">金融合规</a></strong></li>
+<li><strong><a href="https://www.palantir.com/solutions/insider-threat/" target="_blank">企业内部信息安全</a></strong></li>
+<li><strong><a href="https://www.palantir.com/solutions/intelligence/" target="_blank">商业情报分析</a></strong></li>
+<li><strong><a href="https://www.palantir.com/solutions/legal-intelligence/" target="_blank">法律诉讼</a></strong></li>
+<li><strong><a href="https://www.palantir.com/solutions/mergers-and-acquisitions/" target="_blank">并购支持</a></strong></li>
+<li><strong><a href="https://www.palantir.com/solutions/revenue-maximization/" target="_blank">收入最大化</a></strong></li>
+<li><strong><a href="https://www.palantir.com/solutions/case-management/" target="_blank">数据组织</a></strong></li>
+<li><strong><a href="https://www.palantir.com/solutions/defense/" target="_blank">国土防卫</a></strong></li>
+<li><strong><a href="https://www.palantir.com/solutions/gdpr/" target="_blank">欧盟通用数据保护监管</a></strong></li>
+<li><strong><a href="https://www.palantir.com/solutions/insurance-analytics" target="_blank">保险分析</a></strong></li>
+<li><strong><a href="https://www.palantir.com/solutions/law-enforcement/" target="_blank">公共执法</a></strong></li>
+<li><strong><a href="https://www.palantir.com/solutions/manufacturing/" target="_blank">制造业</a></strong></li>
+<li><strong><a href="https://www.palantir.com/solutions/pharma/" target="_blank">医药研发</a></strong></li>
+<li><strong><a href="https://www.palantir.com/solutions/skywise" target="_blank">航空业</a></strong></li>
+</ul>
+
+    </div>
+
+    
+
+
+
+
+    
+
+
+
+
+
+
+<div class="media author-card" itemscope itemtype="http://schema.org/Person">
+  
+  <img class="portrait mr-3" src="/img/portrait.jpg" itemprop="image" alt="Avatar">
+  
+  <div class="media-body">
+    <h5 class="card-title" itemprop="name"><a href="/">Lex Wayne</a></h5>
+    <h6 class="card-subtitle">Python Knight &amp; Go Padawan</h6>
+    
+    <ul class="network-icon" aria-hidden="true">
+      
+    </ul>
+  </div>
+</div>
+
+
+
+
+    
+    
+
+    
+
+    
+
+
+  </div>
+</article>
+
+<div class="container">
+  <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    &copy; 2018 &middot; 
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" id="back_to_top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+</div>
+
+
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">引用</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> 复制
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> 下载
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha512-+NqPlbbtM1QqiK8ZAo4Yrj2c4lNQoGv8P79DPtKzj++l5jnN39rHA/xsqn8zE9l0uSoxaCdrOgFs6yjyfbBxSg==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha256-VsEqElsCHSGmnmHXGQzvoWjWwoznFSZc6hs7ARLRacQ=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/dockerfile.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/shell.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/sql.min.js"></script>
+        
+      
+
+      
+      
+    
+
+    
+    
+
+    
+    
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script>
+      const search_index_filename = "/index.json";
+      const i18n = {
+        'placeholder': "搜索...",
+        'results': "搜索结果",
+        'no_results': "没有找到结果"
+      };
+      const content_type = {
+        'post': "文章",
+        'project': "项目",
+        'publication' : "出版物",
+        'talk' : "演讲"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    <script src="/js/academic.min.d037ee5294b166a79dec317c58aea9cc.js"></script>
+
+    
+
+  </body>
+</html>
+
