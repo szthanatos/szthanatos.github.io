@@ -370,7 +370,7 @@
 
 <h2 id="hugo-安装-更新">Hugo 安装/更新</h2>
 
-<p>Hugo是使用<code>Go</code>语言开发的静态站点生成器。无需<code>Go</code>语言环境，可以直接通过二进制编译包进行跨平台部署。</p>
+<p><a href="https://gohugo.io/" target="_blank">Hugo</a>是使用<code>Go</code>语言开发的静态站点生成器。不过无需准备<code>Go</code>语言环境，可以直接通过二进制编译包进行跨平台部署。</p>
 
 <p>以下均以Ubuntu18.0为例。</p>
 
@@ -385,11 +385,12 @@
 <h3 id="常用命令">常用命令</h3>
 
 <ul>
+<li><strong><code>hugo</code></strong>： 编译项目生成静态网站，默认位置在项目的<code>public</code>目录下</li>
 <li><strong><code>hugo server</code></strong>： 启动你的网站服务，可以通过浏览器访问<code>http://127.0.0.1:1313/</code>访问站点;</li>
 <li><strong><code>hugo new {folder}/{name}.md</code></strong>: 创建新文章，一般默认放在<code>post</code>文件夹下；</li>
 </ul>
 
-<p>基本没了，一般情况下用这两个命令就够了。</p>
+<p>基本没了，一般情况下用这三个命令就够了。</p>
 
 <h2 id="academic-安装-更新">Academic 安装/更新</h2>
 
@@ -423,7 +424,7 @@
 
 <h2 id="部署到github-pages">部署到Github Pages</h2>
 
-<p>网上介绍的办法很多，但核心其实就一句：<strong>将<code>hugo server</code>命令生成的<code>public</code>文件夹上传到GitHub pages项目下</strong>。</p>
+<p>网上介绍的办法很多，但核心其实就一句：<strong>将<code>hugo</code>命令生成的<code>public</code>文件夹上传到GitHub pages项目下</strong>。</p>
 
 <p><code>public</code>文件夹相当于编译完成的静态网站，你在本地打开其实就能看。换句话说，你每次手动将这个目录下的内容上传到你的GitHub page项目也是可以的。</p>
 
