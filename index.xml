@@ -304,7 +304,15 @@ sound_type
       <pubDate>Sun, 09 Dec 2018 15:55:32 +0800</pubDate>
       
       <guid>https://szthanatos.github.io/topic/kafka_intro/</guid>
-      <description></description>
+      <description>
+
+&lt;h2 id=&#34;目录&#34;&gt;目录&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://szthanatos.github.io/post/kafka/install&#34;&gt;Kafka -01- 安装配置&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://szthanatos.github.io/post/kafka/update&#34;&gt;Kafka -02- 滚动升级&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
     
     <item>
@@ -313,7 +321,15 @@ sound_type
       <pubDate>Sun, 09 Dec 2018 15:55:24 +0800</pubDate>
       
       <guid>https://szthanatos.github.io/topic/docker_intro/</guid>
-      <description></description>
+      <description>
+
+&lt;h2 id=&#34;目录&#34;&gt;目录&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://szthanatos.github.io/post/docker/basis&#34;&gt;Docker -01- 基本概念&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://szthanatos.github.io/post/docker/ecology&#34;&gt;Docker -02- 进阶生态&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
     
     <item>
