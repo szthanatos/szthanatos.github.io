@@ -11,7 +11,7 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Hugo&#43;Academic实现Github Page个人博客</title>
+      <title>Academic实现Github Page个人博客</title>
       <link>https://szthanatos.github.io/post/academic_hugo/</link>
       <pubDate>Sun, 09 Dec 2018 16:34:42 +0800</pubDate>
       
@@ -34,7 +34,14 @@
 &lt;li&gt;&lt;a href=&#34;#更新&#34;&gt;更新&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#部署到github-pages&#34;&gt;部署到Github Pages&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#配置修改&#34;&gt;配置修改&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#个性化配置&#34;&gt;个性化配置&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#configtoml主要配置项解释&#34;&gt;config.toml主要配置项解释&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#修改网站logo&#34;&gt;修改网站logo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#给文章添加精选图&#34;&gt;给文章添加精选图&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#给文章添加头部图片&#34;&gt;给文章添加头部图片&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&#34;hugo-安装-更新&#34;&gt;Hugo 安装/更新&lt;/h2&gt;
@@ -56,7 +63,7 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;&lt;code&gt;hugo&lt;/code&gt;&lt;/strong&gt;： 编译项目生成静态网站，默认位置在项目的&lt;code&gt;public&lt;/code&gt;目录下&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;code&gt;hugo server&lt;/code&gt;&lt;/strong&gt;： 启动你的网站服务，可以通过浏览器访问&lt;code&gt;http://127.0.0.1:1313/&lt;/code&gt;访问站点;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;hugo new {folder}/{name}.md&lt;/code&gt;&lt;/strong&gt;: 创建新文章，一般默认放在&lt;code&gt;post&lt;/code&gt;文件夹下；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;hugo new {folder}/{name}.md&lt;/code&gt;&lt;/strong&gt;: 创建新文章，使用&lt;code&gt;markdown&lt;/code&gt;进行排版，一般默认放在&lt;code&gt;post&lt;/code&gt;文件夹下；&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;基本没了，一般情况下用这三个命令就够了。&lt;/p&gt;
@@ -126,7 +133,92 @@ git push origin master
 
 &lt;p&gt;实际上只有第六步是更新GitHub page，每次重复执行这一部分就行(如果你不把文章保存到&lt;code&gt;academic-kickstart&lt;/code&gt;的话)。&lt;/p&gt;
 
-&lt;h2 id=&#34;配置修改&#34;&gt;配置修改&lt;/h2&gt;
+&lt;h2 id=&#34;个性化配置&#34;&gt;个性化配置&lt;/h2&gt;
+
+&lt;p&gt;项目目录结构大体如下：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;content目录&lt;/code&gt;： 网站内容，&lt;code&gt;home&lt;/code&gt;是你的主页的小控件，&lt;code&gt;post&lt;/code&gt;是默认文章存放位置&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;public目录&lt;/code&gt;： 生成的静态页面&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;resouces目录&lt;/code&gt;： JS资源存放位置&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;static目录&lt;/code&gt;： 静态资源存放位置&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;themes目录&lt;/code&gt;： 主题文件所在目录&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;config.toml&lt;/code&gt;: 全局配置文件&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;config-toml主要配置项解释&#34;&gt;config.toml主要配置项解释&lt;/h3&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;配置项&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;baseurl&lt;/td&gt;
+&lt;td&gt;你的站点的url，不设置这个你的文章/资源可能相互引用不到&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;title&lt;/td&gt;
+&lt;td&gt;网站标题&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;defaultContentLanguage&lt;/td&gt;
+&lt;td&gt;默认语言，中文的话填&lt;code&gt;zh&lt;/code&gt;，在文件末尾还有一处配置要同时修改才行&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;hasCJKLanguage&lt;/td&gt;
+&lt;td&gt;是否有中/日/韩语&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;defaultContentLanguageInSubdir&lt;/td&gt;
+&lt;td&gt;目录是否允许用默认语言，&lt;code&gt;true&lt;/code&gt;就对了&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;highlight_languages&lt;/td&gt;
+&lt;td&gt;语法高亮，支持的语言可以去&lt;a href=&#34;https://cdnjs.com/libraries/highlight.js/&#34; target=&#34;_blank&#34;&gt;highlight.js&lt;/a&gt;查到&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;[[menu.main]]&lt;/td&gt;
+&lt;td&gt;这部分是你主页上标题栏显示的内容，&lt;code&gt;url&lt;/code&gt;默认和你&lt;code&gt;content/home&lt;/code&gt;下的文件名对应&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Languages&lt;/td&gt;
+&lt;td&gt;添加中文支持的话，把&lt;code&gt;[languages.zh]&lt;/code&gt;部分解除注释，&lt;code&gt;languageCode&lt;/code&gt;写&lt;code&gt;&amp;quot;zh-cn&amp;quot;&lt;/code&gt;，添加其他语种的话，相同格式再写一组&lt;code&gt;[languages.XX]&lt;/code&gt;即可，支持的语言代码可以在&lt;code&gt;themes\academic\i18n&lt;/code&gt;查看&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&#34;修改网站logo&#34;&gt;修改网站logo&lt;/h3&gt;
+
+&lt;p&gt;默认的logo是Academic的蓝色学位帽，想替换的话将你想用的logo保存为
+&lt;code&gt;icon.png&lt;/code&gt;(默认32*32像素，大了也没关系)
+和&lt;code&gt;icon-192.png&lt;/code&gt;(192*192像素)，并放到项目的&lt;code&gt;static/img&lt;/code&gt;目录下&lt;/p&gt;
+
+&lt;h3 id=&#34;给文章添加精选图&#34;&gt;给文章添加精选图&lt;/h3&gt;
+
+&lt;p&gt;这个图片只能添加一个，名字必须是&lt;code&gt;featured.*&lt;/code&gt;(后缀jpg/png都行)，而且必须和文章放在同一个文件夹下。&lt;/p&gt;
+
+&lt;p&gt;所以一般做法是把文章&lt;code&gt;aaa.md&lt;/code&gt;改名为&lt;code&gt;index.md&lt;/code&gt;并新建一个&lt;code&gt;aaa&lt;/code&gt;目录，再和&lt;code&gt;featured.png&lt;/code&gt;图片一起扔进去。&lt;/p&gt;
+
+&lt;h3 id=&#34;给文章添加头部图片&#34;&gt;给文章添加头部图片&lt;/h3&gt;
+
+&lt;p&gt;这个是文章头部的横跨整个页面的大图，这个的图片可以放到&lt;code&gt;static/img&lt;/code&gt;目录下，不过需要在你文件的&lt;code&gt;+++&lt;/code&gt;的部分添加如下代码：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;[header]
+  image = &amp;quot;img名称&amp;quot;
+  caption = &amp;quot;标题说明&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     

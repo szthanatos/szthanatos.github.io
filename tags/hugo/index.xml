@@ -13,12 +13,12 @@
     
     
     <item>
-      <title>Hugo&#43;Academic实现Github Page个人博客</title>
+      <title>Academic实现Github Page个人博客</title>
       <link>https://szthanatos.github.io/post/academic_hugo/</link>
       <pubDate>Sun, 09 Dec 2018 16:34:42 +0800</pubDate>
       
       <guid>https://szthanatos.github.io/post/academic_hugo/</guid>
-      <description>Hugo 安装/更新 安装/更新 常用命令 Academic 安装/更新 通过Netlify 通过Git 安装 更新 部署到Github Pages 配置修改 Hugo 安装/更新 Hugo是使用Go语言</description>
+      <description>Hugo 安装/更新 安装/更新 常用命令 Academic 安装/更新 通过Netlify 通过Git 安装 更新 部署到Github Pages 个性化配置 config.toml主要配置项</description>
     </item>
     
   </channel>
