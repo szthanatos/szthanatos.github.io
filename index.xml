@@ -12,10 +12,10 @@
     
     <item>
       <title>Academic实现Github Page个人博客</title>
-      <link>https://szthanatos.github.io/post/academic_hugo/</link>
+      <link>https://szthanatos.github.io/post/academic/</link>
       <pubDate>Sun, 09 Dec 2018 16:34:42 +0800</pubDate>
       
-      <guid>https://szthanatos.github.io/post/academic_hugo/</guid>
+      <guid>https://szthanatos.github.io/post/academic/</guid>
       <description>
 
 &lt;ul&gt;
@@ -40,7 +40,7 @@
 &lt;li&gt;&lt;a href=&#34;#configtoml主要配置项解释&#34;&gt;config.toml主要配置项解释&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#修改网站logo&#34;&gt;修改网站logo&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#给文章添加精选图&#34;&gt;给文章添加精选图&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#给文章添加头部图片&#34;&gt;给文章添加头部图片&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#给文章添加头部背景&#34;&gt;给文章添加头部背景&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -211,14 +211,22 @@ git push origin master
 
 &lt;p&gt;所以一般做法是把文章&lt;code&gt;aaa.md&lt;/code&gt;改名为&lt;code&gt;index.md&lt;/code&gt;并新建一个&lt;code&gt;aaa&lt;/code&gt;目录，再和&lt;code&gt;featured.png&lt;/code&gt;图片一起扔进去。&lt;/p&gt;
 
-&lt;h3 id=&#34;给文章添加头部图片&#34;&gt;给文章添加头部图片&lt;/h3&gt;
+&lt;p&gt;显示的效果是在文章列表页，文章右侧有一个缩略图；打开文章，标题默认会居左，右边是精选图：&lt;/p&gt;
 
-&lt;p&gt;这个是文章头部的横跨整个页面的大图，这个的图片可以放到&lt;code&gt;static/img&lt;/code&gt;目录下，不过需要在你文件的&lt;code&gt;+++&lt;/code&gt;的部分添加如下代码：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://szthanatos.github.io/img/featured_image_example.png&#34; alt=&#34;example&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;给文章添加头部背景&#34;&gt;给文章添加头部背景&lt;/h3&gt;
+
+&lt;p&gt;这个是文章头部的横跨整个页面的大图，也就是文章头部这个黑底白字的大图。&lt;/p&gt;
+
+&lt;p&gt;这个的图片可以放到&lt;code&gt;static/img&lt;/code&gt;目录下，不过需要在你文件的&lt;code&gt;+++&lt;/code&gt;的部分添加如下代码：&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;[header]
   image = &amp;quot;img名称&amp;quot;
   caption = &amp;quot;标题说明&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;顺便一提，文章内引用&lt;code&gt;static/img&lt;/code&gt;下存储的图像的话，路径大致如此&lt;code&gt;![example](/img/image_abc.png)&lt;/code&gt;&lt;/p&gt;
 </description>
     </item>
     
