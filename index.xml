@@ -11,6 +11,45 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Git_tips</title>
+      <link>https://szthanatos.github.io/post/git_tips/</link>
+      <pubDate>Fri, 14 Dec 2018 09:35:32 +0800</pubDate>
+      
+      <guid>https://szthanatos.github.io/post/git_tips/</guid>
+      <description>
+
+&lt;h2 id=&#34;github-deploy-key-ssh-key&#34;&gt;github Deploy key/SSH key&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;Deploy key&lt;/code&gt;是在&lt;code&gt;项目主页&lt;/code&gt;-&lt;code&gt;setting&lt;/code&gt;-&lt;code&gt;Delpoy keys&lt;/code&gt;下进行添加，如果勾选&lt;code&gt;Allow write access&lt;/code&gt;，则相当于具有对这个项目的读写权限(否则只能&lt;code&gt;clone&lt;/code&gt;不能&lt;code&gt;push&lt;/code&gt;)。&lt;strong&gt;作用范围是这个项目。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;SSH key&lt;/code&gt;是在你&lt;code&gt;个人主页&lt;/code&gt;-&lt;code&gt;Settings&lt;/code&gt;-&lt;code&gt;SSH and GPG keys&lt;/code&gt;下进行添加。&lt;strong&gt;作用范围是你的账户下的所有项目。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;同一个公钥，只能作为整个账户的&lt;code&gt;SSH key&lt;/code&gt;，或者&lt;strong&gt;一个项目&lt;/strong&gt;的&lt;code&gt;Deploy key&lt;/code&gt;。想为一台机器授予多个项目的读写权限的话，需要通过&lt;code&gt;ssh-keygen&lt;/code&gt;生成多个密钥，分别作为不同项目的&lt;code&gt;Deploy key&lt;/code&gt;。&lt;/p&gt;
+
+&lt;h2 id=&#34;更换git协议&#34;&gt;更换git协议&lt;/h2&gt;
+
+&lt;p&gt;使用&lt;code&gt;http&lt;/code&gt;/&lt;code&gt;https&lt;/code&gt;协议连接仓库相比&lt;code&gt;ssh&lt;/code&gt;即不够安全，也会存在&lt;code&gt;push&lt;/code&gt;的时候必须输入用户名密码的问题。&lt;/p&gt;
+
+&lt;p&gt;使用&lt;code&gt;git remote -v&lt;/code&gt;可以查看项目使用的协议。&lt;/p&gt;
+
+&lt;p&gt;如果是新建的项目，推荐在一开始就使用&lt;code&gt;git@github.com:{USER}/{PROJECT}.git&lt;/code&gt;进行&lt;code&gt;clone&lt;/code&gt;。这样默认都是用&lt;code&gt;ssh&lt;/code&gt;了。&lt;/p&gt;
+
+&lt;p&gt;如果是已有项目，使用&lt;code&gt;git remote set-url {repository} {url}&lt;/code&gt;更改。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ git remote -v
+origin  https://github.com/abc/bcd.git (fetch)
+origin  https://github.com/abc/bcd.git (push)
+
+$ git remote set-url origin git@github.com:abc/bcd.git
+
+$ git remote -v
+origin  git@github.com:abc/bcd.git (fetch)
+origin  git@github.com:abc/bcd.git (push)
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Academic实现Github Page个人博客</title>
       <link>https://szthanatos.github.io/post/academic/</link>
       <pubDate>Sun, 09 Dec 2018 16:34:42 +0800</pubDate>
@@ -33,7 +72,13 @@
 &lt;li&gt;&lt;a href=&#34;#安装&#34;&gt;安装&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#更新&#34;&gt;更新&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#部署到github-pages&#34;&gt;部署到Github Pages&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#部署到github-pages&#34;&gt;部署到Github Pages&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#原理&#34;&gt;原理&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#官方教程缩减版&#34;&gt;官方教程(缩减版)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#脚本&#34;&gt;脚本&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#个性化配置&#34;&gt;个性化配置&lt;/a&gt;
 
 &lt;ul&gt;
@@ -84,7 +129,7 @@
 &lt;h4 id=&#34;安装&#34;&gt;安装&lt;/h4&gt;
 
 &lt;ol&gt;
-&lt;li&gt;通过git安装的话，首先建议你在GitHub上fork成你自己的项目，默认的话，通过&lt;code&gt;git clone https://github.com/sourcethemes/academic-kickstart.git My_Website&lt;/code&gt;将代码克隆到本地文件夹&lt;code&gt;My_Website&lt;/code&gt;;&lt;/li&gt;
+&lt;li&gt;通过git安装的话，首先建议你在GitHub上fork成你自己的项目，默认的话，通过&lt;code&gt;git clone https://github.com/sourcethemes/academic-kickstart.git My_Website&lt;/code&gt;将代码克隆到本地文件夹&lt;code&gt;My_Website&lt;/code&gt; &lt;em&gt;(当然，更推荐使用ssh协议，更安全，也免于push时输入密码，这里暂时按官方的来)&lt;/em&gt; ;&lt;/li&gt;
 &lt;li&gt;进入文件夹，初始化项目：&lt;code&gt;git submodule update --init --recursive&lt;/code&gt;，完成安装;&lt;/li&gt;
 &lt;/ol&gt;
 
@@ -100,21 +145,26 @@
 
 &lt;h2 id=&#34;部署到github-pages&#34;&gt;部署到Github Pages&lt;/h2&gt;
 
-&lt;p&gt;网上介绍的办法很多，但核心其实就一句：&lt;strong&gt;将&lt;code&gt;hugo&lt;/code&gt;命令生成的&lt;code&gt;public&lt;/code&gt;文件夹上传到GitHub pages项目下&lt;/strong&gt;。&lt;/p&gt;
+&lt;h3 id=&#34;原理&#34;&gt;原理&lt;/h3&gt;
+
+&lt;p&gt;网上介绍的办法很多，但核心其实就一句：&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;将&lt;code&gt;hugo&lt;/code&gt;命令生成的&lt;code&gt;public&lt;/code&gt;文件夹上传到GitHub pages项目下&lt;/strong&gt;。&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;public&lt;/code&gt;文件夹相当于编译完成的静态网站，你在本地打开其实就能看。换句话说，你每次手动将这个目录下的内容上传到你的GitHub page项目也是可以的。&lt;/p&gt;
 
 &lt;p&gt;然后为了达到这个目的，官网给出的做法是利用&lt;code&gt;git submodule&lt;/code&gt;命令将你的&lt;code&gt;GitHub page&lt;/code&gt;项目作为&lt;code&gt;My_Website&lt;/code&gt;项目的子模块存放到&lt;code&gt;public&lt;/code&gt;目录。那么当你更新你的文章之后，只提交&lt;code&gt;public&lt;/code&gt;文件夹内的变更到&lt;code&gt;GitHub page&lt;/code&gt;项目即可。&lt;/p&gt;
 
-&lt;p&gt;详细官方做法如下：&lt;/p&gt;
+&lt;h3 id=&#34;官方教程-缩减版&#34;&gt;官方教程(缩减版)&lt;/h3&gt;
 
 &lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://sourcethemes.com/academic/docs/deployment/#github-pages&#34; target=&#34;_blank&#34;&gt;原教程&lt;/a&gt;看这；&lt;/li&gt;
 &lt;li&gt;在GitHub上创建两个项目，一个是fork 的&lt;a href=&#34;https://github.com/sourcethemes/academic-kickstart.git&#34; target=&#34;_blank&#34;&gt;academic-kickstart&lt;/a&gt;，也就是你前面clone到本地的&lt;code&gt;My_Website&lt;/code&gt;，另一个即是以你用户名/组织名开头、以&lt;code&gt;.github.io&lt;/code&gt;结尾的GitHub page项目。&lt;/li&gt;
-&lt;li&gt;在&lt;code&gt;My_Website&lt;/code&gt;目录下执行&lt;code&gt;git submodule update --init --recursive&lt;/code&gt;初始化子模块；&lt;/li&gt;
+&lt;li&gt;在&lt;code&gt;My_Website&lt;/code&gt;目录下执行&lt;code&gt;git submodule update --init --recursive&lt;/code&gt;更新子模块；&lt;/li&gt;
 &lt;li&gt;将&lt;code&gt;config.toml&lt;/code&gt;中的&lt;code&gt;baseurl&lt;/code&gt;设置为你的GitHub page地址；&lt;/li&gt;
-&lt;li&gt;删除&lt;code&gt;public&lt;/code&gt;文件夹(如果有的话)，将GitHub page项目clone进去：&lt;code&gt;git submodule add -f -b master https://github.com/&amp;lt;USERNAME&amp;gt;/&amp;lt;USERNAME&amp;gt;.github.io.git public&lt;/code&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;(实质)&lt;/strong&gt; 删除&lt;code&gt;public&lt;/code&gt;文件夹(如果有的话)，将GitHub page项目clone进去：&lt;code&gt;git submodule add -f -b master https://github.com/&amp;lt;USERNAME&amp;gt;/&amp;lt;USERNAME&amp;gt;.github.io.git public&lt;/code&gt;;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;更新&lt;code&gt;academic-kickstart&lt;/code&gt;项目：&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;新增/编辑文章后，更新&lt;code&gt;academic-kickstart&lt;/code&gt;项目：&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git add .
 git commit -m &amp;quot;Initial commit&amp;quot;
@@ -123,7 +173,7 @@ git push -u origin master
 
 &lt;li&gt;&lt;p&gt;更新GitHub page项目：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;hugo  # 更新public静态文件
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;hugo 
 cd public
 git add .
 git commit -m &amp;quot;Build website&amp;quot;
@@ -132,6 +182,76 @@ git push origin master
 &lt;/ol&gt;
 
 &lt;p&gt;实际上只有第六步是更新GitHub page，每次重复执行这一部分就行(如果你不把文章保存到&lt;code&gt;academic-kickstart&lt;/code&gt;的话)。&lt;/p&gt;
+
+&lt;h3 id=&#34;脚本&#34;&gt;脚本&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;Hugo&lt;/code&gt;官方把上面步骤打包到了一个脚本：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;#!/bin/bash
+
+echo -e &amp;quot;\033[0;32mDeploying updates to GitHub...\033[0m&amp;quot;
+
+# Build the project.
+hugo # if using a theme, replace with `hugo -t &amp;lt;YOURTHEME&amp;gt;`
+
+# Go To Public folder
+cd public
+# Add changes to git.
+git add .
+
+# Commit changes.
+msg=&amp;quot;rebuilding site `date`&amp;quot;
+if [ $# -eq 1 ]
+  then msg=&amp;quot;$1&amp;quot;
+fi
+git commit -m &amp;quot;$msg&amp;quot;
+
+# Push source and build repos.
+git push origin master
+
+# Come Back up to the Project Root
+cd ..
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;实际上我们干脆连第五步也放进去呗：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;#!/bin/bash
+
+echo -e &amp;quot;\033[0;32mDeploying updates to GitHub...\033[0m&amp;quot;
+
+# Build the project.
+hugo # if using a theme, replace with `hugo -t &amp;lt;YOURTHEME&amp;gt;`
+
+# Add changes to git.
+git add .
+
+# Commit changes.
+msg=&amp;quot;rebuilding site `date`&amp;quot;
+if [ $# -eq 1 ]
+  then msg=&amp;quot;$1&amp;quot;
+fi
+git commit -m &amp;quot;$msg&amp;quot;
+
+# Push source and build repos.
+git push origin master
+
+# Go To Public folder
+cd public
+
+# Add changes to git.
+git add .
+
+# Commit changes.
+git commit -m &amp;quot;$msg&amp;quot;
+
+# Push source and build repos.
+git push origin master
+
+# Come Back up to the Project Root
+cd ..
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;将脚本保存为&lt;code&gt;deploy.sh&lt;/code&gt;，放到项目根目录下，完成修改后执行&lt;code&gt;./deploy.sh &amp;quot;{Your optional commit message&amp;quot;}&lt;/code&gt;一键更新/部署。&lt;/p&gt;
 
 &lt;h2 id=&#34;个性化配置&#34;&gt;个性化配置&lt;/h2&gt;
 

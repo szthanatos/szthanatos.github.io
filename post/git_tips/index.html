@@ -15,10 +15,10 @@
   
     
   
-  <meta name="description" content="Python Knight &amp; Go Padawan">
+  <meta name="description" content="github Deploy key/SSH key Deploy key是在项目主页-setting-Delpoy keys下进行添加，如果勾选Allow write access，则相当于具有对这个项目的读写">
 
   
-  <link rel="alternate" hreflang="zh-cn" href="">
+  <link rel="alternate" hreflang="zh-cn" href="https://szthanatos.github.io/post/git_tips/">
 
   
 
@@ -92,7 +92,7 @@
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="">
+  <link rel="canonical" href="https://szthanatos.github.io/post/git_tips/">
 
   
   
@@ -104,19 +104,21 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Kryptonite Lab">
-  <meta property="og:url" content="">
-  <meta property="og:title" content="404 Page not found | Kryptonite Lab">
-  <meta property="og:description" content="Python Knight &amp; Go Padawan"><meta property="og:image" content="https://szthanatos.github.io/img/portrait.jpg">
+  <meta property="og:url" content="https://szthanatos.github.io/post/git_tips/">
+  <meta property="og:title" content="Git_tips | Kryptonite Lab">
+  <meta property="og:description" content="github Deploy key/SSH key Deploy key是在项目主页-setting-Delpoy keys下进行添加，如果勾选Allow write access，则相当于具有对这个项目的读写"><meta property="og:image" content="https://szthanatos.github.io/img/portrait.jpg">
   <meta property="og:locale" content="zh-cn">
   
+  <meta property="article:published_time" content="2018-12-14T09:35:32&#43;08:00">
   
+  <meta property="article:modified_time" content="2018-12-14T09:35:32&#43;08:00">
+  
+
   
 
   
 
-  
-
-  <title>404 Page not found | Kryptonite Lab</title>
+  <title>Git_tips | Kryptonite Lab</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
@@ -253,47 +255,171 @@
   </div>
 </nav>
 
-<div class="container">
 
-  <h1>找不到页面</h1>
-  <p>也许你在找？</p>
+<article class="article" itemscope itemtype="http://schema.org/Article">
 
   
-  
-  <h2>文章</h2>
-  
-  <ul>
-    <li><a href="/post/git_tips/">Git_tips</a></li>
-  </ul>
-  
-  <ul>
-    <li><a href="/post/academic/">Academic实现Github Page个人博客</a></li>
-  </ul>
-  
-  <ul>
-    <li><a href="/post/hbase_design/">hbase表设计风格指南</a></li>
-  </ul>
-  
-  <ul>
-    <li><a href="/post/kafka/update/">Kafka -02- 滚动升级</a></li>
-  </ul>
-  
-  <ul>
-    <li><a href="/post/kafka/install/">Kafka -01- 安装配置</a></li>
-  </ul>
-  
+
+
+
+
+
+
+
+
+
+
+
+
   
 
   
   
+  
+<div class="article-container pt-3">
+  <h1 itemprop="name">Git_tips</h1>
+
+  
+
+  
+    
+
+<div class="article-metadata">
+
+  
+  
+  <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Lex Wayne">
+  </span>
+  
+
+  <span class="article-date">
+    
+    <meta content="2018-12-14 09:35:32 &#43;0800 DST" itemprop="datePublished">
+    <time datetime="2018-12-14 09:35:32 &#43;0800 DST" itemprop="dateModified">
+      Dec 14, 2018
+    </time>
+  </span>
+  <span itemscope itemprop="publisher" itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Lex Wayne">
+  </span>
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    1 分钟阅读时间
+  </span>
+  
 
   
   
 
   
+
+  
+  
+
   
 
 </div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+<h2 id="github-deploy-key-ssh-key">github Deploy key/SSH key</h2>
+
+<p><code>Deploy key</code>是在<code>项目主页</code>-<code>setting</code>-<code>Delpoy keys</code>下进行添加，如果勾选<code>Allow write access</code>，则相当于具有对这个项目的读写权限(否则只能<code>clone</code>不能<code>push</code>)。<strong>作用范围是这个项目。</strong></p>
+
+<p><code>SSH key</code>是在你<code>个人主页</code>-<code>Settings</code>-<code>SSH and GPG keys</code>下进行添加。<strong>作用范围是你的账户下的所有项目。</strong></p>
+
+<p>同一个公钥，只能作为整个账户的<code>SSH key</code>，或者<strong>一个项目</strong>的<code>Deploy key</code>。想为一台机器授予多个项目的读写权限的话，需要通过<code>ssh-keygen</code>生成多个密钥，分别作为不同项目的<code>Deploy key</code>。</p>
+
+<h2 id="更换git协议">更换git协议</h2>
+
+<p>使用<code>http</code>/<code>https</code>协议连接仓库相比<code>ssh</code>即不够安全，也会存在<code>push</code>的时候必须输入用户名密码的问题。</p>
+
+<p>使用<code>git remote -v</code>可以查看项目使用的协议。</p>
+
+<p>如果是新建的项目，推荐在一开始就使用<code>git@github.com:{USER}/{PROJECT}.git</code>进行<code>clone</code>。这样默认都是用<code>ssh</code>了。</p>
+
+<p>如果是已有项目，使用<code>git remote set-url {repository} {url}</code>更改。</p>
+
+<pre><code class="language-bash">$ git remote -v
+origin  https://github.com/abc/bcd.git (fetch)
+origin  https://github.com/abc/bcd.git (push)
+
+$ git remote set-url origin git@github.com:abc/bcd.git
+
+$ git remote -v
+origin  git@github.com:abc/bcd.git (fetch)
+origin  git@github.com:abc/bcd.git (push)
+</code></pre>
+
+    </div>
+
+    
+
+
+
+
+    
+
+
+
+
+
+
+<div class="media author-card" itemscope itemtype="http://schema.org/Person">
+  
+  <img class="portrait mr-3" src="/img/portrait.jpg" itemprop="image" alt="Avatar">
+  
+  <div class="media-body">
+    <h5 class="card-title" itemprop="name"><a href="/">Lex Wayne</a></h5>
+    <h6 class="card-subtitle">Python Knight &amp; Go Padawan</h6>
+    
+    <ul class="network-icon" aria-hidden="true">
+      
+    </ul>
+  </div>
+</div>
+
+
+
+
+    
+    
+
+    
+
+    
+
+
+  </div>
+</article>
+
 <div class="container">
   <footer class="site-footer">
   

@@ -13,12 +13,21 @@
     
     
     <item>
+      <title>Git_tips</title>
+      <link>https://szthanatos.github.io/post/git_tips/</link>
+      <pubDate>Fri, 14 Dec 2018 09:35:32 +0800</pubDate>
+      
+      <guid>https://szthanatos.github.io/post/git_tips/</guid>
+      <description>github Deploy key/SSH key Deploy key是在项目主页-setting-Delpoy keys下进行添加，如果勾选Allow write access，则相当于具有对这个项目的读写</description>
+    </item>
+    
+    <item>
       <title>Academic实现Github Page个人博客</title>
       <link>https://szthanatos.github.io/post/academic/</link>
       <pubDate>Sun, 09 Dec 2018 16:34:42 +0800</pubDate>
       
       <guid>https://szthanatos.github.io/post/academic/</guid>
-      <description>Hugo 安装/更新 安装/更新 常用命令 Academic 安装/更新 通过Netlify 通过Git 安装 更新 部署到Github Pages 个性化配置 config.toml主要配置项</description>
+      <description>Hugo 安装/更新 安装/更新 常用命令 Academic 安装/更新 通过Netlify 通过Git 安装 更新 部署到Github Pages 原理 官方教程(缩减版) 脚本 个性化配置 con</description>
     </item>
     
     <item>
