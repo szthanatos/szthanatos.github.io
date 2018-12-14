@@ -519,7 +519,7 @@ cd ..
 
 <pre><code class="language-bash">#!/bin/bash
 
-echo -e &quot;\033[0;32mDeploying updates to GitHub...\033[0m&quot;
+echo -e &quot;\033[0;32mUpdating content to GitHub...\033[0m&quot;
 
 # Build the project.
 hugo # if using a theme, replace with `hugo -t &lt;YOURTHEME&gt;`
@@ -536,6 +536,9 @@ git commit -m &quot;$msg&quot;
 
 # Push source and build repos.
 git push origin master
+
+# ---------
+echo -e &quot;\033[0;32mDeploying to GitHub Page...\033[0m&quot;
 
 # Go To Public folder
 cd public
