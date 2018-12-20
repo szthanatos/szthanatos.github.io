@@ -521,9 +521,6 @@ cd ..
 
 echo -e &quot;\033[0;32mUpdating content to GitHub...\033[0m&quot;
 
-# Build the project.
-hugo # if using a theme, replace with `hugo -t &lt;YOURTHEME&gt;`
-
 # Add changes to git.
 git add .
 
@@ -539,6 +536,9 @@ git push origin master
 
 # ---------
 echo -e &quot;\033[0;32mDeploying to GitHub Page...\033[0m&quot;
+
+# Build the project.
+hugo # if using a theme, replace with `hugo -t &lt;YOURTHEME&gt;`
 
 # Go To Public folder
 cd public

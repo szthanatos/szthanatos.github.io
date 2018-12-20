@@ -219,9 +219,6 @@ cd ..
 
 echo -e &amp;quot;\033[0;32mUpdating content to GitHub...\033[0m&amp;quot;
 
-# Build the project.
-hugo # if using a theme, replace with `hugo -t &amp;lt;YOURTHEME&amp;gt;`
-
 # Add changes to git.
 git add .
 
@@ -237,6 +234,9 @@ git push origin master
 
 # ---------
 echo -e &amp;quot;\033[0;32mDeploying to GitHub Page...\033[0m&amp;quot;
+
+# Build the project.
+hugo # if using a theme, replace with `hugo -t &amp;lt;YOURTHEME&amp;gt;`
 
 # Go To Public folder
 cd public
@@ -1795,6 +1795,20 @@ docker run -it \
 &lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://www.palantir.com/solutions/pharma/&#34; target=&#34;_blank&#34;&gt;医药研发&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://www.palantir.com/solutions/skywise&#34; target=&#34;_blank&#34;&gt;航空业&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>欢迎来到氪石实验室</title>
+      <link>https://szthanatos.github.io/post/0x00/</link>
+      <pubDate>Sat, 01 Dec 2018 12:00:24 +0800</pubDate>
+      
+      <guid>https://szthanatos.github.io/post/0x00/</guid>
+      <description>&lt;p&gt;这是我第四次，也可能是我最后一次博客迁移(flag已立←_←)。&lt;/p&gt;
+
+&lt;p&gt;从大学时代开始，找个地方写点什么的蠢动心思就没消停过，但是也都消磨在了无关文字的地方。有一个Geek圈子的说法，&lt;code&gt;yak-shaving&lt;/code&gt;，剪牦牛毛，放我身上非常合适——本来只是想写点什么，却发现不知道写哪好，就开始研究市面上的博客服务，又发现都不太好用不如自己搭，又开始研究自建网站，自建网站的过程中又发现自己需要一个服务器，又开始折腾主机&amp;hellip;折腾个人域名&amp;hellip;折腾Linux&amp;hellip;折腾LAMP环境&amp;hellip;——总之折腾到最后，愕然发现写出来的东西寥寥无几。&lt;/p&gt;
+
+&lt;p&gt;客观而论，剪牦牛毛的经历对开阔我的视野还是很有好处的。但在写东西这件事上适得其反。我得个人博客历经Lofter-WordPress-Hexo，最终还是&lt;/p&gt;
 </description>
     </item>
     
