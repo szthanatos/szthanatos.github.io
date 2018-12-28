@@ -27,17 +27,7 @@
       <pubDate>Sun, 15 Oct 2017 00:00:00 +0800</pubDate>
       
       <guid>https://szthanatos.github.io/home/hero/</guid>
-      <description>42号 🦇 档案柜 编号: Cabinet - No.42 状态: 满是灰尘 描述: 氪石实验室角落里的档案柜，保留着一些过时了的资料</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://szthanatos.github.io/home/about/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0800</pubDate>
-      
-      <guid>https://szthanatos.github.io/home/about/</guid>
-      <description>Biography Lena Smith is a professor of artificial intelligence at the Stanford AI Lab. Her research interests include distributed robotics, mobile computing and programmable matter. She leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet.</description>
+      <description>42号 🦇 档案柜 编号: Cabinet - No.42 状态: 满是灰尘，貌似已经废弃 描述: 氪石实验室角落里的档案柜，保留着一些过时了的资料</description>
     </item>
     
     <item>
@@ -50,20 +40,20 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristiq
     </item>
     
     <item>
+      <title>Recent Posts</title>
+      <link>https://szthanatos.github.io/home/posts/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0800</pubDate>
+      
+      <guid>https://szthanatos.github.io/home/posts/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Recent Publications</title>
       <link>https://szthanatos.github.io/home/publications/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0800</pubDate>
       
       <guid>https://szthanatos.github.io/home/publications/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>专题</title>
-      <link>https://szthanatos.github.io/home/topics/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0800</pubDate>
-      
-      <guid>https://szthanatos.github.io/home/topics/</guid>
       <description></description>
     </item>
     
@@ -86,20 +76,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristiq
     </item>
     
     <item>
-      <title>Recent Posts</title>
-      <link>https://szthanatos.github.io/home/posts/</link>
+      <title>专题</title>
+      <link>https://szthanatos.github.io/home/topics/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0800</pubDate>
       
-      <guid>https://szthanatos.github.io/home/posts/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>熟悉领域</title>
-      <link>https://szthanatos.github.io/home/skills/</link>
-      <pubDate>Wed, 20 Sep 2017 00:00:00 +0800</pubDate>
-      
-      <guid>https://szthanatos.github.io/home/skills/</guid>
+      <guid>https://szthanatos.github.io/home/topics/</guid>
       <description></description>
     </item>
     
@@ -114,15 +95,6 @@ To remove this section, either delete content/home/teaching.md or edit the front
     </item>
     
     <item>
-      <title>Experience</title>
-      <link>https://szthanatos.github.io/home/experience/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://szthanatos.github.io/home/experience/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Tags</title>
       <link>https://szthanatos.github.io/home/tags/</link>
       <pubDate>Wed, 20 Sep 2017 00:00:00 +0800</pubDate>
@@ -132,7 +104,7 @@ To remove this section, either delete content/home/teaching.md or edit the front
     </item>
     
     <item>
-      <title>Contact</title>
+      <title>[了解我](about)</title>
       <link>https://szthanatos.github.io/home/contact/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0800</pubDate>
       
