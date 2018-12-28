@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>git on Kryptonite Lab</title>
+    <link>https://szthanatos.github.io/tags/git/</link>
+    <description>Recent content in git on Kryptonite Lab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Fri, 14 Dec 2018 09:35:32 +0800</lastBuildDate>
+    
+	<atom:link href="https://szthanatos.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Git_tips</title>
+      <link>https://szthanatos.github.io/post/git_tips/</link>
+      <pubDate>Fri, 14 Dec 2018 09:35:32 +0800</pubDate>
+      
+      <guid>https://szthanatos.github.io/post/git_tips/</guid>
+      <description>目录 github Deploy key/SSH key 更换git协议 强制覆盖本地文件 github Deploy key/SSH key Deploy key是在项目主页-setting-Delpoy keys下进行添加，如果勾选Allow write</description>
+    </item>
+    
+  </channel>
+</rss>

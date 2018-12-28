@@ -55,6 +55,7 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#github-deploy-key-ssh-key&#34;&gt;github Deploy key/SSH key&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#更换git协议&#34;&gt;更换git协议&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#强制覆盖本地文件&#34;&gt;强制覆盖本地文件&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/nav&gt;
@@ -87,6 +88,14 @@ $ git remote set-url origin git@github.com:abc/bcd.git
 $ git remote -v
 origin  git@github.com:abc/bcd.git (fetch)
 origin  git@github.com:abc/bcd.git (push)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;强制覆盖本地文件&#34;&gt;强制覆盖本地文件&lt;/h2&gt;
+
+&lt;p&gt;啥都别说了，直接重来吧：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git fetch --all  
+git reset --hard origin/master 
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
