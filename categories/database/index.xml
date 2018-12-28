@@ -18,7 +18,7 @@
       <pubDate>Sun, 09 Dec 2018 16:19:27 +0800</pubDate>
       
       <guid>https://szthanatos.github.io/post/hbase_design/</guid>
-      <description>简介 一般原则 命名空间(NameSpace) 命名规范 示例 表(Table) 命名规范 示例 行键(Rowkey) 命名规范 示例 注意 慎重将时间戳直接放入行</description>
+      <description>目录 简介 一般原则 命名空间(NameSpace) 命名规范 示例 表(Table) 命名规范 示例 行键(Rowkey) 命名规范 示例 注意 慎重将时间戳直接放</description>
     </item>
     
   </channel>

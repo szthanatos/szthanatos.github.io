@@ -18,6 +18,18 @@
       <guid>https://szthanatos.github.io/post/git_tips/</guid>
       <description>
 
+&lt;h2&gt;目录&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#github-deploy-key-ssh-key&#34;&gt;github Deploy key/SSH key&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#更换git协议&#34;&gt;更换git协议&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/nav&gt;
+
+
 &lt;h2 id=&#34;github-deploy-key-ssh-key&#34;&gt;github Deploy key/SSH key&lt;/h2&gt;
 
 &lt;p&gt;&lt;code&gt;Deploy key&lt;/code&gt;是在&lt;code&gt;项目主页&lt;/code&gt;-&lt;code&gt;setting&lt;/code&gt;-&lt;code&gt;Delpoy keys&lt;/code&gt;下进行添加，如果勾选&lt;code&gt;Allow write access&lt;/code&gt;，则相当于具有对这个项目的读写权限(否则只能&lt;code&gt;clone&lt;/code&gt;不能&lt;code&gt;push&lt;/code&gt;)。&lt;strong&gt;作用范围是这个项目。&lt;/strong&gt;&lt;/p&gt;
@@ -57,37 +69,43 @@ origin  git@github.com:abc/bcd.git (push)
       <guid>https://szthanatos.github.io/post/academic/</guid>
       <description>
 
+&lt;h2&gt;目录&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#hugo-安装更新&#34;&gt;Hugo 安装/更新&lt;/a&gt;
-
+&lt;li&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#安装更新&#34;&gt;安装/更新&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#hugo-安装-更新&#34;&gt;Hugo 安装/更新&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#安装-更新&#34;&gt;安装/更新&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#常用命令&#34;&gt;常用命令&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#academic-安装更新&#34;&gt;Academic 安装/更新&lt;/a&gt;
-
+&lt;li&gt;&lt;a href=&#34;#academic-安装-更新&#34;&gt;Academic 安装/更新&lt;/a&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#通过netlify&#34;&gt;通过Netlify&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#通过git&#34;&gt;通过Git&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#通过git&#34;&gt;通过Git&lt;/a&gt;
+&lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#安装&#34;&gt;安装&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#更新&#34;&gt;更新&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#部署到github-pages&#34;&gt;部署到Github Pages&lt;/a&gt;
-
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#原理&#34;&gt;原理&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#官方教程缩减版&#34;&gt;官方教程(缩减版)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#官方教程-缩减版&#34;&gt;官方教程(缩减版)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#脚本&#34;&gt;脚本&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#个性化配置&#34;&gt;个性化配置&lt;/a&gt;
-
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#configtoml主要配置项解释&#34;&gt;config.toml主要配置项解释&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#config-toml主要配置项解释&#34;&gt;config.toml主要配置项解释&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#修改网站logo&#34;&gt;修改网站logo&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#给文章添加精选图&#34;&gt;给文章添加精选图&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#给文章添加头部背景&#34;&gt;给文章添加头部背景&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#目录&#34;&gt;目录&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;/nav&gt;
+
 
 &lt;h2 id=&#34;hugo-安装-更新&#34;&gt;Hugo 安装/更新&lt;/h2&gt;
 
@@ -350,6 +368,46 @@ cd ..
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;顺便一提，文章内引用&lt;code&gt;static/img&lt;/code&gt;下存储的图像的话，路径大致如此&lt;code&gt;![example](/img/image_abc.png)&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;目录&#34;&gt;目录&lt;/h3&gt;
+
+&lt;p&gt;使用&lt;code&gt;&lt;h2&gt;目录&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#hugo-安装-更新&#34;&gt;Hugo 安装/更新&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#安装-更新&#34;&gt;安装/更新&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#常用命令&#34;&gt;常用命令&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#academic-安装-更新&#34;&gt;Academic 安装/更新&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#通过netlify&#34;&gt;通过Netlify&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#通过git&#34;&gt;通过Git&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#安装&#34;&gt;安装&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#更新&#34;&gt;更新&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#部署到github-pages&#34;&gt;部署到Github Pages&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#原理&#34;&gt;原理&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#官方教程-缩减版&#34;&gt;官方教程(缩减版)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#脚本&#34;&gt;脚本&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#个性化配置&#34;&gt;个性化配置&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#config-toml主要配置项解释&#34;&gt;config.toml主要配置项解释&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#修改网站logo&#34;&gt;修改网站logo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#给文章添加精选图&#34;&gt;给文章添加精选图&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#给文章添加头部背景&#34;&gt;给文章添加头部背景&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#目录&#34;&gt;目录&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/nav&gt;
+&lt;/code&gt;加在文章的任何你想要的地方以自动生成目录&lt;/p&gt;
 </description>
     </item>
     
@@ -361,45 +419,51 @@ cd ..
       <guid>https://szthanatos.github.io/post/hbase_design/</guid>
       <description>
 
+&lt;h2&gt;目录&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#简介&#34;&gt;简介&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#一般原则&#34;&gt;一般原则&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#命名空间namespace&#34;&gt;命名空间(NameSpace)&lt;/a&gt;
-
+&lt;li&gt;&lt;a href=&#34;#命名空间-namespace&#34;&gt;命名空间(NameSpace)&lt;/a&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#命名规范&#34;&gt;命名规范&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#示例&#34;&gt;示例&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#表table&#34;&gt;表(Table)&lt;/a&gt;
-
+&lt;li&gt;&lt;a href=&#34;#表-table&#34;&gt;表(Table)&lt;/a&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#命名规范-1&#34;&gt;命名规范&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#示例-1&#34;&gt;示例&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#行键rowkey&#34;&gt;行键(Rowkey)&lt;/a&gt;
-
+&lt;li&gt;&lt;a href=&#34;#行键-rowkey&#34;&gt;行键(Rowkey)&lt;/a&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#命名规范-2&#34;&gt;命名规范&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#示例-2&#34;&gt;示例&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#注意&#34;&gt;注意&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#注意&#34;&gt;注意&lt;/a&gt;
+&lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#慎重将时间戳直接放入行键中&#34;&gt;慎重将时间戳直接放入行键中&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#权衡hash和string的效果&#34;&gt;权衡hash和string的效果&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#列族columnfamily&#34;&gt;列族(ColumnFamily)&lt;/a&gt;
-
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#列族-columnfamily&#34;&gt;列族(ColumnFamily)&lt;/a&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#命名规范-3&#34;&gt;命名规范&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#示例-3&#34;&gt;示例&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#注意-1&#34;&gt;注意&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#注意-1&#34;&gt;注意&lt;/a&gt;
+&lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#列族的数量应控制在1-3个&#34;&gt;列族的数量应控制在1-3个&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#列qualifier&#34;&gt;列(Qualifier)&lt;/a&gt;
-
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#列-qualifier&#34;&gt;列(Qualifier)&lt;/a&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#命名规范-4&#34;&gt;命名规范&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#示例-4&#34;&gt;示例&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;/nav&gt;
+
 
 &lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;
 
@@ -563,18 +627,24 @@ sound_type
       <guid>https://szthanatos.github.io/post/kafka/update/</guid>
       <description>
 
+&lt;h2&gt;目录&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#环境说明&#34;&gt;环境说明&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#可能存在的风险&#34;&gt;可能存在的风险&lt;/a&gt;
-
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#轻微警报&#34;&gt;轻微警报&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#严重警报&#34;&gt;严重警报&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#升级步骤滚动升级&#34;&gt;升级步骤（滚动升级）&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#替代方案离线升级&#34;&gt;替代方案（离线升级）&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#kafka20官方升级指南&#34;&gt;Kafka2.0官方升级指南&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#升级步骤-滚动升级&#34;&gt;升级步骤（滚动升级）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#替代方案-离线升级&#34;&gt;替代方案（离线升级）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#kafka2-0官方升级指南&#34;&gt;Kafka2.0官方升级指南&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;/nav&gt;
+
 
 &lt;h2 id=&#34;环境说明&#34;&gt;环境说明&lt;/h2&gt;
 
@@ -671,10 +741,13 @@ sound_type
       <guid>https://szthanatos.github.io/post/kafka/install/</guid>
       <description>
 
+&lt;h2&gt;目录&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#环境说明&#34;&gt;环境说明&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#安装步骤&#34;&gt;安装步骤&lt;/a&gt;
-
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#0-环境准备&#34;&gt;0. 环境准备&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#1-下载安装&#34;&gt;1. 下载安装&lt;/a&gt;&lt;/li&gt;
@@ -683,8 +756,11 @@ sound_type
 &lt;li&gt;&lt;a href=&#34;#4-配置jvm参数&#34;&gt;4. 配置JVM参数&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#5-配置linux参数&#34;&gt;5. 配置Linux参数&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#kafka20官方安装指南&#34;&gt;Kafka2.0官方安装指南&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#kafka2-0官方安装指南&#34;&gt;Kafka2.0官方安装指南&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;/nav&gt;
+
 
 &lt;h2 id=&#34;环境说明&#34;&gt;环境说明&lt;/h2&gt;
 
@@ -918,7 +994,10 @@ echo 212992 &amp;gt;&amp;gt; /proc/sys/net/core/rmem_max
       <pubDate>Thu, 06 Dec 2018 10:06:06 +0800</pubDate>
       
       <guid>https://szthanatos.github.io/post/docker/ecology/</guid>
-      <description></description>
+      <description>&lt;h2&gt;目录&lt;/h2&gt;
+
+
+</description>
     </item>
     
     <item>
@@ -929,16 +1008,18 @@ echo 212992 &amp;gt;&amp;gt; /proc/sys/net/core/rmem_max
       <guid>https://szthanatos.github.io/post/docker/basis/</guid>
       <description>
 
+&lt;h2&gt;目录&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#docker简介&#34;&gt;Docker简介&lt;/a&gt;
-
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#什么是docker&#34;&gt;什么是Docker&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#docker特点&#34;&gt;Docker特点&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#为什么要使用docker&#34;&gt;为什么要使用Docker&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#基本概念&#34;&gt;基本概念&lt;/a&gt;
-
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#镜像&#34;&gt;镜像&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#容器&#34;&gt;容器&lt;/a&gt;&lt;/li&gt;
@@ -946,15 +1027,13 @@ echo 212992 &amp;gt;&amp;gt; /proc/sys/net/core/rmem_max
 &lt;li&gt;&lt;a href=&#34;#生命周期&#34;&gt;生命周期&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#安装配置&#34;&gt;安装配置&lt;/a&gt;
-
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#准备工作&#34;&gt;准备工作&lt;/a&gt;
-
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#系统要求&#34;&gt;系统要求&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#卸载旧版本&#34;&gt;卸载旧版本&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#使用脚本安装非生产环境&#34;&gt;使用脚本安装（非生产环境）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#使用脚本安装-非生产环境&#34;&gt;使用脚本安装（非生产环境）&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#使用-yum-安装&#34;&gt;使用 yum 安装&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#离线安装&#34;&gt;离线安装&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#启动-docker-ce&#34;&gt;启动 Docker CE&lt;/a&gt;&lt;/li&gt;
@@ -964,36 +1043,34 @@ echo 212992 &amp;gt;&amp;gt; /proc/sys/net/core/rmem_max
 &lt;li&gt;&lt;a href=&#34;#常用docker操作&#34;&gt;常用Docker操作&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#使用镜像&#34;&gt;使用镜像&lt;/a&gt;
-
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#基本操作&#34;&gt;基本操作&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#dockerfile&#34;&gt;Dockerfile&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#容器操作&#34;&gt;容器操作&lt;/a&gt;
-
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#容器启停&#34;&gt;容器启停&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#数据管理&#34;&gt;数据管理&lt;/a&gt;
-
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#方式1数据卷推荐&#34;&gt;方式1：数据卷（推荐）&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#方式2绑定主机目录&#34;&gt;方式2：绑定主机目录&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#方式1-数据卷-推荐&#34;&gt;方式1：数据卷（推荐）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#方式2-绑定主机目录&#34;&gt;方式2：绑定主机目录&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#区别&#34;&gt;区别&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#使用网络&#34;&gt;使用网络&lt;/a&gt;
-
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#端口映射&#34;&gt;端口映射&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#容器互联&#34;&gt;容器互联&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#延申&#34;&gt;延申&lt;/a&gt;
-
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#容器编排&#34;&gt;容器编排&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#nvidia-docker&#34;&gt;Nvidia Docker&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;/nav&gt;
+
 
 &lt;h2 id=&#34;docker简介&#34;&gt;Docker简介&lt;/h2&gt;
 
@@ -1674,6 +1751,36 @@ docker run -it \
       <guid>https://szthanatos.github.io/post/palantir_intro/</guid>
       <description>
 
+&lt;h2&gt;目录&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#简介&#34;&gt;简介&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#最新情况&#34;&gt;最新情况&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#创始人&#34;&gt;创始人&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#peter-thiel&#34;&gt;Peter Thiel&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#alex-karp-ceo&#34;&gt;Alex Karp (CEO)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#joe-lonsdale&#34;&gt;Joe Lonsdale&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#stephen-cohen&#34;&gt;Stephen Cohen&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#nathan-gettings&#34;&gt;Nathan Gettings&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#发展历程&#34;&gt;发展历程&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#产品内容&#34;&gt;产品内容&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#官方主页-home-palantir-https-www-palantir-com&#34;&gt;官方主页： &lt;a href=&#34;https://www.palantir.com/&#34; target=&#34;_blank&#34;&gt;Home | Palantir&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#产品线&#34;&gt;产品线&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#解决方案&#34;&gt;解决方案&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/nav&gt;
+
+
 &lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;
 
 &lt;p&gt;Palantir是全球第一大&lt;code&gt;大数据公司&lt;/code&gt;。曾经的全球四大独角兽之一（其它三家是Uber，Airbnb和小米）。中文名帕兰提尔，源于《指环王》中邪恶巫师萨鲁曼使用的可穿越时空、洞悉世间一切的水晶球(Palantiri)。主要客户为政府机构和金融机构。&lt;/p&gt;
@@ -1810,7 +1917,7 @@ docker run -it \
 
 &lt;p&gt;yak-shaving的得失不提，到了现在的这个阶段，折腾的心思已经熄了很多，但是已经写出来的这点东西零零散散还是会难以忍受。也有一部分内容已经过时，或者回头再看理解已经完全不同&amp;hellip;总而言之，旧有的这不到300篇笔记，最后梳理一遍，咱们就此别过。未来的文章，短时间内也无虞搬迁之苦，踏踏实实的呆在实验室档案柜吧。&lt;/p&gt;
 
-&lt;p&gt;嗯&amp;hellip;上面都是写给自己看的，陌生人，欢迎来到氪石实验室。&lt;/p&gt;
+&lt;p&gt;嗯&amp;hellip;上面都是写给自己看的，陌生人，欢迎翻阅氪石实验室42号档案柜。&lt;/p&gt;
 </description>
     </item>
     

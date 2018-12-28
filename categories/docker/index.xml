@@ -27,7 +27,7 @@
       <pubDate>Thu, 06 Dec 2018 10:06:06 +0800</pubDate>
       
       <guid>https://szthanatos.github.io/post/docker/ecology/</guid>
-      <description></description>
+      <description>目录</description>
     </item>
     
     <item>
@@ -36,7 +36,7 @@
       <pubDate>Wed, 05 Dec 2018 22:17:22 +0800</pubDate>
       
       <guid>https://szthanatos.github.io/post/docker/basis/</guid>
-      <description>Docker简介 什么是Docker Docker特点 为什么要使用Docker 基本概念 镜像 容器 仓库 生命周期 安装配置 准备工作 系统要求 卸载旧版本 使用</description>
+      <description>目录 Docker简介 什么是Docker Docker特点 为什么要使用Docker 基本概念 镜像 容器 仓库 生命周期 安装配置 准备工作 系统要求 卸载旧版本</description>
     </item>
     
   </channel>

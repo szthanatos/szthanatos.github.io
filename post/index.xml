@@ -18,7 +18,7 @@
       <pubDate>Fri, 14 Dec 2018 09:35:32 +0800</pubDate>
       
       <guid>https://szthanatos.github.io/post/git_tips/</guid>
-      <description>github Deploy key/SSH key Deploy key是在项目主页-setting-Delpoy keys下进行添加，如果勾选Allow write access，则相当于具有对这个项目的读写</description>
+      <description>目录 github Deploy key/SSH key 更换git协议 github Deploy key/SSH key Deploy key是在项目主页-setting-Delpoy keys下进行添加，如果勾选Allow write access，则</description>
     </item>
     
     <item>
@@ -27,7 +27,7 @@
       <pubDate>Sun, 09 Dec 2018 16:34:42 +0800</pubDate>
       
       <guid>https://szthanatos.github.io/post/academic/</guid>
-      <description>Hugo 安装/更新 安装/更新 常用命令 Academic 安装/更新 通过Netlify 通过Git 安装 更新 部署到Github Pages 原理 官方教程(缩减版) 脚本 个性化配置 con</description>
+      <description>目录 Hugo 安装/更新 安装/更新 常用命令 Academic 安装/更新 通过Netlify 通过Git 安装 更新 部署到Github Pages 原理 官方教程(缩减版) 脚本 个性化配置 c</description>
     </item>
     
     <item>
@@ -36,7 +36,7 @@
       <pubDate>Sun, 09 Dec 2018 16:19:27 +0800</pubDate>
       
       <guid>https://szthanatos.github.io/post/hbase_design/</guid>
-      <description>简介 一般原则 命名空间(NameSpace) 命名规范 示例 表(Table) 命名规范 示例 行键(Rowkey) 命名规范 示例 注意 慎重将时间戳直接放入行</description>
+      <description>目录 简介 一般原则 命名空间(NameSpace) 命名规范 示例 表(Table) 命名规范 示例 行键(Rowkey) 命名规范 示例 注意 慎重将时间戳直接放</description>
     </item>
     
     <item>
@@ -45,7 +45,7 @@
       <pubDate>Sun, 09 Dec 2018 15:19:52 +0800</pubDate>
       
       <guid>https://szthanatos.github.io/post/kafka/update/</guid>
-      <description>环境说明 可能存在的风险 轻微警报 严重警报 升级步骤（滚动升级） 替代方案（离线升级） Kafka2.0官方升级指南 环境说明 版本号 发布日期 当前版本 0.11.0.1 2017-09-14</description>
+      <description>目录 环境说明 可能存在的风险 轻微警报 严重警报 升级步骤（滚动升级） 替代方案（离线升级） Kafka2.0官方升级指南 环境说明 版本号 发布日期 当前版本</description>
     </item>
     
     <item>
@@ -54,7 +54,7 @@
       <pubDate>Thu, 06 Dec 2018 10:09:46 +0800</pubDate>
       
       <guid>https://szthanatos.github.io/post/kafka/install/</guid>
-      <description>环境说明 安装步骤 0. 环境准备 1. 下载安装 2. 配置集群参数 3. 配置日志参数 4. 配置JVM参数 5. 配置Linux参数 Kafka2.0官方安装指南 环境说明 当前</description>
+      <description>目录 环境说明 安装步骤 0. 环境准备 1. 下载安装 2. 配置集群参数 3. 配置日志参数 4. 配置JVM参数 5. 配置Linux参数 Kafka2.0官方安装指南 环境说明</description>
     </item>
     
     <item>
@@ -63,7 +63,7 @@
       <pubDate>Thu, 06 Dec 2018 10:06:06 +0800</pubDate>
       
       <guid>https://szthanatos.github.io/post/docker/ecology/</guid>
-      <description></description>
+      <description>目录</description>
     </item>
     
     <item>
@@ -72,7 +72,7 @@
       <pubDate>Wed, 05 Dec 2018 22:17:22 +0800</pubDate>
       
       <guid>https://szthanatos.github.io/post/docker/basis/</guid>
-      <description>Docker简介 什么是Docker Docker特点 为什么要使用Docker 基本概念 镜像 容器 仓库 生命周期 安装配置 准备工作 系统要求 卸载旧版本 使用</description>
+      <description>目录 Docker简介 什么是Docker Docker特点 为什么要使用Docker 基本概念 镜像 容器 仓库 生命周期 安装配置 准备工作 系统要求 卸载旧版本</description>
     </item>
     
     <item>
@@ -81,7 +81,7 @@
       <pubDate>Wed, 05 Dec 2018 17:09:21 +0800</pubDate>
       
       <guid>https://szthanatos.github.io/post/palantir_intro/</guid>
-      <description>简介 Palantir是全球第一大大数据公司。曾经的全球四大独角兽之一（其它三家是Uber，Airbnb和小米）。中文名帕兰提尔，源于《指环王</description>
+      <description>目录 简介 最新情况 创始人 Peter Thiel Alex Karp (CEO) Joe Lonsdale Stephen Cohen Nathan Gettings 发展历程 产品内容 官方主页： Home | Palantir 产品线 解决方案 简介 Palantir是全球第一大大数据公司。曾经的</description>
     </item>
     
     <item>
