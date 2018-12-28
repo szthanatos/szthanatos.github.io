@@ -101,6 +101,7 @@ origin  git@github.com:abc/bcd.git (push)
 &lt;li&gt;&lt;a href=&#34;#给文章添加精选图&#34;&gt;给文章添加精选图&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#给文章添加头部背景&#34;&gt;给文章添加头部背景&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#目录&#34;&gt;目录&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#注意-警告标识&#34;&gt;注意/警告标识&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -403,11 +404,36 @@ cd ..
 &lt;li&gt;&lt;a href=&#34;#给文章添加精选图&#34;&gt;给文章添加精选图&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#给文章添加头部背景&#34;&gt;给文章添加头部背景&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#目录&#34;&gt;目录&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#注意-警告标识&#34;&gt;注意/警告标识&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/nav&gt;
 &lt;/code&gt;加在文章的任何你想要的地方以自动生成目录&lt;/p&gt;
+
+&lt;h3 id=&#34;注意-警告标识&#34;&gt;注意/警告标识&lt;/h3&gt;
+
+&lt;p&gt;被&lt;code&gt;&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;code&gt;和&lt;/code&gt;
+&lt;/div&gt;
+&lt;/code&gt;包裹起来的内容即为注意项：&lt;/p&gt;
+
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;p&gt;注意内容blabla&lt;/p&gt;
+
+&lt;/div&gt;
+
+
+&lt;p&gt;被&lt;code&gt;&lt;div class=&#34;alert alert-warning&#34;&gt;
+  &lt;code&gt;和&lt;/code&gt;
+&lt;/div&gt;
+&lt;/code&gt;包裹起来的内容即为警告项：&lt;/p&gt;
+
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;p&gt;警告内容blabla&lt;/p&gt;
+
+&lt;/div&gt;
+
 </description>
     </item>
     
