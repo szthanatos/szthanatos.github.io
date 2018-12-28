@@ -660,51 +660,11 @@ cd ..
 
 <h3 id="目录">目录</h3>
 
-<p>使用<code><h2>目录</h2>
-<nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#hugo-安装-更新">Hugo 安装/更新</a>
-<ul>
-<li><a href="#安装-更新">安装/更新</a></li>
-<li><a href="#常用命令">常用命令</a></li>
-</ul></li>
-<li><a href="#academic-安装-更新">Academic 安装/更新</a>
-<ul>
-<li><a href="#通过netlify">通过Netlify</a></li>
-<li><a href="#通过git">通过Git</a>
-<ul>
-<li><a href="#安装">安装</a></li>
-<li><a href="#更新">更新</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#部署到github-pages">部署到Github Pages</a>
-<ul>
-<li><a href="#原理">原理</a></li>
-<li><a href="#官方教程-缩减版">官方教程(缩减版)</a></li>
-<li><a href="#脚本">脚本</a></li>
-</ul></li>
-<li><a href="#个性化配置">个性化配置</a>
-<ul>
-<li><a href="#config-toml主要配置项解释">config.toml主要配置项解释</a></li>
-<li><a href="#修改网站logo">修改网站logo</a></li>
-<li><a href="#给文章添加精选图">给文章添加精选图</a></li>
-<li><a href="#给文章添加头部背景">给文章添加头部背景</a></li>
-<li><a href="#目录">目录</a></li>
-<li><a href="#注意-警告标识">注意/警告标识</a></li>
-</ul></li>
-</ul></li>
-</ul>
-</nav>
-</code>加在文章的任何你想要的地方以自动生成目录</p>
+<p>使用<code>{</code><code>{% toc %}}</code>加在文章的任何你想要的地方以自动生成目录</p>
 
 <h3 id="注意-警告标识">注意/警告标识</h3>
 
-<p>被<code><div class="alert alert-note">
-  <code>和</code>
-</div>
-</code>包裹起来的内容即为注意项：</p>
+<p>被<code>{</code><code>{% alert note %}}</code>和<code>{</code><code>{% /alert %}}</code>包裹起来的内容即为注意项：</p>
 
 <div class="alert alert-note">
   <p>注意内容blabla</p>
@@ -712,12 +672,9 @@ cd ..
 </div>
 
 
-<p>被<code><div class="alert alert-warning">
-  <code>和</code>
-</div>
-</code>包裹起来的内容即为警告项：</p>
+<p>被<code>{</code><code>{% alert warning %}}</code>和<code>{</code><code>{% /alert %}}</code>包裹起来的内容即为警告项：</p>
 
-<div class="alert alert-note">
+<div class="alert alert-warning">
   <p>警告内容blabla</p>
 
 </div>

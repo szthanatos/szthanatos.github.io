@@ -372,51 +372,11 @@ cd ..
 
 &lt;h3 id=&#34;目录&#34;&gt;目录&lt;/h3&gt;
 
-&lt;p&gt;使用&lt;code&gt;&lt;h2&gt;目录&lt;/h2&gt;
-&lt;nav id=&#34;TableOfContents&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#hugo-安装-更新&#34;&gt;Hugo 安装/更新&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#安装-更新&#34;&gt;安装/更新&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#常用命令&#34;&gt;常用命令&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#academic-安装-更新&#34;&gt;Academic 安装/更新&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#通过netlify&#34;&gt;通过Netlify&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#通过git&#34;&gt;通过Git&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#安装&#34;&gt;安装&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#更新&#34;&gt;更新&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#部署到github-pages&#34;&gt;部署到Github Pages&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#原理&#34;&gt;原理&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#官方教程-缩减版&#34;&gt;官方教程(缩减版)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#脚本&#34;&gt;脚本&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#个性化配置&#34;&gt;个性化配置&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#config-toml主要配置项解释&#34;&gt;config.toml主要配置项解释&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#修改网站logo&#34;&gt;修改网站logo&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#给文章添加精选图&#34;&gt;给文章添加精选图&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#给文章添加头部背景&#34;&gt;给文章添加头部背景&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#目录&#34;&gt;目录&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#注意-警告标识&#34;&gt;注意/警告标识&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/nav&gt;
-&lt;/code&gt;加在文章的任何你想要的地方以自动生成目录&lt;/p&gt;
+&lt;p&gt;使用&lt;code&gt;{&lt;/code&gt;&lt;code&gt;{% toc %}}&lt;/code&gt;加在文章的任何你想要的地方以自动生成目录&lt;/p&gt;
 
 &lt;h3 id=&#34;注意-警告标识&#34;&gt;注意/警告标识&lt;/h3&gt;
 
-&lt;p&gt;被&lt;code&gt;&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;code&gt;和&lt;/code&gt;
-&lt;/div&gt;
-&lt;/code&gt;包裹起来的内容即为注意项：&lt;/p&gt;
+&lt;p&gt;被&lt;code&gt;{&lt;/code&gt;&lt;code&gt;{% alert note %}}&lt;/code&gt;和&lt;code&gt;{&lt;/code&gt;&lt;code&gt;{% /alert %}}&lt;/code&gt;包裹起来的内容即为注意项：&lt;/p&gt;
 
 &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;p&gt;注意内容blabla&lt;/p&gt;
@@ -424,12 +384,9 @@ cd ..
 &lt;/div&gt;
 
 
-&lt;p&gt;被&lt;code&gt;&lt;div class=&#34;alert alert-warning&#34;&gt;
-  &lt;code&gt;和&lt;/code&gt;
-&lt;/div&gt;
-&lt;/code&gt;包裹起来的内容即为警告项：&lt;/p&gt;
+&lt;p&gt;被&lt;code&gt;{&lt;/code&gt;&lt;code&gt;{% alert warning %}}&lt;/code&gt;和&lt;code&gt;{&lt;/code&gt;&lt;code&gt;{% /alert %}}&lt;/code&gt;包裹起来的内容即为警告项：&lt;/p&gt;
 
-&lt;div class=&#34;alert alert-note&#34;&gt;
+&lt;div class=&#34;alert alert-warning&#34;&gt;
   &lt;p&gt;警告内容blabla&lt;/p&gt;
 
 &lt;/div&gt;
