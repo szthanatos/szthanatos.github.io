@@ -215,8 +215,9 @@ git reset --hard origin/master
 
 &lt;h3 id=&#34;官方教程-缩减版&#34;&gt;官方教程(缩减版)&lt;/h3&gt;
 
+&lt;p&gt;&lt;em&gt;&lt;a href=&#34;https://sourcethemes.com/academic/docs/deployment/#github-pages&#34; target=&#34;_blank&#34;&gt;原教程&lt;/a&gt;看这里；&lt;/em&gt;&lt;/p&gt;
+
 &lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://sourcethemes.com/academic/docs/deployment/#github-pages&#34; target=&#34;_blank&#34;&gt;原教程&lt;/a&gt;看这；&lt;/li&gt;
 &lt;li&gt;在GitHub上创建两个项目，一个是fork 的&lt;a href=&#34;https://github.com/sourcethemes/academic-kickstart.git&#34; target=&#34;_blank&#34;&gt;academic-kickstart&lt;/a&gt;，也就是你前面clone到本地的&lt;code&gt;My_Website&lt;/code&gt;，另一个即是以你用户名/组织名开头、以&lt;code&gt;.github.io&lt;/code&gt;结尾的GitHub page项目。&lt;/li&gt;
 &lt;li&gt;在&lt;code&gt;My_Website&lt;/code&gt;目录下执行&lt;code&gt;git submodule update --init --recursive&lt;/code&gt;更新子模块；&lt;/li&gt;
 &lt;li&gt;将&lt;code&gt;config.toml&lt;/code&gt;中的&lt;code&gt;baseurl&lt;/code&gt;设置为你的GitHub page地址；&lt;/li&gt;
