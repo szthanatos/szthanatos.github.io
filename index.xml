@@ -281,11 +281,11 @@ echo &amp;quot;\033[0;32mBuilding\033[0m&amp;quot;
 # Build the project.
 hugo # if using a theme, replace with `hugo -t &amp;lt;YOURTHEME&amp;gt;`
 
-echo &amp;quot;\n\033[0;32m
+echo &amp;quot;\033[0;32m
 -----------------------------
 Updating content to GitHub...
 -----------------------------
-\033[0m\n&amp;quot;
+\033[0m&amp;quot;
 
 # Receive args.
 TIME_NOW=$(date +%T\ %F)
@@ -310,11 +310,11 @@ git commit -m &amp;quot;$MSG&amp;quot;
 git push origin master
 
 # ---------
-echo &amp;quot;\n\033[0;32m
+echo &amp;quot;\033[0;32m
 ---------------------------
 Deploying to GitHub Page...
 ---------------------------
-\033[0m\n&amp;quot;
+\033[0m&amp;quot;
 
 # Go To Public folder
 cd public
