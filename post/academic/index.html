@@ -525,10 +525,16 @@ cd ..
 
 <pre><code class="language-bash">#!/bin/bash
 
-echo &quot;\033[0;32mUpdating content to GitHub...\n\033[0m&quot;
+echo &quot;\033[0;32mBuilding\033[0m&quot;
 
 # Build the project.
 hugo # if using a theme, replace with `hugo -t &lt;YOURTHEME&gt;`
+
+echo &quot;\n\033[0;32m
+-----------------------------
+Updating content to GitHub...
+-----------------------------
+\033[0m\n&quot;
 
 # Receive args.
 TIME_NOW=$(date +%T\ %F)
@@ -553,7 +559,11 @@ git commit -m &quot;$MSG&quot;
 git push origin master
 
 # ---------
-echo &quot;\033[0;32mDeploying to GitHub Page...\n\033[0m&quot;
+echo &quot;\n\033[0;32m
+---------------------------
+Deploying to GitHub Page...
+---------------------------
+\033[0m\n&quot;
 
 # Go To Public folder
 cd public
