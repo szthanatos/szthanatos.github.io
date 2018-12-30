@@ -298,7 +298,7 @@ fi
 git add $EDITED_FILE
 
 # Commit changes.
-git commit -m $MSG
+git commit -m &amp;quot;$MSG&amp;quot;
 
 # Push source and build repos.
 git push origin master
