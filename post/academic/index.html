@@ -315,7 +315,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    6 分钟阅读时间
+    7 分钟阅读时间
   </span>
   
 
@@ -524,26 +524,35 @@ cd ..
 
 <pre><code class="language-bash">#!/bin/bash
 
-echo -e &quot;\033[0;32mUpdating content to GitHub...\033[0m&quot;
+echo &quot;\033[0;32mUpdating content to GitHub...\n\033[0m&quot;
+
+# Build the project.
+hugo # if using a theme, replace with `hugo -t &lt;YOURTHEME&gt;`
+
+# Receive args.
+TIME_NOW=$(date +%T\ %F)
+if [ $# -eq 0 ]; then 
+  MSG=&quot;Change something nobody knows at ${TIME_NOW}...&quot;
+elif [ $# -eq 1 ]; then 
+  MSG=&quot;$1&quot;
+  EDITED_FILE=&quot;.&quot;
+else
+  MSG=&quot;$1&quot;
+  shift 1
+  EDITED_FILE=&quot;$*&quot;
+fi
 
 # Add changes to git.
-git add .
+git add $EDITED_FILE
 
 # Commit changes.
-msg=&quot;rebuilding site `date`&quot;
-if [ $# -eq 1 ]
-  then msg=&quot;$1&quot;
-fi
-git commit -m &quot;$msg&quot;
+git commit -m $MSG
 
 # Push source and build repos.
 git push origin master
 
 # ---------
-echo -e &quot;\033[0;32mDeploying to GitHub Page...\033[0m&quot;
-
-# Build the project.
-hugo # if using a theme, replace with `hugo -t &lt;YOURTHEME&gt;`
+echo &quot;\033[0;32mDeploying to GitHub Page...\n\033[0m&quot;
 
 # Go To Public folder
 cd public
@@ -552,16 +561,25 @@ cd public
 git add .
 
 # Commit changes.
-git commit -m &quot;$msg&quot;
+git commit -m &quot;$MSG&quot;
 
 # Push source and build repos.
 git push origin master
 
 # Come Back up to the Project Root
 cd ..
+
 </code></pre>
 
-<p>将脚本保存为<code>deploy.sh</code>，放到项目根目录下，完成修改后执行<code>./deploy.sh &quot;{Your optional commit message&quot;}</code>一键更新/部署。</p>
+<p>将脚本保存为<code>deploy.sh</code>，放到项目根目录下，完成修改后执行<code>./deploy.sh</code>一键更新/部署。</p>
+
+<p>可选参数的第一个是你的commit message，建议还是写点啥：</p>
+
+<p><code>./deploy.sh &quot;{Your optional commit message}&quot;</code>。</p>
+
+<p>如果修改了多个文件，只想提交其中的一部分文件以保持commit的纯净，那就在mesaage后面附加你要提交的文件路径(不超过10个&hellip;)：</p>
+
+<p><code>./deploy.sh &quot;{Your optional commit message}&quot; path1 path2...</code>。</p>
 
 <h2 id="个性化配置">个性化配置</h2>
 

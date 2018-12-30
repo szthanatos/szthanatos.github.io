@@ -15,7 +15,7 @@
   
     
   
-  <meta name="description" content="目录 github Deploy key/SSH key 更换git协议 强制覆盖本地文件 github Deploy key/SSH key Deploy key是在项目主页-setting-Delpoy keys下进行添加，如果勾选Allow write">
+  <meta name="description" content="目录 Deploy key/SSH key(github) 更换git协议 强制覆盖本地文件 Deploy key/SSH key(github) Deploy key是在项目主页-setting-Delpoy keys下进行添加，如果勾选Allow write ac">
 
   
   <link rel="alternate" hreflang="zh-cn" href="https://szthanatos.github.io/post/git_tips/">
@@ -106,7 +106,7 @@
   <meta property="og:site_name" content="Kryptonite Lab">
   <meta property="og:url" content="https://szthanatos.github.io/post/git_tips/">
   <meta property="og:title" content="Git_tips | Kryptonite Lab">
-  <meta property="og:description" content="目录 github Deploy key/SSH key 更换git协议 强制覆盖本地文件 github Deploy key/SSH key Deploy key是在项目主页-setting-Delpoy keys下进行添加，如果勾选Allow write"><meta property="og:image" content="https://szthanatos.github.io/img/portrait.jpg">
+  <meta property="og:description" content="目录 Deploy key/SSH key(github) 更换git协议 强制覆盖本地文件 Deploy key/SSH key(github) Deploy key是在项目主页-setting-Delpoy keys下进行添加，如果勾选Allow write ac"><meta property="og:image" content="https://szthanatos.github.io/img/portrait.jpg">
   <meta property="og:locale" content="zh-cn">
   
   <meta property="article:published_time" content="2018-12-14T09:35:32&#43;08:00">
@@ -307,7 +307,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    2 分钟阅读时间
+    1 分钟阅读时间
   </span>
   
 
@@ -354,7 +354,7 @@
 <ul>
 <li>
 <ul>
-<li><a href="#github-deploy-key-ssh-key">github Deploy key/SSH key</a></li>
+<li><a href="#deploy-key-ssh-key-github">Deploy key/SSH key(github)</a></li>
 <li><a href="#更换git协议">更换git协议</a></li>
 <li><a href="#强制覆盖本地文件">强制覆盖本地文件</a></li>
 </ul></li>
@@ -362,13 +362,13 @@
 </nav>
 
 
-<h2 id="github-deploy-key-ssh-key">github Deploy key/SSH key</h2>
+<h2 id="deploy-key-ssh-key-github">Deploy key/SSH key(github)</h2>
 
 <p><code>Deploy key</code>是在<code>项目主页</code>-<code>setting</code>-<code>Delpoy keys</code>下进行添加，如果勾选<code>Allow write access</code>，则相当于具有对这个项目的读写权限(否则只能<code>clone</code>不能<code>push</code>)。<strong>作用范围是这个项目。</strong></p>
 
 <p><code>SSH key</code>是在你<code>个人主页</code>-<code>Settings</code>-<code>SSH and GPG keys</code>下进行添加。<strong>作用范围是你的账户下的所有项目。</strong></p>
 
-<p>同一个公钥，只能作为整个账户的<code>SSH key</code>，或者<strong>一个项目</strong>的<code>Deploy key</code>。想为一台机器授予多个项目的读写权限的话，需要通过<code>ssh-keygen</code>生成多个密钥，分别作为不同项目的<code>Deploy key</code>。</p>
+<p>同一个<code>公钥</code>，只能作为整个账户的<code>SSH key</code>，或者<strong>一个项目</strong>的<code>Deploy key</code>。想为一台机器授予多个项目的读写权限的话，需要通过<code>ssh-keygen</code>生成多个密钥，分别作为不同项目的<code>Deploy key</code>。</p>
 
 <h2 id="更换git协议">更换git协议</h2>
 
