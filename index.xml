@@ -41,6 +41,251 @@
     </item>
     
     <item>
+      <title>(翻译)(草稿)Academic文档-编写内容</title>
+      <link>https://szthanatos.github.io/post/academic/trans_writing_content/</link>
+      <pubDate>Tue, 01 Jan 2019 12:54:29 +0800</pubDate>
+      
+      <guid>https://szthanatos.github.io/post/academic/trans_writing_content/</guid>
+      <description>
+
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;p&gt;本文是对&lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34;&gt;Academic文档-Writing content章节&lt;/a&gt;的个人翻译，基于个人理解，不保证绝对准确。&lt;/p&gt;
+
+&lt;p&gt;原文详见连接。&lt;/p&gt;
+
+&lt;/div&gt;
+
+
+&lt;h2&gt;目录&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#副标题&#34;&gt;副标题&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#强调&#34;&gt;强调&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#有序列表&#34;&gt;有序列表&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#无序列表&#34;&gt;无序列表&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#图片&#34;&gt;图片&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#图片库&#34;&gt;图片库&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#视频&#34;&gt;视频&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#链接&#34;&gt;链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#emojis&#34;&gt;Emojis&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#引用&#34;&gt;引用&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#强调引用&#34;&gt;强调引用&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#脚注&#34;&gt;脚注&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#嵌入文档&#34;&gt;嵌入文档&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#代码高亮&#34;&gt;代码高亮&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#twitter-tweet&#34;&gt;Twitter tweet&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#github-gist&#34;&gt;GitHub gist&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#latex-math&#34;&gt;LATEX math&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#警告&#34;&gt;警告&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#目录&#34;&gt;目录&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/nav&gt;
+
+
+&lt;p&gt;Academic支持使用Markdown、LaTeX数学公式和Hugo代码段编写内容。
+此外，可以使用HTML以实现高级样式。
+本文概述最常见的格式选项。&lt;/p&gt;
+
+&lt;h2 id=&#34;副标题&#34;&gt;副标题&lt;/h2&gt;
+
+&lt;h2 id=&#34;强调&#34;&gt;强调&lt;/h2&gt;
+
+&lt;h2 id=&#34;有序列表&#34;&gt;有序列表&lt;/h2&gt;
+
+&lt;h2 id=&#34;无序列表&#34;&gt;无序列表&lt;/h2&gt;
+
+&lt;h2 id=&#34;图片&#34;&gt;图片&lt;/h2&gt;
+
+&lt;h2 id=&#34;图片库&#34;&gt;图片库&lt;/h2&gt;
+
+&lt;h2 id=&#34;视频&#34;&gt;视频&lt;/h2&gt;
+
+&lt;h2 id=&#34;链接&#34;&gt;链接&lt;/h2&gt;
+
+&lt;h2 id=&#34;emojis&#34;&gt;Emojis&lt;/h2&gt;
+
+&lt;h2 id=&#34;引用&#34;&gt;引用&lt;/h2&gt;
+
+&lt;h2 id=&#34;强调引用&#34;&gt;强调引用&lt;/h2&gt;
+
+&lt;h2 id=&#34;脚注&#34;&gt;脚注&lt;/h2&gt;
+
+&lt;h2 id=&#34;嵌入文档&#34;&gt;嵌入文档&lt;/h2&gt;
+
+&lt;h2 id=&#34;代码高亮&#34;&gt;代码高亮&lt;/h2&gt;
+
+&lt;h2 id=&#34;twitter-tweet&#34;&gt;Twitter tweet&lt;/h2&gt;
+
+&lt;h2 id=&#34;github-gist&#34;&gt;GitHub gist&lt;/h2&gt;
+
+&lt;h2 id=&#34;latex-math&#34;&gt;LATEX math&lt;/h2&gt;
+
+&lt;h2 id=&#34;警告&#34;&gt;警告&lt;/h2&gt;
+
+&lt;h2 id=&#34;目录&#34;&gt;目录&lt;/h2&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>(翻译)(草稿)Academic文档-管理内容</title>
+      <link>https://szthanatos.github.io/post/academic/trans_managing_content/</link>
+      <pubDate>Tue, 01 Jan 2019 12:54:11 +0800</pubDate>
+      
+      <guid>https://szthanatos.github.io/post/academic/trans_managing_content/</guid>
+      <description>
+
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;p&gt;本文是对&lt;a href=&#34;https://sourcethemes.com/academic/docs/managing-content/&#34; target=&#34;_blank&#34;&gt;Academic文档-Managing content章节&lt;/a&gt;的个人翻译，基于个人理解，不保证绝对准确。&lt;/p&gt;
+
+&lt;p&gt;原文详见连接。&lt;/p&gt;
+
+&lt;/div&gt;
+
+
+&lt;h2&gt;目录&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#精选图片&#34;&gt;精选图片&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#标题图片&#34;&gt;标题图片&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#数学公式和代码&#34;&gt;数学公式和代码&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#页面特性&#34;&gt;页面特性&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#创建一个出版物&#34;&gt;创建一个出版物&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#自动&#34;&gt;自动&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#手动&#34;&gt;手动&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#创建博文&#34;&gt;创建博文&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#创建项目&#34;&gt;创建项目&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#创建演讲&#34;&gt;创建演讲&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#创建幻灯片&#34;&gt;创建幻灯片&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#创建文档&#34;&gt;创建文档&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#创建小部件页面&#34;&gt;创建小部件页面&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#创建其他页面-e-g-简历&#34;&gt;创建其他页面(e.g. 简历)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#管理列表页&#34;&gt;管理列表页&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#移除内容&#34;&gt;移除内容&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#查看站点更新&#34;&gt;查看站点更新&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#部署站点&#34;&gt;部署站点&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/nav&gt;
+
+
+&lt;p&gt;这是一个使用Academic框架管理你的文章的简短指南。
+Academic提供的内容模板包括出版物、项目、宣讲、新闻/博客文章、以及小部件页。
+之后，你可能同样对&lt;a href=&#34;https://szthanatos.github.io/post/trans_writing_content.md&#34;&gt;使用Markdown、LaTeX数学公式和代码段进行创作&lt;/a&gt;感兴趣。&lt;/p&gt;
+
+&lt;div class=&#34;alert alert-warning&#34;&gt;
+  &lt;p&gt;Hugo V0.49 版本在使用本指南中的&lt;code&gt;hugo new&lt;/code&gt;命令时存在一个bug，请升级到V0.50及以上。&lt;/p&gt;
+
+&lt;/div&gt;
+
+
+&lt;h2 id=&#34;精选图片&#34;&gt;精选图片&lt;/h2&gt;
+
+&lt;p&gt;要在文章页显示一个精选图片，简单的将名为&lt;code&gt;featured.*&lt;/code&gt;(e.g. &lt;code&gt;featured.jpg&lt;/code&gt;)的图片文件拖拽到文章文件夹即可。&lt;/p&gt;
+
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;p&gt;如果你的页面在它所属的分类文件夹下没有自己的文件夹(&lt;a href=&#34;https://gohugo.io/content-management/page-bundles/&#34; target=&#34;_blank&#34;&gt;页面包&lt;/a&gt;)，
+你可以创建一个和你页面&lt;code&gt;NAME.md&lt;/code&gt;同名的文件夹&lt;code&gt;NAME&lt;/code&gt;，并将页面文件放入文件夹中，变为&lt;code&gt;NAME/index.md&lt;/code&gt;。
+这里有一个&lt;a href=&#34;https://github.com/sourcethemes/academic-scripts&#34; target=&#34;_blank&#34;&gt;自动迁移工具&lt;/a&gt;。
+使用页面包需要Academic v3+ 以及 Hugo v0.50以上。&lt;/p&gt;
+
+&lt;/div&gt;
+
+
+&lt;p&gt;想要为图片添加标题或者设置一个焦点以控制图片的裁剪？
+将下方的参数添加到扉页(也就是md文件&lt;code&gt;+++&lt;/code&gt;括起来的部分)的底部以自定义图片的外观。
+标题(caption)参数支持使用Markdown为图片添加标题或描述。
+焦点(focal_point)参数确保图片自动缩放的时候主要内容始终可见。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;# Featured image
+# To use, add an image named `featured.jpg/png` to your page&#39;s folder. 
+[image]
+  # Caption (optional)
+  caption = &amp;quot;Photo by [Academic](https://sourcethemes.com/academic/)&amp;quot;
+
+  # Focal point (optional)
+  # Options: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight
+  focal_point = &amp;quot;Smart&amp;quot;
+  
+  # Show image only in page previews?
+  preview_only = false
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;标题图片&#34;&gt;标题图片&lt;/h2&gt;
+
+&lt;p&gt;将下面的header参数添加到扉页的末尾，以在页面顶部展示一个占据全部宽度的标题图片。
+图片文件默认会从静态图片文件库&lt;code&gt;static/img/&lt;/code&gt;读取(所以不必写全)，所以下面例子的图片文件的完整路径是&lt;code&gt;static/img/header.png&lt;/code&gt;。
+标题参数作用和精选图一致。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;[header]
+  image = &amp;quot;header.png&amp;quot;
+  caption = &amp;quot;Image credit: [**Academic**](https://github.com/gcushen/hugo-academic/)&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;数学公式和代码&#34;&gt;数学公式和代码&lt;/h2&gt;
+
+&lt;p&gt;要在页面中启用&lt;strong&gt;LaTeX&lt;/strong&gt; 渲染数学公式，在页面的扉页中应该申明&lt;code&gt;math = true&lt;/code&gt;，如同示例网站的例子一样。
+或者，在&lt;code&gt;config.toml&lt;/code&gt;中设置&lt;code&gt;math = true&lt;/code&gt;，以在全局范围内允许数学公式渲染。&lt;/p&gt;
+
+&lt;p&gt;在&lt;code&gt;config.toml&lt;/code&gt;中设置&lt;code&gt;highlight = false&lt;/code&gt;以全局禁用代码高亮。你可以在需要代码高亮的页面的扉页单独设置&lt;code&gt;highlight = true&lt;/code&gt;。
+查看&lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/#code-highlighting&#34; target=&#34;_blank&#34;&gt;code-highlighting docs&lt;/a&gt;以获取更多细节。&lt;/p&gt;
+
+&lt;h2 id=&#34;页面特性&#34;&gt;页面特性&lt;/h2&gt;
+
+&lt;p&gt;将下述参数添加到页面扉页以管理页面特性：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;reading_time = false  # 显示估计阅读时间
+share = false  # 显示分享按钮
+profile = false  # 显示作者信息
+comments = false  # 显示评论区
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;创建一个出版物&#34;&gt;创建一个出版物&lt;/h2&gt;
+
+&lt;h3 id=&#34;自动&#34;&gt;自动&lt;/h3&gt;
+
+&lt;h3 id=&#34;手动&#34;&gt;手动&lt;/h3&gt;
+
+&lt;h2 id=&#34;创建博文&#34;&gt;创建博文&lt;/h2&gt;
+
+&lt;h2 id=&#34;创建项目&#34;&gt;创建项目&lt;/h2&gt;
+
+&lt;h2 id=&#34;创建演讲&#34;&gt;创建演讲&lt;/h2&gt;
+
+&lt;h2 id=&#34;创建幻灯片&#34;&gt;创建幻灯片&lt;/h2&gt;
+
+&lt;h2 id=&#34;创建文档&#34;&gt;创建文档&lt;/h2&gt;
+
+&lt;h2 id=&#34;创建小部件页面&#34;&gt;创建小部件页面&lt;/h2&gt;
+
+&lt;h2 id=&#34;创建其他页面-e-g-简历&#34;&gt;创建其他页面(e.g. 简历)&lt;/h2&gt;
+
+&lt;h2 id=&#34;管理列表页&#34;&gt;管理列表页&lt;/h2&gt;
+
+&lt;h2 id=&#34;移除内容&#34;&gt;移除内容&lt;/h2&gt;
+
+&lt;h2 id=&#34;查看站点更新&#34;&gt;查看站点更新&lt;/h2&gt;
+
+&lt;h2 id=&#34;部署站点&#34;&gt;部署站点&lt;/h2&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Tmux</title>
+      <link>https://szthanatos.github.io/post/tmux/</link>
+      <pubDate>Tue, 01 Jan 2019 12:27:05 +0800</pubDate>
+      
+      <guid>https://szthanatos.github.io/post/tmux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Git_tips</title>
       <link>https://szthanatos.github.io/post/git_tips/</link>
       <pubDate>Fri, 14 Dec 2018 09:35:32 +0800</pubDate>
@@ -102,10 +347,10 @@ git reset --hard origin/master
     
     <item>
       <title>Academic实现Github Page个人博客</title>
-      <link>https://szthanatos.github.io/post/academic/</link>
+      <link>https://szthanatos.github.io/post/academic/academic_in_practice/</link>
       <pubDate>Sun, 09 Dec 2018 16:34:42 +0800</pubDate>
       
-      <guid>https://szthanatos.github.io/post/academic/</guid>
+      <guid>https://szthanatos.github.io/post/academic/academic_in_practice/</guid>
       <description>
 
 &lt;h2&gt;目录&lt;/h2&gt;
@@ -1791,245 +2036,6 @@ docker run -it \
 &lt;/ul&gt;
 
 &lt;p&gt;详细安装使用见&lt;a href=&#34;https://github.com/NVIDIA/nvidia-docker/wiki/Installation-(version-2.0)&#34; target=&#34;_blank&#34;&gt;官方项目Wiki&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Palantir一分钟印象</title>
-      <link>https://szthanatos.github.io/post/palantir_intro/</link>
-      <pubDate>Wed, 05 Dec 2018 17:09:21 +0800</pubDate>
-      
-      <guid>https://szthanatos.github.io/post/palantir_intro/</guid>
-      <description>
-
-&lt;h2&gt;目录&lt;/h2&gt;
-&lt;nav id=&#34;TableOfContents&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#简介&#34;&gt;简介&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#最新情况&#34;&gt;最新情况&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#创始人&#34;&gt;创始人&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#peter-thiel&#34;&gt;Peter Thiel&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#alex-karp-ceo&#34;&gt;Alex Karp (CEO)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#joe-lonsdale&#34;&gt;Joe Lonsdale&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#stephen-cohen&#34;&gt;Stephen Cohen&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#nathan-gettings&#34;&gt;Nathan Gettings&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#发展历程&#34;&gt;发展历程&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#产品内容&#34;&gt;产品内容&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#官方主页-home-palantir-https-www-palantir-com&#34;&gt;官方主页： &lt;a href=&#34;https://www.palantir.com/&#34; target=&#34;_blank&#34;&gt;Home | Palantir&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#产品线&#34;&gt;产品线&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#解决方案&#34;&gt;解决方案&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/nav&gt;
-
-
-&lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;
-
-&lt;p&gt;Palantir是全球第一大&lt;code&gt;大数据公司&lt;/code&gt;。曾经的全球四大独角兽之一（其它三家是Uber，Airbnb和小米）。中文名帕兰提尔，源于《指环王》中邪恶巫师萨鲁曼使用的可穿越时空、洞悉世间一切的水晶球(Palantiri)。主要客户为政府机构和金融机构。&lt;/p&gt;
-
-&lt;p&gt;最出名的案例是以大数据技术帮助美国军方成功定位和击毙基地组织首脑本·拉登，以及协助多家银行追回了纳斯达克前主席麦道夫Bernie Madoff的庞氏骗局中所隐藏起来的数十亿美元巨款。&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;最新情况&#34;&gt;最新情况&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;2018年10月29日&lt;/strong&gt;，Palantir正在建立ICE的案例管理软件 —— &lt;a href=&#34;http://aldianews.com/articles/politics/immigration/technology-companies-are-ices-dark-allies/54287&#34; target=&#34;_blank&#34;&gt;AL DIA News&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;2018年10月23日&lt;/strong&gt;，亚马逊、微软、Palantir等科技公司在特朗普的移民法案中起到重要作用 —— &lt;a href=&#34;https://www.commondreams.org/news/2018/10/23/amazon-microsoft-and-palantir-among-tech-giants-making-huge-profits-trumps&#34; target=&#34;_blank&#34;&gt;Common Dreams&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;2018年10月19日&lt;/strong&gt;，Palantir或明年上市，估值达410亿美元 —— &lt;a href=&#34;https://www.vanityfair.com/news/2018/10/palantir-peter-thiels-all-seeing-eye-looks-to-a-41-billion-dollar-ipo&#34; target=&#34;_blank&#34;&gt;MAYA KOSOFF&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;2018年09月14日&lt;/strong&gt;，美国陆军决议中止对Palantir2.06亿美元的采购合同 —— &lt;a href=&#34;https://www.law360.com/articles/1082813/army-wrongly-ignored-palantir-in-206m-deal-fed-circ-says&#34; target=&#34;_blank&#34;&gt;LAW 360&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;2018年03月14日&lt;/strong&gt;，雷神、Palantir 拿下美国陆军8.76亿美元合同 —— &lt;a href=&#34;https://www.reuters.com/article/us-raytheon-pentagon/raytheon-palantir-win-876-million-u-s-defense-contract-pentagon-idUSKCN1GL2HR&#34; target=&#34;_blank&#34;&gt;reuters&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;2018年03月02日&lt;/strong&gt;，传Palantir在新奥尔良秘密测试犯罪预测技术，最神秘的独角兽再陷隐私风波 —— &lt;a href=&#34;https://www.lieyunwang.com/archives/416481&#34; target=&#34;_blank&#34;&gt;猎云网&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Palantir发布&lt;a href=&#34;https://www.palantir.com/philanthropy-engineering/annual-report/2017/&#34; target=&#34;_blank&#34;&gt;2017年度报告&lt;/a&gt; 重点提到在哈维飓风的救援以及灾后重建工作，以及帮助世界粮食计划署运输食品以对抗饥饿的工作中所起到的作用。&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;创始人&#34;&gt;创始人&lt;/h2&gt;
-
-&lt;h4 id=&#34;peter-thiel&#34;&gt;Peter Thiel&lt;/h4&gt;
-
-&lt;p&gt;斯坦福本科及法学院JD的高材生，《从0到1》的作者。创立了Clarium Capital、Founders Fund、Valar Ventures、、Mithril Capital Management等多支基金。Paypal创始人之一并出任 CEO。2002年paypal被收购之后，以投资人身份投资包括Facebook、Asana、Quora、LinkedIn、Yelp、Yammer在内的诸多当今一线公司。号称硅谷创投教父。&lt;/p&gt;
-
-&lt;h4 id=&#34;alex-karp-ceo&#34;&gt;Alex Karp (CEO)&lt;/h4&gt;
-
-&lt;p&gt;哈佛本科毕业，斯坦福法学JD学位，德国法兰克福大学新古典社会理论方向博士学位，师从本世纪最伟大的哲学家之一哈贝马斯。早年继承家产后成为硅谷著名投资人，并在伦敦创立Caedmon Group基金管理投资。目前坚持保持单身，热爱气功、游泳以及与员工讲马克思还有带领员工在硅谷打太极。Peter Thiel在斯坦福的室友。&lt;/p&gt;
-
-&lt;h4 id=&#34;joe-lonsdale&#34;&gt;Joe Lonsdale&lt;/h4&gt;
-
-&lt;p&gt;斯坦福计算机系毕业。除Palantir外，还曾创办另外两家高科技公司，和硅谷最大的面向亚洲的风投基金Formation8、 8vc。管理着5000亿美元财富。此外，还是《福布斯》评选出的12位行业未来之星之一，还被美国媒体评为硅谷排名第二的天使投资人。&lt;/p&gt;
-
-&lt;h4 id=&#34;stephen-cohen&#34;&gt;Stephen Cohen&lt;/h4&gt;
-
-&lt;p&gt;毕业于斯坦福计算机系的高级工程师。&lt;/p&gt;
-
-&lt;h4 id=&#34;nathan-gettings&#34;&gt;Nathan Gettings&lt;/h4&gt;
-
-&lt;p&gt;来自于PayPal的的高级工程师。在PayPal负责风险和研发的总监，曾以开发了反欺诈的系统而闻名于世。&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;发展历程&#34;&gt;发展历程&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;2004年Palantir公司创立于加利福尼亚州帕洛阿尔托。创业初期Palantir并不被人看好，融资过程也是屡屡受阻，包括红杉资本，凯鹏华盈两大VC基金都不看好Palantir的发展。经过多次奔走博弈，最终，Palantir赢得了CIA的创投基金的2轮投资，从而走上了发展的正轨。&lt;/li&gt;
-&lt;li&gt;2004到2009年，Palantir主要业务还是服务于美国政府部门，提供情报分析，防欺诈、反恐等服务。&lt;/li&gt;
-&lt;li&gt;2010年，Palantir开始提供企业服务，实现业务多元化。&lt;/li&gt;
-&lt;li&gt;2010年7月，当时已经拥有250位工程师的Palantir完成9000万美元的D轮融资，估值达到7.35亿美元。&lt;/li&gt;
-&lt;li&gt;2011年5月6日，融资5000万美元，累计融资额达到了1.75亿美元。&lt;/li&gt;
-&lt;li&gt;2011年10月7日，融资7000万美元，估值25亿美元。&lt;/li&gt;
-&lt;li&gt;2013年9月29日，融资1.96亿美元，估值60亿美元。&lt;/li&gt;
-&lt;li&gt;2013年12月，Palantir新一轮融资1.075亿美元，同时估值达到90亿美元。此时Palantir的年收入已经超过4.5亿美元。&lt;/li&gt;
-&lt;li&gt;2014年11月，Palantir再拿到5亿美元投资，企业用户突破14000家，估值达到了150亿美元。&lt;/li&gt;
-&lt;li&gt;2015年年底，Palantir获得8.8亿美元的融资，市值达到200亿美元。成为继 Uber、小米、Airbnb 之后，全球估值第四高的创业公司。（截至2018年11月最后一笔融资）&lt;/li&gt;
-&lt;li&gt;2016年2月，收购Kimono Labs&lt;/li&gt;
-&lt;li&gt;2016年5月，Buzzfeed爆料,数司百名员工离职，多个重要客户不再续约。&lt;/li&gt;
-&lt;li&gt;2016年8月，Palantir收购数据可视化公司Silk。&lt;/li&gt;
-&lt;li&gt;2018年10月，Palantir预备明年下半年上市，公司估值或将达410亿美元
-&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;产品内容&#34;&gt;产品内容&lt;/h2&gt;
-
-&lt;h3 id=&#34;官方主页-home-palantir-https-www-palantir-com&#34;&gt;官方主页： &lt;a href=&#34;https://www.palantir.com/&#34; target=&#34;_blank&#34;&gt;Home | Palantir&lt;/a&gt;&lt;/h3&gt;
-
-&lt;h3 id=&#34;产品线&#34;&gt;产品线&lt;/h3&gt;
-
-&lt;p&gt;目前Palantir仅保留两条产品线：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://www.palantir.com/palantir-gotham/&#34; target=&#34;_blank&#34;&gt;Palantir Gotham&lt;/a&gt;&lt;/strong&gt; 一个集成，管理，保护和分析多来源的企业数据的复合平台。命名来源于蝙蝠侠所在的哥谭市。作为后端，Gotham平台可用于集成许多不同的数据源，以进行安全的协作分析；也可以存储企业的各类建模分析数据，充当企业知识库。而在前端, Gotham平台提供了一套针对语义，时间，地理空间和全文分析的分析工具集合。为Gotham提供支撑的子产品包括：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;PHOENIX&lt;/strong&gt; 支持PB级的数万亿条记录进行亚秒级查询的集群数据库；&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;RAPTOR&lt;/strong&gt; 提供对外部数据源进行联合查询,并实时加入数据库的检索工具；&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;SEARCH&lt;/strong&gt; 提供对系统中结构化和非结构化数据的全文检索的搜索引擎；&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;HORIZON&lt;/strong&gt; 允许用户在数十亿个对象中查询并在约10秒内收到结果的,类Spark设计的内存数据库；&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;DYNAMIC ONTOLOGY&lt;/strong&gt; 高度灵活和动态的数据建模工具；&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;REVISIONING DATABASE&lt;/strong&gt; RevDB是Gotham平台的持久化数据管理工具，类似Zookeeper之于Hadoop；&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;ATLASDB&lt;/strong&gt; 作为RevDB的具体数据存储单元，结合了NoSQL数据存储的简单性和可扩展性与传统SQL数据库的事务安全性和一致性；&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;NEXUS PEERING&lt;/strong&gt; 分布式系统平台，上面的各个组件都建立在这个平台之上；&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://www.palantir.com/palantir-foundry/&#34; target=&#34;_blank&#34;&gt;Palantir Foundry&lt;/a&gt;&lt;/strong&gt; ：数据集成/分析平台，将后端的数据存储和前端的数据分析打通，让任何人都能连接到不同数据源轻松进行建模分析。&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;解决方案&#34;&gt;解决方案&lt;/h3&gt;
-
-&lt;p&gt;Palantir面向以下领域直接提供解决方案：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://www.palantir.com/solutions/automotive&#34; target=&#34;_blank&#34;&gt;汽车制造业&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://www.palantir.com/solutions/cyber/&#34; target=&#34;_blank&#34;&gt;网络安全&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://www.palantir.com/solutions/financial-compliance/&#34; target=&#34;_blank&#34;&gt;金融合规&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://www.palantir.com/solutions/insider-threat/&#34; target=&#34;_blank&#34;&gt;企业内部信息安全&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://www.palantir.com/solutions/intelligence/&#34; target=&#34;_blank&#34;&gt;商业情报分析&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://www.palantir.com/solutions/legal-intelligence/&#34; target=&#34;_blank&#34;&gt;法律诉讼&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://www.palantir.com/solutions/mergers-and-acquisitions/&#34; target=&#34;_blank&#34;&gt;并购支持&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://www.palantir.com/solutions/revenue-maximization/&#34; target=&#34;_blank&#34;&gt;收入最大化&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://www.palantir.com/solutions/case-management/&#34; target=&#34;_blank&#34;&gt;数据组织&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://www.palantir.com/solutions/defense/&#34; target=&#34;_blank&#34;&gt;国土防卫&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://www.palantir.com/solutions/gdpr/&#34; target=&#34;_blank&#34;&gt;欧盟通用数据保护监管&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://www.palantir.com/solutions/insurance-analytics&#34; target=&#34;_blank&#34;&gt;保险分析&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://www.palantir.com/solutions/law-enforcement/&#34; target=&#34;_blank&#34;&gt;公共执法&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://www.palantir.com/solutions/manufacturing/&#34; target=&#34;_blank&#34;&gt;制造业&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://www.palantir.com/solutions/pharma/&#34; target=&#34;_blank&#34;&gt;医药研发&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://www.palantir.com/solutions/skywise&#34; target=&#34;_blank&#34;&gt;航空业&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>欢迎来到氪石实验室</title>
-      <link>https://szthanatos.github.io/post/0x00/</link>
-      <pubDate>Sat, 01 Dec 2018 12:00:24 +0800</pubDate>
-      
-      <guid>https://szthanatos.github.io/post/0x00/</guid>
-      <description>
-
-&lt;p&gt;这是我第四次，也可能是我最后一次博客迁移(flag已立←_←)。&lt;/p&gt;
-
-&lt;p&gt;从大学时代开始，找个地方写点什么的蠢动心思就没消停过，但是也都消磨在了无关文字的地方。有一个Geek圈子的说法，&lt;code&gt;yak-shaving&lt;/code&gt;，剪牦牛毛，放我身上非常合适——本来只是想写点什么，却发现不知道写哪好，就开始研究市面上的博客服务，又发现都不太好用不如自己搭，又开始研究自建网站，自建网站的过程中又发现自己需要一个服务器，又开始折腾主机&amp;hellip;折腾个人域名&amp;hellip;折腾Linux&amp;hellip;折腾LAMP环境&amp;hellip;——总之折腾到最后，走马观花的东西很多，写出来的东西寥寥无几。&lt;/p&gt;
-
-&lt;p&gt;yak-shaving的得失不提，到了现在的这个阶段，折腾的心思已经熄了很多，但是已经写出来的东西零零散散还是会难以忍受。也有一部分内容已经过时，或者回头再看理解已经完全不同&amp;hellip;总而言之，借此机会，旧的内容安置妥当，咱们就此别过。未来的文章，短时间内也无虞搬迁之苦，踏踏实实的呆在实验室档案柜吧。&lt;/p&gt;
-
-&lt;p&gt;以后笔记只分两部分存储：未经整理的内容继续保存在OneNote里，相对完整的东西再放到这里来。&lt;/p&gt;
-
-&lt;p&gt;旧的博客文章大概200篇不到，但是想到要挨个过一遍还得翻新到Hugo的模板&amp;hellip;..就感觉&amp;hellip;&amp;hellip;啊，还是鸽了吧&amp;hellip;&amp;hellip;（不过自己立的flag哭着也要做完的）&lt;/p&gt;
-
-&lt;p&gt;说回个人博客。&lt;/p&gt;
-
-&lt;p&gt;上一个博客的灵感是万智牌&lt;font color=#F8F8FF&gt;（和长者）&lt;/font&gt;，为自己设定的身份是掌握了东方神秘膜法的旅法师&amp;hellip;所以取名叫做&amp;rdquo;黑膜法师营地&amp;rdquo;，不过旅法师对决之后也已经好久没玩了。&lt;/p&gt;
-
-&lt;p&gt;至于现在博客的设定，起源于最近重温&lt;a href=&#34;https://www.bilibili.com/bangumi/play/ep257474/&#34; target=&#34;_blank&#34;&gt;守望者&lt;/a&gt;。看到罗夏(罗夏帅爆!)就想到老爷，看到笑匠就想到小丑(罗夏：致命玩笑←_←)，看到法老王&amp;hellip;唔&amp;hellip;蝙蝠侠对抗的智商爆表而且&lt;strong&gt;精神正常&lt;/strong&gt;的反派&amp;hellip;阿卡姆疯人院:&amp;ldquo;外面的都是神经病啊，不要放进来！&amp;rdquo;。&lt;/p&gt;
-
-&lt;p&gt;脑洞扩展到DCEU，嗯，超人，嗯，卢瑟，嗯，巴别塔&amp;hellip;老爷不会只靠定情小氪石的，一定有后备方案，嗯，Lex Wayne，就这么定了。&lt;/p&gt;
-
-&lt;p&gt;顺理成章，细节设定就是严肃的考(wan)证(geng)啦。&lt;/p&gt;
-
-&lt;h2 id=&#34;kryptonite-lab&#34;&gt;Kryptonite Lab&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://szthanatos.github.io/img/kryptonite.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;氪石实验室，没什么好说的，名字都是Lex Wayne了肯定患有氪石狂热啦(雾！)，什么住在全是氪石的实验室啦，爱嚼氪石口香糖啦，肯定都是基本设定啦(大雾！)。&lt;/p&gt;
-
-&lt;p&gt;42这个倒和DCEU没关——《银河系漫游指南》里宇宙的终极答案啊！十六进制的ASCII码 &lt;code&gt;*&lt;/code&gt;，&amp;rsquo;theAnswertoLifetheUniverseandEverythingis&amp;rsquo;问题本身的长度，感觉没有更赞的了。已经想好了，如果以后完善Lab的设定，里面的超算肯定叫深思(Deep Thought)。&lt;/p&gt;
-
-&lt;h2 id=&#34;wayne-manor-b3-1007-mountain-drive-gotham-nj-12345-usa&#34;&gt;Wayne Manor B3, 1007 Mountain Drive, Gotham, NJ 12345, USA&lt;/h2&gt;
-
-&lt;p&gt;一段一段说，&lt;/p&gt;
-
-&lt;h3 id=&#34;wayne-manor-b3&#34;&gt;Wayne Manor B3&lt;/h3&gt;
-
-&lt;p&gt;地下三层取自这个蝙蝠洞的设计图：&lt;img src=&#34;https://szthanatos.github.io/img/batcave_design.jpg&#34; alt=&#34;蝙蝠洞设计图&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;放大可以看到地下从上往下数分别是&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;-1 &lt;code&gt;Main Level&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;-2 &lt;code&gt;Additional Hangar Aeras&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;-3 &lt;code&gt;Sub Level 1&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&amp;hellip;
-&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;code&gt;Sub Level 1&lt;/code&gt;放的就是&lt;code&gt;Labs/Workshops/Library&lt;/code&gt;。&lt;/p&gt;
-
-&lt;h3 id=&#34;1007-mountain-drive-gotham&#34;&gt;1007 Mountain Drive, Gotham&lt;/h3&gt;
-
-&lt;p&gt;韦恩庄园所在的&lt;code&gt;1007 Mountain Drive&lt;/code&gt;这个地址来源于92-95年的蝙蝠侠动画&lt;code&gt;Batman: The Animated Series&lt;/code&gt;第一季中的&lt;code&gt;The Demon&#39;s Quest&lt;/code&gt;故事，应该也是目前蝙蝠侠相关作品中唯一正面出现的庄园地址。&lt;/p&gt;
-
-&lt;p&gt;具体坐落在哥谭的什么位置可以参考1999年Eliot R. Brown制作的地图：&lt;img src=&#34;https://szthanatos.github.io/img/gotham-city-eliot.jpg&#34; alt=&#34;Eliot R. Brown版本&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;而更新一点的设定可以参考诺兰的黑暗骑士的周边&lt;a href=&#34;https://www.amazon.com/The-Dark-Knight-Manual-Documents/dp/1608871045?tag=thehuffingtop-20&#34; target=&#34;_blank&#34;&gt;《黑暗骑士手册》&lt;/a&gt;：&lt;img src=&#34;https://szthanatos.github.io/img/gotham-city-nolan.jpg&#34; alt=&#34;Nolan版本&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;总之，都在右上角啦←_←。&lt;/p&gt;
-
-&lt;h3 id=&#34;nj-12345-usa&#34;&gt;NJ 12345, USA&lt;/h3&gt;
-
-&lt;p&gt;&lt;code&gt;NJ&lt;/code&gt;是新泽西的缩写，虽然哥谭给人的印象就是纽约（早于黑暗骑士的电影给人的感觉可能更像芝加哥），但新泽西的设定可以追溯到1974年的DC漫画惊奇世界(详见维基)，&lt;img src=&#34;https://szthanatos.github.io/img/gotham_local.jpg&#34; alt=&#34;哥谭位置&#34; /&gt;
-&lt;code&gt;NJ 12345&lt;/code&gt;也是出自93年的&lt;code&gt;Batman: Shadow of the Bat&lt;/code&gt;里的那个驾驶证：&lt;code&gt;72 Faxcol Dr Gotham City, NJ 12345&lt;/code&gt;。&lt;/p&gt;
-
-&lt;p&gt;嗯&amp;hellip;上面都是写给自己看的，&lt;/p&gt;
-
-&lt;h1 id=&#34;陌生人-p-欢迎翻阅氪石实验室42号档案柜&#34;&gt;陌生人，&lt;p&gt;欢迎翻阅氪石实验室42号档案柜。&lt;/h1&gt;
 </description>
     </item>
     

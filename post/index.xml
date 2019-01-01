@@ -13,6 +13,33 @@
     
     
     <item>
+      <title>(翻译)(草稿)Academic文档-编写内容</title>
+      <link>https://szthanatos.github.io/post/academic/trans_writing_content/</link>
+      <pubDate>Tue, 01 Jan 2019 12:54:29 +0800</pubDate>
+      
+      <guid>https://szthanatos.github.io/post/academic/trans_writing_content/</guid>
+      <description>本文是对Academic文档-Writing content章节的个人翻译，基于个人理解，不保证绝对准确。 原文详见连接。 目录 副标题 强调 有序列表</description>
+    </item>
+    
+    <item>
+      <title>(翻译)(草稿)Academic文档-管理内容</title>
+      <link>https://szthanatos.github.io/post/academic/trans_managing_content/</link>
+      <pubDate>Tue, 01 Jan 2019 12:54:11 +0800</pubDate>
+      
+      <guid>https://szthanatos.github.io/post/academic/trans_managing_content/</guid>
+      <description>本文是对Academic文档-Managing content章节的个人翻译，基于个人理解，不保证绝对准确。 原文详见连接。 目录 精选图片 标题图片</description>
+    </item>
+    
+    <item>
+      <title>Tmux</title>
+      <link>https://szthanatos.github.io/post/tmux/</link>
+      <pubDate>Tue, 01 Jan 2019 12:27:05 +0800</pubDate>
+      
+      <guid>https://szthanatos.github.io/post/tmux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Git_tips</title>
       <link>https://szthanatos.github.io/post/git_tips/</link>
       <pubDate>Fri, 14 Dec 2018 09:35:32 +0800</pubDate>
@@ -23,10 +50,10 @@
     
     <item>
       <title>Academic实现Github Page个人博客</title>
-      <link>https://szthanatos.github.io/post/academic/</link>
+      <link>https://szthanatos.github.io/post/academic/academic_in_practice/</link>
       <pubDate>Sun, 09 Dec 2018 16:34:42 +0800</pubDate>
       
-      <guid>https://szthanatos.github.io/post/academic/</guid>
+      <guid>https://szthanatos.github.io/post/academic/academic_in_practice/</guid>
       <description>目录 Hugo 安装/更新 安装/更新 常用命令 Academic 安装/更新 通过Netlify 通过Git 安装 更新 部署到Github Pages 原理 官方教程(缩减版) 脚本 个性化配置 c</description>
     </item>
     

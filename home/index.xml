@@ -40,7 +40,7 @@
     </item>
     
     <item>
-      <title>最近文章</title>
+      <title>Recent Posts</title>
       <link>https://szthanatos.github.io/home/posts/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0800</pubDate>
       
@@ -54,15 +54,6 @@
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0800</pubDate>
       
       <guid>https://szthanatos.github.io/home/publications/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>专题</title>
-      <link>https://szthanatos.github.io/home/topics/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0800</pubDate>
-      
-      <guid>https://szthanatos.github.io/home/topics/</guid>
       <description></description>
     </item>
     
@@ -81,6 +72,15 @@
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0800</pubDate>
       
       <guid>https://szthanatos.github.io/home/talks/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>专题</title>
+      <link>https://szthanatos.github.io/home/topics/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0800</pubDate>
+      
+      <guid>https://szthanatos.github.io/home/topics/</guid>
       <description></description>
     </item>
     

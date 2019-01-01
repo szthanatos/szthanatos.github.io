@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 3.2.0">
+  <meta name="generator" content="Hugo 0.52" />
+  <meta name="author" content="Lex Wayne">
+
+  
+  
+  
+  
+    
+  
+  <meta name="description" content="目录 Hugo 安装/更新 安装/更新 常用命令 Academic 安装/更新 通过Netlify 通过Git 安装 更新 部署到Github Pages 原理 官方教程(缩减版) 脚本 个性化配置 c">
+
+  
+  <link rel="alternate" hreflang="zh-cn" href="https://szthanatos.github.io/post/academic/academic_in_practice/">
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#2962ff">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" crossorigin="anonymous">
+        
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono">
+  
+
+  <link rel="stylesheet" href="/styles.css">
+  
+
+  
+  
+  
+
+  
+  <link rel="alternate" href="https://szthanatos.github.io/index.xml" type="application/rss+xml" title="Kryptonite Lab">
+  <link rel="feed" href="https://szthanatos.github.io/index.xml" type="application/rss+xml" title="Kryptonite Lab">
+  
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="https://szthanatos.github.io/post/academic/academic_in_practice/">
+
+  
+  
+  
+  
+    
+  
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="og:site_name" content="Kryptonite Lab">
+  <meta property="og:url" content="https://szthanatos.github.io/post/academic/academic_in_practice/">
+  <meta property="og:title" content="Academic实现Github Page个人博客 | Kryptonite Lab">
+  <meta property="og:description" content="目录 Hugo 安装/更新 安装/更新 常用命令 Academic 安装/更新 通过Netlify 通过Git 安装 更新 部署到Github Pages 原理 官方教程(缩减版) 脚本 个性化配置 c"><meta property="og:image" content="https://szthanatos.github.io/img/academic_header.jpg">
+  <meta property="og:locale" content="zh-cn">
+  
+  <meta property="article:published_time" content="2018-12-09T16:34:42&#43;08:00">
+  
+  <meta property="article:modified_time" content="2018-12-09T16:34:42&#43;08:00">
+  
+
+  
+
+  
+
+  <title>Academic实现Github Page个人博客 | Kryptonite Lab</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1></h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="搜索..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/">Kryptonite Lab</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="切换导航">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav ml-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#hero">
+            
+            <span>主页</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#posts">
+            
+            <span>文章</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#projects">
+            
+            <span>专题</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+
+
+
+
+
+
+
+<div class="article-header">
+  
+  
+  <img src="/img/academic_header.jpg" class="article-banner" itemprop="image" alt="">
+  
+
+  
+</div>
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1 itemprop="name">Academic实现Github Page个人博客</h1>
+
+  
+
+  
+    
+
+<div class="article-metadata">
+
+  
+  
+  <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Lex Wayne">
+  </span>
+  
+
+  <span class="article-date">
+    
+    <meta content="2018-12-09 16:34:42 &#43;0800 DST" itemprop="datePublished">
+    <time datetime="2018-12-09 16:34:42 &#43;0800 DST" itemprop="dateModified">
+      Dec 9, 2018
+    </time>
+  </span>
+  <span itemscope itemprop="publisher" itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Lex Wayne">
+  </span>
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    7 分钟阅读时间
+  </span>
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+<h2>目录</h2>
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#hugo-安装-更新">Hugo 安装/更新</a>
+<ul>
+<li><a href="#安装-更新">安装/更新</a></li>
+<li><a href="#常用命令">常用命令</a></li>
+</ul></li>
+<li><a href="#academic-安装-更新">Academic 安装/更新</a>
+<ul>
+<li><a href="#通过netlify">通过Netlify</a></li>
+<li><a href="#通过git">通过Git</a>
+<ul>
+<li><a href="#安装">安装</a></li>
+<li><a href="#更新">更新</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#部署到github-pages">部署到Github Pages</a>
+<ul>
+<li><a href="#原理">原理</a></li>
+<li><a href="#官方教程-缩减版">官方教程(缩减版)</a></li>
+<li><a href="#脚本">脚本</a></li>
+</ul></li>
+<li><a href="#个性化配置">个性化配置</a>
+<ul>
+<li><a href="#config-toml主要配置项解释">config.toml主要配置项解释</a></li>
+<li><a href="#修改网站logo">修改网站logo</a></li>
+<li><a href="#给文章添加精选图">给文章添加精选图</a></li>
+<li><a href="#给文章添加头部背景">给文章添加头部背景</a></li>
+<li><a href="#目录">目录</a></li>
+<li><a href="#注意-警告标识">注意/警告标识</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+
+
+<h2 id="hugo-安装-更新">Hugo 安装/更新</h2>
+
+<p><a href="https://gohugo.io/" target="_blank">Hugo</a>是使用<code>Go</code>语言开发的静态站点生成器。不过无需准备<code>Go</code>语言环境，可以直接通过二进制编译包进行跨平台部署。</p>
+
+<p>以下均以Ubuntu18.0为例。</p>
+
+<h3 id="安装-更新">安装/更新</h3>
+
+<ol>
+<li>前往<a href="https://github.com/gohugoio/hugo/releases" target="_blank">Github页面</a>下载最新版本，这里我们下载<code>hugo_0.52_Linux-64bit.deb</code>;</li>
+<li>使用命令<code>dpkg -i hugo_0.52_Linux-64bit.deb</code> 安装hugo;</li>
+<li>更新即重复上面两步，覆盖安装即可;</li>
+</ol>
+
+<h3 id="常用命令">常用命令</h3>
+
+<ul>
+<li><strong><code>hugo</code></strong>： 编译项目生成静态网站，默认位置在项目的<code>public</code>目录下</li>
+<li><strong><code>hugo server</code></strong>： 启动你的网站服务，可以通过浏览器访问<code>http://127.0.0.1:1313/</code>访问站点;</li>
+<li><strong><code>hugo new {folder}/{name}.md</code></strong>: 创建新文章，使用<code>markdown</code>进行排版，一般默认放在<code>post</code>文件夹下；</li>
+</ul>
+
+<p>基本没了，一般情况下用这三个命令就够了。</p>
+
+<h2 id="academic-安装-更新">Academic 安装/更新</h2>
+
+<p>Academic是一个Hugo主题，从名字就可以知道这个主题比较学院派，适合科研/学术人员发布个人信息/介绍科研项目，当然，拿来做个人博客也是没问题的。</p>
+
+<h3 id="通过netlify">通过Netlify</h3>
+
+<ol>
+<li>Academic推荐使用第三方博客管理平台<a href="https://app.netlify.com/start/deploy?repository=https://github.com/sourcethemes/academic-kickstart" target="_blank">Netlify</a>安装，如果你没有域名或者没想建站，只是想自己使用，那我建议不使用它的服务——请直接跳到下一部分，否则跟随网站引导完成安装;</li>
+<li>通过Netlify安装的Academic使用一句命令即可更新：<code>git submodule update --remote --merge</code>;</li>
+</ol>
+
+<h3 id="通过git">通过Git</h3>
+
+<h4 id="安装">安装</h4>
+
+<ol>
+<li>通过git安装的话，首先建议你在GitHub上fork成你自己的项目，默认的话，通过<code>git clone https://github.com/sourcethemes/academic-kickstart.git My_Website</code>将代码克隆到本地文件夹<code>My_Website</code> <em>(当然，更推荐使用ssh协议，更安全，也免于push时输入密码，这里暂时按官方的来)</em> ;</li>
+<li>进入文件夹，初始化项目：<code>git submodule update --init --recursive</code>，完成安装;</li>
+</ol>
+
+<h4 id="更新">更新</h4>
+
+<ol>
+<li><code>cd themes/academic</code>;</li>
+<li>将<code>origin</code>仓库重命名为<code>upstream</code>：<code>git remote rename origin upstream</code>;</li>
+<li>将更新下载到本地：<code>git fetch upstream</code>;</li>
+<li>列出可用更新：<code>git log --pretty=oneline --abbrev-commit --decorate HEAD..upstream/master</code>;</li>
+<li>更新：<code>git pull upstream</code>;</li>
+</ol>
+
+<h2 id="部署到github-pages">部署到Github Pages</h2>
+
+<h3 id="原理">原理</h3>
+
+<p>网上介绍的办法很多，但核心其实就一句：</p>
+
+<p><strong>将<code>hugo</code>命令生成的<code>public</code>文件夹上传到GitHub pages项目下</strong>。</p>
+
+<p><code>public</code>文件夹相当于编译完成的静态网站，你在本地打开其实就能看。换句话说，你每次手动将这个目录下的内容上传到你的GitHub page项目也是可以的。</p>
+
+<p>然后为了达到这个目的，官网给出的做法是利用<code>git submodule</code>命令将你的<code>GitHub page</code>项目作为<code>My_Website</code>项目的子模块存放到<code>public</code>目录。那么当你更新你的文章之后，只提交<code>public</code>文件夹内的变更到<code>GitHub page</code>项目即可。</p>
+
+<h3 id="官方教程-缩减版">官方教程(缩减版)</h3>
+
+<p><em><a href="https://sourcethemes.com/academic/docs/deployment/#github-pages" target="_blank">原教程</a>看这里；</em></p>
+
+<ol>
+<li>在GitHub上创建两个项目，一个是fork 的<a href="https://github.com/sourcethemes/academic-kickstart.git" target="_blank">academic-kickstart</a>，也就是你前面clone到本地的<code>My_Website</code>，另一个即是以你用户名/组织名开头、以<code>.github.io</code>结尾的GitHub page项目。</li>
+<li>在<code>My_Website</code>目录下执行<code>git submodule update --init --recursive</code>更新子模块；</li>
+<li>将<code>config.toml</code>中的<code>baseurl</code>设置为你的GitHub page地址；</li>
+<li><strong>(实质)</strong> 删除<code>public</code>文件夹(如果有的话)，将GitHub page项目clone进去：<code>git submodule add -f -b master https://github.com/&lt;USERNAME&gt;/&lt;USERNAME&gt;.github.io.git public</code>;</li>
+
+<li><p>新增/编辑文章后，更新<code>academic-kickstart</code>项目：</p>
+
+<pre><code class="language-bash">git add .
+git commit -m &quot;Initial commit&quot;
+git push -u origin master
+</code></pre></li>
+
+<li><p>更新GitHub page项目：</p>
+
+<pre><code class="language-bash">hugo 
+cd public
+git add .
+git commit -m &quot;Build website&quot;
+git push origin master
+</code></pre></li>
+</ol>
+
+<p>实际上只有第六步是更新GitHub page，每次重复执行这一部分就行(如果你不把文章保存到<code>academic-kickstart</code>的话)。</p>
+
+<h3 id="脚本">脚本</h3>
+
+<p><code>Hugo</code>官方把上面步骤打包到了一个脚本：</p>
+
+<pre><code class="language-bash">#!/bin/bash
+
+echo -e &quot;\033[0;32mDeploying updates to GitHub...\033[0m&quot;
+
+# Build the project.
+hugo # if using a theme, replace with `hugo -t &lt;YOURTHEME&gt;`
+
+# Go To Public folder
+cd public
+# Add changes to git.
+git add .
+
+# Commit changes.
+msg=&quot;rebuilding site `date`&quot;
+if [ $# -eq 1 ]
+  then msg=&quot;$1&quot;
+fi
+git commit -m &quot;$msg&quot;
+
+# Push source and build repos.
+git push origin master
+
+# Come Back up to the Project Root
+cd ..
+</code></pre>
+
+<p>实际上我们干脆连第五步也放进去呗：</p>
+
+<pre><code class="language-bash">#!/bin/bash
+
+echo &quot;\033[0;32mBuilding\033[0m&quot;
+
+# Build the project.
+hugo # if using a theme, replace with `hugo -t &lt;YOURTHEME&gt;`
+
+echo &quot;\033[0;32m
+-----------------------------
+Updating content to GitHub...
+-----------------------------
+\033[0m&quot;
+
+# Receive args.
+TIME_NOW=$(date +%T\ %F)
+if [ $# -eq 0 ]; then 
+  MSG=&quot;Change something nobody knows at ${TIME_NOW}...&quot;
+elif [ $# -eq 1 ]; then 
+  MSG=&quot;$1&quot;
+  EDITED_FILE=&quot;.&quot;
+else
+  MSG=&quot;$1&quot;
+  shift 1
+  EDITED_FILE=&quot;$*&quot;
+fi
+
+# Add changes to git.
+git add $EDITED_FILE
+
+# Commit changes.
+git commit -m &quot;$MSG&quot;
+
+# Push source and build repos.
+git push origin master
+
+# ---------
+echo &quot;\033[0;32m
+---------------------------
+Deploying to GitHub Page...
+---------------------------
+\033[0m&quot;
+
+# Go To Public folder
+cd public
+
+# Add changes to git.
+git add .
+
+# Commit changes.
+git commit -m &quot;$MSG&quot;
+
+# Push source and build repos.
+git push origin master
+
+# Come Back up to the Project Root
+cd ..
+
+</code></pre>
+
+<p>将脚本保存为<code>deploy.sh</code>，放到项目根目录下，完成修改后执行<code>./deploy.sh</code>一键更新/部署。</p>
+
+<p>可选参数的第一个是你的commit message，建议还是写点啥：</p>
+
+<p><code>./deploy.sh &quot;{Your optional commit message}&quot;</code>。</p>
+
+<p>如果修改了多个文件，只想提交其中的一部分文件以保持commit的纯净，那就在mesaage后面附加你要提交的文件路径(不超过10个&hellip;)：</p>
+
+<p><code>./deploy.sh &quot;{Your optional commit message}&quot; path1 path2...</code>。</p>
+
+<h2 id="个性化配置">个性化配置</h2>
+
+<p>项目目录结构大体如下：</p>
+
+<ul>
+<li><code>content目录</code>： 网站内容，<code>home</code>是你的主页的小控件，<code>post</code>是默认文章存放位置</li>
+<li><code>public目录</code>： 生成的静态页面</li>
+<li><code>resouces目录</code>： JS资源存放位置</li>
+<li><code>static目录</code>： 静态资源存放位置</li>
+<li><code>themes目录</code>： 主题文件所在目录</li>
+<li><code>config.toml</code>: 全局配置文件</li>
+</ul>
+
+<h3 id="config-toml主要配置项解释">config.toml主要配置项解释</h3>
+
+<table>
+<thead>
+<tr>
+<th>配置项</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>baseurl</td>
+<td>你的站点的url，不设置这个你的文章/资源可能相互引用不到</td>
+</tr>
+
+<tr>
+<td>title</td>
+<td>网站标题</td>
+</tr>
+
+<tr>
+<td>defaultContentLanguage</td>
+<td>默认语言，中文的话填<code>zh</code>，在文件末尾还有一处配置要同时修改才行</td>
+</tr>
+
+<tr>
+<td>hasCJKLanguage</td>
+<td>是否有中/日/韩语</td>
+</tr>
+
+<tr>
+<td>defaultContentLanguageInSubdir</td>
+<td>目录是否允许用默认语言，<code>true</code>就对了</td>
+</tr>
+
+<tr>
+<td>highlight_languages</td>
+<td>语法高亮，支持的语言可以去<a href="https://cdnjs.com/libraries/highlight.js/" target="_blank">highlight.js</a>查到</td>
+</tr>
+
+<tr>
+<td>[[menu.main]]</td>
+<td>这部分是你主页上标题栏显示的内容，<code>url</code>默认和你<code>content/home</code>下的文件名对应</td>
+</tr>
+
+<tr>
+<td>Languages</td>
+<td>添加中文支持的话，把<code>[languages.zh]</code>部分解除注释，<code>languageCode</code>写<code>&quot;zh-cn&quot;</code>，添加其他语种的话，相同格式再写一组<code>[languages.XX]</code>即可，支持的语言代码可以在<code>themes\academic\i18n</code>查看</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="修改网站logo">修改网站logo</h3>
+
+<p>默认的logo是Academic的蓝色学位帽，想替换的话将你想用的logo保存为
+<code>icon.png</code>(默认32*32像素，大了也没关系)
+和<code>icon-192.png</code>(192*192像素)，并放到项目的<code>static/img</code>目录下</p>
+
+<h3 id="给文章添加精选图">给文章添加精选图</h3>
+
+<p>这个图片只能添加一个，名字必须是<code>featured.*</code>(后缀jpg/png都行)，而且必须和文章放在同一个文件夹下。</p>
+
+<p>所以一般做法是把文章<code>aaa.md</code>改名为<code>index.md</code>并新建一个<code>aaa</code>目录，再和<code>featured.png</code>图片一起扔进去。</p>
+
+<p>显示的效果是在文章列表页，文章右侧有一个缩略图；打开文章，标题默认会居左，右边是精选图：</p>
+
+<p><img src="/img/featured_image_example.png" alt="example" /></p>
+
+<h3 id="给文章添加头部背景">给文章添加头部背景</h3>
+
+<p>这个是文章头部的横跨整个页面的大图，也就是文章头部这个黑底白字的大图。</p>
+
+<p>这个的图片可以放到<code>static/img</code>目录下，不过需要在你文件的<code>+++</code>的部分添加如下代码：</p>
+
+<pre><code class="language-markdown">[header]
+  image = &quot;img名称&quot;
+  caption = &quot;标题说明&quot;
+</code></pre>
+
+<p>顺便一提，文章内引用<code>static/img</code>下存储的图像的话，路径大致如此<code>![example](/img/image_abc.png)</code></p>
+
+<h3 id="目录">目录</h3>
+
+<p>使用<code>{</code><code>{% toc %}}</code>加在文章的任何你想要的地方以自动生成目录</p>
+
+<h3 id="注意-警告标识">注意/警告标识</h3>
+
+<p>被<code>{</code><code>{% alert note %}}</code>和<code>{</code><code>{% /alert %}}</code>包裹起来的内容即为注意项：</p>
+
+<div class="alert alert-note">
+  <p>注意内容blabla</p>
+
+</div>
+
+
+<p>被<code>{</code><code>{% alert warning %}}</code>和<code>{</code><code>{% /alert %}}</code>包裹起来的内容即为警告项：</p>
+
+<div class="alert alert-warning">
+  <p>警告内容blabla</p>
+
+</div>
+
+
+    </div>
+
+    
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tags/hugo/">Hugo</a>
+  
+</div>
+
+
+
+    
+
+
+
+
+
+
+<div class="media author-card" itemscope itemtype="http://schema.org/Person">
+  
+  <img class="portrait mr-3" src="/img/portrait.jpg" itemprop="image" alt="Avatar">
+  
+  <div class="media-body">
+    <h5 class="card-title" itemprop="name"><a href="/">Lex Wayne</a></h5>
+    <h6 class="card-subtitle">Python Knight &amp; Go Padawan</h6>
+    
+    <ul class="network-icon" aria-hidden="true">
+      
+    </ul>
+  </div>
+</div>
+
+
+
+
+    
+    
+
+    
+
+    
+
+
+  </div>
+</article>
+
+<div class="container">
+  <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    &copy; 2018 &middot; 
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" id="back_to_top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+</div>
+
+
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">引用</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> 复制
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> 下载
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha512-+NqPlbbtM1QqiK8ZAo4Yrj2c4lNQoGv8P79DPtKzj++l5jnN39rHA/xsqn8zE9l0uSoxaCdrOgFs6yjyfbBxSg==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha256-VsEqElsCHSGmnmHXGQzvoWjWwoznFSZc6hs7ARLRacQ=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/dockerfile.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/shell.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/sql.min.js"></script>
+        
+      
+
+      
+      
+    
+
+    
+    
+
+    
+    
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script>
+      const search_index_filename = "/index.json";
+      const i18n = {
+        'placeholder': "搜索...",
+        'results': "搜索结果",
+        'no_results': "没有找到结果"
+      };
+      const content_type = {
+        'post': "文章",
+        'project': "项目",
+        'publication' : "出版物",
+        'talk' : "演讲"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    <script src="/js/academic.min.d037ee5294b166a79dec317c58aea9cc.js"></script>
+
+    
+
+  </body>
+</html>
+
