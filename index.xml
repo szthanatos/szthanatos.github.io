@@ -369,7 +369,8 @@ git reset --hard origin/master
 &lt;li&gt;&lt;a href=&#34;#通过git&#34;&gt;通过Git&lt;/a&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#安装&#34;&gt;安装&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#更新&#34;&gt;更新&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#自动更新&#34;&gt;自动更新&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#手动更新&#34;&gt;手动更新&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#部署到github-pages&#34;&gt;部署到Github Pages&lt;/a&gt;
@@ -422,10 +423,7 @@ git reset --hard origin/master
 
 &lt;h3 id=&#34;通过netlify&#34;&gt;通过Netlify&lt;/h3&gt;
 
-&lt;ol&gt;
-&lt;li&gt;Academic推荐使用第三方博客管理平台&lt;a href=&#34;https://app.netlify.com/start/deploy?repository=https://github.com/sourcethemes/academic-kickstart&#34; target=&#34;_blank&#34;&gt;Netlify&lt;/a&gt;安装，如果你没有域名或者没想建站，只是想自己使用，那我建议不使用它的服务——请直接跳到下一部分，否则跟随网站引导完成安装;&lt;/li&gt;
-&lt;li&gt;通过Netlify安装的Academic使用一句命令即可更新：&lt;code&gt;git submodule update --remote --merge&lt;/code&gt;;&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;Academic推荐使用第三方博客管理平台&lt;a href=&#34;https://app.netlify.com/start/deploy?repository=https://github.com/sourcethemes/academic-kickstart&#34; target=&#34;_blank&#34;&gt;Netlify&lt;/a&gt;安装，如果你没有域名或者没想建站，只是想自己使用，那我建议不使用它的服务——请直接跳到下一部分，否则跟随网站引导完成安装;&lt;/p&gt;
 
 &lt;h3 id=&#34;通过git&#34;&gt;通过Git&lt;/h3&gt;
 
@@ -436,7 +434,15 @@ git reset --hard origin/master
 &lt;li&gt;进入文件夹，初始化项目：&lt;code&gt;git submodule update --init --recursive&lt;/code&gt;，完成安装;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h4 id=&#34;更新&#34;&gt;更新&lt;/h4&gt;
+&lt;h4 id=&#34;自动更新&#34;&gt;自动更新&lt;/h4&gt;
+
+&lt;p&gt;说是自动，还是需要手动执行一条命令：&lt;code&gt;git submodule update --remote --merge&lt;/code&gt;;&lt;/p&gt;
+
+&lt;p&gt;这么做的前提条件是你是&lt;code&gt;install&lt;/code&gt;的，也就是&lt;code&gt;git submodule update --init --recursive&lt;/code&gt;过的，而不是直接把&lt;code&gt;academic&lt;/code&gt;给clone到themes文件夹。&lt;/p&gt;
+
+&lt;h4 id=&#34;手动更新&#34;&gt;手动更新&lt;/h4&gt;
+
+&lt;p&gt;如果是clone到themes文件夹的话要这么更新：&lt;/p&gt;
 
 &lt;ol&gt;
 &lt;li&gt;&lt;code&gt;cd themes/academic&lt;/code&gt;;&lt;/li&gt;
@@ -456,7 +462,7 @@ git reset --hard origin/master
 
 &lt;p&gt;&lt;code&gt;public&lt;/code&gt;文件夹相当于编译完成的静态网站，你在本地打开其实就能看。换句话说，你每次手动将这个目录下的内容上传到你的GitHub page项目也是可以的。&lt;/p&gt;
 
-&lt;p&gt;然后为了达到这个目的，官网给出的做法是利用&lt;code&gt;git submodule&lt;/code&gt;命令将你的&lt;code&gt;GitHub page&lt;/code&gt;项目作为&lt;code&gt;My_Website&lt;/code&gt;项目的子模块存放到&lt;code&gt;public&lt;/code&gt;目录。那么当你更新你的文章之后，只提交&lt;code&gt;public&lt;/code&gt;文件夹内的变更到&lt;code&gt;GitHub page&lt;/code&gt;项目即可。&lt;/p&gt;
+&lt;p&gt;然后为了达到这个目的，Academic给出的做法是利用&lt;code&gt;git submodule&lt;/code&gt;将你的&lt;code&gt;GitHub page&lt;/code&gt;项目作为&lt;code&gt;My_Website&lt;/code&gt;项目的子模块存放到&lt;code&gt;public&lt;/code&gt;目录。那么当你更新你的文章之后，只提交&lt;code&gt;public&lt;/code&gt;文件夹内的变更到&lt;code&gt;GitHub page&lt;/code&gt;项目即可。&lt;/p&gt;
 
 &lt;h3 id=&#34;官方教程-缩减版&#34;&gt;官方教程(缩减版)&lt;/h3&gt;
 
@@ -464,9 +470,18 @@ git reset --hard origin/master
 
 &lt;ol&gt;
 &lt;li&gt;在GitHub上创建两个项目，一个是fork 的&lt;a href=&#34;https://github.com/sourcethemes/academic-kickstart.git&#34; target=&#34;_blank&#34;&gt;academic-kickstart&lt;/a&gt;，也就是你前面clone到本地的&lt;code&gt;My_Website&lt;/code&gt;，另一个即是以你用户名/组织名开头、以&lt;code&gt;.github.io&lt;/code&gt;结尾的GitHub page项目。&lt;/li&gt;
-&lt;li&gt;在&lt;code&gt;My_Website&lt;/code&gt;目录下执行&lt;code&gt;git submodule update --init --recursive&lt;/code&gt;更新子模块；&lt;/li&gt;
+&lt;li&gt;在&lt;code&gt;My_Website&lt;/code&gt;目录下执行&lt;code&gt;git submodule update --init --recursive&lt;/code&gt;将子模块更新到最新状态；&lt;/li&gt;
 &lt;li&gt;将&lt;code&gt;config.toml&lt;/code&gt;中的&lt;code&gt;baseurl&lt;/code&gt;设置为你的GitHub page地址；&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;(实质)&lt;/strong&gt; 删除&lt;code&gt;public&lt;/code&gt;文件夹(如果有的话)，将GitHub page项目clone进去：&lt;code&gt;git submodule add -f -b master https://github.com/&amp;lt;USERNAME&amp;gt;/&amp;lt;USERNAME&amp;gt;.github.io.git public&lt;/code&gt;;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;(实质)&lt;/strong&gt; 删除&lt;code&gt;public&lt;/code&gt;文件夹(如果有的话)，将GitHub page项目添加为子模块：&lt;code&gt;git submodule add -f -b master https://github.com/&amp;lt;USERNAME&amp;gt;/&amp;lt;USERNAME&amp;gt;.github.io.git public&lt;/code&gt;;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;这时候你的&lt;code&gt;My_Website&lt;/code&gt;项目实际上有两个子模块：作为主题依赖的&lt;code&gt;themes/academic&lt;/code&gt;和作为网站的&lt;code&gt;&amp;lt;USERNAME&amp;gt;.github.io&lt;/code&gt;；&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;有意思的是一般是子模块&lt;code&gt;themes/academic&lt;/code&gt;更新了之后，你更新主项目&lt;code&gt;My_Website&lt;/code&gt;的依赖；&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;而你更新主项目&lt;code&gt;My_Website&lt;/code&gt;的文章之后，再会手动的更新子模块&lt;code&gt;&amp;lt;USERNAME&amp;gt;.github.io&lt;/code&gt;，刚好反过来。&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;新增/编辑文章后，更新&lt;code&gt;academic-kickstart&lt;/code&gt;项目：&lt;/p&gt;
 
@@ -521,11 +536,6 @@ cd ..
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;#!/bin/bash
 
-echo &amp;quot;\033[0;32mBuilding\033[0m&amp;quot;
-
-# Build the project.
-hugo # if using a theme, replace with `hugo -t &amp;lt;YOURTHEME&amp;gt;`
-
 echo &amp;quot;\033[0;32m
 -----------------------------
 Updating content to GitHub...
@@ -560,6 +570,9 @@ echo &amp;quot;\033[0;32m
 Deploying to GitHub Page...
 ---------------------------
 \033[0m&amp;quot;
+
+# Build the project.
+hugo # if using a theme, replace with `hugo -t &amp;lt;YOURTHEME&amp;gt;`
 
 # Go To Public folder
 cd public
