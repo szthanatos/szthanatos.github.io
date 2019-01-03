@@ -40,7 +40,7 @@
     </item>
     
     <item>
-      <title>最近文章</title>
+      <title>近期文章</title>
       <link>https://szthanatos.github.io/home/posts/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0800</pubDate>
       
@@ -95,7 +95,7 @@ To remove this section, either delete content/home/teaching.md or edit the front
     </item>
     
     <item>
-      <title>Tags</title>
+      <title>标签</title>
       <link>https://szthanatos.github.io/home/tags/</link>
       <pubDate>Wed, 20 Sep 2017 00:00:00 +0800</pubDate>
       
@@ -104,7 +104,7 @@ To remove this section, either delete content/home/teaching.md or edit the front
     </item>
     
     <item>
-      <title>[了解我](about)</title>
+      <title>[关于](about)</title>
       <link>https://szthanatos.github.io/home/contact/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0800</pubDate>
       
