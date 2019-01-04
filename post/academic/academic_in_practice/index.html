@@ -540,16 +540,11 @@ cd ..
 
 <pre><code class="language-bash">#!/bin/bash
 
-echo &quot;\033[0;32m
------------------------------
-Updating content to GitHub...
------------------------------
-\033[0m&quot;
-
 # Receive args.
 TIME_NOW=$(date +%T\ %F)
 if [ $# -eq 0 ]; then 
   MSG=&quot;Change something nobody knows at ${TIME_NOW}...&quot;
+  EDITED_FILE=&quot;.&quot;
 elif [ $# -eq 1 ]; then 
   MSG=&quot;$1&quot;
   EDITED_FILE=&quot;.&quot;
@@ -558,6 +553,17 @@ else
   shift 1
   EDITED_FILE=&quot;$*&quot;
 fi
+
+echo -e &quot;\033[0;32mBuilding\033[0m&quot;
+
+# Build the project.
+hugo # if using a theme, replace with `hugo -t &lt;YOURTHEME&gt;`
+
+echo &quot;\033[0;32m
+-----------------------------
+Updating content to GitHub...
+-----------------------------
+\033[0m&quot;
 
 # Add changes to git.
 git add $EDITED_FILE
@@ -894,6 +900,8 @@ cd ..
         <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/shell.min.js"></script>
         
         <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/sql.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/properties.min.js"></script>
         
       
 

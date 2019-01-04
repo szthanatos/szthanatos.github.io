@@ -31,12 +31,12 @@
     </item>
     
     <item>
-      <title>Tmux</title>
+      <title>Tmux in 10 minutes</title>
       <link>https://szthanatos.github.io/post/tmux/</link>
       <pubDate>Tue, 01 Jan 2019 12:27:05 +0800</pubDate>
       
       <guid>https://szthanatos.github.io/post/tmux/</guid>
-      <description></description>
+      <description>目录 简介 安装tmux 基础概念 配置 常用控制 会话 窗口 窗格 tpm插件 鼠标操作 简介 Tmux是一个终端复用软件，默认的Linux终端一个会话只能干一件</description>
     </item>
     
     <item>
