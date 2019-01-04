@@ -861,77 +861,94 @@ cd ..
 &lt;p&gt;实际上我们干脆连第五步也放进去呗：&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;#!/bin/bash
-
 # Receive args.
-TIME_NOW=$(date +%T\ %F)
-if [ $# -eq 0 ]; then 
-  MSG=&amp;quot;Change something nobody knows at ${TIME_NOW}...&amp;quot;
-  EDITED_FILE=&amp;quot;.&amp;quot;
-elif [ $# -eq 1 ]; then 
-  MSG=&amp;quot;$1&amp;quot;
-  EDITED_FILE=&amp;quot;.&amp;quot;
+if [ $1 = &amp;quot;push&amp;quot; ]; then
+    if [ $# -eq 1 ]; then
+        TIME_NOW=$(date +%T\ %F)
+        MSG=&amp;quot;Change something nobody knows at ${TIME_NOW}...&amp;quot;
+        EDITED_FILE=&amp;quot;.&amp;quot;
+
+    elif [ $# -eq 2 ]; then
+        MSG=&amp;quot;$2&amp;quot;
+        EDITED_FILE=&amp;quot;.&amp;quot;
+
+    elif [ $# -gt 2 ]; then
+        MSG=&amp;quot;$2&amp;quot;
+        shift 2
+        EDITED_FILE=&amp;quot;$*&amp;quot;
+
+    else
+        echo &amp;quot;WTF?&amp;quot;
+
+    fi
+
+    echo &amp;quot;\033[0;32m
+    ---------------------------
+    Deploying to GitHub Page...
+    ---------------------------
+    \033[0m&amp;quot;
+
+    # Build the project.
+    hugo # if using a theme, replace with `hugo -t &amp;lt;YOURTHEME&amp;gt;`
+
+    # Go To Public folder
+    cd public
+
+    # Add changes to git.
+    git add .
+
+    # Commit changes.
+    git commit -m &amp;quot;$MSG&amp;quot;
+
+    # Push source and build repos.
+    git push origin master
+
+    # Come Back up to the Project Root
+    cd ..
+
+    echo &amp;quot;\033[0;32m
+    -----------------------------
+    Updating content to GitHub...
+    -----------------------------
+    \033[0m&amp;quot;
+
+    # Add changes to git.
+    git add $EDITED_FILE
+
+    # Commit changes.
+    git commit -m &amp;quot;$MSG&amp;quot;
+
+    # Push source and build repos.
+    git push origin master
+
+elif [ $1 = &amp;quot;pull&amp;quot; ]; then
+
+    # Update main repo.
+    git pull
+
+    # Update submodule.
+    git submodule update
+
+    echo &amp;quot;Synchronize finish.&amp;quot;
+
 else
-  MSG=&amp;quot;$1&amp;quot;
-  shift 1
-  EDITED_FILE=&amp;quot;$*&amp;quot;
+    echo &amp;quot;Determine What you wanna do.&amp;quot;
+    
 fi
-
-echo -e &amp;quot;\033[0;32mBuilding\033[0m&amp;quot;
-
-# Build the project.
-hugo # if using a theme, replace with `hugo -t &amp;lt;YOURTHEME&amp;gt;`
-
-echo &amp;quot;\033[0;32m
------------------------------
-Updating content to GitHub...
------------------------------
-\033[0m&amp;quot;
-
-# Add changes to git.
-git add $EDITED_FILE
-
-# Commit changes.
-git commit -m &amp;quot;$MSG&amp;quot;
-
-# Push source and build repos.
-git push origin master
-
-# ---------
-echo &amp;quot;\033[0;32m
----------------------------
-Deploying to GitHub Page...
----------------------------
-\033[0m&amp;quot;
-
-# Build the project.
-hugo # if using a theme, replace with `hugo -t &amp;lt;YOURTHEME&amp;gt;`
-
-# Go To Public folder
-cd public
-
-# Add changes to git.
-git add .
-
-# Commit changes.
-git commit -m &amp;quot;$MSG&amp;quot;
-
-# Push source and build repos.
-git push origin master
-
-# Come Back up to the Project Root
-cd ..
 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;将脚本保存为&lt;code&gt;deploy.sh&lt;/code&gt;，放到项目根目录下，完成修改后执行&lt;code&gt;./deploy.sh&lt;/code&gt;一键更新/部署。&lt;/p&gt;
+&lt;p&gt;将脚本保存为&lt;code&gt;deploy.sh&lt;/code&gt;，放到项目根目录下，完成修改后执行&lt;code&gt;./deploy.sh&lt;/code&gt; + &lt;code&gt;pull&lt;/code&gt;/&lt;code&gt;push&lt;/code&gt;一键从服务器同步/提交+部署。&lt;/p&gt;
 
-&lt;p&gt;可选参数的第一个是你的commit message，建议还是写点啥：&lt;/p&gt;
+&lt;p&gt;参数的第一个是你要执行的动作，从远程服务器down到本地的话就是&lt;code&gt;./deploy.sh pull&lt;/code&gt;，不用接别的。&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;./deploy.sh &amp;quot;{Your optional commit message}&amp;quot;&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;如果是要将更新上传到服务器并部署，那就执行&lt;code&gt;./deploy.sh push&lt;/code&gt; + commit message，提交消息可以不写(但最好还是写一下)：&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;./deploy.sh push &amp;quot;{Your optional commit message}&amp;quot;&lt;/code&gt;。&lt;/p&gt;
 
 &lt;p&gt;如果修改了多个文件，只想提交其中的一部分文件以保持commit的纯净，那就在mesaage后面附加你要提交的文件路径(不超过10个&amp;hellip;)：&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;./deploy.sh &amp;quot;{Your optional commit message}&amp;quot; path1 path2...&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;./deploy.sh push &amp;quot;{Your optional commit message}&amp;quot; path1 path2...&lt;/code&gt;。&lt;/p&gt;
 
 &lt;h2 id=&#34;个性化配置&#34;&gt;个性化配置&lt;/h2&gt;
 
