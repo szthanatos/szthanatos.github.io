@@ -13,6 +13,15 @@
     
     
     <item>
+      <title>Git三棵树和reset/checkout命令</title>
+      <link>https://szthanatos.github.io/post/git_trees/</link>
+      <pubDate>Sat, 05 Jan 2019 14:13:21 +0800</pubDate>
+      
+      <guid>https://szthanatos.github.io/post/git_trees/</guid>
+      <description>理解Git没有比从三棵树开始更好的了。 完整的话还是看git文档比较好，说的蛮清楚了。 三棵树和正向流程 树 用途 HEAD 上一次提交的快照，下一次提交的父</description>
+    </item>
+    
+    <item>
       <title>(翻译)(草稿)Academic文档-编写内容</title>
       <link>https://szthanatos.github.io/post/academic/trans_writing_content/</link>
       <pubDate>Tue, 01 Jan 2019 12:54:29 +0800</pubDate>
@@ -40,12 +49,12 @@
     </item>
     
     <item>
-      <title>Git_tips</title>
+      <title>Git Tips</title>
       <link>https://szthanatos.github.io/post/git_tips/</link>
       <pubDate>Fri, 14 Dec 2018 09:35:32 +0800</pubDate>
       
       <guid>https://szthanatos.github.io/post/git_tips/</guid>
-      <description>目录 Deploy key/SSH key(github) 更换git协议 强制覆盖本地文件 Deploy key/SSH key(github) Deploy key是在项目主页-setting-Delpoy keys下进行添加，如果勾选Allow write ac</description>
+      <description>目录 Deploy key/SSH key(github) 更换git协议 强制覆盖本地文件 撤销修改 add之前撤销 commit之前撤销 push之前撤销 Deploy key/SSH key(github) Deploy key是在项目主页-setting</description>
     </item>
     
     <item>

@@ -15,7 +15,7 @@
   
     
   
-  <meta name="description" content="目录 Deploy key/SSH key(github) 更换git协议 强制覆盖本地文件 Deploy key/SSH key(github) Deploy key是在项目主页-setting-Delpoy keys下进行添加，如果勾选Allow write ac">
+  <meta name="description" content="目录 Deploy key/SSH key(github) 更换git协议 强制覆盖本地文件 撤销修改 add之前撤销 commit之前撤销 push之前撤销 Deploy key/SSH key(github) Deploy key是在项目主页-setting">
 
   
   <link rel="alternate" hreflang="zh-cn" href="https://szthanatos.github.io/post/git_tips/">
@@ -105,8 +105,8 @@
   
   <meta property="og:site_name" content="Kryptonite Lab">
   <meta property="og:url" content="https://szthanatos.github.io/post/git_tips/">
-  <meta property="og:title" content="Git_tips | Kryptonite Lab">
-  <meta property="og:description" content="目录 Deploy key/SSH key(github) 更换git协议 强制覆盖本地文件 Deploy key/SSH key(github) Deploy key是在项目主页-setting-Delpoy keys下进行添加，如果勾选Allow write ac"><meta property="og:image" content="https://szthanatos.github.io/img/portrait.jpg">
+  <meta property="og:title" content="Git Tips | Kryptonite Lab">
+  <meta property="og:description" content="目录 Deploy key/SSH key(github) 更换git协议 强制覆盖本地文件 撤销修改 add之前撤销 commit之前撤销 push之前撤销 Deploy key/SSH key(github) Deploy key是在项目主页-setting"><meta property="og:image" content="https://szthanatos.github.io/img/portrait.jpg">
   <meta property="og:locale" content="zh-cn">
   
   <meta property="article:published_time" content="2018-12-14T09:35:32&#43;08:00">
@@ -118,7 +118,7 @@
 
   
 
-  <title>Git_tips | Kryptonite Lab</title>
+  <title>Git Tips | Kryptonite Lab</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
@@ -277,7 +277,7 @@
   
   
 <div class="article-container pt-3">
-  <h1 itemprop="name">Git_tips</h1>
+  <h1 itemprop="name">Git Tips</h1>
 
   
 
@@ -307,7 +307,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    1 分钟阅读时间
+    2 分钟阅读时间
   </span>
   
 
@@ -357,6 +357,12 @@
 <li><a href="#deploy-key-ssh-key-github">Deploy key/SSH key(github)</a></li>
 <li><a href="#更换git协议">更换git协议</a></li>
 <li><a href="#强制覆盖本地文件">强制覆盖本地文件</a></li>
+<li><a href="#撤销修改">撤销修改</a>
+<ul>
+<li><a href="#add之前撤销">add之前撤销</a></li>
+<li><a href="#commit之前撤销">commit之前撤销</a></li>
+<li><a href="#push之前撤销">push之前撤销</a></li>
+</ul></li>
 </ul></li>
 </ul>
 </nav>
@@ -397,6 +403,31 @@ origin  git@github.com:abc/bcd.git (push)
 
 <pre><code class="language-bash">git fetch --all  
 git reset --hard origin/master 
+</code></pre>
+
+<h2 id="撤销修改">撤销修改</h2>
+
+<h3 id="add之前撤销">add之前撤销</h3>
+
+<pre><code class="language-bash"># 单个文件
+git checkout FileName
+
+# 所有文件
+git checkout .
+</code></pre>
+
+<h3 id="commit之前撤销">commit之前撤销</h3>
+
+<pre><code class="language-bash"># 取消暂存
+git reset HEAD FileName
+
+# 撤销修改
+git checkout FileName
+</code></pre>
+
+<h3 id="push之前撤销">push之前撤销</h3>
+
+<pre><code class="language-bash">git reset [--hard|soft|mixed] [commit|HEAD]
 </code></pre>
 
     </div>
