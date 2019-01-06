@@ -315,7 +315,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    8 分钟阅读时间
+    9 分钟阅读时间
   </span>
   
 
@@ -391,6 +391,7 @@
 <li><a href="#给文章添加头部背景">给文章添加头部背景</a></li>
 <li><a href="#目录">目录</a></li>
 <li><a href="#注意-警告标识">注意/警告标识</a></li>
+<li><a href="#修改模板">修改模板</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -744,6 +745,41 @@ fi
 
 </div>
 
+
+<h3 id="修改模板">修改模板</h3>
+
+<p>比如你看到我每个文章结尾都有一个<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><code>CC4.0协议</code></a>的标志，这个肯定不是一篇篇手动添加的，实际上我是自己写了一个License的Widget，插入到文章的模板里面实现的。</p>
+
+<div class="alert alert-warning">
+  <p>不要直接修改<code>theme</code>里面的内容，否则更新主题的时候会非常尴尬。</p>
+
+</div>
+
+
+<p>正确的做法是在项目根目录建立<code>layouts</code>文件夹，将你想修改的模板从<code>themes/academic/layouts</code>拷贝过来再修改。</p>
+
+<p>现在Academic主题的layouts大概是这样的：</p>
+
+<ul>
+<li><code>_default</code>: 默认文章相关模板；</li>
+<li><code>docs</code>: 文档相关模板;</li>
+<li><code>home</code>: 主页相关模板;</li>
+<li><code>partials</code>: 小部件相关模板，页面头部/脚注/摘要等等的都在这;
+
+<ul>
+<li>额外的有一个<code>widgets</code>文件夹，里面是主页的widget的模板；</li>
+</ul></li>
+<li><code>project</code>: 项目相关模板;</li>
+<li><code>publication</code>: 出版物相关模板;</li>
+<li><code>section</code>: 摘要相关模板;</li>
+<li><code>shortcodes</code>: Academic提供的额外效果模板，你写的所有<code>{</code><code>{%%}}</code>的内容效果都出自这里;</li>
+<li><code>slides</code>: 幻灯片相关模板;</li>
+<li><code>talk</code>: 宣讲相关模板;</li>
+</ul>
+
+<p>继续用我自己做例子，我新建了<code>layouts/partials/license.html</code>，把CC协议相关内容存了进去，
+接着，复制主题目录下的<code>layouts/_default/single.html</code>到对应位置，在合适地方插入一句<code>{{ partial &quot;license.html&quot; . }}</code>，表明我要在这里使用名为<code>license.html</code>的<code>partial</code>。
+再之后就是你们看到的效果了。</p>
 
     </div>
 

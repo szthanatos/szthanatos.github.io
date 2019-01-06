@@ -818,6 +818,7 @@ git checkout FileName
 &lt;li&gt;&lt;a href=&#34;#给文章添加头部背景&#34;&gt;给文章添加头部背景&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#目录&#34;&gt;目录&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#注意-警告标识&#34;&gt;注意/警告标识&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#修改模板&#34;&gt;修改模板&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -1171,6 +1172,41 @@ fi
 
 &lt;/div&gt;
 
+
+&lt;h3 id=&#34;修改模板&#34;&gt;修改模板&lt;/h3&gt;
+
+&lt;p&gt;比如你看到我每个文章结尾都有一个&lt;a href=&#34;http://creativecommons.org/licenses/by-sa/4.0/&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;CC4.0协议&lt;/code&gt;&lt;/a&gt;的标志，这个肯定不是一篇篇手动添加的，实际上我是自己写了一个License的Widget，插入到文章的模板里面实现的。&lt;/p&gt;
+
+&lt;div class=&#34;alert alert-warning&#34;&gt;
+  &lt;p&gt;不要直接修改&lt;code&gt;theme&lt;/code&gt;里面的内容，否则更新主题的时候会非常尴尬。&lt;/p&gt;
+
+&lt;/div&gt;
+
+
+&lt;p&gt;正确的做法是在项目根目录建立&lt;code&gt;layouts&lt;/code&gt;文件夹，将你想修改的模板从&lt;code&gt;themes/academic/layouts&lt;/code&gt;拷贝过来再修改。&lt;/p&gt;
+
+&lt;p&gt;现在Academic主题的layouts大概是这样的：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;_default&lt;/code&gt;: 默认文章相关模板；&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;docs&lt;/code&gt;: 文档相关模板;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;home&lt;/code&gt;: 主页相关模板;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;partials&lt;/code&gt;: 小部件相关模板，页面头部/脚注/摘要等等的都在这;
+
+&lt;ul&gt;
+&lt;li&gt;额外的有一个&lt;code&gt;widgets&lt;/code&gt;文件夹，里面是主页的widget的模板；&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;project&lt;/code&gt;: 项目相关模板;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;publication&lt;/code&gt;: 出版物相关模板;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;section&lt;/code&gt;: 摘要相关模板;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;shortcodes&lt;/code&gt;: Academic提供的额外效果模板，你写的所有&lt;code&gt;{&lt;/code&gt;&lt;code&gt;{%%}}&lt;/code&gt;的内容效果都出自这里;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;slides&lt;/code&gt;: 幻灯片相关模板;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;talk&lt;/code&gt;: 宣讲相关模板;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;继续用我自己做例子，我新建了&lt;code&gt;layouts/partials/license.html&lt;/code&gt;，把CC协议相关内容存了进去，
+接着，复制主题目录下的&lt;code&gt;layouts/_default/single.html&lt;/code&gt;到对应位置，在合适地方插入一句&lt;code&gt;{{ partial &amp;quot;license.html&amp;quot; . }}&lt;/code&gt;，表明我要在这里使用名为&lt;code&gt;license.html&lt;/code&gt;的&lt;code&gt;partial&lt;/code&gt;。
+再之后就是你们看到的效果了。&lt;/p&gt;
 </description>
     </item>
     
