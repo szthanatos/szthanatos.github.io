@@ -204,7 +204,7 @@
     </item>
     
     <item>
-      <title>(翻译)(草稿)Academic文档-管理内容</title>
+      <title>(翻译)Academic文档-内容管理</title>
       <link>https://szthanatos.github.io/post/academic/trans_managing_content/</link>
       <pubDate>Tue, 01 Jan 2019 12:54:11 +0800</pubDate>
       
@@ -214,7 +214,7 @@
 &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;p&gt;本文是对&lt;a href=&#34;https://sourcethemes.com/academic/docs/managing-content/&#34; target=&#34;_blank&#34;&gt;Academic文档-Managing content章节&lt;/a&gt;的个人翻译，基于个人理解，不保证绝对准确。&lt;/p&gt;
 
-&lt;p&gt;原文详见连接。&lt;/p&gt;
+&lt;p&gt;原文见上方连接。&lt;/p&gt;
 
 &lt;/div&gt;
 
@@ -232,12 +232,13 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#自动&#34;&gt;自动&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#手动&#34;&gt;手动&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#关联其它资源&#34;&gt;关联其它资源&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#创建博文&#34;&gt;创建博文&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#创建项目&#34;&gt;创建项目&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#创建演讲&#34;&gt;创建演讲&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#创建幻灯片&#34;&gt;创建幻灯片&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#创建文档&#34;&gt;创建文档&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#创建课程或文档&#34;&gt;创建课程或文档&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#创建小部件页面&#34;&gt;创建小部件页面&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#创建其他页面-e-g-简历&#34;&gt;创建其他页面(e.g. 简历)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#管理列表页&#34;&gt;管理列表页&lt;/a&gt;&lt;/li&gt;
@@ -324,29 +325,199 @@ comments = false  # 显示评论区
 
 &lt;h3 id=&#34;自动&#34;&gt;自动&lt;/h3&gt;
 
+&lt;p&gt;先进的文献管理工具可以帮助你将你的出版物转化为开源的BibTeX格式。
+如果你是新手的话我们推荐你使用流行的开源工具&lt;a href=&#34;https://www.zotero.org/&#34; target=&#34;_blank&#34;&gt;Zotero&lt;/a&gt;来管理你的文献。&lt;/p&gt;
+
+&lt;p&gt;在你的文献管理工具中创建你自己的出版物列表并导出为&lt;code&gt;*.bib&lt;/code&gt;格式的BibTeX文件。&lt;/p&gt;
+
+&lt;p&gt;工具需要Python3环境，所以请先&lt;a href=&#34;https://realpython.com/installing-python/&#34; target=&#34;_blank&#34;&gt;安装Python3&lt;/a&gt;。
+同样，为了让你有机会检查Academic管理工具产生的改变，你需要备份你的站点，或者确保它已经处于Git的管理之中。&lt;/p&gt;
+
+&lt;p&gt;打开你的终端或者命令提示符应用，安装Academic管理工具：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;pip3 install -U academic
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;使用&lt;code&gt;cd&lt;/code&gt;命令进入你的站点目录。&lt;/p&gt;
+
+&lt;p&gt;之后，导入你的出版物：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;academic import --bibtex &amp;lt;path_to_your/publications.bib&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这个工具尚处于测试阶段，目的是为了给你提供辅助。
+所以在发布你的站点之前你应该检查&lt;code&gt;publications&lt;/code&gt;文件夹下产生的内容。
+你同样可以看看下一章节&lt;code&gt;手动&lt;/code&gt;部分有关扉页参数的细节，以想办法增强展示效果。&lt;/p&gt;
+
+&lt;p&gt;想要支持这个工具或者提供建议/反馈，请查看&lt;a href=&#34;https://github.com/sourcethemes/academic-admin&#34; target=&#34;_blank&#34;&gt;Academic admin tool项目主页&lt;/a&gt;。&lt;/p&gt;
+
 &lt;h3 id=&#34;手动&#34;&gt;手动&lt;/h3&gt;
+
+&lt;p&gt;另一种选择，使用命令手动的创建出版物：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;hugo new --kind publication publication/&amp;lt;my-publication&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;my-publication&amp;gt;&lt;/code&gt;是你得出版物的名称，使用&lt;code&gt;-&lt;/code&gt;代替空格。&lt;/p&gt;
+
+&lt;p&gt;之后，编辑&lt;code&gt;content/publication/&amp;lt;my-publication&amp;gt;/index.md&lt;/code&gt;内含有你的出版物信息的参数。主要参数如下：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;title&lt;/strong&gt;: 标题&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;date&lt;/strong&gt;: 发布日期 (必须使用有效的TOML日期格式)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;publication_types&lt;/strong&gt;: 使用图例来说明你出版物的类型, e.g. conference proceedings&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;publication&lt;/strong&gt;: 你的出版物发布在什么地方 - 允许使用Markdown以标注斜体或其他.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;abstract&lt;/strong&gt;: 摘要&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;使用Markdown格式将你出版物的细节写到文档的正文部分(在&lt;code&gt;+++&lt;/code&gt;部分之后)。
+内容会出现在你的出版物页之上。&lt;/p&gt;
+
+&lt;p&gt;要使访客能够阅读到你的作品，将作品的PDF链接填入&lt;code&gt;url_pdf&lt;/code&gt;，或者将作品PDF文件放置到出版物目录并统一为相同命名，这样会自动生成PDF的链接。
+举例，如果你的出版物说明位于&lt;code&gt;publication/photons/index.md&lt;/code&gt;，将PDF文件重命名并放到&lt;code&gt;publication/photons/photons.pdf&lt;/code&gt;。&lt;/p&gt;
+
+&lt;h3 id=&#34;关联其它资源&#34;&gt;关联其它资源&lt;/h3&gt;
+
+&lt;p&gt;使用&lt;code&gt;url_&lt;/code&gt;链接以指向本地/网络内容。
+要关联本地内容的话将之复制到出版物文件夹并使用例如&lt;code&gt;url_code = &amp;quot;code.zip&amp;quot;&lt;/code&gt;的方式添加引用。&lt;/p&gt;
+
+&lt;p&gt;你也可以将下面的代码块添加到扉页，以使用自定义链接按钮：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;url_custom = [{name = &amp;quot;Custom Link 1&amp;quot;, url = &amp;quot;http://example.org&amp;quot;},
+              {name = &amp;quot;Custom Link 2&amp;quot;, url = &amp;quot;http://example.org&amp;quot;}]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div class=&#34;alert alert-warning&#34;&gt;
+  &lt;p&gt;想要在扉页的参数中使用双引号或者反斜杠需要额外添加一个反斜杠，_例子懒得翻_，更多信息请参阅&lt;a href=&#34;https://github.com/toml-lang/toml#user-content-string&#34; target=&#34;_blank&#34;&gt;TOML文档&lt;/a&gt;。&lt;/p&gt;
+
+&lt;/div&gt;
+
 
 &lt;h2 id=&#34;创建博文&#34;&gt;创建博文&lt;/h2&gt;
 
+&lt;p&gt;要创建一篇新文章：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;hugo new  --kind post post/my-article-name
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;然后用你的完整标题和内容填充新生成的&lt;code&gt;content/post/my-article-name.md&lt;/code&gt;文件。&lt;/p&gt;
+
+&lt;p&gt;Academic会自动生成内容摘要并显示在主页上。
+如果你不满意自动生成的摘要内容，你可以在文章内容中放置&lt;code&gt;&amp;lt;!&lt;/code&gt;&lt;code&gt;--more--&amp;gt;&lt;/code&gt;以限定摘要的长度，
+或者像这样：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;summary = &amp;quot;Summary of my post.&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;在扉页内添加&lt;code&gt;summary&lt;/code&gt;参数以覆盖自动生成的摘要。&lt;/p&gt;
+
+&lt;p&gt;要为特定的文章禁止评论，在扉页添加&lt;code&gt;disable_comments = true&lt;/code&gt;参数。
+要全局的禁止评论的话，在&lt;code&gt;config.toml&lt;/code&gt;中设置&lt;code&gt;disqusShortname = &amp;quot;&amp;quot;&lt;/code&gt;或者&lt;code&gt;disable_comments = true&lt;/code&gt;。&lt;/p&gt;
+
 &lt;h2 id=&#34;创建项目&#34;&gt;创建项目&lt;/h2&gt;
+
+&lt;p&gt;要创建一个项目：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;hugo new  --kind project project/my-project-name
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;之后编辑新生成的&lt;code&gt;content/project/my-project-name.md&lt;/code&gt;文件。
+在扉页将&lt;code&gt;external_link = &amp;quot;http://external-project.com&amp;quot;&lt;/code&gt;设置成已经存在的项目网址，
+或者也可以手动在正文中介绍项目的情况。&lt;/p&gt;
 
 &lt;h2 id=&#34;创建演讲&#34;&gt;创建演讲&lt;/h2&gt;
 
+&lt;p&gt;要创建一个演讲：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;hugo new  --kind talk talk/my-talk-name
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;然后用你的完整标题和内容填充新生成的&lt;code&gt;content/talk/my-talk-name.md&lt;/code&gt;文件。
+你会注意到演讲的很多参数和出版物是类似的。&lt;/p&gt;
+
 &lt;h2 id=&#34;创建幻灯片&#34;&gt;创建幻灯片&lt;/h2&gt;
 
-&lt;h2 id=&#34;创建文档&#34;&gt;创建文档&lt;/h2&gt;
+&lt;p&gt;可以使用Markdown非常高效的创建幻灯片并通过你的网站分享给观众。
+甚至还包括演讲者笔记。&lt;/p&gt;
+
+&lt;p&gt;查看&lt;a href=&#34;https://themes.gohugo.io//theme/academic/slides/example-slides#/&#34; target=&#34;_blank&#34;&gt;slides demo&lt;/a&gt;
+——尽管你可以注意到这个幻灯片是由Hugo团队制作的，并且他们缩减了一些功能。
+运行&lt;code&gt;themes/academic/exampleSite/&lt;/code&gt;下的示例站点以查看完整的包含演讲者笔记的示例。&lt;/p&gt;
+
+&lt;p&gt;查看&lt;code&gt;themes/academic/exampleSite/content/slides/example-slides.md&lt;/code&gt;内的&lt;code&gt;example slide deck&lt;/code&gt;以开始学习。&lt;/p&gt;
+
+&lt;p&gt;在演讲/出版物页面使用&lt;code&gt;url_slides&lt;/code&gt;参数来关联到幻灯片。
+比如，&lt;code&gt;url_slides = &amp;quot;slides/example-slides&amp;quot;&lt;/code&gt;可以关联到上面的示例站点。
+在&lt;a href=&#34;https://raw.githubusercontent.com/gcushen/hugo-academic/master/exampleSite/content/talk/example/index.md&#34; target=&#34;_blank&#34;&gt;这里&lt;/a&gt;可以看到包含&lt;code&gt;url_slides&lt;/code&gt;的完整扉页的示例。&lt;/p&gt;
+
+&lt;h2 id=&#34;创建课程或文档&#34;&gt;创建课程或文档&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;文档&lt;/em&gt; 是用来&lt;strong&gt;分享知识&lt;/strong&gt;的。常见例子包括在线课程、教程、软件文档以及知识库。&lt;/p&gt;
+
+&lt;p&gt;你现在阅读的这个页面(不是我翻译之后的这个)就是用_文档_的方式来展现Academic相关的。
+同样，这里也有一个&lt;a href=&#34;https://themes.gohugo.io//theme/academic/tutorial/&#34; target=&#34;_blank&#34;&gt;在线课程&lt;/a&gt;的例子。&lt;/p&gt;
+
+&lt;p&gt;查看&lt;code&gt;themes/academic/exampleSite/content/tutorial/&lt;/code&gt;的示例以学习如何开始。&lt;/p&gt;
+
+&lt;p&gt;如果你是一名使用R语言的数据分析师/数据科学家(e.g. RStudio and RMarkdown)，我们推荐你阅读&lt;a href=&#34;https://github.com/sourcethemes/project-kickstart-r&#34; target=&#34;_blank&#34;&gt;R boilerplate project on GitHub&lt;/a&gt;。&lt;/p&gt;
 
 &lt;h2 id=&#34;创建小部件页面&#34;&gt;创建小部件页面&lt;/h2&gt;
 
+&lt;p&gt;你是否想利用Academic的小部件系统，创建一个和Academic主页类似的页面？&lt;/p&gt;
+
+&lt;p&gt;在你的&lt;code&gt;content&lt;/code&gt;文件夹下创建一个新的，以你的页面命名的文件夹。在这个例子中我们将创建&lt;code&gt;content/tutorials/&lt;/code&gt;文件夹以创建我们的tutorials页。&lt;/p&gt;
+
+&lt;p&gt;在新建的&lt;code&gt;content/tutorials/&lt;/code&gt;文件夹下创建一个名为&lt;code&gt;_index.md&lt;/code&gt;的文件，内容如下：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;+++
+title = &amp;quot;Tutorials&amp;quot;  # Add a page title.
+date = 2017-01-01T00:00:00  # Add today&#39;s date.
+widgets = true  # Page type is a Widget Page.
+summary = &amp;quot;&amp;quot;  # Add a page description.
++++
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;将你的小部件放入&lt;code&gt;content/tutorials/&lt;/code&gt;文件夹，可以通过复制&lt;code&gt;content/home/&lt;/code&gt;下的小部件或者从&lt;a href=&#34;https://github.com/gcushen/hugo-academic/tree/master/exampleSite/content/home&#34; target=&#34;_blank&#34;&gt;Github&lt;/a&gt;上下载来实现。&lt;/p&gt;
+
 &lt;h2 id=&#34;创建其他页面-e-g-简历&#34;&gt;创建其他页面(e.g. 简历)&lt;/h2&gt;
+
+&lt;p&gt;其他类型内容的话，可以创建自己的自定义页面。
+例如，我们在&lt;code&gt;content&lt;/code&gt;文件夹下创建一个&lt;code&gt;cv.md&lt;/code&gt;简历页面。复制任意一个文章的扉页，根据需要进行调整，然后在下面编辑Markdown内容。
+再之后，您可以使用&lt;code&gt;[My CV]{&lt;/code&gt;&lt;code&gt;{&amp;lt; ref &amp;quot;cv.md&amp;quot; &amp;gt;}}&lt;/code&gt;代码将简历添加到任何现有页面的内容上。&lt;/p&gt;
+
+&lt;p&gt;或者，在上面的例子中，我们可以使用简历的PDF文件。为此，在&lt;code&gt;static&lt;/code&gt;文件夹中创建名为&lt;code&gt;files&lt;/code&gt;的文件夹，并将名为&lt;code&gt;cv.pdf&lt;/code&gt;的PDF文件移动到该位置。
+然后可以使用以下代码将PDF文件链接到你的任意内容中：&lt;code&gt;{&lt;/code&gt;&lt;code&gt;{% staticref &amp;quot;files/cv.pdf&amp;quot; %}}&lt;/code&gt;&lt;code&gt;下载我的简历&lt;/code&gt;&lt;code&gt;{&lt;/code&gt;&lt;code&gt;{% /staticref %}}&lt;/code&gt;。&lt;/p&gt;
 
 &lt;h2 id=&#34;管理列表页&#34;&gt;管理列表页&lt;/h2&gt;
 
+&lt;p&gt;档案(archive，我理解的就是列表)页或者说节点页，是列出你所有内容的特殊页面。
+博客文章、出版物、演讲都会有列表页。
+如果存在一个小部件放不下的内容的话，主页上的小部件会自动链接到列表页。
+因此，如果你没有足够多的内容的话你可能不会看到自动生成的链接——
+不过你也可以在文章中用一般的Markdown链接格式，手动的链接他们。&lt;/p&gt;
+
+&lt;p&gt;你可以通过将以下&lt;code&gt;_index.md&lt;/code&gt;文件从示例站点复制到你的&lt;code&gt;content/&lt;/code&gt;文件夹中的相同位置，来编辑标题并添加自己的内容（比如简介）：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;/themes/academic/exampleSite/content/post/_index.md
+/themes/academic/exampleSite/content/publication/_index.md
+/themes/academic/exampleSite/content/talk/_index.md
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;之后，根据需要编辑每个&lt;code&gt;_index.md&lt;/code&gt;中的&lt;code&gt;title&lt;/code&gt;参数，并在扉页之后添加任何内容。
+你可能注意到&lt;code&gt;_index.md&lt;/code&gt;文件略有不同，其中一些具有可用于关联内容类型的特殊选项。
+例如，&lt;code&gt;publication/_index.md&lt;/code&gt;包含用于设置出版物列表页面上显示的列表的引用样式的选项。&lt;/p&gt;
+
 &lt;h2 id=&#34;移除内容&#34;&gt;移除内容&lt;/h2&gt;
+
+&lt;p&gt;通常来说，要移除任意内容，简单的从你的&lt;code&gt;content/post&lt;/code&gt;、&lt;code&gt;content/publication&lt;/code&gt;、&lt;code&gt;content/project&lt;/code&gt;或者&lt;code&gt;content/talk&lt;/code&gt;文件夹中删除对应页面文件即可。&lt;/p&gt;
 
 &lt;h2 id=&#34;查看站点更新&#34;&gt;查看站点更新&lt;/h2&gt;
 
+&lt;p&gt;在你对站点做出修改之后，你可以通过执行&lt;code&gt;hugo server&lt;/code&gt;并在浏览器中打开&lt;a href=&#34;http://localhost:1313/&#34; target=&#34;_blank&#34;&gt;http://localhost:1313/&lt;/a&gt; 来看到效果。&lt;/p&gt;
+
 &lt;h2 id=&#34;部署站点&#34;&gt;部署站点&lt;/h2&gt;
+
+&lt;p&gt;最后，你可以&lt;a href=&#34;https://sourcethemes.com/academic/docs/deployment/&#34; target=&#34;_blank&#34;&gt;部署你的站点&lt;/a&gt;了。&lt;/p&gt;
 </description>
     </item>
     

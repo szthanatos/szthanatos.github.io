@@ -15,7 +15,7 @@
   
     
   
-  <meta name="description" content="本文是对Academic文档-Managing content章节的个人翻译，基于个人理解，不保证绝对准确。 原文详见连接。 目录 精选图片 标题图片">
+  <meta name="description" content="本文是对Academic文档-Managing content章节的个人翻译，基于个人理解，不保证绝对准确。 原文见上方连接。 目录 精选图片 标题图">
 
   
   <link rel="alternate" hreflang="zh-cn" href="https://szthanatos.github.io/post/academic/trans_managing_content/">
@@ -105,8 +105,8 @@
   
   <meta property="og:site_name" content="Kryptonite Lab">
   <meta property="og:url" content="https://szthanatos.github.io/post/academic/trans_managing_content/">
-  <meta property="og:title" content="(翻译)(草稿)Academic文档-管理内容 | Kryptonite Lab">
-  <meta property="og:description" content="本文是对Academic文档-Managing content章节的个人翻译，基于个人理解，不保证绝对准确。 原文详见连接。 目录 精选图片 标题图片"><meta property="og:image" content="https://szthanatos.github.io/img/portrait.jpg">
+  <meta property="og:title" content="(翻译)Academic文档-内容管理 | Kryptonite Lab">
+  <meta property="og:description" content="本文是对Academic文档-Managing content章节的个人翻译，基于个人理解，不保证绝对准确。 原文见上方连接。 目录 精选图片 标题图"><meta property="og:image" content="https://szthanatos.github.io/img/portrait.jpg">
   <meta property="og:locale" content="zh-cn">
   
   <meta property="article:published_time" content="2019-01-01T12:54:11&#43;08:00">
@@ -118,7 +118,7 @@
 
   
 
-  <title>(翻译)(草稿)Academic文档-管理内容 | Kryptonite Lab</title>
+  <title>(翻译)Academic文档-内容管理 | Kryptonite Lab</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
@@ -277,7 +277,7 @@
   
   
 <div class="article-container pt-3">
-  <h1 itemprop="name">(翻译)(草稿)Academic文档-管理内容</h1>
+  <h1 itemprop="name">(翻译)Academic文档-内容管理</h1>
 
   
 
@@ -307,7 +307,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    3 分钟阅读时间
+    9 分钟阅读时间
   </span>
   
 
@@ -365,7 +365,7 @@
 <div class="alert alert-note">
   <p>本文是对<a href="https://sourcethemes.com/academic/docs/managing-content/" target="_blank">Academic文档-Managing content章节</a>的个人翻译，基于个人理解，不保证绝对准确。</p>
 
-<p>原文详见连接。</p>
+<p>原文见上方连接。</p>
 
 </div>
 
@@ -383,12 +383,13 @@
 <ul>
 <li><a href="#自动">自动</a></li>
 <li><a href="#手动">手动</a></li>
+<li><a href="#关联其它资源">关联其它资源</a></li>
 </ul></li>
 <li><a href="#创建博文">创建博文</a></li>
 <li><a href="#创建项目">创建项目</a></li>
 <li><a href="#创建演讲">创建演讲</a></li>
 <li><a href="#创建幻灯片">创建幻灯片</a></li>
-<li><a href="#创建文档">创建文档</a></li>
+<li><a href="#创建课程或文档">创建课程或文档</a></li>
 <li><a href="#创建小部件页面">创建小部件页面</a></li>
 <li><a href="#创建其他页面-e-g-简历">创建其他页面(e.g. 简历)</a></li>
 <li><a href="#管理列表页">管理列表页</a></li>
@@ -475,29 +476,199 @@ comments = false  # 显示评论区
 
 <h3 id="自动">自动</h3>
 
+<p>先进的文献管理工具可以帮助你将你的出版物转化为开源的BibTeX格式。
+如果你是新手的话我们推荐你使用流行的开源工具<a href="https://www.zotero.org/" target="_blank">Zotero</a>来管理你的文献。</p>
+
+<p>在你的文献管理工具中创建你自己的出版物列表并导出为<code>*.bib</code>格式的BibTeX文件。</p>
+
+<p>工具需要Python3环境，所以请先<a href="https://realpython.com/installing-python/" target="_blank">安装Python3</a>。
+同样，为了让你有机会检查Academic管理工具产生的改变，你需要备份你的站点，或者确保它已经处于Git的管理之中。</p>
+
+<p>打开你的终端或者命令提示符应用，安装Academic管理工具：</p>
+
+<pre><code class="language-bash">pip3 install -U academic
+</code></pre>
+
+<p>使用<code>cd</code>命令进入你的站点目录。</p>
+
+<p>之后，导入你的出版物：</p>
+
+<pre><code class="language-bash">academic import --bibtex &lt;path_to_your/publications.bib&gt;
+</code></pre>
+
+<p>这个工具尚处于测试阶段，目的是为了给你提供辅助。
+所以在发布你的站点之前你应该检查<code>publications</code>文件夹下产生的内容。
+你同样可以看看下一章节<code>手动</code>部分有关扉页参数的细节，以想办法增强展示效果。</p>
+
+<p>想要支持这个工具或者提供建议/反馈，请查看<a href="https://github.com/sourcethemes/academic-admin" target="_blank">Academic admin tool项目主页</a>。</p>
+
 <h3 id="手动">手动</h3>
+
+<p>另一种选择，使用命令手动的创建出版物：</p>
+
+<pre><code class="language-bash">hugo new --kind publication publication/&lt;my-publication&gt;
+</code></pre>
+
+<p><code>&lt;my-publication&gt;</code>是你得出版物的名称，使用<code>-</code>代替空格。</p>
+
+<p>之后，编辑<code>content/publication/&lt;my-publication&gt;/index.md</code>内含有你的出版物信息的参数。主要参数如下：</p>
+
+<ul>
+<li><strong>title</strong>: 标题</li>
+<li><strong>date</strong>: 发布日期 (必须使用有效的TOML日期格式)</li>
+<li><strong>publication_types</strong>: 使用图例来说明你出版物的类型, e.g. conference proceedings</li>
+<li><strong>publication</strong>: 你的出版物发布在什么地方 - 允许使用Markdown以标注斜体或其他.</li>
+<li><strong>abstract</strong>: 摘要</li>
+</ul>
+
+<p>使用Markdown格式将你出版物的细节写到文档的正文部分(在<code>+++</code>部分之后)。
+内容会出现在你的出版物页之上。</p>
+
+<p>要使访客能够阅读到你的作品，将作品的PDF链接填入<code>url_pdf</code>，或者将作品PDF文件放置到出版物目录并统一为相同命名，这样会自动生成PDF的链接。
+举例，如果你的出版物说明位于<code>publication/photons/index.md</code>，将PDF文件重命名并放到<code>publication/photons/photons.pdf</code>。</p>
+
+<h3 id="关联其它资源">关联其它资源</h3>
+
+<p>使用<code>url_</code>链接以指向本地/网络内容。
+要关联本地内容的话将之复制到出版物文件夹并使用例如<code>url_code = &quot;code.zip&quot;</code>的方式添加引用。</p>
+
+<p>你也可以将下面的代码块添加到扉页，以使用自定义链接按钮：</p>
+
+<pre><code class="language-bash">url_custom = [{name = &quot;Custom Link 1&quot;, url = &quot;http://example.org&quot;},
+              {name = &quot;Custom Link 2&quot;, url = &quot;http://example.org&quot;}]
+</code></pre>
+
+<div class="alert alert-warning">
+  <p>想要在扉页的参数中使用双引号或者反斜杠需要额外添加一个反斜杠，_例子懒得翻_，更多信息请参阅<a href="https://github.com/toml-lang/toml#user-content-string" target="_blank">TOML文档</a>。</p>
+
+</div>
+
 
 <h2 id="创建博文">创建博文</h2>
 
+<p>要创建一篇新文章：</p>
+
+<pre><code class="language-bash">hugo new  --kind post post/my-article-name
+</code></pre>
+
+<p>然后用你的完整标题和内容填充新生成的<code>content/post/my-article-name.md</code>文件。</p>
+
+<p>Academic会自动生成内容摘要并显示在主页上。
+如果你不满意自动生成的摘要内容，你可以在文章内容中放置<code>&lt;!</code><code>--more--&gt;</code>以限定摘要的长度，
+或者像这样：</p>
+
+<pre><code class="language-bash">summary = &quot;Summary of my post.&quot;
+</code></pre>
+
+<p>在扉页内添加<code>summary</code>参数以覆盖自动生成的摘要。</p>
+
+<p>要为特定的文章禁止评论，在扉页添加<code>disable_comments = true</code>参数。
+要全局的禁止评论的话，在<code>config.toml</code>中设置<code>disqusShortname = &quot;&quot;</code>或者<code>disable_comments = true</code>。</p>
+
 <h2 id="创建项目">创建项目</h2>
+
+<p>要创建一个项目：</p>
+
+<pre><code class="language-bash">hugo new  --kind project project/my-project-name
+</code></pre>
+
+<p>之后编辑新生成的<code>content/project/my-project-name.md</code>文件。
+在扉页将<code>external_link = &quot;http://external-project.com&quot;</code>设置成已经存在的项目网址，
+或者也可以手动在正文中介绍项目的情况。</p>
 
 <h2 id="创建演讲">创建演讲</h2>
 
+<p>要创建一个演讲：</p>
+
+<pre><code class="language-bash">hugo new  --kind talk talk/my-talk-name
+</code></pre>
+
+<p>然后用你的完整标题和内容填充新生成的<code>content/talk/my-talk-name.md</code>文件。
+你会注意到演讲的很多参数和出版物是类似的。</p>
+
 <h2 id="创建幻灯片">创建幻灯片</h2>
 
-<h2 id="创建文档">创建文档</h2>
+<p>可以使用Markdown非常高效的创建幻灯片并通过你的网站分享给观众。
+甚至还包括演讲者笔记。</p>
+
+<p>查看<a href="https://themes.gohugo.io//theme/academic/slides/example-slides#/" target="_blank">slides demo</a>
+——尽管你可以注意到这个幻灯片是由Hugo团队制作的，并且他们缩减了一些功能。
+运行<code>themes/academic/exampleSite/</code>下的示例站点以查看完整的包含演讲者笔记的示例。</p>
+
+<p>查看<code>themes/academic/exampleSite/content/slides/example-slides.md</code>内的<code>example slide deck</code>以开始学习。</p>
+
+<p>在演讲/出版物页面使用<code>url_slides</code>参数来关联到幻灯片。
+比如，<code>url_slides = &quot;slides/example-slides&quot;</code>可以关联到上面的示例站点。
+在<a href="https://raw.githubusercontent.com/gcushen/hugo-academic/master/exampleSite/content/talk/example/index.md" target="_blank">这里</a>可以看到包含<code>url_slides</code>的完整扉页的示例。</p>
+
+<h2 id="创建课程或文档">创建课程或文档</h2>
+
+<p><em>文档</em> 是用来<strong>分享知识</strong>的。常见例子包括在线课程、教程、软件文档以及知识库。</p>
+
+<p>你现在阅读的这个页面(不是我翻译之后的这个)就是用_文档_的方式来展现Academic相关的。
+同样，这里也有一个<a href="https://themes.gohugo.io//theme/academic/tutorial/" target="_blank">在线课程</a>的例子。</p>
+
+<p>查看<code>themes/academic/exampleSite/content/tutorial/</code>的示例以学习如何开始。</p>
+
+<p>如果你是一名使用R语言的数据分析师/数据科学家(e.g. RStudio and RMarkdown)，我们推荐你阅读<a href="https://github.com/sourcethemes/project-kickstart-r" target="_blank">R boilerplate project on GitHub</a>。</p>
 
 <h2 id="创建小部件页面">创建小部件页面</h2>
 
+<p>你是否想利用Academic的小部件系统，创建一个和Academic主页类似的页面？</p>
+
+<p>在你的<code>content</code>文件夹下创建一个新的，以你的页面命名的文件夹。在这个例子中我们将创建<code>content/tutorials/</code>文件夹以创建我们的tutorials页。</p>
+
+<p>在新建的<code>content/tutorials/</code>文件夹下创建一个名为<code>_index.md</code>的文件，内容如下：</p>
+
+<pre><code class="language-bash">+++
+title = &quot;Tutorials&quot;  # Add a page title.
+date = 2017-01-01T00:00:00  # Add today's date.
+widgets = true  # Page type is a Widget Page.
+summary = &quot;&quot;  # Add a page description.
++++
+</code></pre>
+
+<p>将你的小部件放入<code>content/tutorials/</code>文件夹，可以通过复制<code>content/home/</code>下的小部件或者从<a href="https://github.com/gcushen/hugo-academic/tree/master/exampleSite/content/home" target="_blank">Github</a>上下载来实现。</p>
+
 <h2 id="创建其他页面-e-g-简历">创建其他页面(e.g. 简历)</h2>
+
+<p>其他类型内容的话，可以创建自己的自定义页面。
+例如，我们在<code>content</code>文件夹下创建一个<code>cv.md</code>简历页面。复制任意一个文章的扉页，根据需要进行调整，然后在下面编辑Markdown内容。
+再之后，您可以使用<code>[My CV]{</code><code>{&lt; ref &quot;cv.md&quot; &gt;}}</code>代码将简历添加到任何现有页面的内容上。</p>
+
+<p>或者，在上面的例子中，我们可以使用简历的PDF文件。为此，在<code>static</code>文件夹中创建名为<code>files</code>的文件夹，并将名为<code>cv.pdf</code>的PDF文件移动到该位置。
+然后可以使用以下代码将PDF文件链接到你的任意内容中：<code>{</code><code>{% staticref &quot;files/cv.pdf&quot; %}}</code><code>下载我的简历</code><code>{</code><code>{% /staticref %}}</code>。</p>
 
 <h2 id="管理列表页">管理列表页</h2>
 
+<p>档案(archive，我理解的就是列表)页或者说节点页，是列出你所有内容的特殊页面。
+博客文章、出版物、演讲都会有列表页。
+如果存在一个小部件放不下的内容的话，主页上的小部件会自动链接到列表页。
+因此，如果你没有足够多的内容的话你可能不会看到自动生成的链接——
+不过你也可以在文章中用一般的Markdown链接格式，手动的链接他们。</p>
+
+<p>你可以通过将以下<code>_index.md</code>文件从示例站点复制到你的<code>content/</code>文件夹中的相同位置，来编辑标题并添加自己的内容（比如简介）：</p>
+
+<pre><code class="language-bash">/themes/academic/exampleSite/content/post/_index.md
+/themes/academic/exampleSite/content/publication/_index.md
+/themes/academic/exampleSite/content/talk/_index.md
+</code></pre>
+
+<p>之后，根据需要编辑每个<code>_index.md</code>中的<code>title</code>参数，并在扉页之后添加任何内容。
+你可能注意到<code>_index.md</code>文件略有不同，其中一些具有可用于关联内容类型的特殊选项。
+例如，<code>publication/_index.md</code>包含用于设置出版物列表页面上显示的列表的引用样式的选项。</p>
+
 <h2 id="移除内容">移除内容</h2>
+
+<p>通常来说，要移除任意内容，简单的从你的<code>content/post</code>、<code>content/publication</code>、<code>content/project</code>或者<code>content/talk</code>文件夹中删除对应页面文件即可。</p>
 
 <h2 id="查看站点更新">查看站点更新</h2>
 
+<p>在你对站点做出修改之后，你可以通过执行<code>hugo server</code>并在浏览器中打开<a href="http://localhost:1313/" target="_blank">http://localhost:1313/</a> 来看到效果。</p>
+
 <h2 id="部署站点">部署站点</h2>
+
+<p>最后，你可以<a href="https://sourcethemes.com/academic/docs/deployment/" target="_blank">部署你的站点</a>了。</p>
 
     </div>
 
