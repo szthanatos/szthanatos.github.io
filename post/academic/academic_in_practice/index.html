@@ -391,6 +391,11 @@
 <li><a href="#给文章添加头部背景">给文章添加头部背景</a></li>
 <li><a href="#目录">目录</a></li>
 <li><a href="#注意-警告标识">注意/警告标识</a></li>
+<li><a href="#消除短代码效果">消除短代码效果</a>
+<ul>
+<li><a href="#单行代码">单行代码</a></li>
+<li><a href="#代码块">代码块</a></li>
+</ul></li>
 <li><a href="#修改模板">修改模板</a></li>
 </ul></li>
 </ul></li>
@@ -742,6 +747,34 @@ fi
 
 <div class="alert alert-warning">
   <p>警告内容blabla</p>
+
+</div>
+
+
+<h3 id="消除短代码效果">消除短代码效果</h3>
+
+<p>Hugo是基于Go的Template，所以所有以<code>{</code><code>{% %}}</code>或者<code>{</code><code>{&lt; &gt;}}</code>包裹的内容都会被解析为短代码块，而无法直接显示其代码。
+那么我是怎么解决的呢，分情况：</p>
+
+<h4 id="单行代码">单行代码</h4>
+
+<p>你看到的<code>{</code><code>{% toc %}}</code>实际是由<code>`{`</code>和<code>`{% toc %}}`</code>组成的。</p>
+
+<p>而上面打出的<code>`</code>其实是<code>双反引号 空格 反引号 空格 双反引号</code>，就不再嵌套了。。。</p>
+
+<h4 id="代码块">代码块</h4>
+
+<pre><code class="language-go">{{&lt; figure library=&quot;1&quot; src=&quot;image.jpg&quot; title=&quot;A caption&quot; &gt;}}
+</code></pre>
+
+<p>的本质是将&lt;&gt;或者%%内的内容用/**/注释掉：</p>
+
+<p><code>{</code><code>{&lt;/* figure library=&quot;1&quot; src=&quot;image.jpg&quot; title=&quot;A caption&quot; */&gt;}}</code></p>
+
+<div class="alert alert-note">
+  <p>谁知道Markdown的代码块怎么嵌套&hellip;
+比如外层一个markdown的代码块，
+里面要显示包含反引号格式的python代码块&hellip;</p>
 
 </div>
 
