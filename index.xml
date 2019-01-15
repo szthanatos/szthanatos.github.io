@@ -41,6 +41,15 @@
     </item>
     
     <item>
+      <title>Kafka30分钟指北</title>
+      <link>https://szthanatos.github.io/topic/kafka/</link>
+      <pubDate>Tue, 15 Jan 2019 15:40:52 +0800</pubDate>
+      
+      <guid>https://szthanatos.github.io/topic/kafka/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Git三棵树和reset/checkout命令</title>
       <link>https://szthanatos.github.io/post/git_trees/</link>
       <pubDate>Sat, 05 Jan 2019 14:13:21 +0800</pubDate>
@@ -2048,58 +2057,21 @@ sound_type
     </item>
     
     <item>
-      <title>手把手教你用Kafka</title>
-      <link>https://szthanatos.github.io/topic/kafka_intro/</link>
-      <pubDate>Sun, 09 Dec 2018 15:55:32 +0800</pubDate>
-      
-      <guid>https://szthanatos.github.io/topic/kafka_intro/</guid>
-      <description>
-
-&lt;h2 id=&#34;目录&#34;&gt;目录&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://szthanatos.github.io/post/kafka/install&#34;&gt;Kafka -01- 安装配置&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://szthanatos.github.io/post/kafka/update&#34;&gt;Kafka -02- 滚动升级&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Docker30分钟指北</title>
       <link>https://szthanatos.github.io/topic/docker/</link>
       <pubDate>Sun, 09 Dec 2018 15:55:24 +0800</pubDate>
       
       <guid>https://szthanatos.github.io/topic/docker/</guid>
-      <description>&lt;p&gt;关于Docker，看完你就知道他们都在逼逼什么了。&lt;/p&gt;
-</description>
+      <description></description>
     </item>
     
     <item>
       <title>Kafka -02- 滚动升级</title>
-      <link>https://szthanatos.github.io/post/kafka/update/</link>
+      <link>https://szthanatos.github.io/topic/kafka/update/</link>
       <pubDate>Sun, 09 Dec 2018 15:19:52 +0800</pubDate>
       
-      <guid>https://szthanatos.github.io/post/kafka/update/</guid>
+      <guid>https://szthanatos.github.io/topic/kafka/update/</guid>
       <description>
-
-&lt;h2&gt;目录&lt;/h2&gt;
-&lt;nav id=&#34;TableOfContents&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#环境说明&#34;&gt;环境说明&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#可能存在的风险&#34;&gt;可能存在的风险&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#轻微警报&#34;&gt;轻微警报&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#严重警报&#34;&gt;严重警报&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#升级步骤-滚动升级&#34;&gt;升级步骤（滚动升级）&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#替代方案-离线升级&#34;&gt;替代方案（离线升级）&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#kafka2-0官方升级指南&#34;&gt;Kafka2.0官方升级指南&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/nav&gt;
-
 
 &lt;h2 id=&#34;环境说明&#34;&gt;环境说明&lt;/h2&gt;
 
@@ -2190,32 +2162,11 @@ sound_type
     
     <item>
       <title>Kafka -01- 安装配置</title>
-      <link>https://szthanatos.github.io/post/kafka/install/</link>
+      <link>https://szthanatos.github.io/topic/kafka/install/</link>
       <pubDate>Thu, 06 Dec 2018 10:09:46 +0800</pubDate>
       
-      <guid>https://szthanatos.github.io/post/kafka/install/</guid>
+      <guid>https://szthanatos.github.io/topic/kafka/install/</guid>
       <description>
-
-&lt;h2&gt;目录&lt;/h2&gt;
-&lt;nav id=&#34;TableOfContents&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#环境说明&#34;&gt;环境说明&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#安装步骤&#34;&gt;安装步骤&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#0-环境准备&#34;&gt;0. 环境准备&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#1-下载安装&#34;&gt;1. 下载安装&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#2-配置集群参数&#34;&gt;2. 配置集群参数&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#3-配置日志参数&#34;&gt;3. 配置日志参数&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#4-配置jvm参数&#34;&gt;4. 配置JVM参数&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#5-配置linux参数&#34;&gt;5. 配置Linux参数&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#kafka2-0官方安装指南&#34;&gt;Kafka2.0官方安装指南&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/nav&gt;
-
 
 &lt;h2 id=&#34;环境说明&#34;&gt;环境说明&lt;/h2&gt;
 
@@ -2449,10 +2400,7 @@ echo 212992 &amp;gt;&amp;gt; /proc/sys/net/core/rmem_max
       <pubDate>Thu, 06 Dec 2018 10:06:06 +0800</pubDate>
       
       <guid>https://szthanatos.github.io/topic/docker/ecology/</guid>
-      <description>&lt;h2&gt;目录&lt;/h2&gt;
-
-
-</description>
+      <description></description>
     </item>
     
   </channel>

@@ -7,18 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Sun, 09 Dec 2018 15:55:32 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 15 Jan 2019 15:40:52 +0800</lastBuildDate>
     
 	<atom:link href="https://szthanatos.github.io/tags/intro/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>手把手教你用Kafka</title>
-      <link>https://szthanatos.github.io/topic/kafka_intro/</link>
-      <pubDate>Sun, 09 Dec 2018 15:55:32 +0800</pubDate>
+      <title>Kafka30分钟指北</title>
+      <link>https://szthanatos.github.io/topic/kafka/</link>
+      <pubDate>Tue, 15 Jan 2019 15:40:52 +0800</pubDate>
       
-      <guid>https://szthanatos.github.io/topic/kafka_intro/</guid>
-      <description>目录 Kafka -01- 安装配置 Kafka -02- 滚动升级</description>
+      <guid>https://szthanatos.github.io/topic/kafka/</guid>
+      <description></description>
     </item>
     
     <item>
@@ -27,7 +27,7 @@
       <pubDate>Sun, 09 Dec 2018 15:55:24 +0800</pubDate>
       
       <guid>https://szthanatos.github.io/topic/docker/</guid>
-      <description>关于Docker，看完你就知道他们都在逼逼什么了。</description>
+      <description></description>
     </item>
     
   </channel>

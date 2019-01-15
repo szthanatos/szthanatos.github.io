@@ -7,36 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Sun, 09 Dec 2018 15:55:32 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 15 Jan 2019 15:40:52 +0800</lastBuildDate>
     
 	<atom:link href="https://szthanatos.github.io/tags/kafka/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>手把手教你用Kafka</title>
-      <link>https://szthanatos.github.io/topic/kafka_intro/</link>
-      <pubDate>Sun, 09 Dec 2018 15:55:32 +0800</pubDate>
+      <title>Kafka30分钟指北</title>
+      <link>https://szthanatos.github.io/topic/kafka/</link>
+      <pubDate>Tue, 15 Jan 2019 15:40:52 +0800</pubDate>
       
-      <guid>https://szthanatos.github.io/topic/kafka_intro/</guid>
-      <description>目录 Kafka -01- 安装配置 Kafka -02- 滚动升级</description>
-    </item>
-    
-    <item>
-      <title>Kafka -02- 滚动升级</title>
-      <link>https://szthanatos.github.io/post/kafka/update/</link>
-      <pubDate>Sun, 09 Dec 2018 15:19:52 +0800</pubDate>
-      
-      <guid>https://szthanatos.github.io/post/kafka/update/</guid>
-      <description>目录 环境说明 可能存在的风险 轻微警报 严重警报 升级步骤（滚动升级） 替代方案（离线升级） Kafka2.0官方升级指南 环境说明 版本号 发布日期 当前版本</description>
-    </item>
-    
-    <item>
-      <title>Kafka -01- 安装配置</title>
-      <link>https://szthanatos.github.io/post/kafka/install/</link>
-      <pubDate>Thu, 06 Dec 2018 10:09:46 +0800</pubDate>
-      
-      <guid>https://szthanatos.github.io/post/kafka/install/</guid>
-      <description>目录 环境说明 安装步骤 0. 环境准备 1. 下载安装 2. 配置集群参数 3. 配置日志参数 4. 配置JVM参数 5. 配置Linux参数 Kafka2.0官方安装指南 环境说明</description>
+      <guid>https://szthanatos.github.io/topic/kafka/</guid>
+      <description></description>
     </item>
     
   </channel>

@@ -18,7 +18,7 @@
       <pubDate>Sun, 09 Dec 2018 15:55:24 +0800</pubDate>
       
       <guid>https://szthanatos.github.io/topic/docker/</guid>
-      <description>关于Docker，看完你就知道他们都在逼逼什么了。</description>
+      <description></description>
     </item>
     
     <item>
@@ -27,7 +27,7 @@
       <pubDate>Thu, 06 Dec 2018 10:06:06 +0800</pubDate>
       
       <guid>https://szthanatos.github.io/topic/docker/ecology/</guid>
-      <description>目录</description>
+      <description></description>
     </item>
     
     <item>
@@ -36,7 +36,7 @@
       <pubDate>Wed, 05 Dec 2018 22:17:22 +0800</pubDate>
       
       <guid>https://szthanatos.github.io/topic/docker/basis/</guid>
-      <description>目录 Docker简介 什么是Docker Docker特点 为什么要使用Docker 基本概念 镜像 容器 仓库 生命周期 安装配置 准备工作 系统要求 卸载旧版本</description>
+      <description>Docker简介 什么是Docker Docker 最初是 dotCloud 公司创始人 Solomon Hykes 在法国期间发起的一个公司内部项目，并于2013 年 3 月以 Apache 2.0 授权协议开源，主要项目代</description>
     </item>
     
   </channel>

@@ -1,25 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Topics on Kryptonite Lab</title>
+    <title>Recent &amp; Upcoming Talks on Kryptonite Lab</title>
     <link>https://szthanatos.github.io/topic/</link>
-    <description>Recent content in Topics on Kryptonite Lab</description>
+    <description>Recent content in Recent &amp; Upcoming Talks on Kryptonite Lab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Sun, 09 Dec 2018 15:55:32 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0800</lastBuildDate>
     
 	<atom:link href="https://szthanatos.github.io/topic/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>手把手教你用Kafka</title>
-      <link>https://szthanatos.github.io/topic/kafka_intro/</link>
-      <pubDate>Sun, 09 Dec 2018 15:55:32 +0800</pubDate>
-      
-      <guid>https://szthanatos.github.io/topic/kafka_intro/</guid>
-      <description>目录 Kafka -01- 安装配置 Kafka -02- 滚动升级</description>
-    </item>
     
   </channel>
 </rss>
