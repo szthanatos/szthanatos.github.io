@@ -46,7 +46,11 @@
       <pubDate>Tue, 15 Jan 2019 15:40:52 +0800</pubDate>
       
       <guid>https://szthanatos.github.io/topic/kafka/</guid>
-      <description></description>
+      <description>&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;install&#34; target=&#34;_blank&#34;&gt;安装配置&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;update&#34; target=&#34;_blank&#34;&gt;滚动升级&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
     
     <item>
@@ -2062,7 +2066,11 @@ sound_type
       <pubDate>Sun, 09 Dec 2018 15:55:24 +0800</pubDate>
       
       <guid>https://szthanatos.github.io/topic/docker/</guid>
-      <description></description>
+      <description>&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;basis&#34; target=&#34;_blank&#34;&gt;基本概念&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;ecology&#34; target=&#34;_blank&#34;&gt;进阶生态&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
     
     <item>
