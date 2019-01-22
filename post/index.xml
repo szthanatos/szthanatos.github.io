@@ -14,10 +14,10 @@
     
     <item>
       <title>Git三棵树和reset/checkout命令</title>
-      <link>https://szthanatos.github.io/post/git_trees/</link>
+      <link>https://szthanatos.github.io/post/git/git_trees/</link>
       <pubDate>Sat, 05 Jan 2019 14:13:21 +0800</pubDate>
       
-      <guid>https://szthanatos.github.io/post/git_trees/</guid>
+      <guid>https://szthanatos.github.io/post/git/git_trees/</guid>
       <description>理解Git没有比从三棵树开始更好的了。 完整的话还是看git文档比较好，说的蛮清楚了。 三棵树和正向流程 树 用途 HEAD 上一次提交的快照，下一次提交的父</description>
     </item>
     
@@ -50,10 +50,10 @@
     
     <item>
       <title>Git Tips</title>
-      <link>https://szthanatos.github.io/post/git_tips/</link>
+      <link>https://szthanatos.github.io/post/git/git_tips/</link>
       <pubDate>Fri, 14 Dec 2018 09:35:32 +0800</pubDate>
       
-      <guid>https://szthanatos.github.io/post/git_tips/</guid>
+      <guid>https://szthanatos.github.io/post/git/git_tips/</guid>
       <description>目录 Deploy key/SSH key(github) 更换git协议 强制覆盖本地文件 撤销修改 add之前撤销 commit之前撤销 push之前撤销 Deploy key/SSH key(github) Deploy key是在项目主页-setting</description>
     </item>
     
@@ -82,6 +82,15 @@
       
       <guid>https://szthanatos.github.io/post/palantir_intro/</guid>
       <description>目录 简介 最新情况 创始人 Peter Thiel Alex Karp (CEO) Joe Lonsdale Stephen Cohen Nathan Gettings 发展历程 产品内容 官方主页： Home | Palantir 产品线 解决方案 简介 Palantir是全球第一大大数据公司。曾经的</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu安装最新版本Python</title>
+      <link>https://szthanatos.github.io/post/python/python_install_on_ubuntu/</link>
+      <pubDate>Sat, 01 Dec 2018 15:59:04 +0800</pubDate>
+      
+      <guid>https://szthanatos.github.io/post/python/python_install_on_ubuntu/</guid>
+      <description>添加ppa源： # 死蛇的源 sudo add-apt-repository ppa:deadsnakes/ppa # 或者，jonathonf的源 sudo add-apt-repository ppa:jonathonf/python-3.x 如果提示没有add-apt-repository的话执行： apt install software-properties-common 更新源并安</description>
     </item>
     
     <item>

@@ -1,23 +1,32 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>git on Kryptonite Lab</title>
+    <title>Git on Kryptonite Lab</title>
     <link>https://szthanatos.github.io/tags/git/</link>
-    <description>Recent content in git on Kryptonite Lab</description>
+    <description>Recent content in Git on Kryptonite Lab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Fri, 14 Dec 2018 09:35:32 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 05 Jan 2019 14:13:21 +0800</lastBuildDate>
     
 	<atom:link href="https://szthanatos.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Git三棵树和reset/checkout命令</title>
+      <link>https://szthanatos.github.io/post/git/git_trees/</link>
+      <pubDate>Sat, 05 Jan 2019 14:13:21 +0800</pubDate>
+      
+      <guid>https://szthanatos.github.io/post/git/git_trees/</guid>
+      <description>理解Git没有比从三棵树开始更好的了。 完整的话还是看git文档比较好，说的蛮清楚了。 三棵树和正向流程 树 用途 HEAD 上一次提交的快照，下一次提交的父</description>
+    </item>
+    
+    <item>
       <title>Git Tips</title>
-      <link>https://szthanatos.github.io/post/git_tips/</link>
+      <link>https://szthanatos.github.io/post/git/git_tips/</link>
       <pubDate>Fri, 14 Dec 2018 09:35:32 +0800</pubDate>
       
-      <guid>https://szthanatos.github.io/post/git_tips/</guid>
+      <guid>https://szthanatos.github.io/post/git/git_tips/</guid>
       <description>目录 Deploy key/SSH key(github) 更换git协议 强制覆盖本地文件 撤销修改 add之前撤销 commit之前撤销 push之前撤销 Deploy key/SSH key(github) Deploy key是在项目主页-setting</description>
     </item>
     
