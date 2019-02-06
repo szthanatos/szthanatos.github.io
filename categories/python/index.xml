@@ -30,5 +30,14 @@
       <description>遇到一个报错： PicklingError: Can&#39;t pickle &amp;lt;type &#39;instancemethod&#39;&amp;gt;: attribute lookup __builtin__.instancemethod failed 当时的情况是想写一个多进程的解析代码，爬虫爬到的内容给扔过来就不管了，差不多这个意思： # !/usr/bin/env python # -*- coding: utf-8 -*- from concurrent.futures import</description>
     </item>
     
+    <item>
+      <title>列表原序去重性能测试</title>
+      <link>https://szthanatos.github.io/post/python/unique_list_ordered/</link>
+      <pubDate>Fri, 01 Sep 2017 18:08:57 +0800</pubDate>
+      
+      <guid>https://szthanatos.github.io/post/python/unique_list_ordered/</guid>
+      <description>对列表的去重很简单，set()一下再list()回来就可以了，但是如果要保留原始列表的顺序呢？ 举例，对[&amp;quot;b&amp;quot;, &amp;quot;b&amp;quot;, &amp;quot;c&amp;quot;, &amp;quot;a&amp;quot;, &amp;quot;c&amp;quot;,</description>
+    </item>
+    
   </channel>
 </rss>
