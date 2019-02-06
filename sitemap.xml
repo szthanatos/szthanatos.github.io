@@ -162,6 +162,14 @@
     
     <url>
     
+      <loc>https://szthanatos.github.io/post/python/pickled/</loc>
+      <lastmod>2018-03-20T16:16:15+08:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>https://szthanatos.github.io/post/</loc>
       <lastmod>2017-01-01T00:00:00+08:00</lastmod>
     </url>
@@ -194,7 +202,7 @@
     
     <url>
     
-      <loc>https://szthanatos.github.io/tags/academic/</loc>
+      <loc>https://szthanatos.github.io/categories/academic/</loc>
       <lastmod>2019-01-01T12:54:29+08:00</lastmod>
       <priority>0</priority>
     </url>
@@ -203,7 +211,7 @@
     
     <url>
     
-      <loc>https://szthanatos.github.io/categories/academic/</loc>
+      <loc>https://szthanatos.github.io/tags/academic/</loc>
       <lastmod>2019-01-01T12:54:29+08:00</lastmod>
       <priority>0</priority>
     </url>
@@ -230,7 +238,7 @@
     
     <url>
     
-      <loc>https://szthanatos.github.io/tags/docker/</loc>
+      <loc>https://szthanatos.github.io/categories/docker/</loc>
       <lastmod>2018-12-09T15:55:24+08:00</lastmod>
       <priority>0</priority>
     </url>
@@ -239,7 +247,7 @@
     
     <url>
     
-      <loc>https://szthanatos.github.io/categories/docker/</loc>
+      <loc>https://szthanatos.github.io/tags/docker/</loc>
       <lastmod>2018-12-09T15:55:24+08:00</lastmod>
       <priority>0</priority>
     </url>
@@ -266,7 +274,7 @@
     
     <url>
     
-      <loc>https://szthanatos.github.io/tags/hugo/</loc>
+      <loc>https://szthanatos.github.io/categories/hugo/</loc>
       <lastmod>2019-01-01T12:54:29+08:00</lastmod>
       <priority>0</priority>
     </url>
@@ -275,7 +283,7 @@
     
     <url>
     
-      <loc>https://szthanatos.github.io/categories/hugo/</loc>
+      <loc>https://szthanatos.github.io/tags/hugo/</loc>
       <lastmod>2019-01-01T12:54:29+08:00</lastmod>
       <priority>0</priority>
     </url>
@@ -293,7 +301,7 @@
     
     <url>
     
-      <loc>https://szthanatos.github.io/tags/kafka/</loc>
+      <loc>https://szthanatos.github.io/categories/kafka/</loc>
       <lastmod>2019-01-15T15:40:52+08:00</lastmod>
       <priority>0</priority>
     </url>
@@ -302,7 +310,7 @@
     
     <url>
     
-      <loc>https://szthanatos.github.io/categories/kafka/</loc>
+      <loc>https://szthanatos.github.io/tags/kafka/</loc>
       <lastmod>2019-01-15T15:40:52+08:00</lastmod>
       <priority>0</priority>
     </url>
@@ -320,7 +328,8 @@
     
     <url>
     
-      <loc>https://szthanatos.github.io/publication_types/</loc>
+      <loc>https://szthanatos.github.io/tags/picklingerror/</loc>
+      <lastmod>2018-03-20T16:16:15+08:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -328,8 +337,7 @@
     
     <url>
     
-      <loc>https://szthanatos.github.io/tags/python/</loc>
-      <lastmod>2018-12-01T15:59:04+08:00</lastmod>
+      <loc>https://szthanatos.github.io/publication_types/</loc>
       <priority>0</priority>
     </url>
     
@@ -375,6 +383,24 @@
     
       <loc>https://szthanatos.github.io/tags/ubuntu/</loc>
       <lastmod>2018-12-01T15:59:04+08:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://szthanatos.github.io/tags/%E5%A4%9A%E8%BF%9B%E7%A8%8B/</loc>
+      <lastmod>2018-03-20T16:16:15+08:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://szthanatos.github.io/tags/%E5%BA%8F%E5%88%97%E5%8C%96/</loc>
+      <lastmod>2018-03-20T16:16:15+08:00</lastmod>
       <priority>0</priority>
     </url>
     

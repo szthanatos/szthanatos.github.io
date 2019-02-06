@@ -102,5 +102,14 @@
       <description>这是我第四次，也可能是我最后一次博客迁移(flag已立←_←)。 从大学时代开始，找个地方写点什么的蠢动心思就没消停过，但是也都消磨在了无关文</description>
     </item>
     
+    <item>
+      <title>可序列化类型和多进程PicklingError</title>
+      <link>https://szthanatos.github.io/post/python/pickled/</link>
+      <pubDate>Tue, 20 Mar 2018 16:16:15 +0800</pubDate>
+      
+      <guid>https://szthanatos.github.io/post/python/pickled/</guid>
+      <description>遇到一个报错： PicklingError: Can&#39;t pickle &amp;lt;type &#39;instancemethod&#39;&amp;gt;: attribute lookup __builtin__.instancemethod failed 当时的情况是想写一个多进程的解析代码，爬虫爬到的内容给扔过来就不管了，差不多这个意思： # !/usr/bin/env python # -*- coding: utf-8 -*- from concurrent.futures import</description>
+    </item>
+    
   </channel>
 </rss>
