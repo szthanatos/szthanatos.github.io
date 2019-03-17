@@ -341,6 +341,15 @@
     
     <url>
     
+      <loc>https://szthanatos.github.io/categories/kg/</loc>
+      <lastmod>2019-03-17T21:50:19+08:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>https://szthanatos.github.io/tags/kafka/</loc>
       <lastmod>2019-01-15T15:40:52+08:00</lastmod>
       <priority>0</priority>
@@ -441,6 +450,33 @@
     
       <loc>https://szthanatos.github.io/tags/benchmark/</loc>
       <lastmod>2017-09-01T18:08:57+08:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://szthanatos.github.io/tags/graphdb/</loc>
+      <lastmod>2019-03-17T21:50:19+08:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://szthanatos.github.io/tags/janusgraph/</loc>
+      <lastmod>2019-03-17T21:50:19+08:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://szthanatos.github.io/tags/knowledge-graph/</loc>
+      <lastmod>2019-03-17T21:50:19+08:00</lastmod>
       <priority>0</priority>
     </url>
     
