@@ -13,6 +13,15 @@
     
     
     <item>
+      <title>JanusGraph搭建及简单使用</title>
+      <link>https://szthanatos.github.io/post/janusgraph/</link>
+      <pubDate>Sun, 17 Mar 2019 21:50:19 +0800</pubDate>
+      
+      <guid>https://szthanatos.github.io/post/janusgraph/</guid>
+      <description>目录 基本环境 安装 配置 基本用法 加载诸神图 一些基本操作 增操作 删操作 查询 基本环境 底层数据库基于HBase，检索服务基于Elasticserach。</description>
+    </item>
+    
+    <item>
       <title>Git三棵树和reset/checkout命令</title>
       <link>https://szthanatos.github.io/post/git/git_trees/</link>
       <pubDate>Sat, 05 Jan 2019 14:13:21 +0800</pubDate>
