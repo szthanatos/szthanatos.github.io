@@ -130,6 +130,24 @@
     </item>
     
     <item>
+      <title>redis</title>
+      <link>https://szthanatos.github.io/tags/redis/</link>
+      <pubDate>Thu, 30 Aug 2018 21:26:18 +0800</pubDate>
+      
+      <guid>https://szthanatos.github.io/tags/redis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>redis cluster</title>
+      <link>https://szthanatos.github.io/tags/redis-cluster/</link>
+      <pubDate>Thu, 30 Aug 2018 21:26:18 +0800</pubDate>
+      
+      <guid>https://szthanatos.github.io/tags/redis-cluster/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>多进程</title>
       <link>https://szthanatos.github.io/tags/%E5%A4%9A%E8%BF%9B%E7%A8%8B/</link>
       <pubDate>Tue, 20 Mar 2018 16:16:15 +0800</pubDate>

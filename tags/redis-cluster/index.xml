@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>redis cluster on Kryptonite Lab</title>
+    <link>https://szthanatos.github.io/tags/redis-cluster/</link>
+    <description>Recent content in redis cluster on Kryptonite Lab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Thu, 30 Aug 2018 21:26:18 +0800</lastBuildDate>
+    
+	<atom:link href="https://szthanatos.github.io/tags/redis-cluster/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Redis集群相关命令</title>
+      <link>https://szthanatos.github.io/post/redis/redis_command/</link>
+      <pubDate>Thu, 30 Aug 2018 21:26:18 +0800</pubDate>
+      
+      <guid>https://szthanatos.github.io/post/redis/redis_command/</guid>
+      <description>集群信息 节点信息 集群节点相关信息可以通过cluster nodes命令获取： 127.0.0.1:6379&amp;gt; cluster nodes 5022fa41642195d74200fd512c08653dc12609e7 172.17.0.2:6380@16380 master - 0 1552814467000 2 connected 5461-10922 730d05ee4da3147d0885c6d47437465c94409f74 172.17.0.2:6383@16383 slave 25a2a1d8c96e9473d4cb3c8b0077d3b7b07dd5c0 0 1552814468555 5 connected 25a2a1d8c96e9473d4cb3c8b0077d3b7b07dd5c0 172.17.0.2:6379@16379 myself,master - 0 1552814468000 1 connected 0-5460 cf0be45c6a05c0d332b7356a7f57de95b32c3a71 172.17.0.2:6384@16384 slave 5022fa41642195d74200fd512c08653dc12609e7</description>
+    </item>
+    
+    <item>
+      <title>Redis单机&amp;集群安装</title>
+      <link>https://szthanatos.github.io/post/redis/redis_install/</link>
+      <pubDate>Thu, 30 Aug 2018 16:40:48 +0800</pubDate>
+      
+      <guid>https://szthanatos.github.io/post/redis/redis_install/</guid>
+      <description>目录 简介 版本 安装 配置 最小配置 集群配置 启动 防火墙 单结点启动 集群启动 ruby环境 联通集群 检查集群状态 相关命令 附注 离线安装redis环境 如果gem</description>
+    </item>
+    
+  </channel>
+</rss>
