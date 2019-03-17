@@ -178,6 +178,14 @@
     
     <url>
     
+      <loc>https://szthanatos.github.io/post/python/unit_testing/</loc>
+      <lastmod>2018-08-20T10:49:50+08:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>https://szthanatos.github.io/post/python/pickled/</loc>
       <lastmod>2018-03-20T16:16:15+08:00</lastmod>
     </url>
@@ -452,6 +460,15 @@
     
       <loc>https://szthanatos.github.io/tags/redis-cluster/</loc>
       <lastmod>2018-08-30T21:26:18+08:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://szthanatos.github.io/tags/unit-testing/</loc>
+      <lastmod>2018-08-20T10:49:50+08:00</lastmod>
       <priority>0</priority>
     </url>
     
