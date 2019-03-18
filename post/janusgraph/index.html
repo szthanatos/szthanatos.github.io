@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 3.3.0">
+  <meta name="generator" content="Hugo 0.53" />
+  <meta name="author" content="Lex Wayne">
+
+  
+  
+  
+  
+    
+  
+  <meta name="description" content="目录 基本环境 安装 配置 基本用法 加载诸神图 一些基本操作 增操作 删操作 查询 基本环境 底层数据库基于HBase，检索服务基于Elasticserach。">
+
+  
+  <link rel="alternate" hreflang="zh-cn" href="https://szthanatos.github.io/post/janusgraph/">
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#2962ff">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" crossorigin="anonymous">
+        
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono">
+  
+
+  <link rel="stylesheet" href="/styles.css">
+  
+
+  
+  
+  
+
+  
+  <link rel="alternate" href="https://szthanatos.github.io/index.xml" type="application/rss+xml" title="Kryptonite Lab">
+  <link rel="feed" href="https://szthanatos.github.io/index.xml" type="application/rss+xml" title="Kryptonite Lab">
+  
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="https://szthanatos.github.io/post/janusgraph/">
+
+  
+  
+  
+  
+    
+    
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="og:site_name" content="Kryptonite Lab">
+  <meta property="og:url" content="https://szthanatos.github.io/post/janusgraph/">
+  <meta property="og:title" content="JanusGraph搭建及简单使用 | Kryptonite Lab">
+  <meta property="og:description" content="目录 基本环境 安装 配置 基本用法 加载诸神图 一些基本操作 增操作 删操作 查询 基本环境 底层数据库基于HBase，检索服务基于Elasticserach。"><meta property="og:image" content="https://szthanatos.github.io/img/portrait.jpg">
+  <meta property="og:locale" content="zh-cn">
+  
+  <meta property="article:published_time" content="2019-03-17T21:50:19&#43;08:00">
+  
+  <meta property="article:modified_time" content="2019-03-17T21:50:19&#43;08:00">
+  
+
+  
+
+  
+
+  <title>JanusGraph搭建及简单使用 | Kryptonite Lab</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1></h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="搜索..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/">Kryptonite Lab</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="切换导航">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav ml-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#hero">
+            
+            <span>主页</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#posts">
+            
+            <span>文章</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#topics">
+            
+            <span>专题</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1 itemprop="name">JanusGraph搭建及简单使用</h1>
+
+  
+
+  
+    
+
+<div class="article-metadata">
+
+  
+  
+  <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Lex Wayne">
+  </span>
+  
+
+  <span class="article-date">
+    
+    <meta content="2019-03-17 21:50:19 &#43;0800 DST" itemprop="datePublished">
+    <time datetime="2019-03-17 21:50:19 &#43;0800 DST" itemprop="dateModified">
+      Mar 17, 2019
+    </time>
+  </span>
+  <span itemscope itemprop="publisher" itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Lex Wayne">
+  </span>
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    5 分钟阅读时间
+  </span>
+  
+
+  
+  
+
+  
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder"></i>
+    
+    <a href="/categories/kg/">KG</a>
+    
+  </span>
+  
+  
+
+  
+  
+
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+<h2>目录</h2>
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#基本环境">基本环境</a></li>
+<li><a href="#安装">安装</a></li>
+<li><a href="#配置">配置</a></li>
+<li><a href="#基本用法">基本用法</a></li>
+<li><a href="#加载诸神图">加载诸神图</a></li>
+<li><a href="#一些基本操作">一些基本操作</a>
+<ul>
+<li><a href="#增操作">增操作</a></li>
+<li><a href="#删操作">删操作</a></li>
+</ul></li>
+<li><a href="#查询">查询</a></li>
+</ul></li>
+</ul>
+</nav>
+
+
+<h2 id="基本环境">基本环境</h2>
+
+<p>底层数据库基于HBase，检索服务基于Elasticserach。</p>
+
+<p>系统运行服务大致如下：</p>
+
+<pre><code class="language-bash">[root@xnode208 ~] jps
+21584 GremlinServer
+27857 DataNode
+23218 Jps
+3251 HMaster
+27283 NameNode
+21707 Console
+17131 Elasticsearch
+29503 SecondaryNameNode
+</code></pre>
+
+<h2 id="安装">安装</h2>
+
+<p>下载<a href="https://github.com/JanusGraph/janusgraph/releases/download/v0.2.2/janusgraph-0.2.2-hadoop2.zip" target="_blank">janusgraph0.22安装包</a>并解压</p>
+
+<pre><code class="language-bash">wget https://github.com/JanusGraph/janusgraph/releases/download/v0.2.2/janusgraph-0.2.2-hadoop2.zip
+unzip janusgraph-0.2.2-hadoop2.zip
+cd janusgraph-0.2.2-hadoop2
+</code></pre>
+
+<h2 id="配置">配置</h2>
+
+<p>在这里我们采用的是启动gremlin-server服务时，加载指定配置文件的方法创建图表，所以需要设置gremlin-server端以及图表的配置文件。</p>
+
+<ol>
+<li><p>创建gremlin-server端配置文件<code>janusgraph-0.2.2-hadoop2/conf/gremlin-server/socket-gremlin-server.yaml</code>，这里我们复制gremlin服务默认的配置文件，在此基础上进行修改</p>
+
+<pre><code class="language-bash">cp conf/gremlin-server/gremlin-server.yaml conf/gremlin-server/socket-gremlin-server.yaml
+</code></pre></li>
+
+<li><p>修改<code>socket-gremlin-server.yaml</code>：在配置文件中添加graphManager;并在graphs项中添加graph键及其值，一个键值代表一个图表，值表示对图表的设置(可添加多个图表，每一个图表都有自己的配置文件)，如：</p>
+
+<pre><code class="language-bash">graphManager: org.janusgraph.graphdb.management.JanusGraphManager
+graphs: {
+  blablabla,
+  graph: conf/gremlin-server/socket-jg-hbase_fyk-server-configraph.properties
+}
+</code></pre></li>
+
+<li><p>准备上述<code>socket-gremlin-server.yaml</code>中对图表进行设置的properties文件，<code>conf/gremlin-server/socket-jg-hbase_fyk-server-configraph.properties</code>文件内容如下：</p>
+
+<pre><code class="language-bash">gremlin.graph=org.janusgraph.core.JanusGraphFactory
+graph.graphname=graph
+
+storage.backend=hbase  # 设置我们本地启动的hbase作为底层数据库
+storage.hostname=127.0.0.1
+
+index.search.backend=elasticsearch  # 设置Janus graph自带的es作为我们的检索服务
+index.search.hostname=127.0.0.1
+
+cache.db-cache = true
+cache.db-cache-clean-wait = 20
+cache.db-cache-time = 180000
+cache.db-cache-size = 0.5
+</code></pre></li>
+</ol>
+
+<h2 id="基本用法">基本用法</h2>
+
+<p>依次启动hbase,elasticsearch以及gremlin-server，最后进入gremlin.sh客户端对图表进行操作</p>
+
+<ul>
+<li><p>hbase</p>
+
+<pre><code class="language-bash">[root@xnode208 ~] start-hbase.sh
+</code></pre></li>
+
+<li><p>elasticsearch.(注：Janusgraph自带的elastic search服务启动时为确保安全被禁止使用root用户)</p>
+
+<pre><code class="language-bash">[zkr@xnode208 ~] cd /usr/local/janusgraph-0.2.2-hadoop2
+[zkr@xnode208 elasticsearch] ./bin/elasticsearch
+</code></pre></li>
+
+<li><p>gremlin-server(启动成功后，会创建我们在配置文件中设计的图表)</p>
+
+<pre><code class="language-bash">[zkr@xnode208 janusgraph0.2] ./bin/gremlin-server.sh ./conf/gremlin-server/socket-gremlin-server.yaml
+</code></pre></li>
+
+<li><p>gremlin.sh(进入gremlin交互式客户端)</p>
+
+<pre><code class="language-bash">[root@xnode208 janusgraph0.2] ./bin/gremlin.sh
+gremlin&gt; 
+</code></pre></li>
+</ul>
+
+<h2 id="加载诸神图">加载诸神图</h2>
+
+<pre><code class="language-bash"># 连接gremlin server
+gremlin&gt; :remote connect tinkerpop.server conf/remote.yaml session
+==&gt;Configured localhost/127.0.0.1:8182-[f6db862e-752c-48db-839b-1b5b16f1786a]
+gremlin&gt; :remote console
+==&gt;All scripts will now be sent to Gremlin Server - [localhost/127.0.0.1:8182]-[f6db862e-752c-48db-839b-1b5b16f1786a] - type ':remote console' to return to local mode
+
+# 加载诸神图到我们创建的空图表中
+gremlin&gt; GraphOfTheGodsFactory.load(graph)
+==&gt;null
+</code></pre>
+
+<p>示例数据描述了一部分希腊诸神以及他们居住的诸神殿的相关关系。</p>
+
+<p><img src="/img/graph-of-the-gods-2.png" alt="graph-of-the-gods" /></p>
+
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>含义</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>粗体键</td>
+<td>带索引的键</td>
+</tr>
+
+<tr>
+<td>星标粗体键</td>
+<td>具有唯一值的带索引的键</td>
+</tr>
+
+<tr>
+<td>带下划线的键</td>
+<td>以顶点为核心的带索引的键</td>
+</tr>
+
+<tr>
+<td>空心箭头边</td>
+<td>不能有多个指向的唯一边</td>
+</tr>
+
+<tr>
+<td>尾部划线的边</td>
+<td>单向边</td>
+</tr>
+</tbody>
+</table>
+
+<p>在JanusGraph中，实体以顶点表示，关系以边表示，顶点和边都可以具有属性。</p>
+
+<h2 id="一些基本操作">一些基本操作</h2>
+
+<h3 id="增操作">增操作</h3>
+
+<pre><code class="language-bash"># 添加顶点
+v1 = graph.addVertex(label, 'student');  # 创建第一个顶点v1并增加标签
+v2 = graph.addVertex();  # 创建第二个顶点没有标签
+
+# 为顶点添加属性
+v1.property('id', '1');  # 为顶点v1添加id属性，值为1
+v3 = graph.addVertex(label,'girl','name','huahua');  # 创建第三个顶点并且增加标签，属性以及属性值
+v4 = graph.addVertex(label,'boy','name','wuyanzu','age',18)  # 创建第四个顶点添加标签以及多个属性属性值
+
+# 添加边
+t1 = v1.addEdge('friends', v2);  # 为v1添加关系到v2,并定义这个关系为t1
+t2 = v1.addEdge('boyfriend', v2);  # 两个顶点之间可以增加多种关系
+
+# 为边增加属性
+t1.property('reason','cool');  # 为t1增加属性
+v3.addEdge('boyfriend',v4,'reason','because the reason');  # v3添加关系到v4并且增加关系属性及属性值
+
+# 提交修改
+graph.tx().commit(); 
+</code></pre>
+
+<h3 id="删操作">删操作</h3>
+
+<pre><code class="language-bash"># 清空
+g.V().drop();  # 删除所有点/图
+g.E().drop();  # 删除所有边
+graph1.close();
+JanusGraphFactory.drop(graph1);  # 清空图中的所有数据
+
+# 删除顶点
+pluto = g.V().has('name','pluto').next();g.V(pluto).drop().iterate();  # 删除name属性为&quot;pluto&quot;的顶点
+g.V().has('keys','ll').drop().iterate();  # 删除keys属性为&quot;ll&quot;的顶点
+g.V().hasLabel('student').has('name','ll').drop().iterate();  # 删除标签为student，并且顶点属性name的值为&quot;ll&quot;的顶点
+
+# 删除边
+g.E().has('uuu','because the reason').drop().iterate();  # 删除边属性uuu的属性值为because the reason的边
+g.E().hasLabel('boyfriend').has('event','the reason').drop().iterate();  # 删除边标签为boyfriend并且边属性event的值为the reason的边
+
+# 删除顶点标签以及顶点属性
+g.V().hasLabel('girl').drop();  # 删除标签girl以及标签为girl的所有顶点
+g.V().properties('name').drop();  # 删除顶点属性name
+
+# 删除边标签、边属性以及属性值
+g.E().hasLabel('boyfriend').drop();  # 删除边标签boyfriend
+g.E().properties('uuu').drop();  # 删除边属性uuu
+g.E().hasLabel(&quot;friend&quot;).properties().drop();  # 删除边标签为friend的所有属性以及属性值
+g.E().values('because the reason').drop();  # 删除边属性值为because the reason以及对应的属性
+
+
+graph.tx().commit();  # 提交
+</code></pre>
+
+<h2 id="查询">查询</h2>
+
+<pre><code class="language-bash"># 设置g=graph.traversal(),方便查询
+gremlin&gt; g = graph.traversal()
+==&gt;graphtraversalsource[standardjanusgraph[hbase:[127.0.0.1]], standard]
+
+# 顶点标签查询
+g.V();  # 查看所有顶点id
+g.V().label();  # 查看所有顶点标签
+g.V().hasLabel(&quot;god&quot;);  # 查看所有标签为god的顶点id
+g.V().filter(label().is('god'));  # 用filter查看所有标签为god的顶点id
+g.V().has('name','hercules');  # 查看属性为name,值为hercules的顶点
+
+# 顶点属性及属性值查询
+g.V().valueMap();  # 遍历每个顶点的属性及属性值(若没有展示空集)
+g.V().properties();  # 查看所有顶点的属性及属性值(不展示空)
+g.V().hasLabel(&quot;god&quot;).values();  # 查看所有顶点标签为god的属性值
+g.V().hasLabel(&quot;god&quot;).properties();  # 查看顶点标签为god的所有顶点属性以及属性值
+g.V().values('id');  # 查看顶点属性为id的属性值
+g.V().properties('id')  # 查看顶点属性为id的属性及属性值
+
+# 边标签查询
+g.E();  # 查看所有顶点之间的边 顶点id---&gt;边---&gt;顶点id
+g.E().label();  # 查看所有边的标签(关系)
+g.E().hasLabel(&quot;battled&quot;)  # 查看标签为battled的所有边
+g.E().filter(label().is('battled'));  # 用filter查看标签为battled的所有边
+g.E().has('time',12);  # 查看属性time的值为12的所有边
+
+# 边属性及属性值查询
+g.E().valueMap();  # 遍历所有边属性及属性值
+g.E().properties();  # 查看所有边属性及属性值
+g.E().hasLabel(&quot;battled&quot;).values();  # 查看所有标签为battled的边属性值
+g.E().hasLabel(&quot;battled&quot;).properties();  # 查看所有标签为battled的边属性以及属性值
+g.E().values('reason');  # 查看边属性为reason的属性值
+g.E().properties('reason');  # 查看边属性为reason的属性及属性值
+</code></pre>
+
+    </div>
+
+    
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tags/graphdb/">graphdb</a>
+  
+  <a class="badge badge-light" href="/tags/janusgraph/">janusgraph</a>
+  
+  <a class="badge badge-light" href="/tags/knowledge-graph/">knowledge graph</a>
+  
+</div>
+
+
+
+    <style type="text/css">
+  div {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+
+  .outter {
+    display: table;
+    height: 100%;
+    width: 100%;
+  }
+
+  .image {
+    display: table-cell;
+    height: 100%;
+     
+    vertical-align: middle;
+  }
+
+  .text {
+    display: table-cell;
+    font-size: 75%;
+    color: #a9a9a9;
+    vertical-align: middle;
+  }
+
+</style>
+
+<div class="outter">
+  <div class="image">
+    <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+      <img alt="知识共享许可协议" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
+    </a>
+  </div>
+  <div class="text">
+    本作品采用<br>
+    <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+      知识共享 署名-相同方式共享 4.0 国际许可协议
+    </a><br>
+    进行许可。
+  </div>
+</div>
+
+    
+
+
+
+
+
+
+<div class="media author-card" itemscope itemtype="http://schema.org/Person">
+  
+  <img class="portrait mr-3" src="/img/portrait.jpg" itemprop="image" alt="Avatar">
+  
+  <div class="media-body">
+    <h5 class="card-title" itemprop="name"><a href="/">Lex Wayne</a></h5>
+    <h6 class="card-subtitle">Python Knight &amp; Go Padawan</h6>
+    
+    <ul class="network-icon" aria-hidden="true">
+      
+    </ul>
+  </div>
+</div>
+
+
+
+
+    
+    
+
+    
+
+    
+
+
+  </div>
+</article>
+
+<div class="container">
+  <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    &copy; 2018 &middot; 
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" id="back_to_top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+</div>
+
+
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">引用</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> 复制
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> 下载
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+    
+    
+    <script src="/js/mathjax-config.js"></script>
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha512-+NqPlbbtM1QqiK8ZAo4Yrj2c4lNQoGv8P79DPtKzj++l5jnN39rHA/xsqn8zE9l0uSoxaCdrOgFs6yjyfbBxSg==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha256-VsEqElsCHSGmnmHXGQzvoWjWwoznFSZc6hs7ARLRacQ=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/dockerfile.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/shell.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/sql.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/properties.min.js"></script>
+        
+      
+
+      
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML-full" integrity="sha256-GhM+5JHb6QUzOQPXSJLEWP7R73CbkisjzK5Eyij4U9w=" crossorigin="anonymous" async></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script>
+      const search_index_filename = "/index.json";
+      const i18n = {
+        'placeholder': "搜索...",
+        'results': "搜索结果",
+        'no_results': "没有找到结果"
+      };
+      const content_type = {
+        'post': "文章",
+        'project': "项目",
+        'publication' : "出版物",
+        'talk' : "演讲"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    <script src="/js/academic.min.70f0041f5a24c6a675ac218c98d7ef71.js"></script>
+
+    
+
+  </body>
+</html>
+

@@ -22,6 +22,15 @@
     </item>
     
     <item>
+      <title>python单元测试标准及实现</title>
+      <link>https://szthanatos.github.io/post/python/unit_testing/</link>
+      <pubDate>Mon, 20 Aug 2018 10:49:50 +0800</pubDate>
+      
+      <guid>https://szthanatos.github.io/post/python/unit_testing/</guid>
+      <description>目录 什么是单元测试 为什么要写单元测试 怎么写单元测试 原生测试框架unittest/unittest2 基础 断言 setUp 和 tearDown 缺点 第三方测试框架py.te</description>
+    </item>
+    
+    <item>
       <title>可序列化类型和多进程PicklingError</title>
       <link>https://szthanatos.github.io/post/python/pickled/</link>
       <pubDate>Tue, 20 Mar 2018 16:16:15 +0800</pubDate>

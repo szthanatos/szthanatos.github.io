@@ -49,6 +49,15 @@
     </item>
     
     <item>
+      <title>KG</title>
+      <link>https://szthanatos.github.io/categories/kg/</link>
+      <pubDate>Sun, 17 Mar 2019 21:50:19 +0800</pubDate>
+      
+      <guid>https://szthanatos.github.io/categories/kg/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Kafka</title>
       <link>https://szthanatos.github.io/categories/kafka/</link>
       <pubDate>Tue, 15 Jan 2019 15:40:52 +0800</pubDate>
@@ -63,6 +72,15 @@
       <pubDate>Sat, 01 Dec 2018 15:59:04 +0800</pubDate>
       
       <guid>https://szthanatos.github.io/categories/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Redis</title>
+      <link>https://szthanatos.github.io/categories/redis/</link>
+      <pubDate>Thu, 30 Aug 2018 21:26:18 +0800</pubDate>
+      
+      <guid>https://szthanatos.github.io/categories/redis/</guid>
       <description></description>
     </item>
     

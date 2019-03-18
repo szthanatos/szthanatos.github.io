@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>unit testing on Kryptonite Lab</title>
+    <link>https://szthanatos.github.io/tags/unit-testing/</link>
+    <description>Recent content in unit testing on Kryptonite Lab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Mon, 20 Aug 2018 10:49:50 +0800</lastBuildDate>
+    
+	<atom:link href="https://szthanatos.github.io/tags/unit-testing/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>python单元测试标准及实现</title>
+      <link>https://szthanatos.github.io/post/python/unit_testing/</link>
+      <pubDate>Mon, 20 Aug 2018 10:49:50 +0800</pubDate>
+      
+      <guid>https://szthanatos.github.io/post/python/unit_testing/</guid>
+      <description>目录 什么是单元测试 为什么要写单元测试 怎么写单元测试 原生测试框架unittest/unittest2 基础 断言 setUp 和 tearDown 缺点 第三方测试框架py.te</description>
+    </item>
+    
+  </channel>
+</rss>
