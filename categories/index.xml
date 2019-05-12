@@ -5,12 +5,21 @@
     <link>https://szthanatos.github.io/categories/</link>
     <description>Recent content in Categories on Kryptonite Lab</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
+    <language>zh-Hans</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Tue, 01 Jan 2019 12:54:29 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 17 Mar 2019 21:50:19 +0800</lastBuildDate>
     
 	<atom:link href="https://szthanatos.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>KG</title>
+      <link>https://szthanatos.github.io/categories/kg/</link>
+      <pubDate>Sun, 17 Mar 2019 21:50:19 +0800</pubDate>
+      
+      <guid>https://szthanatos.github.io/categories/kg/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Academic</title>
@@ -18,24 +27,6 @@
       <pubDate>Tue, 01 Jan 2019 12:54:29 +0800</pubDate>
       
       <guid>https://szthanatos.github.io/categories/academic/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>DataBase</title>
-      <link>https://szthanatos.github.io/categories/database/</link>
-      <pubDate>Sun, 09 Dec 2018 16:19:27 +0800</pubDate>
-      
-      <guid>https://szthanatos.github.io/categories/database/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Docker</title>
-      <link>https://szthanatos.github.io/categories/docker/</link>
-      <pubDate>Sun, 09 Dec 2018 15:55:24 +0800</pubDate>
-      
-      <guid>https://szthanatos.github.io/categories/docker/</guid>
       <description></description>
     </item>
     
@@ -49,20 +40,11 @@
     </item>
     
     <item>
-      <title>KG</title>
-      <link>https://szthanatos.github.io/categories/kg/</link>
-      <pubDate>Sun, 17 Mar 2019 21:50:19 +0800</pubDate>
+      <title>DataBase</title>
+      <link>https://szthanatos.github.io/categories/database/</link>
+      <pubDate>Sun, 09 Dec 2018 16:19:27 +0800</pubDate>
       
-      <guid>https://szthanatos.github.io/categories/kg/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Kafka</title>
-      <link>https://szthanatos.github.io/categories/kafka/</link>
-      <pubDate>Tue, 15 Jan 2019 15:40:52 +0800</pubDate>
-      
-      <guid>https://szthanatos.github.io/categories/kafka/</guid>
+      <guid>https://szthanatos.github.io/categories/database/</guid>
       <description></description>
     </item>
     

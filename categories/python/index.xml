@@ -5,7 +5,7 @@
     <link>https://szthanatos.github.io/categories/python/</link>
     <description>Recent content in Python on Kryptonite Lab</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
+    <language>zh-Hans</language>
     <copyright>&amp;copy; 2018</copyright>
     <lastBuildDate>Sat, 01 Dec 2018 15:59:04 +0800</lastBuildDate>
     
@@ -27,7 +27,7 @@
       <pubDate>Mon, 20 Aug 2018 10:49:50 +0800</pubDate>
       
       <guid>https://szthanatos.github.io/post/python/unit_testing/</guid>
-      <description>目录 什么是单元测试 为什么要写单元测试 怎么写单元测试 原生测试框架unittest/unittest2 基础 断言 setUp 和 tearDown 缺点 第三方测试框架py.te</description>
+      <description>目录 HAHAHUGOSHORTCODE-TOC0-HBHB 这是写给我组里的人看的，顺手粘过来 什么是单元测试 单元测试(Unit Testing)又称为模块测试，是针对程序模块（软件设计的最小单位）</description>
     </item>
     
     <item>

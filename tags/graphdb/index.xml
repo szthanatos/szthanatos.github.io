@@ -5,7 +5,7 @@
     <link>https://szthanatos.github.io/tags/graphdb/</link>
     <description>Recent content in graphdb on Kryptonite Lab</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
+    <language>zh-Hans</language>
     <copyright>&amp;copy; 2018</copyright>
     <lastBuildDate>Sun, 17 Mar 2019 21:50:19 +0800</lastBuildDate>
     
@@ -18,7 +18,7 @@
       <pubDate>Sun, 17 Mar 2019 21:50:19 +0800</pubDate>
       
       <guid>https://szthanatos.github.io/post/janusgraph/</guid>
-      <description>目录 基本环境 安装 配置 基本用法 加载诸神图 一些基本操作 增操作 删操作 查询 基本环境 底层数据库基于HBase，检索服务基于Elasticserach。</description>
+      <description>目录 HAHAHUGOSHORTCODE-TOC0-HBHB 基本环境 底层数据库基于HBase，检索服务基于Elasticserach。 系统运行服务大致如下： [root@xnode208 ~] jps 21584 GremlinServer 27857 DataNode 23218 Jps 3251 HMaster 27283 NameNode 21707 Console 17131 Elasticsearch 29503 SecondaryNameNode</description>
     </item>
     
   </channel>

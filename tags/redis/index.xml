@@ -5,7 +5,7 @@
     <link>https://szthanatos.github.io/tags/redis/</link>
     <description>Recent content in redis on Kryptonite Lab</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
+    <language>zh-Hans</language>
     <copyright>&amp;copy; 2018</copyright>
     <lastBuildDate>Thu, 30 Aug 2018 21:26:18 +0800</lastBuildDate>
     
@@ -27,7 +27,7 @@
       <pubDate>Thu, 30 Aug 2018 16:40:48 +0800</pubDate>
       
       <guid>https://szthanatos.github.io/post/redis/redis_install/</guid>
-      <description>目录 简介 版本 安装 配置 最小配置 集群配置 启动 防火墙 单结点启动 集群启动 ruby环境 联通集群 检查集群状态 相关命令 附注 离线安装redis环境 如果gem</description>
+      <description>目录 HAHAHUGOSHORTCODE-TOC0-HBHB 简介 Redis 是一个开源（BSD许可）的，内存中的数据结构存储系统，它可以用作数据库、缓存和消息中间件。 它支持多种类型的数据结构，如 字符串（s</description>
     </item>
     
   </channel>

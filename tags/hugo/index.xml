@@ -5,7 +5,7 @@
     <link>https://szthanatos.github.io/tags/hugo/</link>
     <description>Recent content in Hugo on Kryptonite Lab</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
+    <language>zh-Hans</language>
     <copyright>&amp;copy; 2018</copyright>
     <lastBuildDate>Tue, 01 Jan 2019 12:54:29 +0800</lastBuildDate>
     
@@ -18,7 +18,7 @@
       <pubDate>Tue, 01 Jan 2019 12:54:29 +0800</pubDate>
       
       <guid>https://szthanatos.github.io/post/academic/trans_writing_content/</guid>
-      <description>本文是对Academic文档-Writing content章节的个人翻译，基于个人理解，不保证绝对准确。 原文见上方连接。 目录 副标题 强调 有序列</description>
+      <description>本文是对Academic文档-Writing content章节的个人翻译，基于个人理解，不保证绝对准确。 原文见上方连接。 目录 Academic</description>
     </item>
     
     <item>
@@ -27,7 +27,7 @@
       <pubDate>Tue, 01 Jan 2019 12:54:11 +0800</pubDate>
       
       <guid>https://szthanatos.github.io/post/academic/trans_managing_content/</guid>
-      <description>本文是对Academic文档-Managing content章节的个人翻译，基于个人理解，不保证绝对准确。 原文见上方连接。 目录 精选图片 标题图</description>
+      <description>本文是对Academic文档-Managing content章节的个人翻译，基于个人理解，不保证绝对准确。 原文见上方连接。 目录 HAHAHUGOSHORTCODE-TOC0-HBHB 这是一个使用</description>
     </item>
     
     <item>
@@ -36,7 +36,7 @@
       <pubDate>Sun, 09 Dec 2018 16:34:42 +0800</pubDate>
       
       <guid>https://szthanatos.github.io/post/academic/academic_in_practice/</guid>
-      <description>目录 Hugo 安装/更新 安装/更新 常用命令 Academic 安装/更新 通过Netlify 通过Git 安装 自动更新 手动更新 部署到Github Pages 原理 官方教程(缩减版) 脚本</description>
+      <description>目录 HAHAHUGOSHORTCODE-TOC0-HBHB Hugo 安装/更新 Hugo是使用Go语言开发的静态站点生成器。不过无需准备Go语言环境，可以直接通过二进制编译包进行跨平台部署。 以下均以Ub</description>
     </item>
     
   </channel>

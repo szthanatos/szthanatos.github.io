@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
+<html lang="zh-Hans">
 <head>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.1.0">
-  <meta name="generator" content="Hugo 0.54.0" />
+  <meta name="generator" content="Source Themes Academic 4.3.0">
 
   
 
@@ -15,9 +14,13 @@
   
   
   
+    
+    
+    
+  
   
 
-  
+  <meta name="author" content="Lex Wayne">
 
   
   
@@ -27,7 +30,7 @@
   <meta name="description" content="集群信息 节点信息 集群节点相关信息可以通过cluster nodes命令获取： 127.0.0.1:6379&gt; cluster nodes 5022fa41642195d74200fd512c08653dc12609e7 172.17.0.2:6380@16380 master - 0 1552814467000 2 connected 5461-10922 730d05ee4da3147d0885c6d47437465c94409f74 172.17.0.2:6383@16383 slave 25a2a1d8c96e9473d4cb3c8b0077d3b7b07dd5c0 0 1552814468555 5 connected 25a2a1d8c96e9473d4cb3c8b0077d3b7b07dd5c0 172.17.0.2:6379@16379 myself,master - 0 1552814468000 1 connected 0-5460 cf0be45c6a05c0d332b7356a7f57de95b32c3a71 172.17.0.2:6384@16384 slave 5022fa41642195d74200fd512c08653dc12609e7">
 
   
-  <link rel="alternate" hreflang="zh-cn" href="https://szthanatos.github.io/post/redis/redis_command/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://szthanatos.github.io/post/redis/redis_command/">
 
   
 
@@ -55,7 +58,6 @@
   
   
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
@@ -86,16 +88,17 @@
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono">
   
 
-  <link rel="stylesheet" href="/styles.css">
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.min.9e398b7a64ee2c82769da9724cdbf0cc.css">
+
   
 
   
   
   
 
-  
-  <link rel="alternate" href="https://szthanatos.github.io/index.xml" type="application/rss+xml" title="Kryptonite Lab">
-  <link rel="feed" href="https://szthanatos.github.io/index.xml" type="application/rss+xml" title="Kryptonite Lab">
   
 
   <link rel="manifest" href="/site.webmanifest">
@@ -116,8 +119,8 @@
   <meta property="og:site_name" content="Kryptonite Lab">
   <meta property="og:url" content="https://szthanatos.github.io/post/redis/redis_command/">
   <meta property="og:title" content="Redis集群相关命令 | Kryptonite Lab">
-  <meta property="og:description" content="集群信息 节点信息 集群节点相关信息可以通过cluster nodes命令获取： 127.0.0.1:6379&gt; cluster nodes 5022fa41642195d74200fd512c08653dc12609e7 172.17.0.2:6380@16380 master - 0 1552814467000 2 connected 5461-10922 730d05ee4da3147d0885c6d47437465c94409f74 172.17.0.2:6383@16383 slave 25a2a1d8c96e9473d4cb3c8b0077d3b7b07dd5c0 0 1552814468555 5 connected 25a2a1d8c96e9473d4cb3c8b0077d3b7b07dd5c0 172.17.0.2:6379@16379 myself,master - 0 1552814468000 1 connected 0-5460 cf0be45c6a05c0d332b7356a7f57de95b32c3a71 172.17.0.2:6384@16384 slave 5022fa41642195d74200fd512c08653dc12609e7"><meta property="og:image" content="https://szthanatos.github.io/img/portrait.jpg">
-  <meta property="og:locale" content="zh-cn">
+  <meta property="og:description" content="集群信息 节点信息 集群节点相关信息可以通过cluster nodes命令获取： 127.0.0.1:6379&gt; cluster nodes 5022fa41642195d74200fd512c08653dc12609e7 172.17.0.2:6380@16380 master - 0 1552814467000 2 connected 5461-10922 730d05ee4da3147d0885c6d47437465c94409f74 172.17.0.2:6383@16383 slave 25a2a1d8c96e9473d4cb3c8b0077d3b7b07dd5c0 0 1552814468555 5 connected 25a2a1d8c96e9473d4cb3c8b0077d3b7b07dd5c0 172.17.0.2:6379@16379 myself,master - 0 1552814468000 1 connected 0-5460 cf0be45c6a05c0d332b7356a7f57de95b32c3a71 172.17.0.2:6384@16384 slave 5022fa41642195d74200fd512c08653dc12609e7"><meta property="og:image" content="https://szthanatos.github.io/img/icon-192.png">
+  <meta property="og:locale" content="zh-Hans">
   
   <meta property="article:published_time" content="2018-08-30T21:26:18&#43;08:00">
   
@@ -164,6 +167,7 @@
 </aside>
 
 
+
 <nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
   <div class="container">
 
@@ -181,7 +185,7 @@
 
       
       
-      <ul class="navbar-nav ml-auto">
+      <ul class="navbar-nav mr-auto">
         
 
         
@@ -192,8 +196,22 @@
           
         
 
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
         <li class="nav-item">
-          <a class="nav-link" href="/#hero">
+          <a class="nav-link " href="/#hero">
             
             <span>主页</span>
             
@@ -211,10 +229,24 @@
           
         
 
-        <li class="nav-item">
-          <a class="nav-link" href="/#posts">
+        
+        
+        
+        
+        
+        
+          
+          
+          
             
-            <span>文章</span>
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts">
+            
+            <span>笔记</span>
             
           </a>
         </li>
@@ -230,8 +262,15 @@
           
         
 
+        
+        
+        
+        
+        
+        
+
         <li class="nav-item">
-          <a class="nav-link" href="/#topics">
+          <a class="nav-link " href="/topic/">
             
             <span>专题</span>
             
@@ -241,6 +280,9 @@
         
         
 
+      
+      </ul>
+      <ul class="navbar-nav ml-auto">
       
 
         
@@ -296,8 +338,8 @@
 
 
 
-<meta content="2018-08-30 21:26:18 &#43;0800 DST" itemprop="datePublished">
-<meta content="2018-08-30 21:26:18 &#43;0800 DST" itemprop="dateModified">
+<meta content="2018-08-30 21:26:18 &#43;0800 CST" itemprop="datePublished">
+<meta content="2018-08-30 21:26:18 &#43;0800 CST" itemprop="dateModified">
 
 <div class="article-metadata">
 
@@ -328,26 +370,59 @@
 
   
   
-  
   <span class="middot-divider"></span>
   <span class="article-categories">
     <i class="fas fa-folder"></i>
-    
-    <a href="/categories/redis/">Redis</a>
-    
-  </span>
-  
+    <a href="/categories/redis/">Redis</a></span>
   
 
   
     
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=&amp;url="
+         target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u="
+         target="_blank" rel="noopener">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=&amp;title="
+         target="_blank" rel="noopener">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=&amp;title="
+         target="_blank" rel="noopener">
+        <i class="fab fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=&amp;body=">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
 
   
 
 </div>
 
     
-
 
 
 
@@ -661,29 +736,24 @@ cluster_stats_messages_received:3112
 
 <div class="alert alert-note">
   <div>
-    <p><strong>ps1</strong>：从redis5.0起，<code>slave</code>关键字将被<code>replicate</code>取代，相关命令也会逐步被替代</p>
-
+    <strong>ps1</strong>：从redis5.0起，<code>slave</code>关键字将被<code>replicate</code>取代，相关命令也会逐步被替代
   </div>
 </div>
 
-
 <div class="alert alert-note">
   <div>
-    <p><strong>ps2</strong>：<code>readonly</code>这个额外说一下，默认情况下，redis的从节点不处理客户端请求，只负责同步主节点的数据，设置<code>readonly</code>之后，指向从节点的读请求会被执行，这样相当于为主节点分担了读的压力(也算是scale了)，但是还是存在两个限制：</p>
+    <strong>ps2</strong>：<code>readonly</code>这个额外说一下，默认情况下，redis的从节点不处理客户端请求，只负责同步主节点的数据，设置<code>readonly</code>之后，指向从节点的读请求会被执行，这样相当于为主节点分担了读的压力(也算是scale了)，但是还是存在两个限制：</p>
 
 <ol>
 <li>写请求还是会转移给主节点；</li>
 <li>要读的key的哈希槽不属于这个节点，请求一样会被转移；</li>
 </ol>
-
   </div>
 </div>
-
 
     </div>
 
     
-
 
 <div class="article-tags">
   
@@ -692,7 +762,6 @@ cluster_stats_messages_received:3112
   <a class="badge badge-light" href="/tags/redis-cluster/">redis cluster</a>
   
 </div>
-
 
 
     <style type="text/css">
@@ -746,13 +815,30 @@ cluster_stats_messages_received:3112
 
 
 
+
+
   
+
+
+
+
+
   
-  
+  <div class="media author-card" itemscope itemtype="http://schema.org/Person">
+    
+      
+      <img class="portrait mr-3" src="/authors/admin/avatar_hu927d0588555ad7f9e6afbb2585734232_402626_250x250_fill_q90_lanczos_center.jpg" itemprop="image" alt="Avatar">
+    
 
-
-
-
+    <div class="media-body">
+      <h5 class="card-title" itemprop="name"><a href="/authors/admin/">Lex Wayne</a></h5>
+      <h6 class="card-subtitle">Python Knight &amp; Go Padawan</h6>
+      <p class="card-text" itemprop="description">You see, madness, as you know, is like gravity.</p>
+      <ul class="network-icon" aria-hidden="true">
+        
+      </ul>
+    </div>
+  </div>
 
 
 
@@ -833,16 +919,12 @@ cluster_stats_messages_received:3112
 
     
     
-    
-    <script src="/js/mathjax-config.js"></script>
-    
 
     
     
     
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha512-+NqPlbbtM1QqiK8ZAo4Yrj2c4lNQoGv8P79DPtKzj++l5jnN39rHA/xsqn8zE9l0uSoxaCdrOgFs6yjyfbBxSg==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha256-VsEqElsCHSGmnmHXGQzvoWjWwoznFSZc6hs7ARLRacQ=" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
 
@@ -850,25 +932,9 @@ cluster_stats_messages_received:3112
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
         
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>
-        
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
-        
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/dockerfile.min.js"></script>
-        
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
-        
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/shell.min.js"></script>
-        
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/sql.min.js"></script>
-        
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/properties.min.js"></script>
-        
       
 
       
-      
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML-full" integrity="sha256-GhM+5JHb6QUzOQPXSJLEWP7R73CbkisjzK5Eyij4U9w=" crossorigin="anonymous" async></script>
       
     
 
@@ -936,12 +1002,14 @@ cluster_stats_messages_received:3112
     
     
     
+    
+    
       
     
     
     
     
-    <script src="/js/academic.min.d7381f2d79e6271d4da28f474f49096c.js"></script>
+    <script src="/js/academic.min.3258b3a711acd6208568ec000de4beec.js"></script>
 
   </body>
 </html>

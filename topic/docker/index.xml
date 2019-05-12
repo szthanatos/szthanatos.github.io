@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Docker30分钟指北 on Kryptonite Lab</title>
+    <title>Overview on Kryptonite Lab</title>
     <link>https://szthanatos.github.io/topic/docker/</link>
-    <description>Recent content in Docker30分钟指北 on Kryptonite Lab</description>
+    <description>Recent content in Overview on Kryptonite Lab</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
+    <language>zh-Hans</language>
     <copyright>&amp;copy; 2018</copyright>
     <lastBuildDate>Sun, 09 Dec 2018 15:55:24 +0800</lastBuildDate>
     
@@ -13,12 +13,12 @@
     
     
     <item>
-      <title>Docker30分钟指北</title>
-      <link>https://szthanatos.github.io/topic/docker/</link>
-      <pubDate>Sun, 09 Dec 2018 15:55:24 +0800</pubDate>
+      <title>Docker -01- 基本概念</title>
+      <link>https://szthanatos.github.io/topic/docker/basis/</link>
+      <pubDate>Wed, 05 Dec 2018 22:17:22 +0800</pubDate>
       
-      <guid>https://szthanatos.github.io/topic/docker/</guid>
-      <description>基本概念 进阶生态</description>
+      <guid>https://szthanatos.github.io/topic/docker/basis/</guid>
+      <description>Docker简介 什么是Docker Docker 最初是 dotCloud 公司创始人 Solomon Hykes 在法国期间发起的一个公司内部项目，并于2013 年 3 月以 Apache 2.0 授权协议开源，主要项目代</description>
     </item>
     
     <item>
@@ -28,15 +28,6 @@
       
       <guid>https://szthanatos.github.io/topic/docker/ecology/</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title>Docker -01- 基本概念</title>
-      <link>https://szthanatos.github.io/topic/docker/basis/</link>
-      <pubDate>Wed, 05 Dec 2018 22:17:22 +0800</pubDate>
-      
-      <guid>https://szthanatos.github.io/topic/docker/basis/</guid>
-      <description>Docker简介 什么是Docker Docker 最初是 dotCloud 公司创始人 Solomon Hykes 在法国期间发起的一个公司内部项目，并于2013 年 3 月以 Apache 2.0 授权协议开源，主要项目代</description>
     </item>
     
   </channel>

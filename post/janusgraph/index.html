@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
+<html lang="zh-Hans">
 <head>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.1.0">
-  <meta name="generator" content="Hugo 0.54.0" />
+  <meta name="generator" content="Source Themes Academic 4.3.0">
 
   
 
@@ -15,9 +14,13 @@
   
   
   
+    
+    
+    
+  
   
 
-  
+  <meta name="author" content="Lex Wayne">
 
   
   
@@ -27,7 +30,7 @@
   <meta name="description" content="目录 基本环境 安装 配置 基本用法 加载诸神图 一些基本操作 增操作 删操作 查询 基本环境 底层数据库基于HBase，检索服务基于Elasticserach。">
 
   
-  <link rel="alternate" hreflang="zh-cn" href="https://szthanatos.github.io/post/janusgraph/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://szthanatos.github.io/post/janusgraph/">
 
   
 
@@ -55,7 +58,6 @@
   
   
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
@@ -86,16 +88,17 @@
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono">
   
 
-  <link rel="stylesheet" href="/styles.css">
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.min.9e398b7a64ee2c82769da9724cdbf0cc.css">
+
   
 
   
   
   
 
-  
-  <link rel="alternate" href="https://szthanatos.github.io/index.xml" type="application/rss+xml" title="Kryptonite Lab">
-  <link rel="feed" href="https://szthanatos.github.io/index.xml" type="application/rss+xml" title="Kryptonite Lab">
   
 
   <link rel="manifest" href="/site.webmanifest">
@@ -116,8 +119,8 @@
   <meta property="og:site_name" content="Kryptonite Lab">
   <meta property="og:url" content="https://szthanatos.github.io/post/janusgraph/">
   <meta property="og:title" content="JanusGraph搭建及简单使用 | Kryptonite Lab">
-  <meta property="og:description" content="目录 基本环境 安装 配置 基本用法 加载诸神图 一些基本操作 增操作 删操作 查询 基本环境 底层数据库基于HBase，检索服务基于Elasticserach。"><meta property="og:image" content="https://szthanatos.github.io/img/portrait.jpg">
-  <meta property="og:locale" content="zh-cn">
+  <meta property="og:description" content="目录 基本环境 安装 配置 基本用法 加载诸神图 一些基本操作 增操作 删操作 查询 基本环境 底层数据库基于HBase，检索服务基于Elasticserach。"><meta property="og:image" content="https://szthanatos.github.io/img/icon-192.png">
+  <meta property="og:locale" content="zh-Hans">
   
   <meta property="article:published_time" content="2019-03-17T21:50:19&#43;08:00">
   
@@ -164,6 +167,7 @@
 </aside>
 
 
+
 <nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
   <div class="container">
 
@@ -181,7 +185,7 @@
 
       
       
-      <ul class="navbar-nav ml-auto">
+      <ul class="navbar-nav mr-auto">
         
 
         
@@ -192,8 +196,22 @@
           
         
 
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
         <li class="nav-item">
-          <a class="nav-link" href="/#hero">
+          <a class="nav-link " href="/#hero">
             
             <span>主页</span>
             
@@ -211,10 +229,24 @@
           
         
 
-        <li class="nav-item">
-          <a class="nav-link" href="/#posts">
+        
+        
+        
+        
+        
+        
+          
+          
+          
             
-            <span>文章</span>
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts">
+            
+            <span>笔记</span>
             
           </a>
         </li>
@@ -230,8 +262,15 @@
           
         
 
+        
+        
+        
+        
+        
+        
+
         <li class="nav-item">
-          <a class="nav-link" href="/#topics">
+          <a class="nav-link " href="/topic/">
             
             <span>专题</span>
             
@@ -241,6 +280,9 @@
         
         
 
+      
+      </ul>
+      <ul class="navbar-nav ml-auto">
       
 
         
@@ -296,8 +338,8 @@
 
 
 
-<meta content="2019-03-17 21:50:19 &#43;0800 DST" itemprop="datePublished">
-<meta content="2019-03-17 21:50:19 &#43;0800 DST" itemprop="dateModified">
+<meta content="2019-03-17 21:50:19 &#43;0800 CST" itemprop="datePublished">
+<meta content="2019-03-17 21:50:19 &#43;0800 CST" itemprop="dateModified">
 
 <div class="article-metadata">
 
@@ -328,26 +370,59 @@
 
   
   
-  
   <span class="middot-divider"></span>
   <span class="article-categories">
     <i class="fas fa-folder"></i>
-    
-    <a href="/categories/kg/">KG</a>
-    
-  </span>
-  
+    <a href="/categories/kg/">KG</a></span>
   
 
   
     
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=&amp;url="
+         target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u="
+         target="_blank" rel="noopener">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=&amp;title="
+         target="_blank" rel="noopener">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=&amp;title="
+         target="_blank" rel="noopener">
+        <i class="fab fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=&amp;body=">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
 
   
 
 </div>
 
     
-
 
 
 
@@ -372,7 +447,7 @@
     <div class="article-style" itemprop="articleBody">
       
 
-<h2>目录</h2>
+<p><h2>目录</h2>
 <nav id="TableOfContents">
 <ul>
 <li>
@@ -390,8 +465,7 @@
 <li><a href="#查询">查询</a></li>
 </ul></li>
 </ul>
-</nav>
-
+</nav></p>
 
 <h2 id="基本环境">基本环境</h2>
 
@@ -427,9 +501,11 @@ cd janusgraph-0.2.2-hadoop2
 <li><p>创建gremlin-server端配置文件<code>janusgraph-0.2.2-hadoop2/conf/gremlin-server/socket-gremlin-server.yaml</code>，这里我们复制gremlin服务默认的配置文件，在此基础上进行修改</p>
 
 <pre><code class="language-bash">cp conf/gremlin-server/gremlin-server.yaml conf/gremlin-server/socket-gremlin-server.yaml
-</code></pre></li>
+</code></pre>
 
-<li><p>修改<code>socket-gremlin-server.yaml</code>：在配置文件中添加graphManager;并在graphs项中添加graph键及其值，一个键值代表一个图表，值表示对图表的设置(可添加多个图表，每一个图表都有自己的配置文件)，如：</p>
+<ol>
+<li>修改<code>socket-gremlin-server.yaml</code>：在配置文件中添加graphManager;并在graphs项中添加graph键及其值，一个键值代表一个图表，值表示对图表的设置(可添加多个图表，每一个图表都有自己的配置文件)，如：</li>
+</ol>
 
 <pre><code class="language-bash">graphManager: org.janusgraph.graphdb.management.JanusGraphManager
 graphs: {
@@ -453,26 +529,30 @@ cache.db-cache = true
 cache.db-cache-clean-wait = 20
 cache.db-cache-time = 180000
 cache.db-cache-size = 0.5
-</code></pre></li>
-</ol>
+</code></pre>
 
 <h2 id="基本用法">基本用法</h2>
 
 <p>依次启动hbase,elasticsearch以及gremlin-server，最后进入gremlin.sh客户端对图表进行操作</p>
 
 <ul>
-<li><p>hbase</p>
+<li>hbase</li>
+</ul>
 
 <pre><code class="language-bash">[root@xnode208 ~] start-hbase.sh
 </code></pre></li>
+</ol>
 
+<ul>
 <li><p>elasticsearch.(注：Janusgraph自带的elastic search服务启动时为确保安全被禁止使用root用户)</p>
 
 <pre><code class="language-bash">[zkr@xnode208 ~] cd /usr/local/janusgraph-0.2.2-hadoop2
 [zkr@xnode208 elasticsearch] ./bin/elasticsearch
-</code></pre></li>
+</code></pre>
 
-<li><p>gremlin-server(启动成功后，会创建我们在配置文件中设计的图表)</p>
+<ul>
+<li>gremlin-server(启动成功后，会创建我们在配置文件中设计的图表)</li>
+</ul>
 
 <pre><code class="language-bash">[zkr@xnode208 janusgraph0.2] ./bin/gremlin-server.sh ./conf/gremlin-server/socket-gremlin-server.yaml
 </code></pre></li>
@@ -481,8 +561,7 @@ cache.db-cache-size = 0.5
 
 <pre><code class="language-bash">[root@xnode208 janusgraph0.2] ./bin/gremlin.sh
 gremlin&gt; 
-</code></pre></li>
-</ul>
+</code></pre>
 
 <h2 id="加载诸神图">加载诸神图</h2>
 
@@ -495,7 +574,8 @@ gremlin&gt; :remote console
 # 加载诸神图到我们创建的空图表中
 gremlin&gt; GraphOfTheGodsFactory.load(graph)
 ==&gt;null
-</code></pre>
+</code></pre></li>
+</ul>
 
 <p>示例数据描述了一部分希腊诸神以及他们居住的诸神殿的相关关系。</p>
 
@@ -636,7 +716,6 @@ g.E().properties('reason');  # 查看边属性为reason的属性及属性值
 
     
 
-
 <div class="article-tags">
   
   <a class="badge badge-light" href="/tags/graphdb/">graphdb</a>
@@ -646,7 +725,6 @@ g.E().properties('reason');  # 查看边属性为reason的属性及属性值
   <a class="badge badge-light" href="/tags/knowledge-graph/">knowledge graph</a>
   
 </div>
-
 
 
     <style type="text/css">
@@ -700,13 +778,30 @@ g.E().properties('reason');  # 查看边属性为reason的属性及属性值
 
 
 
+
+
   
+
+
+
+
+
   
-  
+  <div class="media author-card" itemscope itemtype="http://schema.org/Person">
+    
+      
+      <img class="portrait mr-3" src="/authors/admin/avatar_hu927d0588555ad7f9e6afbb2585734232_402626_250x250_fill_q90_lanczos_center.jpg" itemprop="image" alt="Avatar">
+    
 
-
-
-
+    <div class="media-body">
+      <h5 class="card-title" itemprop="name"><a href="/authors/admin/">Lex Wayne</a></h5>
+      <h6 class="card-subtitle">Python Knight &amp; Go Padawan</h6>
+      <p class="card-text" itemprop="description">You see, madness, as you know, is like gravity.</p>
+      <ul class="network-icon" aria-hidden="true">
+        
+      </ul>
+    </div>
+  </div>
 
 
 
@@ -777,16 +872,12 @@ g.E().properties('reason');  # 查看边属性为reason的属性及属性值
 
     
     
-    
-    <script src="/js/mathjax-config.js"></script>
-    
 
     
     
     
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha512-+NqPlbbtM1QqiK8ZAo4Yrj2c4lNQoGv8P79DPtKzj++l5jnN39rHA/xsqn8zE9l0uSoxaCdrOgFs6yjyfbBxSg==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha256-VsEqElsCHSGmnmHXGQzvoWjWwoznFSZc6hs7ARLRacQ=" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
 
@@ -794,25 +885,9 @@ g.E().properties('reason');  # 查看边属性为reason的属性及属性值
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
         
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>
-        
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
-        
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/dockerfile.min.js"></script>
-        
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
-        
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/shell.min.js"></script>
-        
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/sql.min.js"></script>
-        
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/properties.min.js"></script>
-        
       
 
       
-      
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML-full" integrity="sha256-GhM+5JHb6QUzOQPXSJLEWP7R73CbkisjzK5Eyij4U9w=" crossorigin="anonymous" async></script>
       
     
 
@@ -880,12 +955,14 @@ g.E().properties('reason');  # 查看边属性为reason的属性及属性值
     
     
     
+    
+    
       
     
     
     
     
-    <script src="/js/academic.min.d7381f2d79e6271d4da28f474f49096c.js"></script>
+    <script src="/js/academic.min.3258b3a711acd6208568ec000de4beec.js"></script>
 
   </body>
 </html>

@@ -5,7 +5,7 @@
     <link>https://szthanatos.github.io/tags/hbase/</link>
     <description>Recent content in HBase on Kryptonite Lab</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
+    <language>zh-Hans</language>
     <copyright>&amp;copy; 2018</copyright>
     <lastBuildDate>Sun, 09 Dec 2018 16:19:27 +0800</lastBuildDate>
     
@@ -18,7 +18,7 @@
       <pubDate>Sun, 09 Dec 2018 16:19:27 +0800</pubDate>
       
       <guid>https://szthanatos.github.io/post/hbase_design/</guid>
-      <description>目录 简介 一般原则 命名空间(NameSpace) 命名规范 示例 表(Table) 命名规范 示例 行键(Rowkey) 命名规范 示例 注意 慎重将时间戳直接放</description>
+      <description>目录 HAHAHUGOSHORTCODE-TOC0-HBHB 简介 本指南是对在HBase进行字段设计而提供的指导性准则和建议。总体标准、设计方式参照Google 开源项目风格指南以及现有项目经验。所</description>
     </item>
     
   </channel>

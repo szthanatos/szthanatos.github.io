@@ -5,7 +5,7 @@
     <link>https://szthanatos.github.io/post/</link>
     <description>Recent content in Posts on Kryptonite Lab</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
+    <language>zh-Hans</language>
     <copyright>&amp;copy; 2018</copyright>
     <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0800</lastBuildDate>
     
@@ -18,7 +18,7 @@
       <pubDate>Sun, 17 Mar 2019 21:50:19 +0800</pubDate>
       
       <guid>https://szthanatos.github.io/post/janusgraph/</guid>
-      <description>目录 基本环境 安装 配置 基本用法 加载诸神图 一些基本操作 增操作 删操作 查询 基本环境 底层数据库基于HBase，检索服务基于Elasticserach。</description>
+      <description>目录 HAHAHUGOSHORTCODE-TOC0-HBHB 基本环境 底层数据库基于HBase，检索服务基于Elasticserach。 系统运行服务大致如下： [root@xnode208 ~] jps 21584 GremlinServer 27857 DataNode 23218 Jps 3251 HMaster 27283 NameNode 21707 Console 17131 Elasticsearch 29503 SecondaryNameNode</description>
     </item>
     
     <item>
@@ -36,7 +36,7 @@
       <pubDate>Tue, 01 Jan 2019 12:54:29 +0800</pubDate>
       
       <guid>https://szthanatos.github.io/post/academic/trans_writing_content/</guid>
-      <description>本文是对Academic文档-Writing content章节的个人翻译，基于个人理解，不保证绝对准确。 原文见上方连接。 目录 副标题 强调 有序列</description>
+      <description>本文是对Academic文档-Writing content章节的个人翻译，基于个人理解，不保证绝对准确。 原文见上方连接。 目录 Academic</description>
     </item>
     
     <item>
@@ -45,7 +45,7 @@
       <pubDate>Tue, 01 Jan 2019 12:54:11 +0800</pubDate>
       
       <guid>https://szthanatos.github.io/post/academic/trans_managing_content/</guid>
-      <description>本文是对Academic文档-Managing content章节的个人翻译，基于个人理解，不保证绝对准确。 原文见上方连接。 目录 精选图片 标题图</description>
+      <description>本文是对Academic文档-Managing content章节的个人翻译，基于个人理解，不保证绝对准确。 原文见上方连接。 目录 HAHAHUGOSHORTCODE-TOC0-HBHB 这是一个使用</description>
     </item>
     
     <item>
@@ -54,7 +54,7 @@
       <pubDate>Tue, 01 Jan 2019 12:27:05 +0800</pubDate>
       
       <guid>https://szthanatos.github.io/post/tmux/</guid>
-      <description>目录 简介 安装tmux 基础概念 配置 常用控制 会话 窗口 窗格 tpm插件 鼠标操作 简介 Tmux是一个终端复用软件，默认的Linux终端一个会话只能干一件</description>
+      <description>目录 HAHAHUGOSHORTCODE-TOC0-HBHB 简介 Tmux是一个终端复用软件，默认的Linux终端一个会话只能干一件事，有了tmux就能在一个窗口同时管理多个前/后台程序了。 安装t</description>
     </item>
     
     <item>
@@ -63,7 +63,7 @@
       <pubDate>Fri, 14 Dec 2018 09:35:32 +0800</pubDate>
       
       <guid>https://szthanatos.github.io/post/git/git_tips/</guid>
-      <description>目录 Deploy key/SSH key(github) 更换git协议 强制覆盖本地文件 撤销修改 add之前撤销 commit之前撤销 push之前撤销 删除历史提交记录 Deploy key/SSH key(github) Deploy key是在项目主页</description>
+      <description>目录 HAHAHUGOSHORTCODE-TOC0-HBHB Deploy key/SSH key(github) Deploy key是在项目主页-setting-Delpoy keys下进行添加，如果勾选Allow write access，则相当于具有对这个项目的</description>
     </item>
     
     <item>
@@ -72,7 +72,7 @@
       <pubDate>Sun, 09 Dec 2018 16:34:42 +0800</pubDate>
       
       <guid>https://szthanatos.github.io/post/academic/academic_in_practice/</guid>
-      <description>目录 Hugo 安装/更新 安装/更新 常用命令 Academic 安装/更新 通过Netlify 通过Git 安装 自动更新 手动更新 部署到Github Pages 原理 官方教程(缩减版) 脚本</description>
+      <description>目录 HAHAHUGOSHORTCODE-TOC0-HBHB Hugo 安装/更新 Hugo是使用Go语言开发的静态站点生成器。不过无需准备Go语言环境，可以直接通过二进制编译包进行跨平台部署。 以下均以Ub</description>
     </item>
     
     <item>
@@ -81,7 +81,7 @@
       <pubDate>Sun, 09 Dec 2018 16:19:27 +0800</pubDate>
       
       <guid>https://szthanatos.github.io/post/hbase_design/</guid>
-      <description>目录 简介 一般原则 命名空间(NameSpace) 命名规范 示例 表(Table) 命名规范 示例 行键(Rowkey) 命名规范 示例 注意 慎重将时间戳直接放</description>
+      <description>目录 HAHAHUGOSHORTCODE-TOC0-HBHB 简介 本指南是对在HBase进行字段设计而提供的指导性准则和建议。总体标准、设计方式参照Google 开源项目风格指南以及现有项目经验。所</description>
     </item>
     
     <item>
@@ -90,7 +90,7 @@
       <pubDate>Wed, 05 Dec 2018 17:09:21 +0800</pubDate>
       
       <guid>https://szthanatos.github.io/post/palantir_intro/</guid>
-      <description>目录 简介 最新情况 创始人 Peter Thiel Alex Karp (CEO) Joe Lonsdale Stephen Cohen Nathan Gettings 发展历程 产品内容 官方主页： Home | Palantir 产品线 解决方案 简介 Palantir是全球第一大大数据公司。曾经的</description>
+      <description>目录 HAHAHUGOSHORTCODE-TOC0-HBHB 简介 Palantir是全球第一大大数据公司。曾经的全球四大独角兽之一（其它三家是Uber，Airbnb和小米）。中文名帕兰提尔，源于《</description>
     </item>
     
     <item>
@@ -126,7 +126,7 @@
       <pubDate>Thu, 30 Aug 2018 16:40:48 +0800</pubDate>
       
       <guid>https://szthanatos.github.io/post/redis/redis_install/</guid>
-      <description>目录 简介 版本 安装 配置 最小配置 集群配置 启动 防火墙 单结点启动 集群启动 ruby环境 联通集群 检查集群状态 相关命令 附注 离线安装redis环境 如果gem</description>
+      <description>目录 HAHAHUGOSHORTCODE-TOC0-HBHB 简介 Redis 是一个开源（BSD许可）的，内存中的数据结构存储系统，它可以用作数据库、缓存和消息中间件。 它支持多种类型的数据结构，如 字符串（s</description>
     </item>
     
     <item>
@@ -135,7 +135,7 @@
       <pubDate>Mon, 20 Aug 2018 10:49:50 +0800</pubDate>
       
       <guid>https://szthanatos.github.io/post/python/unit_testing/</guid>
-      <description>目录 什么是单元测试 为什么要写单元测试 怎么写单元测试 原生测试框架unittest/unittest2 基础 断言 setUp 和 tearDown 缺点 第三方测试框架py.te</description>
+      <description>目录 HAHAHUGOSHORTCODE-TOC0-HBHB 这是写给我组里的人看的，顺手粘过来 什么是单元测试 单元测试(Unit Testing)又称为模块测试，是针对程序模块（软件设计的最小单位）</description>
     </item>
     
     <item>
