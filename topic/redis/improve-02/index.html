@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="zh-Hans">
+
 <head>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.3.0">
+  <meta name="generator" content="Source Themes Academic 4.3.1">
 
   
 
@@ -34,16 +35,6 @@
 
   
 
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 
@@ -91,7 +82,7 @@
   
   
   
-  <link rel="stylesheet" href="/css/academic.min.9e398b7a64ee2c82769da9724cdbf0cc.css">
+  <link rel="stylesheet" href="/css/academic.min.a9a796b4dba28c78fc94d2550173437e.css">
 
   
 
@@ -129,12 +120,20 @@
 
   
 
+
   
+
+
+
+
 
   <title>优化指南-使用 | Kryptonite Lab</title>
 
 </head>
+
+
 <body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
+
   <aside class="search-results" id="search">
   <div class="container">
     <section class="search-header">
@@ -167,7 +166,7 @@
 </aside>
 
 
-
+  
 <nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
   <div class="container">
 
@@ -211,11 +210,7 @@
         
 
         <li class="nav-item">
-          <a class="nav-link " href="/#hero">
-            
-            <span>主页</span>
-            
-          </a>
+          <a class="nav-link " href="/#hero"><span>主页</span></a>
         </li>
 
         
@@ -244,11 +239,7 @@
         
 
         <li class="nav-item">
-          <a class="nav-link " href="/#posts">
-            
-            <span>笔记</span>
-            
-          </a>
+          <a class="nav-link " href="/#posts"><span>笔记</span></a>
         </li>
 
         
@@ -270,11 +261,7 @@
         
 
         <li class="nav-item">
-          <a class="nav-link  active" href="/topic/">
-            
-            <span>专题</span>
-            
-          </a>
+          <a class="nav-link  active" href="/topic/"><span>专题</span></a>
         </li>
 
         
@@ -308,11 +295,13 @@
 </nav>
 
 
+  
 
 <div class="container-fluid docs">
   <div class="row flex-xl-nowrap">
     <div class="col-12 col-md-3 col-xl-2 docs-sidebar">
       
+
 
 
 
@@ -386,9 +375,9 @@
 
     
     <div class="d-none d-xl-block col-xl-2 docs-toc">
-      
-      <p class="docs-toc-title">在本页</p>
-      
+      <ul class="nav toc-top">
+        <li><a href="#" id="back_to_top" class="docs-toc-title">在本页</a></li>
+      </ul>
 
       <nav id="TableOfContents">
 <ul>
@@ -411,10 +400,6 @@
 </ul></li>
 </ul>
 </nav>
-
-      <ul class="nav toc-top">
-        <li><a href="#">回到顶部</a></li>
-      </ul>
 
       
     </div>
@@ -746,7 +731,8 @@ $ ./redis-benchmark -r 1000000 -n 2000000 -t get,set,lpush,lpop -q
   </div>
 </div>
 
-    
+
+      
 
     
     
@@ -758,6 +744,8 @@ $ ./redis-benchmark -r 1000000 -n 2000000 -t get,set,lpush,lpop -q
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
 
       
         
@@ -845,9 +833,42 @@ $ ./redis-benchmark -r 1000000 -n 2000000 -t get,set,lpush,lpop -q
     
     
     
-    <script src="/js/academic.min.3258b3a711acd6208568ec000de4beec.js"></script>
+    <script src="/js/academic.min.9ef1b53ee2bde6c7f33b150c6ba4d452.js"></script>
 
-  </body>
+    
+
+
+
+
+
+
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">引用</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> 复制
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> 下载
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
 </html>
-
-
