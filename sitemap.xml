@@ -3,11 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://szthanatos.github.io/courses/example/example1/</loc>
-    <lastmod>2019-05-05T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://szthanatos.github.io/topic/kafka/</loc>
     <lastmod>2019-01-15T15:40:52+08:00</lastmod>
   </url>
@@ -28,13 +23,13 @@
   </url>
   
   <url>
-    <loc>https://szthanatos.github.io/courses/example/</loc>
-    <lastmod>2018-09-09T00:00:00+00:00</lastmod>
+    <loc>https://szthanatos.github.io/topic/redis/install/</loc>
+    <lastmod>2018-08-30T16:40:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://szthanatos.github.io/courses/example/example2/</loc>
-    <lastmod>2019-05-05T00:00:00+01:00</lastmod>
+    <loc>https://szthanatos.github.io/topic/redis/</loc>
+    <lastmod>2019-06-16T14:34:52+08:00</lastmod>
   </url>
   
   <url>
@@ -45,6 +40,21 @@
   <url>
     <loc>https://szthanatos.github.io/topic/docker/ecology/</loc>
     <lastmod>2018-12-06T10:06:06+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://szthanatos.github.io/topic/redis/cluster_command/</loc>
+    <lastmod>2018-08-30T21:26:18+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://szthanatos.github.io/topic/redis/improve-00/</loc>
+    <lastmod>2019-03-18T15:04:35+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://szthanatos.github.io/topic/redis/error/</loc>
+    <lastmod>2018-08-30T16:40:48+08:00</lastmod>
   </url>
   
   <url>
@@ -106,6 +116,21 @@
     <loc>https://szthanatos.github.io/tags/</loc>
     <lastmod>2019-04-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://szthanatos.github.io/topic/redis/improve-02/</loc>
+    <lastmod>2019-03-18T15:04:35+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://szthanatos.github.io/topic/redis/improve-01/</loc>
+    <lastmod>2019-03-18T15:04:35+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://szthanatos.github.io/topic/redis/improve-03/</loc>
+    <lastmod>2019-03-18T15:04:35+08:00</lastmod>
   </url>
   
   <url>
@@ -276,34 +301,6 @@
   </url>
   
   <url>
-    <loc>https://szthanatos.github.io/categories/redis/</loc>
-    <lastmod>2018-08-30T21:26:18+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://szthanatos.github.io/post/redis/redis_command/</loc>
-    <lastmod>2018-08-30T21:26:18+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://szthanatos.github.io/tags/redis/</loc>
-    <lastmod>2018-08-30T21:26:18+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://szthanatos.github.io/tags/redis-cluster/</loc>
-    <lastmod>2018-08-30T21:26:18+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://szthanatos.github.io/post/redis/redis_install/</loc>
-    <lastmod>2018-08-30T16:40:48+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://szthanatos.github.io/post/python/unit_testing/</loc>
     <lastmod>2018-08-20T10:49:50+08:00</lastmod>
   </url>
@@ -312,6 +309,11 @@
     <loc>https://szthanatos.github.io/tags/unit-testing/</loc>
     <lastmod>2018-08-20T10:49:50+08:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://szthanatos.github.io/topic/redis/error-persist/</loc>
+    <lastmod>2018-05-18T11:42:50+08:00</lastmod>
   </url>
   
   <url>

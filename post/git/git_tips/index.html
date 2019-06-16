@@ -27,7 +27,7 @@
   
     
   
-  <meta name="description" content="目录 Deploy key/SSH key(github) 更换git协议 强制覆盖本地文件 撤销修改 add之前撤销 commit之前撤销 push之前撤销 删除历史提交记录 Deploy key/SSH key(github) Deploy key是在项目主页">
+  <meta name="description" content="目录 Deploy key/SSH key(github) 更换git协议 强制覆盖本地文件 撤销修改 add之前撤销 commit之前撤销 push之前撤销 删除历史提交记录 忽略文件权限 Deploy key/SSH key(github) Deploy key">
 
   
   <link rel="alternate" hreflang="zh-Hans" href="https://szthanatos.github.io/post/git/git_tips/">
@@ -71,8 +71,8 @@
       
       
         
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" crossorigin="anonymous" title="hl-light">
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
         
       
     
@@ -119,7 +119,7 @@
   <meta property="og:site_name" content="Kryptonite Lab">
   <meta property="og:url" content="https://szthanatos.github.io/post/git/git_tips/">
   <meta property="og:title" content="Git Tips | Kryptonite Lab">
-  <meta property="og:description" content="目录 Deploy key/SSH key(github) 更换git协议 强制覆盖本地文件 撤销修改 add之前撤销 commit之前撤销 push之前撤销 删除历史提交记录 Deploy key/SSH key(github) Deploy key是在项目主页"><meta property="og:image" content="https://szthanatos.github.io/img/icon-192.png">
+  <meta property="og:description" content="目录 Deploy key/SSH key(github) 更换git协议 强制覆盖本地文件 撤销修改 add之前撤销 commit之前撤销 push之前撤销 删除历史提交记录 忽略文件权限 Deploy key/SSH key(github) Deploy key"><meta property="og:image" content="https://szthanatos.github.io/img/icon-192.png">
   <meta property="og:locale" content="zh-Hans">
   
   <meta property="article:published_time" content="2018-12-14T09:35:32&#43;08:00">
@@ -457,6 +457,7 @@
 <li><a href="#push之前撤销">push之前撤销</a></li>
 </ul></li>
 <li><a href="#删除历史提交记录">删除历史提交记录</a></li>
+<li><a href="#忽略文件权限">忽略文件权限</a></li>
 </ul></li>
 </ul>
 </nav></p>
@@ -544,6 +545,13 @@ git branch -m {old_branch}
 
 # 强制提交变更
 git push -f origin {old_branch}
+</code></pre>
+
+<h2 id="忽略文件权限">忽略文件权限</h2>
+
+<p>文件在系统间转移的时候可能由于权限改变而使文件全都处于&rdquo;modified&rdquo;状态。（比如从linux到Windows，权限会从644变成755）可以以项目为单位设置忽略文件权限：</p>
+
+<pre><code class="language-bash">git config core.filemode false
 </code></pre>
 
     </div>
@@ -713,7 +721,7 @@ git push -f origin {old_branch}
 
       
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
         
       
 

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Overview on Kryptonite Lab</title>
+    <link>https://szthanatos.github.io/topic/redis/</link>
+    <description>Recent content in Overview on Kryptonite Lab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-Hans</language>
+    <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Fri, 18 May 2018 11:42:50 +0800</lastBuildDate>
+    
+	<atom:link href="https://szthanatos.github.io/topic/redis/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Redis单机&amp;集群安装</title>
+      <link>https://szthanatos.github.io/topic/redis/install/</link>
+      <pubDate>Thu, 30 Aug 2018 16:40:48 +0800</pubDate>
+      
+      <guid>https://szthanatos.github.io/topic/redis/install/</guid>
+      <description>简介 Redis 是一个开源（BSD许可）的，内存中的数据结构存储系统，它可以用作数据库、缓存和消息中间件。 它支持多种类型的数据结构，如 字符串（stri</description>
+    </item>
+    
+    <item>
+      <title>Redis集群相关命令</title>
+      <link>https://szthanatos.github.io/topic/redis/cluster_command/</link>
+      <pubDate>Thu, 30 Aug 2018 21:26:18 +0800</pubDate>
+      
+      <guid>https://szthanatos.github.io/topic/redis/cluster_command/</guid>
+      <description>集群信息 节点信息 集群节点相关信息可以通过cluster nodes命令获取： 127.0.0.1:6379&amp;gt; cluster nodes 5022fa41642195d74200fd512c08653dc12609e7 172.17.0.2:6380@16380 master - 0 1552814467000 2 connected 5461-10922 730d05ee4da3147d0885c6d47437465c94409f74 172.17.0.2:6383@16383 slave 25a2a1d8c96e9473d4cb3c8b0077d3b7b07dd5c0 0 1552814468555 5 connected 25a2a1d8c96e9473d4cb3c8b0077d3b7b07dd5c0 172.17.0.2:6379@16379 myself,master - 0 1552814468000 1 connected 0-5460 cf0be45c6a05c0d332b7356a7f57de95b32c3a71 172.17.0.2:6384@16384 slave 5022fa41642195d74200fd512c08653dc12609e7</description>
+    </item>
+    
+    <item>
+      <title>优化指南</title>
+      <link>https://szthanatos.github.io/topic/redis/improve-00/</link>
+      <pubDate>Mon, 18 Mar 2019 15:04:35 +0800</pubDate>
+      
+      <guid>https://szthanatos.github.io/topic/redis/improve-00/</guid>
+      <description>redis性能优化可以从设计，使用，运维三个层面上着手： 设计 结构：合理选择数据类型 负载：保证数据在空间上均匀分布 使用， 操作：保证操作在时间上</description>
+    </item>
+    
+    <item>
+      <title>问题处理</title>
+      <link>https://szthanatos.github.io/topic/redis/error/</link>
+      <pubDate>Thu, 30 Aug 2018 16:40:48 +0800</pubDate>
+      
+      <guid>https://szthanatos.github.io/topic/redis/error/</guid>
+      <description>各种情况下的解决办法。</description>
+    </item>
+    
+    <item>
+      <title>优化指南-使用</title>
+      <link>https://szthanatos.github.io/topic/redis/improve-02/</link>
+      <pubDate>Mon, 18 Mar 2019 15:04:35 +0800</pubDate>
+      
+      <guid>https://szthanatos.github.io/topic/redis/improve-02/</guid>
+      <description>操作 批量操作 传统数据库也存在批量操作效率高于单次操作的情况，但是redis由于执行效率更高，批量操作带来的提升也更夸张。举个不是很恰当的例子</description>
+    </item>
+    
+    <item>
+      <title>优化指南-设计</title>
+      <link>https://szthanatos.github.io/topic/redis/improve-01/</link>
+      <pubDate>Mon, 18 Mar 2019 15:04:35 +0800</pubDate>
+      
+      <guid>https://szthanatos.github.io/topic/redis/improve-01/</guid>
+      <description>数据结构 不同数据类型对应的操作的时间复杂度也不一样，选择合适的数据类型可以降低很多时间成本： String 命令 时间复杂度 SET key value [EX seconds] [PX milliseconds] [NX|XX] O(1) SETNX key value O(1) SETEX key seconds</description>
+    </item>
+    
+    <item>
+      <title>优化指南-运维</title>
+      <link>https://szthanatos.github.io/topic/redis/improve-03/</link>
+      <pubDate>Mon, 18 Mar 2019 15:04:35 +0800</pubDate>
+      
+      <guid>https://szthanatos.github.io/topic/redis/improve-03/</guid>
+      <description>监控 为了发现前面所说的问题，需要开发/运维人员不断的监控redis运行情况。 redis-cli 查询 部分信息无法通过redis命令直接获取，但是可以通过red</description>
+    </item>
+    
+    <item>
+      <title>解决 not able to persist on disk</title>
+      <link>https://szthanatos.github.io/topic/redis/error-persist/</link>
+      <pubDate>Fri, 18 May 2018 11:42:50 +0800</pubDate>
+      
+      <guid>https://szthanatos.github.io/topic/redis/error-persist/</guid>
+      <description>报错信息 MISCONF Redis is configured to save RDB snapshots, but it is currently not able to persist on disk. 原因 绝大多数情况是写磁盘写满了，并且redis默认stop-writes-on-bgsave-e</description>
+    </item>
+    
+  </channel>
+</rss>

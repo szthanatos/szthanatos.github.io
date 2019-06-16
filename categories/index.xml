@@ -57,14 +57,5 @@
       <description></description>
     </item>
     
-    <item>
-      <title>Redis</title>
-      <link>https://szthanatos.github.io/categories/redis/</link>
-      <pubDate>Thu, 30 Aug 2018 21:26:18 +0800</pubDate>
-      
-      <guid>https://szthanatos.github.io/categories/redis/</guid>
-      <description></description>
-    </item>
-    
   </channel>
 </rss>
