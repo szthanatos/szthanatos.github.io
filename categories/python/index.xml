@@ -4,12 +4,12 @@
     <title>Python on Kryptonite Lab</title>
     <link>https://szthanatos.github.io/categories/python/</link>
     <description>Recent content in Python on Kryptonite Lab</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>zh-Hans</language>
     <copyright>&amp;copy; 2018</copyright>
     <lastBuildDate>Sat, 01 Dec 2018 15:59:04 +0800</lastBuildDate>
     
-	<atom:link href="https://szthanatos.github.io/categories/python/index.xml" rel="self" type="application/rss+xml" />
+	    <atom:link href="https://szthanatos.github.io/categories/python/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,7 +18,78 @@
       <pubDate>Sat, 01 Dec 2018 15:59:04 +0800</pubDate>
       
       <guid>https://szthanatos.github.io/post/python/python_install_on_ubuntu/</guid>
-      <description>添加ppa源： # 死蛇的源 sudo add-apt-repository ppa:deadsnakes/ppa # 或者，jonathonf的源 sudo add-apt-repository ppa:jonathonf/python-3.x 如果提示没有add-apt-repository的话执行： apt install software-properties-common 更新源并安</description>
+      <description>&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;添加ppa源：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 死蛇的源
+sudo add-apt-repository ppa:deadsnakes/ppa
+# 或者，jonathonf的源
+sudo add-apt-repository ppa:jonathonf/python-3.x
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;如果提示没有add-apt-repository的话执行：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;apt install software-properties-common
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;更新源并安装python3.x，&lt;code&gt;3.x&lt;/code&gt;以你要安装的版本号为准：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sudo apt update
+sudo apt install python3.x
+# 可选
+sudo apt install python3.x-dev
+sudo apt install python3.x-venv
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
+&lt;li&gt;安装pip:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;wget https://bootstrap.pypa.io/get-pip.py
+sudo python3.x get-pip.py
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;查看python和pip版本：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 也可以用-V
+python --version
+python3 --version
+pip --version
+pip3 --version
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
+&lt;li&gt;如果关联版本不正确，备份usr/bin的软链接，重建软链接：&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 设置默认python3对应python版本
+sudo ln -s /usr/bin/python3.x /usr/bin/python3
+# 设置默认pip3使用pip版本
+sudo ln -s /usr/local/bin/pip3.x /usr/bin/pip3
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;注意 python默认安装位置在&lt;code&gt;/usr/bin&lt;/code&gt;下，pip默认安装位置在&lt;code&gt;/usr/local/bin&lt;/code&gt;下&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;pip初始化设置：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;mkdir ~/.pip
+touch ~/.pip/pip.conf
+# python3.6/pip18之后无需配置这个
+echo [list]&amp;gt;&amp;gt;~/.pip/pip.conf
+echo format=columns&amp;gt;&amp;gt;~/.pip/pip.conf
+# 设置默认pip源为清华大学开源镜像
+echo [global]&amp;gt;&amp;gt;~/.pip/pip.conf
+echo index-url = https://pypi.tuna.tsinghua.edu.cn/simple&amp;gt;&amp;gt;~/.pip/pip.conf
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
+&lt;li&gt;(可选)一键升级所有过期的包：&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sudo pip freeze --local | grep -v &#39;^\-e&#39; | cut -d = -f 1  | xargs pip install -U
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
     </item>
     
     <item>
@@ -27,7 +98,386 @@
       <pubDate>Mon, 20 Aug 2018 10:49:50 +0800</pubDate>
       
       <guid>https://szthanatos.github.io/post/python/unit_testing/</guid>
-      <description>目录 HAHAHUGOSHORTCODE-TOC0-HBHB 这是写给我组里的人看的，顺手粘过来 什么是单元测试 单元测试(Unit Testing)又称为模块测试，是针对程序模块（软件设计的最小单位）</description>
+      <description>
+
+&lt;p&gt;&lt;h2&gt;目录&lt;/h2&gt;
+HAHAHUGOSHORTCODE-TOC0-HBHB&lt;/p&gt;
+
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    这是写给我组里的人看的，顺手粘过来
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;什么是单元测试&#34;&gt;什么是单元测试&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;单元测试(Unit Testing)又称为模块测试，是针对程序模块（软件设计的最小单位）来进行正确性检验的测试工作。程序单元是应用的最小可测试部件。在过程化编程中，一个单元就是单个程序、函数、过程等；对于面向对象编程，最小单元就是方法，包括基类（超类）、抽象类、或者派生类（子类）中的方法。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;一句话概括，单元测试也就是校验代码中具体的类(甚至函数)的输出值是否符合预期。&lt;/p&gt;
+
+&lt;h2 id=&#34;为什么要写单元测试&#34;&gt;为什么要写单元测试&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;“可能出错的事情最终一定会出错”&lt;/p&gt;
+
+&lt;p&gt;——墨菲定律&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;代码随着时间的累计而增长，出现意想不到的问题的可能性也在指数级上升。代码的正确与否不应该靠人来保证，因为人是会犯错并且一定犯错的。如果每次新功能上线时不能回答“所有功能都测试过了么”的问题，那么最终整个项目的可靠性都将被摧毁。单元测试的意义就在于让你能够回答这个问题，并且，回答的更自动化。&lt;/p&gt;
+
+&lt;h2 id=&#34;怎么写单元测试&#34;&gt;怎么写单元测试&lt;/h2&gt;
+
+&lt;h3 id=&#34;原生测试框架unittest-unittest2&#34;&gt;原生测试框架unittest/unittest2&lt;/h3&gt;
+
+&lt;p&gt;在python语境中，官方提供unittest标准库完成单元测试。&lt;/p&gt;
+
+&lt;h4 id=&#34;基础&#34;&gt;基础&lt;/h4&gt;
+
+&lt;p&gt;需要理解的概念有如下四个：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;test fixture&lt;/code&gt;：单元测试所需上下文环境，比如临时数据库/网络连接等；&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;test case&lt;/code&gt;：一个独立的单元测试最小单位；&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;test suite&lt;/code&gt;：test case的集合；&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;test runner&lt;/code&gt;：执行并输出单元测试的程序；&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;详细定义请自行查阅&lt;a href=&#34;https://docs.python.org/3/library/unittest.html&#34; target=&#34;_blank&#34;&gt;官网文档&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;官方单元测试用例如下，我们对upper(将string转换为大写)、isupper(判断string是否全部为大写)、split(对string按空格切分为list)函数的功能进行校验&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import unittest
+
+class TestStringMethods(unittest.TestCase):
+
+    def test_upper(self):
+        self.assertEqual(&#39;foo&#39;.upper(), &#39;FOO&#39;)
+
+    def test_isupper(self):
+        self.assertTrue(&#39;FOO&#39;.isupper())
+        self.assertFalse(&#39;Foo&#39;.isupper())
+
+    def test_split(self):
+        s = &#39;hello world&#39;
+        self.assertEqual(s.split(), [&#39;hello&#39;, &#39;world&#39;])
+        # check that s.split fails when the separator is not a string
+        with self.assertRaises(TypeError):
+            s.split(2)
+
+if __name__ == &#39;__main__&#39;:
+    unittest.main()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;断言&#34;&gt;断言&lt;/h4&gt;
+
+&lt;p&gt;可以从上面的例子看出，单元测试判断结果是否符合预期的主要方式是通过断言(assert)  实现。
+以下是常见断言：&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Method&lt;/th&gt;
+&lt;th&gt;Checks that&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;assertEqual(a, b)&lt;/td&gt;
+&lt;td&gt;a == b&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;assertNotEqual(a, b)&lt;/td&gt;
+&lt;td&gt;a != b&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;assertGreater(a, b)&lt;/td&gt;
+&lt;td&gt;a &amp;gt; b&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;assertGreaterEqual(a, b)&lt;/td&gt;
+&lt;td&gt;a &amp;gt;= b&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;assertLess(a, b)&lt;/td&gt;
+&lt;td&gt;a &amp;lt; b&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;assertLessEqual(a, b)&lt;/td&gt;
+&lt;td&gt;a &amp;lt;= b&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;assertAlmostEqual(a, b)&lt;/td&gt;
+&lt;td&gt;round(a-b, 7) == 0&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;assertNotAlmostEqual(a, b)&lt;/td&gt;
+&lt;td&gt;round(a-b, 7) != 0&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;assertRegex(s, r)&lt;/td&gt;
+&lt;td&gt;r.search(s)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;assertNotRegex(s, r)&lt;/td&gt;
+&lt;td&gt;not r.search(s)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;assertTrue(x)&lt;/td&gt;
+&lt;td&gt;bool(x) is True&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;assertFalse(x)&lt;/td&gt;
+&lt;td&gt;bool(x) is False&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;assertIs(a, b)&lt;/td&gt;
+&lt;td&gt;a is b&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;assertIsNot(a, b)&lt;/td&gt;
+&lt;td&gt;a is not b&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;assertIsNone(x)&lt;/td&gt;
+&lt;td&gt;x is None&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;assertIsNotNone(x)&lt;/td&gt;
+&lt;td&gt;x is not None&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;assertIn(a, b)&lt;/td&gt;
+&lt;td&gt;a in b&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;assertNotIn(a, b)&lt;/td&gt;
+&lt;td&gt;a not in b&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;assertIsInstance(a, b)&lt;/td&gt;
+&lt;td&gt;isinstance(a, b)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;assertNotIsInstance(a, b)&lt;/td&gt;
+&lt;td&gt;not isinstance(a, b)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h4 id=&#34;setup-和-teardown&#34;&gt;setUp 和 tearDown&lt;/h4&gt;
+
+&lt;p&gt;&lt;code&gt;test fixture&lt;/code&gt;是通过&lt;code&gt;setUp&lt;/code&gt; 和&lt;code&gt;tearDown&lt;/code&gt; 来具体实现的。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;setUp()方法&lt;/strong&gt;：
+在执行每个测试用例(test case)之前被执行，除了unittest.SkipTest和AssertionError以外的任何异常都会当做是error并终止当前测试用例；&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;tearDown()方法&lt;/strong&gt;：
+执行了setUp()方法后，执行tearDown()方法(进行清理)。对异常的处理和setUp()类似；&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;setUpClass(cls)与tearDownClass(cls)类&lt;/strong&gt;：
+可以将setUp和tearDown定义在基类中避免重复定义，定义setUpClass(cls)与tearDownClass(cls)类时必须加上classmethod装饰符；&lt;/p&gt;
+
+&lt;p&gt;对上面的例子进行简单的改造以演示setUp和tearDown的效果：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import unittest
+
+class TestStringMethods(unittest.TestCase):
+
+    def setUp(self): 
+        print &#39;1. setUp here&#39;
+
+    def tearDown(self):
+        print &#39;2. tearDown here&#39;
+
+    def test_upper(self):
+        self.assertEqual(&#39;foo&#39;.upper(), &#39;FOO&#39;)
+    
+    ...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;执行后效果如下：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;test_isupper (mytest.TestStringMethods) ... 1. setUp here
+1. tearDown here
+ok
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;缺点&#34;&gt;缺点&lt;/h4&gt;
+
+&lt;p&gt;基本的一个单元测试可以用这四步概括：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;新建单元测试脚本&lt;/li&gt;
+&lt;li&gt;导入单元测试依赖&lt;/li&gt;
+&lt;li&gt;继承单元测试类&lt;/li&gt;
+&lt;li&gt;实现单元测试方法&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;而这个过程非常不pythonic：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;必须新建单独的测试文件&lt;/li&gt;
+&lt;li&gt;测试必须继承自unittest类，即使再简单的测试&lt;/li&gt;
+&lt;li&gt;断言只能使用unittest的Assertion&lt;/li&gt;
+&lt;li&gt;最最关键和难以忍受的：unitunit内的命名规则和pep 8相悖&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;造成这些问题的原因一言以蔽之：python的测试框架是完全仿照Java实现的。&lt;/p&gt;
+
+&lt;h3 id=&#34;第三方测试框架py-test&#34;&gt;第三方测试框架py.test&lt;/h3&gt;
+
+&lt;p&gt;实际上，通过使用py.test，我们可以非常pythonic的实现单元测试：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# content of test_sample.py
+def inc(x):
+    return x + 1
+
+
+def test_answer():
+    assert inc(3) == 5
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;直接在测试文件所在目录执行py.test得到如下结果：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ pytest
+=========================== test session starts ============================
+platform linux -- Python 3.x.y, pytest-3.x.y, py-1.x.y, pluggy-0.x.y
+rootdir: $REGENDOC_TMPDIR, inifile:
+collected 1 item
+
+test_sample.py F                                                     [100%]
+
+================================= FAILURES =================================
+_______________________________ test_answer ________________________________
+
+    def test_answer():
+&amp;gt;       assert inc(3) == 5
+E       assert 4 == 5
+E        +  where 4 = inc(3)
+
+test_sample.py:6: AssertionError
+========================= 1 failed in 0.12 seconds =========================
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;就是这么简单，更进一步的，py.test支持自动生成对指定目录下所有测试文件的统一测试脚本，更具体的用法参见&lt;a href=&#34;https://docs.pytest.org/en/latest/&#34; target=&#34;_blank&#34;&gt;pytest文档&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;总的来说，py.test具有如下特点：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;非常容易上手，入门简单，文档丰富，文档中有很多实例可以参考&lt;/li&gt;
+&lt;li&gt;能够支持简单的单元测试和复杂的功能测试&lt;/li&gt;
+&lt;li&gt;支持参数化&lt;/li&gt;
+&lt;li&gt;执行测试过程中可以将某些测试跳过，或者对某些预期失败的 case 标记成失败&lt;/li&gt;
+&lt;li&gt;支持重复执行失败的 case&lt;/li&gt;
+&lt;li&gt;支持运行由 nose , unittest 编写的测试 case&lt;/li&gt;
+&lt;li&gt;具有很多第三方插件，并且可以自定义扩展&lt;/li&gt;
+&lt;li&gt;方便的和持续集成工具集成&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;单元测试标准&#34;&gt;单元测试标准&lt;/h2&gt;
+
+&lt;p&gt;业界通常使用代码覆盖(率)来评判测试的好坏。&lt;/p&gt;
+
+&lt;h3 id=&#34;代码覆盖指标&#34;&gt;代码覆盖指标&lt;/h3&gt;
+
+&lt;p&gt;单独的一两个测试完全无法体现测试的优势。而对所有可能的情况编写单元测试既不现实也无必要。所以明确测试覆盖哪些指标非常重要。&lt;strong&gt;我们在此指定以下四个指标必须被覆盖：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;函数覆盖（Function Coverage）&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;每一个函数都必须被测试；&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;语句覆盖（Statement Coverage）&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;被测代码中每个可执行语句都应该被执行测试。例如&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def foo(x:int, y:int):
+    z = 0
+    if x&amp;gt;0 and y &amp;gt;0:
+        z = x
+    return z
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;中，如果测试为assertEqualst(0, foo(2,-1))，则if内的代码就没有被覆盖到；&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;决策覆盖（Decision Coverage）&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;指每一个逻辑分支都应该被测试覆盖。类似上面的例子，如果想要达到决策覆盖，我们起码应该执行两次测试：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;assertEquals(2, foo(2, 2))  # 决策1&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;assertEqualst(0, foo(2,-1))  # 决策2&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;条件覆盖（Condition Coverage）&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;每一个逻辑分支的每一个条件都应该被覆盖。条件覆盖不需要满足条件表达式所有的排列组合，而只需将每个条件表达式的结果为true/false的情况进行测试就可以了。依旧使用上面的例子，如果想要达到条件覆盖，我们应该执行至少三次测试：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;assertEquals(2, foo(2, 2))  # 决策1条件true&lt;/li&gt;
+&lt;li&gt;assertEqualst(0, foo(2,-1))  # 决策2(没有条件)&lt;/li&gt;
+&lt;li&gt;assertEquals(0, foo(-1, -1))  # 决策1条件false&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;如果没有第三个测试，那么只能达到决策覆盖，不能达到条件覆盖。&lt;/p&gt;
+
+&lt;h3 id=&#34;代码覆盖率&#34;&gt;代码覆盖率&lt;/h3&gt;
+
+&lt;p&gt;在满足代码覆盖指标的基础上，只有保证一定的代码覆盖率才能保证测试的完整。满足代码覆盖指标相当于是“质”，而代码覆盖率则是保证“量”。&lt;strong&gt;目前要求代码覆盖率不应该低于75%&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;我们选定&lt;a href=&#34;https://pypi.org/project/coverage/&#34; target=&#34;_blank&#34;&gt;coverage.py&lt;/a&gt;来统计代码覆盖率。由于主要使用py.test，需要额外安装&lt;a href=&#34;https://github.com/pytest-dev/pytest-cov&#34; target=&#34;_blank&#34;&gt;pytest-cov&lt;/a&gt;插件。安装过程非常简单，对照文档直接pip安装即可，不多介绍。&lt;/p&gt;
+
+&lt;p&gt;完成安装后，使用py.test的时候增加&amp;ndash;cov=myproj参数即可。
+效果如下：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;-------------------- coverage: ... ---------------------
+Name                 Stmts   Miss  Cover
+----------------------------------------
+myproj/__init__          2      0   100%
+myproj/myproj          257     13    94%
+myproj/feature4286      94      7    92%
+----------------------------------------
+TOTAL                  353     20    94%
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;详细用法可参照&lt;a href=&#34;http://pytest-cov.readthedocs.io/en/latest/&#34; target=&#34;_blank&#34;&gt;官方文档&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;小结&#34;&gt;小结&lt;/h2&gt;
+
+&lt;p&gt;总结一下，通过对单元测试的必要性、编写方法、评判标准等一系列的介绍，确立了以下三点：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;使用py.test+unittest编写单元测试，使用coverage统计、分析单元测试编写情况；&lt;/li&gt;
+&lt;li&gt;单元测试应覆盖最基本的四项指标(函数覆盖、语句覆盖、分支覆盖、条件覆盖)；&lt;/li&gt;
+&lt;li&gt;在覆盖基本指标的基础上，需要达到75%的代码覆盖率；&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
     
     <item>
@@ -36,7 +486,129 @@
       <pubDate>Tue, 20 Mar 2018 16:16:15 +0800</pubDate>
       
       <guid>https://szthanatos.github.io/post/python/pickled/</guid>
-      <description>遇到一个报错： PicklingError: Can&#39;t pickle &amp;lt;type &#39;instancemethod&#39;&amp;gt;: attribute lookup __builtin__.instancemethod failed 当时的情况是想写一个多进程的解析代码，爬虫爬到的内容给扔过来就不管了，差不多这个意思： # !/usr/bin/env python # -*- coding: utf-8 -*- from concurrent.futures import</description>
+      <description>&lt;p&gt;遇到一个报错：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;PicklingError: Can&#39;t pickle &amp;lt;type &#39;instancemethod&#39;&amp;gt;: attribute lookup __builtin__.instancemethod failed&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;当时的情况是想写一个多进程的解析代码，爬虫爬到的内容给扔过来就不管了，差不多这个意思：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# !/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+from concurrent.futures import ProcessPoolExecutor
+
+
+class PageProcess(object):
+    def __init__(self, worker):
+        self.max_worker = worker
+
+    def single_process(self, page):
+        pass
+
+    def multi_process(self, page_list):
+        with ProcessPoolExecutor(max_workers=self.max_worker) as pp:
+            result = pp.map(self.single_process, page_list)
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这个错误是这么造成的：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;在类中使用进程池；&lt;/li&gt;
+&lt;li&gt;进程池使用&lt;code&gt;Queue&lt;/code&gt;管理任务队列；&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Queue&lt;/code&gt;要求传递的内容必须都是可以被序列化的；&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;那么问题来了，哪些类型是可以被序列化的呢？&lt;/p&gt;
+
+&lt;p&gt;根据&lt;a href=&#34;https://docs.python.org/3/library/pickle.html#pickle-picklable&#34; target=&#34;_blank&#34;&gt;官方文档&lt;/a&gt;，可序列化的类型包括：&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;类型&lt;/th&gt;
+&lt;th&gt;原文&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;布尔型和空值&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;None&lt;/code&gt;, &lt;code&gt;True&lt;/code&gt;, and &lt;code&gt;False&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;数字类型中的整数，浮点数和复数&lt;/td&gt;
+&lt;td&gt;integers, floating point numbers, complex numbers&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;字符串类型和二进制类型(字节流，字节数组)&lt;/td&gt;
+&lt;td&gt;strings, bytes, bytearrays&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;只包含可序列化对象的元组、集合、列表、字典&lt;/td&gt;
+&lt;td&gt;tuples, lists, sets, and dictionaries containing only picklable objects&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;模块中最顶层声明的非匿名函数&lt;/td&gt;
+&lt;td&gt;functions defined at the top level of a module (using def, not lambda)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;模块中最顶层声明的内置函数&lt;/td&gt;
+&lt;td&gt;built-in functions defined at the top level of a module&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;模块中最顶层声明的类&lt;/td&gt;
+&lt;td&gt;classes that are defined at the top level of a module&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;__getstate__&lt;/code&gt;的结果或&lt;code&gt;__dict__&lt;/code&gt;是可序列化的这样的类的实例&lt;/td&gt;
+&lt;td&gt;instances of such classes whose &lt;code&gt;__dict__&lt;/code&gt; or the result of calling &lt;code&gt;__getstate__()&lt;/code&gt; is picklable&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;破案了，上面代码中，我们的进程池要序列化的是类中的函数，就不符合最顶层定义的函数的要求。&lt;/p&gt;
+
+&lt;p&gt;所以最直接的解决办法也很简单，把要并行的函数抽外面去就行了：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# !/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+from concurrent.futures import ProcessPoolExecutor
+
+
+def single_process(page):
+    pass
+
+
+class PageProcess(object):
+    def __init__(self, worker):
+        self.max_worker = worker
+
+    def multi_process(self, page_list):
+        with ProcessPoolExecutor(max_workers=self.max_worker) as pp:
+            result = pp.map(single_process, page_list)
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;英文这种语序/标点我老是搞不懂，这个&lt;code&gt;containing only picklable objects&lt;/code&gt;到底是指dictionaries还是前面全部，就当是全部吧
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:1&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
     </item>
     
     <item>
@@ -45,7 +617,142 @@
       <pubDate>Fri, 01 Sep 2017 18:08:57 +0800</pubDate>
       
       <guid>https://szthanatos.github.io/post/python/unique_list_ordered/</guid>
-      <description>对列表的去重很简单，set()一下再list()回来就可以了，但是如果要保留原始列表的顺序呢？ 举例，对[&amp;quot;b&amp;quot;, &amp;quot;b&amp;quot;, &amp;quot;c&amp;quot;, &amp;quot;a&amp;quot;, &amp;quot;c&amp;quot;,</description>
+      <description>
+
+&lt;p&gt;对列表的去重很简单，&lt;code&gt;set()&lt;/code&gt;一下再&lt;code&gt;list()&lt;/code&gt;回来就可以了，但是如果要保留原始列表的顺序呢？&lt;/p&gt;
+
+&lt;p&gt;举例，对&lt;code&gt;[&amp;quot;b&amp;quot;, &amp;quot;b&amp;quot;, &amp;quot;c&amp;quot;, &amp;quot;a&amp;quot;, &amp;quot;c&amp;quot;, &amp;quot;b&amp;quot;, &amp;quot;a&amp;quot;, &amp;quot;b&amp;quot;]&lt;/code&gt;这个列表进行原序去重，得到结果应该是&lt;code&gt;[&#39;b&#39;, &#39;c&#39;, &#39;a&#39;]&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;有下面这几种写法：&lt;/p&gt;
+
+&lt;h4 id=&#34;二次排序&#34;&gt;二次排序&lt;/h4&gt;
+
+&lt;p&gt;也就是对去重结果再按原列表sort一次：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def sort_1(list_in):
+    return sorted(list(set(list_in)), key=list_in.index)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;匿名函数&#34;&gt;匿名函数&lt;/h4&gt;
+
+&lt;p&gt;使用匿名函数将列表里不重复的元素累加到一个新列表中：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def sort_2(list_in):
+    return reduce(lambda x, y: x if y in x else x + [y], [[], ] + list_in)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;借用字典&#34;&gt;借用字典&lt;/h4&gt;
+
+&lt;h5 id=&#34;有序字典&#34;&gt;有序字典&lt;/h5&gt;
+
+&lt;p&gt;使用&lt;code&gt;OrderedDict&lt;/code&gt;排序：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def sort_3(list_in):
+    return list(collections.OrderedDict.fromkeys(list_in).keys())
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;defaultdict&#34;&gt;defaultdict&lt;/h4&gt;
+
+&lt;p&gt;类似的,我们使用&lt;code&gt;defaultdict&lt;/code&gt;进行排序：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def sort_4(list_in):
+    return list(collections.defaultdict.fromkeys(list_in).keys())
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;直接使用dict&#34;&gt;直接使用dict&lt;/h4&gt;
+
+&lt;p&gt;在python3.6之前， &lt;code&gt;dict&lt;/code&gt;的&lt;code&gt;key&lt;/code&gt;的顺序并不保证一定是插入顺序，所以只有在python3.6之后才可以直接用&lt;code&gt;dict&lt;/code&gt;实现这个操作；&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def sort_5(list_in):
+    return list(dict.fromkeys(list_in).keys())
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;完整性能测试代码如下：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# !/usr/bin/env python
+# encoding: utf-8
+
+from timeit import repeat
+from functools import reduce
+from collections import defaultdict, OrderedDict
+
+example = [&amp;quot;b&amp;quot;, &amp;quot;b&amp;quot;, &amp;quot;c&amp;quot;, &amp;quot;a&amp;quot;, &amp;quot;c&amp;quot;, &amp;quot;b&amp;quot;, &amp;quot;a&amp;quot;, &amp;quot;b&amp;quot;]
+
+
+def sort_1(list_in):
+    return sorted(list(set(list_in)), key=list_in.index)
+
+
+def sort_2(list_in):
+    return reduce(lambda x, y: x if y in x else x + [y], [[], ] + list_in)
+
+
+def sort_3(list_in):
+    return list(OrderedDict.fromkeys(list_in).keys())
+
+
+def sort_4(list_in):
+    return list(defaultdict.fromkeys(list_in).keys())
+
+
+def sort_5(list_in):
+    return list(dict.fromkeys(list_in).keys())
+
+
+if __name__ == &#39;__main__&#39;:
+    # time usage: t5&amp;lt; t4 &amp;lt; t3 &amp;lt; t2 &amp;lt; t1
+    result = {}
+    for i in range(1, 6):
+        result[&#39;sort_{}&#39;.format(i)] = repeat(&#39;sort_{}(example)&#39;.format(i),
+                                             &#39;from __main__ import sort_{}, example&#39;.format(i),
+                                             number=1000000,
+                                             repeat=5)
+    for k, v in result.items():
+        avg_v = round(sum(v) / len(v), 3)
+        print(k, avg_v)
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;在我的苏菲婆上的结果仅供参考：&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;排序&lt;/th&gt;
+&lt;th&gt;平均时间&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;sort_1&lt;/td&gt;
+&lt;td&gt;1.477&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;sort_2&lt;/td&gt;
+&lt;td&gt;1.305&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;sort_3&lt;/td&gt;
+&lt;td&gt;0.957&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;sort_4&lt;/td&gt;
+&lt;td&gt;0.734&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;sort_5&lt;/td&gt;
+&lt;td&gt;0.698&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;可见，python3.6之后dict是最好的原序去重办法，3.6之前用defaultdict吧。&lt;/p&gt;
+</description>
     </item>
     
   </channel>

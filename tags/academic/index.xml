@@ -4,12 +4,12 @@
     <title>Academic on Kryptonite Lab</title>
     <link>https://szthanatos.github.io/tags/academic/</link>
     <description>Recent content in Academic on Kryptonite Lab</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>zh-Hans</language>
     <copyright>&amp;copy; 2018</copyright>
     <lastBuildDate>Tue, 01 Jan 2019 12:54:29 +0800</lastBuildDate>
     
-	<atom:link href="https://szthanatos.github.io/tags/academic/index.xml" rel="self" type="application/rss+xml" />
+	    <atom:link href="https://szthanatos.github.io/tags/academic/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,7 +18,499 @@
       <pubDate>Tue, 01 Jan 2019 12:54:29 +0800</pubDate>
       
       <guid>https://szthanatos.github.io/post/academic/trans_writing_content/</guid>
-      <description>本文是对Academic文档-Writing content章节的个人翻译，基于个人理解，不保证绝对准确。 原文见上方连接。 目录 Academic</description>
+      <description>
+
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    &lt;p&gt;本文是对&lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34;&gt;Academic文档-Writing content章节&lt;/a&gt;的个人翻译，基于个人理解，不保证绝对准确。&lt;/p&gt;
+
+&lt;p&gt;原文见上方连接。&lt;/p&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;h2&gt;目录&lt;/h2&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Academic支持使用Markdown、LaTeX数学公式和Hugo代码段编写内容。
+此外，可以使用HTML以实现高级样式。
+本文概述最常见的格式选项。&lt;/p&gt;
+
+&lt;h2 id=&#34;副标题&#34;&gt;副标题&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;## Heading 2
+### Heading 3
+#### Heading 4
+##### Heading 5
+###### Heading 6
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;强调&#34;&gt;强调&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 下划线内为斜体
+Italics with _underscores_.
+
+# *内为粗体
+Bold with **asterisks**.
+
+# 粗体和斜体可以组合
+Combined emphasis with **asterisks and _underscores_**.
+
+# 双波浪符内为删除线
+Strikethrough with ~~two tildes~~.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;有序列表&#34;&gt;有序列表&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;1. First item
+2. Another item
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;无序列表&#34;&gt;无序列表&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;我个人更习惯用 - 
+* First item
+* Another item
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;图片&#34;&gt;图片&lt;/h2&gt;
+
+&lt;p&gt;图片可以存放在你的媒体库&lt;code&gt;static/img&lt;/code&gt;或你的&lt;a href=&#34;https://gohugo.io/content-management/page-bundles/&#34; target=&#34;_blank&#34;&gt;页面文件夹&lt;/a&gt;。
+使用以下任一方式即可引用图片：&lt;/p&gt;
+
+&lt;p&gt;假设图片来自你的&lt;code&gt;static/img&lt;/code&gt;媒体库：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;{{&amp;lt; figure library=&amp;quot;1&amp;quot; src=&amp;quot;image.jpg&amp;quot; title=&amp;quot;A caption&amp;quot; &amp;gt;}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;假设图片来自你的页面文件夹(比如&lt;code&gt;content/post/hello/&lt;/code&gt;)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;{{&amp;lt; figure src=&amp;quot;image.jpg&amp;quot; title=&amp;quot;A caption&amp;quot; &amp;gt;}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;带编号和标题的图片：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;{{&amp;lt; figure src=&amp;quot;image.jpg&amp;quot; title=&amp;quot;A caption&amp;quot; numbered=&amp;quot;true&amp;quot; &amp;gt;}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;一般图片：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;![alternative text for search engines](/img/image.jpg)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;图片集&#34;&gt;图片集&lt;/h2&gt;
+
+&lt;p&gt;为页面包增加一个图片集：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;在&lt;a href=&#34;https://gohugo.io/content-management/page-bundles/&#34; target=&#34;_blank&#34;&gt;页面包&lt;/a&gt;(也就是你的页面文件夹)内创建图片集文件夹；&lt;/li&gt;
+&lt;li&gt;将图片放入图片集文件夹；&lt;/li&gt;
+&lt;li&gt;粘贴&lt;code&gt;{&lt;/code&gt;&lt;code&gt;{&amp;lt; gallery album=&amp;quot;&amp;lt;ALBUM FOLDER&amp;gt;&amp;quot; &amp;gt;}&lt;/code&gt;&lt;code&gt;}&lt;/code&gt;到文章中你想要它出现的地方，将album参数修改为你文件集的名称；&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;可选的，要为你的图片集添加标题的话，将下面的实例添加到你扉页的尾部:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;[[gallery_item]]
+album = &amp;quot;&amp;lt;ALBUM FOLDER&amp;gt;&amp;quot;
+image = &amp;quot;&amp;lt;IMAGE NAME&amp;gt;.jpg&amp;quot;
+caption = &amp;quot;Write your image caption here&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;另外，想要在图片集中使用网络位置/媒体库中的图片；&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;将图片添加到&lt;code&gt;static/img/&lt;/code&gt;文件夹；&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;在文章的扉页尾部声明图片引用：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;[[gallery_item]]
+album = &amp;quot;1&amp;quot;
+image = &amp;quot;my_image.jpg&amp;quot;
+caption = &amp;quot;Write your image caption here&amp;quot;
+
+[[gallery_item]]
+album = &amp;quot;1&amp;quot;
+image = &amp;quot;https://raw.githubusercontent.com/gcushen/hugo-academic/master/images/theme-dark.png&amp;quot;
+caption = &amp;quot;Dark theme&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
+&lt;li&gt;在正文要显示的位置使用&lt;code&gt;{&lt;/code&gt;&lt;code&gt;{&amp;lt; gallery album=&amp;quot;1&amp;quot; &amp;gt;}&lt;/code&gt;&lt;code&gt;}&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;视频&#34;&gt;视频&lt;/h2&gt;
+
+&lt;p&gt;页面可以添加以下几种类型的视频。&lt;/p&gt;
+
+&lt;h3 id=&#34;本地视频文件&#34;&gt;本地视频文件&lt;/h3&gt;
+
+&lt;p&gt;要添加视频，将它放在&lt;code&gt;static/img/&lt;/code&gt;媒体库或者页面文件夹内，使用以下任一方式即可引用。&lt;/p&gt;
+
+&lt;p&gt;位于&lt;code&gt;static/img/&lt;/code&gt;文件夹下的视频：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;{{&amp;lt; video library=&amp;quot;1&amp;quot; src=&amp;quot;my_video.mp4&amp;quot; controls=&amp;quot;yes&amp;quot; &amp;gt;}}
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;位于页面文件夹下的视频：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;{{&amp;lt; video src=&amp;quot;my_video.mp4&amp;quot; controls=&amp;quot;yes&amp;quot; &amp;gt;}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;youtube&#34;&gt;Youtube&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;{{&amp;lt; youtube w7Ft2ymGmfc &amp;gt;}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;vimeo&#34;&gt;Vimeo&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;{{&amp;lt; vimeo 146022717 &amp;gt;}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;链接&#34;&gt;链接&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;[I&#39;m a link](https://www.google.com)
+[A post]({{&amp;lt; ref &amp;quot;post/hi.md&amp;quot; &amp;gt;}})
+[A publication]({{&amp;lt; ref &amp;quot;publication/hi.md&amp;quot; &amp;gt;}})
+[A project]({{&amp;lt; ref &amp;quot;project/hi.md&amp;quot; &amp;gt;}})
+[Another section]({{&amp;lt; relref &amp;quot;hi.md#who&amp;quot; &amp;gt;}})
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;想要链接到一个文件，比如PDF，首先将它放到&lt;code&gt;static/files/&lt;/code&gt;文件夹下，然后使用下面方式链接：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;{{% staticref &amp;quot;files/cv.pdf&amp;quot; &amp;quot;newtab&amp;quot; %}}Download my CV{{% /staticref %}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;staticref&lt;/code&gt;的&lt;code&gt;&amp;quot;newtab&amp;quot;&lt;/code&gt;参数将使链接在新页面打开。&lt;/p&gt;
+
+&lt;h3 id=&#34;标签和分类&#34;&gt;标签和分类&lt;/h3&gt;
+
+&lt;p&gt;使用&lt;code&gt;{&lt;/code&gt;&lt;code&gt;{&amp;lt; list_tags &amp;gt;}&lt;/code&gt;&lt;code&gt;}&lt;/code&gt;生成标签链接列表，使用&lt;code&gt;{&lt;/code&gt;&lt;code&gt;{&amp;lt; list_categories &amp;gt;}&lt;/code&gt;&lt;code&gt;}&lt;/code&gt;生成分类链接列表。&lt;/p&gt;
+
+&lt;h2 id=&#34;emojis&#34;&gt;Emojis&lt;/h2&gt;
+
+&lt;p&gt;可用Emojis见&lt;a href=&#34;http://www.webpagefx.com/tools/emoji-cheat-sheet/&#34; target=&#34;_blank&#34;&gt;Emoji cheat sheet&lt;/a&gt;。
+下面的这个示例在实际使用时需要把:和表情名之前的空格去掉：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;I : heart : Academic : smile :
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I ❤️ Academic 😄&lt;/p&gt;
+
+&lt;h2 id=&#34;段落引用&#34;&gt;段落引用&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;&amp;gt; This is a blockquote.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;This is a blockquote.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;高亮引用&#34;&gt;高亮引用&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;This is a {{&amp;lt; hl &amp;gt;}}highlighted quote{{&amp;lt; /hl &amp;gt;}}.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This is a &lt;span class=&#34;markup-quote&#34;&gt;highlighted quote&lt;/span&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;脚注&#34;&gt;脚注&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;I have more [^1] to say.
+[^1]: Footnote example.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;嵌入文档&#34;&gt;嵌入文档&lt;/h2&gt;
+
+&lt;p&gt;下面几种类型的文档可以被嵌入到页面中。&lt;/p&gt;
+
+&lt;p&gt;要插入&lt;strong&gt;谷歌文档&lt;/strong&gt; (比如幻灯片)点击Google Docs中的 &lt;em&gt;File &amp;gt; Publish to web &amp;gt; Embed&lt;/em&gt; 并复制&lt;code&gt;src=&amp;quot;...&amp;quot;&lt;/code&gt;部分中的URL。
+之后粘贴到下面代码中：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;{{&amp;lt; gdocs src=&amp;quot;https://docs.google.com/...&amp;quot; &amp;gt;}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;speaker-deck&#34;&gt;Speaker Deck&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;{{&amp;lt; speakerdeck 4e8126e72d853c0060001f97 &amp;gt;}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;代码高亮&#34;&gt;代码高亮&lt;/h2&gt;
+
+&lt;p&gt;将语言的代码，比如&lt;code&gt;python&lt;/code&gt;，作为参数放在三个反引号之后：(打出来```就会被解析，只能加空格了)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt; ` ` `python
+ # Example of code highlighting
+ input_string_var = input(&amp;quot;Enter some data: &amp;quot;)
+ print(&amp;quot;You entered: {}&amp;quot;.format(input_string_var))
+ ` ` `
+ 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;效果：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Example of code highlighting
+input_string_var = input(&amp;quot;Enter some data: &amp;quot;)
+print(&amp;quot;You entered: {}&amp;quot;.format(input_string_var))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;高亮选项&#34;&gt;高亮选项&lt;/h3&gt;
+
+&lt;p&gt;Academic主题使用&lt;a href=&#34;https://highlightjs.org/&#34; target=&#34;_blank&#34;&gt;highlight.js&lt;/a&gt;作为高亮的来源，并且默认为所有页面启用。
+并且，有一些更细粒度的选项可以控制highlight.js的显示效果。&lt;/p&gt;
+
+&lt;p&gt;下表列出了highlight.js支持的一些选项，包含他们的类型和简短描述。
+&lt;strong&gt;config.toml&lt;/strong&gt;列中的&amp;rdquo;yes&amp;rdquo;表示允许在&lt;code&gt;config.toml&lt;/code&gt;中全局设置，
+&lt;strong&gt;preamble&lt;/strong&gt;列中的&amp;rdquo;yes&amp;rdquo;表示可以设定在特定页面中。&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;option&lt;/th&gt;
+&lt;th&gt;type&lt;/th&gt;
+&lt;th&gt;description&lt;/th&gt;
+&lt;th&gt;config.toml&lt;/th&gt;
+&lt;th&gt;preamble&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;highlight&lt;/td&gt;
+&lt;td&gt;boolean&lt;/td&gt;
+&lt;td&gt;启用/禁用高亮&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;highlight_languages&lt;/td&gt;
+&lt;td&gt;slice&lt;/td&gt;
+&lt;td&gt;选择额外语言&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;highlight_style&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;选择高亮样式&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;td&gt;no&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h4 id=&#34;highlight-选项&#34;&gt;&lt;code&gt;highlight&lt;/code&gt;选项&lt;/h4&gt;
+
+&lt;p&gt;&lt;code&gt;highlight&lt;/code&gt;选项允许在全局或者特定页面启动/禁止语法高亮。
+如果没有明确指定的话，默认会认为你设置了&lt;code&gt;highlight = true&lt;/code&gt;。
+也就是说，highlight.js的javascript/css文件会出现在每一个页面文件中。
+如果你只希望那些真的需要使用的页面才有语法高亮，
+你可以在&lt;code&gt;config.toml&lt;/code&gt;中设置&lt;code&gt;highlight = false&lt;/code&gt;，
+之后在需要的页面的扉页覆盖为&lt;code&gt;highlight = true&lt;/code&gt;。
+相反，你也可以全局启用语法高亮，在不需要的页面中禁用。
+下面给出一张展示不同全局和单独页面设置下，页面是否高亮。&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;config.toml&lt;/th&gt;
+&lt;th&gt;page preamble&lt;/th&gt;
+&lt;th&gt;highlighting enabled for page?&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;unset or true&lt;/td&gt;
+&lt;td&gt;unset or true&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;unset or true&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;no&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;unset or false&lt;/td&gt;
+&lt;td&gt;no&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h4 id=&#34;highlight-languages-选项&#34;&gt;&lt;code&gt;highlight_languages&lt;/code&gt;选项&lt;/h4&gt;
+
+&lt;p&gt;&lt;code&gt;highlight_languages&lt;/code&gt;选项允许你指定highlight.js支持的，但是不是默认支持的常见的语言。
+比如，你想在所有页面高亮Go和clojure语言，那就在&lt;code&gt;config.toml&lt;/code&gt;中设置&lt;code&gt;highlight_languages = [&amp;quot;go&amp;quot;, &amp;quot;clojure&amp;quot;]&lt;/code&gt;。
+另外，如果你想为页面只启用特定的语法高亮，那就去页面扉页设置&lt;code&gt;highlight_languages&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;在&lt;code&gt;config.toml&lt;/code&gt;和扉页设置的&lt;code&gt;highlight_languages&lt;/code&gt;是累加的。
+也就是说，如果&lt;code&gt;config.toml&lt;/code&gt;里设置了&lt;code&gt;highlight_languages = [&amp;quot;go&amp;quot;]&lt;/code&gt;，而扉页设置了&lt;code&gt;highlight_languages = [&amp;quot;ocaml&amp;quot;]&lt;/code&gt;，
+那么这个页面会包含两者的高亮文件。&lt;/p&gt;
+
+&lt;p&gt;当你设置了&lt;code&gt;highlight_languages&lt;/code&gt;之后，相应的高亮脚本会由&lt;a href=&#34;https://cdnjs.com/libraries/highlight.js/&#34; target=&#34;_blank&#34;&gt;cdnjs服务&lt;/a&gt;提供。
+要查看支持的语言，访问&lt;a href=&#34;https://cdnjs.com/libraries/highlight.js/&#34; target=&#34;_blank&#34;&gt;cdnjs page&lt;/a&gt;页面并查找包含&amp;rdquo;languages&amp;rdquo;关键字的链接。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;highlight_languages&lt;/code&gt;选项通过CDN提供了一种方便又容易的方式来满足附加语言的高亮需求。
+如果cdnjs提供的默认的文件不能满足你的需求，你可以通过&lt;a href=&#34;https://sourcethemes.com/academic/docs/customization/#add-scripts-js&#34; target=&#34;_blank&#34;&gt;个性化指南&lt;/a&gt;中的方法来使用自己的javascript文件。&lt;/p&gt;
+
+&lt;h4 id=&#34;highlight-style-选项&#34;&gt;&lt;code&gt;highlight_style&lt;/code&gt;选项&lt;/h4&gt;
+
+&lt;p&gt;&lt;code&gt;highlight_style&lt;/code&gt;选项允许你使用备选的高亮样式。
+比如，如果你想使用solarized-dark样式，你可以在&lt;code&gt;config.toml&lt;/code&gt;中设置&lt;code&gt;highlight_style = &amp;quot;solarized-dark&amp;quot;&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;如果未设置&lt;code&gt;highlight_style&lt;/code&gt;，默认会使用Academic提供的或者在你的&lt;code&gt;static&lt;/code&gt;文件夹下的&lt;code&gt;/css/highlight.min.css&lt;/code&gt;。
+Academic提供的默认样式和&lt;code&gt;github&lt;/code&gt;是一致的。&lt;/p&gt;
+
+&lt;p&gt;如果设置了&lt;code&gt;highlight_style&lt;/code&gt;，&lt;code&gt;/css/highlight.min.css&lt;/code&gt;就会被忽略，相应的样式会由&lt;a href=&#34;https://cdnjs.com/libraries/highlight.js/&#34; target=&#34;_blank&#34;&gt;cdnjs服务&lt;/a&gt;提供。
+要查看支持的样式列表，访问&lt;a href=&#34;https://cdnjs.com/libraries/highlight.js/&#34; target=&#34;_blank&#34;&gt;cdnjs page&lt;/a&gt;页面并查找包含&amp;rdquo;styles&amp;rdquo;关键字的链接。&lt;/p&gt;
+
+&lt;p&gt;可以在&lt;a href=&#34;https://highlightjs.org/static/demo/&#34; target=&#34;_blank&#34;&gt;highlight.js demo page&lt;/a&gt;上查看可用样式。&lt;/p&gt;
+
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    不是所有&lt;a href=&#34;https://highlightjs.org/static/demo/&#34; target=&#34;_blank&#34;&gt;highlight.js demo page&lt;/a&gt;上列出的样式都在&lt;a href=&#34;https://cdnjs.com/libraries/highlight.js/&#34; target=&#34;_blank&#34;&gt;cdnjs服务&lt;/a&gt;上可用。
+如果你想使用不是由cdnjs提供的样式，那么保持&lt;code&gt;highlight_style&lt;/code&gt;未设置，然后将相应文件放到&lt;code&gt;/static/css/highlight.min.css&lt;/code&gt;。
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    如果你不想更换Academic附带的样式，但是还是想由&lt;a href=&#34;https://cdnjs.com/libraries/highlight.js/&#34; target=&#34;_blank&#34;&gt;cdnjs&lt;/a&gt;提供服务，那么在&lt;code&gt;config.toml&lt;/code&gt;中设置&lt;code&gt;highlight_style = &amp;quot;github&amp;quot;&lt;/code&gt;。
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;只有在&lt;code&gt;config.toml&lt;/code&gt;中设置的&lt;code&gt;highlight_style&lt;/code&gt;才会生效，在扉页设置的&lt;code&gt;highlight_style&lt;/code&gt;不会生效。&lt;/p&gt;
+
+&lt;h2 id=&#34;twitter-tweet&#34;&gt;Twitter tweet&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;{{&amp;lt; tweet 666616452582129664 &amp;gt;}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;github-gist&#34;&gt;GitHub gist&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;{{&amp;lt; gist USERNAME GIST-ID &amp;gt;}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;latex-数学公式&#34;&gt;LATEX 数学公式&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;$$\left [ – \frac{\hbar^2}{2 m} \frac{\partial^2}{\partial x^2} + V \right ] \Psi = i \hbar \frac{\partial}{\partial t} \Psi$$
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div&gt;
+$$\left [ – \frac{\hbar^2}{2 m} \frac{\partial^2}{\partial x^2} + V \right ] \Psi = i \hbar \frac{\partial}{\partial t} \Psi$$
+&lt;/div&gt;
+
+&lt;p&gt;另外，单行的数学公式可以只用单个&lt;code&gt;$&lt;/code&gt;包裹：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;This is inline: $\mathbf{y} = \mathbf{X}\boldsymbol\beta + \boldsymbol\varepsilon$
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This is inline: $\mathbf{y} = \mathbf{X}\boldsymbol\beta + \boldsymbol\varepsilon$&lt;/p&gt;
+
+&lt;p&gt;注意Markdown的特殊符号需要使用反斜杠转义，才能被识别为数学公式而非Markdown关键字。
+比如&lt;code&gt;*&lt;/code&gt;和&lt;code&gt;_&lt;/code&gt;应该被替换为&lt;code&gt;\*&lt;/code&gt;和&lt;code&gt;\_&lt;/code&gt;。&lt;/p&gt;
+
+&lt;h3 id=&#34;多行方程式&#34;&gt;多行方程式&lt;/h3&gt;
+
+&lt;p&gt;标准LaTeX的双反斜杠换行应该被替换为6个反斜杠：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;$$f(k;p\_0^\*) = \begin{cases} p\_0^\* &amp;amp; \text{if }k=1, \\\\\\
+1-p\_0^\* &amp;amp; \text {if }k=0.\end{cases}$$
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;$$f(k;p_0^*) = \begin{cases} p_0^* &amp;amp; \text{if }k=1, \\&lt;br /&gt;
+1-p_0^* &amp;amp; \text {if }k=0.\end{cases}$$&lt;/p&gt;
+
+&lt;h3 id=&#34;论文摘要&#34;&gt;论文摘要&lt;/h3&gt;
+
+&lt;p&gt;由于Hugo和Academic会尝试解析摘要中的TOML, Markdown, 以及LaTeX内容，论文的&lt;code&gt;abstract&lt;/code&gt;和&lt;code&gt;abstract_short&lt;/code&gt;部分应当遵循下面两个方针：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;LaTeX的反斜杠&lt;code&gt;\&lt;/code&gt;应该被转义为双反斜杠，也就是&lt;code&gt;\\&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;LaTeX的下划线&lt;code&gt;_&lt;/code&gt;应该被转义为双反斜杠加下划线，也就是&lt;code&gt;\\_&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;因此，&lt;code&gt;abstract = &amp;quot;${O(d_{\max})}$&amp;quot;&lt;/code&gt;就会变成&lt;code&gt;abstract = &amp;quot;${O(d\\_{\\max})}$&amp;quot;&lt;/code&gt;。&lt;/p&gt;
+
+&lt;h2 id=&#34;表格&#34;&gt;表格&lt;/h2&gt;
+
+&lt;p&gt;代码：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;| Command         | Description         |
+| --------------- | ------------------- |
+| `hugo`          | Build your website. |
+| `hugo serve -w` | View your website.  |
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;效果：&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Command&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;hugo&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Build your website.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;hugo serve -w&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;View your website.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&#34;警报&#34;&gt;警报&lt;/h2&gt;
+
+&lt;p&gt;在你为文章添加提示、注意项、警告时，警报是一个非常有用的功能。
+尤其是对于教程性质的文章。
+使用对应的短代码以在文章中显示警报：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;{{% alert note %}}
+Here&#39;s a tip or note...
+{{% /alert %}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这会显示为如下 &lt;em&gt;注意&lt;/em&gt; 项：&lt;/p&gt;
+
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Here&amp;rsquo;s a tip or note&amp;hellip;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;{{% alert warning %}}
+Here&#39;s some important information...
+{{% /alert %}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这会展示为如下 &lt;em&gt;警告&lt;/em&gt; 项：&lt;/p&gt;
+
+&lt;div class=&#34;alert alert-warning&#34;&gt;
+  &lt;div&gt;
+    Here&amp;rsquo;s some important information&amp;hellip;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;目录&#34;&gt;目录&lt;/h2&gt;
+
+&lt;p&gt;目录对于长文章或者教程/文档可能特别有用，在你Markdown正文的任何位置使用&lt;code&gt;{&lt;/code&gt;&lt;code&gt;{% toc %}&lt;/code&gt;&lt;code&gt;}&lt;/code&gt;短代码自动生成目录。&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -27,7 +519,289 @@
       <pubDate>Tue, 01 Jan 2019 12:54:11 +0800</pubDate>
       
       <guid>https://szthanatos.github.io/post/academic/trans_managing_content/</guid>
-      <description>本文是对Academic文档-Managing content章节的个人翻译，基于个人理解，不保证绝对准确。 原文见上方连接。 目录 HAHAHUGOSHORTCODE-TOC0-HBHB 这是一个使用</description>
+      <description>
+
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    &lt;p&gt;本文是对&lt;a href=&#34;https://sourcethemes.com/academic/docs/managing-content/&#34; target=&#34;_blank&#34;&gt;Academic文档-Managing content章节&lt;/a&gt;的个人翻译，基于个人理解，不保证绝对准确。&lt;/p&gt;
+
+&lt;p&gt;原文见上方连接。&lt;/p&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;h2&gt;目录&lt;/h2&gt;
+HAHAHUGOSHORTCODE-TOC0-HBHB&lt;/p&gt;
+
+&lt;p&gt;这是一个使用Academic框架管理你的文章的简短指南。
+Academic提供的内容模板包括出版物、项目、宣讲、新闻/博客文章、以及小部件页。
+之后，你可能同样对&lt;a href=&#34;https://szthanatos.github.io/post/trans_writing_content.md&#34;&gt;使用Markdown、LaTeX数学公式和代码段进行创作&lt;/a&gt;感兴趣。&lt;/p&gt;
+
+&lt;div class=&#34;alert alert-warning&#34;&gt;
+  &lt;div&gt;
+    Hugo V0.49 版本在使用本指南中的&lt;code&gt;hugo new&lt;/code&gt;命令时存在一个bug，请升级到V0.50及以上。
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;精选图片&#34;&gt;精选图片&lt;/h2&gt;
+
+&lt;p&gt;要在文章页显示一个精选图片，简单的将名为&lt;code&gt;featured.*&lt;/code&gt;(e.g. &lt;code&gt;featured.jpg&lt;/code&gt;)的图片文件拖拽到文章文件夹即可。&lt;/p&gt;
+
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    如果你的页面在它所属的分类文件夹下没有自己的文件夹(&lt;a href=&#34;https://gohugo.io/content-management/page-bundles/&#34; target=&#34;_blank&#34;&gt;页面包&lt;/a&gt;)，
+你可以创建一个和你页面&lt;code&gt;NAME.md&lt;/code&gt;同名的文件夹&lt;code&gt;NAME&lt;/code&gt;，并将页面文件放入文件夹中，变为&lt;code&gt;NAME/index.md&lt;/code&gt;。
+这里有一个&lt;a href=&#34;https://github.com/sourcethemes/academic-scripts&#34; target=&#34;_blank&#34;&gt;自动迁移工具&lt;/a&gt;。
+使用页面包需要Academic v3+ 以及 Hugo v0.50以上。
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;想要为图片添加标题或者设置一个焦点以控制图片的裁剪？
+将下方的参数添加到扉页(也就是md文件&lt;code&gt;+++&lt;/code&gt;括起来的部分)的底部以自定义图片的外观。
+标题(caption)参数支持使用Markdown为图片添加标题或描述。
+焦点(focal_point)参数确保图片自动缩放的时候主要内容始终可见。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;# Featured image
+# To use, add an image named `featured.jpg/png` to your page&#39;s folder. 
+[image]
+  # Caption (optional)
+  caption = &amp;quot;Photo by [Academic](https://sourcethemes.com/academic/)&amp;quot;
+
+  # Focal point (optional)
+  # Options: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight
+  focal_point = &amp;quot;Smart&amp;quot;
+  
+  # Show image only in page previews?
+  preview_only = false
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;标题图片&#34;&gt;标题图片&lt;/h2&gt;
+
+&lt;p&gt;将下面的header参数添加到扉页的末尾，以在页面顶部展示一个占据全部宽度的标题图片。
+图片文件默认会从静态图片文件库&lt;code&gt;static/img/&lt;/code&gt;读取(所以不必写全)，所以下面例子的图片文件的完整路径是&lt;code&gt;static/img/header.png&lt;/code&gt;。
+标题参数作用和精选图一致。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;[header]
+  image = &amp;quot;header.png&amp;quot;
+  caption = &amp;quot;Image credit: [**Academic**](https://github.com/gcushen/hugo-academic/)&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;数学公式和代码&#34;&gt;数学公式和代码&lt;/h2&gt;
+
+&lt;p&gt;要在页面中启用&lt;strong&gt;LaTeX&lt;/strong&gt; 渲染数学公式，在页面的扉页中应该申明&lt;code&gt;math = true&lt;/code&gt;，如同示例网站的例子一样。
+或者，在&lt;code&gt;config.toml&lt;/code&gt;中设置&lt;code&gt;math = true&lt;/code&gt;，以在全局范围内允许数学公式渲染。&lt;/p&gt;
+
+&lt;p&gt;在&lt;code&gt;config.toml&lt;/code&gt;中设置&lt;code&gt;highlight = false&lt;/code&gt;以全局禁用代码高亮。你可以在需要代码高亮的页面的扉页单独设置&lt;code&gt;highlight = true&lt;/code&gt;。
+查看&lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/#code-highlighting&#34; target=&#34;_blank&#34;&gt;code-highlighting docs&lt;/a&gt;以获取更多细节。&lt;/p&gt;
+
+&lt;h2 id=&#34;页面特性&#34;&gt;页面特性&lt;/h2&gt;
+
+&lt;p&gt;将下述参数添加到页面扉页以管理页面特性：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;reading_time = false  # 显示估计阅读时间
+share = false  # 显示分享按钮
+profile = false  # 显示作者信息
+comments = false  # 显示评论区
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;创建一个出版物&#34;&gt;创建一个出版物&lt;/h2&gt;
+
+&lt;h3 id=&#34;自动&#34;&gt;自动&lt;/h3&gt;
+
+&lt;p&gt;先进的文献管理工具可以帮助你将你的出版物转化为开源的BibTeX格式。
+如果你是新手的话我们推荐你使用流行的开源工具&lt;a href=&#34;https://www.zotero.org/&#34; target=&#34;_blank&#34;&gt;Zotero&lt;/a&gt;来管理你的文献。&lt;/p&gt;
+
+&lt;p&gt;在你的文献管理工具中创建你自己的出版物列表并导出为&lt;code&gt;*.bib&lt;/code&gt;格式的BibTeX文件。&lt;/p&gt;
+
+&lt;p&gt;工具需要Python3环境，所以请先&lt;a href=&#34;https://realpython.com/installing-python/&#34; target=&#34;_blank&#34;&gt;安装Python3&lt;/a&gt;。
+同样，为了让你有机会检查Academic管理工具产生的改变，你需要备份你的站点，或者确保它已经处于Git的管理之中。&lt;/p&gt;
+
+&lt;p&gt;打开你的终端或者命令提示符应用，安装Academic管理工具：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;pip3 install -U academic
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;使用&lt;code&gt;cd&lt;/code&gt;命令进入你的站点目录。&lt;/p&gt;
+
+&lt;p&gt;之后，导入你的出版物：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;academic import --bibtex &amp;lt;path_to_your/publications.bib&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这个工具尚处于测试阶段，目的是为了给你提供辅助。
+所以在发布你的站点之前你应该检查&lt;code&gt;publications&lt;/code&gt;文件夹下产生的内容。
+你同样可以看看下一章节&lt;code&gt;手动&lt;/code&gt;部分有关扉页参数的细节，以想办法增强展示效果。&lt;/p&gt;
+
+&lt;p&gt;想要支持这个工具或者提供建议/反馈，请查看&lt;a href=&#34;https://github.com/sourcethemes/academic-admin&#34; target=&#34;_blank&#34;&gt;Academic admin tool项目主页&lt;/a&gt;。&lt;/p&gt;
+
+&lt;h3 id=&#34;手动&#34;&gt;手动&lt;/h3&gt;
+
+&lt;p&gt;另一种选择，使用命令手动的创建出版物：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;hugo new --kind publication publication/&amp;lt;my-publication&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;my-publication&amp;gt;&lt;/code&gt;是你得出版物的名称，使用&lt;code&gt;-&lt;/code&gt;代替空格。&lt;/p&gt;
+
+&lt;p&gt;之后，编辑&lt;code&gt;content/publication/&amp;lt;my-publication&amp;gt;/index.md&lt;/code&gt;内含有你的出版物信息的参数。主要参数如下：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;title&lt;/strong&gt;: 标题&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;date&lt;/strong&gt;: 发布日期 (必须使用有效的TOML日期格式)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;publication_types&lt;/strong&gt;: 使用图例来说明你出版物的类型, e.g. conference proceedings&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;publication&lt;/strong&gt;: 你的出版物发布在什么地方 - 允许使用Markdown以标注斜体或其他.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;abstract&lt;/strong&gt;: 摘要&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;使用Markdown格式将你出版物的细节写到文档的正文部分(在&lt;code&gt;+++&lt;/code&gt;部分之后)。
+内容会出现在你的出版物页之上。&lt;/p&gt;
+
+&lt;p&gt;要使访客能够阅读到你的作品，将作品的PDF链接填入&lt;code&gt;url_pdf&lt;/code&gt;，或者将作品PDF文件放置到出版物目录并统一为相同命名，这样会自动生成PDF的链接。
+举例，如果你的出版物说明位于&lt;code&gt;publication/photons/index.md&lt;/code&gt;，将PDF文件重命名并放到&lt;code&gt;publication/photons/photons.pdf&lt;/code&gt;。&lt;/p&gt;
+
+&lt;h3 id=&#34;关联其它资源&#34;&gt;关联其它资源&lt;/h3&gt;
+
+&lt;p&gt;使用&lt;code&gt;url_&lt;/code&gt;链接以指向本地/网络内容。
+要关联本地内容的话将之复制到出版物文件夹并使用例如&lt;code&gt;url_code = &amp;quot;code.zip&amp;quot;&lt;/code&gt;的方式添加引用。&lt;/p&gt;
+
+&lt;p&gt;你也可以将下面的代码块添加到扉页，以使用自定义链接按钮：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;url_custom = [{name = &amp;quot;Custom Link 1&amp;quot;, url = &amp;quot;http://example.org&amp;quot;},
+              {name = &amp;quot;Custom Link 2&amp;quot;, url = &amp;quot;http://example.org&amp;quot;}]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div class=&#34;alert alert-warning&#34;&gt;
+  &lt;div&gt;
+    想要在扉页的参数中使用双引号或者反斜杠需要额外添加一个反斜杠，_例子懒得翻_，更多信息请参阅&lt;a href=&#34;https://github.com/toml-lang/toml#user-content-string&#34; target=&#34;_blank&#34;&gt;TOML文档&lt;/a&gt;。
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;创建博文&#34;&gt;创建博文&lt;/h2&gt;
+
+&lt;p&gt;要创建一篇新文章：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;hugo new  --kind post post/my-article-name
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;然后用你的完整标题和内容填充新生成的&lt;code&gt;content/post/my-article-name.md&lt;/code&gt;文件。&lt;/p&gt;
+
+&lt;p&gt;Academic会自动生成内容摘要并显示在主页上。
+如果你不满意自动生成的摘要内容，你可以在文章内容中放置&lt;code&gt;&amp;lt;!&lt;/code&gt;&lt;code&gt;--more--&amp;gt;&lt;/code&gt;以限定摘要的长度，
+或者像这样：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;summary = &amp;quot;Summary of my post.&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;在扉页内添加&lt;code&gt;summary&lt;/code&gt;参数以覆盖自动生成的摘要。&lt;/p&gt;
+
+&lt;p&gt;要为特定的文章禁止评论，在扉页添加&lt;code&gt;disable_comments = true&lt;/code&gt;参数。
+要全局的禁止评论的话，在&lt;code&gt;config.toml&lt;/code&gt;中设置&lt;code&gt;disqusShortname = &amp;quot;&amp;quot;&lt;/code&gt;或者&lt;code&gt;disable_comments = true&lt;/code&gt;。&lt;/p&gt;
+
+&lt;h2 id=&#34;创建项目&#34;&gt;创建项目&lt;/h2&gt;
+
+&lt;p&gt;要创建一个项目：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;hugo new  --kind project project/my-project-name
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;之后编辑新生成的&lt;code&gt;content/project/my-project-name.md&lt;/code&gt;文件。
+在扉页将&lt;code&gt;external_link = &amp;quot;http://external-project.com&amp;quot;&lt;/code&gt;设置成已经存在的项目网址，
+或者也可以手动在正文中介绍项目的情况。&lt;/p&gt;
+
+&lt;h2 id=&#34;创建演讲&#34;&gt;创建演讲&lt;/h2&gt;
+
+&lt;p&gt;要创建一个演讲：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;hugo new  --kind talk talk/my-talk-name
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;然后用你的完整标题和内容填充新生成的&lt;code&gt;content/talk/my-talk-name.md&lt;/code&gt;文件。
+你会注意到演讲的很多参数和出版物是类似的。&lt;/p&gt;
+
+&lt;h2 id=&#34;创建幻灯片&#34;&gt;创建幻灯片&lt;/h2&gt;
+
+&lt;p&gt;可以使用Markdown非常高效的创建幻灯片并通过你的网站分享给观众。
+甚至还包括演讲者笔记。&lt;/p&gt;
+
+&lt;p&gt;查看&lt;a href=&#34;https://themes.gohugo.io//theme/academic/slides/example-slides#/&#34; target=&#34;_blank&#34;&gt;slides demo&lt;/a&gt;
+——尽管你可以注意到这个幻灯片是由Hugo团队制作的，并且他们缩减了一些功能。
+运行&lt;code&gt;themes/academic/exampleSite/&lt;/code&gt;下的示例站点以查看完整的包含演讲者笔记的示例。&lt;/p&gt;
+
+&lt;p&gt;查看&lt;code&gt;themes/academic/exampleSite/content/slides/example-slides.md&lt;/code&gt;内的&lt;code&gt;example slide deck&lt;/code&gt;以开始学习。&lt;/p&gt;
+
+&lt;p&gt;在演讲/出版物页面使用&lt;code&gt;url_slides&lt;/code&gt;参数来关联到幻灯片。
+比如，&lt;code&gt;url_slides = &amp;quot;slides/example-slides&amp;quot;&lt;/code&gt;可以关联到上面的示例站点。
+在&lt;a href=&#34;https://raw.githubusercontent.com/gcushen/hugo-academic/master/exampleSite/content/talk/example/index.md&#34; target=&#34;_blank&#34;&gt;这里&lt;/a&gt;可以看到包含&lt;code&gt;url_slides&lt;/code&gt;的完整扉页的示例。&lt;/p&gt;
+
+&lt;h2 id=&#34;创建课程或文档&#34;&gt;创建课程或文档&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;文档&lt;/em&gt; 是用来&lt;strong&gt;分享知识&lt;/strong&gt;的。常见例子包括在线课程、教程、软件文档以及知识库。&lt;/p&gt;
+
+&lt;p&gt;你现在阅读的这个页面(不是我翻译之后的这个)就是用_文档_的方式来展现Academic相关的。
+同样，这里也有一个&lt;a href=&#34;https://themes.gohugo.io//theme/academic/tutorial/&#34; target=&#34;_blank&#34;&gt;在线课程&lt;/a&gt;的例子。&lt;/p&gt;
+
+&lt;p&gt;查看&lt;code&gt;themes/academic/exampleSite/content/tutorial/&lt;/code&gt;的示例以学习如何开始。&lt;/p&gt;
+
+&lt;p&gt;如果你是一名使用R语言的数据分析师/数据科学家(e.g. RStudio and RMarkdown)，我们推荐你阅读&lt;a href=&#34;https://github.com/sourcethemes/project-kickstart-r&#34; target=&#34;_blank&#34;&gt;R boilerplate project on GitHub&lt;/a&gt;。&lt;/p&gt;
+
+&lt;h2 id=&#34;创建小部件页面&#34;&gt;创建小部件页面&lt;/h2&gt;
+
+&lt;p&gt;你是否想利用Academic的小部件系统，创建一个和Academic主页类似的页面？&lt;/p&gt;
+
+&lt;p&gt;在你的&lt;code&gt;content&lt;/code&gt;文件夹下创建一个新的，以你的页面命名的文件夹。在这个例子中我们将创建&lt;code&gt;content/tutorials/&lt;/code&gt;文件夹以创建我们的tutorials页。&lt;/p&gt;
+
+&lt;p&gt;在新建的&lt;code&gt;content/tutorials/&lt;/code&gt;文件夹下创建一个名为&lt;code&gt;_index.md&lt;/code&gt;的文件，内容如下：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;+++
+title = &amp;quot;Tutorials&amp;quot;  # Add a page title.
+date = 2017-01-01T00:00:00  # Add today&#39;s date.
+widgets = true  # Page type is a Widget Page.
+summary = &amp;quot;&amp;quot;  # Add a page description.
++++
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;将你的小部件放入&lt;code&gt;content/tutorials/&lt;/code&gt;文件夹，可以通过复制&lt;code&gt;content/home/&lt;/code&gt;下的小部件或者从&lt;a href=&#34;https://github.com/gcushen/hugo-academic/tree/master/exampleSite/content/home&#34; target=&#34;_blank&#34;&gt;Github&lt;/a&gt;上下载来实现。&lt;/p&gt;
+
+&lt;h2 id=&#34;创建其他页面-e-g-简历&#34;&gt;创建其他页面(e.g. 简历)&lt;/h2&gt;
+
+&lt;p&gt;其他类型内容的话，可以创建自己的自定义页面。
+例如，我们在&lt;code&gt;content&lt;/code&gt;文件夹下创建一个&lt;code&gt;cv.md&lt;/code&gt;简历页面。复制任意一个文章的扉页，根据需要进行调整，然后在下面编辑Markdown内容。
+再之后，您可以使用&lt;code&gt;[My CV]{&lt;/code&gt;&lt;code&gt;{&amp;lt; ref &amp;quot;cv.md&amp;quot; &amp;gt;}}&lt;/code&gt;代码将简历添加到任何现有页面的内容上。&lt;/p&gt;
+
+&lt;p&gt;或者，在上面的例子中，我们可以使用简历的PDF文件。为此，在&lt;code&gt;static&lt;/code&gt;文件夹中创建名为&lt;code&gt;files&lt;/code&gt;的文件夹，并将名为&lt;code&gt;cv.pdf&lt;/code&gt;的PDF文件移动到该位置。
+然后可以使用以下代码将PDF文件链接到你的任意内容中：&lt;code&gt;{&lt;/code&gt;&lt;code&gt;{% staticref &amp;quot;files/cv.pdf&amp;quot; %}}&lt;/code&gt;&lt;code&gt;下载我的简历&lt;/code&gt;&lt;code&gt;{&lt;/code&gt;&lt;code&gt;{% /staticref %}}&lt;/code&gt;。&lt;/p&gt;
+
+&lt;h2 id=&#34;管理列表页&#34;&gt;管理列表页&lt;/h2&gt;
+
+&lt;p&gt;档案(archive，我理解的就是列表)页或者说节点页，是列出你所有内容的特殊页面。
+博客文章、出版物、演讲都会有列表页。
+如果存在一个小部件放不下的内容的话，主页上的小部件会自动链接到列表页。
+因此，如果你没有足够多的内容的话你可能不会看到自动生成的链接——
+不过你也可以在文章中用一般的Markdown链接格式，手动的链接他们。&lt;/p&gt;
+
+&lt;p&gt;你可以通过将以下&lt;code&gt;_index.md&lt;/code&gt;文件从示例站点复制到你的&lt;code&gt;content/&lt;/code&gt;文件夹中的相同位置，来编辑标题并添加自己的内容（比如简介）：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;/themes/academic/exampleSite/content/post/_index.md
+/themes/academic/exampleSite/content/publication/_index.md
+/themes/academic/exampleSite/content/talk/_index.md
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;之后，根据需要编辑每个&lt;code&gt;_index.md&lt;/code&gt;中的&lt;code&gt;title&lt;/code&gt;参数，并在扉页之后添加任何内容。
+你可能注意到&lt;code&gt;_index.md&lt;/code&gt;文件略有不同，其中一些具有可用于关联内容类型的特殊选项。
+例如，&lt;code&gt;publication/_index.md&lt;/code&gt;包含用于设置出版物列表页面上显示的列表的引用样式的选项。&lt;/p&gt;
+
+&lt;h2 id=&#34;移除内容&#34;&gt;移除内容&lt;/h2&gt;
+
+&lt;p&gt;通常来说，要移除任意内容，简单的从你的&lt;code&gt;content/post&lt;/code&gt;、&lt;code&gt;content/publication&lt;/code&gt;、&lt;code&gt;content/project&lt;/code&gt;或者&lt;code&gt;content/talk&lt;/code&gt;文件夹中删除对应页面文件即可。&lt;/p&gt;
+
+&lt;h2 id=&#34;查看站点更新&#34;&gt;查看站点更新&lt;/h2&gt;
+
+&lt;p&gt;在你对站点做出修改之后，你可以通过执行&lt;code&gt;hugo server&lt;/code&gt;并在浏览器中打开&lt;a href=&#34;http://localhost:1313/&#34; target=&#34;_blank&#34;&gt;http://localhost:1313/&lt;/a&gt; 来看到效果。&lt;/p&gt;
+
+&lt;h2 id=&#34;部署站点&#34;&gt;部署站点&lt;/h2&gt;
+
+&lt;p&gt;最后，你可以&lt;a href=&#34;https://sourcethemes.com/academic/docs/deployment/&#34; target=&#34;_blank&#34;&gt;部署你的站点&lt;/a&gt;了。&lt;/p&gt;
+</description>
     </item>
     
   </channel>

@@ -4,12 +4,12 @@
     <title>Ubuntu on Kryptonite Lab</title>
     <link>https://szthanatos.github.io/tags/ubuntu/</link>
     <description>Recent content in Ubuntu on Kryptonite Lab</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>zh-Hans</language>
     <copyright>&amp;copy; 2018</copyright>
     <lastBuildDate>Sat, 01 Dec 2018 15:59:04 +0800</lastBuildDate>
     
-	<atom:link href="https://szthanatos.github.io/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
+	    <atom:link href="https://szthanatos.github.io/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,7 +18,78 @@
       <pubDate>Sat, 01 Dec 2018 15:59:04 +0800</pubDate>
       
       <guid>https://szthanatos.github.io/post/python/python_install_on_ubuntu/</guid>
-      <description>添加ppa源： # 死蛇的源 sudo add-apt-repository ppa:deadsnakes/ppa # 或者，jonathonf的源 sudo add-apt-repository ppa:jonathonf/python-3.x 如果提示没有add-apt-repository的话执行： apt install software-properties-common 更新源并安</description>
+      <description>&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;添加ppa源：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 死蛇的源
+sudo add-apt-repository ppa:deadsnakes/ppa
+# 或者，jonathonf的源
+sudo add-apt-repository ppa:jonathonf/python-3.x
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;如果提示没有add-apt-repository的话执行：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;apt install software-properties-common
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;更新源并安装python3.x，&lt;code&gt;3.x&lt;/code&gt;以你要安装的版本号为准：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sudo apt update
+sudo apt install python3.x
+# 可选
+sudo apt install python3.x-dev
+sudo apt install python3.x-venv
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
+&lt;li&gt;安装pip:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;wget https://bootstrap.pypa.io/get-pip.py
+sudo python3.x get-pip.py
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;查看python和pip版本：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 也可以用-V
+python --version
+python3 --version
+pip --version
+pip3 --version
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
+&lt;li&gt;如果关联版本不正确，备份usr/bin的软链接，重建软链接：&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 设置默认python3对应python版本
+sudo ln -s /usr/bin/python3.x /usr/bin/python3
+# 设置默认pip3使用pip版本
+sudo ln -s /usr/local/bin/pip3.x /usr/bin/pip3
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;注意 python默认安装位置在&lt;code&gt;/usr/bin&lt;/code&gt;下，pip默认安装位置在&lt;code&gt;/usr/local/bin&lt;/code&gt;下&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;pip初始化设置：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;mkdir ~/.pip
+touch ~/.pip/pip.conf
+# python3.6/pip18之后无需配置这个
+echo [list]&amp;gt;&amp;gt;~/.pip/pip.conf
+echo format=columns&amp;gt;&amp;gt;~/.pip/pip.conf
+# 设置默认pip源为清华大学开源镜像
+echo [global]&amp;gt;&amp;gt;~/.pip/pip.conf
+echo index-url = https://pypi.tuna.tsinghua.edu.cn/simple&amp;gt;&amp;gt;~/.pip/pip.conf
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
+&lt;li&gt;(可选)一键升级所有过期的包：&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sudo pip freeze --local | grep -v &#39;^\-e&#39; | cut -d = -f 1  | xargs pip install -U
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
     </item>
     
   </channel>
