@@ -533,11 +533,9 @@ cd janusgraph-0.2.2-hadoop2
 <li><p>创建gremlin-server端配置文件<code>janusgraph-0.2.2-hadoop2/conf/gremlin-server/socket-gremlin-server.yaml</code>，这里我们复制gremlin服务默认的配置文件，在此基础上进行修改</p>
 
 <pre><code class="language-bash">cp conf/gremlin-server/gremlin-server.yaml conf/gremlin-server/socket-gremlin-server.yaml
-</code></pre>
+</code></pre></li>
 
-<ol>
-<li>修改<code>socket-gremlin-server.yaml</code>：在配置文件中添加graphManager;并在graphs项中添加graph键及其值，一个键值代表一个图表，值表示对图表的设置(可添加多个图表，每一个图表都有自己的配置文件)，如：</li>
-</ol>
+<li><p>修改<code>socket-gremlin-server.yaml</code>：在配置文件中添加graphManager;并在graphs项中添加graph键及其值，一个键值代表一个图表，值表示对图表的设置(可添加多个图表，每一个图表都有自己的配置文件)，如：</p>
 
 <pre><code class="language-bash">graphManager: org.janusgraph.graphdb.management.JanusGraphManager
 graphs: {
@@ -561,30 +559,26 @@ cache.db-cache = true
 cache.db-cache-clean-wait = 20
 cache.db-cache-time = 180000
 cache.db-cache-size = 0.5
-</code></pre>
+</code></pre></li>
+</ol>
 
 <h2 id="基本用法">基本用法</h2>
 
 <p>依次启动hbase,elasticsearch以及gremlin-server，最后进入gremlin.sh客户端对图表进行操作</p>
 
 <ul>
-<li>hbase</li>
-</ul>
+<li><p>hbase</p>
 
 <pre><code class="language-bash">[root@xnode208 ~] start-hbase.sh
 </code></pre></li>
-</ol>
 
-<ul>
 <li><p>elasticsearch.(注：Janusgraph自带的elastic search服务启动时为确保安全被禁止使用root用户)</p>
 
 <pre><code class="language-bash">[zkr@xnode208 ~] cd /usr/local/janusgraph-0.2.2-hadoop2
 [zkr@xnode208 elasticsearch] ./bin/elasticsearch
-</code></pre>
+</code></pre></li>
 
-<ul>
-<li>gremlin-server(启动成功后，会创建我们在配置文件中设计的图表)</li>
-</ul>
+<li><p>gremlin-server(启动成功后，会创建我们在配置文件中设计的图表)</p>
 
 <pre><code class="language-bash">[zkr@xnode208 janusgraph0.2] ./bin/gremlin-server.sh ./conf/gremlin-server/socket-gremlin-server.yaml
 </code></pre></li>
@@ -593,7 +587,8 @@ cache.db-cache-size = 0.5
 
 <pre><code class="language-bash">[root@xnode208 janusgraph0.2] ./bin/gremlin.sh
 gremlin&gt; 
-</code></pre>
+</code></pre></li>
+</ul>
 
 <h2 id="加载诸神图">加载诸神图</h2>
 
@@ -606,8 +601,7 @@ gremlin&gt; :remote console
 # 加载诸神图到我们创建的空图表中
 gremlin&gt; GraphOfTheGodsFactory.load(graph)
 ==&gt;null
-</code></pre></li>
-</ul>
+</code></pre>
 
 <p>示例数据描述了一部分希腊诸神以及他们居住的诸神殿的相关关系。</p>
 
@@ -953,7 +947,7 @@ g.E().properties('reason');  # 查看边属性为reason的属性及属性值
     
     
     
-    <script src="/js/academic.min.9ef1b53ee2bde6c7f33b150c6ba4d452.js"></script>
+    <script src="/js/academic.min.3394a224b26ce58ff36f44c54743e0ab.js"></script>
 
     
 

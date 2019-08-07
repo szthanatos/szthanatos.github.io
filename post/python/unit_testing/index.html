@@ -824,21 +824,18 @@ test_sample.py:6: AssertionError
     return z
 </code></pre>
 
-<p>中，如果测试为assertEqualst(0, foo(2,-1))，则if内的代码就没有被覆盖到；</p>
+<p>中，如果测试为assertEqualst(0, foo(2,-1))，则if内的代码就没有被覆盖到；</p></li>
 
-<ul>
-<li><strong>决策覆盖（Decision Coverage）</strong></li>
-</ul>
+<li><p><strong>决策覆盖（Decision Coverage）</strong></p>
 
 <p>指每一个逻辑分支都应该被测试覆盖。类似上面的例子，如果想要达到决策覆盖，我们起码应该执行两次测试：</p>
 
 <ul>
 <li>assertEquals(2, foo(2, 2))  # 决策1</li>
+<li>assertEqualst(0, foo(2,-1))  # 决策2</li>
+</ul></li>
 
-<li><p>assertEqualst(0, foo(2,-1))  # 决策2</p></li>
-
-<li><p><strong>条件覆盖（Condition Coverage）</strong></p></li>
-</ul>
+<li><p><strong>条件覆盖（Condition Coverage）</strong></p>
 
 <p>每一个逻辑分支的每一个条件都应该被覆盖。条件覆盖不需要满足条件表达式所有的排列组合，而只需将每个条件表达式的结果为true/false的情况进行测试就可以了。依旧使用上面的例子，如果想要达到条件覆盖，我们应该执行至少三次测试：</p>
 
@@ -848,7 +845,8 @@ test_sample.py:6: AssertionError
 <li>assertEquals(0, foo(-1, -1))  # 决策1条件false</li>
 </ul>
 
-<p>如果没有第三个测试，那么只能达到决策覆盖，不能达到条件覆盖。</p>
+<p>如果没有第三个测试，那么只能达到决策覆盖，不能达到条件覆盖。</p></li>
+</ul>
 
 <h3 id="代码覆盖率">代码覆盖率</h3>
 
@@ -867,8 +865,7 @@ myproj/myproj          257     13    94%
 myproj/feature4286      94      7    92%
 ----------------------------------------
 TOTAL                  353     20    94%
-</code></pre></li>
-</ul>
+</code></pre>
 
 <p>详细用法可参照<a href="http://pytest-cov.readthedocs.io/en/latest/" target="_blank">官方文档</a></p>
 
@@ -1087,7 +1084,7 @@ TOTAL                  353     20    94%
     
     
     
-    <script src="/js/academic.min.9ef1b53ee2bde6c7f33b150c6ba4d452.js"></script>
+    <script src="/js/academic.min.3394a224b26ce58ff36f44c54743e0ab.js"></script>
 
     
 

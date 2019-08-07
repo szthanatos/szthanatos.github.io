@@ -57,11 +57,9 @@ cd janusgraph-0.2.2-hadoop2
 &lt;li&gt;&lt;p&gt;创建gremlin-server端配置文件&lt;code&gt;janusgraph-0.2.2-hadoop2/conf/gremlin-server/socket-gremlin-server.yaml&lt;/code&gt;，这里我们复制gremlin服务默认的配置文件，在此基础上进行修改&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cp conf/gremlin-server/gremlin-server.yaml conf/gremlin-server/socket-gremlin-server.yaml
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
-&lt;ol&gt;
-&lt;li&gt;修改&lt;code&gt;socket-gremlin-server.yaml&lt;/code&gt;：在配置文件中添加graphManager;并在graphs项中添加graph键及其值，一个键值代表一个图表，值表示对图表的设置(可添加多个图表，每一个图表都有自己的配置文件)，如：&lt;/li&gt;
-&lt;/ol&gt;
+&lt;li&gt;&lt;p&gt;修改&lt;code&gt;socket-gremlin-server.yaml&lt;/code&gt;：在配置文件中添加graphManager;并在graphs项中添加graph键及其值，一个键值代表一个图表，值表示对图表的设置(可添加多个图表，每一个图表都有自己的配置文件)，如：&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;graphManager: org.janusgraph.graphdb.management.JanusGraphManager
 graphs: {
@@ -85,30 +83,26 @@ cache.db-cache = true
 cache.db-cache-clean-wait = 20
 cache.db-cache-time = 180000
 cache.db-cache-size = 0.5
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;h2 id=&#34;基本用法&#34;&gt;基本用法&lt;/h2&gt;
 
 &lt;p&gt;依次启动hbase,elasticsearch以及gremlin-server，最后进入gremlin.sh客户端对图表进行操作&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;hbase&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;&lt;p&gt;hbase&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;[root@xnode208 ~] start-hbase.sh
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;/ol&gt;
 
-&lt;ul&gt;
 &lt;li&gt;&lt;p&gt;elasticsearch.(注：Janusgraph自带的elastic search服务启动时为确保安全被禁止使用root用户)&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;[zkr@xnode208 ~] cd /usr/local/janusgraph-0.2.2-hadoop2
 [zkr@xnode208 elasticsearch] ./bin/elasticsearch
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
-&lt;ul&gt;
-&lt;li&gt;gremlin-server(启动成功后，会创建我们在配置文件中设计的图表)&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;&lt;p&gt;gremlin-server(启动成功后，会创建我们在配置文件中设计的图表)&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;[zkr@xnode208 janusgraph0.2] ./bin/gremlin-server.sh ./conf/gremlin-server/socket-gremlin-server.yaml
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
@@ -117,7 +111,8 @@ cache.db-cache-size = 0.5
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;[root@xnode208 janusgraph0.2] ./bin/gremlin.sh
 gremlin&amp;gt; 
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h2 id=&#34;加载诸神图&#34;&gt;加载诸神图&lt;/h2&gt;
 
@@ -130,8 +125,7 @@ gremlin&amp;gt; :remote console
 # 加载诸神图到我们创建的空图表中
 gremlin&amp;gt; GraphOfTheGodsFactory.load(graph)
 ==&amp;gt;null
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;示例数据描述了一部分希腊诸神以及他们居住的诸神殿的相关关系。&lt;/p&gt;
 

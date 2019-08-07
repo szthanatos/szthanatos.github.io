@@ -74,6 +74,11 @@
   </url>
   
   <url>
+    <loc>https://szthanatos.github.io/topic/redis/error-connection_reset/</loc>
+    <lastmod>2019-06-16T23:06:41+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://szthanatos.github.io/authors/admin/</loc>
     <lastmod>2019-04-07T00:00:00+00:00</lastmod>
   </url>
@@ -196,25 +201,25 @@
   </url>
   
   <url>
-    <loc>https://szthanatos.github.io/categories/academic/</loc>
-    <lastmod>2019-01-01T12:54:29+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://szthanatos.github.io/tags/academic/</loc>
     <lastmod>2019-01-01T12:54:29+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://szthanatos.github.io/categories/hugo/</loc>
+    <loc>https://szthanatos.github.io/categories/academic/</loc>
     <lastmod>2019-01-01T12:54:29+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://szthanatos.github.io/tags/hugo/</loc>
+    <lastmod>2019-01-01T12:54:29+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://szthanatos.github.io/categories/hugo/</loc>
     <lastmod>2019-01-01T12:54:29+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -312,7 +317,7 @@
   </url>
   
   <url>
-    <loc>https://szthanatos.github.io/topic/redis/error-persist/</loc>
+    <loc>https://szthanatos.github.io/topic/redis/error-persist_on_disk/</loc>
     <lastmod>2018-05-18T11:42:50+08:00</lastmod>
   </url>
   

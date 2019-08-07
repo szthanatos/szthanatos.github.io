@@ -132,10 +132,9 @@ caption = &amp;quot;Write your image caption here&amp;quot;
 album = &amp;quot;1&amp;quot;
 image = &amp;quot;https://raw.githubusercontent.com/gcushen/hugo-academic/master/images/theme-dark.png&amp;quot;
 caption = &amp;quot;Dark theme&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
-&lt;ol&gt;
-&lt;li&gt;在正文要显示的位置使用&lt;code&gt;{&lt;/code&gt;&lt;code&gt;{&amp;lt; gallery album=&amp;quot;1&amp;quot; &amp;gt;}&lt;/code&gt;&lt;code&gt;}&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;在正文要显示的位置使用&lt;code&gt;{&lt;/code&gt;&lt;code&gt;{&amp;lt; gallery album=&amp;quot;1&amp;quot; &amp;gt;}&lt;/code&gt;&lt;code&gt;}&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h2 id=&#34;视频&#34;&gt;视频&lt;/h2&gt;
@@ -149,8 +148,7 @@ caption = &amp;quot;Dark theme&amp;quot;
 &lt;p&gt;位于&lt;code&gt;static/img/&lt;/code&gt;文件夹下的视频：&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;{{&amp;lt; video library=&amp;quot;1&amp;quot; src=&amp;quot;my_video.mp4&amp;quot; controls=&amp;quot;yes&amp;quot; &amp;gt;}}
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;位于页面文件夹下的视频：&lt;/p&gt;
 
@@ -910,12 +908,9 @@ HAHAHUGOSHORTCODE-TOC0-HBHB&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git add .
 git commit -m &amp;quot;Initial commit&amp;quot;
 git push -u origin master
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
-&lt;ol&gt;
-&lt;li&gt;更新GitHub page项目：
-&lt;br /&gt;&lt;/li&gt;
-&lt;/ol&gt;
+&lt;li&gt;&lt;p&gt;更新GitHub page项目：&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;hugo 
 cd public

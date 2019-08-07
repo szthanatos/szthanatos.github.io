@@ -308,19 +308,13 @@ echo 212992 &amp;gt;&amp;gt; /proc/sys/net/core/rmem_max
 &lt;p&gt;配置broker上的server.properties文件：&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-ini&#34;&gt;inter.broker.protocol.version = 0.11.0
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
-&lt;ul&gt;
-&lt;li&gt;依次更新代码并重启borker：
-&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;&lt;p&gt;依次更新代码并重启borker：&lt;/p&gt;
 
-&lt;p&gt;一次关闭一个broker，更新源码，重启&lt;/p&gt;
+&lt;p&gt;一次关闭一个broker，更新源码，重启&lt;/p&gt;&lt;/li&gt;
 
-&lt;ul&gt;
-&lt;li&gt;更新通讯协议版本：
-&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;&lt;p&gt;更新通讯协议版本：&lt;/p&gt;
 
 &lt;p&gt;完成所有broker节点的源码更新后,升级协议（方法同上）：&lt;/p&gt;
 

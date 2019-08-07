@@ -340,21 +340,18 @@ test_sample.py:6: AssertionError
     return z
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;中，如果测试为assertEqualst(0, foo(2,-1))，则if内的代码就没有被覆盖到；&lt;/p&gt;
+&lt;p&gt;中，如果测试为assertEqualst(0, foo(2,-1))，则if内的代码就没有被覆盖到；&lt;/p&gt;&lt;/li&gt;
 
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;决策覆盖（Decision Coverage）&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;决策覆盖（Decision Coverage）&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;指每一个逻辑分支都应该被测试覆盖。类似上面的例子，如果想要达到决策覆盖，我们起码应该执行两次测试：&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;assertEquals(2, foo(2, 2))  # 决策1&lt;/li&gt;
+&lt;li&gt;assertEqualst(0, foo(2,-1))  # 决策2&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;assertEqualst(0, foo(2,-1))  # 决策2&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;条件覆盖（Condition Coverage）&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;条件覆盖（Condition Coverage）&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;每一个逻辑分支的每一个条件都应该被覆盖。条件覆盖不需要满足条件表达式所有的排列组合，而只需将每个条件表达式的结果为true/false的情况进行测试就可以了。依旧使用上面的例子，如果想要达到条件覆盖，我们应该执行至少三次测试：&lt;/p&gt;
 
@@ -364,7 +361,8 @@ test_sample.py:6: AssertionError
 &lt;li&gt;assertEquals(0, foo(-1, -1))  # 决策1条件false&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;如果没有第三个测试，那么只能达到决策覆盖，不能达到条件覆盖。&lt;/p&gt;
+&lt;p&gt;如果没有第三个测试，那么只能达到决策覆盖，不能达到条件覆盖。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h3 id=&#34;代码覆盖率&#34;&gt;代码覆盖率&lt;/h3&gt;
 
@@ -383,8 +381,7 @@ myproj/myproj          257     13    94%
 myproj/feature4286      94      7    92%
 ----------------------------------------
 TOTAL                  353     20    94%
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;详细用法可参照&lt;a href=&#34;http://pytest-cov.readthedocs.io/en/latest/&#34; target=&#34;_blank&#34;&gt;官方文档&lt;/a&gt;&lt;/p&gt;
 

@@ -498,11 +498,9 @@ sudo apt install python3.x
 # 可选
 sudo apt install python3.x-dev
 sudo apt install python3.x-venv
-</code></pre>
+</code></pre></li>
 
-<ol>
-<li>安装pip:</li>
-</ol>
+<li><p>安装pip:</p>
 
 <pre><code class="language-bash">wget https://bootstrap.pypa.io/get-pip.py
 sudo python3.x get-pip.py
@@ -515,11 +513,9 @@ python --version
 python3 --version
 pip --version
 pip3 --version
-</code></pre>
+</code></pre></li>
 
-<ol>
-<li>如果关联版本不正确，备份usr/bin的软链接，重建软链接：</li>
-</ol>
+<li><p>如果关联版本不正确，备份usr/bin的软链接，重建软链接：</p>
 
 <pre><code class="language-bash"># 设置默认python3对应python版本
 sudo ln -s /usr/bin/python3.x /usr/bin/python3
@@ -539,11 +535,9 @@ echo format=columns&gt;&gt;~/.pip/pip.conf
 # 设置默认pip源为清华大学开源镜像
 echo [global]&gt;&gt;~/.pip/pip.conf
 echo index-url = https://pypi.tuna.tsinghua.edu.cn/simple&gt;&gt;~/.pip/pip.conf
-</code></pre>
+</code></pre></li>
 
-<ol>
-<li>(可选)一键升级所有过期的包：</li>
-</ol>
+<li><p>(可选)一键升级所有过期的包：</p>
 
 <pre><code class="language-bash">sudo pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip install -U
 </code></pre></li>
@@ -754,7 +748,7 @@ echo index-url = https://pypi.tuna.tsinghua.edu.cn/simple&gt;&gt;~/.pip/pip.conf
     
     
     
-    <script src="/js/academic.min.9ef1b53ee2bde6c7f33b150c6ba4d452.js"></script>
+    <script src="/js/academic.min.3394a224b26ce58ff36f44c54743e0ab.js"></script>
 
     
 

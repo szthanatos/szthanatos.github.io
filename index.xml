@@ -1072,11 +1072,9 @@ firewall-cmd --reload
 &lt;li&gt;&lt;p&gt;yum安装ruby环境及包&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;yum -y install ruby ruby-devel rubygems
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
-&lt;ol&gt;
-&lt;li&gt;修改ruby源，使用国内镜像&lt;/li&gt;
-&lt;/ol&gt;
+&lt;li&gt;&lt;p&gt;修改ruby源，使用国内镜像&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;gem sources --add https://gems.ruby-china.org/ --remove https://rubygems.org/
 # 如果修改失败将https换为http重试
@@ -1086,11 +1084,9 @@ gem sources --add http://gems.ruby-china.org/ --remove http://rubygems.org/
 &lt;li&gt;&lt;p&gt;检查源列表，确保只有gems.ruby-china.org&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;gem sources -l
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
-&lt;ol&gt;
-&lt;li&gt;安装ruby的redis包：&lt;/li&gt;
-&lt;/ol&gt;
+&lt;li&gt;&lt;p&gt;安装ruby的redis包：&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;gem install redis
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
@@ -1105,10 +1101,9 @@ gem sources --add http://gems.ruby-china.org/ --remove http://rubygems.org/
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# --replicas 1 表示主从复制比例为 1:1，即一个主节点对应一个从节点
 ./redis-trib.rb create --replicas 1 {node1_ip:port} {node2_ip:port} ...
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
-&lt;ol&gt;
-&lt;li&gt;默认会自动分配主从节点，确认的话输入&lt;code&gt;yes&lt;/code&gt;完成集群的创建&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;默认会自动分配主从节点，确认的话输入&lt;code&gt;yes&lt;/code&gt;完成集群的创建&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h2 id=&#34;检查集群状态&#34;&gt;检查集群状态&lt;/h2&gt;
@@ -1119,8 +1114,7 @@ redis-cli -c -h {ip} -p {port}
 &amp;gt; cluster nodes
 # 查看集群信息
 &amp;gt; cluster info
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h2 id=&#34;相关命令&#34;&gt;相关命令&lt;/h2&gt;
 
@@ -1172,12 +1166,11 @@ tcl-8.5.13-8.el7.x86_64.rpm
 &lt;li&gt;&lt;p&gt;卸载yum过时的ruby环境&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;yum remove ruby ruby-devel rubygems
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
-&lt;ol&gt;
-&lt;li&gt;下载&lt;a href=&#34;https://www.ruby-lang.org/en/downloads/&#34; target=&#34;_blank&#34;&gt;ruby&lt;/a&gt;源码&lt;/li&gt;
-&lt;li&gt;解压，编译安装:&lt;/li&gt;
-&lt;/ol&gt;
+&lt;li&gt;&lt;p&gt;下载&lt;a href=&#34;https://www.ruby-lang.org/en/downloads/&#34; target=&#34;_blank&#34;&gt;ruby&lt;/a&gt;源码&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;解压，编译安装:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;tar -zxvf {latest_ruby.tar.gz}
 cd {latest_ruby}
@@ -1193,11 +1186,9 @@ make install
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;tar -zxvf {latest_rubygem.tgz}
 cd {latest_rubygem}
 ruby setup.rb
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
-&lt;ol&gt;
-&lt;li&gt;重新&lt;code&gt;gem install redis&lt;/code&gt;或者离线下载&lt;a href=&#34;https://rubygems.org/downloads/&#34; target=&#34;_blank&#34;&gt;gem-redis&lt;/a&gt;的包，本地安装&lt;/li&gt;
-&lt;/ol&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;重新&lt;code&gt;gem install redis&lt;/code&gt;或者离线下载&lt;a href=&#34;https://rubygems.org/downloads/&#34; target=&#34;_blank&#34;&gt;gem-redis&lt;/a&gt;的包，本地安装&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 </description>
     </item>
@@ -1264,19 +1255,13 @@ ruby setup.rb
 &lt;p&gt;配置broker上的server.properties文件：&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-ini&#34;&gt;inter.broker.protocol.version = 0.11.0
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
-&lt;ul&gt;
-&lt;li&gt;依次更新代码并重启borker：
-&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;&lt;p&gt;依次更新代码并重启borker：&lt;/p&gt;
 
-&lt;p&gt;一次关闭一个broker，更新源码，重启&lt;/p&gt;
+&lt;p&gt;一次关闭一个broker，更新源码，重启&lt;/p&gt;&lt;/li&gt;
 
-&lt;ul&gt;
-&lt;li&gt;更新通讯协议版本：
-&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;&lt;p&gt;更新通讯协议版本：&lt;/p&gt;
 
 &lt;p&gt;完成所有broker节点的源码更新后,升级协议（方法同上）：&lt;/p&gt;
 
@@ -1690,6 +1675,36 @@ cluster_stats_messages_received:3112
 &lt;/ul&gt;
 
 &lt;p&gt;Further talk details can easily be added to this page using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>解决 Error connection reset by peer</title>
+      <link>https://szthanatos.github.io/topic/redis/error-connection_reset/</link>
+      <pubDate>Sun, 16 Jun 2019 23:06:41 +0800</pubDate>
+      
+      <guid>https://szthanatos.github.io/topic/redis/error-connection_reset/</guid>
+      <description>
+
+&lt;h2 id=&#34;报错信息&#34;&gt;报错信息&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Error: Connection reset by peer&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;原因&#34;&gt;原因&lt;/h2&gt;
+
+&lt;p&gt;读写操作发生在连接断开后。&lt;/p&gt;
+
+&lt;h2 id=&#34;解决办法&#34;&gt;解决办法&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;用&lt;code&gt;info&lt;/code&gt;/&lt;code&gt;cluster info&lt;/code&gt;命令检查连接数是否过多&lt;/li&gt;
+&lt;li&gt;检查redis-server是否正确监听配置文件&lt;/li&gt;
+&lt;li&gt;检查配置文件中&lt;code&gt;bind&lt;/code&gt;部分，如果是&lt;code&gt;bind 127.0.0.1&lt;/code&gt;则只允许本地访问&lt;/li&gt;
+&lt;li&gt;检查配置文件中&lt;code&gt;protected-mode&lt;/code&gt;部分是否为&lt;code&gt;no&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;重启redis-server&lt;/li&gt;
+&lt;/ol&gt;
 </description>
     </item>
     
@@ -2802,11 +2817,9 @@ cd janusgraph-0.2.2-hadoop2
 &lt;li&gt;&lt;p&gt;创建gremlin-server端配置文件&lt;code&gt;janusgraph-0.2.2-hadoop2/conf/gremlin-server/socket-gremlin-server.yaml&lt;/code&gt;，这里我们复制gremlin服务默认的配置文件，在此基础上进行修改&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cp conf/gremlin-server/gremlin-server.yaml conf/gremlin-server/socket-gremlin-server.yaml
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
-&lt;ol&gt;
-&lt;li&gt;修改&lt;code&gt;socket-gremlin-server.yaml&lt;/code&gt;：在配置文件中添加graphManager;并在graphs项中添加graph键及其值，一个键值代表一个图表，值表示对图表的设置(可添加多个图表，每一个图表都有自己的配置文件)，如：&lt;/li&gt;
-&lt;/ol&gt;
+&lt;li&gt;&lt;p&gt;修改&lt;code&gt;socket-gremlin-server.yaml&lt;/code&gt;：在配置文件中添加graphManager;并在graphs项中添加graph键及其值，一个键值代表一个图表，值表示对图表的设置(可添加多个图表，每一个图表都有自己的配置文件)，如：&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;graphManager: org.janusgraph.graphdb.management.JanusGraphManager
 graphs: {
@@ -2830,30 +2843,26 @@ cache.db-cache = true
 cache.db-cache-clean-wait = 20
 cache.db-cache-time = 180000
 cache.db-cache-size = 0.5
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;h2 id=&#34;基本用法&#34;&gt;基本用法&lt;/h2&gt;
 
 &lt;p&gt;依次启动hbase,elasticsearch以及gremlin-server，最后进入gremlin.sh客户端对图表进行操作&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;hbase&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;&lt;p&gt;hbase&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;[root@xnode208 ~] start-hbase.sh
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;/ol&gt;
 
-&lt;ul&gt;
 &lt;li&gt;&lt;p&gt;elasticsearch.(注：Janusgraph自带的elastic search服务启动时为确保安全被禁止使用root用户)&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;[zkr@xnode208 ~] cd /usr/local/janusgraph-0.2.2-hadoop2
 [zkr@xnode208 elasticsearch] ./bin/elasticsearch
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
-&lt;ul&gt;
-&lt;li&gt;gremlin-server(启动成功后，会创建我们在配置文件中设计的图表)&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;&lt;p&gt;gremlin-server(启动成功后，会创建我们在配置文件中设计的图表)&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;[zkr@xnode208 janusgraph0.2] ./bin/gremlin-server.sh ./conf/gremlin-server/socket-gremlin-server.yaml
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
@@ -2862,7 +2871,8 @@ cache.db-cache-size = 0.5
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;[root@xnode208 janusgraph0.2] ./bin/gremlin.sh
 gremlin&amp;gt; 
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h2 id=&#34;加载诸神图&#34;&gt;加载诸神图&lt;/h2&gt;
 
@@ -2875,8 +2885,7 @@ gremlin&amp;gt; :remote console
 # 加载诸神图到我们创建的空图表中
 gremlin&amp;gt; GraphOfTheGodsFactory.load(graph)
 ==&amp;gt;null
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;示例数据描述了一部分希腊诸神以及他们居住的诸神殿的相关关系。&lt;/p&gt;
 
@@ -3391,10 +3400,9 @@ caption = &amp;quot;Write your image caption here&amp;quot;
 album = &amp;quot;1&amp;quot;
 image = &amp;quot;https://raw.githubusercontent.com/gcushen/hugo-academic/master/images/theme-dark.png&amp;quot;
 caption = &amp;quot;Dark theme&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
-&lt;ol&gt;
-&lt;li&gt;在正文要显示的位置使用&lt;code&gt;{&lt;/code&gt;&lt;code&gt;{&amp;lt; gallery album=&amp;quot;1&amp;quot; &amp;gt;}&lt;/code&gt;&lt;code&gt;}&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;在正文要显示的位置使用&lt;code&gt;{&lt;/code&gt;&lt;code&gt;{&amp;lt; gallery album=&amp;quot;1&amp;quot; &amp;gt;}&lt;/code&gt;&lt;code&gt;}&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h2 id=&#34;视频&#34;&gt;视频&lt;/h2&gt;
@@ -3408,8 +3416,7 @@ caption = &amp;quot;Dark theme&amp;quot;
 &lt;p&gt;位于&lt;code&gt;static/img/&lt;/code&gt;文件夹下的视频：&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;{{&amp;lt; video library=&amp;quot;1&amp;quot; src=&amp;quot;my_video.mp4&amp;quot; controls=&amp;quot;yes&amp;quot; &amp;gt;}}
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;位于页面文件夹下的视频：&lt;/p&gt;
 
@@ -4607,12 +4614,9 @@ HAHAHUGOSHORTCODE-TOC0-HBHB&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git add .
 git commit -m &amp;quot;Initial commit&amp;quot;
 git push -u origin master
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
-&lt;ol&gt;
-&lt;li&gt;更新GitHub page项目：
-&lt;br /&gt;&lt;/li&gt;
-&lt;/ol&gt;
+&lt;li&gt;&lt;p&gt;更新GitHub page项目：&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;hugo 
 cd public
@@ -5221,11 +5225,9 @@ sudo apt install python3.x
 # 可选
 sudo apt install python3.x-dev
 sudo apt install python3.x-venv
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
-&lt;ol&gt;
-&lt;li&gt;安装pip:&lt;/li&gt;
-&lt;/ol&gt;
+&lt;li&gt;&lt;p&gt;安装pip:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;wget https://bootstrap.pypa.io/get-pip.py
 sudo python3.x get-pip.py
@@ -5238,11 +5240,9 @@ python --version
 python3 --version
 pip --version
 pip3 --version
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
-&lt;ol&gt;
-&lt;li&gt;如果关联版本不正确，备份usr/bin的软链接，重建软链接：&lt;/li&gt;
-&lt;/ol&gt;
+&lt;li&gt;&lt;p&gt;如果关联版本不正确，备份usr/bin的软链接，重建软链接：&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 设置默认python3对应python版本
 sudo ln -s /usr/bin/python3.x /usr/bin/python3
@@ -5262,11 +5262,9 @@ echo format=columns&amp;gt;&amp;gt;~/.pip/pip.conf
 # 设置默认pip源为清华大学开源镜像
 echo [global]&amp;gt;&amp;gt;~/.pip/pip.conf
 echo index-url = https://pypi.tuna.tsinghua.edu.cn/simple&amp;gt;&amp;gt;~/.pip/pip.conf
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
-&lt;ol&gt;
-&lt;li&gt;(可选)一键升级所有过期的包：&lt;/li&gt;
-&lt;/ol&gt;
+&lt;li&gt;&lt;p&gt;(可选)一键升级所有过期的包：&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sudo pip freeze --local | grep -v &#39;^\-e&#39; | cut -d = -f 1  | xargs pip install -U
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
@@ -5703,21 +5701,18 @@ test_sample.py:6: AssertionError
     return z
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;中，如果测试为assertEqualst(0, foo(2,-1))，则if内的代码就没有被覆盖到；&lt;/p&gt;
+&lt;p&gt;中，如果测试为assertEqualst(0, foo(2,-1))，则if内的代码就没有被覆盖到；&lt;/p&gt;&lt;/li&gt;
 
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;决策覆盖（Decision Coverage）&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;决策覆盖（Decision Coverage）&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;指每一个逻辑分支都应该被测试覆盖。类似上面的例子，如果想要达到决策覆盖，我们起码应该执行两次测试：&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;assertEquals(2, foo(2, 2))  # 决策1&lt;/li&gt;
+&lt;li&gt;assertEqualst(0, foo(2,-1))  # 决策2&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;assertEqualst(0, foo(2,-1))  # 决策2&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;条件覆盖（Condition Coverage）&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;条件覆盖（Condition Coverage）&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;每一个逻辑分支的每一个条件都应该被覆盖。条件覆盖不需要满足条件表达式所有的排列组合，而只需将每个条件表达式的结果为true/false的情况进行测试就可以了。依旧使用上面的例子，如果想要达到条件覆盖，我们应该执行至少三次测试：&lt;/p&gt;
 
@@ -5727,7 +5722,8 @@ test_sample.py:6: AssertionError
 &lt;li&gt;assertEquals(0, foo(-1, -1))  # 决策1条件false&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;如果没有第三个测试，那么只能达到决策覆盖，不能达到条件覆盖。&lt;/p&gt;
+&lt;p&gt;如果没有第三个测试，那么只能达到决策覆盖，不能达到条件覆盖。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h3 id=&#34;代码覆盖率&#34;&gt;代码覆盖率&lt;/h3&gt;
 
@@ -5746,8 +5742,7 @@ myproj/myproj          257     13    94%
 myproj/feature4286      94      7    92%
 ----------------------------------------
 TOTAL                  353     20    94%
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;详细用法可参照&lt;a href=&#34;http://pytest-cov.readthedocs.io/en/latest/&#34; target=&#34;_blank&#34;&gt;官方文档&lt;/a&gt;&lt;/p&gt;
 
@@ -5765,10 +5760,10 @@ TOTAL                  353     20    94%
     
     <item>
       <title>解决 not able to persist on disk</title>
-      <link>https://szthanatos.github.io/topic/redis/error-persist/</link>
+      <link>https://szthanatos.github.io/topic/redis/error-persist_on_disk/</link>
       <pubDate>Fri, 18 May 2018 11:42:50 +0800</pubDate>
       
-      <guid>https://szthanatos.github.io/topic/redis/error-persist/</guid>
+      <guid>https://szthanatos.github.io/topic/redis/error-persist_on_disk/</guid>
       <description>
 
 &lt;h2 id=&#34;报错信息&#34;&gt;报错信息&lt;/h2&gt;

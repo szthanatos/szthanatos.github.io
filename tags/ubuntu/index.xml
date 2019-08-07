@@ -39,11 +39,9 @@ sudo apt install python3.x
 # 可选
 sudo apt install python3.x-dev
 sudo apt install python3.x-venv
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
-&lt;ol&gt;
-&lt;li&gt;安装pip:&lt;/li&gt;
-&lt;/ol&gt;
+&lt;li&gt;&lt;p&gt;安装pip:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;wget https://bootstrap.pypa.io/get-pip.py
 sudo python3.x get-pip.py
@@ -56,11 +54,9 @@ python --version
 python3 --version
 pip --version
 pip3 --version
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
-&lt;ol&gt;
-&lt;li&gt;如果关联版本不正确，备份usr/bin的软链接，重建软链接：&lt;/li&gt;
-&lt;/ol&gt;
+&lt;li&gt;&lt;p&gt;如果关联版本不正确，备份usr/bin的软链接，重建软链接：&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 设置默认python3对应python版本
 sudo ln -s /usr/bin/python3.x /usr/bin/python3
@@ -80,11 +76,9 @@ echo format=columns&amp;gt;&amp;gt;~/.pip/pip.conf
 # 设置默认pip源为清华大学开源镜像
 echo [global]&amp;gt;&amp;gt;~/.pip/pip.conf
 echo index-url = https://pypi.tuna.tsinghua.edu.cn/simple&amp;gt;&amp;gt;~/.pip/pip.conf
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
-&lt;ol&gt;
-&lt;li&gt;(可选)一键升级所有过期的包：&lt;/li&gt;
-&lt;/ol&gt;
+&lt;li&gt;&lt;p&gt;(可选)一键升级所有过期的包：&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sudo pip freeze --local | grep -v &#39;^\-e&#39; | cut -d = -f 1  | xargs pip install -U
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;

@@ -360,7 +360,11 @@
     <ul class="nav docs-sidenav">
       
       <li >
-        <a href="/topic/redis/error-persist/">not able to persist on disk</a>
+        <a href="/topic/redis/error-persist_on_disk/">not able to persist on disk</a>
+      </li>
+      
+      <li >
+        <a href="/topic/redis/error-connection_reset/">connection reset by peer</a>
       </li>
       
     </ul>
@@ -565,11 +569,9 @@ firewall-cmd --reload
 <li><p>yum安装ruby环境及包</p>
 
 <pre><code class="language-bash">yum -y install ruby ruby-devel rubygems
-</code></pre>
+</code></pre></li>
 
-<ol>
-<li>修改ruby源，使用国内镜像</li>
-</ol>
+<li><p>修改ruby源，使用国内镜像</p>
 
 <pre><code class="language-bash">gem sources --add https://gems.ruby-china.org/ --remove https://rubygems.org/
 # 如果修改失败将https换为http重试
@@ -579,11 +581,9 @@ gem sources --add http://gems.ruby-china.org/ --remove http://rubygems.org/
 <li><p>检查源列表，确保只有gems.ruby-china.org</p>
 
 <pre><code class="language-bash">gem sources -l
-</code></pre>
+</code></pre></li>
 
-<ol>
-<li>安装ruby的redis包：</li>
-</ol>
+<li><p>安装ruby的redis包：</p>
 
 <pre><code class="language-bash">gem install redis
 </code></pre></li>
@@ -598,10 +598,9 @@ gem sources --add http://gems.ruby-china.org/ --remove http://rubygems.org/
 
 <pre><code class="language-bash"># --replicas 1 表示主从复制比例为 1:1，即一个主节点对应一个从节点
 ./redis-trib.rb create --replicas 1 {node1_ip:port} {node2_ip:port} ...
-</code></pre>
+</code></pre></li>
 
-<ol>
-<li>默认会自动分配主从节点，确认的话输入<code>yes</code>完成集群的创建</li>
+<li><p>默认会自动分配主从节点，确认的话输入<code>yes</code>完成集群的创建</p></li>
 </ol>
 
 <h2 id="检查集群状态">检查集群状态</h2>
@@ -612,8 +611,7 @@ redis-cli -c -h {ip} -p {port}
 &gt; cluster nodes
 # 查看集群信息
 &gt; cluster info
-</code></pre></li>
-</ol>
+</code></pre>
 
 <h2 id="相关命令">相关命令</h2>
 
@@ -665,12 +663,11 @@ tcl-8.5.13-8.el7.x86_64.rpm
 <li><p>卸载yum过时的ruby环境</p>
 
 <pre><code class="language-bash">yum remove ruby ruby-devel rubygems
-</code></pre>
+</code></pre></li>
 
-<ol>
-<li>下载<a href="https://www.ruby-lang.org/en/downloads/" target="_blank">ruby</a>源码</li>
-<li>解压，编译安装:</li>
-</ol>
+<li><p>下载<a href="https://www.ruby-lang.org/en/downloads/" target="_blank">ruby</a>源码</p></li>
+
+<li><p>解压，编译安装:</p>
 
 <pre><code class="language-bash">tar -zxvf {latest_ruby.tar.gz}
 cd {latest_ruby}
@@ -686,11 +683,9 @@ make install
 <pre><code class="language-bash">tar -zxvf {latest_rubygem.tgz}
 cd {latest_rubygem}
 ruby setup.rb
-</code></pre>
+</code></pre></li>
 
-<ol>
-<li>重新<code>gem install redis</code>或者离线下载<a href="https://rubygems.org/downloads/" target="_blank">gem-redis</a>的包，本地安装</li>
-</ol></li>
+<li><p>重新<code>gem install redis</code>或者离线下载<a href="https://rubygems.org/downloads/" target="_blank">gem-redis</a>的包，本地安装</p></li>
 </ol>
 
           </div>
@@ -829,7 +824,7 @@ ruby setup.rb
     
     
     
-    <script src="/js/academic.min.9ef1b53ee2bde6c7f33b150c6ba4d452.js"></script>
+    <script src="/js/academic.min.3394a224b26ce58ff36f44c54743e0ab.js"></script>
 
     
 

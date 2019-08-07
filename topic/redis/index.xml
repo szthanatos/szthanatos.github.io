@@ -159,11 +159,9 @@ firewall-cmd --reload
 &lt;li&gt;&lt;p&gt;yum安装ruby环境及包&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;yum -y install ruby ruby-devel rubygems
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
-&lt;ol&gt;
-&lt;li&gt;修改ruby源，使用国内镜像&lt;/li&gt;
-&lt;/ol&gt;
+&lt;li&gt;&lt;p&gt;修改ruby源，使用国内镜像&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;gem sources --add https://gems.ruby-china.org/ --remove https://rubygems.org/
 # 如果修改失败将https换为http重试
@@ -173,11 +171,9 @@ gem sources --add http://gems.ruby-china.org/ --remove http://rubygems.org/
 &lt;li&gt;&lt;p&gt;检查源列表，确保只有gems.ruby-china.org&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;gem sources -l
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
-&lt;ol&gt;
-&lt;li&gt;安装ruby的redis包：&lt;/li&gt;
-&lt;/ol&gt;
+&lt;li&gt;&lt;p&gt;安装ruby的redis包：&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;gem install redis
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
@@ -192,10 +188,9 @@ gem sources --add http://gems.ruby-china.org/ --remove http://rubygems.org/
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# --replicas 1 表示主从复制比例为 1:1，即一个主节点对应一个从节点
 ./redis-trib.rb create --replicas 1 {node1_ip:port} {node2_ip:port} ...
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
-&lt;ol&gt;
-&lt;li&gt;默认会自动分配主从节点，确认的话输入&lt;code&gt;yes&lt;/code&gt;完成集群的创建&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;默认会自动分配主从节点，确认的话输入&lt;code&gt;yes&lt;/code&gt;完成集群的创建&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h2 id=&#34;检查集群状态&#34;&gt;检查集群状态&lt;/h2&gt;
@@ -206,8 +201,7 @@ redis-cli -c -h {ip} -p {port}
 &amp;gt; cluster nodes
 # 查看集群信息
 &amp;gt; cluster info
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h2 id=&#34;相关命令&#34;&gt;相关命令&lt;/h2&gt;
 
@@ -259,12 +253,11 @@ tcl-8.5.13-8.el7.x86_64.rpm
 &lt;li&gt;&lt;p&gt;卸载yum过时的ruby环境&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;yum remove ruby ruby-devel rubygems
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
-&lt;ol&gt;
-&lt;li&gt;下载&lt;a href=&#34;https://www.ruby-lang.org/en/downloads/&#34; target=&#34;_blank&#34;&gt;ruby&lt;/a&gt;源码&lt;/li&gt;
-&lt;li&gt;解压，编译安装:&lt;/li&gt;
-&lt;/ol&gt;
+&lt;li&gt;&lt;p&gt;下载&lt;a href=&#34;https://www.ruby-lang.org/en/downloads/&#34; target=&#34;_blank&#34;&gt;ruby&lt;/a&gt;源码&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;解压，编译安装:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;tar -zxvf {latest_ruby.tar.gz}
 cd {latest_ruby}
@@ -280,11 +273,9 @@ make install
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;tar -zxvf {latest_rubygem.tgz}
 cd {latest_rubygem}
 ruby setup.rb
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
-&lt;ol&gt;
-&lt;li&gt;重新&lt;code&gt;gem install redis&lt;/code&gt;或者离线下载&lt;a href=&#34;https://rubygems.org/downloads/&#34; target=&#34;_blank&#34;&gt;gem-redis&lt;/a&gt;的包，本地安装&lt;/li&gt;
-&lt;/ol&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;重新&lt;code&gt;gem install redis&lt;/code&gt;或者离线下载&lt;a href=&#34;https://rubygems.org/downloads/&#34; target=&#34;_blank&#34;&gt;gem-redis&lt;/a&gt;的包，本地安装&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 </description>
     </item>
@@ -643,6 +634,36 @@ cluster_stats_messages_received:3112
       
       <guid>https://szthanatos.github.io/topic/redis/error/</guid>
       <description>&lt;p&gt;各种情况下的解决办法。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>解决 Error connection reset by peer</title>
+      <link>https://szthanatos.github.io/topic/redis/error-connection_reset/</link>
+      <pubDate>Sun, 16 Jun 2019 23:06:41 +0800</pubDate>
+      
+      <guid>https://szthanatos.github.io/topic/redis/error-connection_reset/</guid>
+      <description>
+
+&lt;h2 id=&#34;报错信息&#34;&gt;报错信息&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Error: Connection reset by peer&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;原因&#34;&gt;原因&lt;/h2&gt;
+
+&lt;p&gt;读写操作发生在连接断开后。&lt;/p&gt;
+
+&lt;h2 id=&#34;解决办法&#34;&gt;解决办法&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;用&lt;code&gt;info&lt;/code&gt;/&lt;code&gt;cluster info&lt;/code&gt;命令检查连接数是否过多&lt;/li&gt;
+&lt;li&gt;检查redis-server是否正确监听配置文件&lt;/li&gt;
+&lt;li&gt;检查配置文件中&lt;code&gt;bind&lt;/code&gt;部分，如果是&lt;code&gt;bind 127.0.0.1&lt;/code&gt;则只允许本地访问&lt;/li&gt;
+&lt;li&gt;检查配置文件中&lt;code&gt;protected-mode&lt;/code&gt;部分是否为&lt;code&gt;no&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;重启redis-server&lt;/li&gt;
+&lt;/ol&gt;
 </description>
     </item>
     
@@ -1696,10 +1717,10 @@ pass
     
     <item>
       <title>解决 not able to persist on disk</title>
-      <link>https://szthanatos.github.io/topic/redis/error-persist/</link>
+      <link>https://szthanatos.github.io/topic/redis/error-persist_on_disk/</link>
       <pubDate>Fri, 18 May 2018 11:42:50 +0800</pubDate>
       
-      <guid>https://szthanatos.github.io/topic/redis/error-persist/</guid>
+      <guid>https://szthanatos.github.io/topic/redis/error-persist_on_disk/</guid>
       <description>
 
 &lt;h2 id=&#34;报错信息&#34;&gt;报错信息&lt;/h2&gt;
