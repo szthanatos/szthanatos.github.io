@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>多进程 on Kryptonite Lab</title>
+    <title>多进程 | Kryptonite Lab</title>
     <link>https://szthanatos.github.io/tags/%E5%A4%9A%E8%BF%9B%E7%A8%8B/</link>
-    <description>Recent content in 多进程 on Kryptonite Lab</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
-    <language>zh-Hans</language>
-    <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Tue, 20 Mar 2018 16:16:15 +0800</lastBuildDate>
-    
-	    <atom:link href="https://szthanatos.github.io/tags/%E5%A4%9A%E8%BF%9B%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="https://szthanatos.github.io/tags/%E5%A4%9A%E8%BF%9B%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+    <description>多进程</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh-Hans</language><lastBuildDate>Tue, 20 Mar 2018 16:16:15 +0800</lastBuildDate>
+    <image>
+      <url>https://szthanatos.github.io/img/icon-192.png</url>
+      <title>多进程</title>
+      <link>https://szthanatos.github.io/tags/%E5%A4%9A%E8%BF%9B%E7%A8%8B/</link>
+    </image>
     
     <item>
       <title>可序列化类型和多进程PicklingError</title>
       <link>https://szthanatos.github.io/post/python/pickled/</link>
       <pubDate>Tue, 20 Mar 2018 16:16:15 +0800</pubDate>
-      
       <guid>https://szthanatos.github.io/post/python/pickled/</guid>
       <description>&lt;p&gt;遇到一个报错：&lt;/p&gt;
 

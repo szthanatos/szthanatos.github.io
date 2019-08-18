@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>list on Kryptonite Lab</title>
+    <title>list | Kryptonite Lab</title>
     <link>https://szthanatos.github.io/tags/list/</link>
-    <description>Recent content in list on Kryptonite Lab</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
-    <language>zh-Hans</language>
-    <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Fri, 01 Sep 2017 18:08:57 +0800</lastBuildDate>
-    
-	    <atom:link href="https://szthanatos.github.io/tags/list/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="https://szthanatos.github.io/tags/list/index.xml" rel="self" type="application/rss+xml" />
+    <description>list</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh-Hans</language><lastBuildDate>Fri, 01 Sep 2017 18:08:57 +0800</lastBuildDate>
+    <image>
+      <url>https://szthanatos.github.io/img/icon-192.png</url>
+      <title>list</title>
+      <link>https://szthanatos.github.io/tags/list/</link>
+    </image>
     
     <item>
       <title>列表原序去重性能测试</title>
       <link>https://szthanatos.github.io/post/python/unique_list_ordered/</link>
       <pubDate>Fri, 01 Sep 2017 18:08:57 +0800</pubDate>
-      
       <guid>https://szthanatos.github.io/post/python/unique_list_ordered/</guid>
       <description>
 

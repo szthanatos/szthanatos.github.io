@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.3.1">
+  <meta name="generator" content="Source Themes Academic 4.4.0">
 
   
 
@@ -76,13 +76,13 @@
 
   
   
-  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono&display=swap">
   
 
   
   
   
-  <link rel="stylesheet" href="/css/academic.min.a9a796b4dba28c78fc94d2550173437e.css">
+  <link rel="stylesheet" href="/css/academic.min.dd629241ea9333c62c071f4a25f829ff.css">
 
   
 
@@ -92,8 +92,8 @@
 
   
 
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon-32.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
   <link rel="canonical" href="https://szthanatos.github.io/post/tmux/">
@@ -105,17 +105,19 @@
     
     
   
+  
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Kryptonite Lab">
   <meta property="og:url" content="https://szthanatos.github.io/post/tmux/">
   <meta property="og:title" content="Tmux in 10 minutes | Kryptonite Lab">
   <meta property="og:description" content="目录 简介 安装tmux 基础概念 配置 常用控制 会话 窗口 窗格 tpm插件 鼠标操作 简介 Tmux是一个终端复用软件，默认的Linux终端一个会话只能干一件"><meta property="og:image" content="https://szthanatos.github.io/img/icon-192.png">
-  <meta property="og:locale" content="zh-Hans">
+  <meta property="twitter:image" content="https://szthanatos.github.io/img/icon-192.png"><meta property="og:locale" content="zh-Hans">
   
-  <meta property="article:published_time" content="2019-01-01T12:27:05&#43;08:00">
-  
-  <meta property="article:modified_time" content="2019-01-01T12:27:05&#43;08:00">
+    
+      <meta property="article:published_time" content="2019-01-01T12:27:05&#43;08:00">
+    
+    <meta property="article:modified_time" content="2019-01-01T12:27:05&#43;08:00">
   
 
   
@@ -131,8 +133,7 @@
 
 </head>
 
-
-<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
 
   <aside class="search-results" id="search">
   <div class="container">
@@ -150,7 +151,7 @@
       <div id="search-box">
         
         <input name="q" id="search-query" placeholder="搜索..." autocapitalize="off"
-        autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" type="search">
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
         
       </div>
 
@@ -167,7 +168,7 @@
 
 
   
-<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0 compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
@@ -352,6 +353,7 @@
   </span>
   
 
+  
   
   
 
@@ -539,7 +541,7 @@
 
 <pre><code class="language-properties">#-- base --#
 # (可选)设置zsh为默认shell
-set -g default-shell /bin/zsh 
+set -g default-shell /bin/zsh
 
 #-- settings --#
 set -g mouse on # 开启鼠标切换窗格，按住shift复制粘贴
@@ -554,52 +556,52 @@ set -g default-terminal &quot;tmux-256color&quot; # 开启256 colors支持
 
 #-- bindkeys --#
 # 以下3行设置ctrl+x代替ctrl+b的快捷键
-set -g prefix C-x 
+set -g prefix C-x
 unbind C-b
 bind C-x send-prefix
 
 # 设置tmux-prefix + \垂直分割窗格
 unbind %
-bind \ split-window -h 
+bind \ split-window -h
 # 设置tmux-prefix + -水平分割窗格
 unbind '&quot;'
-bind - split-window -v 
+bind - split-window -v
 
 # 设置ctrl+vim方式切换窗格
-bind -n C-h select-pane -L 
-bind -n C-j select-pane -D 
-bind -n C-k select-pane -U 
-bind -n C-l select-pane -R 
+bind -n C-h select-pane -L
+bind -n C-j select-pane -D
+bind -n C-k select-pane -U
+bind -n C-l select-pane -R
 
 # plugins
 # tmux plugin manager 插件管理
-set -g @plugin 'tmux-plugins/tpm' 
+set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-sensible'
 # 保存布局插件，tmux-prefix + ctrl+s/tmux-prefix + ctrl+r保存/恢复
-set -g @plugin 'tmux-plugins/tmux-resurrect' 
+set -g @plugin 'tmux-plugins/tmux-resurrect'
 # 自动保存插件
-set -g @plugin 'tmux-plugins/tmux-continuum' 
+set -g @plugin 'tmux-plugins/tmux-continuum'
 
 # tmux-resurrect配置
 # 恢复shell的历史记录,只有无前台任务运行的窗格 才能被保存
-set -g @resurrect-save-bash-history 'on' 
+set -g @resurrect-save-bash-history 'on'
 # 恢复窗格内容,目前使用该功能时，请确保tmux的default-command没有包含&amp;&amp; 或者||操作符，
 # 否则将导致bug。（查看default-command的值，请使用命令tmux show -g default-command。）
-set -g @resurrect-capture-pane-contents 'on' 
+set -g @resurrect-capture-pane-contents 'on'
 # 恢复vim会话
-set -g @resurrect-strategy-vim 'session' 
+set -g @resurrect-strategy-vim 'session'
 
 # set -g @resurrect-save 'S'
 # set -g @resurrect-restore 'R'
 
 # tmux-continuum配置
 # 开启自动恢复
-set -g @continuum-restore 'on' 
+set -g @continuum-restore 'on'
 # 设置备份间隔（分钟，0为不自动备份）
-set -g @continuum-save-interval '240' 
+set -g @continuum-save-interval '240'
 # 状态栏查看备份状态
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
-set -g status-right 'Continuum status: #{continuum_status}' 
+set -g status-right 'Continuum status: #{continuum_status}'
 
 run '/etc/.tmux/plugins/tpm/tpm'
 
@@ -810,6 +812,12 @@ run '/etc/.tmux/plugins/tpm/tpm'
 
     
 
+
+    
+    <div class="hr-light"></div>
+
+    
+
 <div class="article-tags">
   
   <a class="badge badge-light" href="/tags/tmux/">Tmux</a>
@@ -817,6 +825,7 @@ run '/etc/.tmux/plugins/tpm/tpm'
 </div>
 
 
+    
     
     <style type="text/css">
   div {
@@ -934,16 +943,22 @@ run '/etc/.tmux/plugins/tpm/tpm'
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
         
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/python.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/go.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/javascript.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/html.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/r.min.js"></script>
+        
       
 
       
       
     
 
-    
-    
-
-    
     
     
 
@@ -999,6 +1014,9 @@ run '/etc/.tmux/plugins/tpm/tpm'
 
     
     
+
+    
+    
     
     
     
@@ -1011,7 +1029,7 @@ run '/etc/.tmux/plugins/tpm/tpm'
     
     
     
-    <script src="/js/academic.min.3394a224b26ce58ff36f44c54743e0ab.js"></script>
+    <script src="/js/academic.min.16bbb3750feb7244c9bc409a5a4fe678.js"></script>
 
     
 
@@ -1026,7 +1044,7 @@ run '/etc/.tmux/plugins/tpm/tpm'
   
 
   <p class="powered-by">
-    &copy; 2018 &middot; 
+    
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

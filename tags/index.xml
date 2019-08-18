@@ -1,31 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Kryptonite Lab</title>
+    <title>Tags | Kryptonite Lab</title>
     <link>https://szthanatos.github.io/tags/</link>
-    <description>Recent content in Tags on Kryptonite Lab</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
-    <language>zh-Hans</language>
-    <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Sun, 07 Apr 2019 00:00:00 +0000</lastBuildDate>
-    
-	    <atom:link href="https://szthanatos.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Source Themes</title>
-      <link>https://szthanatos.github.io/tags/source-themes/</link>
-      <pubDate>Sun, 07 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://szthanatos.github.io/tags/source-themes/</guid>
-      <description></description>
-    </item>
+      <atom:link href="https://szthanatos.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <description>Tags</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh-Hans</language><lastBuildDate>Sun, 17 Mar 2019 21:50:19 +0800</lastBuildDate>
+    <image>
+      <url>https://szthanatos.github.io/img/icon-192.png</url>
+      <title>Tags</title>
+      <link>https://szthanatos.github.io/tags/</link>
+    </image>
     
     <item>
       <title>graphdb</title>
       <link>https://szthanatos.github.io/tags/graphdb/</link>
       <pubDate>Sun, 17 Mar 2019 21:50:19 +0800</pubDate>
-      
       <guid>https://szthanatos.github.io/tags/graphdb/</guid>
       <description></description>
     </item>
@@ -34,7 +24,6 @@
       <title>janusgraph</title>
       <link>https://szthanatos.github.io/tags/janusgraph/</link>
       <pubDate>Sun, 17 Mar 2019 21:50:19 +0800</pubDate>
-      
       <guid>https://szthanatos.github.io/tags/janusgraph/</guid>
       <description></description>
     </item>
@@ -43,7 +32,6 @@
       <title>knowledge graph</title>
       <link>https://szthanatos.github.io/tags/knowledge-graph/</link>
       <pubDate>Sun, 17 Mar 2019 21:50:19 +0800</pubDate>
-      
       <guid>https://szthanatos.github.io/tags/knowledge-graph/</guid>
       <description></description>
     </item>
@@ -52,7 +40,6 @@
       <title>Git</title>
       <link>https://szthanatos.github.io/tags/git/</link>
       <pubDate>Sat, 05 Jan 2019 14:13:21 +0800</pubDate>
-      
       <guid>https://szthanatos.github.io/tags/git/</guid>
       <description></description>
     </item>
@@ -61,7 +48,6 @@
       <title>Academic</title>
       <link>https://szthanatos.github.io/tags/academic/</link>
       <pubDate>Tue, 01 Jan 2019 12:54:29 +0800</pubDate>
-      
       <guid>https://szthanatos.github.io/tags/academic/</guid>
       <description></description>
     </item>
@@ -70,7 +56,6 @@
       <title>Hugo</title>
       <link>https://szthanatos.github.io/tags/hugo/</link>
       <pubDate>Tue, 01 Jan 2019 12:54:29 +0800</pubDate>
-      
       <guid>https://szthanatos.github.io/tags/hugo/</guid>
       <description></description>
     </item>
@@ -79,7 +64,6 @@
       <title>Translation</title>
       <link>https://szthanatos.github.io/tags/translation/</link>
       <pubDate>Tue, 01 Jan 2019 12:54:29 +0800</pubDate>
-      
       <guid>https://szthanatos.github.io/tags/translation/</guid>
       <description></description>
     </item>
@@ -88,7 +72,6 @@
       <title>Tmux</title>
       <link>https://szthanatos.github.io/tags/tmux/</link>
       <pubDate>Tue, 01 Jan 2019 12:27:05 +0800</pubDate>
-      
       <guid>https://szthanatos.github.io/tags/tmux/</guid>
       <description></description>
     </item>
@@ -97,7 +80,6 @@
       <title>HBase</title>
       <link>https://szthanatos.github.io/tags/hbase/</link>
       <pubDate>Sun, 09 Dec 2018 16:19:27 +0800</pubDate>
-      
       <guid>https://szthanatos.github.io/tags/hbase/</guid>
       <description></description>
     </item>
@@ -106,7 +88,6 @@
       <title>Ubuntu</title>
       <link>https://szthanatos.github.io/tags/ubuntu/</link>
       <pubDate>Sat, 01 Dec 2018 15:59:04 +0800</pubDate>
-      
       <guid>https://szthanatos.github.io/tags/ubuntu/</guid>
       <description></description>
     </item>
@@ -115,7 +96,6 @@
       <title>unit testing</title>
       <link>https://szthanatos.github.io/tags/unit-testing/</link>
       <pubDate>Mon, 20 Aug 2018 10:49:50 +0800</pubDate>
-      
       <guid>https://szthanatos.github.io/tags/unit-testing/</guid>
       <description></description>
     </item>
@@ -124,7 +104,6 @@
       <title>PicklingError</title>
       <link>https://szthanatos.github.io/tags/picklingerror/</link>
       <pubDate>Tue, 20 Mar 2018 16:16:15 +0800</pubDate>
-      
       <guid>https://szthanatos.github.io/tags/picklingerror/</guid>
       <description></description>
     </item>
@@ -133,7 +112,6 @@
       <title>多进程</title>
       <link>https://szthanatos.github.io/tags/%E5%A4%9A%E8%BF%9B%E7%A8%8B/</link>
       <pubDate>Tue, 20 Mar 2018 16:16:15 +0800</pubDate>
-      
       <guid>https://szthanatos.github.io/tags/%E5%A4%9A%E8%BF%9B%E7%A8%8B/</guid>
       <description></description>
     </item>
@@ -142,7 +120,6 @@
       <title>序列化</title>
       <link>https://szthanatos.github.io/tags/%E5%BA%8F%E5%88%97%E5%8C%96/</link>
       <pubDate>Tue, 20 Mar 2018 16:16:15 +0800</pubDate>
-      
       <guid>https://szthanatos.github.io/tags/%E5%BA%8F%E5%88%97%E5%8C%96/</guid>
       <description></description>
     </item>
@@ -151,7 +128,6 @@
       <title>benchmark</title>
       <link>https://szthanatos.github.io/tags/benchmark/</link>
       <pubDate>Fri, 01 Sep 2017 18:08:57 +0800</pubDate>
-      
       <guid>https://szthanatos.github.io/tags/benchmark/</guid>
       <description></description>
     </item>
@@ -160,26 +136,7 @@
       <title>list</title>
       <link>https://szthanatos.github.io/tags/list/</link>
       <pubDate>Fri, 01 Sep 2017 18:08:57 +0800</pubDate>
-      
       <guid>https://szthanatos.github.io/tags/list/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Deep Learning</title>
-      <link>https://szthanatos.github.io/tags/deep-learning/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://szthanatos.github.io/tags/deep-learning/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Demo</title>
-      <link>https://szthanatos.github.io/tags/demo/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://szthanatos.github.io/tags/demo/</guid>
       <description></description>
     </item>
     

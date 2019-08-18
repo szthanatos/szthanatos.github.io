@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.3.1">
+  <meta name="generator" content="Source Themes Academic 4.4.0">
 
   
 
@@ -76,13 +76,13 @@
 
   
   
-  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono&display=swap">
   
 
   
   
   
-  <link rel="stylesheet" href="/css/academic.min.a9a796b4dba28c78fc94d2550173437e.css">
+  <link rel="stylesheet" href="/css/academic.min.dd629241ea9333c62c071f4a25f829ff.css">
 
   
 
@@ -92,8 +92,8 @@
 
   
 
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon-32.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
   <link rel="canonical" href="https://szthanatos.github.io/topic/redis/cluster_command/">
@@ -105,17 +105,19 @@
     
     
   
+  
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Kryptonite Lab">
   <meta property="og:url" content="https://szthanatos.github.io/topic/redis/cluster_command/">
   <meta property="og:title" content="Redis集群相关命令 | Kryptonite Lab">
   <meta property="og:description" content="集群信息 节点信息 集群节点相关信息可以通过cluster nodes命令获取： 127.0.0.1:6379&gt; cluster nodes 5022fa41642195d74200fd512c08653dc12609e7 172.17.0.2:6380@16380 master - 0 1552814467000 2 connected 5461-10922 730d05ee4da3147d0885c6d47437465c94409f74 172.17.0.2:6383@16383 slave 25a2a1d8c96e9473d4cb3c8b0077d3b7b07dd5c0 0 1552814468555 5 connected 25a2a1d8c96e9473d4cb3c8b0077d3b7b07dd5c0 172.17.0.2:6379@16379 myself,master - 0 1552814468000 1 connected 0-5460 cf0be45c6a05c0d332b7356a7f57de95b32c3a71 172.17.0.2:6384@16384 slave 5022fa41642195d74200fd512c08653dc12609e7"><meta property="og:image" content="https://szthanatos.github.io/img/icon-192.png">
-  <meta property="og:locale" content="zh-Hans">
+  <meta property="twitter:image" content="https://szthanatos.github.io/img/icon-192.png"><meta property="og:locale" content="zh-Hans">
   
-  <meta property="article:published_time" content="2018-08-30T21:26:18&#43;08:00">
-  
-  <meta property="article:modified_time" content="2018-08-30T21:26:18&#43;08:00">
+    
+      <meta property="article:published_time" content="2018-08-30T21:26:18&#43;08:00">
+    
+    <meta property="article:modified_time" content="2018-08-30T21:26:18&#43;08:00">
   
 
   
@@ -131,8 +133,7 @@
 
 </head>
 
-
-<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
 
   <aside class="search-results" id="search">
   <div class="container">
@@ -150,7 +151,7 @@
       <div id="search-box">
         
         <input name="q" id="search-query" placeholder="搜索..." autocapitalize="off"
-        autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" type="search">
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
         
       </div>
 
@@ -167,7 +168,7 @@
 
 
   
-<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0 compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
@@ -312,7 +313,7 @@
   </button>
 
   
-  <input name="q" type="search" class="form-control" id="search-query" placeholder="搜索..." autocomplete="off">
+  <input name="q" type="search" class="form-control" placeholder="搜索..." autocomplete="off">
   
 </form>
 
@@ -722,10 +723,38 @@ cluster_stats_messages_received:3112
 
 
           
+          <div class="article-widget">
+            
+<div class="post-nav">
+  
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">上一页</div>
+    <a href="/topic/redis/install/" rel="next">Redis单机&amp;集群安装</a>
+  </div>
+  
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">下一页</div>
+    <a href="/topic/redis/improve-00/" rel="prev">优化指南</a>
+  </div>
+  
+</div>
+
+          </div>
+          
         </div>
 
         <div class="body-footer">
-          最近更新于 Aug 30, 2018
+          <p>最近更新于 Aug 30, 2018</p>
+
+          
+
+
+          
+
         </div>
 
       </article>
@@ -734,7 +763,7 @@ cluster_stats_messages_received:3112
   
 
   <p class="powered-by">
-    &copy; 2018 &middot; 
+    
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
@@ -769,16 +798,22 @@ cluster_stats_messages_received:3112
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
         
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/python.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/go.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/javascript.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/html.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/r.min.js"></script>
+        
       
 
       
       
     
 
-    
-    
-
-    
     
     
 
@@ -839,6 +874,9 @@ cluster_stats_messages_received:3112
 
     
     
+
+    
+    
     
     
     
@@ -851,7 +889,7 @@ cluster_stats_messages_received:3112
     
     
     
-    <script src="/js/academic.min.3394a224b26ce58ff36f44c54743e0ab.js"></script>
+    <script src="/js/academic.min.16bbb3750feb7244c9bc409a5a4fe678.js"></script>
 
     
 

@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.3.1">
+  <meta name="generator" content="Source Themes Academic 4.4.0">
 
   
 
@@ -76,13 +76,13 @@
 
   
   
-  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono&display=swap">
   
 
   
   
   
-  <link rel="stylesheet" href="/css/academic.min.a9a796b4dba28c78fc94d2550173437e.css">
+  <link rel="stylesheet" href="/css/academic.min.dd629241ea9333c62c071f4a25f829ff.css">
 
   
 
@@ -92,8 +92,8 @@
 
   
 
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon-32.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
   <link rel="canonical" href="https://szthanatos.github.io/topic/kafka/install/">
@@ -105,17 +105,19 @@
     
     
   
+  
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Kryptonite Lab">
   <meta property="og:url" content="https://szthanatos.github.io/topic/kafka/install/">
   <meta property="og:title" content="Kafka -01- 安装配置 | Kryptonite Lab">
   <meta property="og:description" content="环境说明 当前版本 发布日期 下载地址 2.0 2018-07-30 官方2.0.0镜像 安装步骤 注意： 文中以 {} 包裹起来的内容需要自己替换，并非直接使用 0. 环境准备 基础环境 说明 Java"><meta property="og:image" content="https://szthanatos.github.io/img/icon-192.png">
-  <meta property="og:locale" content="zh-Hans">
+  <meta property="twitter:image" content="https://szthanatos.github.io/img/icon-192.png"><meta property="og:locale" content="zh-Hans">
   
-  <meta property="article:published_time" content="2018-12-06T10:09:46&#43;08:00">
-  
-  <meta property="article:modified_time" content="2018-12-06T10:09:46&#43;08:00">
+    
+      <meta property="article:published_time" content="2018-12-06T10:09:46&#43;08:00">
+    
+    <meta property="article:modified_time" content="2018-12-06T10:09:46&#43;08:00">
   
 
   
@@ -131,8 +133,7 @@
 
 </head>
 
-
-<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
 
   <aside class="search-results" id="search">
   <div class="container">
@@ -150,7 +151,7 @@
       <div id="search-box">
         
         <input name="q" id="search-query" placeholder="搜索..." autocapitalize="off"
-        autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" type="search">
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
         
       </div>
 
@@ -167,7 +168,7 @@
 
 
   
-<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0 compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
@@ -312,7 +313,7 @@
   </button>
 
   
-  <input name="q" type="search" class="form-control" id="search-query" placeholder="搜索..." autocomplete="off">
+  <input name="q" type="search" class="form-control" placeholder="搜索..." autocomplete="off">
   
 </form>
 
@@ -464,7 +465,7 @@ listeners=PLAINTEXT://{your.host}:9092
 log.dirs={data.storage.list}
 
 # zookeeper地址列表，以逗号隔开
-zookeeper.connect={zookeeper.server.list} 
+zookeeper.connect={zookeeper.server.list}
 </code></pre>
 
 <p>优化参数配置如下：</p>
@@ -595,7 +596,7 @@ echo 'fs.file-max = 1024000' &gt;&gt; /etc/sysctl.conf
 <p>增大socket buffer size，以提高吞吐性能</p>
 
 <pre><code class="language-bash">echo 212992 &gt;&gt; /proc/sys/net/core/wmem_max
-echo 212992 &gt;&gt; /proc/sys/net/core/rmem_max    
+echo 212992 &gt;&gt; /proc/sys/net/core/rmem_max
 </code></pre>
 
 <h2 id="kafka2-0官方安装指南">Kafka2.0官方安装指南</h2>
@@ -609,10 +610,31 @@ echo 212992 &gt;&gt; /proc/sys/net/core/rmem_max
 
 
           
+          <div class="article-widget">
+            
+<div class="post-nav">
+  
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">下一页</div>
+    <a href="/topic/kafka/update/" rel="prev">Kafka -02- 滚动升级</a>
+  </div>
+  
+</div>
+
+          </div>
+          
         </div>
 
         <div class="body-footer">
-          最近更新于 Dec 6, 2018
+          <p>最近更新于 Dec 6, 2018</p>
+
+          
+
+
+          
+
         </div>
 
       </article>
@@ -621,7 +643,7 @@ echo 212992 &gt;&gt; /proc/sys/net/core/rmem_max
   
 
   <p class="powered-by">
-    &copy; 2018 &middot; 
+    
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
@@ -656,16 +678,22 @@ echo 212992 &gt;&gt; /proc/sys/net/core/rmem_max
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
         
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/python.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/go.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/javascript.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/html.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/r.min.js"></script>
+        
       
 
       
       
     
 
-    
-    
-
-    
     
     
 
@@ -726,6 +754,9 @@ echo 212992 &gt;&gt; /proc/sys/net/core/rmem_max
 
     
     
+
+    
+    
     
     
     
@@ -738,7 +769,7 @@ echo 212992 &gt;&gt; /proc/sys/net/core/rmem_max
     
     
     
-    <script src="/js/academic.min.3394a224b26ce58ff36f44c54743e0ab.js"></script>
+    <script src="/js/academic.min.16bbb3750feb7244c9bc409a5a4fe678.js"></script>
 
     
 

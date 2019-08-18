@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Overview on Kryptonite Lab</title>
+    <title>Overview | Kryptonite Lab</title>
     <link>https://szthanatos.github.io/topic/kafka/</link>
-    <description>Recent content in Overview on Kryptonite Lab</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
-    <language>zh-Hans</language>
-    <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Tue, 15 Jan 2019 15:40:52 +0800</lastBuildDate>
-    
-	    <atom:link href="https://szthanatos.github.io/topic/kafka/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="https://szthanatos.github.io/topic/kafka/index.xml" rel="self" type="application/rss+xml" />
+    <description>Overview</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh-Hans</language><lastBuildDate>Tue, 15 Jan 2019 15:40:52 +0800</lastBuildDate>
+    <image>
+      <url>https://szthanatos.github.io/img/icon-192.png</url>
+      <title>Overview</title>
+      <link>https://szthanatos.github.io/topic/kafka/</link>
+    </image>
     
     <item>
       <title>Kafka -01- 安装配置</title>
       <link>https://szthanatos.github.io/topic/kafka/install/</link>
       <pubDate>Thu, 06 Dec 2018 10:09:46 +0800</pubDate>
-      
       <guid>https://szthanatos.github.io/topic/kafka/install/</guid>
       <description>
 
@@ -106,7 +105,7 @@ listeners=PLAINTEXT://{your.host}:9092
 log.dirs={data.storage.list}
 
 # zookeeper地址列表，以逗号隔开
-zookeeper.connect={zookeeper.server.list} 
+zookeeper.connect={zookeeper.server.list}
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;优化参数配置如下：&lt;/p&gt;
@@ -237,7 +236,7 @@ echo &#39;fs.file-max = 1024000&#39; &amp;gt;&amp;gt; /etc/sysctl.conf
 &lt;p&gt;增大socket buffer size，以提高吞吐性能&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;echo 212992 &amp;gt;&amp;gt; /proc/sys/net/core/wmem_max
-echo 212992 &amp;gt;&amp;gt; /proc/sys/net/core/rmem_max    
+echo 212992 &amp;gt;&amp;gt; /proc/sys/net/core/rmem_max
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h2 id=&#34;kafka2-0官方安装指南&#34;&gt;Kafka2.0官方安装指南&lt;/h2&gt;
@@ -250,7 +249,6 @@ echo 212992 &amp;gt;&amp;gt; /proc/sys/net/core/rmem_max
       <title>Kafka -02- 滚动升级</title>
       <link>https://szthanatos.github.io/topic/kafka/update/</link>
       <pubDate>Sun, 09 Dec 2018 15:19:52 +0800</pubDate>
-      
       <guid>https://szthanatos.github.io/topic/kafka/update/</guid>
       <description>
 

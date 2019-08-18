@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Git on Kryptonite Lab</title>
+    <title>Git | Kryptonite Lab</title>
     <link>https://szthanatos.github.io/tags/git/</link>
-    <description>Recent content in Git on Kryptonite Lab</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
-    <language>zh-Hans</language>
-    <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Sat, 05 Jan 2019 14:13:21 +0800</lastBuildDate>
-    
-	    <atom:link href="https://szthanatos.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="https://szthanatos.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <description>Git</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh-Hans</language><lastBuildDate>Sat, 05 Jan 2019 14:13:21 +0800</lastBuildDate>
+    <image>
+      <url>https://szthanatos.github.io/img/icon-192.png</url>
+      <title>Git</title>
+      <link>https://szthanatos.github.io/tags/git/</link>
+    </image>
     
     <item>
       <title>Git三棵树和reset/checkout命令</title>
       <link>https://szthanatos.github.io/post/git/git_trees/</link>
       <pubDate>Sat, 05 Jan 2019 14:13:21 +0800</pubDate>
-      
       <guid>https://szthanatos.github.io/post/git/git_trees/</guid>
       <description>
 
@@ -90,7 +89,6 @@
       <title>Git Tips</title>
       <link>https://szthanatos.github.io/post/git/git_tips/</link>
       <pubDate>Fri, 14 Dec 2018 09:35:32 +0800</pubDate>
-      
       <guid>https://szthanatos.github.io/post/git/git_tips/</guid>
       <description>
 
@@ -131,7 +129,7 @@ origin  git@github.com:abc/bcd.git (push)
 &lt;p&gt;啥都别说了，直接重来吧：&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git fetch --all  
-git reset --hard origin/master 
+git reset --hard origin/master
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h2 id=&#34;撤销修改&#34;&gt;撤销修改&lt;/h2&gt;

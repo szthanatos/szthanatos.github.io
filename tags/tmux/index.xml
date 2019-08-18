@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tmux on Kryptonite Lab</title>
+    <title>Tmux | Kryptonite Lab</title>
     <link>https://szthanatos.github.io/tags/tmux/</link>
-    <description>Recent content in Tmux on Kryptonite Lab</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
-    <language>zh-Hans</language>
-    <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Tue, 01 Jan 2019 12:27:05 +0800</lastBuildDate>
-    
-	    <atom:link href="https://szthanatos.github.io/tags/tmux/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="https://szthanatos.github.io/tags/tmux/index.xml" rel="self" type="application/rss+xml" />
+    <description>Tmux</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh-Hans</language><lastBuildDate>Tue, 01 Jan 2019 12:27:05 +0800</lastBuildDate>
+    <image>
+      <url>https://szthanatos.github.io/img/icon-192.png</url>
+      <title>Tmux</title>
+      <link>https://szthanatos.github.io/tags/tmux/</link>
+    </image>
     
     <item>
       <title>Tmux in 10 minutes</title>
       <link>https://szthanatos.github.io/post/tmux/</link>
       <pubDate>Tue, 01 Jan 2019 12:27:05 +0800</pubDate>
-      
       <guid>https://szthanatos.github.io/post/tmux/</guid>
       <description>
 
@@ -67,7 +66,7 @@ HAHAHUGOSHORTCODE-TOC0-HBHB&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-properties&#34;&gt;#-- base --#
 # (可选)设置zsh为默认shell
-set -g default-shell /bin/zsh 
+set -g default-shell /bin/zsh
 
 #-- settings --#
 set -g mouse on # 开启鼠标切换窗格，按住shift复制粘贴
@@ -82,52 +81,52 @@ set -g default-terminal &amp;quot;tmux-256color&amp;quot; # 开启256 colors支�
 
 #-- bindkeys --#
 # 以下3行设置ctrl+x代替ctrl+b的快捷键
-set -g prefix C-x 
+set -g prefix C-x
 unbind C-b
 bind C-x send-prefix
 
 # 设置tmux-prefix + \垂直分割窗格
 unbind %
-bind \ split-window -h 
+bind \ split-window -h
 # 设置tmux-prefix + -水平分割窗格
 unbind &#39;&amp;quot;&#39;
-bind - split-window -v 
+bind - split-window -v
 
 # 设置ctrl+vim方式切换窗格
-bind -n C-h select-pane -L 
-bind -n C-j select-pane -D 
-bind -n C-k select-pane -U 
-bind -n C-l select-pane -R 
+bind -n C-h select-pane -L
+bind -n C-j select-pane -D
+bind -n C-k select-pane -U
+bind -n C-l select-pane -R
 
 # plugins
 # tmux plugin manager 插件管理
-set -g @plugin &#39;tmux-plugins/tpm&#39; 
+set -g @plugin &#39;tmux-plugins/tpm&#39;
 set -g @plugin &#39;tmux-plugins/tmux-sensible&#39;
 # 保存布局插件，tmux-prefix + ctrl+s/tmux-prefix + ctrl+r保存/恢复
-set -g @plugin &#39;tmux-plugins/tmux-resurrect&#39; 
+set -g @plugin &#39;tmux-plugins/tmux-resurrect&#39;
 # 自动保存插件
-set -g @plugin &#39;tmux-plugins/tmux-continuum&#39; 
+set -g @plugin &#39;tmux-plugins/tmux-continuum&#39;
 
 # tmux-resurrect配置
 # 恢复shell的历史记录,只有无前台任务运行的窗格 才能被保存
-set -g @resurrect-save-bash-history &#39;on&#39; 
+set -g @resurrect-save-bash-history &#39;on&#39;
 # 恢复窗格内容,目前使用该功能时，请确保tmux的default-command没有包含&amp;amp;&amp;amp; 或者||操作符，
 # 否则将导致bug。（查看default-command的值，请使用命令tmux show -g default-command。）
-set -g @resurrect-capture-pane-contents &#39;on&#39; 
+set -g @resurrect-capture-pane-contents &#39;on&#39;
 # 恢复vim会话
-set -g @resurrect-strategy-vim &#39;session&#39; 
+set -g @resurrect-strategy-vim &#39;session&#39;
 
 # set -g @resurrect-save &#39;S&#39;
 # set -g @resurrect-restore &#39;R&#39;
 
 # tmux-continuum配置
 # 开启自动恢复
-set -g @continuum-restore &#39;on&#39; 
+set -g @continuum-restore &#39;on&#39;
 # 设置备份间隔（分钟，0为不自动备份）
-set -g @continuum-save-interval &#39;240&#39; 
+set -g @continuum-save-interval &#39;240&#39;
 # 状态栏查看备份状态
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
-set -g status-right &#39;Continuum status: #{continuum_status}&#39; 
+set -g status-right &#39;Continuum status: #{continuum_status}&#39;
 
 run &#39;/etc/.tmux/plugins/tpm/tpm&#39;
 

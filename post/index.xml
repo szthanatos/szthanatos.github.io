@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Kryptonite Lab</title>
+    <title>Posts | Kryptonite Lab</title>
     <link>https://szthanatos.github.io/post/</link>
-    <description>Recent content in Posts on Kryptonite Lab</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
-    <language>zh-Hans</language>
-    <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0800</lastBuildDate>
-    
-	    <atom:link href="https://szthanatos.github.io/post/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="https://szthanatos.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <description>Posts</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh-Hans</language><lastBuildDate>Sun, 17 Mar 2019 21:50:19 +0800</lastBuildDate>
+    <image>
+      <url>https://szthanatos.github.io/img/icon-192.png</url>
+      <title>Posts</title>
+      <link>https://szthanatos.github.io/post/</link>
+    </image>
     
     <item>
       <title>JanusGraph搭建及简单使用</title>
       <link>https://szthanatos.github.io/post/janusgraph/</link>
       <pubDate>Sun, 17 Mar 2019 21:50:19 +0800</pubDate>
-      
       <guid>https://szthanatos.github.io/post/janusgraph/</guid>
       <description>
 
@@ -110,7 +109,7 @@ cache.db-cache-size = 0.5
 &lt;li&gt;&lt;p&gt;gremlin.sh(进入gremlin交互式客户端)&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;[root@xnode208 janusgraph0.2] ./bin/gremlin.sh
-gremlin&amp;gt; 
+gremlin&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -191,7 +190,7 @@ t1.property(&#39;reason&#39;,&#39;cool&#39;);  # 为t1增加属性
 v3.addEdge(&#39;boyfriend&#39;,v4,&#39;reason&#39;,&#39;because the reason&#39;);  # v3添加关系到v4并且增加关系属性及属性值
 
 # 提交修改
-graph.tx().commit(); 
+graph.tx().commit();
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h3 id=&#34;删操作&#34;&gt;删操作&lt;/h3&gt;
@@ -268,7 +267,6 @@ g.E().properties(&#39;reason&#39;);  # 查看边属性为reason的属性及属�
       <title>Git三棵树和reset/checkout命令</title>
       <link>https://szthanatos.github.io/post/git/git_trees/</link>
       <pubDate>Sat, 05 Jan 2019 14:13:21 +0800</pubDate>
-      
       <guid>https://szthanatos.github.io/post/git/git_trees/</guid>
       <description>
 
@@ -342,7 +340,6 @@ g.E().properties(&#39;reason&#39;);  # 查看边属性为reason的属性及属�
       <title>(翻译)Academic文档-内容编写</title>
       <link>https://szthanatos.github.io/post/academic/trans_writing_content/</link>
       <pubDate>Tue, 01 Jan 2019 12:54:29 +0800</pubDate>
-      
       <guid>https://szthanatos.github.io/post/academic/trans_writing_content/</guid>
       <description>
 
@@ -394,7 +391,7 @@ Strikethrough with ~~two tildes~~.
 
 &lt;h2 id=&#34;无序列表&#34;&gt;无序列表&lt;/h2&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;我个人更习惯用 - 
+&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;我个人更习惯用 -
 * First item
 * Another item
 &lt;/code&gt;&lt;/pre&gt;
@@ -567,7 +564,7 @@ caption = &amp;quot;Dark theme&amp;quot;
  input_string_var = input(&amp;quot;Enter some data: &amp;quot;)
  print(&amp;quot;You entered: {}&amp;quot;.format(input_string_var))
  ` ` `
- 
+
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;效果：&lt;/p&gt;
@@ -841,7 +838,6 @@ Here&#39;s some important information...
       <title>(翻译)Academic文档-内容管理</title>
       <link>https://szthanatos.github.io/post/academic/trans_managing_content/</link>
       <pubDate>Tue, 01 Jan 2019 12:54:11 +0800</pubDate>
-      
       <guid>https://szthanatos.github.io/post/academic/trans_managing_content/</guid>
       <description>
 
@@ -886,7 +882,7 @@ Academic提供的内容模板包括出版物、项目、宣讲、新闻/博客�
 焦点(focal_point)参数确保图片自动缩放的时候主要内容始终可见。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;# Featured image
-# To use, add an image named `featured.jpg/png` to your page&#39;s folder. 
+# To use, add an image named `featured.jpg/png` to your page&#39;s folder.
 [image]
   # Caption (optional)
   caption = &amp;quot;Photo by [Academic](https://sourcethemes.com/academic/)&amp;quot;
@@ -1132,7 +1128,6 @@ summary = &amp;quot;&amp;quot;  # Add a page description.
       <title>Tmux in 10 minutes</title>
       <link>https://szthanatos.github.io/post/tmux/</link>
       <pubDate>Tue, 01 Jan 2019 12:27:05 +0800</pubDate>
-      
       <guid>https://szthanatos.github.io/post/tmux/</guid>
       <description>
 
@@ -1183,7 +1178,7 @@ HAHAHUGOSHORTCODE-TOC0-HBHB&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-properties&#34;&gt;#-- base --#
 # (可选)设置zsh为默认shell
-set -g default-shell /bin/zsh 
+set -g default-shell /bin/zsh
 
 #-- settings --#
 set -g mouse on # 开启鼠标切换窗格，按住shift复制粘贴
@@ -1198,52 +1193,52 @@ set -g default-terminal &amp;quot;tmux-256color&amp;quot; # 开启256 colors支�
 
 #-- bindkeys --#
 # 以下3行设置ctrl+x代替ctrl+b的快捷键
-set -g prefix C-x 
+set -g prefix C-x
 unbind C-b
 bind C-x send-prefix
 
 # 设置tmux-prefix + \垂直分割窗格
 unbind %
-bind \ split-window -h 
+bind \ split-window -h
 # 设置tmux-prefix + -水平分割窗格
 unbind &#39;&amp;quot;&#39;
-bind - split-window -v 
+bind - split-window -v
 
 # 设置ctrl+vim方式切换窗格
-bind -n C-h select-pane -L 
-bind -n C-j select-pane -D 
-bind -n C-k select-pane -U 
-bind -n C-l select-pane -R 
+bind -n C-h select-pane -L
+bind -n C-j select-pane -D
+bind -n C-k select-pane -U
+bind -n C-l select-pane -R
 
 # plugins
 # tmux plugin manager 插件管理
-set -g @plugin &#39;tmux-plugins/tpm&#39; 
+set -g @plugin &#39;tmux-plugins/tpm&#39;
 set -g @plugin &#39;tmux-plugins/tmux-sensible&#39;
 # 保存布局插件，tmux-prefix + ctrl+s/tmux-prefix + ctrl+r保存/恢复
-set -g @plugin &#39;tmux-plugins/tmux-resurrect&#39; 
+set -g @plugin &#39;tmux-plugins/tmux-resurrect&#39;
 # 自动保存插件
-set -g @plugin &#39;tmux-plugins/tmux-continuum&#39; 
+set -g @plugin &#39;tmux-plugins/tmux-continuum&#39;
 
 # tmux-resurrect配置
 # 恢复shell的历史记录,只有无前台任务运行的窗格 才能被保存
-set -g @resurrect-save-bash-history &#39;on&#39; 
+set -g @resurrect-save-bash-history &#39;on&#39;
 # 恢复窗格内容,目前使用该功能时，请确保tmux的default-command没有包含&amp;amp;&amp;amp; 或者||操作符，
 # 否则将导致bug。（查看default-command的值，请使用命令tmux show -g default-command。）
-set -g @resurrect-capture-pane-contents &#39;on&#39; 
+set -g @resurrect-capture-pane-contents &#39;on&#39;
 # 恢复vim会话
-set -g @resurrect-strategy-vim &#39;session&#39; 
+set -g @resurrect-strategy-vim &#39;session&#39;
 
 # set -g @resurrect-save &#39;S&#39;
 # set -g @resurrect-restore &#39;R&#39;
 
 # tmux-continuum配置
 # 开启自动恢复
-set -g @continuum-restore &#39;on&#39; 
+set -g @continuum-restore &#39;on&#39;
 # 设置备份间隔（分钟，0为不自动备份）
-set -g @continuum-save-interval &#39;240&#39; 
+set -g @continuum-save-interval &#39;240&#39;
 # 状态栏查看备份状态
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
-set -g status-right &#39;Continuum status: #{continuum_status}&#39; 
+set -g status-right &#39;Continuum status: #{continuum_status}&#39;
 
 run &#39;/etc/.tmux/plugins/tpm/tpm&#39;
 
@@ -1456,7 +1451,6 @@ run &#39;/etc/.tmux/plugins/tpm/tpm&#39;
       <title>Git Tips</title>
       <link>https://szthanatos.github.io/post/git/git_tips/</link>
       <pubDate>Fri, 14 Dec 2018 09:35:32 +0800</pubDate>
-      
       <guid>https://szthanatos.github.io/post/git/git_tips/</guid>
       <description>
 
@@ -1497,7 +1491,7 @@ origin  git@github.com:abc/bcd.git (push)
 &lt;p&gt;啥都别说了，直接重来吧：&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git fetch --all  
-git reset --hard origin/master 
+git reset --hard origin/master
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h2 id=&#34;撤销修改&#34;&gt;撤销修改&lt;/h2&gt;
@@ -1561,7 +1555,6 @@ git push -f origin {old_branch}
       <title>Academic实现Github Page个人博客</title>
       <link>https://szthanatos.github.io/post/academic/academic_in_practice/</link>
       <pubDate>Sun, 09 Dec 2018 16:34:42 +0800</pubDate>
-      
       <guid>https://szthanatos.github.io/post/academic/academic_in_practice/</guid>
       <description>
 
@@ -1667,7 +1660,7 @@ git push -u origin master
 
 &lt;li&gt;&lt;p&gt;更新GitHub page项目：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;hugo 
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;hugo
 cd public
 git add .
 git commit -m &amp;quot;Build website&amp;quot;
@@ -1985,7 +1978,6 @@ fi
       <title>hbase表设计风格指南</title>
       <link>https://szthanatos.github.io/post/hbase_design/</link>
       <pubDate>Sun, 09 Dec 2018 16:19:27 +0800</pubDate>
-      
       <guid>https://szthanatos.github.io/post/hbase_design/</guid>
       <description>
 
@@ -2021,7 +2013,7 @@ HAHAHUGOSHORTCODE-TOC0-HBHB&lt;/p&gt;
 &lt;h3 id=&#34;示例&#34;&gt;示例&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;ZKR
-XJ917 
+XJ917
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h2 id=&#34;表-table&#34;&gt;表(Table)&lt;/h2&gt;
@@ -2116,7 +2108,6 @@ sound_type
       <title>Palantir一分钟印象</title>
       <link>https://szthanatos.github.io/post/palantir_intro/</link>
       <pubDate>Wed, 05 Dec 2018 17:09:21 +0800</pubDate>
-      
       <guid>https://szthanatos.github.io/post/palantir_intro/</guid>
       <description>
 
@@ -2251,7 +2242,6 @@ HAHAHUGOSHORTCODE-TOC0-HBHB&lt;/p&gt;
       <title>Ubuntu安装最新版本Python</title>
       <link>https://szthanatos.github.io/post/python/python_install_on_ubuntu/</link>
       <pubDate>Sat, 01 Dec 2018 15:59:04 +0800</pubDate>
-      
       <guid>https://szthanatos.github.io/post/python/python_install_on_ubuntu/</guid>
       <description>&lt;ol&gt;
 &lt;li&gt;&lt;p&gt;添加ppa源：&lt;/p&gt;
@@ -2325,7 +2315,6 @@ echo index-url = https://pypi.tuna.tsinghua.edu.cn/simple&amp;gt;&amp;gt;~/.pip/
       <title>欢迎来到氪石实验室</title>
       <link>https://szthanatos.github.io/post/0x00/</link>
       <pubDate>Sat, 01 Dec 2018 12:00:24 +0800</pubDate>
-      
       <guid>https://szthanatos.github.io/post/0x00/</guid>
       <description>
 
@@ -2426,7 +2415,6 @@ echo index-url = https://pypi.tuna.tsinghua.edu.cn/simple&amp;gt;&amp;gt;~/.pip/
       <title>python单元测试标准及实现</title>
       <link>https://szthanatos.github.io/post/python/unit_testing/</link>
       <pubDate>Mon, 20 Aug 2018 10:49:50 +0800</pubDate>
-      
       <guid>https://szthanatos.github.io/post/python/unit_testing/</guid>
       <description>
 
@@ -2635,7 +2623,7 @@ if __name__ == &#39;__main__&#39;:
 
 class TestStringMethods(unittest.TestCase):
 
-    def setUp(self): 
+    def setUp(self):
         print &#39;1. setUp here&#39;
 
     def tearDown(self):
@@ -2643,7 +2631,7 @@ class TestStringMethods(unittest.TestCase):
 
     def test_upper(self):
         self.assertEqual(&#39;foo&#39;.upper(), &#39;FOO&#39;)
-    
+
     ...
 &lt;/code&gt;&lt;/pre&gt;
 
@@ -2811,7 +2799,6 @@ TOTAL                  353     20    94%
       <title>可序列化类型和多进程PicklingError</title>
       <link>https://szthanatos.github.io/post/python/pickled/</link>
       <pubDate>Tue, 20 Mar 2018 16:16:15 +0800</pubDate>
-      
       <guid>https://szthanatos.github.io/post/python/pickled/</guid>
       <description>&lt;p&gt;遇到一个报错：&lt;/p&gt;
 
@@ -2942,7 +2929,6 @@ class PageProcess(object):
       <title>列表原序去重性能测试</title>
       <link>https://szthanatos.github.io/post/python/unique_list_ordered/</link>
       <pubDate>Fri, 01 Sep 2017 18:08:57 +0800</pubDate>
-      
       <guid>https://szthanatos.github.io/post/python/unique_list_ordered/</guid>
       <description>
 

@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.3.1">
+  <meta name="generator" content="Source Themes Academic 4.4.0">
 
   
 
@@ -76,13 +76,13 @@
 
   
   
-  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono&display=swap">
   
 
   
   
   
-  <link rel="stylesheet" href="/css/academic.min.a9a796b4dba28c78fc94d2550173437e.css">
+  <link rel="stylesheet" href="/css/academic.min.dd629241ea9333c62c071f4a25f829ff.css">
 
   
 
@@ -92,8 +92,8 @@
 
   
 
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon-32.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
   <link rel="canonical" href="https://szthanatos.github.io/post/git/git_tips/">
@@ -105,17 +105,19 @@
     
     
   
+  
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Kryptonite Lab">
   <meta property="og:url" content="https://szthanatos.github.io/post/git/git_tips/">
   <meta property="og:title" content="Git Tips | Kryptonite Lab">
   <meta property="og:description" content="目录 Deploy key/SSH key(github) 更换git协议 强制覆盖本地文件 撤销修改 add之前撤销 commit之前撤销 push之前撤销 删除历史提交记录 忽略文件权限 Deploy key/SSH key(github) Deploy key"><meta property="og:image" content="https://szthanatos.github.io/img/icon-192.png">
-  <meta property="og:locale" content="zh-Hans">
+  <meta property="twitter:image" content="https://szthanatos.github.io/img/icon-192.png"><meta property="og:locale" content="zh-Hans">
   
-  <meta property="article:published_time" content="2018-12-14T09:35:32&#43;08:00">
-  
-  <meta property="article:modified_time" content="2018-12-14T09:35:32&#43;08:00">
+    
+      <meta property="article:published_time" content="2018-12-14T09:35:32&#43;08:00">
+    
+    <meta property="article:modified_time" content="2018-12-14T09:35:32&#43;08:00">
   
 
   
@@ -131,8 +133,7 @@
 
 </head>
 
-
-<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
 
   <aside class="search-results" id="search">
   <div class="container">
@@ -150,7 +151,7 @@
       <div id="search-box">
         
         <input name="q" id="search-query" placeholder="搜索..." autocapitalize="off"
-        autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" type="search">
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
         
       </div>
 
@@ -167,7 +168,7 @@
 
 
   
-<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0 compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
@@ -354,6 +355,7 @@
 
   
   
+  
 
   
   
@@ -528,7 +530,7 @@ origin  git@github.com:abc/bcd.git (push)
 <p>啥都别说了，直接重来吧：</p>
 
 <pre><code class="language-bash">git fetch --all  
-git reset --hard origin/master 
+git reset --hard origin/master
 </code></pre>
 
 <h2 id="撤销修改">撤销修改</h2>
@@ -590,6 +592,12 @@ git push -f origin {old_branch}
 
     
 
+
+    
+    <div class="hr-light"></div>
+
+    
+
 <div class="article-tags">
   
   <a class="badge badge-light" href="/tags/git/">Git</a>
@@ -597,6 +605,7 @@ git push -f origin {old_branch}
 </div>
 
 
+    
     
     <style type="text/css">
   div {
@@ -714,16 +723,22 @@ git push -f origin {old_branch}
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
         
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/python.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/go.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/javascript.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/html.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/r.min.js"></script>
+        
       
 
       
       
     
 
-    
-    
-
-    
     
     
 
@@ -779,6 +794,9 @@ git push -f origin {old_branch}
 
     
     
+
+    
+    
     
     
     
@@ -791,7 +809,7 @@ git push -f origin {old_branch}
     
     
     
-    <script src="/js/academic.min.3394a224b26ce58ff36f44c54743e0ab.js"></script>
+    <script src="/js/academic.min.16bbb3750feb7244c9bc409a5a4fe678.js"></script>
 
     
 
@@ -806,7 +824,7 @@ git push -f origin {old_branch}
   
 
   <p class="powered-by">
-    &copy; 2018 &middot; 
+    
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

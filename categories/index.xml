@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on Kryptonite Lab</title>
+    <title>Categories | Kryptonite Lab</title>
     <link>https://szthanatos.github.io/categories/</link>
-    <description>Recent content in Categories on Kryptonite Lab</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
-    <language>zh-Hans</language>
-    <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Sun, 17 Mar 2019 21:50:19 +0800</lastBuildDate>
-    
-	    <atom:link href="https://szthanatos.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="https://szthanatos.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <description>Categories</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh-Hans</language><lastBuildDate>Sun, 17 Mar 2019 21:50:19 +0800</lastBuildDate>
+    <image>
+      <url>https://szthanatos.github.io/img/icon-192.png</url>
+      <title>Categories</title>
+      <link>https://szthanatos.github.io/categories/</link>
+    </image>
     
     <item>
       <title>KG</title>
       <link>https://szthanatos.github.io/categories/kg/</link>
       <pubDate>Sun, 17 Mar 2019 21:50:19 +0800</pubDate>
-      
       <guid>https://szthanatos.github.io/categories/kg/</guid>
       <description></description>
     </item>
@@ -25,7 +24,6 @@
       <title>Academic</title>
       <link>https://szthanatos.github.io/categories/academic/</link>
       <pubDate>Tue, 01 Jan 2019 12:54:29 +0800</pubDate>
-      
       <guid>https://szthanatos.github.io/categories/academic/</guid>
       <description></description>
     </item>
@@ -34,7 +32,6 @@
       <title>Hugo</title>
       <link>https://szthanatos.github.io/categories/hugo/</link>
       <pubDate>Tue, 01 Jan 2019 12:54:29 +0800</pubDate>
-      
       <guid>https://szthanatos.github.io/categories/hugo/</guid>
       <description></description>
     </item>
@@ -43,7 +40,6 @@
       <title>DataBase</title>
       <link>https://szthanatos.github.io/categories/database/</link>
       <pubDate>Sun, 09 Dec 2018 16:19:27 +0800</pubDate>
-      
       <guid>https://szthanatos.github.io/categories/database/</guid>
       <description></description>
     </item>
@@ -52,7 +48,6 @@
       <title>Python</title>
       <link>https://szthanatos.github.io/categories/python/</link>
       <pubDate>Sat, 01 Dec 2018 15:59:04 +0800</pubDate>
-      
       <guid>https://szthanatos.github.io/categories/python/</guid>
       <description></description>
     </item>

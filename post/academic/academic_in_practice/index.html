@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.3.1">
+  <meta name="generator" content="Source Themes Academic 4.4.0">
 
   
 
@@ -76,13 +76,13 @@
 
   
   
-  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono&display=swap">
   
 
   
   
   
-  <link rel="stylesheet" href="/css/academic.min.a9a796b4dba28c78fc94d2550173437e.css">
+  <link rel="stylesheet" href="/css/academic.min.dd629241ea9333c62c071f4a25f829ff.css">
 
   
 
@@ -92,8 +92,8 @@
 
   
 
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon-32.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
   <link rel="canonical" href="https://szthanatos.github.io/post/academic/academic_in_practice/">
@@ -103,18 +103,21 @@
   
   
     
+    
   
-  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Kryptonite Lab">
   <meta property="og:url" content="https://szthanatos.github.io/post/academic/academic_in_practice/">
   <meta property="og:title" content="Academic实现Github Page个人博客 | Kryptonite Lab">
-  <meta property="og:description" content="目录 Hugo 安装/更新 安装/更新 常用命令 Academic 安装/更新 通过Netlify 通过Git 安装 自动更新 手动更新 部署到Github Pages 原理 官方教程(缩减版) 脚本"><meta property="og:image" content="https://szthanatos.github.io/img/academic_header.jpg">
-  <meta property="og:locale" content="zh-Hans">
+  <meta property="og:description" content="目录 Hugo 安装/更新 安装/更新 常用命令 Academic 安装/更新 通过Netlify 通过Git 安装 自动更新 手动更新 部署到Github Pages 原理 官方教程(缩减版) 脚本"><meta property="og:image" content="https://szthanatos.github.io/img/icon-192.png">
+  <meta property="twitter:image" content="https://szthanatos.github.io/img/icon-192.png"><meta property="og:locale" content="zh-Hans">
   
-  <meta property="article:published_time" content="2018-12-09T16:34:42&#43;08:00">
-  
-  <meta property="article:modified_time" content="2018-12-09T16:34:42&#43;08:00">
+    
+      <meta property="article:published_time" content="2018-12-09T16:34:42&#43;08:00">
+    
+    <meta property="article:modified_time" content="2018-12-09T16:34:42&#43;08:00">
   
 
   
@@ -130,8 +133,7 @@
 
 </head>
 
-
-<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
 
   <aside class="search-results" id="search">
   <div class="container">
@@ -149,7 +151,7 @@
       <div id="search-box">
         
         <input name="q" id="search-query" placeholder="搜索..." autocapitalize="off"
-        autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" type="search">
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
         
       </div>
 
@@ -166,7 +168,7 @@
 
 
   
-<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0 compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
@@ -306,15 +308,6 @@
 
 
 
-<div class="article-header">
-  
-  
-  <img src="/img/academic_header.jpg" class="article-banner" itemprop="image" alt="">
-  
-
-  
-</div>
-
 
 
 
@@ -360,6 +353,7 @@
   </span>
   
 
+  
   
   
 
@@ -626,7 +620,7 @@ git push -u origin master
 
 <li><p>更新GitHub page项目：</p>
 
-<pre><code class="language-bash">hugo 
+<pre><code class="language-bash">hugo
 cd public
 git add .
 git commit -m &quot;Build website&quot;
@@ -942,6 +936,12 @@ fi
 
     
 
+
+    
+    <div class="hr-light"></div>
+
+    
+
 <div class="article-tags">
   
   <a class="badge badge-light" href="/tags/hugo/">Hugo</a>
@@ -949,6 +949,7 @@ fi
 </div>
 
 
+    
     
     <style type="text/css">
   div {
@@ -1066,16 +1067,22 @@ fi
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
         
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/python.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/go.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/javascript.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/html.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/r.min.js"></script>
+        
       
 
       
       
     
 
-    
-    
-
-    
     
     
 
@@ -1131,6 +1138,9 @@ fi
 
     
     
+
+    
+    
     
     
     
@@ -1143,7 +1153,7 @@ fi
     
     
     
-    <script src="/js/academic.min.3394a224b26ce58ff36f44c54743e0ab.js"></script>
+    <script src="/js/academic.min.16bbb3750feb7244c9bc409a5a4fe678.js"></script>
 
     
 
@@ -1158,7 +1168,7 @@ fi
   
 
   <p class="powered-by">
-    &copy; 2018 &middot; 
+    
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>DataBase on Kryptonite Lab</title>
+    <title>DataBase | Kryptonite Lab</title>
     <link>https://szthanatos.github.io/categories/database/</link>
-    <description>Recent content in DataBase on Kryptonite Lab</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
-    <language>zh-Hans</language>
-    <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Sun, 09 Dec 2018 16:19:27 +0800</lastBuildDate>
-    
-	    <atom:link href="https://szthanatos.github.io/categories/database/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="https://szthanatos.github.io/categories/database/index.xml" rel="self" type="application/rss+xml" />
+    <description>DataBase</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh-Hans</language><lastBuildDate>Sun, 09 Dec 2018 16:19:27 +0800</lastBuildDate>
+    <image>
+      <url>https://szthanatos.github.io/img/icon-192.png</url>
+      <title>DataBase</title>
+      <link>https://szthanatos.github.io/categories/database/</link>
+    </image>
     
     <item>
       <title>hbase表设计风格指南</title>
       <link>https://szthanatos.github.io/post/hbase_design/</link>
       <pubDate>Sun, 09 Dec 2018 16:19:27 +0800</pubDate>
-      
       <guid>https://szthanatos.github.io/post/hbase_design/</guid>
       <description>
 
@@ -52,7 +51,7 @@ HAHAHUGOSHORTCODE-TOC0-HBHB&lt;/p&gt;
 &lt;h3 id=&#34;示例&#34;&gt;示例&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;ZKR
-XJ917 
+XJ917
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h2 id=&#34;表-table&#34;&gt;表(Table)&lt;/h2&gt;

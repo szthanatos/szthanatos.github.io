@@ -3,22 +3,14 @@
   <channel>
     <title>Kryptonite Lab</title>
     <link>https://szthanatos.github.io/authors/sz/</link>
-    <description>Recent content on Kryptonite Lab</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
-    <language>zh-Hans</language>
-    <copyright>&amp;copy; 2018</copyright>
-    
-	    <atom:link href="https://szthanatos.github.io/authors/sz/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title></title>
+      <atom:link href="https://szthanatos.github.io/authors/sz/index.xml" rel="self" type="application/rss+xml" />
+    <description>Kryptonite Lab</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh-Hans</language>
+    <image>
+      <url>https://szthanatos.github.io/img/icon-192.png</url>
+      <title>Kryptonite Lab</title>
       <link>https://szthanatos.github.io/authors/sz/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://szthanatos.github.io/authors/sz/</guid>
-      <description></description>
-    </item>
+    </image>
     
   </channel>
 </rss>

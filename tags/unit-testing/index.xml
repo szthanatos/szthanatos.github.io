@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>unit testing on Kryptonite Lab</title>
+    <title>unit testing | Kryptonite Lab</title>
     <link>https://szthanatos.github.io/tags/unit-testing/</link>
-    <description>Recent content in unit testing on Kryptonite Lab</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
-    <language>zh-Hans</language>
-    <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Mon, 20 Aug 2018 10:49:50 +0800</lastBuildDate>
-    
-	    <atom:link href="https://szthanatos.github.io/tags/unit-testing/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="https://szthanatos.github.io/tags/unit-testing/index.xml" rel="self" type="application/rss+xml" />
+    <description>unit testing</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh-Hans</language><lastBuildDate>Mon, 20 Aug 2018 10:49:50 +0800</lastBuildDate>
+    <image>
+      <url>https://szthanatos.github.io/img/icon-192.png</url>
+      <title>unit testing</title>
+      <link>https://szthanatos.github.io/tags/unit-testing/</link>
+    </image>
     
     <item>
       <title>python单元测试标准及实现</title>
       <link>https://szthanatos.github.io/post/python/unit_testing/</link>
       <pubDate>Mon, 20 Aug 2018 10:49:50 +0800</pubDate>
-      
       <guid>https://szthanatos.github.io/post/python/unit_testing/</guid>
       <description>
 
@@ -225,7 +224,7 @@ if __name__ == &#39;__main__&#39;:
 
 class TestStringMethods(unittest.TestCase):
 
-    def setUp(self): 
+    def setUp(self):
         print &#39;1. setUp here&#39;
 
     def tearDown(self):
@@ -233,7 +232,7 @@ class TestStringMethods(unittest.TestCase):
 
     def test_upper(self):
         self.assertEqual(&#39;foo&#39;.upper(), &#39;FOO&#39;)
-    
+
     ...
 &lt;/code&gt;&lt;/pre&gt;
 

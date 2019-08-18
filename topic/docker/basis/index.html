@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.3.1">
+  <meta name="generator" content="Source Themes Academic 4.4.0">
 
   
 
@@ -76,13 +76,13 @@
 
   
   
-  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono&display=swap">
   
 
   
   
   
-  <link rel="stylesheet" href="/css/academic.min.a9a796b4dba28c78fc94d2550173437e.css">
+  <link rel="stylesheet" href="/css/academic.min.dd629241ea9333c62c071f4a25f829ff.css">
 
   
 
@@ -92,8 +92,8 @@
 
   
 
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon-32.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
   <link rel="canonical" href="https://szthanatos.github.io/topic/docker/basis/">
@@ -105,17 +105,19 @@
     
     
   
+  
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Kryptonite Lab">
   <meta property="og:url" content="https://szthanatos.github.io/topic/docker/basis/">
   <meta property="og:title" content="Docker -01- 基本概念 | Kryptonite Lab">
   <meta property="og:description" content="Docker简介 什么是Docker Docker 最初是 dotCloud 公司创始人 Solomon Hykes 在法国期间发起的一个公司内部项目，并于2013 年 3 月以 Apache 2.0 授权协议开源，主要项目代"><meta property="og:image" content="https://szthanatos.github.io/img/icon-192.png">
-  <meta property="og:locale" content="zh-Hans">
+  <meta property="twitter:image" content="https://szthanatos.github.io/img/icon-192.png"><meta property="og:locale" content="zh-Hans">
   
-  <meta property="article:published_time" content="2018-12-05T22:17:22&#43;08:00">
-  
-  <meta property="article:modified_time" content="2018-12-05T22:17:22&#43;08:00">
+    
+      <meta property="article:published_time" content="2018-12-05T22:17:22&#43;08:00">
+    
+    <meta property="article:modified_time" content="2018-12-05T22:17:22&#43;08:00">
   
 
   
@@ -131,8 +133,7 @@
 
 </head>
 
-
-<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
 
   <aside class="search-results" id="search">
   <div class="container">
@@ -150,7 +151,7 @@
       <div id="search-box">
         
         <input name="q" id="search-query" placeholder="搜索..." autocapitalize="off"
-        autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" type="search">
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
         
       </div>
 
@@ -167,7 +168,7 @@
 
 
   
-<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0 compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
@@ -312,7 +313,7 @@
   </button>
 
   
-  <input name="q" type="search" class="form-control" id="search-query" placeholder="搜索..." autocomplete="off">
+  <input name="q" type="search" class="form-control" placeholder="搜索..." autocomplete="off">
   
 </form>
 
@@ -497,10 +498,13 @@
 
 <h2 id="基本概念">基本概念</h2>
 
-<p>Docker 包括三个基本概念
-- 镜像（<code>Image</code>）
-- 容器（<code>Container</code>）
-- 仓库（<code>Repository</code>）</p>
+<p>Docker 包括三个基本概念</p>
+
+<ul>
+<li>镜像（<code>Image</code>）</li>
+<li>容器（<code>Container</code>）</li>
+<li>仓库（<code>Repository</code>）</li>
+</ul>
 
 <p>理解了这三个概念，就理解了 Docker 的整个生命周期。</p>
 
@@ -609,7 +613,7 @@ sudo yum-config-manager \
 # 官方源
 # sudo yum-config-manager \
 #     --add-repo \
-#     https://download.docker.com/linux/centos/docker-ce.repo    
+#     https://download.docker.com/linux/centos/docker-ce.repo
 </code></pre>
 
 <p>更新 <code>yum</code> 软件源缓存，并安装 <code>docker-ce</code>。</p>
@@ -623,9 +627,9 @@ sudo yum install docker-ce
 <p>以docker-ce-18.03.1为例：</p>
 
 <ol>
-<li>在<a href="https://download.docker.com/linux/centos/7/x86_64/stable/Packages/这里找到对应rpm包" target="_blank">https://download.docker.com/linux/centos/7/x86_64/stable/Packages/这里找到对应rpm包</a></li>
+<li>在<code>https://download.docker.com/linux/centos/7/x86_64/stable/Packages/</code>这里找到对应rpm包</li>
 <li>执行安装命令：<code>rpm -ivh docker-ce-18.03.1.ce-1.el7.centos.x86_64.rpm</code></li>
-<li>由于安装环境不同，可能会发现缺少一些相关依赖包（eg: libcgroup、libtool-ltdl、container-selinux）前往 <a href="https://pkgs.org/" target="_blank">https://pkgs.org/</a> 或 <a href="https://buildlogs.centos.org/" target="_blank">https://buildlogs.centos.org/</a> 下载对应依赖包，依次安装即可</li>
+<li>由于安装环境不同，可能会发现缺少一些相关依赖包（eg: libcgroup、libtool-ltdl、container-selinux）前往<code>https://pkgs.org/</code>或<code>https://buildlogs.centos.org/</code>下载对应依赖包，依次安装即可</li>
 </ol>
 
 <h3 id="启动-docker-ce">启动 Docker CE</h3>
@@ -719,9 +723,9 @@ sudo service docker start|stop
 <pre><code class="language-bash">docker pull redis
 </code></pre>
 
-<p><em>ps1：由于redis是官方源（Official），否则应该写完整的两段式仓库名 <code>&lt;用户名&gt;/&lt;软件名&gt;</code>，例如bitnami/redis。</em></p>
+<p><em>ps1：</em> 由于redis是官方源（Official），否则应该写完整的两段式仓库名 <code>&lt;用户名&gt;/&lt;软件名&gt;</code>，例如bitnami/redis。</p>
 
-<p><em>ps2：此处没有指定镜像版本，默认会拉取redis:lastest镜像，指定版本应该写成例如：redis:5.0-rc5</em></p>
+<p><em>ps2：</em> 此处没有指定镜像版本，默认会拉取redis:lastest镜像，指定版本应该写成例如：redis:5.0-rc5</p>
 
 <p>查看已经下载的镜像：</p>
 
@@ -729,7 +733,7 @@ sudo service docker start|stop
 
 # 会有类似如下显示
 REPOSITORY           TAG                 IMAGE ID            CREATED             SIZE
-redis                latest              5f515359c7f8        5 days ago          183 MB 
+redis                latest              5f515359c7f8        5 days ago          183 MB
 ......
 </code></pre>
 
@@ -1057,7 +1061,7 @@ docker volume inspect my-vol
 <pre><code class="language-bash">docker run -d \
     --name redis-server \
     --network my-net \
-    redis 
+    redis
 
 docker run -it \
     --rm \
@@ -1097,10 +1101,31 @@ docker run -it \
 
 
           
+          <div class="article-widget">
+            
+<div class="post-nav">
+  
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">下一页</div>
+    <a href="/topic/docker/ecology/" rel="prev">Docker -02- 进阶生态</a>
+  </div>
+  
+</div>
+
+          </div>
+          
         </div>
 
         <div class="body-footer">
-          最近更新于 Dec 5, 2018
+          <p>最近更新于 Dec 5, 2018</p>
+
+          
+
+
+          
+
         </div>
 
       </article>
@@ -1109,7 +1134,7 @@ docker run -it \
   
 
   <p class="powered-by">
-    &copy; 2018 &middot; 
+    
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
@@ -1144,16 +1169,22 @@ docker run -it \
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
         
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/python.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/go.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/javascript.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/html.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/r.min.js"></script>
+        
       
 
       
       
     
 
-    
-    
-
-    
     
     
 
@@ -1214,6 +1245,9 @@ docker run -it \
 
     
     
+
+    
+    
     
     
     
@@ -1226,7 +1260,7 @@ docker run -it \
     
     
     
-    <script src="/js/academic.min.3394a224b26ce58ff36f44c54743e0ab.js"></script>
+    <script src="/js/academic.min.16bbb3750feb7244c9bc409a5a4fe678.js"></script>
 
     
 

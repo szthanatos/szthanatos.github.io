@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>graphdb on Kryptonite Lab</title>
+    <title>graphdb | Kryptonite Lab</title>
     <link>https://szthanatos.github.io/tags/graphdb/</link>
-    <description>Recent content in graphdb on Kryptonite Lab</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
-    <language>zh-Hans</language>
-    <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Sun, 17 Mar 2019 21:50:19 +0800</lastBuildDate>
-    
-	    <atom:link href="https://szthanatos.github.io/tags/graphdb/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="https://szthanatos.github.io/tags/graphdb/index.xml" rel="self" type="application/rss+xml" />
+    <description>graphdb</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh-Hans</language><lastBuildDate>Sun, 17 Mar 2019 21:50:19 +0800</lastBuildDate>
+    <image>
+      <url>https://szthanatos.github.io/img/icon-192.png</url>
+      <title>graphdb</title>
+      <link>https://szthanatos.github.io/tags/graphdb/</link>
+    </image>
     
     <item>
       <title>JanusGraph搭建及简单使用</title>
       <link>https://szthanatos.github.io/post/janusgraph/</link>
       <pubDate>Sun, 17 Mar 2019 21:50:19 +0800</pubDate>
-      
       <guid>https://szthanatos.github.io/post/janusgraph/</guid>
       <description>
 
@@ -110,7 +109,7 @@ cache.db-cache-size = 0.5
 &lt;li&gt;&lt;p&gt;gremlin.sh(进入gremlin交互式客户端)&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;[root@xnode208 janusgraph0.2] ./bin/gremlin.sh
-gremlin&amp;gt; 
+gremlin&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -191,7 +190,7 @@ t1.property(&#39;reason&#39;,&#39;cool&#39;);  # 为t1增加属性
 v3.addEdge(&#39;boyfriend&#39;,v4,&#39;reason&#39;,&#39;because the reason&#39;);  # v3添加关系到v4并且增加关系属性及属性值
 
 # 提交修改
-graph.tx().commit(); 
+graph.tx().commit();
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h3 id=&#34;删操作&#34;&gt;删操作&lt;/h3&gt;

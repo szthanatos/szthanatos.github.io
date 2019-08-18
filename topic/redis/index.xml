@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Overview on Kryptonite Lab</title>
+    <title>Overview | Kryptonite Lab</title>
     <link>https://szthanatos.github.io/topic/redis/</link>
-    <description>Recent content in Overview on Kryptonite Lab</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
-    <language>zh-Hans</language>
-    <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Fri, 18 May 2018 11:42:50 +0800</lastBuildDate>
-    
-	    <atom:link href="https://szthanatos.github.io/topic/redis/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="https://szthanatos.github.io/topic/redis/index.xml" rel="self" type="application/rss+xml" />
+    <description>Overview</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh-Hans</language><lastBuildDate>Fri, 18 May 2018 11:42:50 +0800</lastBuildDate>
+    <image>
+      <url>https://szthanatos.github.io/img/icon-192.png</url>
+      <title>Overview</title>
+      <link>https://szthanatos.github.io/topic/redis/</link>
+    </image>
     
     <item>
       <title>Redis单机&amp;集群安装</title>
       <link>https://szthanatos.github.io/topic/redis/install/</link>
       <pubDate>Thu, 30 Aug 2018 16:40:48 +0800</pubDate>
-      
       <guid>https://szthanatos.github.io/topic/redis/install/</guid>
       <description>
 
@@ -284,7 +283,6 @@ ruby setup.rb
       <title>Redis集群相关命令</title>
       <link>https://szthanatos.github.io/topic/redis/cluster_command/</link>
       <pubDate>Thu, 30 Aug 2018 21:26:18 +0800</pubDate>
-      
       <guid>https://szthanatos.github.io/topic/redis/cluster_command/</guid>
       <description>
 
@@ -598,7 +596,6 @@ cluster_stats_messages_received:3112
       <title>优化指南</title>
       <link>https://szthanatos.github.io/topic/redis/improve-00/</link>
       <pubDate>Mon, 18 Mar 2019 15:04:35 +0800</pubDate>
-      
       <guid>https://szthanatos.github.io/topic/redis/improve-00/</guid>
       <description>&lt;p&gt;redis性能优化可以从设计，使用，运维三个层面上着手：&lt;/p&gt;
 
@@ -631,7 +628,6 @@ cluster_stats_messages_received:3112
       <title>问题处理</title>
       <link>https://szthanatos.github.io/topic/redis/error/</link>
       <pubDate>Thu, 30 Aug 2018 16:40:48 +0800</pubDate>
-      
       <guid>https://szthanatos.github.io/topic/redis/error/</guid>
       <description>&lt;p&gt;各种情况下的解决办法。&lt;/p&gt;
 </description>
@@ -641,7 +637,6 @@ cluster_stats_messages_received:3112
       <title>解决 Error connection reset by peer</title>
       <link>https://szthanatos.github.io/topic/redis/error-connection_reset/</link>
       <pubDate>Sun, 16 Jun 2019 23:06:41 +0800</pubDate>
-      
       <guid>https://szthanatos.github.io/topic/redis/error-connection_reset/</guid>
       <description>
 
@@ -671,7 +666,6 @@ cluster_stats_messages_received:3112
       <title>优化指南-使用</title>
       <link>https://szthanatos.github.io/topic/redis/improve-02/</link>
       <pubDate>Mon, 18 Mar 2019 15:04:35 +0800</pubDate>
-      
       <guid>https://szthanatos.github.io/topic/redis/improve-02/</guid>
       <description>
 
@@ -963,7 +957,6 @@ $ ./redis-benchmark -r 1000000 -n 2000000 -t get,set,lpush,lpop -q
       <title>优化指南-设计</title>
       <link>https://szthanatos.github.io/topic/redis/improve-01/</link>
       <pubDate>Mon, 18 Mar 2019 15:04:35 +0800</pubDate>
-      
       <guid>https://szthanatos.github.io/topic/redis/improve-01/</guid>
       <description>
 
@@ -1614,7 +1607,6 @@ $ ./redis-benchmark -r 1000000 -n 2000000 -t get,set,lpush,lpop -q
       <title>优化指南-运维</title>
       <link>https://szthanatos.github.io/topic/redis/improve-03/</link>
       <pubDate>Mon, 18 Mar 2019 15:04:35 +0800</pubDate>
-      
       <guid>https://szthanatos.github.io/topic/redis/improve-03/</guid>
       <description>
 
@@ -1719,7 +1711,6 @@ pass
       <title>解决 not able to persist on disk</title>
       <link>https://szthanatos.github.io/topic/redis/error-persist_on_disk/</link>
       <pubDate>Fri, 18 May 2018 11:42:50 +0800</pubDate>
-      
       <guid>https://szthanatos.github.io/topic/redis/error-persist_on_disk/</guid>
       <description>
 

@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Academic on Kryptonite Lab</title>
+    <title>Academic | Kryptonite Lab</title>
     <link>https://szthanatos.github.io/categories/academic/</link>
-    <description>Recent content in Academic on Kryptonite Lab</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
-    <language>zh-Hans</language>
-    <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Tue, 01 Jan 2019 12:54:29 +0800</lastBuildDate>
-    
-	    <atom:link href="https://szthanatos.github.io/categories/academic/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="https://szthanatos.github.io/categories/academic/index.xml" rel="self" type="application/rss+xml" />
+    <description>Academic</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh-Hans</language><lastBuildDate>Tue, 01 Jan 2019 12:54:29 +0800</lastBuildDate>
+    <image>
+      <url>https://szthanatos.github.io/img/icon-192.png</url>
+      <title>Academic</title>
+      <link>https://szthanatos.github.io/categories/academic/</link>
+    </image>
     
     <item>
       <title>(翻译)Academic文档-内容编写</title>
       <link>https://szthanatos.github.io/post/academic/trans_writing_content/</link>
       <pubDate>Tue, 01 Jan 2019 12:54:29 +0800</pubDate>
-      
       <guid>https://szthanatos.github.io/post/academic/trans_writing_content/</guid>
       <description>
 
@@ -68,7 +67,7 @@ Strikethrough with ~~two tildes~~.
 
 &lt;h2 id=&#34;无序列表&#34;&gt;无序列表&lt;/h2&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;我个人更习惯用 - 
+&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;我个人更习惯用 -
 * First item
 * Another item
 &lt;/code&gt;&lt;/pre&gt;
@@ -241,7 +240,7 @@ caption = &amp;quot;Dark theme&amp;quot;
  input_string_var = input(&amp;quot;Enter some data: &amp;quot;)
  print(&amp;quot;You entered: {}&amp;quot;.format(input_string_var))
  ` ` `
- 
+
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;效果：&lt;/p&gt;
@@ -515,7 +514,6 @@ Here&#39;s some important information...
       <title>(翻译)Academic文档-内容管理</title>
       <link>https://szthanatos.github.io/post/academic/trans_managing_content/</link>
       <pubDate>Tue, 01 Jan 2019 12:54:11 +0800</pubDate>
-      
       <guid>https://szthanatos.github.io/post/academic/trans_managing_content/</guid>
       <description>
 
@@ -560,7 +558,7 @@ Academic提供的内容模板包括出版物、项目、宣讲、新闻/博客�
 焦点(focal_point)参数确保图片自动缩放的时候主要内容始终可见。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;# Featured image
-# To use, add an image named `featured.jpg/png` to your page&#39;s folder. 
+# To use, add an image named `featured.jpg/png` to your page&#39;s folder.
 [image]
   # Caption (optional)
   caption = &amp;quot;Photo by [Academic](https://sourcethemes.com/academic/)&amp;quot;
