@@ -58,12 +58,37 @@
   </url>
   
   <url>
-    <loc>https://szthanatos.github.io/topic/redis/error-connection_reset/</loc>
-    <lastmod>2019-06-16T23:06:41+08:00</lastmod>
+    <loc>https://szthanatos.github.io/</loc>
+    <lastmod>2019-09-01T15:39:50+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://szthanatos.github.io/</loc>
+    <loc>https://szthanatos.github.io/tags/os/</loc>
+    <lastmod>2019-09-01T15:39:50+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://szthanatos.github.io/post/</loc>
+    <lastmod>2019-09-01T15:39:50+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://szthanatos.github.io/tags/rancher/</loc>
+    <lastmod>2019-09-01T15:39:50+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://szthanatos.github.io/post/rancheros/</loc>
+    <lastmod>2019-09-01T15:39:50+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://szthanatos.github.io/tags/</loc>
+    <lastmod>2019-09-01T15:39:50+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://szthanatos.github.io/topic/redis/error-connection_reset/</loc>
     <lastmod>2019-06-16T23:06:41+08:00</lastmod>
   </url>
   
@@ -109,16 +134,6 @@
   
   <url>
     <loc>https://szthanatos.github.io/tags/knowledge-graph/</loc>
-    <lastmod>2019-03-17T21:50:19+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://szthanatos.github.io/post/</loc>
-    <lastmod>2019-03-17T21:50:19+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://szthanatos.github.io/tags/</loc>
     <lastmod>2019-03-17T21:50:19+08:00</lastmod>
   </url>
   

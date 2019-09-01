@@ -5,12 +5,28 @@
     <link>https://szthanatos.github.io/tags/</link>
       <atom:link href="https://szthanatos.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <description>Tags</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh-Hans</language><lastBuildDate>Sun, 17 Mar 2019 21:50:19 +0800</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh-Hans</language><lastBuildDate>Sun, 01 Sep 2019 15:39:50 +0800</lastBuildDate>
     <image>
       <url>https://szthanatos.github.io/img/icon-192.png</url>
       <title>Tags</title>
       <link>https://szthanatos.github.io/tags/</link>
     </image>
+    
+    <item>
+      <title>os</title>
+      <link>https://szthanatos.github.io/tags/os/</link>
+      <pubDate>Sun, 01 Sep 2019 15:39:50 +0800</pubDate>
+      <guid>https://szthanatos.github.io/tags/os/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rancher</title>
+      <link>https://szthanatos.github.io/tags/rancher/</link>
+      <pubDate>Sun, 01 Sep 2019 15:39:50 +0800</pubDate>
+      <guid>https://szthanatos.github.io/tags/rancher/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>graphdb</title>
