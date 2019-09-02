@@ -13,7 +13,7 @@
     </image>
     
     <item>
-      <title>RancherOS——容器时代的操作系统</title>
+      <title>RancherOS初步使用小结</title>
       <link>https://szthanatos.github.io/post/rancheros/</link>
       <pubDate>Sun, 01 Sep 2019 15:39:50 +0800</pubDate>
       <guid>https://szthanatos.github.io/post/rancheros/</guid>
@@ -105,6 +105,15 @@ ssh_authorized_keys:
 
 &lt;li&gt;&lt;p&gt;手动&lt;code&gt;sudo poweroff&lt;/code&gt;，卸载光驱，重启，看到熟悉的牛头LOGO，恭喜完成~&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
+
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    &lt;p&gt;如果一定要为rancher设置一个密码的话，将安装命令替换为：&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;sudo ros install -c cloud-config.yml -d /dev/sda --append=rancher.password=密码&lt;/code&gt;&lt;/p&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
 
 &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
@@ -321,15 +330,15 @@ disabled pingan-amc
 
 &lt;p&gt;现有的公有云/虚拟化厂商大多支持&lt;code&gt;cloud-init&lt;/code&gt;工具进行系统配置初始化(某种意义上的事实标准)。cloud-config就是为&lt;code&gt;cloud-init&lt;/code&gt;服务的。RancherOS在&lt;code&gt;system-docker&lt;/code&gt;中运行了一个&lt;code&gt;cloud-init&lt;/code&gt;容器，它会在启动时查找可能位置上的cloud-config文件并依此配置系统配置项。&lt;/p&gt;
 
-&lt;p&gt;cloud-config的语法格式就是标准的YAML语法，一个比较完整的cloud-config的示例如下：&lt;/p&gt;
+&lt;p&gt;cloud-config的语法格式就是标准的YAML语法，一个我在用的、比较完整的cloud-config的示例如下：&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;# 主机名
 hostname: ros-test
 
 # 系统配置
 rancher:
-  # 设置用户rancher的密码，惊喜吧，又能用户名密码登陆了~
-  password: 1234
+  # 替换控制台为alpine，也可以是ubuntu/centos/debian...
+  console: alpine
 
   # 初始Docker源
   bootstrap_docker:
@@ -345,8 +354,10 @@ rancher:
   network:
     interfaces:
       eth0:
+        # IP要是CIDR格式，要是和子网掩码对不上就上不了网
         address: 192.168.0.1/24
-        broadcast: 192.168.0.255
+        # netmask: 255.255.255.0
+        # broadcast: 192.168.0.255
         gateway: 192.168.0.254
         mtu: 1500
         dhcp: false
@@ -355,22 +366,64 @@ rancher:
         - 114.114.114.114
         - 8.8.8.8
 
-  # 扩容现有磁盘不要用fdisk，除非你想把系统格式化了，用这个就能调整磁盘大小
-  resize_device: /dev/sda
+  # # 扩容现有磁盘不要用fdisk，除非你想把系统格式化了，用这个就能调整磁盘大小
+  # resize_device: /dev/sda
 
 # 可登录的机器公钥
 ssh_authorized_keys:
   - ssh-rsa ...
   - ssh-rsa ...
 
-# 挂载新磁盘
-mounts:
-- [&amp;quot;/dev/vdb&amp;quot;, &amp;quot;/mnt/s&amp;quot;, &amp;quot;ext4&amp;quot;, &amp;quot;&amp;quot;]
+# # 挂载新磁盘
+# mounts:
+# - [&amp;quot;/dev/vdb&amp;quot;, &amp;quot;/mnt/s&amp;quot;, &amp;quot;ext4&amp;quot;, &amp;quot;&amp;quot;]
+
+# 写文件
+write_files:
+  # 修改apk使用国内镜像
+  - path: /etc/apk/repositories
+    permissions: &amp;quot;0755&amp;quot;
+    owner: root
+    content: |
+      https://mirrors.ustc.edu.cn/alpine/latest-stable/main
+      https://mirrors.ustc.edu.cn/alpine/latest-stable/community
+
+  # 确保ssh连接时会读取.bashrc
+  - path: /home/rancher/.bash_profile
+    permissions: &amp;quot;0755&amp;quot;
+    owner: rancher
+    content: |
+      # If the shell is interactive and .bashrc exists, get the aliases and functions
+      if [[ $- == *i* &amp;amp;&amp;amp; -f ~/.bashrc ]]; then
+          . ~/.bashrc
+      fi
+
+  # 配置.bashrc
+  - path: /home/rancher/.bashrc
+    permissions: &amp;quot;0755&amp;quot;
+    owner: rancher
+    content: |
+      # .bashrc
+      # User specific aliases and functions
+      PS1=&amp;quot;\[\e[37m\][\[\e[32m\]\u\[\e[37m\]@\h \[\e[36m\]\w\[\e[0m\]]\\$ &amp;quot;
+
+      alias  d=&amp;quot;docker &amp;quot;
+      alias di=&amp;quot;docker image&amp;quot;
+      alias dc=&amp;quot;docker container&amp;quot;
+      alias dv=&amp;quot;docker volumn&amp;quot;
+      alias dn=&amp;quot;docker netwrok&amp;quot;
+
+      # Source global definitions
+      if [ -f /etc/bashrc ]; then
+              . /etc/bashrc
+      fi
 
 # 启动时执行命令
 runcmd:
-- [ touch, /home/rancher/test1 ]
-- echo &amp;quot;test&amp;quot; &amp;gt; /home/rancher/test2
+  #   # 两种写法
+  #   - [touch, /home/rancher/test1]
+  #   - echo &amp;quot;test&amp;quot; &amp;gt; /home/rancher/test2
+  - apk update
 
 &lt;/code&gt;&lt;/pre&gt;
 </description>
