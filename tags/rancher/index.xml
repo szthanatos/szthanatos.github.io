@@ -388,6 +388,26 @@ write_files:
       https://mirrors.ustc.edu.cn/alpine/latest-stable/main
       https://mirrors.ustc.edu.cn/alpine/latest-stable/community
 
+  # 设置CST时区
+  - path: /etc/profile
+    permissions: &amp;quot;0755&amp;quot;
+    owner: root
+    content: |
+      export CHARSET=UTF-8
+      export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+      export PAGER=less
+      # 显示样式
+      export PS1=&amp;quot;\[\e[37m\][\[\e[32m\]\u\[\e[37m\]@\h \[\e[36m\]\w\[\e[0m\]]\\$ &amp;quot;
+      # 时区
+      export TZ=&#39;CST-8&#39;
+      umask 022
+
+      for script in /etc/profile.d/*.sh ; do
+              if [ -r $script ] ; then
+                      . $script
+              fi
+      done
+
   # 确保ssh连接时会读取.bashrc
   - path: /home/rancher/.bash_profile
     permissions: &amp;quot;0755&amp;quot;
@@ -405,8 +425,6 @@ write_files:
     content: |
       # .bashrc
       # User specific aliases and functions
-      PS1=&amp;quot;\[\e[37m\][\[\e[32m\]\u\[\e[37m\]@\h \[\e[36m\]\w\[\e[0m\]]\\$ &amp;quot;
-
       alias  d=&amp;quot;docker &amp;quot;
       alias di=&amp;quot;docker image&amp;quot;
       alias dc=&amp;quot;docker container&amp;quot;
@@ -423,7 +441,10 @@ runcmd:
   #   # 两种写法
   #   - [touch, /home/rancher/test1]
   #   - echo &amp;quot;test&amp;quot; &amp;gt; /home/rancher/test2
+  # 开机更新apk源
   - apk update
+  # 启动定时任务服务
+  - crond
 
 &lt;/code&gt;&lt;/pre&gt;
 </description>
