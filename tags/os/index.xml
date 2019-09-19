@@ -332,6 +332,12 @@ disabled pingan-amc
 
 &lt;p&gt;cloud-config的语法格式就是标准的YAML语法，一个我在用的、比较完整的cloud-config的示例如下：&lt;/p&gt;
 
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    使用时请删除掉中文注释&amp;hellip;给别人演示的时候懒得删注释结果validate没问题，但是配置就是不生效&amp;hellip;
+  &lt;/div&gt;
+&lt;/div&gt;
+
 &lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;# 主机名
 hostname: ros-test
 
