@@ -12,31 +12,5 @@
       <link>https://szthanatos.github.io/topic/</link>
     </image>
     
-    <item>
-      <title>Overview</title>
-      <link>https://szthanatos.github.io/topic/kafka/</link>
-      <pubDate>Tue, 15 Jan 2019 15:40:52 +0800</pubDate>
-      <guid>https://szthanatos.github.io/topic/kafka/</guid>
-      <description>&lt;p&gt;关于Kafka，看完你就知道他们都在逼逼什么了。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Overview</title>
-      <link>https://szthanatos.github.io/topic/docker/</link>
-      <pubDate>Sun, 09 Dec 2018 15:55:24 +0800</pubDate>
-      <guid>https://szthanatos.github.io/topic/docker/</guid>
-      <description>&lt;p&gt;关于Docker，看完你就知道他们都在逼逼什么了。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Overview</title>
-      <link>https://szthanatos.github.io/topic/redis/</link>
-      <pubDate>Fri, 18 May 2018 11:42:50 +0800</pubDate>
-      <guid>https://szthanatos.github.io/topic/redis/</guid>
-      <description></description>
-    </item>
-    
   </channel>
 </rss>

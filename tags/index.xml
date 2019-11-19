@@ -5,7 +5,7 @@
     <link>https://szthanatos.github.io/tags/</link>
       <atom:link href="https://szthanatos.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <description>Tags</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh-Hans</language><lastBuildDate>Sun, 01 Sep 2019 15:39:50 +0800</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh-Hans</language><lastBuildDate>Fri, 15 Nov 2019 17:18:05 +0800</lastBuildDate>
     <image>
       <url>https://szthanatos.github.io/img/icon-192.png</url>
       <title>Tags</title>
@@ -13,18 +13,26 @@
     </image>
     
     <item>
-      <title>os</title>
-      <link>https://szthanatos.github.io/tags/os/</link>
-      <pubDate>Sun, 01 Sep 2019 15:39:50 +0800</pubDate>
-      <guid>https://szthanatos.github.io/tags/os/</guid>
+      <title>ssh</title>
+      <link>https://szthanatos.github.io/tags/ssh/</link>
+      <pubDate>Fri, 15 Nov 2019 17:18:05 +0800</pubDate>
+      <guid>https://szthanatos.github.io/tags/ssh/</guid>
       <description></description>
     </item>
     
     <item>
       <title>rancher</title>
       <link>https://szthanatos.github.io/tags/rancher/</link>
-      <pubDate>Sun, 01 Sep 2019 15:39:50 +0800</pubDate>
+      <pubDate>Thu, 26 Sep 2019 22:58:39 +0800</pubDate>
       <guid>https://szthanatos.github.io/tags/rancher/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>os</title>
+      <link>https://szthanatos.github.io/tags/os/</link>
+      <pubDate>Sun, 01 Sep 2019 15:39:50 +0800</pubDate>
+      <guid>https://szthanatos.github.io/tags/os/</guid>
       <description></description>
     </item>
     

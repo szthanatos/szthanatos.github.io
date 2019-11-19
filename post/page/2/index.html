@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.4.0">
+  <meta name="generator" content="Source Themes Academic 4.5.0">
 
   
 
@@ -37,8 +37,6 @@
 
 
   
-
-  
   
   
   <meta name="theme-color" content="#2962ff">
@@ -50,8 +48,8 @@
   
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
 
     
     
@@ -62,13 +60,15 @@
       
       
         
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light">
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
         
       
     
 
     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css" integrity="sha256-SHMGCYmST46SoyGgo4YR/9AlK1vf3ff84Aq9yK4hdqM=" crossorigin="anonymous">
+    
 
     
 
@@ -76,19 +76,23 @@
 
   
   
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono&display=swap">
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
   
 
   
   
   
-  <link rel="stylesheet" href="/css/academic.min.33a9de0011bfb8b4b84638e7b1af0e1e.css">
+  
+  <link rel="stylesheet" href="/css/academic.css">
 
   
 
+
+
+
   
-  
-  
+
 
   
   <link rel="alternate" href="/post/index.xml" type="application/rss+xml" title="Kryptonite Lab">
@@ -116,8 +120,13 @@
   <meta property="og:description" content="Python Knight &amp; Go Padawan"><meta property="og:image" content="https://szthanatos.github.io/img/icon-192.png">
   <meta property="twitter:image" content="https://szthanatos.github.io/img/icon-192.png"><meta property="og:locale" content="zh-Hans">
   
-    <meta property="og:updated_time" content="2019-09-01T15:39:50&#43;08:00">
+    <meta property="og:updated_time" content="2019-11-15T17:18:05&#43;08:00">
   
+
+  
+
+
+
 
   
 
@@ -316,7 +325,7 @@
     
   
 <div class="universal-wrapper pt-3">
-  <h1 itemprop="name">Posts</h1>
+  <h1>Posts</h1>
 
   
 
@@ -343,24 +352,194 @@
 
 
 
-  
-
-
-
 
 
   
 
 
-<div class="media stream-item" itemscope itemtype="http://schema.org/BlogPosting">
+<div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0" itemprop="name">
-      <a href="/post/python/python_install_on_ubuntu/"  itemprop="url">Ubuntu安装最新版本Python</a>
+    <h3 class="article-title mb-0 mt-0">
+      <a href="/post/hbase_design/" >hbase表设计风格指南</a>
     </h3>
 
     
-    <div class="article-style" itemprop="articleBody">
+    <div class="article-style">
+      目录 简介 一般原则 命名空间(NameSpace) 命名规范 示例 表(Table) 命名规范 示例 行键(Rowkey) 命名规范 示例 注意 慎重将时间戳直接放
+    </div>
+    
+
+    <div class="stream-meta article-metadata">
+
+      
+
+      
+        
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Dec 9, 2018
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    4 阅读时间（分钟）
+  </span>
+  
+
+  
+  
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder mr-1"></i><a href="/categories/database/">DataBase</a></span>
+  
+
+</div>
+
+      
+    </div>
+
+    
+
+  </div>
+  <div class="ml-3">
+    
+    
+  </div>
+</div>
+
+    
+  
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="media stream-item">
+  <div class="media-body">
+
+    <h3 class="article-title mb-0 mt-0">
+      <a href="/post/palantir_intro/" >Palantir一分钟印象</a>
+    </h3>
+
+    
+    <div class="article-style">
+      目录 简介 最新情况 创始人 Peter Thiel Alex Karp (CEO) Joe Lonsdale Stephen Cohen Nathan Gettings 发展历程 产品内容 官方主页： Home | Palantir …
+    </div>
+    
+
+    <div class="stream-meta article-metadata">
+
+      
+
+      
+        
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Dec 5, 2018
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    6 阅读时间（分钟）
+  </span>
+  
+
+  
+  
+  
+
+  
+  
+
+</div>
+
+      
+    </div>
+
+    
+
+  </div>
+  <div class="ml-3">
+    
+    
+  </div>
+</div>
+
+    
+  
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="media stream-item">
+  <div class="media-body">
+
+    <h3 class="article-title mb-0 mt-0">
+      <a href="/post/python/python_install_on_ubuntu/" >Ubuntu安装最新版本Python</a>
+    </h3>
+
+    
+    <div class="article-style">
       添加ppa源： # 死蛇的源 sudo add-apt-repository ppa:deadsnakes/ppa # 或者，jonathonf的源 sudo add-apt-repository ppa:jonathonf/python-3.x 如果提示没 …
     </div>
     
@@ -373,10 +552,6 @@
         
 
 
-
-<meta content="2018-12-01 15:59:04 &#43;0800 CST" itemprop="datePublished">
-<meta content="2018-12-01 15:59:04 &#43;0800 CST" itemprop="dateModified">
-
 <div class="article-metadata">
 
   
@@ -388,7 +563,7 @@
     
       
     
-    <time>Dec 1, 2018</time>
+    Dec 1, 2018
   </span>
   
 
@@ -397,7 +572,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    1 分钟阅读时间
+    1 阅读时间（分钟）
   </span>
   
 
@@ -410,8 +585,6 @@
   <span class="middot-divider"></span>
   <span class="article-categories">
     <i class="fas fa-folder mr-1"></i><a href="/categories/python/">Python</a></span>
-  
-
   
 
 </div>
@@ -442,24 +615,20 @@
 
 
 
-  
-
-
-
 
 
   
 
 
-<div class="media stream-item" itemscope itemtype="http://schema.org/BlogPosting">
+<div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0" itemprop="name">
-      <a href="/post/0x00/"  itemprop="url">欢迎来到氪石实验室</a>
+    <h3 class="article-title mb-0 mt-0">
+      <a href="/post/0x00/" >欢迎来到氪石实验室</a>
     </h3>
 
     
-    <div class="article-style" itemprop="articleBody">
+    <div class="article-style">
       这是我第四次，也可能是我最后一次博客迁移(flag已立←_←)。 从大学时代开始，找个地方写点什么的蠢动心思就没消停过，但是也都消磨在了无关文
     </div>
     
@@ -472,10 +641,6 @@
         
 
 
-
-<meta content="2018-12-01 12:00:24 &#43;0800 CST" itemprop="datePublished">
-<meta content="2018-12-01 12:00:24 &#43;0800 CST" itemprop="dateModified">
-
 <div class="article-metadata">
 
   
@@ -487,7 +652,7 @@
     
       
     
-    <time>Dec 1, 2018</time>
+    Dec 1, 2018
   </span>
   
 
@@ -496,7 +661,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    4 分钟阅读时间
+    4 阅读时间（分钟）
   </span>
   
 
@@ -505,8 +670,6 @@
   
 
   
-  
-
   
 
 </div>
@@ -537,24 +700,20 @@
 
 
 
-  
-
-
-
 
 
   
 
 
-<div class="media stream-item" itemscope itemtype="http://schema.org/BlogPosting">
+<div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0" itemprop="name">
-      <a href="/post/python/unit_testing/"  itemprop="url">python单元测试标准及实现</a>
+    <h3 class="article-title mb-0 mt-0">
+      <a href="/post/python/unit_testing/" >python单元测试标准及实现</a>
     </h3>
 
     
-    <div class="article-style" itemprop="articleBody">
+    <div class="article-style">
       目录 什么是单元测试 为什么要写单元测试 怎么写单元测试 原生测试框架unittest/unittest2 基础 断言 setUp 和 tearDown 缺点 第三方测试框架py.te
     </div>
     
@@ -567,10 +726,6 @@
         
 
 
-
-<meta content="2018-08-20 10:49:50 &#43;0800 CST" itemprop="datePublished">
-<meta content="2018-08-20 10:49:50 &#43;0800 CST" itemprop="dateModified">
-
 <div class="article-metadata">
 
   
@@ -582,7 +737,7 @@
     
       
     
-    <time>Aug 20, 2018</time>
+    Aug 20, 2018
   </span>
   
 
@@ -591,7 +746,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    6 分钟阅读时间
+    6 阅读时间（分钟）
   </span>
   
 
@@ -604,8 +759,6 @@
   <span class="middot-divider"></span>
   <span class="article-categories">
     <i class="fas fa-folder mr-1"></i><a href="/categories/python/">Python</a></span>
-  
-
   
 
 </div>
@@ -636,24 +789,20 @@
 
 
 
-  
-
-
-
 
 
   
 
 
-<div class="media stream-item" itemscope itemtype="http://schema.org/BlogPosting">
+<div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0" itemprop="name">
-      <a href="/post/python/pickled/"  itemprop="url">可序列化类型和多进程PicklingError</a>
+    <h3 class="article-title mb-0 mt-0">
+      <a href="/post/python/pickled/" >可序列化类型和多进程PicklingError</a>
     </h3>
 
     
-    <div class="article-style" itemprop="articleBody">
+    <div class="article-style">
       遇到一个报错： PicklingError: Can't pickle &lt;type 'instancemethod'&gt;: attribute lookup __builtin__.instancemethod failed 当时的情况是想写一个多进程的解析代 …
     </div>
     
@@ -666,10 +815,6 @@
         
 
 
-
-<meta content="2018-03-20 16:16:15 &#43;0800 CST" itemprop="datePublished">
-<meta content="2018-03-20 16:16:15 &#43;0800 CST" itemprop="dateModified">
-
 <div class="article-metadata">
 
   
@@ -681,7 +826,7 @@
     
       
     
-    <time>Mar 20, 2018</time>
+    Mar 20, 2018
   </span>
   
 
@@ -690,7 +835,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    2 分钟阅读时间
+    2 阅读时间（分钟）
   </span>
   
 
@@ -703,8 +848,6 @@
   <span class="middot-divider"></span>
   <span class="article-categories">
     <i class="fas fa-folder mr-1"></i><a href="/categories/python/">Python</a></span>
-  
-
   
 
 </div>
@@ -735,24 +878,20 @@
 
 
 
-  
-
-
-
 
 
   
 
 
-<div class="media stream-item" itemscope itemtype="http://schema.org/BlogPosting">
+<div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0" itemprop="name">
-      <a href="/post/python/unique_list_ordered/"  itemprop="url">列表原序去重性能测试</a>
+    <h3 class="article-title mb-0 mt-0">
+      <a href="/post/python/unique_list_ordered/" >列表原序去重性能测试</a>
     </h3>
 
     
-    <div class="article-style" itemprop="articleBody">
+    <div class="article-style">
       对列表的去重很简单，set()一下再list()回来就可以了，但是如果要保留原始列表的顺序呢？ 举例，对[&quot;b&quot;, &quot;b&quot;, &quot;c&quot;, &quot;a&quot;, &quot;c&quot;,
     </div>
     
@@ -765,10 +904,6 @@
         
 
 
-
-<meta content="2017-09-01 18:08:57 &#43;0800 CST" itemprop="datePublished">
-<meta content="2017-09-01 18:08:57 &#43;0800 CST" itemprop="dateModified">
-
 <div class="article-metadata">
 
   
@@ -780,7 +915,7 @@
     
       
     
-    <time>Sep 1, 2017</time>
+    Sep 1, 2017
   </span>
   
 
@@ -789,7 +924,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    2 分钟阅读时间
+    2 阅读时间（分钟）
   </span>
   
 
@@ -802,8 +937,6 @@
   <span class="middot-divider"></span>
   <span class="article-categories">
     <i class="fas fa-folder mr-1"></i><a href="/categories/python/">Python</a></span>
-  
-
   
 
 </div>
@@ -848,23 +981,23 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
 
       
 
       
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js" integrity="sha256-1zu+3BnLYV9LdiY85uXMzii3bdrkelyp37e0ZyTAQh0=" crossorigin="anonymous"></script>
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/python.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/python.min.js"></script>
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/go.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/go.min.js"></script>
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/javascript.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/javascript.min.js"></script>
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/html.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/html.min.js"></script>
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/r.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/r.min.js"></script>
         
       
 
@@ -873,6 +1006,8 @@
     
 
     
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js" integrity="sha256-EErZamuLefUnbMBQbsEqu1USa+btR2oIlCpBJbyD4/g=" crossorigin="anonymous"></script>
     
 
     
@@ -882,13 +1017,13 @@
 
     
     
+    
+    
+    
+    
     <script>
-      const search_index_filename = "/index.json";
-      const i18n = {
-        'placeholder': "搜索...",
-        'results': "搜索结果",
-        'no_results': "没有找到结果"
-      };
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"没有找到结果","placeholder":"搜索...","results":"搜索结果"};
       const content_type = {
         'post': "文章",
         'project': "项目",
@@ -942,7 +1077,7 @@
     
     
     
-    <script src="/js/academic.min.16bbb3750feb7244c9bc409a5a4fe678.js"></script>
+    <script src="/js/academic.min.d6bd04fdad2ad213aa8111c5a3b72fc5.js"></script>
 
     
 
@@ -951,6 +1086,7 @@
 
 
 
+  
   
   <div class="container">
     <footer class="site-footer">
@@ -965,7 +1101,7 @@
 
     
     <span class="float-right" aria-hidden="true">
-      <a href="#" id="back_to_top">
+      <a href="#" class="back-to-top">
         <span class="button_icon">
           <i class="fas fa-chevron-up fa-2x"></i>
         </span>

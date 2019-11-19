@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.4.0">
+  <meta name="generator" content="Source Themes Academic 4.5.0">
 
   
 
@@ -37,8 +37,6 @@
 
 
   
-
-  
   
   
   <meta name="theme-color" content="#2962ff">
@@ -50,8 +48,8 @@
   
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
 
     
     
@@ -62,13 +60,15 @@
       
       
         
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light">
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
         
       
     
 
     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css" integrity="sha256-SHMGCYmST46SoyGgo4YR/9AlK1vf3ff84Aq9yK4hdqM=" crossorigin="anonymous">
+    
 
     
 
@@ -76,19 +76,23 @@
 
   
   
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono&display=swap">
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
   
 
   
   
   
-  <link rel="stylesheet" href="/css/academic.min.33a9de0011bfb8b4b84638e7b1af0e1e.css">
+  
+  <link rel="stylesheet" href="/css/academic.css">
 
   
 
+
+
+
   
-  
-  
+
 
   
   <link rel="alternate" href="/post/index.xml" type="application/rss+xml" title="Kryptonite Lab">
@@ -116,8 +120,13 @@
   <meta property="og:description" content="Python Knight &amp; Go Padawan"><meta property="og:image" content="https://szthanatos.github.io/img/icon-192.png">
   <meta property="twitter:image" content="https://szthanatos.github.io/img/icon-192.png"><meta property="og:locale" content="zh-Hans">
   
-    <meta property="og:updated_time" content="2019-09-01T15:39:50&#43;08:00">
+    <meta property="og:updated_time" content="2019-11-15T17:18:05&#43;08:00">
   
+
+  
+
+
+
 
   
 
@@ -316,7 +325,7 @@
     
   
 <div class="universal-wrapper pt-3">
-  <h1 itemprop="name">Posts</h1>
+  <h1>Posts</h1>
 
   
 
@@ -343,25 +352,21 @@
 
 
 
-  
-
-
-
 
 
   
 
 
-<div class="media stream-item" itemscope itemtype="http://schema.org/BlogPosting">
+<div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0" itemprop="name">
-      <a href="/post/rancheros/"  itemprop="url">RancherOS初步使用小结</a>
+    <h3 class="article-title mb-0 mt-0">
+      <a href="/post/ssh_speed_up/" >加速ssh连接</a>
     </h3>
 
     
-    <div class="article-style" itemprop="articleBody">
-      目录 介绍 安装 使用 ros ros config ros service 系统服务 docker cloud-config 介绍 RancherOS是Rancher推出的一个轻量级的Linux内核操作系统，专为容器环境而设计。 按
+    <div class="article-style">
+      报错信息 之前运维给做了几台测试服务器，远程连接的时候速度特别慢，ssh之后需要接近1分钟才能连上。 原因 使用ssh -v &lt;服务器&gt; 显示
     </div>
     
 
@@ -372,10 +377,6 @@
       
         
 
-
-
-<meta content="2019-09-01 15:39:50 &#43;0800 CST" itemprop="datePublished">
-<meta content="2019-09-01 15:39:50 &#43;0800 CST" itemprop="dateModified">
 
 <div class="article-metadata">
 
@@ -388,7 +389,7 @@
     
       
     
-    <time>Sep 1, 2019</time>
+    Nov 15, 2019
   </span>
   
 
@@ -397,7 +398,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    7 分钟阅读时间
+    3 阅读时间（分钟）
   </span>
   
 
@@ -407,7 +408,9 @@
 
   
   
-
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder mr-1"></i><a href="/categories/linux/">Linux</a></span>
   
 
 </div>
@@ -438,25 +441,21 @@
 
 
 
-  
-
-
-
 
 
   
 
 
-<div class="media stream-item" itemscope itemtype="http://schema.org/BlogPosting">
+<div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0" itemprop="name">
-      <a href="/post/janusgraph/"  itemprop="url">JanusGraph搭建及简单使用</a>
+    <h3 class="article-title mb-0 mt-0">
+      <a href="/post/rancher_ha/" >基于Rancher HA搭建容器云平台</a>
     </h3>
 
     
-    <div class="article-style" itemprop="articleBody">
-      目录 基本环境 安装 配置 基本用法 加载诸神图 一些基本操作 增操作 删操作 查询 基本环境 底层数据库基于HBase，检索服务基于Elasticserach。
+    <div class="article-style">
+      目录 硬件需求 0. 工具准备 1. 配置Nginx负载均衡 2. 使用RKE安装K8S 3. 初始化helm 4. 配置ca证书 5. 安装rancher 6. 添加主机别名 硬件需求
     </div>
     
 
@@ -467,10 +466,6 @@
       
         
 
-
-
-<meta content="2019-03-17 21:50:19 &#43;0800 CST" itemprop="datePublished">
-<meta content="2019-03-17 21:50:19 &#43;0800 CST" itemprop="dateModified">
 
 <div class="article-metadata">
 
@@ -483,7 +478,7 @@
     
       
     
-    <time>Mar 17, 2019</time>
+    Sep 26, 2019
   </span>
   
 
@@ -492,7 +487,177 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    5 分钟阅读时间
+    5 阅读时间（分钟）
+  </span>
+  
+
+  
+  
+  
+
+  
+  
+
+</div>
+
+      
+    </div>
+
+    
+
+  </div>
+  <div class="ml-3">
+    
+    
+  </div>
+</div>
+
+    
+  
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="media stream-item">
+  <div class="media-body">
+
+    <h3 class="article-title mb-0 mt-0">
+      <a href="/post/rancheros/" >RancherOS初步使用小结</a>
+    </h3>
+
+    
+    <div class="article-style">
+      目录 介绍 安装 使用 ros ros config ros service 系统服务 docker cloud-config 介绍 RancherOS是Rancher推出的一个轻量级的Linux内核操作系统，专为容器环境而设计。 按
+    </div>
+    
+
+    <div class="stream-meta article-metadata">
+
+      
+
+      
+        
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Sep 1, 2019
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    7 阅读时间（分钟）
+  </span>
+  
+
+  
+  
+  
+
+  
+  
+
+</div>
+
+      
+    </div>
+
+    
+
+  </div>
+  <div class="ml-3">
+    
+    
+  </div>
+</div>
+
+    
+  
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="media stream-item">
+  <div class="media-body">
+
+    <h3 class="article-title mb-0 mt-0">
+      <a href="/post/janusgraph/" >JanusGraph搭建及简单使用</a>
+    </h3>
+
+    
+    <div class="article-style">
+      目录 基本环境 安装 配置 基本用法 加载诸神图 一些基本操作 增操作 删操作 查询 基本环境 底层数据库基于HBase，检索服务基于Elasticserach。
+    </div>
+    
+
+    <div class="stream-meta article-metadata">
+
+      
+
+      
+        
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Mar 17, 2019
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    5 阅读时间（分钟）
   </span>
   
 
@@ -507,8 +672,6 @@
     <i class="fas fa-folder mr-1"></i><a href="/categories/kg/">KG</a></span>
   
 
-  
-
 </div>
 
       
@@ -537,24 +700,20 @@
 
 
 
-  
-
-
-
 
 
   
 
 
-<div class="media stream-item" itemscope itemtype="http://schema.org/BlogPosting">
+<div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0" itemprop="name">
-      <a href="/post/git/git_trees/"  itemprop="url">Git三棵树和reset/checkout命令</a>
+    <h3 class="article-title mb-0 mt-0">
+      <a href="/post/git/git_trees/" >Git三棵树和reset/checkout命令</a>
     </h3>
 
     
-    <div class="article-style" itemprop="articleBody">
+    <div class="article-style">
       理解Git没有比从三棵树开始更好的了。 完整的话还是看git文档比较好，说的蛮清楚了。 三棵树和正向流程 树 用途 HEAD 上一次提交的快照，下一次提交的父
     </div>
     
@@ -567,10 +726,6 @@
         
 
 
-
-<meta content="2019-01-05 14:13:21 &#43;0800 CST" itemprop="datePublished">
-<meta content="2019-01-05 14:13:21 &#43;0800 CST" itemprop="dateModified">
-
 <div class="article-metadata">
 
   
@@ -582,7 +737,7 @@
     
       
     
-    <time>Jan 5, 2019</time>
+    Jan 5, 2019
   </span>
   
 
@@ -591,7 +746,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    2 分钟阅读时间
+    2 阅读时间（分钟）
   </span>
   
 
@@ -600,8 +755,6 @@
   
 
   
-  
-
   
 
 </div>
@@ -632,24 +785,20 @@
 
 
 
-  
-
-
-
 
 
   
 
 
-<div class="media stream-item" itemscope itemtype="http://schema.org/BlogPosting">
+<div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0" itemprop="name">
-      <a href="/post/academic/trans_writing_content/"  itemprop="url">(翻译)Academic文档-内容编写</a>
+    <h3 class="article-title mb-0 mt-0">
+      <a href="/post/academic/trans_writing_content/" >(翻译)Academic文档-内容编写</a>
     </h3>
 
     
-    <div class="article-style" itemprop="articleBody">
+    <div class="article-style">
       本文是对Academic文档-Writing content章节的个人翻译，基于个人理解，不保证绝对准确。 原文见上方连接。 目录 副标题 强调 有序列
     </div>
     
@@ -662,10 +811,6 @@
         
 
 
-
-<meta content="2019-01-01 12:54:29 &#43;0800 CST" itemprop="datePublished">
-<meta content="2019-01-01 12:54:29 &#43;0800 CST" itemprop="dateModified">
-
 <div class="article-metadata">
 
   
@@ -677,7 +822,7 @@
     
       
     
-    <time>Jan 1, 2019</time>
+    Jan 1, 2019
   </span>
   
 
@@ -686,7 +831,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    8 分钟阅读时间
+    8 阅读时间（分钟）
   </span>
   
 
@@ -699,8 +844,6 @@
   <span class="middot-divider"></span>
   <span class="article-categories">
     <i class="fas fa-folder mr-1"></i><a href="/categories/academic/">Academic</a>, <a href="/categories/hugo/">Hugo</a></span>
-  
-
   
 
 </div>
@@ -731,24 +874,20 @@
 
 
 
-  
-
-
-
 
 
   
 
 
-<div class="media stream-item" itemscope itemtype="http://schema.org/BlogPosting">
+<div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0" itemprop="name">
-      <a href="/post/academic/trans_managing_content/"  itemprop="url">(翻译)Academic文档-内容管理</a>
+    <h3 class="article-title mb-0 mt-0">
+      <a href="/post/academic/trans_managing_content/" >(翻译)Academic文档-内容管理</a>
     </h3>
 
     
-    <div class="article-style" itemprop="articleBody">
+    <div class="article-style">
       本文是对Academic文档-Managing content章节的个人翻译，基于个人理解，不保证绝对准确。 原文见上方连接。 目录 精选图片 标题图
     </div>
     
@@ -761,10 +900,6 @@
         
 
 
-
-<meta content="2019-01-01 12:54:11 &#43;0800 CST" itemprop="datePublished">
-<meta content="2019-01-01 12:54:11 &#43;0800 CST" itemprop="dateModified">
-
 <div class="article-metadata">
 
   
@@ -776,7 +911,7 @@
     
       
     
-    <time>Jan 1, 2019</time>
+    Jan 1, 2019
   </span>
   
 
@@ -785,7 +920,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    9 分钟阅读时间
+    9 阅读时间（分钟）
   </span>
   
 
@@ -800,8 +935,6 @@
     <i class="fas fa-folder mr-1"></i><a href="/categories/academic/">Academic</a>, <a href="/categories/hugo/">Hugo</a></span>
   
 
-  
-
 </div>
 
       
@@ -830,24 +963,20 @@
 
 
 
-  
-
-
-
 
 
   
 
 
-<div class="media stream-item" itemscope itemtype="http://schema.org/BlogPosting">
+<div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0" itemprop="name">
-      <a href="/post/tmux/"  itemprop="url">Tmux in 10 minutes</a>
+    <h3 class="article-title mb-0 mt-0">
+      <a href="/post/tmux/" >Tmux in 10 minutes</a>
     </h3>
 
     
-    <div class="article-style" itemprop="articleBody">
+    <div class="article-style">
       目录 简介 安装tmux 基础概念 配置 常用控制 会话 窗口 窗格 tpm插件 鼠标操作 简介 Tmux是一个终端复用软件，默认的Linux终端一个会话只能干一件
     </div>
     
@@ -860,10 +989,6 @@
         
 
 
-
-<meta content="2019-01-01 12:27:05 &#43;0800 CST" itemprop="datePublished">
-<meta content="2019-01-01 12:27:05 &#43;0800 CST" itemprop="dateModified">
-
 <div class="article-metadata">
 
   
@@ -875,7 +1000,7 @@
     
       
     
-    <time>Jan 1, 2019</time>
+    Jan 1, 2019
   </span>
   
 
@@ -884,7 +1009,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    4 分钟阅读时间
+    4 阅读时间（分钟）
   </span>
   
 
@@ -893,8 +1018,6 @@
   
 
   
-  
-
   
 
 </div>
@@ -925,24 +1048,20 @@
 
 
 
-  
-
-
-
 
 
   
 
 
-<div class="media stream-item" itemscope itemtype="http://schema.org/BlogPosting">
+<div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0" itemprop="name">
-      <a href="/post/git/git_tips/"  itemprop="url">Git Tips</a>
+    <h3 class="article-title mb-0 mt-0">
+      <a href="/post/git/git_tips/" >Git Tips</a>
     </h3>
 
     
-    <div class="article-style" itemprop="articleBody">
+    <div class="article-style">
       目录 Deploy key/SSH key(github) 更换git协议 强制覆盖本地文件 撤销修改 add之前撤销 commit之前撤销 push之前撤销 删除历史提交记录 忽略文件权限 Deploy key/SSH key(github) Deploy key
     </div>
     
@@ -955,10 +1074,6 @@
         
 
 
-
-<meta content="2018-12-14 09:35:32 &#43;0800 CST" itemprop="datePublished">
-<meta content="2018-12-14 09:35:32 &#43;0800 CST" itemprop="dateModified">
-
 <div class="article-metadata">
 
   
@@ -970,7 +1085,7 @@
     
       
     
-    <time>Dec 14, 2018</time>
+    Dec 14, 2018
   </span>
   
 
@@ -979,7 +1094,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    2 分钟阅读时间
+    2 阅读时间（分钟）
   </span>
   
 
@@ -988,8 +1103,6 @@
   
 
   
-  
-
   
 
 </div>
@@ -1020,24 +1133,20 @@
 
 
 
-  
-
-
-
 
 
   
 
 
-<div class="media stream-item" itemscope itemtype="http://schema.org/BlogPosting">
+<div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0" itemprop="name">
-      <a href="/post/academic/academic_in_practice/"  itemprop="url">Academic实现Github Page个人博客</a>
+    <h3 class="article-title mb-0 mt-0">
+      <a href="/post/academic/academic_in_practice/" >Academic实现Github Page个人博客</a>
     </h3>
 
     
-    <div class="article-style" itemprop="articleBody">
+    <div class="article-style">
       目录 Hugo 安装/更新 安装/更新 常用命令 Academic 安装/更新 通过Netlify 通过Git 安装 自动更新 手动更新 部署到Github Pages 原理 官方教程(缩减版) 脚本
     </div>
     
@@ -1050,10 +1159,6 @@
         
 
 
-
-<meta content="2018-12-09 16:34:42 &#43;0800 CST" itemprop="datePublished">
-<meta content="2018-12-09 16:34:42 &#43;0800 CST" itemprop="dateModified">
-
 <div class="article-metadata">
 
   
@@ -1065,7 +1170,7 @@
     
       
     
-    <time>Dec 9, 2018</time>
+    Dec 9, 2018
   </span>
   
 
@@ -1074,7 +1179,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    9 分钟阅读时间
+    9 阅读时间（分钟）
   </span>
   
 
@@ -1083,202 +1188,6 @@
   
 
   
-  
-
-  
-
-</div>
-
-      
-    </div>
-
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-  </div>
-</div>
-
-    
-  
-    
-      
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-<div class="media stream-item" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="media-body">
-
-    <h3 class="article-title mb-0 mt-0" itemprop="name">
-      <a href="/post/hbase_design/"  itemprop="url">hbase表设计风格指南</a>
-    </h3>
-
-    
-    <div class="article-style" itemprop="articleBody">
-      目录 简介 一般原则 命名空间(NameSpace) 命名规范 示例 表(Table) 命名规范 示例 行键(Rowkey) 命名规范 示例 注意 慎重将时间戳直接放
-    </div>
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-
-      
-        
-
-
-
-<meta content="2018-12-09 16:19:27 &#43;0800 CST" itemprop="datePublished">
-<meta content="2018-12-09 16:19:27 &#43;0800 CST" itemprop="dateModified">
-
-<div class="article-metadata">
-
-  
-  
-
-  
-  <span class="article-date">
-    
-    
-      
-    
-    <time>Dec 9, 2018</time>
-  </span>
-  
-
-  
-
-  
-  <span class="middot-divider"></span>
-  <span class="article-reading-time">
-    4 分钟阅读时间
-  </span>
-  
-
-  
-  
-  
-
-  
-  
-  <span class="middot-divider"></span>
-  <span class="article-categories">
-    <i class="fas fa-folder mr-1"></i><a href="/categories/database/">DataBase</a></span>
-  
-
-  
-
-</div>
-
-      
-    </div>
-
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-  </div>
-</div>
-
-    
-  
-    
-      
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-<div class="media stream-item" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="media-body">
-
-    <h3 class="article-title mb-0 mt-0" itemprop="name">
-      <a href="/post/palantir_intro/"  itemprop="url">Palantir一分钟印象</a>
-    </h3>
-
-    
-    <div class="article-style" itemprop="articleBody">
-      目录 简介 最新情况 创始人 Peter Thiel Alex Karp (CEO) Joe Lonsdale Stephen Cohen Nathan Gettings 发展历程 产品内容 官方主页： Home | Palantir …
-    </div>
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-
-      
-        
-
-
-
-<meta content="2018-12-05 17:09:21 &#43;0800 CST" itemprop="datePublished">
-<meta content="2018-12-05 17:09:21 &#43;0800 CST" itemprop="dateModified">
-
-<div class="article-metadata">
-
-  
-  
-
-  
-  <span class="article-date">
-    
-    
-      
-    
-    <time>Dec 5, 2018</time>
-  </span>
-  
-
-  
-
-  
-  <span class="middot-divider"></span>
-  <span class="article-reading-time">
-    6 分钟阅读时间
-  </span>
-  
-
-  
-  
-  
-
-  
-  
-
   
 
 </div>
@@ -1323,23 +1232,23 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
 
       
 
       
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js" integrity="sha256-1zu+3BnLYV9LdiY85uXMzii3bdrkelyp37e0ZyTAQh0=" crossorigin="anonymous"></script>
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/python.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/python.min.js"></script>
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/go.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/go.min.js"></script>
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/javascript.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/javascript.min.js"></script>
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/html.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/html.min.js"></script>
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/r.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/r.min.js"></script>
         
       
 
@@ -1348,6 +1257,8 @@
     
 
     
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js" integrity="sha256-EErZamuLefUnbMBQbsEqu1USa+btR2oIlCpBJbyD4/g=" crossorigin="anonymous"></script>
     
 
     
@@ -1357,13 +1268,13 @@
 
     
     
+    
+    
+    
+    
     <script>
-      const search_index_filename = "/index.json";
-      const i18n = {
-        'placeholder': "搜索...",
-        'results': "搜索结果",
-        'no_results': "没有找到结果"
-      };
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"没有找到结果","placeholder":"搜索...","results":"搜索结果"};
       const content_type = {
         'post': "文章",
         'project': "项目",
@@ -1417,7 +1328,7 @@
     
     
     
-    <script src="/js/academic.min.16bbb3750feb7244c9bc409a5a4fe678.js"></script>
+    <script src="/js/academic.min.d6bd04fdad2ad213aa8111c5a3b72fc5.js"></script>
 
     
 
@@ -1426,6 +1337,7 @@
 
 
 
+  
   
   <div class="container">
     <footer class="site-footer">
@@ -1440,7 +1352,7 @@
 
     
     <span class="float-right" aria-hidden="true">
-      <a href="#" id="back_to_top">
+      <a href="#" class="back-to-top">
         <span class="button_icon">
           <i class="fas fa-chevron-up fa-2x"></i>
         </span>

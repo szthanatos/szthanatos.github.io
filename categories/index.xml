@@ -5,12 +5,20 @@
     <link>https://szthanatos.github.io/categories/</link>
       <atom:link href="https://szthanatos.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <description>Categories</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh-Hans</language><lastBuildDate>Sun, 17 Mar 2019 21:50:19 +0800</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh-Hans</language><lastBuildDate>Fri, 15 Nov 2019 17:18:05 +0800</lastBuildDate>
     <image>
       <url>https://szthanatos.github.io/img/icon-192.png</url>
       <title>Categories</title>
       <link>https://szthanatos.github.io/categories/</link>
     </image>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://szthanatos.github.io/categories/linux/</link>
+      <pubDate>Fri, 15 Nov 2019 17:18:05 +0800</pubDate>
+      <guid>https://szthanatos.github.io/categories/linux/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>KG</title>

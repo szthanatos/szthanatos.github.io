@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.4.0">
+  <meta name="generator" content="Source Themes Academic 4.5.0">
 
   
 
@@ -37,8 +37,6 @@
 
 
   
-
-  
   
   
   <meta name="theme-color" content="#2962ff">
@@ -50,8 +48,8 @@
   
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
 
     
     
@@ -62,13 +60,15 @@
       
       
         
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light">
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
         
       
     
 
     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css" integrity="sha256-SHMGCYmST46SoyGgo4YR/9AlK1vf3ff84Aq9yK4hdqM=" crossorigin="anonymous">
+    
 
     
 
@@ -76,19 +76,23 @@
 
   
   
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono&display=swap">
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
   
 
   
   
   
-  <link rel="stylesheet" href="/css/academic.min.33a9de0011bfb8b4b84638e7b1af0e1e.css">
+  
+  <link rel="stylesheet" href="/css/academic.css">
 
   
 
+
+
+
   
-  
-  
+
 
   
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Kryptonite Lab">
@@ -116,8 +120,27 @@
   <meta property="og:description" content="Python Knight &amp; Go Padawan"><meta property="og:image" content="https://szthanatos.github.io/img/icon-192.png">
   <meta property="twitter:image" content="https://szthanatos.github.io/img/icon-192.png"><meta property="og:locale" content="zh-Hans">
   
-    <meta property="og:updated_time" content="2019-09-01T15:39:50&#43;08:00">
+    <meta property="og:updated_time" content="2019-11-15T17:18:05&#43;08:00">
   
+
+  
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://szthanatos.github.io/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  },
+  "url": "https://szthanatos.github.io/"
+}
+</script>
+
+
+  
+
 
   
 
@@ -298,6 +321,15 @@
   
 
 
+
+
+
+
+
+
+
+
+
 <span class="js-widget-page d-none"></span>
 
 
@@ -354,7 +386,7 @@
   <div class="col-md-6 order-md-1 text-center text-md-left">
 
 
-    <h1 class="hero-title" itemprop="headline">
+    <h1 class="hero-title">
       氪石实验室
     </h1>
 
@@ -483,25 +515,21 @@
 
 
 
-  
-
-
-
 
 
   
 
 
-<div class="media stream-item" itemscope itemtype="http://schema.org/BlogPosting">
+<div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0" itemprop="name">
-      <a href="/post/rancheros/"  itemprop="url">RancherOS初步使用小结</a>
+    <h3 class="article-title mb-0 mt-0">
+      <a href="/post/ssh_speed_up/" >加速ssh连接</a>
     </h3>
 
     
-    <div class="article-style" itemprop="articleBody">
-      目录 介绍 安装 使用 ros ros config ros service 系统服务 docker cloud-config 介绍 RancherOS是Rancher推出的一个轻量级的Linux内核操作系统，专为容器环境而设计。 按
+    <div class="article-style">
+      报错信息 之前运维给做了几台测试服务器，远程连接的时候速度特别慢，ssh之后需要接近1分钟才能连上。 原因 使用ssh -v &lt;服务器&gt; 显示
     </div>
     
 
@@ -512,10 +540,6 @@
       
         
 
-
-
-<meta content="2019-09-01 15:39:50 &#43;0800 CST" itemprop="datePublished">
-<meta content="2019-09-01 15:39:50 &#43;0800 CST" itemprop="dateModified">
 
 <div class="article-metadata">
 
@@ -528,7 +552,7 @@
     
       
     
-    <time>Sep 1, 2019</time>
+    Nov 15, 2019
   </span>
   
 
@@ -537,7 +561,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    7 分钟阅读时间
+    3 阅读时间（分钟）
   </span>
   
 
@@ -547,7 +571,9 @@
 
   
   
-
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder mr-1"></i><a href="/categories/linux/">Linux</a></span>
   
 
 </div>
@@ -578,25 +604,21 @@
 
 
 
-  
-
-
-
 
 
   
 
 
-<div class="media stream-item" itemscope itemtype="http://schema.org/BlogPosting">
+<div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0" itemprop="name">
-      <a href="/post/janusgraph/"  itemprop="url">JanusGraph搭建及简单使用</a>
+    <h3 class="article-title mb-0 mt-0">
+      <a href="/post/rancher_ha/" >基于Rancher HA搭建容器云平台</a>
     </h3>
 
     
-    <div class="article-style" itemprop="articleBody">
-      目录 基本环境 安装 配置 基本用法 加载诸神图 一些基本操作 增操作 删操作 查询 基本环境 底层数据库基于HBase，检索服务基于Elasticserach。
+    <div class="article-style">
+      目录 硬件需求 0. 工具准备 1. 配置Nginx负载均衡 2. 使用RKE安装K8S 3. 初始化helm 4. 配置ca证书 5. 安装rancher 6. 添加主机别名 硬件需求
     </div>
     
 
@@ -607,10 +629,6 @@
       
         
 
-
-
-<meta content="2019-03-17 21:50:19 &#43;0800 CST" itemprop="datePublished">
-<meta content="2019-03-17 21:50:19 &#43;0800 CST" itemprop="dateModified">
 
 <div class="article-metadata">
 
@@ -623,7 +641,7 @@
     
       
     
-    <time>Mar 17, 2019</time>
+    Sep 26, 2019
   </span>
   
 
@@ -632,7 +650,177 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    5 分钟阅读时间
+    5 阅读时间（分钟）
+  </span>
+  
+
+  
+  
+  
+
+  
+  
+
+</div>
+
+      
+    </div>
+
+    
+
+  </div>
+  <div class="ml-3">
+    
+    
+  </div>
+</div>
+
+      
+    
+      
+        
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="media stream-item">
+  <div class="media-body">
+
+    <h3 class="article-title mb-0 mt-0">
+      <a href="/post/rancheros/" >RancherOS初步使用小结</a>
+    </h3>
+
+    
+    <div class="article-style">
+      目录 介绍 安装 使用 ros ros config ros service 系统服务 docker cloud-config 介绍 RancherOS是Rancher推出的一个轻量级的Linux内核操作系统，专为容器环境而设计。 按
+    </div>
+    
+
+    <div class="stream-meta article-metadata">
+
+      
+
+      
+        
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Sep 1, 2019
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    7 阅读时间（分钟）
+  </span>
+  
+
+  
+  
+  
+
+  
+  
+
+</div>
+
+      
+    </div>
+
+    
+
+  </div>
+  <div class="ml-3">
+    
+    
+  </div>
+</div>
+
+      
+    
+      
+        
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="media stream-item">
+  <div class="media-body">
+
+    <h3 class="article-title mb-0 mt-0">
+      <a href="/post/janusgraph/" >JanusGraph搭建及简单使用</a>
+    </h3>
+
+    
+    <div class="article-style">
+      目录 基本环境 安装 配置 基本用法 加载诸神图 一些基本操作 增操作 删操作 查询 基本环境 底层数据库基于HBase，检索服务基于Elasticserach。
+    </div>
+    
+
+    <div class="stream-meta article-metadata">
+
+      
+
+      
+        
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Mar 17, 2019
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    5 阅读时间（分钟）
   </span>
   
 
@@ -647,8 +835,6 @@
     <i class="fas fa-folder mr-1"></i><a href="/categories/kg/">KG</a></span>
   
 
-  
-
 </div>
 
       
@@ -677,24 +863,20 @@
 
 
 
-  
-
-
-
 
 
   
 
 
-<div class="media stream-item" itemscope itemtype="http://schema.org/BlogPosting">
+<div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0" itemprop="name">
-      <a href="/post/git/git_trees/"  itemprop="url">Git三棵树和reset/checkout命令</a>
+    <h3 class="article-title mb-0 mt-0">
+      <a href="/post/git/git_trees/" >Git三棵树和reset/checkout命令</a>
     </h3>
 
     
-    <div class="article-style" itemprop="articleBody">
+    <div class="article-style">
       理解Git没有比从三棵树开始更好的了。 完整的话还是看git文档比较好，说的蛮清楚了。 三棵树和正向流程 树 用途 HEAD 上一次提交的快照，下一次提交的父
     </div>
     
@@ -707,10 +889,6 @@
         
 
 
-
-<meta content="2019-01-05 14:13:21 &#43;0800 CST" itemprop="datePublished">
-<meta content="2019-01-05 14:13:21 &#43;0800 CST" itemprop="dateModified">
-
 <div class="article-metadata">
 
   
@@ -722,7 +900,7 @@
     
       
     
-    <time>Jan 5, 2019</time>
+    Jan 5, 2019
   </span>
   
 
@@ -731,7 +909,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    2 分钟阅读时间
+    2 阅读时间（分钟）
   </span>
   
 
@@ -740,206 +918,6 @@
   
 
   
-  
-
-  
-
-</div>
-
-      
-    </div>
-
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-  </div>
-</div>
-
-      
-    
-      
-        
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-<div class="media stream-item" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="media-body">
-
-    <h3 class="article-title mb-0 mt-0" itemprop="name">
-      <a href="/post/academic/trans_writing_content/"  itemprop="url">(翻译)Academic文档-内容编写</a>
-    </h3>
-
-    
-    <div class="article-style" itemprop="articleBody">
-      本文是对Academic文档-Writing content章节的个人翻译，基于个人理解，不保证绝对准确。 原文见上方连接。 目录 副标题 强调 有序列
-    </div>
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-
-      
-        
-
-
-
-<meta content="2019-01-01 12:54:29 &#43;0800 CST" itemprop="datePublished">
-<meta content="2019-01-01 12:54:29 &#43;0800 CST" itemprop="dateModified">
-
-<div class="article-metadata">
-
-  
-  
-
-  
-  <span class="article-date">
-    
-    
-      
-    
-    <time>Jan 1, 2019</time>
-  </span>
-  
-
-  
-
-  
-  <span class="middot-divider"></span>
-  <span class="article-reading-time">
-    8 分钟阅读时间
-  </span>
-  
-
-  
-  
-  
-
-  
-  
-  <span class="middot-divider"></span>
-  <span class="article-categories">
-    <i class="fas fa-folder mr-1"></i><a href="/categories/academic/">Academic</a>, <a href="/categories/hugo/">Hugo</a></span>
-  
-
-  
-
-</div>
-
-      
-    </div>
-
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-  </div>
-</div>
-
-      
-    
-      
-        
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-<div class="media stream-item" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="media-body">
-
-    <h3 class="article-title mb-0 mt-0" itemprop="name">
-      <a href="/post/academic/trans_managing_content/"  itemprop="url">(翻译)Academic文档-内容管理</a>
-    </h3>
-
-    
-    <div class="article-style" itemprop="articleBody">
-      本文是对Academic文档-Managing content章节的个人翻译，基于个人理解，不保证绝对准确。 原文见上方连接。 目录 精选图片 标题图
-    </div>
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-
-      
-        
-
-
-
-<meta content="2019-01-01 12:54:11 &#43;0800 CST" itemprop="datePublished">
-<meta content="2019-01-01 12:54:11 &#43;0800 CST" itemprop="dateModified">
-
-<div class="article-metadata">
-
-  
-  
-
-  
-  <span class="article-date">
-    
-    
-      
-    
-    <time>Jan 1, 2019</time>
-  </span>
-  
-
-  
-
-  
-  <span class="middot-divider"></span>
-  <span class="article-reading-time">
-    9 分钟阅读时间
-  </span>
-  
-
-  
-  
-  
-
-  
-  
-  <span class="middot-divider"></span>
-  <span class="article-categories">
-    <i class="fas fa-folder mr-1"></i><a href="/categories/academic/">Academic</a>, <a href="/categories/hugo/">Hugo</a></span>
-  
-
   
 
 </div>
@@ -1009,6 +987,21 @@
       
 
 
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
 <div class="row">
   <div class="col-12 col-lg-4 section-heading">
     <h1>Popular Topics</h1>
@@ -1018,8 +1011,6 @@
     
 
     
-      
-      
 
       
       
@@ -1032,92 +1023,97 @@
           
           
           
-          <a href="/tags/academic/" style="font-size:1.65rem">Academic</a>
+          <a href="/tags/academic/" style="font-size:2rem">Academic</a>
         
           
           
           
-          <a href="/tags/benchmark/" style="font-size:0.8rem">benchmark</a>
+          <a href="/tags/benchmark/" style="font-size:0.7rem">benchmark</a>
         
           
           
           
-          <a href="/tags/git/" style="font-size:1.65rem">Git</a>
+          <a href="/tags/git/" style="font-size:2rem">Git</a>
         
           
           
           
-          <a href="/tags/graphdb/" style="font-size:0.8rem">graphdb</a>
+          <a href="/tags/graphdb/" style="font-size:0.7rem">graphdb</a>
         
           
           
           
-          <a href="/tags/hbase/" style="font-size:0.8rem">HBase</a>
+          <a href="/tags/hbase/" style="font-size:0.7rem">HBase</a>
         
           
           
           
-          <a href="/tags/hugo/" style="font-size:2.1472181256129828rem">Hugo</a>
+          <a href="/tags/hugo/" style="font-size:2.7604512509375025rem">Hugo</a>
         
           
           
           
-          <a href="/tags/janusgraph/" style="font-size:0.8rem">janusgraph</a>
+          <a href="/tags/janusgraph/" style="font-size:0.7rem">janusgraph</a>
         
           
           
           
-          <a href="/tags/knowledge-graph/" style="font-size:0.8rem">knowledge graph</a>
+          <a href="/tags/knowledge-graph/" style="font-size:0.7rem">knowledge graph</a>
         
           
           
           
-          <a href="/tags/list/" style="font-size:0.8rem">list</a>
+          <a href="/tags/list/" style="font-size:0.7rem">list</a>
         
           
           
           
-          <a href="/tags/os/" style="font-size:0.8rem">os</a>
+          <a href="/tags/os/" style="font-size:0.7rem">os</a>
         
           
           
           
-          <a href="/tags/picklingerror/" style="font-size:0.8rem">PicklingError</a>
+          <a href="/tags/picklingerror/" style="font-size:0.7rem">PicklingError</a>
         
           
           
           
-          <a href="/tags/rancher/" style="font-size:0.8rem">rancher</a>
+          <a href="/tags/rancher/" style="font-size:2rem">rancher</a>
         
           
           
           
-          <a href="/tags/tmux/" style="font-size:0.8rem">Tmux</a>
+          <a href="/tags/ssh/" style="font-size:0.7rem">ssh</a>
         
           
           
           
-          <a href="/tags/translation/" style="font-size:1.65rem">Translation</a>
+          <a href="/tags/tmux/" style="font-size:0.7rem">Tmux</a>
         
           
           
           
-          <a href="/tags/ubuntu/" style="font-size:0.8rem">Ubuntu</a>
+          <a href="/tags/translation/" style="font-size:2rem">Translation</a>
         
           
           
           
-          <a href="/tags/unit-testing/" style="font-size:0.8rem">unit testing</a>
+          <a href="/tags/ubuntu/" style="font-size:0.7rem">Ubuntu</a>
         
           
           
           
-          <a href="/tags/%E5%A4%9A%E8%BF%9B%E7%A8%8B/" style="font-size:0.8rem">多进程</a>
+          <a href="/tags/unit-testing/" style="font-size:0.7rem">unit testing</a>
         
           
           
           
-          <a href="/tags/%E5%BA%8F%E5%88%97%E5%8C%96/" style="font-size:0.8rem">序列化</a>
+          <a href="/tags/%E5%A4%9A%E8%BF%9B%E7%A8%8B/" style="font-size:0.7rem">多进程</a>
+        
+          
+          
+          
+          <a href="/tags/%E5%BA%8F%E5%88%97%E5%8C%96/" style="font-size:0.7rem">序列化</a>
         
       </div>
     
@@ -1165,6 +1161,7 @@
 
 
 
+
 <div class="row contact-widget">
   <div class="col-12 col-lg-4 section-heading">
     <h1>Contact</h1>
@@ -1200,29 +1197,43 @@
     </div>
     
 
-    <ul class="fa-ul" itemscope>
+    <ul class="fa-ul">
 
       
 
       
       <li>
         <i class="fa-li fas fa-phone fa-2x" aria-hidden="true"></i>
-        <span id="person-telephone" itemprop="telephone"><a href="tel:888%20888%2088%2088">888 888 88 88</a></span>
+        <span id="person-telephone"><a href="tel:888%20888%2088%2088">888 888 88 88</a></span>
       </li>
       
 
       
+      
+        
+        
+        
+        
+        
+        
+        
+        <li>
+          <i class="fa-li fas fa-map-marker fa-2x" aria-hidden="true"></i>
+          <span id="person-address">Wayne Manor B3, 1007 Mountain Drive, Gotham, NJ, 12345, United States</span>
+        </li>
+      
+
+      
       <li>
-        <i class="fa-li fas fa-map-marker fa-2x" aria-hidden="true"></i>
-        <span id="person-address" itemprop="address">Wayne Manor B3, 1007 Mountain Drive, Gotham, NJ 12345, USA</span>
+        <i class="fa-li fas fa-compass fa-2x" aria-hidden="true"></i>
+        <span>Enter Building 1 and take the stairs to Office 200 on Floor 2</span>
       </li>
       
 
       
       <li>
         <i class="fa-li fas fa-clock fa-2x" aria-hidden="true"></i>
-        <span>Monday 10:00 to 13:00<br>
-                  Wednesday 09:00 to 10:00</span>
+        <span>Monday 10:00 to 13:00<br>Wednesday 09:00 to 10:00</span>
       </li>
       
 
@@ -1233,6 +1244,16 @@
 
     </ul>
 
+    
+    <div class="d-none">
+      <input id="map-provider" value="2">
+      <input id="map-lat" value="37.4275">
+      <input id="map-lng" value="-122.1697">
+      <input id="map-dir" value="Wayne Manor B3, 1007 Mountain Drive, Gotham, NJ, 12345, United States">
+      <input id="map-zoom" value="15">
+      <input id="map-api-key" value="">
+    </div>
+    <div id="map"></div>
     
 
   </div>
@@ -1254,23 +1275,23 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
 
       
 
       
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js" integrity="sha256-1zu+3BnLYV9LdiY85uXMzii3bdrkelyp37e0ZyTAQh0=" crossorigin="anonymous"></script>
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/python.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/python.min.js"></script>
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/go.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/go.min.js"></script>
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/javascript.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/javascript.min.js"></script>
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/html.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/html.min.js"></script>
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/r.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/r.min.js"></script>
         
       
 
@@ -1279,6 +1300,8 @@
     
 
     
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js" integrity="sha256-EErZamuLefUnbMBQbsEqu1USa+btR2oIlCpBJbyD4/g=" crossorigin="anonymous"></script>
     
 
     
@@ -1288,13 +1311,13 @@
 
     
     
+    
+    
+    
+    
     <script>
-      const search_index_filename = "/index.json";
-      const i18n = {
-        'placeholder': "搜索...",
-        'results': "搜索结果",
-        'no_results': "没有找到结果"
-      };
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"没有找到结果","placeholder":"搜索...","results":"搜索结果"};
       const content_type = {
         'post': "文章",
         'project': "项目",
@@ -1348,7 +1371,7 @@
     
     
     
-    <script src="/js/academic.min.16bbb3750feb7244c9bc409a5a4fe678.js"></script>
+    <script src="/js/academic.min.d6bd04fdad2ad213aa8111c5a3b72fc5.js"></script>
 
     
 
@@ -1357,6 +1380,7 @@
 
 
 
+  
   
   <div class="container">
     <footer class="site-footer">
@@ -1371,7 +1395,7 @@
 
     
     <span class="float-right" aria-hidden="true">
-      <a href="#" id="back_to_top">
+      <a href="#" class="back-to-top">
         <span class="button_icon">
           <i class="fas fa-chevron-up fa-2x"></i>
         </span>
