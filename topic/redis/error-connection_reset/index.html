@@ -196,7 +196,7 @@
 
       
       
-      <ul class="navbar-nav mr-auto">
+      <ul class="navbar-nav ml-auto">
         
 
         
@@ -279,9 +279,6 @@
         
         
 
-      
-      </ul>
-      <ul class="navbar-nav ml-auto">
       
 
         
@@ -405,14 +402,11 @@
       </ul>
 
       <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#报错信息">报错信息</a></li>
-<li><a href="#原因">原因</a></li>
-<li><a href="#解决办法">解决办法</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#heading">报错信息</a></li>
+    <li><a href="#heading-1">原因</a></li>
+    <li><a href="#heading-2">解决办法</a></li>
+  </ul>
 </nav>
 
       
@@ -427,20 +421,13 @@
           <h1>解决 Error connection reset by peer</h1>
 
           <div class="article-style">
-            
-
-<h2 id="报错信息">报错信息</h2>
-
+            <h2 id="heading">报错信息</h2>
 <blockquote>
 <p>Error: Connection reset by peer</p>
 </blockquote>
-
-<h2 id="原因">原因</h2>
-
+<h2 id="heading-1">原因</h2>
 <p>读写操作发生在连接断开后。</p>
-
-<h2 id="解决办法">解决办法</h2>
-
+<h2 id="heading-2">解决办法</h2>
 <ol>
 <li>用<code>info</code>/<code>cluster info</code>命令检查连接数是否过多</li>
 <li>检查redis-server是否正确监听配置文件</li>

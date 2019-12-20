@@ -196,7 +196,7 @@
 
       
       
-      <ul class="navbar-nav mr-auto">
+      <ul class="navbar-nav ml-auto">
         
 
         
@@ -279,9 +279,6 @@
         
         
 
-      
-      </ul>
-      <ul class="navbar-nav ml-auto">
       
 
         
@@ -405,18 +402,16 @@
       </ul>
 
       <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#报错信息">报错信息</a></li>
-<li><a href="#原因">原因</a></li>
-<li><a href="#解决办法">解决办法</a>
-<ul>
-<li><a href="#解决rdb保存问题">解决rdb保存问题</a></li>
-<li><a href="#临时-解决无法写入问题">(临时)解决无法写入问题</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#heading">报错信息</a></li>
+    <li><a href="#heading-1">原因</a></li>
+    <li><a href="#heading-2">解决办法</a>
+      <ul>
+        <li><a href="#rdb">解决rdb保存问题</a></li>
+        <li><a href="#heading-3">(临时)解决无法写入问题</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
 
       
@@ -431,24 +426,15 @@
           <h1>解决 not able to persist on disk</h1>
 
           <div class="article-style">
-            
-
-<h2 id="报错信息">报错信息</h2>
-
+            <h2 id="heading">报错信息</h2>
 <blockquote>
 <p>MISCONF Redis is configured to save RDB snapshots, but it is currently not able to persist on disk.</p>
 </blockquote>
-
-<h2 id="原因">原因</h2>
-
+<h2 id="heading-1">原因</h2>
 <p>绝大多数情况是写磁盘写满了，并且redis默认<code>stop-writes-on-bgsave-error</code>配置为<code>yes</code>，无法正确的存储rdb文件的时候也就拒绝客户端的请求了。</p>
-
-<h2 id="解决办法">解决办法</h2>
-
-<h3 id="解决rdb保存问题">解决rdb保存问题</h3>
-
+<h2 id="heading-2">解决办法</h2>
+<h3 id="rdb">解决rdb保存问题</h3>
 <p>有重要数据的时候不能直接清空重来，先检查磁盘空间是否足够，然后指定一个新的rdb文件，重新<code>bgsave</code>：</p>
-
 <pre><code class="language-bash"># 1. 更改工作目录位置
 CONFIG SET dir /tmp/some/directory/other/than/var
 
@@ -458,13 +444,9 @@ CONFIG SET dbfilename temp.rdb
 # 3. 保存新的rdb文件
 BGSAVE
 </code></pre>
-
 <p>以上修改会在重启redis后失效，根据实际情况处理吧。</p>
-
-<h3 id="临时-解决无法写入问题">(临时)解决无法写入问题</h3>
-
+<h3 id="heading-3">(临时)解决无法写入问题</h3>
 <p>关闭rdb保存失败拒绝写入的功能：</p>
-
 <pre><code class="language-bash">config set stop-writes-on-bgsave-error no
 </code></pre>
 

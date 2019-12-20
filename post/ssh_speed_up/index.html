@@ -241,7 +241,7 @@
 
       
       
-      <ul class="navbar-nav mr-auto">
+      <ul class="navbar-nav ml-auto">
         
 
         
@@ -324,9 +324,6 @@
         
         
 
-      
-      </ul>
-      <ul class="navbar-nav ml-auto">
       
 
         
@@ -441,16 +438,10 @@
   <div class="article-container">
 
     <div class="article-style" itemprop="articleBody">
-      
-
-<h2 id="报错信息">报错信息</h2>
-
+      <h2 id="heading">报错信息</h2>
 <p>之前运维给做了几台测试服务器，远程连接的时候速度特别慢，ssh之后需要接近1分钟才能连上。</p>
-
-<h2 id="原因">原因</h2>
-
+<h2 id="heading-1">原因</h2>
 <p>使用<code>ssh -v &lt;服务器&gt;</code> 显示连接过程：</p>
-
 <pre><code class="language-bash">$ ssh -v 123.456.789.0
 OpenSSH_6.6.1, OpenSSL 1.0.1e-fips 11 Feb 2013
 debug1: Reading configuration data /etc/ssh/ssh_config
@@ -511,49 +502,37 @@ debug1: Trying private key: /root/.ssh/id_ecdsa
 debug1: Trying private key: /root/.ssh/id_ed25519
 debug1: Next authentication method: password # 3
 </code></pre>
-
 <p>发现卡住的位置是<code>debug1: Next authentication method: gssapi-with-mic</code>附近。</p>
-
 <p>证明是由于<code>gssapi</code>认证带来的问题。</p>
-
 <p>从网上找到相关的解释：</p>
-
 <blockquote>
 <ol>
-<li><p>GSSAPI(Generic Security Services Application Programming Interface)是一套通用网络安全系统接口。
-该接口是对各种不同的客户端服务器安全机制的封装，以消除安全接口的不同，降低编程难度。</p></li>
-
-<li><p>OpenSSH在用户登录的时候会验证IP，它根据用户的IP使用反向DNS找到主机名，再使用DNS找到IP地址，最后匹配一下登录的IP是否合法。</p></li>
+<li>
+<p>GSSAPI(Generic Security Services Application Programming Interface)是一套通用网络安全系统接口。
+该接口是对各种不同的客户端服务器安全机制的封装，以消除安全接口的不同，降低编程难度。</p>
+</li>
+<li>
+<p>OpenSSH在用户登录的时候会验证IP，它根据用户的IP使用反向DNS找到主机名，再使用DNS找到IP地址，最后匹配一下登录的IP是否合法。</p>
+</li>
 </ol>
 </blockquote>
-
 <p>进行身份认证的时候，OpenSSH虽然说的是<code>publickey,gssapi-keyex,gssapi-with-mic,password</code>，</p>
-
 <p>但默认顺序是：<code>gssapi-with-mic</code> → <code>hostbased</code> → <code>publickey</code> → <code>keyboard-interactive</code> → <code>password</code></p>
-
 <p>上面连接过程我也标出了0123，实际顺序的确如此。</p>
-
 <p><code>gssapi</code>的认证是基于<code>Kerberos</code>的，没见到人用过，</p>
-
 <p>另一方面，客户端反向DNS的过程也会在连接DNS服务器/查询客户端域名(没域名可就会一层层DNS查上去)上花费时间。</p>
-
-<h2 id="解决办法">解决办法</h2>
-
+<h2 id="heading-2">解决办法</h2>
 <p>客户端，编辑<code>/etc/ssh/ssh_config</code>文件：</p>
-
 <ul>
 <li>方式1：将<code>GSSAPIAuthentication</code>改为no；</li>
 <li>方式2：编辑/新增<code>PreferredAuthentications</code>为publickey或者password，改变认证优先度;</li>
 </ul>
-
 <p>服务端，编辑<code>/etc/ssh/sshd_config</code>文件：</p>
-
 <ol>
 <li>将<code>UseDNS</code>改为no；</li>
 <li>(可选)将<code>GSSAPIAuthentication</code>改为no(所有连接都不做gssapi认证了)；</li>
 <li>重启sshd服务；</li>
 </ol>
-
 <p>实际效果，关闭<code>GSSAPIAuthentication</code>让连接时间从1分钟下降到8秒左右，关闭<code>UseDNS</code>后几乎接近秒连。</p>
 
     </div>

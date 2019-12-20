@@ -193,7 +193,7 @@
 
       
       
-      <ul class="navbar-nav mr-auto">
+      <ul class="navbar-nav ml-auto">
         
 
         
@@ -276,9 +276,6 @@
         
         
 
-      
-      </ul>
-      <ul class="navbar-nav ml-auto">
       
 
         
@@ -455,7 +452,7 @@
 
     
     <div class="article-style">
-      目录 硬件需求 0. 工具准备 1. 配置Nginx负载均衡 2. 使用RKE安装K8S 3. 初始化helm 4. 配置ca证书 5. 安装rancher 6. 添加主机别名 硬件需求
+      目录 硬件需求 rancher ha推荐的架构是单独搭建一个K8s集群部署Rancher，然后再用这个Rancher去管理其他的K8s集群。 rancher集群
     </div>
     
 
@@ -540,7 +537,7 @@
 
     
     <div class="article-style">
-      目录 介绍 安装 使用 ros ros config ros service 系统服务 docker cloud-config 介绍 RancherOS是Rancher推出的一个轻量级的Linux内核操作系统，专为容器环境而设计。 按
+      目录 介绍 RancherOS是Rancher推出的一个轻量级的Linux内核操作系统，专为容器环境而设计。 按官网的说法，它具有如下特性： 官方说
     </div>
     
 
@@ -625,7 +622,7 @@
 
     
     <div class="article-style">
-      目录 基本环境 安装 配置 基本用法 加载诸神图 一些基本操作 增操作 删操作 查询 基本环境 底层数据库基于HBase，检索服务基于Elasticserach。
+      目录 基本环境 底层数据库基于HBase，检索服务基于Elasticserach。 系统运行服务大致如下： [root@xnode208 ~] jps 21584 GremlinServer 27857 DataNode 23218 Jps 3251 HMaster …
     </div>
     
 
@@ -799,7 +796,7 @@
 
     
     <div class="article-style">
-      本文是对Academic文档-Writing content章节的个人翻译，基于个人理解，不保证绝对准确。 原文见上方连接。 目录 副标题 强调 有序列
+      本文是对Academic文档-Writing content章节的个人翻译，基于个人理解，不保证绝对准确。 原文见上方连接。 目录 Academic
     </div>
     
 
@@ -888,7 +885,7 @@
 
     
     <div class="article-style">
-      本文是对Academic文档-Managing content章节的个人翻译，基于个人理解，不保证绝对准确。 原文见上方连接。 目录 精选图片 标题图
+      本文是对Academic文档-Managing content章节的个人翻译，基于个人理解，不保证绝对准确。 原文见上方连接。 目录 这是一个使用A
     </div>
     
 
@@ -977,7 +974,7 @@
 
     
     <div class="article-style">
-      目录 简介 安装tmux 基础概念 配置 常用控制 会话 窗口 窗格 tpm插件 鼠标操作 简介 Tmux是一个终端复用软件，默认的Linux终端一个会话只能干一件
+      目录 简介 Tmux是一个终端复用软件，默认的Linux终端一个会话只能干一件事，有了tmux就能在一个窗口同时管理多个前/后台程序了。 安装tm
     </div>
     
 
@@ -1062,7 +1059,7 @@
 
     
     <div class="article-style">
-      目录 Deploy key/SSH key(github) 更换git协议 强制覆盖本地文件 撤销修改 add之前撤销 commit之前撤销 push之前撤销 删除历史提交记录 忽略文件权限 Deploy key/SSH key(github) Deploy key
+      目录 Deploy key/SSH key(github) Deploy key是在项目主页-setting-Delpoy keys下进行添加，如果勾选Allow write access，则相当于具有对这个项目的读
     </div>
     
 
@@ -1147,7 +1144,7 @@
 
     
     <div class="article-style">
-      目录 Hugo 安装/更新 安装/更新 常用命令 Academic 安装/更新 通过Netlify 通过Git 安装 自动更新 手动更新 部署到Github Pages 原理 官方教程(缩减版) 脚本
+      目录 Hugo 安装/更新 Hugo是使用Go语言开发的静态站点生成器。不过无需准备Go语言环境，可以直接通过二进制编译包进行跨平台部署。 以下均以Ubu
     </div>
     
 

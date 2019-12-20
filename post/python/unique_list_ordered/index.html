@@ -241,7 +241,7 @@
 
       
       
-      <ul class="navbar-nav mr-auto">
+      <ul class="navbar-nav ml-auto">
         
 
         
@@ -324,9 +324,6 @@
         
         
 
-      
-      </ul>
-      <ul class="navbar-nav ml-auto">
       
 
         
@@ -441,58 +438,36 @@
   <div class="article-container">
 
     <div class="article-style" itemprop="articleBody">
-      
-
-<p>对列表的去重很简单，<code>set()</code>一下再<code>list()</code>回来就可以了，但是如果要保留原始列表的顺序呢？</p>
-
+      <p>对列表的去重很简单，<code>set()</code>一下再<code>list()</code>回来就可以了，但是如果要保留原始列表的顺序呢？</p>
 <p>举例，对<code>[&quot;b&quot;, &quot;b&quot;, &quot;c&quot;, &quot;a&quot;, &quot;c&quot;, &quot;b&quot;, &quot;a&quot;, &quot;b&quot;]</code>这个列表进行原序去重，得到结果应该是<code>['b', 'c', 'a']</code>。</p>
-
 <p>有下面这几种写法：</p>
-
-<h4 id="二次排序">二次排序</h4>
-
+<h4 id="heading">二次排序</h4>
 <p>也就是对去重结果再按原列表sort一次：</p>
-
 <pre><code class="language-python">def sort_1(list_in):
     return sorted(list(set(list_in)), key=list_in.index)
 </code></pre>
-
-<h4 id="匿名函数">匿名函数</h4>
-
+<h4 id="heading-1">匿名函数</h4>
 <p>使用匿名函数将列表里不重复的元素累加到一个新列表中：</p>
-
 <pre><code class="language-python">def sort_2(list_in):
     return reduce(lambda x, y: x if y in x else x + [y], [[], ] + list_in)
 </code></pre>
-
-<h4 id="借用字典">借用字典</h4>
-
-<h5 id="有序字典">有序字典</h5>
-
+<h4 id="heading-2">借用字典</h4>
+<h5 id="heading-3">有序字典</h5>
 <p>使用<code>OrderedDict</code>排序：</p>
-
 <pre><code class="language-python">def sort_3(list_in):
     return list(collections.OrderedDict.fromkeys(list_in).keys())
 </code></pre>
-
 <h4 id="defaultdict">defaultdict</h4>
-
 <p>类似的,我们使用<code>defaultdict</code>进行排序：</p>
-
 <pre><code class="language-python">def sort_4(list_in):
     return list(collections.defaultdict.fromkeys(list_in).keys())
 </code></pre>
-
-<h4 id="直接使用dict">直接使用dict</h4>
-
+<h4 id="dict">直接使用dict</h4>
 <p>在python3.6之前， <code>dict</code>的<code>key</code>的顺序并不保证一定是插入顺序，所以只有在python3.6之后才可以直接用<code>dict</code>实现这个操作；</p>
-
 <pre><code class="language-python">def sort_5(list_in):
     return list(dict.fromkeys(list_in).keys())
 </code></pre>
-
 <p>完整性能测试代码如下：</p>
-
 <pre><code class="language-python"># !/usr/bin/env python
 # encoding: utf-8
 
@@ -536,9 +511,7 @@ if __name__ == '__main__':
         print(k, avg_v)
 
 </code></pre>
-
 <p>在我的苏菲婆上的结果仅供参考：</p>
-
 <table>
 <thead>
 <tr>
@@ -546,35 +519,29 @@ if __name__ == '__main__':
 <th>平均时间</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>sort_1</td>
 <td>1.477</td>
 </tr>
-
 <tr>
 <td>sort_2</td>
 <td>1.305</td>
 </tr>
-
 <tr>
 <td>sort_3</td>
 <td>0.957</td>
 </tr>
-
 <tr>
 <td>sort_4</td>
 <td>0.734</td>
 </tr>
-
 <tr>
 <td>sort_5</td>
 <td>0.698</td>
 </tr>
 </tbody>
 </table>
-
 <p>可见，python3.6之后dict是最好的原序去重办法，3.6之前用defaultdict吧。</p>
 
     </div>

@@ -17,17 +17,11 @@
       <link>https://szthanatos.github.io/post/janusgraph/</link>
       <pubDate>Sun, 17 Mar 2019 21:50:19 +0800</pubDate>
       <guid>https://szthanatos.github.io/post/janusgraph/</guid>
-      <description>
-
-&lt;p&gt;&lt;h2&gt;目录&lt;/h2&gt;
-HAHAHUGOSHORTCODE-TOC0-HBHB&lt;/p&gt;
-
-&lt;h2 id=&#34;基本环境&#34;&gt;基本环境&lt;/h2&gt;
-
+      <description>&lt;h2&gt;目录&lt;/h2&gt;
+HAHAHUGOSHORTCODE-TOC0-HBHB
+&lt;h2 id=&#34;heading&#34;&gt;基本环境&lt;/h2&gt;
 &lt;p&gt;底层数据库基于HBase，检索服务基于Elasticserach。&lt;/p&gt;
-
 &lt;p&gt;系统运行服务大致如下：&lt;/p&gt;
-
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;[root@xnode208 ~] jps
 21584 GremlinServer
 27857 DataNode
@@ -38,37 +32,31 @@ HAHAHUGOSHORTCODE-TOC0-HBHB&lt;/p&gt;
 17131 Elasticsearch
 29503 SecondaryNameNode
 &lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;安装&#34;&gt;安装&lt;/h2&gt;
-
-&lt;p&gt;下载&lt;a href=&#34;https://github.com/JanusGraph/janusgraph/releases/download/v0.2.2/janusgraph-0.2.2-hadoop2.zip&#34; target=&#34;_blank&#34;&gt;janusgraph0.22安装包&lt;/a&gt;并解压&lt;/p&gt;
-
+&lt;h2 id=&#34;heading-1&#34;&gt;安装&lt;/h2&gt;
+&lt;p&gt;下载&lt;a href=&#34;https://github.com/JanusGraph/janusgraph/releases/download/v0.2.2/janusgraph-0.2.2-hadoop2.zip&#34;&gt;janusgraph0.22安装包&lt;/a&gt;并解压&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;wget https://github.com/JanusGraph/janusgraph/releases/download/v0.2.2/janusgraph-0.2.2-hadoop2.zip
 unzip janusgraph-0.2.2-hadoop2.zip
 cd janusgraph-0.2.2-hadoop2
 &lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;配置&#34;&gt;配置&lt;/h2&gt;
-
+&lt;h2 id=&#34;heading-2&#34;&gt;配置&lt;/h2&gt;
 &lt;p&gt;在这里我们采用的是启动gremlin-server服务时，加载指定配置文件的方法创建图表，所以需要设置gremlin-server端以及图表的配置文件。&lt;/p&gt;
-
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;创建gremlin-server端配置文件&lt;code&gt;janusgraph-0.2.2-hadoop2/conf/gremlin-server/socket-gremlin-server.yaml&lt;/code&gt;，这里我们复制gremlin服务默认的配置文件，在此基础上进行修改&lt;/p&gt;
-
+&lt;li&gt;
+&lt;p&gt;创建gremlin-server端配置文件&lt;code&gt;janusgraph-0.2.2-hadoop2/conf/gremlin-server/socket-gremlin-server.yaml&lt;/code&gt;，这里我们复制gremlin服务默认的配置文件，在此基础上进行修改&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cp conf/gremlin-server/gremlin-server.yaml conf/gremlin-server/socket-gremlin-server.yaml
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;修改&lt;code&gt;socket-gremlin-server.yaml&lt;/code&gt;：在配置文件中添加graphManager;并在graphs项中添加graph键及其值，一个键值代表一个图表，值表示对图表的设置(可添加多个图表，每一个图表都有自己的配置文件)，如：&lt;/p&gt;
-
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;修改&lt;code&gt;socket-gremlin-server.yaml&lt;/code&gt;：在配置文件中添加graphManager;并在graphs项中添加graph键及其值，一个键值代表一个图表，值表示对图表的设置(可添加多个图表，每一个图表都有自己的配置文件)，如：&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;graphManager: org.janusgraph.graphdb.management.JanusGraphManager
 graphs: {
   blablabla,
   graph: conf/gremlin-server/socket-jg-hbase_fyk-server-configraph.properties
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;准备上述&lt;code&gt;socket-gremlin-server.yaml&lt;/code&gt;中对图表进行设置的properties文件，&lt;code&gt;conf/gremlin-server/socket-jg-hbase_fyk-server-configraph.properties&lt;/code&gt;文件内容如下：&lt;/p&gt;
-
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;准备上述&lt;code&gt;socket-gremlin-server.yaml&lt;/code&gt;中对图表进行设置的properties文件，&lt;code&gt;conf/gremlin-server/socket-jg-hbase_fyk-server-configraph.properties&lt;/code&gt;文件内容如下：&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;gremlin.graph=org.janusgraph.core.JanusGraphFactory
 graph.graphname=graph
 
@@ -82,39 +70,36 @@ cache.db-cache = true
 cache.db-cache-clean-wait = 20
 cache.db-cache-time = 180000
 cache.db-cache-size = 0.5
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
-
-&lt;h2 id=&#34;基本用法&#34;&gt;基本用法&lt;/h2&gt;
-
+&lt;h2 id=&#34;heading-3&#34;&gt;基本用法&lt;/h2&gt;
 &lt;p&gt;依次启动hbase,elasticsearch以及gremlin-server，最后进入gremlin.sh客户端对图表进行操作&lt;/p&gt;
-
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;hbase&lt;/p&gt;
-
+&lt;li&gt;
+&lt;p&gt;hbase&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;[root@xnode208 ~] start-hbase.sh
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;elasticsearch.(注：Janusgraph自带的elastic search服务启动时为确保安全被禁止使用root用户)&lt;/p&gt;
-
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;elasticsearch.(注：Janusgraph自带的elastic search服务启动时为确保安全被禁止使用root用户)&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;[zkr@xnode208 ~] cd /usr/local/janusgraph-0.2.2-hadoop2
 [zkr@xnode208 elasticsearch] ./bin/elasticsearch
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;gremlin-server(启动成功后，会创建我们在配置文件中设计的图表)&lt;/p&gt;
-
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;gremlin-server(启动成功后，会创建我们在配置文件中设计的图表)&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;[zkr@xnode208 janusgraph0.2] ./bin/gremlin-server.sh ./conf/gremlin-server/socket-gremlin-server.yaml
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;gremlin.sh(进入gremlin交互式客户端)&lt;/p&gt;
-
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;gremlin.sh(进入gremlin交互式客户端)&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;[root@xnode208 janusgraph0.2] ./bin/gremlin.sh
 gremlin&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;h2 id=&#34;加载诸神图&#34;&gt;加载诸神图&lt;/h2&gt;
-
+&lt;h2 id=&#34;heading-4&#34;&gt;加载诸神图&lt;/h2&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 连接gremlin server
 gremlin&amp;gt; :remote connect tinkerpop.server conf/remote.yaml session
 ==&amp;gt;Configured localhost/127.0.0.1:8182-[f6db862e-752c-48db-839b-1b5b16f1786a]
@@ -125,11 +110,8 @@ gremlin&amp;gt; :remote console
 gremlin&amp;gt; GraphOfTheGodsFactory.load(graph)
 ==&amp;gt;null
 &lt;/code&gt;&lt;/pre&gt;
-
 &lt;p&gt;示例数据描述了一部分希腊诸神以及他们居住的诸神殿的相关关系。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://szthanatos.github.io/img/graph-of-the-gods-2.png&#34; alt=&#34;graph-of-the-gods&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;https://szthanatos.github.io/img/graph-of-the-gods-2.png&#34; alt=&#34;graph-of-the-gods&#34;&gt;&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -137,41 +119,32 @@ gremlin&amp;gt; GraphOfTheGodsFactory.load(graph)
 &lt;th&gt;含义&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;粗体键&lt;/td&gt;
 &lt;td&gt;带索引的键&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;星标粗体键&lt;/td&gt;
 &lt;td&gt;具有唯一值的带索引的键&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;带下划线的键&lt;/td&gt;
 &lt;td&gt;以顶点为核心的带索引的键&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;空心箭头边&lt;/td&gt;
 &lt;td&gt;不能有多个指向的唯一边&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;尾部划线的边&lt;/td&gt;
 &lt;td&gt;单向边&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-
 &lt;p&gt;在JanusGraph中，实体以顶点表示，关系以边表示，顶点和边都可以具有属性。&lt;/p&gt;
-
-&lt;h2 id=&#34;一些基本操作&#34;&gt;一些基本操作&lt;/h2&gt;
-
-&lt;h3 id=&#34;增操作&#34;&gt;增操作&lt;/h3&gt;
-
+&lt;h2 id=&#34;heading-5&#34;&gt;一些基本操作&lt;/h2&gt;
+&lt;h3 id=&#34;heading-6&#34;&gt;增操作&lt;/h3&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 添加顶点
 v1 = graph.addVertex(label, &#39;student&#39;);  # 创建第一个顶点v1并增加标签
 v2 = graph.addVertex();  # 创建第二个顶点没有标签
@@ -192,9 +165,7 @@ v3.addEdge(&#39;boyfriend&#39;,v4,&#39;reason&#39;,&#39;because the reason&#39;)
 # 提交修改
 graph.tx().commit();
 &lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;删操作&#34;&gt;删操作&lt;/h3&gt;
-
+&lt;h3 id=&#34;heading-7&#34;&gt;删操作&lt;/h3&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 清空
 g.V().drop();  # 删除所有点/图
 g.E().drop();  # 删除所有边
@@ -223,9 +194,7 @@ g.E().values(&#39;because the reason&#39;).drop();  # 删除边属性值为becau
 
 graph.tx().commit();  # 提交
 &lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;查询&#34;&gt;查询&lt;/h2&gt;
-
+&lt;h2 id=&#34;heading-8&#34;&gt;查询&lt;/h2&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 设置g=graph.traversal(),方便查询
 gremlin&amp;gt; g = graph.traversal()
 ==&amp;gt;graphtraversalsource[standardjanusgraph[hbase:[127.0.0.1]], standard]

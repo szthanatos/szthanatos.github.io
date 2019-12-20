@@ -28,7 +28,7 @@
   
     
   
-  <meta name="description" content="目录 简介 安装tmux 基础概念 配置 常用控制 会话 窗口 窗格 tpm插件 鼠标操作 简介 Tmux是一个终端复用软件，默认的Linux终端一个会话只能干一件">
+  <meta name="description" content="目录 简介 Tmux是一个终端复用软件，默认的Linux终端一个会话只能干一件事，有了tmux就能在一个窗口同时管理多个前/后台程序了。 安装tm">
 
   
   <link rel="alternate" hreflang="zh-Hans" href="https://szthanatos.github.io/post/tmux/">
@@ -115,7 +115,7 @@
   <meta property="og:site_name" content="Kryptonite Lab">
   <meta property="og:url" content="https://szthanatos.github.io/post/tmux/">
   <meta property="og:title" content="Tmux in 10 minutes | Kryptonite Lab">
-  <meta property="og:description" content="目录 简介 安装tmux 基础概念 配置 常用控制 会话 窗口 窗格 tpm插件 鼠标操作 简介 Tmux是一个终端复用软件，默认的Linux终端一个会话只能干一件"><meta property="og:image" content="https://szthanatos.github.io/img/icon-192.png">
+  <meta property="og:description" content="目录 简介 Tmux是一个终端复用软件，默认的Linux终端一个会话只能干一件事，有了tmux就能在一个窗口同时管理多个前/后台程序了。 安装tm"><meta property="og:image" content="https://szthanatos.github.io/img/icon-192.png">
   <meta property="twitter:image" content="https://szthanatos.github.io/img/icon-192.png"><meta property="og:locale" content="zh-Hans">
   
     
@@ -167,7 +167,7 @@
       "url": "https://szthanatos.github.io/img/icon-512.png"
     }
   },
-  "description": "目录 简介 安装tmux 基础概念 配置 常用控制 会话 窗口 窗格 tpm插件 鼠标操作 简介 Tmux是一个终端复用软件，默认的Linux终端一个会话只能干一件"
+  "description": "目录 简介 Tmux是一个终端复用软件，默认的Linux终端一个会话只能干一件事，有了tmux就能在一个窗口同时管理多个前/后台程序了。 安装tm"
 }
 </script>
 
@@ -241,7 +241,7 @@
 
       
       
-      <ul class="navbar-nav mr-auto">
+      <ul class="navbar-nav ml-auto">
         
 
         
@@ -324,9 +324,6 @@
         
         
 
-      
-      </ul>
-      <ul class="navbar-nav ml-auto">
       
 
         
@@ -437,71 +434,33 @@
   <div class="article-container">
 
     <div class="article-style" itemprop="articleBody">
-      
+      <h2>目录</h2>
 
-<p><h2>目录</h2>
-<nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#简介">简介</a></li>
-<li><a href="#安装tmux">安装tmux</a></li>
-<li><a href="#基础概念">基础概念</a></li>
-<li><a href="#配置">配置</a></li>
-<li><a href="#常用控制">常用控制</a>
-<ul>
-<li><a href="#会话">会话</a></li>
-<li><a href="#窗口">窗口</a></li>
-<li><a href="#窗格">窗格</a></li>
-<li><a href="#tpm插件">tpm插件</a></li>
-</ul></li>
-<li><a href="#鼠标操作">鼠标操作</a></li>
-</ul></li>
-</ul>
-</nav></p>
-
-<h2 id="简介">简介</h2>
-
+<h2 id="heading">简介</h2>
 <p>Tmux是一个终端复用软件，默认的Linux终端一个会话只能干一件事，有了tmux就能在一个窗口同时管理多个前/后台程序了。</p>
-
-<h2 id="安装tmux">安装tmux</h2>
-
+<h2 id="tmux">安装tmux</h2>
 <p>基础软件，跳过</p>
-
-<h2 id="基础概念">基础概念</h2>
-
+<h2 id="heading-1">基础概念</h2>
 <p>见图</p>
-
-<p><img src="/img/tmux.jpg" alt="Tmux页面" /></p>
-
+<p><img src="/img/tmux.jpg" alt="Tmux页面"></p>
 <ul>
 <li><code>Session</code>：输入tmux后就创建了一个会话，一个会话是一组窗体的集合；</li>
 <li><code>Window</code>：会话中一个可见的窗口；</li>
 <li><code>Pane</code>: 一个窗口可以分成多个窗格；</li>
 </ul>
-
 <p>用win10任务视图(Win+Tab调出)的概念来类比，</p>
-
 <p><code>Pane</code>就是一个个应用窗口，在一个桌面上可以同时开多个(但是不能堆叠，)；</p>
-
 <p><code>Window</code>就是一组组桌面，同一时间你只能看到一个桌面</p>
-
 <p><code>Session</code>就是一个用户，区别就是win10同一个账户只能登陆一次，tmux里相当于一个用户登陆N次。</p>
-
 <p>为了控制这些元素，tmux分为三种模式：</p>
-
 <ul>
 <li><code>控制模式</code>: （按下或者按住前缀(tmux-prefix)，默认ctrl+b, 下文用<code>※ + X</code>表示按下前缀之后按X，<code>※※ + Y</code>表示按住前缀的同时按Y）相当于各种热键；</li>
 <li><code>命令模式</code>: （输入tmux 后接命令，或者在tmux内输入<code>※ + shift + :</code>）也就是输入命令，但是执行的不是系统命令，而是tmux自身的命令；</li>
 <li><code>一般模式</code>:  正常打字；</li>
 </ul>
-
-<h2 id="配置">配置</h2>
-
+<h2 id="heading-2">配置</h2>
 <p>和zsh一样，得先配置才能用的舒坦。下面是我个人用的配置文件。</p>
-
 <p><code>Ctrl+b</code>被我替换为<code>Ctrl+x</code>，横竖分割窗格我分别设置为<code>-</code>和<code>\</code>，刚好一横一竖嘛，并且启用了tpm管理tmux插件。</p>
-
 <pre><code class="language-properties">#-- base --#
 # (可选)设置zsh为默认shell
 set -g default-shell /bin/zsh
@@ -569,9 +528,7 @@ set -g status-right 'Continuum status: #{continuum_status}'
 run '/etc/.tmux/plugins/tpm/tpm'
 
 </code></pre>
-
 <p>具体配置步骤如下：</p>
-
 <ol>
 <li>编辑<code>.tmux.conf</code>文件放到你的根目录下；</li>
 <li>使用<code>git clone https://github.com/tmux-plugins/tpm /etc/.tmux/plugins/tpm</code>将tpm安装到<code>etc</code>目录下
@@ -579,17 +536,13 @@ run '/etc/.tmux/plugins/tpm/tpm'
 <li>输入<code>tmux source-file ~/.tmux.conf</code>载入配置；</li>
 <li>进入tmux，输入<code>※ + U</code>查看tpm插件更新，弹出页面默认打开命令模式，直接输入<code>all</code>完成更新；</li>
 </ol>
-
-<h2 id="常用控制">常用控制</h2>
-
+<h2 id="heading-3">常用控制</h2>
 <div class="alert alert-note">
   <div>
     注意，下列所有快捷键区分大小写。
   </div>
 </div>
-
-<h3 id="会话">会话</h3>
-
+<h3 id="heading-4">会话</h3>
 <table>
 <thead>
 <tr>
@@ -597,27 +550,22 @@ run '/etc/.tmux/plugins/tpm/tpm'
 <th>说明</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>※ + d</td>
 <td>休眠</td>
 </tr>
-
 <tr>
 <td>※ + s</td>
 <td>以菜单方式显示和选择会话</td>
 </tr>
-
 <tr>
 <td>※ + L</td>
 <td>切换回上一次的会话</td>
 </tr>
 </tbody>
 </table>
-
-<h3 id="窗口">窗口</h3>
-
+<h3 id="heading-5">窗口</h3>
 <table>
 <thead>
 <tr>
@@ -625,62 +573,50 @@ run '/etc/.tmux/plugins/tpm/tpm'
 <th>说明</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>※ + c</td>
 <td>创建新窗口</td>
 </tr>
-
 <tr>
 <td>※ + n</td>
 <td>选择下一个窗口</td>
 </tr>
-
 <tr>
 <td>※ + p</td>
 <td>选择前一个窗口</td>
 </tr>
-
 <tr>
 <td>※ + l</td>
 <td>最近一次活跃窗口之间进行切换</td>
 </tr>
-
 <tr>
 <td>※ + 0~9</td>
 <td>选择几号窗口</td>
 </tr>
-
 <tr>
 <td>※ + ,</td>
 <td>重命名窗口</td>
 </tr>
-
 <tr>
 <td>※ + .</td>
 <td>更改窗口的编号，但只能更改成未使用的编号，所以要交换窗口的话，得多次更改进行交换</td>
 </tr>
-
 <tr>
 <td>※ + &amp;</td>
 <td>关闭窗口</td>
 </tr>
-
 <tr>
 <td>※ + w</td>
 <td>以菜单方式显示及选择窗口</td>
 </tr>
-
 <tr>
 <td>※ + f</td>
 <td>在所有窗口中查找内容</td>
 </tr>
 </tbody>
 </table>
-
-<h3 id="窗格">窗格</h3>
-
+<h3 id="heading-6">窗格</h3>
 <table>
 <thead>
 <tr>
@@ -688,62 +624,50 @@ run '/etc/.tmux/plugins/tpm/tpm'
 <th>说明</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>※ + z</td>
 <td>最大化/还原当前窗格</td>
 </tr>
-
 <tr>
-<td>※ + &ldquo;</td>
+<td>※ + &quot;</td>
 <td>模向分隔窗格，<strong>替换为了<code>-</code></strong></td>
 </tr>
-
 <tr>
 <td>※ + %</td>
 <td>纵向分隔窗格，<strong>替换为了<code>\</code></strong></td>
 </tr>
-
 <tr>
 <td>※ + o</td>
 <td>跳到下一个分隔窗格</td>
 </tr>
-
 <tr>
 <td>※ + x</td>
 <td>关闭窗格</td>
 </tr>
-
 <tr>
 <td>※ + ;</td>
 <td>切换到最后一个使用的窗格</td>
 </tr>
-
 <tr>
 <td>※ + ↑/↓/←/→</td>
 <td>切换到上/下/左/右的窗格</td>
 </tr>
-
 <tr>
 <td>※※ + h/j/k/l</td>
 <td><strong>自定义配置，vim方式切换窗格</strong></td>
 </tr>
-
 <tr>
 <td>※ + q</td>
 <td>显示窗格编号，并在右上角显示窗格的长宽</td>
 </tr>
-
 <tr>
 <td>※ + 空格键</td>
 <td>自动排布窗格，可多次执行尝试多种布局</td>
 </tr>
 </tbody>
 </table>
-
-<h3 id="tpm插件">tpm插件</h3>
-
+<h3 id="tpm">tpm插件</h3>
 <table>
 <thead>
 <tr>
@@ -751,24 +675,19 @@ run '/etc/.tmux/plugins/tpm/tpm'
 <th>说明</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>※ + S</td>
 <td><strong>自定义配置，保存当前布局</strong></td>
 </tr>
-
 <tr>
 <td>※ + R</td>
 <td><strong>自定义配置，还原保存的布局</strong></td>
 </tr>
 </tbody>
 </table>
-
-<h2 id="鼠标操作">鼠标操作</h2>
-
+<h2 id="heading-7">鼠标操作</h2>
 <p>鼠标按住窗格的分割线可以修改窗格大小；</p>
-
 <p>如果你用<code>wsltty</code>或者其他软件，发现右键/中键失效，记得按住修饰键(比如<code>Shift</code>)再试。</p>
 
     </div>

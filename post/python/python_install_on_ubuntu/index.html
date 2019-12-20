@@ -241,7 +241,7 @@
 
       
       
-      <ul class="navbar-nav mr-auto">
+      <ul class="navbar-nav ml-auto">
         
 
         
@@ -324,9 +324,6 @@
         
         
 
-      
-      </ul>
-      <ul class="navbar-nav ml-auto">
       
 
         
@@ -442,55 +439,52 @@
 
     <div class="article-style" itemprop="articleBody">
       <ol>
-<li><p>添加ppa源：</p>
-
+<li>
+<p>添加ppa源：</p>
 <pre><code class="language-bash"># 死蛇的源
 sudo add-apt-repository ppa:deadsnakes/ppa
 # 或者，jonathonf的源
 sudo add-apt-repository ppa:jonathonf/python-3.x
 </code></pre>
-
 <p>如果提示没有add-apt-repository的话执行：</p>
-
 <pre><code class="language-bash">apt install software-properties-common
-</code></pre></li>
-
-<li><p>更新源并安装python3.x，<code>3.x</code>以你要安装的版本号为准：</p>
-
+</code></pre>
+</li>
+<li>
+<p>更新源并安装python3.x，<code>3.x</code>以你要安装的版本号为准：</p>
 <pre><code class="language-bash">sudo apt update
 sudo apt install python3.x
 # 可选
 sudo apt install python3.x-dev
 sudo apt install python3.x-venv
-</code></pre></li>
-
-<li><p>安装pip:</p>
-
+</code></pre>
+</li>
+<li>
+<p>安装pip:</p>
 <pre><code class="language-bash">wget https://bootstrap.pypa.io/get-pip.py
 sudo python3.x get-pip.py
-</code></pre></li>
-
-<li><p>查看python和pip版本：</p>
-
+</code></pre>
+</li>
+<li>
+<p>查看python和pip版本：</p>
 <pre><code class="language-bash"># 也可以用-V
 python --version
 python3 --version
 pip --version
 pip3 --version
-</code></pre></li>
-
-<li><p>如果关联版本不正确，备份usr/bin的软链接，重建软链接：</p>
-
+</code></pre>
+</li>
+<li>
+<p>如果关联版本不正确，备份usr/bin的软链接，重建软链接：</p>
 <pre><code class="language-bash"># 设置默认python3对应python版本
 sudo ln -s /usr/bin/python3.x /usr/bin/python3
 # 设置默认pip3使用pip版本
 sudo ln -s /usr/local/bin/pip3.x /usr/bin/pip3
 </code></pre>
-
-<p>注意 python默认安装位置在<code>/usr/bin</code>下，pip默认安装位置在<code>/usr/local/bin</code>下</p></li>
-
-<li><p>pip初始化设置：</p>
-
+<p>注意 python默认安装位置在<code>/usr/bin</code>下，pip默认安装位置在<code>/usr/local/bin</code>下</p>
+</li>
+<li>
+<p>pip初始化设置：</p>
 <pre><code class="language-bash">mkdir ~/.pip
 touch ~/.pip/pip.conf
 # python3.6/pip18之后无需配置这个
@@ -499,12 +493,13 @@ echo format=columns&gt;&gt;~/.pip/pip.conf
 # 设置默认pip源为清华大学开源镜像
 echo [global]&gt;&gt;~/.pip/pip.conf
 echo index-url = https://pypi.tuna.tsinghua.edu.cn/simple&gt;&gt;~/.pip/pip.conf
-</code></pre></li>
-
-<li><p>(可选)一键升级所有过期的包：</p>
-
+</code></pre>
+</li>
+<li>
+<p>(可选)一键升级所有过期的包：</p>
 <pre><code class="language-bash">sudo pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip install -U
-</code></pre></li>
+</code></pre>
+</li>
 </ol>
 
     </div>

@@ -28,7 +28,7 @@
   
     
   
-  <meta name="description" content="目录 介绍 安装 使用 ros ros config ros service 系统服务 docker cloud-config 介绍 RancherOS是Rancher推出的一个轻量级的Linux内核操作系统，专为容器环境而设计。 按">
+  <meta name="description" content="目录 介绍 RancherOS是Rancher推出的一个轻量级的Linux内核操作系统，专为容器环境而设计。 按官网的说法，它具有如下特性： 官方说">
 
   
   <link rel="alternate" hreflang="zh-Hans" href="https://szthanatos.github.io/post/rancheros/">
@@ -115,7 +115,7 @@
   <meta property="og:site_name" content="Kryptonite Lab">
   <meta property="og:url" content="https://szthanatos.github.io/post/rancheros/">
   <meta property="og:title" content="RancherOS初步使用小结 | Kryptonite Lab">
-  <meta property="og:description" content="目录 介绍 安装 使用 ros ros config ros service 系统服务 docker cloud-config 介绍 RancherOS是Rancher推出的一个轻量级的Linux内核操作系统，专为容器环境而设计。 按"><meta property="og:image" content="https://szthanatos.github.io/img/icon-192.png">
+  <meta property="og:description" content="目录 介绍 RancherOS是Rancher推出的一个轻量级的Linux内核操作系统，专为容器环境而设计。 按官网的说法，它具有如下特性： 官方说"><meta property="og:image" content="https://szthanatos.github.io/img/icon-192.png">
   <meta property="twitter:image" content="https://szthanatos.github.io/img/icon-192.png"><meta property="og:locale" content="zh-Hans">
   
     
@@ -167,7 +167,7 @@
       "url": "https://szthanatos.github.io/img/icon-512.png"
     }
   },
-  "description": "目录 介绍 安装 使用 ros ros config ros service 系统服务 docker cloud-config 介绍 RancherOS是Rancher推出的一个轻量级的Linux内核操作系统，专为容器环境而设计。 按"
+  "description": "目录 介绍 RancherOS是Rancher推出的一个轻量级的Linux内核操作系统，专为容器环境而设计。 按官网的说法，它具有如下特性： 官方说"
 }
 </script>
 
@@ -241,7 +241,7 @@
 
       
       
-      <ul class="navbar-nav mr-auto">
+      <ul class="navbar-nav ml-auto">
         
 
         
@@ -324,9 +324,6 @@
         
         
 
-      
-      </ul>
-      <ul class="navbar-nav ml-auto">
       
 
         
@@ -437,36 +434,11 @@
   <div class="article-container">
 
     <div class="article-style" itemprop="articleBody">
-      
+      <h2>目录</h2>
 
-<p><h2>目录</h2>
-<nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#介绍">介绍</a></li>
-<li><a href="#安装">安装</a></li>
-<li><a href="#使用">使用</a>
-<ul>
-<li><a href="#ros">ros</a>
-<ul>
-<li><a href="#ros-config"><code>ros config</code></a></li>
-<li><a href="#ros-service"><code>ros service</code></a></li>
-</ul></li>
-<li><a href="#系统服务">系统服务</a></li>
-<li><a href="#docker">docker</a></li>
-</ul></li>
-<li><a href="#cloud-config">cloud-config</a></li>
-</ul></li>
-</ul>
-</nav></p>
-
-<h2 id="介绍">介绍</h2>
-
+<h2 id="heading">介绍</h2>
 <p><code>RancherOS</code>是Rancher推出的一个轻量级的Linux内核操作系统，专为容器环境而设计。</p>
-
 <p>按官网的说法，它具有如下特性：</p>
-
 <table>
 <thead>
 <tr>
@@ -474,93 +446,76 @@
 <th>瞎翻译</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>Minimalist OS</td>
 <td>极简系统 ——当前版本(v1.5.4)镜像也只有146M，还内置了各类虚拟机工具和N个版本的Docker环境</td>
 </tr>
-
 <tr>
 <td>Comprehensive System Services</td>
 <td>综合系统服务——所有的系统服务都可以通过Compose文件声明和启动</td>
 </tr>
-
 <tr>
 <td>Improved Security</td>
 <td>更安全——没有额外的工具/代码，所有应用都跑在容器里，当然更安全</td>
 </tr>
-
 <tr>
 <td>Up-to-Date Version of Docker &amp; Linux</td>
 <td>集成最新的Docker&amp;Linux发行版——装完系统直接就有Docker用，还是最新的，美滋滋</td>
 </tr>
-
 <tr>
 <td>Automated OS Configuration</td>
 <td>自动化系统配置——使用cloud-init工具解析<code>cloud-config</code>文件，统一管理系统级的所有配置，比如网络，docker源&hellip;</td>
 </tr>
-
 <tr>
 <td>24x7 Enterprise-level Support</td>
 <td>不解释&hellip;</td>
 </tr>
 </tbody>
 </table>
-
 <p>简单的来说，当我们开始使用容器化的方式来管理应用和服务的时候，我们自然而然的会发现，我们对操作系统其实没什么需求了
 ——环境依赖和工具链由镜像提供，GUI界面或者浏览器毫无作用，系统内置的各种工具也就是启动一个容器的事&hellip;</p>
-
 <p>把这些七七八八的都去掉，最后剩下：一个Linux内核 + Docker环境 + 精简但是统一的配置管理 = RancherOS</p>
-
-<p><img src="/img/rancheroshowitworks.png" alt="RancherOS 架构" /></p>
-
+<p><img src="/img/rancheroshowitworks.png" alt="RancherOS 架构"></p>
 <p>RancherOS的架构也非常简单，除了内核，就是两个Docker。</p>
-
 <p>一个系统级的Docker(<code>system-docker</code>)接管了系统的绝大部分功能，比如在一般Linux上你会用<code>systemctl restart</code>重启服务，在这里就是用<code>system-docker restart</code>重启一个容器了。</p>
-
 <p>用户级别的Docker也作为一个服务运行在<code>system-docker</code>之上，也就是我们一般意义上跑应用的docker，正常使用。</p>
-
-<h2 id="安装">安装</h2>
-
+<h2 id="heading-1">安装</h2>
 <ol>
-<li>在<a href="https://github.com/rancher/os/releases/" target="_blank">RancherOS Gitlab页面</a>下载对应版本镜像。</li>
-<li>新建虚拟机，加载ISO镜像，默认会以<code>rancher</code>用户身份进入一个运行在内存之上的临时RancherOS，所以建虚拟机的时候内存可以适当大一点，比如2G</li>
-
-<li><p>新建/上传一个<code>cloud-config.yml</code>文件，主要内容就是写入你的ssh公钥，因为RancherOS安装之后就只能通过ssh+公钥的方式登陆(是的，你在虚拟机控制台都进不去)，一个最简单的示例如下：</p>
-
+<li>
+<p>在<a href="https://github.com/rancher/os/releases/">RancherOS Gitlab页面</a>下载对应版本镜像。</p>
+</li>
+<li>
+<p>新建虚拟机，加载ISO镜像，默认会以<code>rancher</code>用户身份进入一个运行在内存之上的临时RancherOS，所以建虚拟机的时候内存可以适当大一点，比如2G</p>
+</li>
+<li>
+<p>新建/上传一个<code>cloud-config.yml</code>文件，主要内容就是写入你的ssh公钥，因为RancherOS安装之后就只能通过ssh+公钥的方式登陆(是的，你在虚拟机控制台都进不去)，一个最简单的示例如下：</p>
 <pre><code class="language-yaml"># cloud-config
 ssh_authorized_keys:
 - ssh-rsa AAA...
-</code></pre></li>
-
-<li><p>没有其他配置了的话，</p>
-
+</code></pre>
+</li>
+<li>
+<p>没有其他配置了的话，</p>
 <p><code>sudo ros config valicate -i cloud-config.yml</code>校验没有格式错误，</p>
-
 <p><code>sudo ros install -c cloud-config.yml -d /dev/sda</code>将RancherOS安装到硬盘。</p>
-
-<p>一路只有2个选项，是否要安装？Y，是否要重启？N，因为重启比你卸载光驱还快&hellip;直接就又进入一个新的临时RancherOS了&hellip;</p></li>
-
-<li><p>手动<code>sudo poweroff</code>，卸载光驱，重启，看到熟悉的牛头LOGO，恭喜完成~</p></li>
+<p>一路只有2个选项，是否要安装？Y，是否要重启？N，因为重启比你卸载光驱还快&hellip;直接就又进入一个新的临时RancherOS了&hellip;</p>
+</li>
+<li>
+<p>手动<code>sudo poweroff</code>，卸载光驱，重启，看到熟悉的牛头LOGO，恭喜完成~</p>
+</li>
 </ol>
-
 <div class="alert alert-note">
   <div>
     <p>如果一定要为rancher设置一个密码的话，将安装命令替换为：</p>
-
 <p><code>sudo ros install -c cloud-config.yml -d /dev/sda --append=rancher.password=密码</code></p>
-
   </div>
 </div>
-
 <div class="alert alert-note">
   <div>
     <p>我遇到的一个情况，在Vmware上安装时，临时RancherOS默认没有网，
 需要手动配置网卡：</p>
-
 <p>修改<code>/etc/network/interfaces</code>文件，在末尾添加：</p>
-
 <pre><code class="language-bash">auto eth0
 iface eth0 inet static
 # IP
@@ -576,16 +531,11 @@ gateway             xxx.xxx.xxx.xxx
 # dns服务器
 dns-nameservers     xxx.xxx.xxx.xxx
 </code></pre>
-
 <p>配置好执行<code>sudo ifup eth0</code>即可连上网络。</p>
-
   </div>
 </div>
-
-<h2 id="使用">使用</h2>
-
+<h2 id="heading-2">使用</h2>
 <p>整个RancherOS自底向上分三个层面进行管理</p>
-
 <table>
 <thead>
 <tr>
@@ -594,20 +544,17 @@ dns-nameservers     xxx.xxx.xxx.xxx
 <th>管理</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>系统管理</td>
 <td>ros</td>
 <td>cloud-config.yml</td>
 </tr>
-
 <tr>
 <td>服务管理</td>
 <td>system-docker</td>
 <td>类Compose文件</td>
 </tr>
-
 <tr>
 <td>应用管理</td>
 <td>docker</td>
@@ -615,11 +562,8 @@ dns-nameservers     xxx.xxx.xxx.xxx
 </tr>
 </tbody>
 </table>
-
 <h3 id="ros">ros</h3>
-
 <p>ros是对系统进行管理的工具，所以必须要以root权限执行，具体用法可以help看一下：</p>
-
 <pre><code class="language-bash">$ sudo ros help
 NAME:
    ros - Control and configure RancherOS
@@ -649,9 +593,7 @@ GLOBAL OPTIONS:
    --version, -v  print the version
 
 </code></pre>
-
 <h4 id="ros-config"><code>ros config</code></h4>
-
 <pre><code class="language-bash">$ ros config
 NAME:
    ros config - configure settings
@@ -669,23 +611,15 @@ COMMANDS:
      syslinux  edit Syslinux boot global.cfg                        # 没用过
      validate  validate configuration from stdin                    # 校验配置文件格式
 </code></pre>
-
 <p>所有面向系统的设置都是通过<code>ros config</code>进行管理的，默认的配置存放在<code>/var/lib/rancher/conf/cloud-config.yml</code>中。未记录的配置修改都会在重启后失效(是的，<code>sudo passwd</code>也不能让你下次直接用户名密码登陆，不过有别的办法)</p>
-
 <p>简单的修改配置可以直接执行<code>ros config set &lt;key&gt; &lt;value&gt;</code>，比如</p>
-
 <p><code>ros config set rancher.docker.tls true</code>；</p>
-
 <p>多个值写成列表，比如</p>
-
 <p><code>ros config set rancher.network.dns.nameservers &quot;['8.8.8.8','8.8.4.4']&quot;</code>；</p>
-
 <p>复杂一点的可以写一个小的yml，然后执行<code>ros config merge -i &lt;文件&gt;</code>进行合并，
 理论上也可以手动添加到<code>/var/lib/rancher/conf/cloud-config.yml</code>中。
 但是个人不推荐这样做，因为现在版本的cloud-config.yml和<code>ros config export</code>输出的不是一回事，待研究。</p>
-
 <h4 id="ros-service"><code>ros service</code></h4>
-
 <pre><code class="language-bash">$  ros service
 NAME:
    ros service -
@@ -720,13 +654,9 @@ OPTIONS:
    --verbose, --debug
    --help, -h          show help
 </code></pre>
-
 <p>控制的是随系统启动的服务，用法包括声明文件的写法基本和Docker Compose一样，把它理解成Docker Compose的替代品就对了。</p>
-
 <p>别的命令不解释了&hellip;</p>
-
-<h3 id="系统服务">系统服务</h3>
-
+<h3 id="heading-3">系统服务</h3>
 <pre><code class="language-bash">$ ros s list
 disabled amazon-ecs-agent
 disabled container-cron
@@ -749,34 +679,24 @@ disabled waagent
 disabled virtualbox-tools
 disabled pingan-amc
 </code></pre>
-
 <p>上面说到系统级的服务都是用<code>ros s</code>控制启停，而想要自定义一个系统级的服务的话:</p>
-
 <ol>
 <li>用Docker Compose语法编写服务的<code>xxx.yml</code>文件，一般存放到<code>/var/lib/rancher/conf/</code></li>
 <li><code>ros service enable /var/lib/rancher/conf/xxx.yml</code> 启用该服务</li>
 <li><code>ros service up &lt;serviceName&gt;</code>启动服务，如果一个Compose里定义了多个服务，那么需要
 <code>ros service up &lt;serviceName1&gt; &lt;serviceName2&gt; &lt;serviceName3&gt; ...</code>来同时启动</li>
 </ol>
-
 <h3 id="docker">docker</h3>
-
 <p>没啥好说的&hellip;Just use it.</p>
-
 <h2 id="cloud-config">cloud-config</h2>
-
 <p>额外说一下这个cloud-config。</p>
-
 <p>现有的公有云/虚拟化厂商大多支持<code>cloud-init</code>工具进行系统配置初始化(某种意义上的事实标准)。cloud-config就是为<code>cloud-init</code>服务的。RancherOS在<code>system-docker</code>中运行了一个<code>cloud-init</code>容器，它会在启动时查找可能位置上的cloud-config文件并依此配置系统配置项。</p>
-
 <p>cloud-config的语法格式就是标准的YAML语法，一个我在用的、比较完整的cloud-config的示例如下：</p>
-
 <div class="alert alert-note">
   <div>
     使用时请删除掉中文注释&hellip;给别人演示的时候懒得删注释结果validate没问题，但是配置就是不生效&hellip;
   </div>
 </div>
-
 <pre><code class="language-yaml"># 主机名
 hostname: ros-test
 

@@ -28,7 +28,7 @@
   
     
   
-  <meta name="description" content="目录 什么是单元测试 为什么要写单元测试 怎么写单元测试 原生测试框架unittest/unittest2 基础 断言 setUp 和 tearDown 缺点 第三方测试框架py.te">
+  <meta name="description" content="目录 这是写给我组里的人看的，顺手粘过来 什么是单元测试 单元测试(Unit Testing)又称为模块测试，是针对程序模块（软件设计的最小单位）来">
 
   
   <link rel="alternate" hreflang="zh-Hans" href="https://szthanatos.github.io/post/python/unit_testing/">
@@ -115,7 +115,7 @@
   <meta property="og:site_name" content="Kryptonite Lab">
   <meta property="og:url" content="https://szthanatos.github.io/post/python/unit_testing/">
   <meta property="og:title" content="python单元测试标准及实现 | Kryptonite Lab">
-  <meta property="og:description" content="目录 什么是单元测试 为什么要写单元测试 怎么写单元测试 原生测试框架unittest/unittest2 基础 断言 setUp 和 tearDown 缺点 第三方测试框架py.te"><meta property="og:image" content="https://szthanatos.github.io/img/icon-192.png">
+  <meta property="og:description" content="目录 这是写给我组里的人看的，顺手粘过来 什么是单元测试 单元测试(Unit Testing)又称为模块测试，是针对程序模块（软件设计的最小单位）来"><meta property="og:image" content="https://szthanatos.github.io/img/icon-192.png">
   <meta property="twitter:image" content="https://szthanatos.github.io/img/icon-192.png"><meta property="og:locale" content="zh-Hans">
   
     
@@ -167,7 +167,7 @@
       "url": "https://szthanatos.github.io/img/icon-512.png"
     }
   },
-  "description": "目录 什么是单元测试 为什么要写单元测试 怎么写单元测试 原生测试框架unittest/unittest2 基础 断言 setUp 和 tearDown 缺点 第三方测试框架py.te"
+  "description": "目录 这是写给我组里的人看的，顺手粘过来 什么是单元测试 单元测试(Unit Testing)又称为模块测试，是针对程序模块（软件设计的最小单位）来"
 }
 </script>
 
@@ -241,7 +241,7 @@
 
       
       
-      <ul class="navbar-nav mr-auto">
+      <ul class="navbar-nav ml-auto">
         
 
         
@@ -324,9 +324,6 @@
         
         
 
-      
-      </ul>
-      <ul class="navbar-nav ml-auto">
       
 
         
@@ -441,81 +438,37 @@
   <div class="article-container">
 
     <div class="article-style" itemprop="articleBody">
-      
-
-<p><h2>目录</h2>
-<nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#什么是单元测试">什么是单元测试</a></li>
-<li><a href="#为什么要写单元测试">为什么要写单元测试</a></li>
-<li><a href="#怎么写单元测试">怎么写单元测试</a>
-<ul>
-<li><a href="#原生测试框架unittest-unittest2">原生测试框架unittest/unittest2</a>
-<ul>
-<li><a href="#基础">基础</a></li>
-<li><a href="#断言">断言</a></li>
-<li><a href="#setup-和-teardown">setUp 和 tearDown</a></li>
-<li><a href="#缺点">缺点</a></li>
-</ul></li>
-<li><a href="#第三方测试框架py-test">第三方测试框架py.test</a></li>
-</ul></li>
-<li><a href="#单元测试标准">单元测试标准</a>
-<ul>
-<li><a href="#代码覆盖指标">代码覆盖指标</a></li>
-<li><a href="#代码覆盖率">代码覆盖率</a></li>
-</ul></li>
-<li><a href="#小结">小结</a></li>
-</ul></li>
-</ul>
-</nav></p>
+      <h2>目录</h2>
 
 <div class="alert alert-note">
   <div>
     这是写给我组里的人看的，顺手粘过来
   </div>
 </div>
-
-<h2 id="什么是单元测试">什么是单元测试</h2>
-
+<h2 id="heading">什么是单元测试</h2>
 <blockquote>
 <p>单元测试(Unit Testing)又称为模块测试，是针对程序模块（软件设计的最小单位）来进行正确性检验的测试工作。程序单元是应用的最小可测试部件。在过程化编程中，一个单元就是单个程序、函数、过程等；对于面向对象编程，最小单元就是方法，包括基类（超类）、抽象类、或者派生类（子类）中的方法。</p>
 </blockquote>
-
 <p>一句话概括，单元测试也就是校验代码中具体的类(甚至函数)的输出值是否符合预期。</p>
-
-<h2 id="为什么要写单元测试">为什么要写单元测试</h2>
-
+<h2 id="heading-1">为什么要写单元测试</h2>
 <blockquote>
 <p>“可能出错的事情最终一定会出错”</p>
-
 <p>——墨菲定律</p>
 </blockquote>
-
 <p>代码随着时间的累计而增长，出现意想不到的问题的可能性也在指数级上升。代码的正确与否不应该靠人来保证，因为人是会犯错并且一定犯错的。如果每次新功能上线时不能回答“所有功能都测试过了么”的问题，那么最终整个项目的可靠性都将被摧毁。单元测试的意义就在于让你能够回答这个问题，并且，回答的更自动化。</p>
-
-<h2 id="怎么写单元测试">怎么写单元测试</h2>
-
-<h3 id="原生测试框架unittest-unittest2">原生测试框架unittest/unittest2</h3>
-
+<h2 id="heading-2">怎么写单元测试</h2>
+<h3 id="unittestunittest2">原生测试框架unittest/unittest2</h3>
 <p>在python语境中，官方提供unittest标准库完成单元测试。</p>
-
-<h4 id="基础">基础</h4>
-
+<h4 id="heading-3">基础</h4>
 <p>需要理解的概念有如下四个：</p>
-
 <ul>
 <li><code>test fixture</code>：单元测试所需上下文环境，比如临时数据库/网络连接等；</li>
 <li><code>test case</code>：一个独立的单元测试最小单位；</li>
 <li><code>test suite</code>：test case的集合；</li>
 <li><code>test runner</code>：执行并输出单元测试的程序；</li>
 </ul>
-
-<p>详细定义请自行查阅<a href="https://docs.python.org/3/library/unittest.html" target="_blank">官网文档</a>。</p>
-
+<p>详细定义请自行查阅<a href="https://docs.python.org/3/library/unittest.html">官网文档</a>。</p>
 <p>官方单元测试用例如下，我们对upper(将string转换为大写)、isupper(判断string是否全部为大写)、split(对string按空格切分为list)函数的功能进行校验</p>
-
 <pre><code class="language-python">import unittest
 
 class TestStringMethods(unittest.TestCase):
@@ -537,12 +490,9 @@ class TestStringMethods(unittest.TestCase):
 if __name__ == '__main__':
     unittest.main()
 </code></pre>
-
-<h4 id="断言">断言</h4>
-
+<h4 id="heading-4">断言</h4>
 <p>可以从上面的例子看出，单元测试判断结果是否符合预期的主要方式是通过断言(assert)  实现。
 以下是常见断言：</p>
-
 <table>
 <thead>
 <tr>
@@ -550,125 +500,98 @@ if __name__ == '__main__':
 <th>Checks that</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>assertEqual(a, b)</td>
 <td>a == b</td>
 </tr>
-
 <tr>
 <td>assertNotEqual(a, b)</td>
 <td>a != b</td>
 </tr>
-
 <tr>
 <td>assertGreater(a, b)</td>
 <td>a &gt; b</td>
 </tr>
-
 <tr>
 <td>assertGreaterEqual(a, b)</td>
 <td>a &gt;= b</td>
 </tr>
-
 <tr>
 <td>assertLess(a, b)</td>
 <td>a &lt; b</td>
 </tr>
-
 <tr>
 <td>assertLessEqual(a, b)</td>
 <td>a &lt;= b</td>
 </tr>
-
 <tr>
 <td>assertAlmostEqual(a, b)</td>
 <td>round(a-b, 7) == 0</td>
 </tr>
-
 <tr>
 <td>assertNotAlmostEqual(a, b)</td>
 <td>round(a-b, 7) != 0</td>
 </tr>
-
 <tr>
 <td>assertRegex(s, r)</td>
 <td>r.search(s)</td>
 </tr>
-
 <tr>
 <td>assertNotRegex(s, r)</td>
 <td>not r.search(s)</td>
 </tr>
-
 <tr>
 <td>assertTrue(x)</td>
 <td>bool(x) is True</td>
 </tr>
-
 <tr>
 <td>assertFalse(x)</td>
 <td>bool(x) is False</td>
 </tr>
-
 <tr>
 <td>assertIs(a, b)</td>
 <td>a is b</td>
 </tr>
-
 <tr>
 <td>assertIsNot(a, b)</td>
 <td>a is not b</td>
 </tr>
-
 <tr>
 <td>assertIsNone(x)</td>
 <td>x is None</td>
 </tr>
-
 <tr>
 <td>assertIsNotNone(x)</td>
 <td>x is not None</td>
 </tr>
-
 <tr>
 <td>assertIn(a, b)</td>
 <td>a in b</td>
 </tr>
-
 <tr>
 <td>assertNotIn(a, b)</td>
 <td>a not in b</td>
 </tr>
-
 <tr>
 <td>assertIsInstance(a, b)</td>
 <td>isinstance(a, b)</td>
 </tr>
-
 <tr>
 <td>assertNotIsInstance(a, b)</td>
 <td>not isinstance(a, b)</td>
 </tr>
 </tbody>
 </table>
-
-<h4 id="setup-和-teardown">setUp 和 tearDown</h4>
-
+<h4 id="setup--teardown">setUp 和 tearDown</h4>
 <p><code>test fixture</code>是通过<code>setUp</code> 和<code>tearDown</code> 来具体实现的。</p>
-
 <p><strong>setUp()方法</strong>：
 在执行每个测试用例(test case)之前被执行，除了unittest.SkipTest和AssertionError以外的任何异常都会当做是error并终止当前测试用例；</p>
-
 <p><strong>tearDown()方法</strong>：
 执行了setUp()方法后，执行tearDown()方法(进行清理)。对异常的处理和setUp()类似；</p>
-
 <p><strong>setUpClass(cls)与tearDownClass(cls)类</strong>：
 可以将setUp和tearDown定义在基类中避免重复定义，定义setUpClass(cls)与tearDownClass(cls)类时必须加上classmethod装饰符；</p>
-
 <p>对上面的例子进行简单的改造以演示setUp和tearDown的效果：</p>
-
 <pre><code class="language-python">import unittest
 
 class TestStringMethods(unittest.TestCase):
@@ -684,40 +607,29 @@ class TestStringMethods(unittest.TestCase):
 
     ...
 </code></pre>
-
 <p>执行后效果如下：</p>
-
 <pre><code class="language-shell">test_isupper (mytest.TestStringMethods) ... 1. setUp here
 1. tearDown here
 ok
 </code></pre>
-
-<h4 id="缺点">缺点</h4>
-
+<h4 id="heading-5">缺点</h4>
 <p>基本的一个单元测试可以用这四步概括：</p>
-
 <ol>
 <li>新建单元测试脚本</li>
 <li>导入单元测试依赖</li>
 <li>继承单元测试类</li>
 <li>实现单元测试方法</li>
 </ol>
-
 <p>而这个过程非常不pythonic：</p>
-
 <ul>
 <li>必须新建单独的测试文件</li>
 <li>测试必须继承自unittest类，即使再简单的测试</li>
 <li>断言只能使用unittest的Assertion</li>
 <li>最最关键和难以忍受的：unitunit内的命名规则和pep 8相悖</li>
 </ul>
-
 <p>造成这些问题的原因一言以蔽之：python的测试框架是完全仿照Java实现的。</p>
-
-<h3 id="第三方测试框架py-test">第三方测试框架py.test</h3>
-
+<h3 id="pytest">第三方测试框架py.test</h3>
 <p>实际上，通过使用py.test，我们可以非常pythonic的实现单元测试：</p>
-
 <pre><code class="language-python"># content of test_sample.py
 def inc(x):
     return x + 1
@@ -726,9 +638,7 @@ def inc(x):
 def test_answer():
     assert inc(3) == 5
 </code></pre>
-
 <p>直接在测试文件所在目录执行py.test得到如下结果：</p>
-
 <pre><code class="language-shell">$ pytest
 =========================== test session starts ============================
 platform linux -- Python 3.x.y, pytest-3.x.y, py-1.x.y, pluggy-0.x.y
@@ -748,11 +658,8 @@ E        +  where 4 = inc(3)
 test_sample.py:6: AssertionError
 ========================= 1 failed in 0.12 seconds =========================
 </code></pre>
-
-<p>就是这么简单，更进一步的，py.test支持自动生成对指定目录下所有测试文件的统一测试脚本，更具体的用法参见<a href="https://docs.pytest.org/en/latest/" target="_blank">pytest文档</a></p>
-
+<p>就是这么简单，更进一步的，py.test支持自动生成对指定目录下所有测试文件的统一测试脚本，更具体的用法参见<a href="https://docs.pytest.org/en/latest/">pytest文档</a></p>
 <p>总的来说，py.test具有如下特点：</p>
-
 <ul>
 <li>非常容易上手，入门简单，文档丰富，文档中有很多实例可以参考</li>
 <li>能够支持简单的单元测试和复杂的功能测试</li>
@@ -763,64 +670,56 @@ test_sample.py:6: AssertionError
 <li>具有很多第三方插件，并且可以自定义扩展</li>
 <li>方便的和持续集成工具集成</li>
 </ul>
-
-<h2 id="单元测试标准">单元测试标准</h2>
-
+<h2 id="heading-6">单元测试标准</h2>
 <p>业界通常使用代码覆盖(率)来评判测试的好坏。</p>
-
-<h3 id="代码覆盖指标">代码覆盖指标</h3>
-
+<h3 id="heading-7">代码覆盖指标</h3>
 <p>单独的一两个测试完全无法体现测试的优势。而对所有可能的情况编写单元测试既不现实也无必要。所以明确测试覆盖哪些指标非常重要。<strong>我们在此指定以下四个指标必须被覆盖：</strong></p>
-
 <ul>
-<li><p><strong>函数覆盖（Function Coverage）</strong></p>
-
-<p>每一个函数都必须被测试；</p></li>
-
-<li><p><strong>语句覆盖（Statement Coverage）</strong></p>
-
+<li>
+<p><strong>函数覆盖（Function Coverage）</strong></p>
+<p>每一个函数都必须被测试；</p>
+</li>
+<li>
+<p><strong>语句覆盖（Statement Coverage）</strong></p>
 <p>被测代码中每个可执行语句都应该被执行测试。例如</p>
-
 <pre><code class="language-python">def foo(x:int, y:int):
     z = 0
     if x&gt;0 and y &gt;0:
         z = x
     return z
 </code></pre>
-
-<p>中，如果测试为assertEqualst(0, foo(2,-1))，则if内的代码就没有被覆盖到；</p></li>
-
-<li><p><strong>决策覆盖（Decision Coverage）</strong></p>
-
+<p>中，如果测试为assertEqualst(0, foo(2,-1))，则if内的代码就没有被覆盖到；</p>
+</li>
+<li>
+<p><strong>决策覆盖（Decision Coverage）</strong></p>
 <p>指每一个逻辑分支都应该被测试覆盖。类似上面的例子，如果想要达到决策覆盖，我们起码应该执行两次测试：</p>
-
 <ul>
 <li>assertEquals(2, foo(2, 2))  # 决策1</li>
 <li>assertEqualst(0, foo(2,-1))  # 决策2</li>
-</ul></li>
-
-<li><p><strong>条件覆盖（Condition Coverage）</strong></p>
-
+</ul>
+</li>
+<li>
+<p><strong>条件覆盖（Condition Coverage）</strong></p>
 <p>每一个逻辑分支的每一个条件都应该被覆盖。条件覆盖不需要满足条件表达式所有的排列组合，而只需将每个条件表达式的结果为true/false的情况进行测试就可以了。依旧使用上面的例子，如果想要达到条件覆盖，我们应该执行至少三次测试：</p>
-
 <ul>
-<li>assertEquals(2, foo(2, 2))  # 决策1条件true</li>
-<li>assertEqualst(0, foo(2,-1))  # 决策2(没有条件)</li>
-<li>assertEquals(0, foo(-1, -1))  # 决策1条件false</li>
+<li>
+<p>assertEquals(2, foo(2, 2))  # 决策1条件true</p>
+</li>
+<li>
+<p>assertEqualst(0, foo(2,-1))  # 决策2(没有条件)</p>
+</li>
+<li>
+<p>assertEquals(0, foo(-1, -1))  # 决策1条件false</p>
+<p>如果没有第三个测试，那么只能达到决策覆盖，不能达到条件覆盖。</p>
+</li>
 </ul>
-
-<p>如果没有第三个测试，那么只能达到决策覆盖，不能达到条件覆盖。</p></li>
+</li>
 </ul>
-
-<h3 id="代码覆盖率">代码覆盖率</h3>
-
+<h3 id="heading-8">代码覆盖率</h3>
 <p>在满足代码覆盖指标的基础上，只有保证一定的代码覆盖率才能保证测试的完整。满足代码覆盖指标相当于是“质”，而代码覆盖率则是保证“量”。<strong>目前要求代码覆盖率不应该低于75%</strong></p>
-
-<p>我们选定<a href="https://pypi.org/project/coverage/" target="_blank">coverage.py</a>来统计代码覆盖率。由于主要使用py.test，需要额外安装<a href="https://github.com/pytest-dev/pytest-cov" target="_blank">pytest-cov</a>插件。安装过程非常简单，对照文档直接pip安装即可，不多介绍。</p>
-
+<p>我们选定<a href="https://pypi.org/project/coverage/">coverage.py</a>来统计代码覆盖率。由于主要使用py.test，需要额外安装<a href="https://github.com/pytest-dev/pytest-cov">pytest-cov</a>插件。安装过程非常简单，对照文档直接pip安装即可，不多介绍。</p>
 <p>完成安装后，使用py.test的时候增加&ndash;cov=myproj参数即可。
 效果如下：</p>
-
 <pre><code class="language-shell">-------------------- coverage: ... ---------------------
 Name                 Stmts   Miss  Cover
 ----------------------------------------
@@ -830,13 +729,9 @@ myproj/feature4286      94      7    92%
 ----------------------------------------
 TOTAL                  353     20    94%
 </code></pre>
-
-<p>详细用法可参照<a href="http://pytest-cov.readthedocs.io/en/latest/" target="_blank">官方文档</a></p>
-
-<h2 id="小结">小结</h2>
-
+<p>详细用法可参照<a href="http://pytest-cov.readthedocs.io/en/latest/">官方文档</a></p>
+<h2 id="heading-9">小结</h2>
 <p>总结一下，通过对单元测试的必要性、编写方法、评判标准等一系列的介绍，确立了以下三点：</p>
-
 <ul>
 <li>使用py.test+unittest编写单元测试，使用coverage统计、分析单元测试编写情况；</li>
 <li>单元测试应覆盖最基本的四项指标(函数覆盖、语句覆盖、分支覆盖、条件覆盖)；</li>

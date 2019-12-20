@@ -28,7 +28,7 @@
   
     
   
-  <meta name="description" content="目录 Hugo 安装/更新 安装/更新 常用命令 Academic 安装/更新 通过Netlify 通过Git 安装 自动更新 手动更新 部署到Github Pages 原理 官方教程(缩减版) 脚本">
+  <meta name="description" content="目录 Hugo 安装/更新 Hugo是使用Go语言开发的静态站点生成器。不过无需准备Go语言环境，可以直接通过二进制编译包进行跨平台部署。 以下均以Ubu">
 
   
   <link rel="alternate" hreflang="zh-Hans" href="https://szthanatos.github.io/post/academic/academic_in_practice/">
@@ -115,7 +115,7 @@
   <meta property="og:site_name" content="Kryptonite Lab">
   <meta property="og:url" content="https://szthanatos.github.io/post/academic/academic_in_practice/">
   <meta property="og:title" content="Academic实现Github Page个人博客 | Kryptonite Lab">
-  <meta property="og:description" content="目录 Hugo 安装/更新 安装/更新 常用命令 Academic 安装/更新 通过Netlify 通过Git 安装 自动更新 手动更新 部署到Github Pages 原理 官方教程(缩减版) 脚本"><meta property="og:image" content="https://szthanatos.github.io/img/icon-192.png">
+  <meta property="og:description" content="目录 Hugo 安装/更新 Hugo是使用Go语言开发的静态站点生成器。不过无需准备Go语言环境，可以直接通过二进制编译包进行跨平台部署。 以下均以Ubu"><meta property="og:image" content="https://szthanatos.github.io/img/icon-192.png">
   <meta property="twitter:image" content="https://szthanatos.github.io/img/icon-192.png"><meta property="og:locale" content="zh-Hans">
   
     
@@ -167,7 +167,7 @@
       "url": "https://szthanatos.github.io/img/icon-512.png"
     }
   },
-  "description": "目录 Hugo 安装/更新 安装/更新 常用命令 Academic 安装/更新 通过Netlify 通过Git 安装 自动更新 手动更新 部署到Github Pages 原理 官方教程(缩减版) 脚本"
+  "description": "目录 Hugo 安装/更新 Hugo是使用Go语言开发的静态站点生成器。不过无需准备Go语言环境，可以直接通过二进制编译包进行跨平台部署。 以下均以Ubu"
 }
 </script>
 
@@ -241,7 +241,7 @@
 
       
       
-      <ul class="navbar-nav mr-auto">
+      <ul class="navbar-nav ml-auto">
         
 
         
@@ -324,9 +324,6 @@
         
         
 
-      
-      </ul>
-      <ul class="navbar-nav ml-auto">
       
 
         
@@ -437,104 +434,39 @@
   <div class="article-container">
 
     <div class="article-style" itemprop="articleBody">
-      
+      <h2>目录</h2>
 
-<p><h2>目录</h2>
-<nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#hugo-安装-更新">Hugo 安装/更新</a>
-<ul>
-<li><a href="#安装-更新">安装/更新</a></li>
-<li><a href="#常用命令">常用命令</a></li>
-</ul></li>
-<li><a href="#academic-安装-更新">Academic 安装/更新</a>
-<ul>
-<li><a href="#通过netlify">通过Netlify</a></li>
-<li><a href="#通过git">通过Git</a>
-<ul>
-<li><a href="#安装">安装</a></li>
-<li><a href="#自动更新">自动更新</a></li>
-<li><a href="#手动更新">手动更新</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#部署到github-pages">部署到Github Pages</a>
-<ul>
-<li><a href="#原理">原理</a></li>
-<li><a href="#官方教程-缩减版">官方教程(缩减版)</a></li>
-<li><a href="#脚本">脚本</a></li>
-</ul></li>
-<li><a href="#个性化配置">个性化配置</a>
-<ul>
-<li><a href="#config-toml主要配置项解释">config.toml主要配置项解释</a></li>
-<li><a href="#修改网站logo">修改网站logo</a></li>
-<li><a href="#给文章添加精选图">给文章添加精选图</a></li>
-<li><a href="#给文章添加头部背景">给文章添加头部背景</a></li>
-<li><a href="#目录">目录</a></li>
-<li><a href="#注意-警告标识">注意/警告标识</a></li>
-<li><a href="#消除短代码效果">消除短代码效果</a>
-<ul>
-<li><a href="#单行代码">单行代码</a></li>
-<li><a href="#代码块">代码块</a></li>
-</ul></li>
-<li><a href="#修改模板">修改模板</a></li>
-</ul></li>
-</ul></li>
-</ul>
-</nav></p>
-
-<h2 id="hugo-安装-更新">Hugo 安装/更新</h2>
-
-<p><a href="https://gohugo.io/" target="_blank">Hugo</a>是使用<code>Go</code>语言开发的静态站点生成器。不过无需准备<code>Go</code>语言环境，可以直接通过二进制编译包进行跨平台部署。</p>
-
+<h2 id="hugo-">Hugo 安装/更新</h2>
+<p><a href="https://gohugo.io/">Hugo</a>是使用<code>Go</code>语言开发的静态站点生成器。不过无需准备<code>Go</code>语言环境，可以直接通过二进制编译包进行跨平台部署。</p>
 <p>以下均以Ubuntu18.0为例。</p>
-
-<h3 id="安装-更新">安装/更新</h3>
-
+<h3 id="heading">安装/更新</h3>
 <ol>
-<li>前往<a href="https://github.com/gohugoio/hugo/releases" target="_blank">Github页面</a>下载最新版本，这里我们下载<code>hugo_0.52_Linux-64bit.deb</code>;</li>
+<li>前往<a href="https://github.com/gohugoio/hugo/releases">Github页面</a>下载最新版本，这里我们下载<code>hugo_0.52_Linux-64bit.deb</code>;</li>
 <li>使用命令<code>dpkg -i hugo_0.52_Linux-64bit.deb</code> 安装hugo;</li>
 <li>更新即重复上面两步，覆盖安装即可;</li>
 </ol>
-
-<h3 id="常用命令">常用命令</h3>
-
+<h3 id="heading-1">常用命令</h3>
 <ul>
 <li><strong><code>hugo</code></strong>： 编译项目生成静态网站，默认位置在项目的<code>public</code>目录下</li>
 <li><strong><code>hugo server</code></strong>： 启动你的网站服务，可以通过浏览器访问<code>http://127.0.0.1:1313/</code>访问站点;</li>
 <li><strong><code>hugo new {folder}/{name}.md</code></strong>: 创建新文章，使用<code>markdown</code>进行排版，一般默认放在<code>post</code>文件夹下；</li>
 </ul>
-
 <p>基本没了，一般情况下用这三个命令就够了。</p>
-
-<h2 id="academic-安装-更新">Academic 安装/更新</h2>
-
+<h2 id="academic-">Academic 安装/更新</h2>
 <p>Academic是一个Hugo主题，从名字就可以知道这个主题比较学院派，适合科研/学术人员发布个人信息/介绍科研项目，当然，拿来做个人博客也是没问题的。</p>
-
-<h3 id="通过netlify">通过Netlify</h3>
-
-<p>Academic推荐使用第三方博客管理平台<a href="https://app.netlify.com/start/deploy?repository=https://github.com/sourcethemes/academic-kickstart" target="_blank">Netlify</a>安装，如果你没有域名或者没想建站，只是想自己使用，那我建议不使用它的服务——请直接跳到下一部分，否则跟随网站引导完成安装;</p>
-
-<h3 id="通过git">通过Git</h3>
-
-<h4 id="安装">安装</h4>
-
+<h3 id="netlify">通过Netlify</h3>
+<p>Academic推荐使用第三方博客管理平台<a href="https://app.netlify.com/start/deploy?repository=https://github.com/sourcethemes/academic-kickstart">Netlify</a>安装，如果你没有域名或者没想建站，只是想自己使用，那我建议不使用它的服务——请直接跳到下一部分，否则跟随网站引导完成安装;</p>
+<h3 id="git">通过Git</h3>
+<h4 id="heading-2">安装</h4>
 <ol>
 <li>通过git安装的话，首先建议你在GitHub上fork成你自己的项目，默认的话，通过<code>git clone https://github.com/sourcethemes/academic-kickstart.git My_Website</code>将代码克隆到本地文件夹<code>My_Website</code> <em>(当然，更推荐使用ssh协议，更安全，也免于push时输入密码，这里暂时按官方的来)</em> ;</li>
 <li>进入文件夹，初始化项目：<code>git submodule update --init --recursive</code>，完成安装;</li>
 </ol>
-
-<h4 id="自动更新">自动更新</h4>
-
+<h4 id="heading-3">自动更新</h4>
 <p>说是自动，还是需要手动执行一条命令：<code>git submodule update --remote --merge</code>;</p>
-
 <p>这么做的前提条件是你是<code>install</code>的，也就是<code>git submodule update --init --recursive</code>过的，而不是直接把<code>academic</code>给clone到themes文件夹。</p>
-
-<h4 id="手动更新">手动更新</h4>
-
+<h4 id="heading-4">手动更新</h4>
 <p>如果是clone到themes文件夹的话要这么更新：</p>
-
 <ol>
 <li><code>cd themes/academic</code>;</li>
 <li>将<code>origin</code>仓库重命名为<code>upstream</code>：<code>git remote rename origin upstream</code>;</li>
@@ -542,61 +474,52 @@
 <li>列出可用更新：<code>git log --pretty=oneline --abbrev-commit --decorate HEAD..upstream/master</code>;</li>
 <li>更新：<code>git pull upstream</code>;</li>
 </ol>
-
-<h2 id="部署到github-pages">部署到Github Pages</h2>
-
-<h3 id="原理">原理</h3>
-
+<h2 id="github-pages">部署到Github Pages</h2>
+<h3 id="heading-5">原理</h3>
 <p>网上介绍的办法很多，但核心其实就一句：</p>
-
 <p><strong>将<code>hugo</code>命令生成的<code>public</code>文件夹上传到GitHub pages项目下</strong>。</p>
-
 <p><code>public</code>文件夹相当于编译完成的静态网站，你在本地打开其实就能看。换句话说，你每次手动将这个目录下的内容上传到你的GitHub page项目也是可以的。</p>
-
 <p>然后为了达到这个目的，Academic给出的做法是利用<code>git submodule</code>将你的<code>GitHub page</code>项目作为<code>My_Website</code>项目的子模块存放到<code>public</code>目录。那么当你更新你的文章之后，只提交<code>public</code>文件夹内的变更到<code>GitHub page</code>项目即可。</p>
-
-<h3 id="官方教程-缩减版">官方教程(缩减版)</h3>
-
-<p><em><a href="https://sourcethemes.com/academic/docs/deployment/#github-pages" target="_blank">原教程</a>看这里；</em></p>
-
+<h3 id="heading-6">官方教程(缩减版)</h3>
+<p><em><a href="https://sourcethemes.com/academic/docs/deployment/#github-pages">原教程</a>看这里；</em></p>
 <ol>
-<li>在GitHub上创建两个项目，一个是fork 的<a href="https://github.com/sourcethemes/academic-kickstart.git" target="_blank">academic-kickstart</a>，也就是你前面clone到本地的<code>My_Website</code>，另一个即是以你用户名/组织名开头、以<code>.github.io</code>结尾的GitHub page项目。</li>
-<li>在<code>My_Website</code>目录下执行<code>git submodule update --init --recursive</code>将子模块更新到最新状态；</li>
-<li>将<code>config.toml</code>中的<code>baseurl</code>设置为你的GitHub page地址；</li>
-
-<li><p><strong>(实质)</strong> 删除<code>public</code>文件夹(如果有的话)，将GitHub page项目添加为子模块：<code>git submodule add -f -b master https://github.com/&lt;USERNAME&gt;/&lt;USERNAME&gt;.github.io.git public</code>;</p>
-
+<li>
+<p>在GitHub上创建两个项目，一个是fork 的<a href="https://github.com/sourcethemes/academic-kickstart.git">academic-kickstart</a>，也就是你前面clone到本地的<code>My_Website</code>，另一个即是以你用户名/组织名开头、以<code>.github.io</code>结尾的GitHub page项目。</p>
+</li>
+<li>
+<p>在<code>My_Website</code>目录下执行<code>git submodule update --init --recursive</code>将子模块更新到最新状态；</p>
+</li>
+<li>
+<p>将<code>config.toml</code>中的<code>baseurl</code>设置为你的GitHub page地址；</p>
+</li>
+<li>
+<p><strong>(实质)</strong> 删除<code>public</code>文件夹(如果有的话)，将GitHub page项目添加为子模块：<code>git submodule add -f -b master https://github.com/&lt;USERNAME&gt;/&lt;USERNAME&gt;.github.io.git public</code>;</p>
 <blockquote>
 <p><em>这时候你的<code>My_Website</code>项目实际上有两个子模块：作为主题依赖的<code>themes/academic</code>和作为网站的<code>&lt;USERNAME&gt;.github.io</code>；</em></p>
-
 <p><em>有意思的是一般是子模块<code>themes/academic</code>更新了之后，你更新主项目<code>My_Website</code>的依赖；</em></p>
-
 <p><em>而你更新主项目<code>My_Website</code>的文章之后，再会手动的更新子模块<code>&lt;USERNAME&gt;.github.io</code>，刚好反过来。</em></p>
-</blockquote></li>
-
-<li><p>新增/编辑文章后，更新<code>academic-kickstart</code>项目：</p>
-
+</blockquote>
+</li>
+<li>
+<p>新增/编辑文章后，更新<code>academic-kickstart</code>项目：</p>
 <pre><code class="language-bash">git add .
 git commit -m &quot;Initial commit&quot;
 git push -u origin master
-</code></pre></li>
-
-<li><p>更新GitHub page项目：</p>
-
+</code></pre>
+</li>
+<li>
+<p>更新GitHub page项目：</p>
 <pre><code class="language-bash">hugo
 cd public
 git add .
 git commit -m &quot;Build website&quot;
 git push origin master
-</code></pre></li>
+</code></pre>
+</li>
 </ol>
-
 <p>实际上只有第六步是更新GitHub page，每次重复执行这一部分就行(如果你不把文章保存到<code>academic-kickstart</code>的话)。</p>
-
-<h3 id="脚本">脚本</h3>
-
+<h3 id="heading-7">脚本</h3>
 <p><code>Hugo</code>官方把上面步骤打包到了一个脚本：</p>
-
 <pre><code class="language-bash">#!/bin/bash
 
 echo -e &quot;\033[0;32mDeploying updates to GitHub...\033[0m&quot;
@@ -622,9 +545,7 @@ git push origin master
 # Come Back up to the Project Root
 cd ..
 </code></pre>
-
 <p>实际上我们干脆连第五步也放进去呗：</p>
-
 <pre><code class="language-bash">#!/bin/bash
 # Receive args.
 if [ $1 = &quot;push&quot; ]; then
@@ -702,23 +623,14 @@ else
 fi
 
 </code></pre>
-
 <p>将脚本保存为<code>deploy.sh</code>，放到项目根目录下，完成修改后执行<code>./deploy.sh</code> + <code>pull</code>/<code>push</code>一键从服务器同步/提交+部署。</p>
-
 <p>参数的第一个是你要执行的动作，从远程服务器down到本地的话就是<code>./deploy.sh pull</code>，不用接别的。</p>
-
 <p>如果是要将更新上传到服务器并部署，那就执行<code>./deploy.sh push</code> + commit message，提交消息可以不写(但最好还是写一下)：</p>
-
 <p><code>./deploy.sh push &quot;{Your optional commit message}&quot;</code>。</p>
-
 <p>如果修改了多个文件，只想提交其中的一部分文件以保持commit的纯净，那就在mesaage后面附加你要提交的文件路径(不超过10个&hellip;)：</p>
-
 <p><code>./deploy.sh push &quot;{Your optional commit message}&quot; path1 path2...</code>。</p>
-
-<h2 id="个性化配置">个性化配置</h2>
-
+<h2 id="heading-8">个性化配置</h2>
 <p>项目目录结构大体如下：</p>
-
 <ul>
 <li><code>content目录</code>： 网站内容，<code>home</code>是你的主页的小控件，<code>post</code>是默认文章存放位置</li>
 <li><code>public目录</code>： 生成的静态页面</li>
@@ -727,9 +639,7 @@ fi
 <li><code>themes目录</code>： 主题文件所在目录</li>
 <li><code>config.toml</code>: 全局配置文件</li>
 </ul>
-
-<h3 id="config-toml主要配置项解释">config.toml主要配置项解释</h3>
-
+<h3 id="configtoml">config.toml主要配置项解释</h3>
 <table>
 <thead>
 <tr>
@@ -737,121 +647,84 @@ fi
 <th>说明</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>baseurl</td>
 <td>你的站点的url，不设置这个你的文章/资源可能相互引用不到</td>
 </tr>
-
 <tr>
 <td>title</td>
 <td>网站标题</td>
 </tr>
-
 <tr>
 <td>defaultContentLanguage</td>
 <td>默认语言，中文的话填<code>zh</code>，在文件末尾还有一处配置要同时修改才行</td>
 </tr>
-
 <tr>
 <td>hasCJKLanguage</td>
 <td>是否有中/日/韩语</td>
 </tr>
-
 <tr>
 <td>defaultContentLanguageInSubdir</td>
 <td>目录是否允许用默认语言，<code>true</code>就对了</td>
 </tr>
-
 <tr>
 <td>highlight_languages</td>
-<td>语法高亮，支持的语言可以去<a href="https://cdnjs.com/libraries/highlight.js/" target="_blank">highlight.js</a>查到</td>
+<td>语法高亮，支持的语言可以去<a href="https://cdnjs.com/libraries/highlight.js/">highlight.js</a>查到</td>
 </tr>
-
 <tr>
 <td>[[menu.main]]</td>
 <td>这部分是你主页上标题栏显示的内容，<code>url</code>默认和你<code>content/home</code>下的文件名对应</td>
 </tr>
-
 <tr>
 <td>Languages</td>
 <td>添加中文支持的话，把<code>[languages.zh]</code>部分解除注释，<code>languageCode</code>写<code>&quot;zh-cn&quot;</code>，添加其他语种的话，相同格式再写一组<code>[languages.XX]</code>即可，支持的语言代码可以在<code>themes\academic\i18n</code>查看</td>
 </tr>
 </tbody>
 </table>
-
-<h3 id="修改网站logo">修改网站logo</h3>
-
+<h3 id="logo">修改网站logo</h3>
 <p>默认的logo是Academic的蓝色学位帽，想替换的话将你想用的logo保存为
-<code>icon.png</code>(默认32*32像素，大了也没关系)
-和<code>icon-192.png</code>(192*192像素)，并放到项目的<code>static/img</code>目录下</p>
-
-<h3 id="给文章添加精选图">给文章添加精选图</h3>
-
+<code>icon.png</code>(默认32<em>32像素，大了也没关系)
+和<code>icon-192.png</code>(192</em>192像素)，并放到项目的<code>static/img</code>目录下</p>
+<h3 id="heading-9">给文章添加精选图</h3>
 <p>这个图片只能添加一个，名字必须是<code>featured.*</code>(后缀jpg/png都行)，而且必须和文章放在同一个文件夹下。</p>
-
 <p>所以一般做法是把文章<code>aaa.md</code>改名为<code>index.md</code>并新建一个<code>aaa</code>目录，再和<code>featured.png</code>图片一起扔进去。</p>
-
 <p>显示的效果是在文章列表页，文章右侧有一个缩略图；打开文章，标题默认会居左，右边是精选图：</p>
-
-<p><img src="/img/featured_image_example.png" alt="example" /></p>
-
-<h3 id="给文章添加头部背景">给文章添加头部背景</h3>
-
+<p><img src="/img/featured_image_example.png" alt="example"></p>
+<h3 id="heading-10">给文章添加头部背景</h3>
 <p>这个是文章头部的横跨整个页面的大图，也就是文章头部这个黑底白字的大图。</p>
-
 <p>这个的图片可以放到<code>static/img</code>目录下，不过需要在你文件的<code>+++</code>的部分添加如下代码：</p>
-
 <pre><code class="language-markdown">[header]
   image = &quot;img名称&quot;
   caption = &quot;标题说明&quot;
 </code></pre>
-
 <p>顺便一提，文章内引用<code>static/img</code>下存储的图像的话，路径大致如此<code>![example](/img/image_abc.png)</code></p>
-
-<h3 id="目录">目录</h3>
-
-<p>使用<code>{</code><code>{% toc %}}</code>加在文章的任何你想要的地方以自动生成目录</p>
-
-<h3 id="注意-警告标识">注意/警告标识</h3>
-
-<p>被<code>{</code><code>{% alert note %}}</code>和<code>{</code><code>{% /alert %}}</code>包裹起来的内容即为注意项：</p>
-
+<h3 id="heading-11">目录</h3>
+<p>使用<code>{``{% toc %}}</code>加在文章的任何你想要的地方以自动生成目录</p>
+<h3 id="heading-12">注意/警告标识</h3>
+<p>被<code>{``{% alert note %}}</code>和<code>{``{% /alert %}}</code>包裹起来的内容即为注意项：</p>
 <div class="alert alert-note">
   <div>
     注意内容blabla
   </div>
 </div>
-
-<p>被<code>{</code><code>{% alert warning %}}</code>和<code>{</code><code>{% /alert %}}</code>包裹起来的内容即为警告项：</p>
-
+<p>被<code>{``{% alert warning %}}</code>和<code>{``{% /alert %}}</code>包裹起来的内容即为警告项：</p>
 <div class="alert alert-warning">
   <div>
     警告内容blabla
   </div>
 </div>
-
-<h3 id="消除短代码效果">消除短代码效果</h3>
-
-<p>Hugo是基于Go的Template，所以所有以<code>{</code><code>{% %}}</code>或者<code>{</code><code>{&lt; &gt;}}</code>包裹的内容都会被解析为短代码块，而无法直接显示其代码。
+<h3 id="heading-13">消除短代码效果</h3>
+<p>Hugo是基于Go的Template，所以所有以<code>{``{% %}}</code>或者<code>{``{&lt; &gt;}}</code>包裹的内容都会被解析为短代码块，而无法直接显示其代码。
 那么我是怎么解决的呢，分情况：</p>
-
-<h4 id="单行代码">单行代码</h4>
-
-<p>你看到的<code>{</code><code>{% toc %}}</code>实际是由<code>`{`</code>和<code>`{% toc %}}`</code>组成的。</p>
-
+<h4 id="heading-14">单行代码</h4>
+<p>你看到的<code>{``{% toc %}}</code>实际是由<code>`{`</code>和<code>`{% toc %}}`</code>组成的。</p>
 <p>而上面打出的<code>`</code>其实是<code>双反引号 空格 反引号 空格 双反引号</code>，就不再嵌套了。。。</p>
-
-<h4 id="代码块">代码块</h4>
-
+<h4 id="heading-15">代码块</h4>
 <pre><code class="language-go">{{&lt; figure library=&quot;1&quot; src=&quot;image.jpg&quot; title=&quot;A caption&quot; &gt;}}
 </code></pre>
-
 <p>的本质是将&lt;&gt;或者%%内的内容用/**/注释掉：</p>
-
-<p><code>{</code><code>{&lt;/* figure library=&quot;1&quot; src=&quot;image.jpg&quot; title=&quot;A caption&quot; */&gt;}}</code></p>
-
+<p><code>{``{&lt;/* figure library=&quot;1&quot; src=&quot;image.jpg&quot; title=&quot;A caption&quot; */&gt;}}</code></p>
 <div class="alert alert-note">
   <div>
     谁知道Markdown的代码块怎么嵌套&hellip;
@@ -859,38 +732,31 @@ fi
 里面要显示包含反引号格式的python代码块&hellip;
   </div>
 </div>
-
-<h3 id="修改模板">修改模板</h3>
-
-<p>比如你看到我每个文章结尾都有一个<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><code>CC4.0协议</code></a>的标志，这个肯定不是一篇篇手动添加的，实际上我是自己写了一个License的Widget，插入到文章的模板里面实现的。</p>
-
+<h3 id="heading-16">修改模板</h3>
+<p>比如你看到我每个文章结尾都有一个<a href="http://creativecommons.org/licenses/by-sa/4.0/"><code>CC4.0协议</code></a>的标志，这个肯定不是一篇篇手动添加的，实际上我是自己写了一个License的Widget，插入到文章的模板里面实现的。</p>
 <div class="alert alert-warning">
   <div>
     不要直接修改<code>theme</code>里面的内容，否则更新主题的时候会非常尴尬。
   </div>
 </div>
-
 <p>正确的做法是在项目根目录建立<code>layouts</code>文件夹，将你想修改的模板从<code>themes/academic/layouts</code>拷贝过来再修改。</p>
-
 <p>现在Academic主题的layouts大概是这样的：</p>
-
 <ul>
 <li><code>_default</code>: 默认文章相关模板；</li>
 <li><code>docs</code>: 文档相关模板;</li>
 <li><code>home</code>: 主页相关模板;</li>
 <li><code>partials</code>: 小部件相关模板，页面头部/脚注/摘要等等的都在这;
-
 <ul>
 <li>额外的有一个<code>widgets</code>文件夹，里面是主页的widget的模板；</li>
-</ul></li>
+</ul>
+</li>
 <li><code>project</code>: 项目相关模板;</li>
 <li><code>publication</code>: 出版物相关模板;</li>
 <li><code>section</code>: 摘要相关模板;</li>
-<li><code>shortcodes</code>: Academic提供的额外效果模板，你写的所有<code>{</code><code>{%%}}</code>的内容效果都出自这里;</li>
+<li><code>shortcodes</code>: Academic提供的额外效果模板，你写的所有<code>{``{%%}}</code>的内容效果都出自这里;</li>
 <li><code>slides</code>: 幻灯片相关模板;</li>
 <li><code>talk</code>: 宣讲相关模板;</li>
 </ul>
-
 <p>继续用我自己做例子，我新建了<code>layouts/partials/license.html</code>，把CC协议相关内容存了进去，
 接着，复制主题目录下的<code>layouts/_default/single.html</code>到对应位置，在合适地方插入一句<code>{{ partial &quot;license.html&quot; . }}</code>，表明我要在这里使用名为<code>license.html</code>的<code>partial</code>。
 再之后就是你们看到的效果了。</p>

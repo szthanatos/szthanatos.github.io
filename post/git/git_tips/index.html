@@ -28,7 +28,7 @@
   
     
   
-  <meta name="description" content="目录 Deploy key/SSH key(github) 更换git协议 强制覆盖本地文件 撤销修改 add之前撤销 commit之前撤销 push之前撤销 删除历史提交记录 忽略文件权限 Deploy key/SSH key(github) Deploy key">
+  <meta name="description" content="目录 Deploy key/SSH key(github) Deploy key是在项目主页-setting-Delpoy keys下进行添加，如果勾选Allow write access，则相当于具有对这个项目的读">
 
   
   <link rel="alternate" hreflang="zh-Hans" href="https://szthanatos.github.io/post/git/git_tips/">
@@ -115,7 +115,7 @@
   <meta property="og:site_name" content="Kryptonite Lab">
   <meta property="og:url" content="https://szthanatos.github.io/post/git/git_tips/">
   <meta property="og:title" content="Git Tips | Kryptonite Lab">
-  <meta property="og:description" content="目录 Deploy key/SSH key(github) 更换git协议 强制覆盖本地文件 撤销修改 add之前撤销 commit之前撤销 push之前撤销 删除历史提交记录 忽略文件权限 Deploy key/SSH key(github) Deploy key"><meta property="og:image" content="https://szthanatos.github.io/img/icon-192.png">
+  <meta property="og:description" content="目录 Deploy key/SSH key(github) Deploy key是在项目主页-setting-Delpoy keys下进行添加，如果勾选Allow write access，则相当于具有对这个项目的读"><meta property="og:image" content="https://szthanatos.github.io/img/icon-192.png">
   <meta property="twitter:image" content="https://szthanatos.github.io/img/icon-192.png"><meta property="og:locale" content="zh-Hans">
   
     
@@ -167,7 +167,7 @@
       "url": "https://szthanatos.github.io/img/icon-512.png"
     }
   },
-  "description": "目录 Deploy key/SSH key(github) 更换git协议 强制覆盖本地文件 撤销修改 add之前撤销 commit之前撤销 push之前撤销 删除历史提交记录 忽略文件权限 Deploy key/SSH key(github) Deploy key"
+  "description": "目录 Deploy key/SSH key(github) Deploy key是在项目主页-setting-Delpoy keys下进行添加，如果勾选Allow write access，则相当于具有对这个项目的读"
 }
 </script>
 
@@ -241,7 +241,7 @@
 
       
       
-      <ul class="navbar-nav mr-auto">
+      <ul class="navbar-nav ml-auto">
         
 
         
@@ -324,9 +324,6 @@
         
         
 
-      
-      </ul>
-      <ul class="navbar-nav ml-auto">
       
 
         
@@ -437,46 +434,17 @@
   <div class="article-container">
 
     <div class="article-style" itemprop="articleBody">
-      
+      <h2>目录</h2>
 
-<p><h2>目录</h2>
-<nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#deploy-key-ssh-key-github">Deploy key/SSH key(github)</a></li>
-<li><a href="#更换git协议">更换git协议</a></li>
-<li><a href="#强制覆盖本地文件">强制覆盖本地文件</a></li>
-<li><a href="#撤销修改">撤销修改</a>
-<ul>
-<li><a href="#add之前撤销">add之前撤销</a></li>
-<li><a href="#commit之前撤销">commit之前撤销</a></li>
-<li><a href="#push之前撤销">push之前撤销</a></li>
-</ul></li>
-<li><a href="#删除历史提交记录">删除历史提交记录</a></li>
-<li><a href="#忽略文件权限">忽略文件权限</a></li>
-</ul></li>
-</ul>
-</nav></p>
-
-<h2 id="deploy-key-ssh-key-github">Deploy key/SSH key(github)</h2>
-
+<h2 id="deploy-keyssh-keygithub">Deploy key/SSH key(github)</h2>
 <p><code>Deploy key</code>是在<code>项目主页</code>-<code>setting</code>-<code>Delpoy keys</code>下进行添加，如果勾选<code>Allow write access</code>，则相当于具有对这个项目的读写权限(否则只能<code>clone</code>不能<code>push</code>)。<strong>作用范围是这个项目。</strong></p>
-
 <p><code>SSH key</code>是在你<code>个人主页</code>-<code>Settings</code>-<code>SSH and GPG keys</code>下进行添加。<strong>作用范围是你的账户下的所有项目。</strong></p>
-
 <p>同一个<code>公钥</code>，只能作为整个账户的<code>SSH key</code>，或者<strong>一个项目</strong>的<code>Deploy key</code>。想为一台机器授予多个项目的读写权限的话，需要通过<code>ssh-keygen</code>生成多个密钥，分别作为不同项目的<code>Deploy key</code>。</p>
-
-<h2 id="更换git协议">更换git协议</h2>
-
+<h2 id="git">更换git协议</h2>
 <p>使用<code>http</code>/<code>https</code>协议连接仓库相比<code>ssh</code>即不够安全，也会存在<code>push</code>的时候必须输入用户名密码的问题。</p>
-
 <p>使用<code>git remote -v</code>可以查看项目使用的协议。</p>
-
 <p>如果是新建的项目，推荐在一开始就使用<code>git@github.com:{USER}/{PROJECT}.git</code>进行<code>clone</code>。这样默认都是用<code>ssh</code>了。</p>
-
 <p>如果是已有项目，使用<code>git remote set-url {repository} {url}</code>更改。</p>
-
 <pre><code class="language-bash">$ git remote -v
 origin  https://github.com/abc/bcd.git (fetch)
 origin  https://github.com/abc/bcd.git (push)
@@ -487,44 +455,31 @@ $ git remote -v
 origin  git@github.com:abc/bcd.git (fetch)
 origin  git@github.com:abc/bcd.git (push)
 </code></pre>
-
-<h2 id="强制覆盖本地文件">强制覆盖本地文件</h2>
-
+<h2 id="heading">强制覆盖本地文件</h2>
 <p>啥都别说了，直接重来吧：</p>
-
 <pre><code class="language-bash">git fetch --all  
 git reset --hard origin/master
 </code></pre>
-
-<h2 id="撤销修改">撤销修改</h2>
-
-<h3 id="add之前撤销">add之前撤销</h3>
-
+<h2 id="heading-1">撤销修改</h2>
+<h3 id="add">add之前撤销</h3>
 <pre><code class="language-bash"># 单个文件
 git checkout FileName
 
 # 所有文件
 git checkout .
 </code></pre>
-
-<h3 id="commit之前撤销">commit之前撤销</h3>
-
+<h3 id="commit">commit之前撤销</h3>
 <pre><code class="language-bash"># 取消暂存
 git reset HEAD FileName
 
 # 撤销修改
 git checkout FileName
 </code></pre>
-
-<h3 id="push之前撤销">push之前撤销</h3>
-
+<h3 id="push">push之前撤销</h3>
 <pre><code class="language-bash">git reset [--hard|soft|mixed] [commit|HEAD]
 </code></pre>
-
-<h2 id="删除历史提交记录">删除历史提交记录</h2>
-
+<h2 id="heading-2">删除历史提交记录</h2>
 <p>commit多了项目也会膨胀&hellip;清了一干二净。</p>
-
 <pre><code class="language-bash"># 用orphan参数创建全新的分支
 git checkout --orphan {new_branch}
 
@@ -543,11 +498,8 @@ git branch -m {old_branch}
 # 强制提交变更
 git push -f origin {old_branch}
 </code></pre>
-
-<h2 id="忽略文件权限">忽略文件权限</h2>
-
-<p>文件在系统间转移的时候可能由于权限改变而使文件全都处于&rdquo;modified&rdquo;状态。（比如从linux到Windows，权限会从644变成755）可以以项目为单位设置忽略文件权限：</p>
-
+<h2 id="heading-3">忽略文件权限</h2>
+<p>文件在系统间转移的时候可能由于权限改变而使文件全都处于&quot;modified&quot;状态。（比如从linux到Windows，权限会从644变成755）可以以项目为单位设置忽略文件权限：</p>
 <pre><code class="language-bash">git config core.filemode false
 </code></pre>
 

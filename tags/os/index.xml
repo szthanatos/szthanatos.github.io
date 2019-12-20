@@ -17,17 +17,11 @@
       <link>https://szthanatos.github.io/post/rancheros/</link>
       <pubDate>Sun, 01 Sep 2019 15:39:50 +0800</pubDate>
       <guid>https://szthanatos.github.io/post/rancheros/</guid>
-      <description>
-
-&lt;p&gt;&lt;h2&gt;目录&lt;/h2&gt;
-HAHAHUGOSHORTCODE-TOC0-HBHB&lt;/p&gt;
-
-&lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
-
+      <description>&lt;h2&gt;目录&lt;/h2&gt;
+HAHAHUGOSHORTCODE-TOC0-HBHB
+&lt;h2 id=&#34;heading&#34;&gt;介绍&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;RancherOS&lt;/code&gt;是Rancher推出的一个轻量级的Linux内核操作系统，专为容器环境而设计。&lt;/p&gt;
-
 &lt;p&gt;按官网的说法，它具有如下特性：&lt;/p&gt;
-
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -35,93 +29,76 @@ HAHAHUGOSHORTCODE-TOC0-HBHB&lt;/p&gt;
 &lt;th&gt;瞎翻译&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;Minimalist OS&lt;/td&gt;
 &lt;td&gt;极简系统 ——当前版本(v1.5.4)镜像也只有146M，还内置了各类虚拟机工具和N个版本的Docker环境&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;Comprehensive System Services&lt;/td&gt;
 &lt;td&gt;综合系统服务——所有的系统服务都可以通过Compose文件声明和启动&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;Improved Security&lt;/td&gt;
 &lt;td&gt;更安全——没有额外的工具/代码，所有应用都跑在容器里，当然更安全&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;Up-to-Date Version of Docker &amp;amp; Linux&lt;/td&gt;
 &lt;td&gt;集成最新的Docker&amp;amp;Linux发行版——装完系统直接就有Docker用，还是最新的，美滋滋&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;Automated OS Configuration&lt;/td&gt;
 &lt;td&gt;自动化系统配置——使用cloud-init工具解析&lt;code&gt;cloud-config&lt;/code&gt;文件，统一管理系统级的所有配置，比如网络，docker源&amp;hellip;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;24x7 Enterprise-level Support&lt;/td&gt;
 &lt;td&gt;不解释&amp;hellip;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-
 &lt;p&gt;简单的来说，当我们开始使用容器化的方式来管理应用和服务的时候，我们自然而然的会发现，我们对操作系统其实没什么需求了
 ——环境依赖和工具链由镜像提供，GUI界面或者浏览器毫无作用，系统内置的各种工具也就是启动一个容器的事&amp;hellip;&lt;/p&gt;
-
 &lt;p&gt;把这些七七八八的都去掉，最后剩下：一个Linux内核 + Docker环境 + 精简但是统一的配置管理 = RancherOS&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://szthanatos.github.io/img/rancheroshowitworks.png&#34; alt=&#34;RancherOS 架构&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;https://szthanatos.github.io/img/rancheroshowitworks.png&#34; alt=&#34;RancherOS 架构&#34;&gt;&lt;/p&gt;
 &lt;p&gt;RancherOS的架构也非常简单，除了内核，就是两个Docker。&lt;/p&gt;
-
 &lt;p&gt;一个系统级的Docker(&lt;code&gt;system-docker&lt;/code&gt;)接管了系统的绝大部分功能，比如在一般Linux上你会用&lt;code&gt;systemctl restart&lt;/code&gt;重启服务，在这里就是用&lt;code&gt;system-docker restart&lt;/code&gt;重启一个容器了。&lt;/p&gt;
-
 &lt;p&gt;用户级别的Docker也作为一个服务运行在&lt;code&gt;system-docker&lt;/code&gt;之上，也就是我们一般意义上跑应用的docker，正常使用。&lt;/p&gt;
-
-&lt;h2 id=&#34;安装&#34;&gt;安装&lt;/h2&gt;
-
+&lt;h2 id=&#34;heading-1&#34;&gt;安装&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;在&lt;a href=&#34;https://github.com/rancher/os/releases/&#34; target=&#34;_blank&#34;&gt;RancherOS Gitlab页面&lt;/a&gt;下载对应版本镜像。&lt;/li&gt;
-&lt;li&gt;新建虚拟机，加载ISO镜像，默认会以&lt;code&gt;rancher&lt;/code&gt;用户身份进入一个运行在内存之上的临时RancherOS，所以建虚拟机的时候内存可以适当大一点，比如2G&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;新建/上传一个&lt;code&gt;cloud-config.yml&lt;/code&gt;文件，主要内容就是写入你的ssh公钥，因为RancherOS安装之后就只能通过ssh+公钥的方式登陆(是的，你在虚拟机控制台都进不去)，一个最简单的示例如下：&lt;/p&gt;
-
+&lt;li&gt;
+&lt;p&gt;在&lt;a href=&#34;https://github.com/rancher/os/releases/&#34;&gt;RancherOS Gitlab页面&lt;/a&gt;下载对应版本镜像。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;新建虚拟机，加载ISO镜像，默认会以&lt;code&gt;rancher&lt;/code&gt;用户身份进入一个运行在内存之上的临时RancherOS，所以建虚拟机的时候内存可以适当大一点，比如2G&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;新建/上传一个&lt;code&gt;cloud-config.yml&lt;/code&gt;文件，主要内容就是写入你的ssh公钥，因为RancherOS安装之后就只能通过ssh+公钥的方式登陆(是的，你在虚拟机控制台都进不去)，一个最简单的示例如下：&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;# cloud-config
 ssh_authorized_keys:
 - ssh-rsa AAA...
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;没有其他配置了的话，&lt;/p&gt;
-
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;没有其他配置了的话，&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;sudo ros config valicate -i cloud-config.yml&lt;/code&gt;校验没有格式错误，&lt;/p&gt;
-
 &lt;p&gt;&lt;code&gt;sudo ros install -c cloud-config.yml -d /dev/sda&lt;/code&gt;将RancherOS安装到硬盘。&lt;/p&gt;
-
-&lt;p&gt;一路只有2个选项，是否要安装？Y，是否要重启？N，因为重启比你卸载光驱还快&amp;hellip;直接就又进入一个新的临时RancherOS了&amp;hellip;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;手动&lt;code&gt;sudo poweroff&lt;/code&gt;，卸载光驱，重启，看到熟悉的牛头LOGO，恭喜完成~&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;一路只有2个选项，是否要安装？Y，是否要重启？N，因为重启比你卸载光驱还快&amp;hellip;直接就又进入一个新的临时RancherOS了&amp;hellip;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;手动&lt;code&gt;sudo poweroff&lt;/code&gt;，卸载光驱，重启，看到熟悉的牛头LOGO，恭喜完成~&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
-
 &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     &lt;p&gt;如果一定要为rancher设置一个密码的话，将安装命令替换为：&lt;/p&gt;
-
 &lt;p&gt;&lt;code&gt;sudo ros install -c cloud-config.yml -d /dev/sda --append=rancher.password=密码&lt;/code&gt;&lt;/p&gt;
-
   &lt;/div&gt;
 &lt;/div&gt;
-
 &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     &lt;p&gt;我遇到的一个情况，在Vmware上安装时，临时RancherOS默认没有网，
 需要手动配置网卡：&lt;/p&gt;
-
 &lt;p&gt;修改&lt;code&gt;/etc/network/interfaces&lt;/code&gt;文件，在末尾添加：&lt;/p&gt;
-
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;auto eth0
 iface eth0 inet static
 # IP
@@ -137,16 +114,11 @@ gateway             xxx.xxx.xxx.xxx
 # dns服务器
 dns-nameservers     xxx.xxx.xxx.xxx
 &lt;/code&gt;&lt;/pre&gt;
-
 &lt;p&gt;配置好执行&lt;code&gt;sudo ifup eth0&lt;/code&gt;即可连上网络。&lt;/p&gt;
-
   &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;h2 id=&#34;使用&#34;&gt;使用&lt;/h2&gt;
-
+&lt;h2 id=&#34;heading-2&#34;&gt;使用&lt;/h2&gt;
 &lt;p&gt;整个RancherOS自底向上分三个层面进行管理&lt;/p&gt;
-
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -155,20 +127,17 @@ dns-nameservers     xxx.xxx.xxx.xxx
 &lt;th&gt;管理&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;系统管理&lt;/td&gt;
 &lt;td&gt;ros&lt;/td&gt;
 &lt;td&gt;cloud-config.yml&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;服务管理&lt;/td&gt;
 &lt;td&gt;system-docker&lt;/td&gt;
 &lt;td&gt;类Compose文件&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;应用管理&lt;/td&gt;
 &lt;td&gt;docker&lt;/td&gt;
@@ -176,11 +145,8 @@ dns-nameservers     xxx.xxx.xxx.xxx
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-
 &lt;h3 id=&#34;ros&#34;&gt;ros&lt;/h3&gt;
-
 &lt;p&gt;ros是对系统进行管理的工具，所以必须要以root权限执行，具体用法可以help看一下：&lt;/p&gt;
-
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ sudo ros help
 NAME:
    ros - Control and configure RancherOS
@@ -210,9 +176,7 @@ GLOBAL OPTIONS:
    --version, -v  print the version
 
 &lt;/code&gt;&lt;/pre&gt;
-
 &lt;h4 id=&#34;ros-config&#34;&gt;&lt;code&gt;ros config&lt;/code&gt;&lt;/h4&gt;
-
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ ros config
 NAME:
    ros config - configure settings
@@ -230,23 +194,15 @@ COMMANDS:
      syslinux  edit Syslinux boot global.cfg                        # 没用过
      validate  validate configuration from stdin                    # 校验配置文件格式
 &lt;/code&gt;&lt;/pre&gt;
-
 &lt;p&gt;所有面向系统的设置都是通过&lt;code&gt;ros config&lt;/code&gt;进行管理的，默认的配置存放在&lt;code&gt;/var/lib/rancher/conf/cloud-config.yml&lt;/code&gt;中。未记录的配置修改都会在重启后失效(是的，&lt;code&gt;sudo passwd&lt;/code&gt;也不能让你下次直接用户名密码登陆，不过有别的办法)&lt;/p&gt;
-
 &lt;p&gt;简单的修改配置可以直接执行&lt;code&gt;ros config set &amp;lt;key&amp;gt; &amp;lt;value&amp;gt;&lt;/code&gt;，比如&lt;/p&gt;
-
 &lt;p&gt;&lt;code&gt;ros config set rancher.docker.tls true&lt;/code&gt;；&lt;/p&gt;
-
 &lt;p&gt;多个值写成列表，比如&lt;/p&gt;
-
 &lt;p&gt;&lt;code&gt;ros config set rancher.network.dns.nameservers &amp;quot;[&#39;8.8.8.8&#39;,&#39;8.8.4.4&#39;]&amp;quot;&lt;/code&gt;；&lt;/p&gt;
-
 &lt;p&gt;复杂一点的可以写一个小的yml，然后执行&lt;code&gt;ros config merge -i &amp;lt;文件&amp;gt;&lt;/code&gt;进行合并，
 理论上也可以手动添加到&lt;code&gt;/var/lib/rancher/conf/cloud-config.yml&lt;/code&gt;中。
 但是个人不推荐这样做，因为现在版本的cloud-config.yml和&lt;code&gt;ros config export&lt;/code&gt;输出的不是一回事，待研究。&lt;/p&gt;
-
 &lt;h4 id=&#34;ros-service&#34;&gt;&lt;code&gt;ros service&lt;/code&gt;&lt;/h4&gt;
-
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$  ros service
 NAME:
    ros service -
@@ -281,13 +237,9 @@ OPTIONS:
    --verbose, --debug
    --help, -h          show help
 &lt;/code&gt;&lt;/pre&gt;
-
 &lt;p&gt;控制的是随系统启动的服务，用法包括声明文件的写法基本和Docker Compose一样，把它理解成Docker Compose的替代品就对了。&lt;/p&gt;
-
 &lt;p&gt;别的命令不解释了&amp;hellip;&lt;/p&gt;
-
-&lt;h3 id=&#34;系统服务&#34;&gt;系统服务&lt;/h3&gt;
-
+&lt;h3 id=&#34;heading-3&#34;&gt;系统服务&lt;/h3&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ ros s list
 disabled amazon-ecs-agent
 disabled container-cron
@@ -310,34 +262,24 @@ disabled waagent
 disabled virtualbox-tools
 disabled pingan-amc
 &lt;/code&gt;&lt;/pre&gt;
-
 &lt;p&gt;上面说到系统级的服务都是用&lt;code&gt;ros s&lt;/code&gt;控制启停，而想要自定义一个系统级的服务的话:&lt;/p&gt;
-
 &lt;ol&gt;
 &lt;li&gt;用Docker Compose语法编写服务的&lt;code&gt;xxx.yml&lt;/code&gt;文件，一般存放到&lt;code&gt;/var/lib/rancher/conf/&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;ros service enable /var/lib/rancher/conf/xxx.yml&lt;/code&gt; 启用该服务&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;ros service up &amp;lt;serviceName&amp;gt;&lt;/code&gt;启动服务，如果一个Compose里定义了多个服务，那么需要
 &lt;code&gt;ros service up &amp;lt;serviceName1&amp;gt; &amp;lt;serviceName2&amp;gt; &amp;lt;serviceName3&amp;gt; ...&lt;/code&gt;来同时启动&lt;/li&gt;
 &lt;/ol&gt;
-
 &lt;h3 id=&#34;docker&#34;&gt;docker&lt;/h3&gt;
-
 &lt;p&gt;没啥好说的&amp;hellip;Just use it.&lt;/p&gt;
-
 &lt;h2 id=&#34;cloud-config&#34;&gt;cloud-config&lt;/h2&gt;
-
 &lt;p&gt;额外说一下这个cloud-config。&lt;/p&gt;
-
 &lt;p&gt;现有的公有云/虚拟化厂商大多支持&lt;code&gt;cloud-init&lt;/code&gt;工具进行系统配置初始化(某种意义上的事实标准)。cloud-config就是为&lt;code&gt;cloud-init&lt;/code&gt;服务的。RancherOS在&lt;code&gt;system-docker&lt;/code&gt;中运行了一个&lt;code&gt;cloud-init&lt;/code&gt;容器，它会在启动时查找可能位置上的cloud-config文件并依此配置系统配置项。&lt;/p&gt;
-
 &lt;p&gt;cloud-config的语法格式就是标准的YAML语法，一个我在用的、比较完整的cloud-config的示例如下：&lt;/p&gt;
-
 &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     使用时请删除掉中文注释&amp;hellip;给别人演示的时候懒得删注释结果validate没问题，但是配置就是不生效&amp;hellip;
   &lt;/div&gt;
 &lt;/div&gt;
-
 &lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;# 主机名
 hostname: ros-test
 

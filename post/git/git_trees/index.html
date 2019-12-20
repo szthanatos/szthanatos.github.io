@@ -241,7 +241,7 @@
 
       
       
-      <ul class="navbar-nav mr-auto">
+      <ul class="navbar-nav ml-auto">
         
 
         
@@ -324,9 +324,6 @@
         
         
 
-      
-      </ul>
-      <ul class="navbar-nav ml-auto">
       
 
         
@@ -437,14 +434,9 @@
   <div class="article-container">
 
     <div class="article-style" itemprop="articleBody">
-      
-
-<p>理解Git没有比从三棵树开始更好的了。</p>
-
-<p>完整的话还是看<a href="https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E9%87%8D%E7%BD%AE%E6%8F%AD%E5%AF%86" target="_blank">git文档</a>比较好，说的蛮清楚了。</p>
-
-<h2 id="三棵树和正向流程">三棵树和正向流程</h2>
-
+      <p>理解Git没有比从三棵树开始更好的了。</p>
+<p>完整的话还是看<a href="https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E9%87%8D%E7%BD%AE%E6%8F%AD%E5%AF%86">git文档</a>比较好，说的蛮清楚了。</p>
+<h2 id="heading">三棵树和正向流程</h2>
 <table>
 <thead>
 <tr>
@@ -452,55 +444,39 @@
 <th>用途</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>HEAD</td>
 <td>上一次提交的快照，下一次提交的父结点</td>
 </tr>
-
 <tr>
 <td>Index</td>
 <td>预期的下一次提交的快照</td>
 </tr>
-
 <tr>
 <td>Working Directory</td>
 <td>沙盒</td>
 </tr>
 </tbody>
 </table>
-
-<p>git的核心工作就是管理这三棵树。<code>git add</code>就是把你工作目录(Working Directory)的修改提交到暂存区(Index)，<code>git commit</code>就是把暂存区的内容同步到仓库里作为一个快照，并移动<code>HEAD</code>指向新快照；<img src="/img/git_flow.gif" alt="git_flow" /></p>
-
+<p>git的核心工作就是管理这三棵树。<code>git add</code>就是把你工作目录(Working Directory)的修改提交到暂存区(Index)，<code>git commit</code>就是把暂存区的内容同步到仓库里作为一个快照，并移动<code>HEAD</code>指向新快照；<img src="/img/git_flow.gif" alt="git_flow"></p>
 <p>额外说一下这个<code>HEAD指针</code>，每一次commit都相当于在仓库(Repository)里生成一个快照，
 把N个快照想象成一个右进左出的队列(List)，再想象有一个指针，默认指向队首(最新快照)，告诉你当前到底用的是哪一个版本快照。</p>
-
 <h2 id="reset">reset</h2>
-
 <p>显然，<code>git reset</code>就是对上述行为的反向操作。</p>
-
 <p><code>reset</code>的本质其实是移动<code>HEAD</code>指针指向哪个快照，而通过</p>
-
 <ul>
 <li><code>--soft</code>——只改变指针指向的快照；</li>
 <li><code>--mixed</code>——移动指针的同时也把快照内容同步到暂存区；</li>
 <li><code>--hard</code>——三棵树全同步为指针指向的快照；</li>
 </ul>
-
-<p>参数来<strong>递进的</strong>控制改变是发生在哪几颗树上。<img src="/img/git_reflow.gif" alt="git_reflow" /></p>
-
+<p>参数来<strong>递进的</strong>控制改变是发生在哪几颗树上。<img src="/img/git_reflow.gif" alt="git_reflow"></p>
 <p>再强调一遍，<code>reset</code>的改变的是<code>HEAD</code>指针，而不是文件。即使<code>git reset File</code>的写法是有效的，但它的本质是<code>git reset --mixed HEAD File</code>的缩写，即将<code>File</code>从<code>HEAD</code>指向的快照复制到索引中。<code>HEAD</code>指针永远只能指向一个快照，但是快照是可以局部修改它里面的文件的。</p>
-
 <p><code>HEAD~</code>表示前一个快照，<code>HEAD~2</code>表示前两个，依此类推。</p>
-
 <h2 id="checkout">checkout</h2>
-
 <p><code>checkout</code>的本质就有所不同，它关心的是分支(branch)，它的主要作用是让<code>HEAD</code>在不同分支间移动(默认三棵树都会更新)。</p>
-
 <p>还是拿刚才那个队列举例，分支相当于是平行的一条队列，现在把他放在你脑子里之前那个队列的上方，
-由于<code>HEAD</code>指针只能指向一个快照，所以这个时候它可能会在两个队列间“跳动”，<code>checkout</code>就是控制指针上下移动的命令，而<code>reset</code>则是控制指针在当前队列左右(前后)移动。<img src="/img/git_checkout.gif" alt="git_chechout" /></p>
-
+由于<code>HEAD</code>指针只能指向一个快照，所以这个时候它可能会在两个队列间“跳动”，<code>checkout</code>就是控制指针上下移动的命令，而<code>reset</code>则是控制指针在当前队列左右(前后)移动。<img src="/img/git_checkout.gif" alt="git_chechout"></p>
 <p>同样的，<code>checkout</code>后面也可以跟一个文件，和<code>git reset --hard [branch] file</code>可能会产生的效果一样。</p>
 
     </div>

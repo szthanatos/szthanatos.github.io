@@ -17,18 +17,12 @@
       <link>https://szthanatos.github.io/topic/redis/install/</link>
       <pubDate>Thu, 30 Aug 2018 16:40:48 +0800</pubDate>
       <guid>https://szthanatos.github.io/topic/redis/install/</guid>
-      <description>
-
-&lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;
-
+      <description>&lt;h2 id=&#34;heading&#34;&gt;简介&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Redis 是一个开源（BSD许可）的，内存中的数据结构存储系统，它可以用作数据库、缓存和消息中间件。 它支持多种类型的数据结构，如 字符串（strings）， 散列（hashes）， 列表（lists）， 集合（sets）， 有序集合（sorted sets） 与范围查询， bitmaps， hyperloglogs 和 地理空间（geospatial） 索引半径查询。 Redis 内置了 复制（replication），LUA脚本（Lua scripting）， LRU驱动事件（LRU eviction），事务（transactions） 和不同级别的 磁盘持久化（persistence）， 并通过 Redis哨兵（Sentinel）和自动 分区（Cluster）提供高可用性（high availability）。&lt;/p&gt;
 &lt;/blockquote&gt;
-
 &lt;p&gt;—— Redis官方介绍&lt;/p&gt;
-
-&lt;h2 id=&#34;版本&#34;&gt;版本&lt;/h2&gt;
-
+&lt;h2 id=&#34;heading-1&#34;&gt;版本&lt;/h2&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -38,66 +32,63 @@
 &lt;th&gt;备注&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;http://download.redis.io/releases/redis-4.0.11.tar.gz&#34; target=&#34;_blank&#34;&gt;Redis&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://download.redis.io/releases/redis-4.0.11.tar.gz&#34;&gt;Redis&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;4.0.11&lt;/td&gt;
 &lt;td&gt;2018-08-03&lt;/td&gt;
 &lt;td&gt;必装&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://cache.ruby-lang.org/pub/ruby/2.5/ruby-2.5.1.tar.gz&#34; target=&#34;_blank&#34;&gt;Ruby&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://cache.ruby-lang.org/pub/ruby/2.5/ruby-2.5.1.tar.gz&#34;&gt;Ruby&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;2.5.1&lt;/td&gt;
 &lt;td&gt;2018-03-28&lt;/td&gt;
 &lt;td&gt;可选,集群执行rb脚本的节点安装即可&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://rubygems.org/rubygems/rubygems-2.7.7.tgz&#34; target=&#34;_blank&#34;&gt;rubygem&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://rubygems.org/rubygems/rubygems-2.7.7.tgz&#34;&gt;rubygem&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;2.7.7&lt;/td&gt;
 &lt;td&gt;2018-05-18&lt;/td&gt;
 &lt;td&gt;同上&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://rubygems.org/downloads/redis-4.0.2.gem&#34; target=&#34;_blank&#34;&gt;gem-redis&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://rubygems.org/downloads/redis-4.0.2.gem&#34;&gt;gem-redis&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;4.0.2&lt;/td&gt;
 &lt;td&gt;2018-08-13&lt;/td&gt;
 &lt;td&gt;同上&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-
-&lt;h2 id=&#34;安装&#34;&gt;安装&lt;/h2&gt;
-
+&lt;h2 id=&#34;heading-2&#34;&gt;安装&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;以CentOS 7为例&lt;/li&gt;
-&lt;li&gt;从上述链接下载redis文件&lt;/li&gt;
-&lt;li&gt;安装环境依赖&lt;code&gt;yum install -y gcc gcc-c++ tcl&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;tar -xvzf {redis.tar.gz}&lt;/code&gt;解压&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;进入redis目录，执行&lt;code&gt;make &amp;amp;&amp;amp; make install&lt;/code&gt;进行安装&lt;/p&gt;
-
+&lt;li&gt;
+&lt;p&gt;以CentOS 7为例&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;从上述链接下载redis文件&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;安装环境依赖&lt;code&gt;yum install -y gcc gcc-c++ tcl&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;tar -xvzf {redis.tar.gz}&lt;/code&gt;解压&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;进入redis目录，执行&lt;code&gt;make &amp;amp;&amp;amp; make install&lt;/code&gt;进行安装&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;如果make出错，通过make test检查：&lt;/em&gt;&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;尝试只用单核运行：&lt;code&gt;taskset -c 1 sudo make test&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;更改&lt;code&gt;tests/integration/replication-psync.tcl&lt;/code&gt;文件,把对应报错的那段代码中的 &lt;code&gt;after 100&lt;/code&gt;改成&lt;code&gt;after 500&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;完成单节点安装&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;完成单节点安装&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
-
-&lt;h2 id=&#34;配置&#34;&gt;配置&lt;/h2&gt;
-
+&lt;h2 id=&#34;heading-3&#34;&gt;配置&lt;/h2&gt;
 &lt;p&gt;默认配置文件为位于redis目录下的&lt;code&gt;redis.conf&lt;/code&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;最小配置&#34;&gt;最小配置&lt;/h3&gt;
-
+&lt;h3 id=&#34;heading-4&#34;&gt;最小配置&lt;/h3&gt;
 &lt;p&gt;一个最小的redis.conf配置如下：&lt;/p&gt;
-
 &lt;pre&gt;&lt;code class=&#34;language-conf&#34;&gt;# 节点监听的端口号
 port {your_port}
 # 是否以进程守护方式(后台)运行
@@ -109,13 +100,9 @@ dir {your_dir}
 # 进程文件名称，固定为redis_监听的端口号.pid
 pidfile /var/run/redis_{your_port}.pid
 &lt;/code&gt;&lt;/pre&gt;
-
 &lt;p&gt;完成以上配置即可启动单节点redis。&lt;/p&gt;
-
-&lt;h3 id=&#34;集群配置&#34;&gt;集群配置&lt;/h3&gt;
-
+&lt;h3 id=&#34;heading-5&#34;&gt;集群配置&lt;/h3&gt;
 &lt;p&gt;集群需要在redis.conf中配置以下部分：&lt;/p&gt;
-
 &lt;pre&gt;&lt;code class=&#34;language-conf&#34;&gt;# 以集群模式启动
 cluster-enabled yes
 # 集群配置存放的文件名，一般为node-端口号.conf
@@ -125,75 +112,62 @@ cluster-node-timeout 15000
 # 是否启用aof方式持久化，建议开启
 appendonly yes
 &lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;启动&#34;&gt;启动&lt;/h2&gt;
-
-&lt;h3 id=&#34;防火墙&#34;&gt;防火墙&lt;/h3&gt;
-
+&lt;h2 id=&#34;heading-6&#34;&gt;启动&lt;/h2&gt;
+&lt;h3 id=&#34;heading-7&#34;&gt;防火墙&lt;/h3&gt;
 &lt;p&gt;redis需要使用指定端口号以及指定端口号+10000进行通讯，以6379端口为例，如果开启了防火墙，需要执行：&lt;/p&gt;
-
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;firewall-cmd --zone=public --add-port=6379/tcp --permanent
 firewall-cmd --zone=public --add-port=16379/tcp --permanent
 firewall-cmd --reload
 &lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;单结点启动&#34;&gt;单结点启动&lt;/h3&gt;
-
+&lt;h3 id=&#34;heading-8&#34;&gt;单结点启动&lt;/h3&gt;
 &lt;p&gt;执行&lt;/p&gt;
-
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;redis-server {dir}/redis.conf
 &lt;/code&gt;&lt;/pre&gt;
-
 &lt;p&gt;启动redis&lt;/p&gt;
-
-&lt;h3 id=&#34;集群启动&#34;&gt;集群启动&lt;/h3&gt;
-
-&lt;h4 id=&#34;ruby环境&#34;&gt;ruby环境&lt;/h4&gt;
-
+&lt;h3 id=&#34;heading-9&#34;&gt;集群启动&lt;/h3&gt;
+&lt;h4 id=&#34;ruby&#34;&gt;ruby环境&lt;/h4&gt;
 &lt;p&gt;redis集群是通过Ruby编写的脚本进行联通的（但不需要在每隔节点都执行），所以集群中起码一个节点，应该具备ruby环境、rubygem包管理软件、rubygem中的redis包。&lt;/p&gt;
-
 &lt;p&gt;ruby环境搭建过程如下：&lt;/p&gt;
-
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;yum安装ruby环境及包&lt;/p&gt;
-
+&lt;li&gt;
+&lt;p&gt;yum安装ruby环境及包&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;yum -y install ruby ruby-devel rubygems
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;修改ruby源，使用国内镜像&lt;/p&gt;
-
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;修改ruby源，使用国内镜像&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;gem sources --add https://gems.ruby-china.org/ --remove https://rubygems.org/
 # 如果修改失败将https换为http重试
 gem sources --add http://gems.ruby-china.org/ --remove http://rubygems.org/
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;检查源列表，确保只有gems.ruby-china.org&lt;/p&gt;
-
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;检查源列表，确保只有gems.ruby-china.org&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;gem sources -l
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;安装ruby的redis包：&lt;/p&gt;
-
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;安装ruby的redis包：&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;gem install redis
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
-
-&lt;h4 id=&#34;联通集群&#34;&gt;联通集群&lt;/h4&gt;
-
+&lt;h4 id=&#34;heading-10&#34;&gt;联通集群&lt;/h4&gt;
 &lt;ol&gt;
-&lt;li&gt;启动所有节点上的redis服务&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;进入redis安装路径下src文件夹，执行集群命令：&lt;/p&gt;
-
+&lt;li&gt;
+&lt;p&gt;启动所有节点上的redis服务&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;进入redis安装路径下src文件夹，执行集群命令：&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# --replicas 1 表示主从复制比例为 1:1，即一个主节点对应一个从节点
 ./redis-trib.rb create --replicas 1 {node1_ip:port} {node2_ip:port} ...
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;默认会自动分配主从节点，确认的话输入&lt;code&gt;yes&lt;/code&gt;完成集群的创建&lt;/p&gt;&lt;/li&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;默认会自动分配主从节点，确认的话输入&lt;code&gt;yes&lt;/code&gt;完成集群的创建&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
-
-&lt;h2 id=&#34;检查集群状态&#34;&gt;检查集群状态&lt;/h2&gt;
-
+&lt;h2 id=&#34;heading-11&#34;&gt;检查集群状态&lt;/h2&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# -c 表示连接的是集群
 redis-cli -c -h {ip} -p {port}
 # 查看集群节点
@@ -201,28 +175,18 @@ redis-cli -c -h {ip} -p {port}
 # 查看集群信息
 &amp;gt; cluster info
 &lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;相关命令&#34;&gt;相关命令&lt;/h2&gt;
-
+&lt;h2 id=&#34;heading-12&#34;&gt;相关命令&lt;/h2&gt;
 &lt;p&gt;除了使用rb脚本，其实可以直接在redis节点上&lt;a href=&#34;https://szthanatos.github.io/post/redis/redis_command.md&#34;&gt;通过命令操作集群&lt;/a&gt;，个人更推荐这个做法。&lt;/p&gt;
-
 &lt;p&gt;主要用到的是&lt;/p&gt;
-
 &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     &lt;p&gt;谨慎使用rb脚本对redis进行修复，从来没修复成功过&amp;hellip;&lt;/p&gt;
-
 &lt;p&gt;它还会把你的哈希槽按顺序平均分配到所有节点上，本来可能是A节点管理0-6000，B节点6001-12000&amp;hellip;fix完了之后就成了A节点：1，3，5，7&amp;hellip;终端都被坑到无法阅读了。&lt;/p&gt;
-
   &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;h2 id=&#34;附注&#34;&gt;附注&lt;/h2&gt;
-
-&lt;h3 id=&#34;离线安装redis环境&#34;&gt;离线安装redis环境&lt;/h3&gt;
-
+&lt;h2 id=&#34;heading-13&#34;&gt;附注&lt;/h2&gt;
+&lt;h3 id=&#34;redis&#34;&gt;离线安装redis环境&lt;/h3&gt;
 &lt;p&gt;离线情况需要本地下载如下rpm包(版本号以最新为准):&lt;/p&gt;
-
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cpp-4.8.5-16.el7.x86_64.rpm
 gcc-4.8.5-16.el7.x86_64.rpm
 gcc-c++-4.8.5-16.el7.x86_64.rpm
@@ -245,36 +209,38 @@ nss-softokn-freebl-3.28.3-8.el7_4.x86_64.rpm
 tcl-8.5.13-8.el7.i686.rpm
 tcl-8.5.13-8.el7.x86_64.rpm
 &lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;如果gem安装redis包时-提示ruby版本太低&#34;&gt;如果gem安装redis包时，提示ruby版本太低&lt;/h3&gt;
-
+&lt;h3 id=&#34;gemredisruby&#34;&gt;如果gem安装redis包时，提示ruby版本太低&lt;/h3&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;卸载yum过时的ruby环境&lt;/p&gt;
-
+&lt;li&gt;
+&lt;p&gt;卸载yum过时的ruby环境&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;yum remove ruby ruby-devel rubygems
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;下载&lt;a href=&#34;https://www.ruby-lang.org/en/downloads/&#34; target=&#34;_blank&#34;&gt;ruby&lt;/a&gt;源码&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;解压，编译安装:&lt;/p&gt;
-
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;下载&lt;a href=&#34;https://www.ruby-lang.org/en/downloads/&#34;&gt;ruby&lt;/a&gt;源码&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;解压，编译安装:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;tar -zxvf {latest_ruby.tar.gz}
 cd {latest_ruby}
 ./configure
 make
 make install
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;下载&lt;a href=&#34;https://rubygems.org/pages/download&#34; target=&#34;_blank&#34;&gt;gem&lt;/a&gt;源码&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;解压，安装：&lt;/p&gt;
-
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;下载&lt;a href=&#34;https://rubygems.org/pages/download&#34;&gt;gem&lt;/a&gt;源码&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;解压，安装：&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;tar -zxvf {latest_rubygem.tgz}
 cd {latest_rubygem}
 ruby setup.rb
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;重新&lt;code&gt;gem install redis&lt;/code&gt;或者离线下载&lt;a href=&#34;https://rubygems.org/downloads/&#34; target=&#34;_blank&#34;&gt;gem-redis&lt;/a&gt;的包，本地安装&lt;/p&gt;&lt;/li&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;重新&lt;code&gt;gem install redis&lt;/code&gt;或者离线下载&lt;a href=&#34;https://rubygems.org/downloads/&#34;&gt;gem-redis&lt;/a&gt;的包，本地安装&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 </description>
     </item>
@@ -284,14 +250,9 @@ ruby setup.rb
       <link>https://szthanatos.github.io/topic/redis/cluster_command/</link>
       <pubDate>Thu, 30 Aug 2018 21:26:18 +0800</pubDate>
       <guid>https://szthanatos.github.io/topic/redis/cluster_command/</guid>
-      <description>
-
-&lt;h2 id=&#34;集群信息&#34;&gt;集群信息&lt;/h2&gt;
-
-&lt;h3 id=&#34;节点信息&#34;&gt;节点信息&lt;/h3&gt;
-
+      <description>&lt;h2 id=&#34;heading&#34;&gt;集群信息&lt;/h2&gt;
+&lt;h3 id=&#34;heading-1&#34;&gt;节点信息&lt;/h3&gt;
 &lt;p&gt;集群节点相关信息可以通过&lt;code&gt;cluster nodes&lt;/code&gt;命令获取：&lt;/p&gt;
-
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;127.0.0.1:6379&amp;gt; cluster nodes
 5022fa41642195d74200fd512c08653dc12609e7 172.17.0.2:6380@16380 master - 0 1552814467000 2 connected 5461-10922
 730d05ee4da3147d0885c6d47437465c94409f74 172.17.0.2:6383@16383 slave 25a2a1d8c96e9473d4cb3c8b0077d3b7b07dd5c0 0 1552814468555 5 connected
@@ -301,9 +262,7 @@ cf0be45c6a05c0d332b7356a7f57de95b32c3a71 172.17.0.2:6384@16384 slave 5022fa41642
 1a60baf4c2254b2e3a37cf6215d42b316ffdccc7 172.17.0.2:6382@16382 slave 55d264b148ce35903928964ac017d682fc803eab 0 1552814468000 4 connected
 127.0.0.1:6379&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
-
 &lt;p&gt;可以看到，每一行即是一个节点的信息，以第一行为例，每个字段的含义分别是：&lt;/p&gt;
-
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -311,59 +270,47 @@ cf0be45c6a05c0d332b7356a7f57de95b32c3a71 172.17.0.2:6384@16384 slave 5022fa41642
 &lt;th&gt;含义&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;502&amp;hellip;&amp;hellip;9e7&lt;/td&gt;
 &lt;td&gt;node_id，节点标识&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;172.17.0.2:6380@16380&lt;/td&gt;
 &lt;td&gt;IP端口&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;master&lt;/td&gt;
 &lt;td&gt;身份，一般就是&lt;code&gt;myself/master/slave&lt;/code&gt;，其他&lt;code&gt;fail?/handshake/noaddr/noflags&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;-&lt;/td&gt;
 &lt;td&gt;对应主节点的node_id(如果你是从节点的话，否则就是&lt;code&gt;-&lt;/code&gt;)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;0&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;0&lt;/code&gt;表示没有待发送的&lt;code&gt;ping&lt;/code&gt;，否则是要发送&lt;code&gt;ping&lt;/code&gt;的时间戳&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;1552814467000&lt;/td&gt;
 &lt;td&gt;收到上一个&lt;code&gt;pong&lt;/code&gt;命令的时间戳&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;2&lt;/td&gt;
 &lt;td&gt;权重&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;connected&lt;/td&gt;
 &lt;td&gt;状态，&lt;code&gt;connected&lt;/code&gt;or&lt;code&gt;disconnected&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;5461-10922&lt;/td&gt;
 &lt;td&gt;哈希槽，连续的哈希槽用&lt;code&gt;-&lt;/code&gt;连接，离散的用&lt;code&gt;,&lt;/code&gt;隔开&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-
-&lt;h3 id=&#34;状态信息&#34;&gt;状态信息&lt;/h3&gt;
-
+&lt;h3 id=&#34;heading-2&#34;&gt;状态信息&lt;/h3&gt;
 &lt;p&gt;集群信息通过&lt;code&gt;cluster info&lt;/code&gt;获取：&lt;/p&gt;
-
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;127.0.0.1:6379&amp;gt; cluster info
 # 集群状态
 cluster_state:ok
@@ -392,11 +339,8 @@ cluster_stats_messages_meet_received:5
 cluster_stats_messages_received:3112
 127.0.0.1:6379&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;集群操作&#34;&gt;集群操作&lt;/h2&gt;
-
-&lt;p&gt;就不挨个详述了，写了个速查表如下，全部命令详见&lt;a href=&#34;https://redis.io/commands&#34; target=&#34;_blank&#34;&gt;redis官方文档&lt;/a&gt;。&lt;/p&gt;
-
+&lt;h2 id=&#34;heading-3&#34;&gt;集群操作&lt;/h2&gt;
+&lt;p&gt;就不挨个详述了，写了个速查表如下，全部命令详见&lt;a href=&#34;https://redis.io/commands&#34;&gt;redis官方文档&lt;/a&gt;。&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -404,185 +348,149 @@ cluster_stats_messages_received:3112
 &lt;th&gt;含义&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;strong&gt;信息&lt;/strong&gt;&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;cluster info&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;返回集群基本信息&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;cluster nodes&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;返回全部节点&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;strong&gt;控制&lt;/strong&gt;&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;cluster count-failure-reports &amp;lt;node_id&amp;gt;&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;返回节点的错误报告数&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;cluster failover [FORCE/TAKEOVER]&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;在从节点上执行，测试故障转移&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;cluster set-config-epoch &amp;lt;config-epoch&amp;gt;&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;为新节点设置权重&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;cluster saveconfig&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;将节点的配置文件保存到硬盘里面&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;cluster reset [HARD/SOFT]&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;重置没有key的当前节点(所以应该先flushall)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;cluster readonly&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;将从节点置为可读(默认情况下，指向从节点的连接会被转向主节点)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;cluster readwrite&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;将从节点置为读写(相当于还原为&lt;code&gt;readonly&lt;/code&gt;之前的状态)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;strong&gt;节点&lt;/strong&gt;&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;cluster meet &amp;lt;ip&amp;gt; &amp;lt;port&amp;gt;&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;将节点加入集群作为主节点&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;cluster replicate &amp;lt;node_id&amp;gt;&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;将当前节点作为&lt;node_id&gt;的从节点加入集群&lt;/td&gt;
+&lt;td&gt;将当前节点作为&amp;lt;node_id&amp;gt;的从节点加入集群&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;cluster replicas &amp;lt;node_id&amp;gt;&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;redis5.0开始支持，列出指定主节点的从节点&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;cluster slaves &amp;lt;node_id&amp;gt;&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;不再建议被使用，基本同replicas&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;cluster replicaof &amp;lt;ip&amp;gt; &amp;lt;port&amp;gt;&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;redis5.0开始支持，将当前节点置为指定节点的从节点&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;cluster slaveof &amp;lt;ip&amp;gt; &amp;lt;port&amp;gt;&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;不再建议被使用，基本同replicaof&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;cluster forget &amp;lt;node_id&amp;gt;&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;从集群中移除&lt;node_id&gt;节点（前提是没给他分配哈希槽/内容）&lt;/td&gt;
+&lt;td&gt;从集群中移除&amp;lt;node_id&amp;gt;节点（前提是没给他分配哈希槽/内容）&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;strong&gt;哈希槽&lt;/strong&gt;&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;cluster addslots &amp;lt;slot&amp;gt;,...&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;将一个或多个哈希槽添加到当前节点&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;cluster delslots  &amp;lt;slot&amp;gt;,...&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;从当前节点移除哈希槽&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;cluster flushslots&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;清空当前节点的哈希槽&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;cluster setslot &amp;lt;slot&amp;gt; node &amp;lt;node_id&amp;gt;&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;将&lt;strong&gt;未分配的&lt;/strong&gt;哈希槽分配给指定节点&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;cluster setslot &amp;lt;slot&amp;gt; migrating &amp;lt;node_id&amp;gt;&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;将本节点的哈希槽合并到指定节点&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;cluster setslot &amp;lt;slot&amp;gt; importing &amp;lt;node_id&amp;gt;&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;从指定节点引入哈希槽到本节点&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;cluster setslot &amp;lt;slot&amp;gt; stable&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;取消哈希槽的移动，_主要是修复&lt;code&gt;redis-trib fix&lt;/code&gt;引发的问题←&lt;em&gt;←&lt;/em&gt;&lt;/td&gt;
+&lt;td&gt;取消哈希槽的移动，&lt;em&gt;主要是修复&lt;code&gt;redis-trib fix&lt;/code&gt;引发的问题←_←&lt;/em&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;cluster flushslots&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;清空当前节点的哈希槽&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;cluster flushslots&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;清空当前节点的哈希槽&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;strong&gt;键&lt;/strong&gt;&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;cluster keyslot &amp;lt;key&amp;gt;&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;计算key应该被放在哪个槽&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;cluster countkeysinslot &amp;lt;slot&amp;gt;&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;返回哈希槽中key的数量&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;cluster getkeysinslot &amp;lt;slot&amp;gt; &amp;lt;count&amp;gt;&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;从哈希槽中返回指定数量个key&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-
 &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     &lt;strong&gt;ps1&lt;/strong&gt;：从redis5.0起，&lt;code&gt;slave&lt;/code&gt;关键字将被&lt;code&gt;replicate&lt;/code&gt;取代，相关命令也会逐步被替代
   &lt;/div&gt;
 &lt;/div&gt;
-
 &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     &lt;strong&gt;ps2&lt;/strong&gt;：&lt;code&gt;readonly&lt;/code&gt;这个额外说一下，默认情况下，redis的从节点不处理客户端请求，只负责同步主节点的数据，设置&lt;code&gt;readonly&lt;/code&gt;之后，指向从节点的读请求会被执行，这样相当于为主节点分担了读的压力(也算是scale了)，但是还是存在两个限制：&lt;/p&gt;
-
 &lt;ol&gt;
 &lt;li&gt;写请求还是会转移给主节点；&lt;/li&gt;
 &lt;li&gt;要读的key的哈希槽不属于这个节点，请求一样会被转移；&lt;/li&gt;
@@ -598,28 +506,26 @@ cluster_stats_messages_received:3112
       <pubDate>Mon, 18 Mar 2019 15:04:35 +0800</pubDate>
       <guid>https://szthanatos.github.io/topic/redis/improve-00/</guid>
       <description>&lt;p&gt;redis性能优化可以从设计，使用，运维三个层面上着手：&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;设计&lt;/strong&gt;
-
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;结构&lt;/strong&gt;：合理选择数据类型&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;负载&lt;/strong&gt;：保证数据在空间上均匀分布&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;使用&lt;/strong&gt;，
-
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;操作&lt;/strong&gt;：保证操作在时间上均匀分布&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;策略&lt;/strong&gt;：优化资源利用&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;运维&lt;/strong&gt;
-
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;监控&lt;/strong&gt;：持续关注执行效率和性能指标&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;部署&lt;/strong&gt;：物理层面的调优&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;下面具体的谈一下几个tips。&lt;/p&gt;
 </description>
     </item>
@@ -638,20 +544,13 @@ cluster_stats_messages_received:3112
       <link>https://szthanatos.github.io/topic/redis/error-connection_reset/</link>
       <pubDate>Sun, 16 Jun 2019 23:06:41 +0800</pubDate>
       <guid>https://szthanatos.github.io/topic/redis/error-connection_reset/</guid>
-      <description>
-
-&lt;h2 id=&#34;报错信息&#34;&gt;报错信息&lt;/h2&gt;
-
+      <description>&lt;h2 id=&#34;heading&#34;&gt;报错信息&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Error: Connection reset by peer&lt;/p&gt;
 &lt;/blockquote&gt;
-
-&lt;h2 id=&#34;原因&#34;&gt;原因&lt;/h2&gt;
-
+&lt;h2 id=&#34;heading-1&#34;&gt;原因&lt;/h2&gt;
 &lt;p&gt;读写操作发生在连接断开后。&lt;/p&gt;
-
-&lt;h2 id=&#34;解决办法&#34;&gt;解决办法&lt;/h2&gt;
-
+&lt;h2 id=&#34;heading-2&#34;&gt;解决办法&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;用&lt;code&gt;info&lt;/code&gt;/&lt;code&gt;cluster info&lt;/code&gt;命令检查连接数是否过多&lt;/li&gt;
 &lt;li&gt;检查redis-server是否正确监听配置文件&lt;/li&gt;
@@ -667,16 +566,10 @@ cluster_stats_messages_received:3112
       <link>https://szthanatos.github.io/topic/redis/improve-02/</link>
       <pubDate>Mon, 18 Mar 2019 15:04:35 +0800</pubDate>
       <guid>https://szthanatos.github.io/topic/redis/improve-02/</guid>
-      <description>
-
-&lt;h2 id=&#34;操作&#34;&gt;操作&lt;/h2&gt;
-
-&lt;h3 id=&#34;批量操作&#34;&gt;批量操作&lt;/h3&gt;
-
+      <description>&lt;h2 id=&#34;heading&#34;&gt;操作&lt;/h2&gt;
+&lt;h3 id=&#34;heading-1&#34;&gt;批量操作&lt;/h3&gt;
 &lt;p&gt;传统数据库也存在批量操作效率高于单次操作的情况，但是redis由于执行效率更高，批量操作带来的提升也更夸张。举个不是很恰当的例子，还是按redis每秒能处理10k请求来算——&lt;/p&gt;
-
 &lt;p&gt;假设客户端和服务端不在同一机器，网络通信存在额外1ms延时：&lt;/p&gt;
-
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -684,93 +577,65 @@ cluster_stats_messages_received:3112
 &lt;th&gt;时间&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;1000次get&lt;/td&gt;
 &lt;td&gt;1000 * 1 + 1000 * 0.01 = 1010  (ms)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;10次100个键值对的mget&lt;/td&gt;
 &lt;td&gt;10 * (1 * 1 + 100 * 0.01) = 20 (ms)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;1次1000个键值对的mget&lt;/td&gt;
 &lt;td&gt;1 * 1 + 1000 * 0.01 = 11 (ms)&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-
 &lt;p&gt;如果一条条去执行，这时redis每秒只能处理1000 / 1.01 ≈ 990次请求，只发挥了实际计算力的0.99%。&lt;/p&gt;
-
 &lt;h4 id=&#34;multi-action-vs-pipeline-vs-transaction&#34;&gt;Multi-action vs Pipeline vs Transaction&lt;/h4&gt;
-
 &lt;p&gt;批量操作有3种实现方式：&lt;/p&gt;
-
 &lt;p&gt;&lt;strong&gt;&lt;code&gt;Multi-action&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
-
 &lt;p&gt;也就是m开头的命令，比如&lt;code&gt;mget&lt;/code&gt;&lt;/p&gt;
-
 &lt;p&gt;&lt;strong&gt;优点&lt;/strong&gt;：&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;效率是最高的，因为它只需要解析一条命令&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;&lt;strong&gt;缺点&lt;/strong&gt;：&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;只能做一件事&lt;/li&gt;
 &lt;li&gt;一次操作的key太多的话会导致redis实例的响应能力等比下降&lt;/li&gt;
 &lt;li&gt;不具有原子性，存在部分成功部分失败的情况&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;&lt;strong&gt;&lt;code&gt;Pipeline&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
-
 &lt;p&gt;管道式的操作&lt;/p&gt;
-
 &lt;p&gt;&lt;strong&gt;优点&lt;/strong&gt;：&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;可以处理多类数据&lt;/li&gt;
 &lt;li&gt;可以将大量命令分解为多个包依次发送执行&lt;/li&gt;
 &lt;li&gt;使用灵活&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;&lt;strong&gt;缺点&lt;/strong&gt;：&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;不保证事务，其他客户端发送的命令可能在pipeline执行期间被执行&lt;/li&gt;
 &lt;li&gt;不具有原子性，存在部分成功部分失败的情况&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;&lt;strong&gt;&lt;code&gt;Transaction&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
-
 &lt;p&gt;事务&lt;/p&gt;
-
 &lt;p&gt;&lt;strong&gt;优点&lt;/strong&gt;：&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;原子性，要么全执行要么不执行&lt;/li&gt;
 &lt;li&gt;乐观锁&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;&lt;strong&gt;缺点&lt;/strong&gt;：&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;命令会被分批发送给服务端，最后统一执行，性能是最低的(但还是远高于执行n次命令)&lt;/li&gt;
 &lt;li&gt;随着竞争激烈程度的上升，乐观锁会导致性能相应下降&lt;/li&gt;
 &lt;li&gt;在集群中，只有同属于一个哈希槽的键才能使用事务，多数客户端支持的不好&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;另外，因为Pipeline是基于redis自定义的RESP协议实现的，而Transaction是命令实现，所以给了我们组合使用的机会。相比直接使用事务会快上一点点，没有太大区别。&lt;/p&gt;
-
 &lt;p&gt;总的来说，实现批量执行的核心肯定是Pipeline，请尽可能的使用。&lt;/p&gt;
-
 &lt;p&gt;放上一组官方测试结果以供参考：&lt;/p&gt;
-
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# Intel(R) Xeon(R) CPU E5520 @ 2.27GHz (with pipelining)
 $ ./redis-benchmark -r 1000000 -n 2000000 -t get,set,lpush,lpop -P 16 -q
 &amp;gt; SET: 552028.75 requests per second
@@ -785,13 +650,9 @@ $ ./redis-benchmark -r 1000000 -n 2000000 -t get,set,lpush,lpop -q
 &amp;gt; LPUSH: 136752.14 requests per second
 &amp;gt; LPOP: 132424.03 requests per second
 &lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;减少阻塞&#34;&gt;减少阻塞&lt;/h3&gt;
-
+&lt;h3 id=&#34;heading-2&#34;&gt;减少阻塞&lt;/h3&gt;
 &lt;p&gt;另一方面，针对每条命令，由于redis是单进程单线程的模式，命令是依次执行的，想象一下星巴克排队，只要有一个客人堵在那，后面的不管买多买少都只能排着&amp;hellip;&lt;/p&gt;
-
 &lt;p&gt;可能造成阻塞的命令包括：&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;del&lt;/code&gt;，这个删除是在前台阻塞式的删除，在redis4.0以后应该使用&lt;code&gt;unlink&lt;/code&gt;后台非阻塞的标记删除&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;keys&lt;/code&gt;、&lt;code&gt;hgetall&lt;/code&gt;、&lt;code&gt;smembers&lt;/code&gt;，这类返回所有结果的命令都会占用大量资源，都应该用&lt;code&gt;scan&lt;/code&gt;、&lt;code&gt;hscan&lt;/code&gt;、&lt;code&gt;sscan&lt;/code&gt;等命令替换&lt;/li&gt;
@@ -800,32 +661,25 @@ $ ./redis-benchmark -r 1000000 -n 2000000 -t get,set,lpush,lpop -q
 &lt;li&gt;能用&lt;code&gt;mget&lt;/code&gt;/&lt;code&gt;mhset&lt;/code&gt;的情况下就不要用&lt;code&gt;get&lt;/code&gt;/&lt;code&gt;set&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;总之，所有时间复杂度大于O(log n)的操作都应该考虑有没有更低占用的实现&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;除了命令本身，造成阻塞的原因还有：&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;CPU饱和：cpu占用率100%了&lt;/li&gt;
 &lt;li&gt;CPU竞争：和其他服务竞争资源&lt;/li&gt;
 &lt;li&gt;持久化带来的IO阻塞
-
 &lt;ul&gt;
 &lt;li&gt;fork阻塞：rdb/aof文件重写的时候fork出的子进程长时间不能完成，导致的主进程阻塞&lt;/li&gt;
 &lt;li&gt;AOF阻塞：数据变动剧烈的时候fsync持续写硬盘导致的&lt;/li&gt;
 &lt;li&gt;HugePage阻塞：如果linux内核里启用了&lt;code&gt;transparent_hugepage&lt;/code&gt;，会对内存和延迟带来很大影响&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;内存交换：物理内存不够用了，部分数据被写到Linux的虚拟内存，也就是swap，但是内存和磁盘的读写速度起码差了5个量级&lt;/li&gt;
 &lt;li&gt;网络问题&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;这些就需要在使用过程中不断监测和发现了。&lt;/p&gt;
-
-&lt;h2 id=&#34;策略&#34;&gt;策略&lt;/h2&gt;
-
-&lt;h3 id=&#34;过期回收&#34;&gt;过期回收&lt;/h3&gt;
-
+&lt;h2 id=&#34;heading-3&#34;&gt;策略&lt;/h2&gt;
+&lt;h3 id=&#34;heading-4&#34;&gt;过期回收&lt;/h3&gt;
 &lt;p&gt;随着时间增长，碎片化的无用key的数量也会持续上升，直到最终你的内存被垃圾Key占满。
 所以一个好习惯是给不需要持久存储(redis本身就不是用来持久化的)的Key都加上过期时间。&lt;/p&gt;
-
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -833,39 +687,31 @@ $ ./redis-benchmark -r 1000000 -n 2000000 -t get,set,lpush,lpop -q
 &lt;th&gt;注释&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;EXPIRE &amp;lt;KEY&amp;gt; &amp;lt;TTL&amp;gt;&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;将键的生存时间设为 ttl 秒&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;PEXPIRE &amp;lt;KEY&amp;gt; &amp;lt;TTL&amp;gt;&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;将键的生存时间设为 ttl 毫秒&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;EXPIREAT &amp;lt;KEY&amp;gt; &amp;lt;timestamp&amp;gt;&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;将键的过期时间设为 timestamp 所指定的秒数时间戳&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;PEXPIREAT &amp;lt;KEY&amp;gt; &amp;lt;timestamp&amp;gt;&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;将键的过期时间设为 timestamp 所指定的毫秒数时间戳.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-
 &lt;p&gt;但是需要注意，过期键的内存空间默认并不会被立即回收。redis的内存回收策略主要是这两个：&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;被动删除&lt;/strong&gt;，读/写过期键时触发删除；&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;主动删除&lt;/strong&gt;，每隔100ms检查20个带过期时间的键，如果有超过四分之一的键过期，则重复上面步骤；&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;另外，设置&lt;code&gt;maxmemory&lt;/code&gt;最大内存，可以在达到内存阈值的时候触发强制删除机制(配置项&lt;code&gt;maxmemory-policy&lt;/code&gt;)：&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;noeviction&lt;/strong&gt;，禁止强制删除，&lt;strong&gt;默认策略&lt;/strong&gt;；&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;volatile-ttl&lt;/strong&gt;，从带过期时间的键中删除最接近过期的；&lt;/li&gt;
@@ -876,11 +722,8 @@ $ ./redis-benchmark -r 1000000 -n 2000000 -t get,set,lpush,lpop -q
 &lt;li&gt;&lt;strong&gt;allkeys-lfu&lt;/strong&gt;，从所有键中删除最近最少使用的；&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;allkeys-random&lt;/strong&gt;，从带过期时间的键中随机删除；&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;h3 id=&#34;持久化&#34;&gt;持久化&lt;/h3&gt;
-
+&lt;h3 id=&#34;heading-5&#34;&gt;持久化&lt;/h3&gt;
 &lt;p&gt;redis数据落到硬盘依赖两种持久化机制：RDB和AOF。&lt;/p&gt;
-
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -889,50 +732,42 @@ $ ./redis-benchmark -r 1000000 -n 2000000 -t get,set,lpush,lpop -q
 &lt;th&gt;AOF&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;strong&gt;存储内容&lt;/strong&gt;&lt;/td&gt;
 &lt;td&gt;数据&lt;/td&gt;
 &lt;td&gt;写操作日志&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;strong&gt;性能影响&lt;/strong&gt;&lt;/td&gt;
 &lt;td&gt;小&lt;/td&gt;
 &lt;td&gt;大&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;strong&gt;恢复速度&lt;/strong&gt;&lt;/td&gt;
 &lt;td&gt;高&lt;/td&gt;
 &lt;td&gt;低&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;strong&gt;存储空间&lt;/strong&gt;&lt;/td&gt;
 &lt;td&gt;小&lt;/td&gt;
 &lt;td&gt;大&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;strong&gt;可读性&lt;/strong&gt;&lt;/td&gt;
 &lt;td&gt;低&lt;/td&gt;
 &lt;td&gt;高&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;strong&gt;安全程度&lt;/strong&gt;&lt;/td&gt;
 &lt;td&gt;较低，保存频率低&lt;/td&gt;
 &lt;td&gt;较高，保存频率高&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;strong&gt;默认开启&lt;/strong&gt;&lt;/td&gt;
 &lt;td&gt;是&lt;/td&gt;
 &lt;td&gt;否&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;strong&gt;存储策略&lt;/strong&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;save 900 1&lt;/code&gt;：九百秒内一次修改即保存&lt;br&gt;&lt;code&gt;save 300 10&lt;/code&gt;：三百秒内十次修改即保存&lt;br&gt;&lt;code&gt;save 60 10000&lt;/code&gt;：六十秒内一万次修改即保存&lt;br&gt;允许自定义&lt;/td&gt;
@@ -940,15 +775,10 @@ $ ./redis-benchmark -r 1000000 -n 2000000 -t get,set,lpush,lpop -q
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-
 &lt;p&gt;RDB的save策略配合大键有时候简直性能地狱。必要时请重写触发机制。&lt;/p&gt;
-
 &lt;p&gt;AOF的日志文件会膨胀的非常厉害，所以会定期重写。如果文件变动过于剧烈，你会发现swap比内存更先被吃干净。&lt;/p&gt;
-
 &lt;p&gt;redis4.0以后支持一个叫&lt;code&gt;aof-use-rdb-preamble&lt;/code&gt;的参数，意思就是在重写AOF文件的时候，会把早期日志写成RDB格式，新增加的继续使用AOF。这样一来可以替高重写和恢复的速度。某种意义上有了这个就不必单独开启RDB持久化了。&lt;/p&gt;
-
-&lt;h3 id=&#34;内存清理&#34;&gt;内存清理&lt;/h3&gt;
-
+&lt;h3 id=&#34;heading-6&#34;&gt;内存清理&lt;/h3&gt;
 &lt;p&gt;在redis4.0之后，可以通过将配置里的&lt;code&gt;activedefrag&lt;/code&gt;设置为&lt;code&gt;yes&lt;/code&gt;开启自动清理，或者通过&lt;code&gt;memory purge&lt;/code&gt;命令手动清理。&lt;/p&gt;
 </description>
     </item>
@@ -958,14 +788,9 @@ $ ./redis-benchmark -r 1000000 -n 2000000 -t get,set,lpush,lpop -q
       <link>https://szthanatos.github.io/topic/redis/improve-01/</link>
       <pubDate>Mon, 18 Mar 2019 15:04:35 +0800</pubDate>
       <guid>https://szthanatos.github.io/topic/redis/improve-01/</guid>
-      <description>
-
-&lt;h2 id=&#34;数据结构&#34;&gt;数据结构&lt;/h2&gt;
-
+      <description>&lt;h2 id=&#34;heading&#34;&gt;数据结构&lt;/h2&gt;
 &lt;p&gt;不同数据类型对应的操作的时间复杂度也不一样，选择合适的数据类型可以降低很多时间成本：&lt;/p&gt;
-
 &lt;h3 id=&#34;string&#34;&gt;String&lt;/h3&gt;
-
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -973,102 +798,82 @@ $ ./redis-benchmark -r 1000000 -n 2000000 -t get,set,lpush,lpop -q
 &lt;th&gt;时间复杂度&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;SET&lt;/code&gt; key value [EX seconds] [PX milliseconds] [NX|XX]&lt;/td&gt;
 &lt;td&gt;O(1)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;SETNX&lt;/code&gt; key value&lt;/td&gt;
 &lt;td&gt;O(1)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;SETEX&lt;/code&gt; key seconds value&lt;/td&gt;
 &lt;td&gt;O(1)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;PSETEX&lt;/code&gt; key milliseconds value&lt;/td&gt;
 &lt;td&gt;O(1)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;GET&lt;/code&gt; key&lt;/td&gt;
 &lt;td&gt;O(1)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;GETSET&lt;/code&gt; key value&lt;/td&gt;
 &lt;td&gt;O(1)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;STRLEN&lt;/code&gt; key&lt;/td&gt;
 &lt;td&gt;O(1)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;APPEND&lt;/code&gt; key value&lt;/td&gt;
 &lt;td&gt;平均O(1)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;SETRANGE&lt;/code&gt; key offset value&lt;/td&gt;
 &lt;td&gt;短字符串平均O(1)/长字符串O(N)，N为&lt;code&gt;value&lt;/code&gt;长度&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;GETRANGE&lt;/code&gt; key start end&lt;/td&gt;
 &lt;td&gt;O(N)，N为返回值长度&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;INCR&lt;/code&gt; key&lt;/td&gt;
 &lt;td&gt;O(1)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;INCRBY&lt;/code&gt; key increment&lt;/td&gt;
 &lt;td&gt;O(1)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;INCRBYFLOAT&lt;/code&gt; key increment&lt;/td&gt;
 &lt;td&gt;O(1)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;DECR&lt;/code&gt; key&lt;/td&gt;
 &lt;td&gt;O(1)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;DECRBY&lt;/code&gt; key decrement&lt;/td&gt;
 &lt;td&gt;O(1)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;MSET&lt;/code&gt; key value [key value …]&lt;/td&gt;
 &lt;td&gt;O(N)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;MSETNX&lt;/code&gt; key value [key value …]&lt;/td&gt;
 &lt;td&gt;O(N)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;MGET&lt;/code&gt; key [key …]&lt;/td&gt;
 &lt;td&gt;O(N)&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-
 &lt;h3 id=&#34;list&#34;&gt;List&lt;/h3&gt;
-
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -1076,97 +881,78 @@ $ ./redis-benchmark -r 1000000 -n 2000000 -t get,set,lpush,lpop -q
 &lt;th&gt;时间复杂度&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;LPUSH&lt;/code&gt; key value [value …]&lt;/td&gt;
 &lt;td&gt;O(1)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;LPUSHX&lt;/code&gt; key value&lt;/td&gt;
 &lt;td&gt;O(1)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;RPUSH&lt;/code&gt; key value [value …]&lt;/td&gt;
 &lt;td&gt;O(1)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;RPUSHX&lt;/code&gt; key value&lt;/td&gt;
 &lt;td&gt;O(1)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;LPOP&lt;/code&gt; key&lt;/td&gt;
 &lt;td&gt;O(1)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;RPOP&lt;/code&gt; key&lt;/td&gt;
 &lt;td&gt;O(1)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;RPOPLPUSH&lt;/code&gt; source destination&lt;/td&gt;
 &lt;td&gt;O(1)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;LREM&lt;/code&gt; key count value&lt;/td&gt;
 &lt;td&gt;O(N)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;LLEN&lt;/code&gt; key&lt;/td&gt;
 &lt;td&gt;O(1)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;LINDEX&lt;/code&gt; key index&lt;/td&gt;
 &lt;td&gt;O(N)，N 为到达下标&lt;code&gt;index&lt;/code&gt;过程中经过的元素数量&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;LINSERT&lt;/code&gt; key BEFORE|AFTER pivot value&lt;/td&gt;
 &lt;td&gt;O(N)，N 为寻找&lt;code&gt;pivot&lt;/code&gt;过程中经过的元素数量&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;LSET&lt;/code&gt; key index value&lt;/td&gt;
 &lt;td&gt;头尾元素O(1)，其他O(N)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;LRANGE&lt;/code&gt; key start stop&lt;/td&gt;
 &lt;td&gt;O(S+N)，S 为偏移量 start ， N 为指定区间内元素的数&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;LTRIM&lt;/code&gt; key start stop&lt;/td&gt;
 &lt;td&gt;O(N)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;BLPOP&lt;/code&gt; key [key …] timeout&lt;/td&gt;
 &lt;td&gt;O(1)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;BRPOP&lt;/code&gt; key [key …] timeout&lt;/td&gt;
 &lt;td&gt;O(1)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;BRPOPLPUSH&lt;/code&gt; source destination timeout&lt;/td&gt;
 &lt;td&gt;O(1)&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-
 &lt;h3 id=&#34;hash&#34;&gt;Hash&lt;/h3&gt;
-
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -1174,87 +960,70 @@ $ ./redis-benchmark -r 1000000 -n 2000000 -t get,set,lpush,lpop -q
 &lt;th&gt;时间复杂度&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;HSET&lt;/code&gt; hash field value&lt;/td&gt;
 &lt;td&gt;O(1)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;HSETNX&lt;/code&gt; hash field value&lt;/td&gt;
 &lt;td&gt;O(1)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;HGET&lt;/code&gt; hash field&lt;/td&gt;
 &lt;td&gt;O(1)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;HEXISTS&lt;/code&gt; hash field&lt;/td&gt;
 &lt;td&gt;O(1)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;HDEL&lt;/code&gt; key field [field …]&lt;/td&gt;
 &lt;td&gt;O(N)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;HLEN&lt;/code&gt; key&lt;/td&gt;
 &lt;td&gt;O(1)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;HSTRLEN&lt;/code&gt; key field&lt;/td&gt;
 &lt;td&gt;O(1)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;HINCRBY&lt;/code&gt; key field increment&lt;/td&gt;
 &lt;td&gt;O(1)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;HINCRBYFLOAT&lt;/code&gt; key field increment&lt;/td&gt;
 &lt;td&gt;O(1)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;HMSET&lt;/code&gt; key field value [field value …]&lt;/td&gt;
 &lt;td&gt;O(N)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;HMGET&lt;/code&gt; key field [field …]&lt;/td&gt;
 &lt;td&gt;O(N)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;HKEYS&lt;/code&gt; key&lt;/td&gt;
 &lt;td&gt;O(N)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;HVALS&lt;/code&gt; key&lt;/td&gt;
 &lt;td&gt;O(N)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;HGETALL&lt;/code&gt; key&lt;/td&gt;
 &lt;td&gt;O(N)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;HSCAN&lt;/code&gt; key cursor [MATCH pattern] [COUNT count]&lt;/td&gt;
 &lt;td&gt;O(1)&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-
 &lt;h3 id=&#34;set&#34;&gt;Set&lt;/h3&gt;
-
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -1262,87 +1031,70 @@ $ ./redis-benchmark -r 1000000 -n 2000000 -t get,set,lpush,lpop -q
 &lt;th&gt;时间复杂度&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;SADD&lt;/code&gt; key member [member …]&lt;/td&gt;
 &lt;td&gt;O(N)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;SISMEMBER&lt;/code&gt; key member&lt;/td&gt;
 &lt;td&gt;O(1)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;SPOP&lt;/code&gt; key&lt;/td&gt;
 &lt;td&gt;O(1)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;SRANDMEMBER&lt;/code&gt; key [count]&lt;/td&gt;
 &lt;td&gt;无conut时O(1)，有conut时O(N)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;SREM&lt;/code&gt; key member [member …]&lt;/td&gt;
 &lt;td&gt;O(N)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;SMOVE&lt;/code&gt; source destination member&lt;/td&gt;
 &lt;td&gt;O(1)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;SCARD&lt;/code&gt; key&lt;/td&gt;
 &lt;td&gt;O(1)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;SMEMBERS&lt;/code&gt; key&lt;/td&gt;
 &lt;td&gt;O(N)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;SSCAN&lt;/code&gt; key cursor [MATCH pattern] [COUNT count]&lt;/td&gt;
 &lt;td&gt;O(1)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;SINTER&lt;/code&gt; key [key …]&lt;/td&gt;
 &lt;td&gt;O(N*M)， N 为给定集合当中基数最小的集合， M 为给定集合的个数&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;SINTERSTORE&lt;/code&gt; destination key [key …]&lt;/td&gt;
 &lt;td&gt;O(N*M)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;SUNION&lt;/code&gt; key [key …]&lt;/td&gt;
 &lt;td&gt;O(N)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;SUNIONSTORE&lt;/code&gt; destination key [key …]&lt;/td&gt;
 &lt;td&gt;O(N)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;SDIFF&lt;/code&gt; key [key …]&lt;/td&gt;
 &lt;td&gt;O(N)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;SDIFFSTORE&lt;/code&gt; destination key [key …]&lt;/td&gt;
 &lt;td&gt;O(N)&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-
 &lt;h3 id=&#34;zset&#34;&gt;ZSet&lt;/h3&gt;
-
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -1350,125 +1102,99 @@ $ ./redis-benchmark -r 1000000 -n 2000000 -t get,set,lpush,lpop -q
 &lt;th&gt;时间复杂度&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;ZADD&lt;/code&gt; key score member [[score member] [score member] …]&lt;/td&gt;
 &lt;td&gt;O(M*log(N))，N 是有序集的基数， M 为成功添加的新成员的数量&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;ZSCORE&lt;/code&gt; key member&lt;/td&gt;
 &lt;td&gt;O(1)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;ZINCRBY&lt;/code&gt; key increment member&lt;/td&gt;
 &lt;td&gt;O(log(N))&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;ZCARD&lt;/code&gt; key&lt;/td&gt;
 &lt;td&gt;O(1)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;ZCOUNT&lt;/code&gt; key min max&lt;/td&gt;
 &lt;td&gt;O(log(N))&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;ZRANGE&lt;/code&gt; key start stop [WITHSCORES]&lt;/td&gt;
 &lt;td&gt;O(log(N)+M)，N 为有序集的基数，而 M 为结果集的基数&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;ZREVRANGE&lt;/code&gt; key start stop [WITHSCORES]&lt;/td&gt;
 &lt;td&gt;O(log(N)+M)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;ZRANGEBYSCORE&lt;/code&gt; key min max [WITHSCORES] [LIMIT offset count]&lt;/td&gt;
 &lt;td&gt;O(log(N)+M)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;ZREVRANGEBYSCORE&lt;/code&gt; key max min [WITHSCORES] [LIMIT offset count]&lt;/td&gt;
 &lt;td&gt;O(log(N)+M)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;ZRANK&lt;/code&gt; key member&lt;/td&gt;
 &lt;td&gt;O(log(N))&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;ZREVRANK&lt;/code&gt; key member&lt;/td&gt;
 &lt;td&gt;O(log(N))&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;ZREM&lt;/code&gt; key member [member …]&lt;/td&gt;
 &lt;td&gt;O(M*log(N))&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;ZREMRANGEBYRANK&lt;/code&gt; key start stop&lt;/td&gt;
 &lt;td&gt;O(log(N)+M)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;ZREMRANGEBYSCORE&lt;/code&gt; key min max&lt;/td&gt;
 &lt;td&gt;O(log(N)+M)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;ZRANGEBYLEX&lt;/code&gt; key min max [LIMIT offset count]&lt;/td&gt;
 &lt;td&gt;O(log(N)+M)，N 为有序集合的元素数量， 而 M 则是命令返回的元素数量&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;ZLEXCOUNT&lt;/code&gt; key min max&lt;/td&gt;
 &lt;td&gt;O(log(N))&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;ZREMRANGEBYLEX&lt;/code&gt; key min max&lt;/td&gt;
 &lt;td&gt;O(log(N)+M)，N 为有序集合的元素数量， 而 M 则为被移除的元素数量&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;ZSCAN&lt;/code&gt; key cursor [MATCH pattern] [COUNT count]&lt;/td&gt;
 &lt;td&gt;O(1)&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;ZUNIONSTORE&lt;/code&gt; destination numkeys key [key …] [WEIGHTS weight [weight …]] [AGGREGATE SUM|MIN|MAX]&lt;/td&gt;
 &lt;td&gt;O(N)+O(M log(M))，N 为给定有序集基数的总和， M 为结果集的基数&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;ZINTERSTORE&lt;/code&gt; destination numkeys key [key …] [WEIGHTS weight [weight …]] [AGGREGATE SUM|MIN|MAX]&lt;/td&gt;
-&lt;td&gt;O(N*K)+O(M*log(M))， N 为给定 key 中基数最小的有序集， K 为给定有序集的数量， M 为结果集的基数&lt;/td&gt;
+&lt;td&gt;O(N&lt;em&gt;K)+O(M&lt;/em&gt;log(M))， N 为给定 key 中基数最小的有序集， K 为给定有序集的数量， M 为结果集的基数&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-
-&lt;h3 id=&#34;模拟类型&#34;&gt;模拟类型&lt;/h3&gt;
-
+&lt;h3 id=&#34;heading-1&#34;&gt;模拟类型&lt;/h3&gt;
 &lt;p&gt;除了直接使用redis数据类型，其他的一些常见数据结构也可以用固定操作模拟出来：&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;堆栈&lt;/strong&gt;：lpush + lpop = Stack&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;队列&lt;/strong&gt;：lpush + rpop = Queue&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;有限集合&lt;/strong&gt;：lpush + ltrim = Capped Collection&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;消息队列&lt;/strong&gt;&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;：lpush + brpop = Message Queue&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;消息队列&lt;/strong&gt;&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;：lpush + brpop = Message Queue&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;h2 id=&#34;负载&#34;&gt;负载&lt;/h2&gt;
-
+&lt;h2 id=&#34;heading-2&#34;&gt;负载&lt;/h2&gt;
 &lt;p&gt;redis基本的逻辑存储单位是键(Key)对象，键底层的编码方式会随着键的类型/大小而改变：&lt;/p&gt;
-
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -1476,104 +1202,80 @@ $ ./redis-benchmark -r 1000000 -n 2000000 -t get,set,lpush,lpop -q
 &lt;th&gt;情况&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;strong&gt;&lt;code&gt;String&lt;/code&gt;类型&lt;/strong&gt;&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;int(long类型整数)&lt;/td&gt;
 &lt;td&gt;long能存下的整数值&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;embstr(embstr类型的简单动态字符串SDS)&lt;/td&gt;
 &lt;td&gt;&amp;lt;=32字节的字符串&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;raw(简单动态字符串SDS)&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;strong&gt;&lt;code&gt;List&lt;/code&gt;类型&lt;/strong&gt;&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;ziplist(压缩列表)&lt;/td&gt;
 &lt;td&gt;列表内元素不超过512个并且所有元素长度都小于64字节&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;linkedlist(双端链表)&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;strong&gt;&lt;code&gt;Hash&lt;/code&gt;类型&lt;/strong&gt;&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;ziplist&lt;/td&gt;
 &lt;td&gt;哈希内不超过512个键值对并且所有键值对的键和值的长度都小于64字节&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;hashtable(字典)&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;strong&gt;&lt;code&gt;Set&lt;/code&gt;类型&lt;/strong&gt;&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;intset(整数集合)&lt;/td&gt;
 &lt;td&gt;集合内元素不超过512个并且所有元素都是整数值&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;hashtable&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;&lt;strong&gt;&lt;code&gt;ZSet&lt;/code&gt;类型&lt;/strong&gt;&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;ziplist&lt;/td&gt;
 &lt;td&gt;有序集合内元素不超过128个并且所有元素的长度都小于64字节&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;skiplist(跳跃表和字典)&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-
 &lt;p&gt;所以简单的来说，String长度小于32字节，其他复合类型元素个数不超过512个(ZSet不超过128个)并且元素小于64字节或者是整数(Set)的时候，是redis认为的一个key的合理值，超过这个范围redis也是允许的，但是关注点就放在存储而不是性能上了。&lt;/p&gt;
-
 &lt;p&gt;大键会拖累存储性能。尤其是在时间复杂度不是O(1)的操作上，性能损失是线性(eg: &lt;code&gt;LREM&lt;/code&gt;)甚至指数(eg: &lt;code&gt;ZINTERSTORE&lt;/code&gt;)上升的。&lt;/p&gt;
-
 &lt;p&gt;过小(零碎)的键也不合适，它是对性能的一种浪费，比如要存放&lt;code&gt;用户: 用户信息&lt;/code&gt;，直接将每个用户存为一个&lt;code&gt;String&lt;/code&gt;，相比用&lt;code&gt;Hash&lt;/code&gt;把所有用户存储在一个键上，想要实现&lt;code&gt;hgetall&lt;/code&gt;这样的操作既复杂，效率也更低。&lt;/p&gt;
-
-&lt;h3 id=&#34;集群倾斜-热点问题&#34;&gt;集群倾斜 &amp;amp; 热点问题&lt;/h3&gt;
-
+&lt;h3 id=&#34;--&#34;&gt;集群倾斜 &amp;amp; 热点问题&lt;/h3&gt;
 &lt;p&gt;在集群中，redis是划分出16384个哈希槽，然后将哈希槽平均(也可以手动指定)分配到集群节点上。键会通过&lt;code&gt;crc16&lt;/code&gt;算法计算并将结果对16384取余，由此将键映射到编号为0~16383的哈希槽中。&lt;/p&gt;
-
 &lt;p&gt;大键会造成集群倾斜，也就是大键所在节点的内存可能被占满了，而其他节点还空着。极端情况下如果一个键所占空间超过了节点分配的内存，那这个集群可能会永远&lt;code&gt;fail&lt;/code&gt;下去——虽然有大量内存空着，但是没有一个节点能放下这个键了。&lt;/p&gt;
-
 &lt;p&gt;大键越多，分布越不均匀，在集群中就越容易出现热点问题(另一种角度的倾斜)，简单来说，就是&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;由于数据都集中在一个键&lt;/li&gt;
 &lt;li&gt;→ 对数据的操作都集中在一个键&lt;/li&gt;
@@ -1581,25 +1283,21 @@ $ ./redis-benchmark -r 1000000 -n 2000000 -t get,set,lpush,lpop -q
 &lt;li&gt;→ 哈希槽所在的节点读写压力非常大&lt;/li&gt;
 &lt;li&gt;→ 集群其他节点都在划水&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;假设是3个master的集群，本来的处理能力可能是100000 q/s * 3，这样的情况下实际发挥出来的就只有100000 q/s了。&lt;/p&gt;
-
 &lt;p&gt;针对大键&amp;amp;倾斜问题可以有以下措施：&lt;/p&gt;
-
 &lt;ol&gt;
 &lt;li&gt;将可能的大键进行拆分，比如将一个大List拆成List0~List9；&lt;/li&gt;
-&lt;li&gt;在集群配置中开启&lt;code&gt;readonly&lt;/code&gt;以降低主节点读压力(详见&lt;a href=&#34;cluster_command.md&#34; target=&#34;_blank&#34;&gt;《Redis集群相关命令》&lt;/a&gt;)；&lt;/li&gt;
+&lt;li&gt;在集群配置中开启&lt;code&gt;readonly&lt;/code&gt;以降低主节点读压力(详见&lt;a href=&#34;cluster_command.md&#34;&gt;《Redis集群相关命令》&lt;/a&gt;)；&lt;/li&gt;
 &lt;li&gt;根据实际情况，修改redis变更编码类型的阈值，比如设定&lt;code&gt;list-max-ziplist-entries=1024&lt;/code&gt;让元素在1024以内的列表都用ziplist编码；&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class=&#34;footnotes&#34;&gt;
-
-&lt;hr /&gt;
-
+&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
 &lt;ol&gt;
-&lt;li id=&#34;fn:1&#34;&gt;redis5中提供新的数据结构&lt;code&gt;Stream&lt;/code&gt;，直接实现了Kafka那种支持多播的消息队列
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:1&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;redis5中提供新的数据结构&lt;code&gt;Stream&lt;/code&gt;，直接实现了Kafka那种支持多播的消息队列 &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;
+&lt;/section&gt;
 </description>
     </item>
     
@@ -1608,101 +1306,57 @@ $ ./redis-benchmark -r 1000000 -n 2000000 -t get,set,lpush,lpop -q
       <link>https://szthanatos.github.io/topic/redis/improve-03/</link>
       <pubDate>Mon, 18 Mar 2019 15:04:35 +0800</pubDate>
       <guid>https://szthanatos.github.io/topic/redis/improve-03/</guid>
-      <description>
-
-&lt;h2 id=&#34;监控&#34;&gt;监控&lt;/h2&gt;
-
+      <description>&lt;h2 id=&#34;heading&#34;&gt;监控&lt;/h2&gt;
 &lt;p&gt;为了发现前面所说的问题，需要开发/运维人员不断的监控redis运行情况。&lt;/p&gt;
-
-&lt;h3 id=&#34;redis-cli-查询&#34;&gt;redis-cli 查询&lt;/h3&gt;
-
+&lt;h3 id=&#34;redis-cli-&#34;&gt;redis-cli 查询&lt;/h3&gt;
 &lt;p&gt;部分信息无法通过redis命令直接获取，但是可以通过&lt;code&gt;redis-cli [参数]&lt;/code&gt;获取：&lt;/p&gt;
-
 &lt;p&gt;&lt;code&gt;–-bigkeys&lt;/code&gt;&lt;/p&gt;
-
 &lt;p&gt;后台scan出每种数据类型中较大的key&lt;/p&gt;
-
 &lt;p&gt;&lt;code&gt;--latency&lt;/code&gt;&lt;/p&gt;
-
 &lt;p&gt;服务端响应延时&lt;/p&gt;
-
-&lt;h3 id=&#34;slowlog命令&#34;&gt;slowlog命令&lt;/h3&gt;
-
+&lt;h3 id=&#34;slowlog&#34;&gt;slowlog命令&lt;/h3&gt;
 &lt;p&gt;在客户端执行&lt;code&gt;slowlog get [n]&lt;/code&gt;可以获取最慢的n条执行命令的记录&lt;/p&gt;
-
-&lt;h3 id=&#34;info命令&#34;&gt;info命令&lt;/h3&gt;
-
+&lt;h3 id=&#34;info&#34;&gt;info命令&lt;/h3&gt;
 &lt;p&gt;返回服务器信息，性能监测的时候注意其中的几个部分：&lt;/p&gt;
-
 &lt;p&gt;&lt;strong&gt;memory&lt;/strong&gt;：&lt;code&gt;mem_fragmentation_ratio&lt;/code&gt;&lt;/p&gt;
-
 &lt;p&gt;内存碎片率，&lt;code&gt;used_memory_rss&lt;/code&gt;(系统分配内存总量)和&lt;code&gt;used_memory&lt;/code&gt;(Redis分配器分配的内存总量)的比值。&lt;/p&gt;
-
-&lt;p&gt;在1-1.5之间都是合理值，&lt;1则说明内存已经占满，正在和硬盘进行内存交换，性能下降严重，&gt;1.5则说明碎片过多需要清理了。&lt;/p&gt;
-
+&lt;p&gt;在1-1.5之间都是合理值，&amp;lt;1则说明内存已经占满，正在和硬盘进行内存交换，性能下降严重，&amp;gt;1.5则说明碎片过多需要清理了。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;stats&lt;/strong&gt;：&lt;code&gt;latest_fork_usec&lt;/code&gt;&lt;/p&gt;
-
 &lt;p&gt;最近一次fork操作耗时&lt;/p&gt;
-
 &lt;p&gt;&lt;strong&gt;persistence&lt;/strong&gt;：&lt;code&gt;aof_delayed_fsync&lt;/code&gt;&lt;/p&gt;
-
 &lt;p&gt;被延迟的fsync调用数量&lt;/p&gt;
-
 &lt;p&gt;&lt;strong&gt;clients&lt;/strong&gt;：&lt;code&gt;connected_clients&lt;/code&gt;，&lt;code&gt;blocked_clients&lt;/code&gt;&lt;/p&gt;
-
 &lt;p&gt;已连接客户端的数量和正在等待阻塞命令的客户端的数量&lt;/p&gt;
-
-&lt;h3 id=&#34;monitor命令&#34;&gt;monitor命令&lt;/h3&gt;
-
+&lt;h3 id=&#34;monitor&#34;&gt;monitor命令&lt;/h3&gt;
 &lt;p&gt;可以用来监测一个节点一段时间内执行的命令，从而统计出热点key。但是monitor自己也是有内存占用的，所以不能频繁、持续的使用。&lt;/p&gt;
-
-&lt;h2 id=&#34;部署&#34;&gt;部署&lt;/h2&gt;
-
-&lt;h3 id=&#34;网络&#34;&gt;网络&lt;/h3&gt;
-
+&lt;h2 id=&#34;heading-1&#34;&gt;部署&lt;/h2&gt;
+&lt;h3 id=&#34;heading-2&#34;&gt;网络&lt;/h3&gt;
 &lt;p&gt;影响redis性能的最主要因素是网络。&lt;/p&gt;
-
 &lt;p&gt;按官方基准测试来说，对于10kb以内的数据，redis的处理能力在100000q/s以上。&lt;/p&gt;
-
 &lt;p&gt;那么假设每次set/get的4kb大小的字符串，这时占用的带宽就有3.2 Gbit/s ，千兆网卡(1 Gbit/s)就不够用了，得换万兆网卡(10 Gbit/s)才能满足需求，可见想跑满redis的CPU计算力对网络的要求是很夸张的。&lt;/p&gt;
-
 &lt;p&gt;当然，这个例子比较极端，redis官方推荐的网络环境下每次传输的包最好不超过一个&lt;code&gt;MTU&lt;/code&gt;(大约 1500 bytes)。&lt;/p&gt;
-
 &lt;p&gt;如果完全抛开网络因素，客户端服务端都在单机上时，使用Unix域套接字(&lt;code&gt;Unix domain sockets&lt;/code&gt;，也叫&lt;code&gt;IPC(inter-precess communication) socket&lt;/code&gt;进程间通信套接字)替换默认的TCP/IP连接方式，能额外再有50%的吞吐量提升(不过在大量使用pipeline的情况下就没差这么多了)。&lt;/p&gt;
-
 &lt;p&gt;启用Unix域套接字需要在配置文件中取消注释：&lt;/p&gt;
-
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# unixsocket路径
 unixsocket /tmp/redis.sock
 
 # unixsocket权限
 unixsocketperm 700
 &lt;/code&gt;&lt;/pre&gt;
-
 &lt;p&gt;之后就可以在客户端使用指定方式连接了，以python客户端为例：&lt;/p&gt;
-
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import redis
 
 redis_connect = redis.Redis(unix_socket_path=&#39;/tmp/redis.sock&#39;)
 pass
 &lt;/code&gt;&lt;/pre&gt;
-
 &lt;h3 id=&#34;cpu&#34;&gt;CPU&lt;/h3&gt;
-
 &lt;p&gt;redis更倾向于具有更大缓存而不是更多核的CPU，在多核的情况下，redis性能会受NUMA配置和进程所处位置的影响，指定客户端和服务器使用同一CPU的两个不同核心可以使从L3缓存获得的收益最大化。&lt;/p&gt;
-
 &lt;p&gt;另外，redis在Inter和AMD的CPU上的表现也有差别，在某些情况下在AMD的CPU上性能可能只有Inter的一半。&lt;/p&gt;
-
-&lt;h3 id=&#34;内存&#34;&gt;内存&lt;/h3&gt;
-
+&lt;h3 id=&#34;heading-3&#34;&gt;内存&lt;/h3&gt;
 &lt;p&gt;只有在面对大于10KB的数据的时候，内存频率/带宽才会影响redis性能，所以一般不用去考虑。内存大小只会影响能存放的数据量。&lt;/p&gt;
-
-&lt;h3 id=&#34;连接数&#34;&gt;连接数&lt;/h3&gt;
-
+&lt;h3 id=&#34;heading-4&#34;&gt;连接数&lt;/h3&gt;
 &lt;p&gt;redis可以在60000多个连接时维持50000 q/s的性能，但是根据官方测试，具有30000个连接的redis实例只能处理100个连接实例可实现的吞吐量的一半。&lt;/p&gt;
-
-&lt;h3 id=&#34;虚拟化&#34;&gt;虚拟化&lt;/h3&gt;
-
+&lt;h3 id=&#34;heading-5&#34;&gt;虚拟化&lt;/h3&gt;
 &lt;p&gt;虚拟机中的redis性能肯定是低于实机上的，系统调用和中断上面浪费的太多。&lt;/p&gt;
 </description>
     </item>
@@ -1712,24 +1366,15 @@ pass
       <link>https://szthanatos.github.io/topic/redis/error-persist_on_disk/</link>
       <pubDate>Fri, 18 May 2018 11:42:50 +0800</pubDate>
       <guid>https://szthanatos.github.io/topic/redis/error-persist_on_disk/</guid>
-      <description>
-
-&lt;h2 id=&#34;报错信息&#34;&gt;报错信息&lt;/h2&gt;
-
+      <description>&lt;h2 id=&#34;heading&#34;&gt;报错信息&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;MISCONF Redis is configured to save RDB snapshots, but it is currently not able to persist on disk.&lt;/p&gt;
 &lt;/blockquote&gt;
-
-&lt;h2 id=&#34;原因&#34;&gt;原因&lt;/h2&gt;
-
+&lt;h2 id=&#34;heading-1&#34;&gt;原因&lt;/h2&gt;
 &lt;p&gt;绝大多数情况是写磁盘写满了，并且redis默认&lt;code&gt;stop-writes-on-bgsave-error&lt;/code&gt;配置为&lt;code&gt;yes&lt;/code&gt;，无法正确的存储rdb文件的时候也就拒绝客户端的请求了。&lt;/p&gt;
-
-&lt;h2 id=&#34;解决办法&#34;&gt;解决办法&lt;/h2&gt;
-
-&lt;h3 id=&#34;解决rdb保存问题&#34;&gt;解决rdb保存问题&lt;/h3&gt;
-
+&lt;h2 id=&#34;heading-2&#34;&gt;解决办法&lt;/h2&gt;
+&lt;h3 id=&#34;rdb&#34;&gt;解决rdb保存问题&lt;/h3&gt;
 &lt;p&gt;有重要数据的时候不能直接清空重来，先检查磁盘空间是否足够，然后指定一个新的rdb文件，重新&lt;code&gt;bgsave&lt;/code&gt;：&lt;/p&gt;
-
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 1. 更改工作目录位置
 CONFIG SET dir /tmp/some/directory/other/than/var
 
@@ -1739,13 +1384,9 @@ CONFIG SET dbfilename temp.rdb
 # 3. 保存新的rdb文件
 BGSAVE
 &lt;/code&gt;&lt;/pre&gt;
-
 &lt;p&gt;以上修改会在重启redis后失效，根据实际情况处理吧。&lt;/p&gt;
-
-&lt;h3 id=&#34;临时-解决无法写入问题&#34;&gt;(临时)解决无法写入问题&lt;/h3&gt;
-
+&lt;h3 id=&#34;heading-3&#34;&gt;(临时)解决无法写入问题&lt;/h3&gt;
 &lt;p&gt;关闭rdb保存失败拒绝写入的功能：&lt;/p&gt;
-
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;config set stop-writes-on-bgsave-error no
 &lt;/code&gt;&lt;/pre&gt;
 </description>

@@ -196,7 +196,7 @@
 
       
       
-      <ul class="navbar-nav mr-auto">
+      <ul class="navbar-nav ml-auto">
         
 
         
@@ -279,9 +279,6 @@
         
         
 
-      
-      </ul>
-      <ul class="navbar-nav ml-auto">
       
 
         
@@ -405,17 +402,15 @@
       </ul>
 
       <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#集群信息">集群信息</a>
-<ul>
-<li><a href="#节点信息">节点信息</a></li>
-<li><a href="#状态信息">状态信息</a></li>
-</ul></li>
-<li><a href="#集群操作">集群操作</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#heading">集群信息</a>
+      <ul>
+        <li><a href="#heading-1">节点信息</a></li>
+        <li><a href="#heading-2">状态信息</a></li>
+      </ul>
+    </li>
+    <li><a href="#heading-3">集群操作</a></li>
+  </ul>
 </nav>
 
       
@@ -430,14 +425,9 @@
           <h1>Redis集群相关命令</h1>
 
           <div class="article-style">
-            
-
-<h2 id="集群信息">集群信息</h2>
-
-<h3 id="节点信息">节点信息</h3>
-
+            <h2 id="heading">集群信息</h2>
+<h3 id="heading-1">节点信息</h3>
 <p>集群节点相关信息可以通过<code>cluster nodes</code>命令获取：</p>
-
 <pre><code class="language-bash">127.0.0.1:6379&gt; cluster nodes
 5022fa41642195d74200fd512c08653dc12609e7 172.17.0.2:6380@16380 master - 0 1552814467000 2 connected 5461-10922
 730d05ee4da3147d0885c6d47437465c94409f74 172.17.0.2:6383@16383 slave 25a2a1d8c96e9473d4cb3c8b0077d3b7b07dd5c0 0 1552814468555 5 connected
@@ -447,9 +437,7 @@ cf0be45c6a05c0d332b7356a7f57de95b32c3a71 172.17.0.2:6384@16384 slave 5022fa41642
 1a60baf4c2254b2e3a37cf6215d42b316ffdccc7 172.17.0.2:6382@16382 slave 55d264b148ce35903928964ac017d682fc803eab 0 1552814468000 4 connected
 127.0.0.1:6379&gt;
 </code></pre>
-
 <p>可以看到，每一行即是一个节点的信息，以第一行为例，每个字段的含义分别是：</p>
-
 <table>
 <thead>
 <tr>
@@ -457,59 +445,47 @@ cf0be45c6a05c0d332b7356a7f57de95b32c3a71 172.17.0.2:6384@16384 slave 5022fa41642
 <th>含义</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>502&hellip;&hellip;9e7</td>
 <td>node_id，节点标识</td>
 </tr>
-
 <tr>
 <td>172.17.0.2:6380@16380</td>
 <td>IP端口</td>
 </tr>
-
 <tr>
 <td>master</td>
 <td>身份，一般就是<code>myself/master/slave</code>，其他<code>fail?/handshake/noaddr/noflags</code></td>
 </tr>
-
 <tr>
 <td>-</td>
 <td>对应主节点的node_id(如果你是从节点的话，否则就是<code>-</code>)</td>
 </tr>
-
 <tr>
 <td>0</td>
 <td><code>0</code>表示没有待发送的<code>ping</code>，否则是要发送<code>ping</code>的时间戳</td>
 </tr>
-
 <tr>
 <td>1552814467000</td>
 <td>收到上一个<code>pong</code>命令的时间戳</td>
 </tr>
-
 <tr>
 <td>2</td>
 <td>权重</td>
 </tr>
-
 <tr>
 <td>connected</td>
 <td>状态，<code>connected</code>or<code>disconnected</code></td>
 </tr>
-
 <tr>
 <td>5461-10922</td>
 <td>哈希槽，连续的哈希槽用<code>-</code>连接，离散的用<code>,</code>隔开</td>
 </tr>
 </tbody>
 </table>
-
-<h3 id="状态信息">状态信息</h3>
-
+<h3 id="heading-2">状态信息</h3>
 <p>集群信息通过<code>cluster info</code>获取：</p>
-
 <pre><code class="language-bash">127.0.0.1:6379&gt; cluster info
 # 集群状态
 cluster_state:ok
@@ -538,11 +514,8 @@ cluster_stats_messages_meet_received:5
 cluster_stats_messages_received:3112
 127.0.0.1:6379&gt;
 </code></pre>
-
-<h2 id="集群操作">集群操作</h2>
-
-<p>就不挨个详述了，写了个速查表如下，全部命令详见<a href="https://redis.io/commands" target="_blank">redis官方文档</a>。</p>
-
+<h2 id="heading-3">集群操作</h2>
+<p>就不挨个详述了，写了个速查表如下，全部命令详见<a href="https://redis.io/commands">redis官方文档</a>。</p>
 <table>
 <thead>
 <tr>
@@ -550,185 +523,149 @@ cluster_stats_messages_received:3112
 <th>含义</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><strong>信息</strong></td>
 <td></td>
 </tr>
-
 <tr>
 <td><code>cluster info</code></td>
 <td>返回集群基本信息</td>
 </tr>
-
 <tr>
 <td><code>cluster nodes</code></td>
 <td>返回全部节点</td>
 </tr>
-
 <tr>
 <td><strong>控制</strong></td>
 <td></td>
 </tr>
-
 <tr>
 <td><code>cluster count-failure-reports &lt;node_id&gt;</code></td>
 <td>返回节点的错误报告数</td>
 </tr>
-
 <tr>
 <td><code>cluster failover [FORCE/TAKEOVER]</code></td>
 <td>在从节点上执行，测试故障转移</td>
 </tr>
-
 <tr>
 <td><code>cluster set-config-epoch &lt;config-epoch&gt;</code></td>
 <td>为新节点设置权重</td>
 </tr>
-
 <tr>
 <td><code>cluster saveconfig</code></td>
 <td>将节点的配置文件保存到硬盘里面</td>
 </tr>
-
 <tr>
 <td><code>cluster reset [HARD/SOFT]</code></td>
 <td>重置没有key的当前节点(所以应该先flushall)</td>
 </tr>
-
 <tr>
 <td><code>cluster readonly</code></td>
 <td>将从节点置为可读(默认情况下，指向从节点的连接会被转向主节点)</td>
 </tr>
-
 <tr>
 <td><code>cluster readwrite</code></td>
 <td>将从节点置为读写(相当于还原为<code>readonly</code>之前的状态)</td>
 </tr>
-
 <tr>
 <td><strong>节点</strong></td>
 <td></td>
 </tr>
-
 <tr>
 <td><code>cluster meet &lt;ip&gt; &lt;port&gt;</code></td>
 <td>将节点加入集群作为主节点</td>
 </tr>
-
 <tr>
 <td><code>cluster replicate &lt;node_id&gt;</code></td>
-<td>将当前节点作为<node_id>的从节点加入集群</td>
+<td>将当前节点作为&lt;node_id&gt;的从节点加入集群</td>
 </tr>
-
 <tr>
 <td><code>cluster replicas &lt;node_id&gt;</code></td>
 <td>redis5.0开始支持，列出指定主节点的从节点</td>
 </tr>
-
 <tr>
 <td><code>cluster slaves &lt;node_id&gt;</code></td>
 <td>不再建议被使用，基本同replicas</td>
 </tr>
-
 <tr>
 <td><code>cluster replicaof &lt;ip&gt; &lt;port&gt;</code></td>
 <td>redis5.0开始支持，将当前节点置为指定节点的从节点</td>
 </tr>
-
 <tr>
 <td><code>cluster slaveof &lt;ip&gt; &lt;port&gt;</code></td>
 <td>不再建议被使用，基本同replicaof</td>
 </tr>
-
 <tr>
 <td><code>cluster forget &lt;node_id&gt;</code></td>
-<td>从集群中移除<node_id>节点（前提是没给他分配哈希槽/内容）</td>
+<td>从集群中移除&lt;node_id&gt;节点（前提是没给他分配哈希槽/内容）</td>
 </tr>
-
 <tr>
 <td><strong>哈希槽</strong></td>
 <td></td>
 </tr>
-
 <tr>
 <td><code>cluster addslots &lt;slot&gt;,...</code></td>
 <td>将一个或多个哈希槽添加到当前节点</td>
 </tr>
-
 <tr>
 <td><code>cluster delslots  &lt;slot&gt;,...</code></td>
 <td>从当前节点移除哈希槽</td>
 </tr>
-
 <tr>
 <td><code>cluster flushslots</code></td>
 <td>清空当前节点的哈希槽</td>
 </tr>
-
 <tr>
 <td><code>cluster setslot &lt;slot&gt; node &lt;node_id&gt;</code></td>
 <td>将<strong>未分配的</strong>哈希槽分配给指定节点</td>
 </tr>
-
 <tr>
 <td><code>cluster setslot &lt;slot&gt; migrating &lt;node_id&gt;</code></td>
 <td>将本节点的哈希槽合并到指定节点</td>
 </tr>
-
 <tr>
 <td><code>cluster setslot &lt;slot&gt; importing &lt;node_id&gt;</code></td>
 <td>从指定节点引入哈希槽到本节点</td>
 </tr>
-
 <tr>
 <td><code>cluster setslot &lt;slot&gt; stable</code></td>
-<td>取消哈希槽的移动，_主要是修复<code>redis-trib fix</code>引发的问题←<em>←</em></td>
+<td>取消哈希槽的移动，<em>主要是修复<code>redis-trib fix</code>引发的问题←_←</em></td>
 </tr>
-
 <tr>
 <td><code>cluster flushslots</code></td>
 <td>清空当前节点的哈希槽</td>
 </tr>
-
 <tr>
 <td><code>cluster flushslots</code></td>
 <td>清空当前节点的哈希槽</td>
 </tr>
-
 <tr>
 <td><strong>键</strong></td>
 <td></td>
 </tr>
-
 <tr>
 <td><code>cluster keyslot &lt;key&gt;</code></td>
 <td>计算key应该被放在哪个槽</td>
 </tr>
-
 <tr>
 <td><code>cluster countkeysinslot &lt;slot&gt;</code></td>
 <td>返回哈希槽中key的数量</td>
 </tr>
-
 <tr>
 <td><code>cluster getkeysinslot &lt;slot&gt; &lt;count&gt;</code></td>
 <td>从哈希槽中返回指定数量个key</td>
 </tr>
 </tbody>
 </table>
-
 <div class="alert alert-note">
   <div>
     <strong>ps1</strong>：从redis5.0起，<code>slave</code>关键字将被<code>replicate</code>取代，相关命令也会逐步被替代
   </div>
 </div>
-
 <div class="alert alert-note">
   <div>
     <strong>ps2</strong>：<code>readonly</code>这个额外说一下，默认情况下，redis的从节点不处理客户端请求，只负责同步主节点的数据，设置<code>readonly</code>之后，指向从节点的读请求会被执行，这样相当于为主节点分担了读的压力(也算是scale了)，但是还是存在两个限制：</p>
-
 <ol>
 <li>写请求还是会转移给主节点；</li>
 <li>要读的key的哈希槽不属于这个节点，请求一样会被转移；</li>
