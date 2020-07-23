@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.5.0">
+  <meta name="generator" content="Source Themes Academic 4.6.0">
 
   
 
@@ -28,7 +28,7 @@
   
     
   
-  <meta name="description" content="监控 为了发现前面所说的问题，需要开发/运维人员不断的监控redis运行情况。 redis-cli 查询 部分信息无法通过redis命令直接获取，但是可以通过red">
+  <meta name="description" content="监控 为了发现前面所说的问题，需要开发/运维人员不断的监控re">
 
   
   <link rel="alternate" hreflang="zh-Hans" href="https://szthanatos.github.io/topic/redis/improve-03/">
@@ -39,7 +39,7 @@
   
   
   
-  <meta name="theme-color" content="#2962ff">
+  <meta name="theme-color" content="#4169E1">
   
 
   
@@ -77,7 +77,7 @@
   
   
   
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CNoto+Sans+SC:400,400italic,700%7CInconsolata&display=swap">
   
 
   
@@ -115,8 +115,8 @@
   <meta property="og:site_name" content="Kryptonite Lab">
   <meta property="og:url" content="https://szthanatos.github.io/topic/redis/improve-03/">
   <meta property="og:title" content="优化指南-运维 | Kryptonite Lab">
-  <meta property="og:description" content="监控 为了发现前面所说的问题，需要开发/运维人员不断的监控redis运行情况。 redis-cli 查询 部分信息无法通过redis命令直接获取，但是可以通过red"><meta property="og:image" content="https://szthanatos.github.io/img/icon-192.png">
-  <meta property="twitter:image" content="https://szthanatos.github.io/img/icon-192.png"><meta property="og:locale" content="zh-Hans">
+  <meta property="og:description" content="监控 为了发现前面所说的问题，需要开发/运维人员不断的监控re"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="zh-Hans">
   
     
       <meta property="article:published_time" content="2019-03-18T15:04:35&#43;08:00">
@@ -179,24 +179,28 @@
 
 
   
-<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0 compensate-for-scrollbar" id="navbar-main">
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
+    
+    
       <a class="navbar-brand" href="/">Kryptonite Lab</a>
-      
-      <button type="button" class="navbar-toggler" data-toggle="collapse"
-              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="切换导航">
-        <span><i class="fas fa-bars"></i></span>
-      </button>
-      
+    
 
     
-    <div class="collapse navbar-collapse" id="navbar">
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="切换导航">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
 
       
-      
-      <ul class="navbar-nav ml-auto">
+      <ul class="navbar-nav d-md-inline-flex">
         
 
         
@@ -282,24 +286,26 @@
       
 
         
-
-        
-        <li class="nav-item">
-          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
-        </li>
-        
-
-        
-
-        
-        <li class="nav-item">
-          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
-        </li>
-        
-
       </ul>
-
     </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      <li class="nav-item">
+        <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+
+    </ul>
+
   </div>
 </nav>
 
@@ -403,21 +409,21 @@
 
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#heading">监控</a>
+    <li><a href="#监控">监控</a>
       <ul>
-        <li><a href="#redis-cli-">redis-cli 查询</a></li>
-        <li><a href="#slowlog">slowlog命令</a></li>
-        <li><a href="#info">info命令</a></li>
-        <li><a href="#monitor">monitor命令</a></li>
+        <li><a href="#redis-cli-查询">redis-cli 查询</a></li>
+        <li><a href="#slowlog命令">slowlog命令</a></li>
+        <li><a href="#info命令">info命令</a></li>
+        <li><a href="#monitor命令">monitor命令</a></li>
       </ul>
     </li>
-    <li><a href="#heading-1">部署</a>
+    <li><a href="#部署">部署</a>
       <ul>
-        <li><a href="#heading-2">网络</a></li>
+        <li><a href="#网络">网络</a></li>
         <li><a href="#cpu">CPU</a></li>
-        <li><a href="#heading-3">内存</a></li>
-        <li><a href="#heading-4">连接数</a></li>
-        <li><a href="#heading-5">虚拟化</a></li>
+        <li><a href="#内存">内存</a></li>
+        <li><a href="#连接数">连接数</a></li>
+        <li><a href="#虚拟化">虚拟化</a></li>
       </ul>
     </li>
   </ul>
@@ -435,17 +441,17 @@
           <h1>优化指南-运维</h1>
 
           <div class="article-style">
-            <h2 id="heading">监控</h2>
+            <h2 id="监控">监控</h2>
 <p>为了发现前面所说的问题，需要开发/运维人员不断的监控redis运行情况。</p>
-<h3 id="redis-cli-">redis-cli 查询</h3>
+<h3 id="redis-cli-查询">redis-cli 查询</h3>
 <p>部分信息无法通过redis命令直接获取，但是可以通过<code>redis-cli [参数]</code>获取：</p>
 <p><code>–-bigkeys</code></p>
 <p>后台scan出每种数据类型中较大的key</p>
 <p><code>--latency</code></p>
 <p>服务端响应延时</p>
-<h3 id="slowlog">slowlog命令</h3>
+<h3 id="slowlog命令">slowlog命令</h3>
 <p>在客户端执行<code>slowlog get [n]</code>可以获取最慢的n条执行命令的记录</p>
-<h3 id="info">info命令</h3>
+<h3 id="info命令">info命令</h3>
 <p>返回服务器信息，性能监测的时候注意其中的几个部分：</p>
 <p><strong>memory</strong>：<code>mem_fragmentation_ratio</code></p>
 <p>内存碎片率，<code>used_memory_rss</code>(系统分配内存总量)和<code>used_memory</code>(Redis分配器分配的内存总量)的比值。</p>
@@ -456,10 +462,10 @@
 <p>被延迟的fsync调用数量</p>
 <p><strong>clients</strong>：<code>connected_clients</code>，<code>blocked_clients</code></p>
 <p>已连接客户端的数量和正在等待阻塞命令的客户端的数量</p>
-<h3 id="monitor">monitor命令</h3>
+<h3 id="monitor命令">monitor命令</h3>
 <p>可以用来监测一个节点一段时间内执行的命令，从而统计出热点key。但是monitor自己也是有内存占用的，所以不能频繁、持续的使用。</p>
-<h2 id="heading-1">部署</h2>
-<h3 id="heading-2">网络</h3>
+<h2 id="部署">部署</h2>
+<h3 id="网络">网络</h3>
 <p>影响redis性能的最主要因素是网络。</p>
 <p>按官方基准测试来说，对于10kb以内的数据，redis的处理能力在100000q/s以上。</p>
 <p>那么假设每次set/get的4kb大小的字符串，这时占用的带宽就有3.2 Gbit/s ，千兆网卡(1 Gbit/s)就不够用了，得换万兆网卡(10 Gbit/s)才能满足需求，可见想跑满redis的CPU计算力对网络的要求是很夸张的。</p>
@@ -481,11 +487,11 @@ pass
 <h3 id="cpu">CPU</h3>
 <p>redis更倾向于具有更大缓存而不是更多核的CPU，在多核的情况下，redis性能会受NUMA配置和进程所处位置的影响，指定客户端和服务器使用同一CPU的两个不同核心可以使从L3缓存获得的收益最大化。</p>
 <p>另外，redis在Inter和AMD的CPU上的表现也有差别，在某些情况下在AMD的CPU上性能可能只有Inter的一半。</p>
-<h3 id="heading-3">内存</h3>
+<h3 id="内存">内存</h3>
 <p>只有在面对大于10KB的数据的时候，内存频率/带宽才会影响redis性能，所以一般不用去考虑。内存大小只会影响能存放的数据量。</p>
-<h3 id="heading-4">连接数</h3>
+<h3 id="连接数">连接数</h3>
 <p>redis可以在60000多个连接时维持50000 q/s的性能，但是根据官方测试，具有30000个连接的redis实例只能处理100个连接实例可实现的吞吐量的一半。</p>
-<h3 id="heading-5">虚拟化</h3>
+<h3 id="虚拟化">虚拟化</h3>
 <p>虚拟机中的redis性能肯定是低于实机上的，系统调用和中断上面浪费的太多。</p>
 
           </div>
@@ -586,8 +592,6 @@ pass
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/html.min.js"></script>
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/r.min.js"></script>
-        
       
 
       
@@ -671,7 +675,7 @@ pass
     
     
     
-    <script src="/js/academic.min.d6bd04fdad2ad213aa8111c5a3b72fc5.js"></script>
+    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
 
     
 

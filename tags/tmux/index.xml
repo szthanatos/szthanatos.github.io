@@ -7,7 +7,7 @@
     <description>Tmux</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh-Hans</language><lastBuildDate>Tue, 01 Jan 2019 12:27:05 +0800</lastBuildDate>
     <image>
-      <url>https://szthanatos.github.io/img/icon-192.png</url>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Tmux</title>
       <link>https://szthanatos.github.io/tags/tmux/</link>
     </image>
@@ -18,12 +18,28 @@
       <pubDate>Tue, 01 Jan 2019 12:27:05 +0800</pubDate>
       <guid>https://szthanatos.github.io/post/tmux/</guid>
       <description>&lt;h2&gt;目录&lt;/h2&gt;
-HAHAHUGOSHORTCODE-TOC0-HBHB
-&lt;h2 id=&#34;heading&#34;&gt;简介&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#简介&#34;&gt;简介&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#安装tmux&#34;&gt;安装tmux&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#基础概念&#34;&gt;基础概念&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#配置&#34;&gt;配置&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#常用控制&#34;&gt;常用控制&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#会话&#34;&gt;会话&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#窗口&#34;&gt;窗口&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#窗格&#34;&gt;窗格&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#tpm插件&#34;&gt;tpm插件&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#鼠标操作&#34;&gt;鼠标操作&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;
 &lt;p&gt;Tmux是一个终端复用软件，默认的Linux终端一个会话只能干一件事，有了tmux就能在一个窗口同时管理多个前/后台程序了。&lt;/p&gt;
-&lt;h2 id=&#34;tmux&#34;&gt;安装tmux&lt;/h2&gt;
+&lt;h2 id=&#34;安装tmux&#34;&gt;安装tmux&lt;/h2&gt;
 &lt;p&gt;基础软件，跳过&lt;/p&gt;
-&lt;h2 id=&#34;heading-1&#34;&gt;基础概念&lt;/h2&gt;
+&lt;h2 id=&#34;基础概念&#34;&gt;基础概念&lt;/h2&gt;
 &lt;p&gt;见图&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://szthanatos.github.io/img/tmux.jpg&#34; alt=&#34;Tmux页面&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -41,7 +57,7 @@ HAHAHUGOSHORTCODE-TOC0-HBHB
 &lt;li&gt;&lt;code&gt;命令模式&lt;/code&gt;: （输入tmux 后接命令，或者在tmux内输入&lt;code&gt;※ + shift + :&lt;/code&gt;）也就是输入命令，但是执行的不是系统命令，而是tmux自身的命令；&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;一般模式&lt;/code&gt;:  正常打字；&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;heading-2&#34;&gt;配置&lt;/h2&gt;
+&lt;h2 id=&#34;配置&#34;&gt;配置&lt;/h2&gt;
 &lt;p&gt;和zsh一样，得先配置才能用的舒坦。下面是我个人用的配置文件。&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;Ctrl+b&lt;/code&gt;被我替换为&lt;code&gt;Ctrl+x&lt;/code&gt;，横竖分割窗格我分别设置为&lt;code&gt;-&lt;/code&gt;和&lt;code&gt;\&lt;/code&gt;，刚好一横一竖嘛，并且启用了tpm管理tmux插件。&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-properties&#34;&gt;#-- base --#
@@ -119,13 +135,13 @@ run &#39;/etc/.tmux/plugins/tpm/tpm&#39;
 &lt;li&gt;输入&lt;code&gt;tmux source-file ~/.tmux.conf&lt;/code&gt;载入配置；&lt;/li&gt;
 &lt;li&gt;进入tmux，输入&lt;code&gt;※ + U&lt;/code&gt;查看tpm插件更新，弹出页面默认打开命令模式，直接输入&lt;code&gt;all&lt;/code&gt;完成更新；&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id=&#34;heading-3&#34;&gt;常用控制&lt;/h2&gt;
+&lt;h2 id=&#34;常用控制&#34;&gt;常用控制&lt;/h2&gt;
 &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     注意，下列所有快捷键区分大小写。
   &lt;/div&gt;
 &lt;/div&gt;
-&lt;h3 id=&#34;heading-4&#34;&gt;会话&lt;/h3&gt;
+&lt;h3 id=&#34;会话&#34;&gt;会话&lt;/h3&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -148,7 +164,7 @@ run &#39;/etc/.tmux/plugins/tpm/tpm&#39;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h3 id=&#34;heading-5&#34;&gt;窗口&lt;/h3&gt;
+&lt;h3 id=&#34;窗口&#34;&gt;窗口&lt;/h3&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -199,7 +215,7 @@ run &#39;/etc/.tmux/plugins/tpm/tpm&#39;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h3 id=&#34;heading-6&#34;&gt;窗格&lt;/h3&gt;
+&lt;h3 id=&#34;窗格&#34;&gt;窗格&lt;/h3&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -250,7 +266,7 @@ run &#39;/etc/.tmux/plugins/tpm/tpm&#39;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h3 id=&#34;tpm&#34;&gt;tpm插件&lt;/h3&gt;
+&lt;h3 id=&#34;tpm插件&#34;&gt;tpm插件&lt;/h3&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -269,7 +285,7 @@ run &#39;/etc/.tmux/plugins/tpm/tpm&#39;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h2 id=&#34;heading-7&#34;&gt;鼠标操作&lt;/h2&gt;
+&lt;h2 id=&#34;鼠标操作&#34;&gt;鼠标操作&lt;/h2&gt;
 &lt;p&gt;鼠标按住窗格的分割线可以修改窗格大小；&lt;/p&gt;
 &lt;p&gt;如果你用&lt;code&gt;wsltty&lt;/code&gt;或者其他软件，发现右键/中键失效，记得按住修饰键(比如&lt;code&gt;Shift&lt;/code&gt;)再试。&lt;/p&gt;
 </description>

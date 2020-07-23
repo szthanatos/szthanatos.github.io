@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.5.0">
+  <meta name="generator" content="Source Themes Academic 4.6.0">
 
   
 
@@ -28,7 +28,7 @@
   
     
   
-  <meta name="description" content="目录 基本环境 底层数据库基于HBase，检索服务基于Elasticserach。 系统运行服务大致如下： [root@xnode208 ~] jps 21584 GremlinServer 27857 DataNode 23218 Jps 3251 HMaster 27283 NameNode 21707 Console 17131 Elasticsearch 29503 SecondaryNameNode 安">
+  <meta name="description" content="目录 基本环境 安装 配置 基本用法 加载诸神图 一些基本操作 增操作 删操">
 
   
   <link rel="alternate" hreflang="zh-Hans" href="https://szthanatos.github.io/post/janusgraph/">
@@ -39,7 +39,7 @@
   
   
   
-  <meta name="theme-color" content="#2962ff">
+  <meta name="theme-color" content="#4169E1">
   
 
   
@@ -77,7 +77,7 @@
   
   
   
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CNoto+Sans+SC:400,400italic,700%7CInconsolata&display=swap">
   
 
   
@@ -115,8 +115,8 @@
   <meta property="og:site_name" content="Kryptonite Lab">
   <meta property="og:url" content="https://szthanatos.github.io/post/janusgraph/">
   <meta property="og:title" content="JanusGraph搭建及简单使用 | Kryptonite Lab">
-  <meta property="og:description" content="目录 基本环境 底层数据库基于HBase，检索服务基于Elasticserach。 系统运行服务大致如下： [root@xnode208 ~] jps 21584 GremlinServer 27857 DataNode 23218 Jps 3251 HMaster 27283 NameNode 21707 Console 17131 Elasticsearch 29503 SecondaryNameNode 安"><meta property="og:image" content="https://szthanatos.github.io/img/icon-192.png">
-  <meta property="twitter:image" content="https://szthanatos.github.io/img/icon-192.png"><meta property="og:locale" content="zh-Hans">
+  <meta property="og:description" content="目录 基本环境 安装 配置 基本用法 加载诸神图 一些基本操作 增操作 删操"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="zh-Hans">
   
     
       <meta property="article:published_time" content="2019-03-17T21:50:19&#43;08:00">
@@ -167,7 +167,7 @@
       "url": "https://szthanatos.github.io/img/icon-512.png"
     }
   },
-  "description": "目录 基本环境 底层数据库基于HBase，检索服务基于Elasticserach。 系统运行服务大致如下： [root@xnode208 ~] jps 21584 GremlinServer 27857 DataNode 23218 Jps 3251 HMaster 27283 NameNode 21707 Console 17131 Elasticsearch 29503 SecondaryNameNode 安"
+  "description": "目录 基本环境 安装 配置 基本用法 加载诸神图 一些基本操作 增操作 删操"
 }
 </script>
 
@@ -224,24 +224,28 @@
 
 
   
-<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0 compensate-for-scrollbar" id="navbar-main">
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
+    
+    
       <a class="navbar-brand" href="/">Kryptonite Lab</a>
-      
-      <button type="button" class="navbar-toggler" data-toggle="collapse"
-              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="切换导航">
-        <span><i class="fas fa-bars"></i></span>
-      </button>
-      
+    
 
     
-    <div class="collapse navbar-collapse" id="navbar">
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="切换导航">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
 
       
-      
-      <ul class="navbar-nav ml-auto">
+      <ul class="navbar-nav d-md-inline-flex">
         
 
         
@@ -327,29 +331,31 @@
       
 
         
-
-        
-        <li class="nav-item">
-          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
-        </li>
-        
-
-        
-
-        
-        <li class="nav-item">
-          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
-        </li>
-        
-
       </ul>
-
     </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      <li class="nav-item">
+        <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+
+    </ul>
+
   </div>
 </nav>
 
 
-  <article class="article" itemscope itemtype="http://schema.org/Article">
+  <article class="article">
 
   
 
@@ -437,10 +443,25 @@
 
   <div class="article-container">
 
-    <div class="article-style" itemprop="articleBody">
+    <div class="article-style">
       <h2>目录</h2>
-
-<h2 id="heading">基本环境</h2>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#基本环境">基本环境</a></li>
+    <li><a href="#安装">安装</a></li>
+    <li><a href="#配置">配置</a></li>
+    <li><a href="#基本用法">基本用法</a></li>
+    <li><a href="#加载诸神图">加载诸神图</a></li>
+    <li><a href="#一些基本操作">一些基本操作</a>
+      <ul>
+        <li><a href="#增操作">增操作</a></li>
+        <li><a href="#删操作">删操作</a></li>
+      </ul>
+    </li>
+    <li><a href="#查询">查询</a></li>
+  </ul>
+</nav>
+<h2 id="基本环境">基本环境</h2>
 <p>底层数据库基于HBase，检索服务基于Elasticserach。</p>
 <p>系统运行服务大致如下：</p>
 <pre><code class="language-bash">[root@xnode208 ~] jps
@@ -453,13 +474,13 @@
 17131 Elasticsearch
 29503 SecondaryNameNode
 </code></pre>
-<h2 id="heading-1">安装</h2>
+<h2 id="安装">安装</h2>
 <p>下载<a href="https://github.com/JanusGraph/janusgraph/releases/download/v0.2.2/janusgraph-0.2.2-hadoop2.zip">janusgraph0.22安装包</a>并解压</p>
 <pre><code class="language-bash">wget https://github.com/JanusGraph/janusgraph/releases/download/v0.2.2/janusgraph-0.2.2-hadoop2.zip
 unzip janusgraph-0.2.2-hadoop2.zip
 cd janusgraph-0.2.2-hadoop2
 </code></pre>
-<h2 id="heading-2">配置</h2>
+<h2 id="配置">配置</h2>
 <p>在这里我们采用的是启动gremlin-server服务时，加载指定配置文件的方法创建图表，所以需要设置gremlin-server端以及图表的配置文件。</p>
 <ol>
 <li>
@@ -494,7 +515,7 @@ cache.db-cache-size = 0.5
 </code></pre>
 </li>
 </ol>
-<h2 id="heading-3">基本用法</h2>
+<h2 id="基本用法">基本用法</h2>
 <p>依次启动hbase,elasticsearch以及gremlin-server，最后进入gremlin.sh客户端对图表进行操作</p>
 <ul>
 <li>
@@ -520,7 +541,7 @@ gremlin&gt;
 </code></pre>
 </li>
 </ul>
-<h2 id="heading-4">加载诸神图</h2>
+<h2 id="加载诸神图">加载诸神图</h2>
 <pre><code class="language-bash"># 连接gremlin server
 gremlin&gt; :remote connect tinkerpop.server conf/remote.yaml session
 ==&gt;Configured localhost/127.0.0.1:8182-[f6db862e-752c-48db-839b-1b5b16f1786a]
@@ -564,8 +585,8 @@ gremlin&gt; GraphOfTheGodsFactory.load(graph)
 </tbody>
 </table>
 <p>在JanusGraph中，实体以顶点表示，关系以边表示，顶点和边都可以具有属性。</p>
-<h2 id="heading-5">一些基本操作</h2>
-<h3 id="heading-6">增操作</h3>
+<h2 id="一些基本操作">一些基本操作</h2>
+<h3 id="增操作">增操作</h3>
 <pre><code class="language-bash"># 添加顶点
 v1 = graph.addVertex(label, 'student');  # 创建第一个顶点v1并增加标签
 v2 = graph.addVertex();  # 创建第二个顶点没有标签
@@ -586,7 +607,7 @@ v3.addEdge('boyfriend',v4,'reason','because the reason');  # v3添加关系到v4
 # 提交修改
 graph.tx().commit();
 </code></pre>
-<h3 id="heading-7">删操作</h3>
+<h3 id="删操作">删操作</h3>
 <pre><code class="language-bash"># 清空
 g.V().drop();  # 删除所有点/图
 g.E().drop();  # 删除所有边
@@ -615,7 +636,7 @@ g.E().values('because the reason').drop();  # 删除边属性值为because the r
 
 graph.tx().commit();  # 提交
 </code></pre>
-<h2 id="heading-8">查询</h2>
+<h2 id="查询">查询</h2>
 <pre><code class="language-bash"># 设置g=graph.traversal(),方便查询
 gremlin&gt; g = graph.traversal()
 ==&gt;graphtraversalsource[standardjanusgraph[hbase:[127.0.0.1]], standard]
@@ -655,27 +676,6 @@ g.E().properties('reason');  # 查看边属性为reason的属性及属性值
 
     
 
-
-
-
-    
-    <div class="hr-light"></div>
-
-    
-
-<div class="article-tags">
-  
-  <a class="badge badge-light" href="/tags/graphdb/">graphdb</a>
-  
-  <a class="badge badge-light" href="/tags/janusgraph/">janusgraph</a>
-  
-  <a class="badge badge-light" href="/tags/knowledge-graph/">knowledge graph</a>
-  
-</div>
-
-
-    
-    
     <style type="text/css">
   div {
     margin: 0;
@@ -722,7 +722,110 @@ g.E().properties('reason');  # 查看边属性为reason的属性及属性值
 
 
     
+    
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tags/graphdb/">graphdb</a>
+  
+  <a class="badge badge-light" href="/tags/janusgraph/">janusgraph</a>
+  
+  <a class="badge badge-light" href="/tags/knowledge-graph/">knowledge graph</a>
+  
+</div>
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
       
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://szthanatos.github.io/post/janusgraph/&amp;text=JanusGraph%e6%90%ad%e5%bb%ba%e5%8f%8a%e7%ae%80%e5%8d%95%e4%bd%bf%e7%94%a8" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://szthanatos.github.io/post/janusgraph/&amp;t=JanusGraph%e6%90%ad%e5%bb%ba%e5%8f%8a%e7%ae%80%e5%8d%95%e4%bd%bf%e7%94%a8" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=JanusGraph%e6%90%ad%e5%bb%ba%e5%8f%8a%e7%ae%80%e5%8d%95%e4%bd%bf%e7%94%a8&amp;body=https://szthanatos.github.io/post/janusgraph/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://szthanatos.github.io/post/janusgraph/&amp;title=JanusGraph%e6%90%ad%e5%bb%ba%e5%8f%8a%e7%ae%80%e5%8d%95%e4%bd%bf%e7%94%a8" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://web.whatsapp.com/send?text=JanusGraph%e6%90%ad%e5%bb%ba%e5%8f%8a%e7%ae%80%e5%8d%95%e4%bd%bf%e7%94%a8%20https://szthanatos.github.io/post/janusgraph/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://szthanatos.github.io/post/janusgraph/&amp;title=JanusGraph%e6%90%ad%e5%bb%ba%e5%8f%8a%e7%ae%80%e5%8d%95%e4%bd%bf%e7%94%a8" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
 
 
 
@@ -764,13 +867,15 @@ g.E().properties('reason');  # 查看边属性为reason的属性及属性值
 
 
 
-      
-      
-    
 
-    
 
-    
+
+
+
+
+  
+  
+
 
 
   </div>
@@ -802,8 +907,6 @@ g.E().properties('reason');  # 查看边属性为reason的属性及属性值
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/javascript.min.js"></script>
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/html.min.js"></script>
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/r.min.js"></script>
         
       
 
@@ -883,7 +986,7 @@ g.E().properties('reason');  # 查看边属性为reason的属性及属性值
     
     
     
-    <script src="/js/academic.min.d6bd04fdad2ad213aa8111c5a3b72fc5.js"></script>
+    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
 
     
 

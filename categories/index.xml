@@ -7,58 +7,10 @@
     <description>Categories</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh-Hans</language><lastBuildDate>Fri, 15 Nov 2019 17:18:05 +0800</lastBuildDate>
     <image>
-      <url>https://szthanatos.github.io/img/icon-192.png</url>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Categories</title>
       <link>https://szthanatos.github.io/categories/</link>
     </image>
-    
-    <item>
-      <title>Linux</title>
-      <link>https://szthanatos.github.io/categories/linux/</link>
-      <pubDate>Fri, 15 Nov 2019 17:18:05 +0800</pubDate>
-      <guid>https://szthanatos.github.io/categories/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>KG</title>
-      <link>https://szthanatos.github.io/categories/kg/</link>
-      <pubDate>Sun, 17 Mar 2019 21:50:19 +0800</pubDate>
-      <guid>https://szthanatos.github.io/categories/kg/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Academic</title>
-      <link>https://szthanatos.github.io/categories/academic/</link>
-      <pubDate>Tue, 01 Jan 2019 12:54:29 +0800</pubDate>
-      <guid>https://szthanatos.github.io/categories/academic/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hugo</title>
-      <link>https://szthanatos.github.io/categories/hugo/</link>
-      <pubDate>Tue, 01 Jan 2019 12:54:29 +0800</pubDate>
-      <guid>https://szthanatos.github.io/categories/hugo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>DataBase</title>
-      <link>https://szthanatos.github.io/categories/database/</link>
-      <pubDate>Sun, 09 Dec 2018 16:19:27 +0800</pubDate>
-      <guid>https://szthanatos.github.io/categories/database/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>https://szthanatos.github.io/categories/python/</link>
-      <pubDate>Sat, 01 Dec 2018 15:59:04 +0800</pubDate>
-      <guid>https://szthanatos.github.io/categories/python/</guid>
-      <description></description>
-    </item>
     
   </channel>
 </rss>

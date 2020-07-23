@@ -7,7 +7,7 @@
     <description>Posts</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh-Hans</language><lastBuildDate>Fri, 15 Nov 2019 17:18:05 +0800</lastBuildDate>
     <image>
-      <url>https://szthanatos.github.io/img/icon-192.png</url>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Posts</title>
       <link>https://szthanatos.github.io/post/</link>
     </image>
@@ -17,9 +17,9 @@
       <link>https://szthanatos.github.io/post/ssh_speed_up/</link>
       <pubDate>Fri, 15 Nov 2019 17:18:05 +0800</pubDate>
       <guid>https://szthanatos.github.io/post/ssh_speed_up/</guid>
-      <description>&lt;h2 id=&#34;heading&#34;&gt;报错信息&lt;/h2&gt;
+      <description>&lt;h2 id=&#34;报错信息&#34;&gt;报错信息&lt;/h2&gt;
 &lt;p&gt;之前运维给做了几台测试服务器，远程连接的时候速度特别慢，ssh之后需要接近1分钟才能连上。&lt;/p&gt;
-&lt;h2 id=&#34;heading-1&#34;&gt;原因&lt;/h2&gt;
+&lt;h2 id=&#34;原因&#34;&gt;原因&lt;/h2&gt;
 &lt;p&gt;使用&lt;code&gt;ssh -v &amp;lt;服务器&amp;gt;&lt;/code&gt; 显示连接过程：&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ ssh -v 123.456.789.0
 OpenSSH_6.6.1, OpenSSL 1.0.1e-fips 11 Feb 2013
@@ -100,7 +100,7 @@ debug1: Next authentication method: password # 3
 &lt;p&gt;上面连接过程我也标出了0123，实际顺序的确如此。&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;gssapi&lt;/code&gt;的认证是基于&lt;code&gt;Kerberos&lt;/code&gt;的，没见到人用过，&lt;/p&gt;
 &lt;p&gt;另一方面，客户端反向DNS的过程也会在连接DNS服务器/查询客户端域名(没域名可就会一层层DNS查上去)上花费时间。&lt;/p&gt;
-&lt;h2 id=&#34;heading-2&#34;&gt;解决办法&lt;/h2&gt;
+&lt;h2 id=&#34;解决办法&#34;&gt;解决办法&lt;/h2&gt;
 &lt;p&gt;客户端，编辑&lt;code&gt;/etc/ssh/ssh_config&lt;/code&gt;文件：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;方式1：将&lt;code&gt;GSSAPIAuthentication&lt;/code&gt;改为no；&lt;/li&gt;
@@ -122,8 +122,19 @@ debug1: Next authentication method: password # 3
       <pubDate>Thu, 26 Sep 2019 22:58:39 +0800</pubDate>
       <guid>https://szthanatos.github.io/post/rancher_ha/</guid>
       <description>&lt;h2&gt;目录&lt;/h2&gt;
-HAHAHUGOSHORTCODE-TOC0-HBHB
-&lt;h2 id=&#34;heading&#34;&gt;硬件需求&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#硬件需求&#34;&gt;硬件需求&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#0-工具准备&#34;&gt;0. 工具准备&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#1-配置nginx负载均衡&#34;&gt;1. 配置Nginx负载均衡&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#2-使用rke安装k8s&#34;&gt;2. 使用RKE安装K8S&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#3-初始化helm&#34;&gt;3. 初始化helm&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#4-配置ca证书&#34;&gt;4. 配置ca证书&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#5-安装rancher&#34;&gt;5. 安装rancher&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#6-添加主机别名&#34;&gt;6. 添加主机别名&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;h2 id=&#34;硬件需求&#34;&gt;硬件需求&lt;/h2&gt;
 &lt;p&gt;rancher ha推荐的架构是单独搭建一个K8s集群部署Rancher，然后再用这个Rancher去管理其他的K8s集群。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://szthanatos.github.io/img/rancher2ha.png&#34; alt=&#34;推荐架构&#34;&gt;&lt;/p&gt;
 &lt;p&gt;rancher集群的配置和能管理的集群规模之间的关系如下：&lt;/p&gt;
@@ -210,7 +221,7 @@ HAHAHUGOSHORTCODE-TOC0-HBHB
 &lt;/table&gt;
 &lt;p&gt;一个负载均衡服务器，3个服务器组成K8S集群。&lt;/p&gt;
 &lt;p&gt;操作系统均为&lt;code&gt;RancherOS 1.54&lt;/code&gt;(&lt;code&gt;Console&lt;/code&gt;是&lt;code&gt;Ubuntu&lt;/code&gt;，因为&lt;code&gt;Longhorn&lt;/code&gt;只支持这个)，Docker版本&lt;code&gt;18.09&lt;/code&gt;。&lt;/p&gt;
-&lt;h2 id=&#34;0-&#34;&gt;0. 工具准备&lt;/h2&gt;
+&lt;h2 id=&#34;0-工具准备&#34;&gt;0. 工具准备&lt;/h2&gt;
 &lt;p&gt;在任意一节点(我这里都是在&lt;code&gt;server-01&lt;/code&gt;上)上准备以下工具：&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -260,7 +271,7 @@ sudo ln -s $(pwd)/linux-amd64/helm /usr/local/bin/helm
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;1-nginx&#34;&gt;1. 配置Nginx负载均衡&lt;/h2&gt;
+&lt;h2 id=&#34;1-配置nginx负载均衡&#34;&gt;1. 配置Nginx负载均衡&lt;/h2&gt;
 &lt;p&gt;在&lt;code&gt;loadbalance&lt;/code&gt;主机上编写nginx.conf配置文件：&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-conf&#34;&gt;worker_processes 4;
 worker_rlimit_nofile 40000;
@@ -303,7 +314,7 @@ stream {
        -v /nginx.conf:/etc/nginx/nginx.conf \
        nginx:1.14
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;2-rkek8s&#34;&gt;2. 使用RKE安装K8S&lt;/h2&gt;
+&lt;h2 id=&#34;2-使用rke安装k8s&#34;&gt;2. 使用RKE安装K8S&lt;/h2&gt;
 &lt;p&gt;三个作为rancher-server的服务器需要配置相互免密。&lt;code&gt;ssh-keygen&lt;/code&gt;生成密钥附加到&lt;code&gt;authorized_keys&lt;/code&gt;上，不赘述。&lt;/p&gt;
 &lt;p&gt;在&lt;code&gt;server-01&lt;/code&gt;节点，编写&lt;code&gt;rancher-cluster.yml&lt;/code&gt;，告诉rke要如何创建集群：&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;nodes:
@@ -337,7 +348,7 @@ services:
 &lt;p&gt;说明安装完毕。&lt;/p&gt;
 &lt;p&gt;K8S创建成功后会在根目录生成集群信息&lt;code&gt;rancher-cluster.rkestate&lt;/code&gt;和配置文件&lt;code&gt;kube_config_rancher-cluster.yml&lt;/code&gt;，&lt;/p&gt;
 &lt;p&gt;这两个文件包含访问K8S的凭据。&lt;/p&gt;
-&lt;h2 id=&#34;3-helm&#34;&gt;3. 初始化helm&lt;/h2&gt;
+&lt;h2 id=&#34;3-初始化helm&#34;&gt;3. 初始化helm&lt;/h2&gt;
 &lt;p&gt;helm是由客户端helm和服务端tiller组成，我们之前安装了helm可以调用helm命令了。&lt;/p&gt;
 &lt;p&gt;为了保存和管理helm软件包(helm charts)，我们还需要在本地启动一个服务端。&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 创建名为tiller的serviceaccount
@@ -360,7 +371,7 @@ helm init \
 kubectl -n kube-system rollout status deploy/tiller-deploy
 helm version
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;4-ca&#34;&gt;4. 配置ca证书&lt;/h2&gt;
+&lt;h2 id=&#34;4-配置ca证书&#34;&gt;4. 配置ca证书&lt;/h2&gt;
 &lt;p&gt;rancher支持三种来源的证书，rancher自生成/来自Let’s Encrypt的/来自文件的。&lt;/p&gt;
 &lt;p&gt;前两种都需要额外安装CERT-MANAGER。&lt;/p&gt;
 &lt;p&gt;这里我们采用第一种方式，依据&lt;a href=&#34;https://docs.cert-manager.io/en/latest/getting-started/install/kubernetes.html#installing-with-helm&#34;&gt;cert-manager官方文档&lt;/a&gt;：&lt;/p&gt;
@@ -386,7 +397,7 @@ helm install \
 &lt;p&gt;使用&lt;code&gt;kubectl get pods --namespace cert-manager&lt;/code&gt;测试是否安装成功，&lt;/p&gt;
 &lt;p&gt;应该能看到&lt;code&gt;cert-manager&lt;/code&gt;，&lt;code&gt;cert-manager-webhook&lt;/code&gt;，&lt;code&gt;cert-manager-cainjector&lt;/code&gt;运行中。&lt;/p&gt;
 &lt;p&gt;注意cert-manager使用的镜像来自&lt;code&gt;quay.io&lt;/code&gt;，可以编辑charts中的&lt;code&gt;values.yaml&lt;/code&gt;来修改镜像源，或者提前从国内源下载好镜像放到服务器上。&lt;/p&gt;
-&lt;h2 id=&#34;5-rancher&#34;&gt;5. 安装rancher&lt;/h2&gt;
+&lt;h2 id=&#34;5-安装rancher&#34;&gt;5. 安装rancher&lt;/h2&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 在helm中添加rancher源，建议使用stable
 helm repo add rancher-stable https://releases.rancher.com/server-charts/stable
 helm repo update
@@ -398,7 +409,7 @@ helm install rancher-stable/rancher \
   --set hostname=&amp;lt;你的域名&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;等待一段时间，可以运行&lt;code&gt;kubectl -n cattle-system rollout status deploy/rancher&lt;/code&gt;查看安装进度。&lt;/p&gt;
-&lt;h2 id=&#34;6-&#34;&gt;6. 添加主机别名&lt;/h2&gt;
+&lt;h2 id=&#34;6-添加主机别名&#34;&gt;6. 添加主机别名&lt;/h2&gt;
 &lt;p&gt;由于没有内部DNS服务器，我们还需要为Agent Pod添加主机别名(/etc/hosts)。&lt;/p&gt;
 &lt;p&gt;不然&lt;/p&gt;
 &lt;blockquote&gt;
@@ -501,8 +512,21 @@ patch  daemonsets cattle-node-agent --patch &#39;{
       <pubDate>Sun, 01 Sep 2019 15:39:50 +0800</pubDate>
       <guid>https://szthanatos.github.io/post/rancheros/</guid>
       <description>&lt;h2&gt;目录&lt;/h2&gt;
-HAHAHUGOSHORTCODE-TOC0-HBHB
-&lt;h2 id=&#34;heading&#34;&gt;介绍&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#介绍&#34;&gt;介绍&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#安装&#34;&gt;安装&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#使用&#34;&gt;使用&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#ros&#34;&gt;ros&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#系统服务&#34;&gt;系统服务&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#docker&#34;&gt;docker&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#cloud-config&#34;&gt;cloud-config&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;RancherOS&lt;/code&gt;是Rancher推出的一个轻量级的Linux内核操作系统，专为容器环境而设计。&lt;/p&gt;
 &lt;p&gt;按官网的说法，它具有如下特性：&lt;/p&gt;
 &lt;table&gt;
@@ -546,7 +570,7 @@ HAHAHUGOSHORTCODE-TOC0-HBHB
 &lt;p&gt;RancherOS的架构也非常简单，除了内核，就是两个Docker。&lt;/p&gt;
 &lt;p&gt;一个系统级的Docker(&lt;code&gt;system-docker&lt;/code&gt;)接管了系统的绝大部分功能，比如在一般Linux上你会用&lt;code&gt;systemctl restart&lt;/code&gt;重启服务，在这里就是用&lt;code&gt;system-docker restart&lt;/code&gt;重启一个容器了。&lt;/p&gt;
 &lt;p&gt;用户级别的Docker也作为一个服务运行在&lt;code&gt;system-docker&lt;/code&gt;之上，也就是我们一般意义上跑应用的docker，正常使用。&lt;/p&gt;
-&lt;h2 id=&#34;heading-1&#34;&gt;安装&lt;/h2&gt;
+&lt;h2 id=&#34;安装&#34;&gt;安装&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;在&lt;a href=&#34;https://github.com/rancher/os/releases/&#34;&gt;RancherOS Gitlab页面&lt;/a&gt;下载对应版本镜像。&lt;/p&gt;
@@ -600,7 +624,7 @@ dns-nameservers     xxx.xxx.xxx.xxx
 &lt;p&gt;配置好执行&lt;code&gt;sudo ifup eth0&lt;/code&gt;即可连上网络。&lt;/p&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-&lt;h2 id=&#34;heading-2&#34;&gt;使用&lt;/h2&gt;
+&lt;h2 id=&#34;使用&#34;&gt;使用&lt;/h2&gt;
 &lt;p&gt;整个RancherOS自底向上分三个层面进行管理&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -722,7 +746,7 @@ OPTIONS:
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;控制的是随系统启动的服务，用法包括声明文件的写法基本和Docker Compose一样，把它理解成Docker Compose的替代品就对了。&lt;/p&gt;
 &lt;p&gt;别的命令不解释了&amp;hellip;&lt;/p&gt;
-&lt;h3 id=&#34;heading-3&#34;&gt;系统服务&lt;/h3&gt;
+&lt;h3 id=&#34;系统服务&#34;&gt;系统服务&lt;/h3&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ ros s list
 disabled amazon-ecs-agent
 disabled container-cron
@@ -887,8 +911,23 @@ runcmd:
       <pubDate>Sun, 17 Mar 2019 21:50:19 +0800</pubDate>
       <guid>https://szthanatos.github.io/post/janusgraph/</guid>
       <description>&lt;h2&gt;目录&lt;/h2&gt;
-HAHAHUGOSHORTCODE-TOC0-HBHB
-&lt;h2 id=&#34;heading&#34;&gt;基本环境&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#基本环境&#34;&gt;基本环境&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#安装&#34;&gt;安装&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#配置&#34;&gt;配置&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#基本用法&#34;&gt;基本用法&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#加载诸神图&#34;&gt;加载诸神图&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#一些基本操作&#34;&gt;一些基本操作&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#增操作&#34;&gt;增操作&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#删操作&#34;&gt;删操作&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#查询&#34;&gt;查询&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;h2 id=&#34;基本环境&#34;&gt;基本环境&lt;/h2&gt;
 &lt;p&gt;底层数据库基于HBase，检索服务基于Elasticserach。&lt;/p&gt;
 &lt;p&gt;系统运行服务大致如下：&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;[root@xnode208 ~] jps
@@ -901,13 +940,13 @@ HAHAHUGOSHORTCODE-TOC0-HBHB
 17131 Elasticsearch
 29503 SecondaryNameNode
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;heading-1&#34;&gt;安装&lt;/h2&gt;
+&lt;h2 id=&#34;安装&#34;&gt;安装&lt;/h2&gt;
 &lt;p&gt;下载&lt;a href=&#34;https://github.com/JanusGraph/janusgraph/releases/download/v0.2.2/janusgraph-0.2.2-hadoop2.zip&#34;&gt;janusgraph0.22安装包&lt;/a&gt;并解压&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;wget https://github.com/JanusGraph/janusgraph/releases/download/v0.2.2/janusgraph-0.2.2-hadoop2.zip
 unzip janusgraph-0.2.2-hadoop2.zip
 cd janusgraph-0.2.2-hadoop2
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;heading-2&#34;&gt;配置&lt;/h2&gt;
+&lt;h2 id=&#34;配置&#34;&gt;配置&lt;/h2&gt;
 &lt;p&gt;在这里我们采用的是启动gremlin-server服务时，加载指定配置文件的方法创建图表，所以需要设置gremlin-server端以及图表的配置文件。&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -942,7 +981,7 @@ cache.db-cache-size = 0.5
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id=&#34;heading-3&#34;&gt;基本用法&lt;/h2&gt;
+&lt;h2 id=&#34;基本用法&#34;&gt;基本用法&lt;/h2&gt;
 &lt;p&gt;依次启动hbase,elasticsearch以及gremlin-server，最后进入gremlin.sh客户端对图表进行操作&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -968,7 +1007,7 @@ gremlin&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;heading-4&#34;&gt;加载诸神图&lt;/h2&gt;
+&lt;h2 id=&#34;加载诸神图&#34;&gt;加载诸神图&lt;/h2&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 连接gremlin server
 gremlin&amp;gt; :remote connect tinkerpop.server conf/remote.yaml session
 ==&amp;gt;Configured localhost/127.0.0.1:8182-[f6db862e-752c-48db-839b-1b5b16f1786a]
@@ -1012,8 +1051,8 @@ gremlin&amp;gt; GraphOfTheGodsFactory.load(graph)
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;在JanusGraph中，实体以顶点表示，关系以边表示，顶点和边都可以具有属性。&lt;/p&gt;
-&lt;h2 id=&#34;heading-5&#34;&gt;一些基本操作&lt;/h2&gt;
-&lt;h3 id=&#34;heading-6&#34;&gt;增操作&lt;/h3&gt;
+&lt;h2 id=&#34;一些基本操作&#34;&gt;一些基本操作&lt;/h2&gt;
+&lt;h3 id=&#34;增操作&#34;&gt;增操作&lt;/h3&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 添加顶点
 v1 = graph.addVertex(label, &#39;student&#39;);  # 创建第一个顶点v1并增加标签
 v2 = graph.addVertex();  # 创建第二个顶点没有标签
@@ -1034,7 +1073,7 @@ v3.addEdge(&#39;boyfriend&#39;,v4,&#39;reason&#39;,&#39;because the reason&#39;)
 # 提交修改
 graph.tx().commit();
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;heading-7&#34;&gt;删操作&lt;/h3&gt;
+&lt;h3 id=&#34;删操作&#34;&gt;删操作&lt;/h3&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 清空
 g.V().drop();  # 删除所有点/图
 g.E().drop();  # 删除所有边
@@ -1063,7 +1102,7 @@ g.E().values(&#39;because the reason&#39;).drop();  # 删除边属性值为becau
 
 graph.tx().commit();  # 提交
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;heading-8&#34;&gt;查询&lt;/h2&gt;
+&lt;h2 id=&#34;查询&#34;&gt;查询&lt;/h2&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 设置g=graph.traversal(),方便查询
 gremlin&amp;gt; g = graph.traversal()
 ==&amp;gt;graphtraversalsource[standardjanusgraph[hbase:[127.0.0.1]], standard]
@@ -1108,7 +1147,7 @@ g.E().properties(&#39;reason&#39;);  # 查看边属性为reason的属性及属�
       <guid>https://szthanatos.github.io/post/git/git_trees/</guid>
       <description>&lt;p&gt;理解Git没有比从三棵树开始更好的了。&lt;/p&gt;
 &lt;p&gt;完整的话还是看&lt;a href=&#34;https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E9%87%8D%E7%BD%AE%E6%8F%AD%E5%AF%86&#34;&gt;git文档&lt;/a&gt;比较好，说的蛮清楚了。&lt;/p&gt;
-&lt;h2 id=&#34;heading&#34;&gt;三棵树和正向流程&lt;/h2&gt;
+&lt;h2 id=&#34;三棵树和正向流程&#34;&gt;三棵树和正向流程&lt;/h2&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -1165,18 +1204,64 @@ g.E().properties(&#39;reason&#39;);  # 查看边属性为reason的属性及属�
   &lt;/div&gt;
 &lt;/div&gt;
 &lt;h2&gt;目录&lt;/h2&gt;
-
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#副标题&#34;&gt;副标题&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#强调&#34;&gt;强调&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#有序列表&#34;&gt;有序列表&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#无序列表&#34;&gt;无序列表&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#图片&#34;&gt;图片&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#图片集&#34;&gt;图片集&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#视频&#34;&gt;视频&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#本地视频文件&#34;&gt;本地视频文件&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#youtube&#34;&gt;Youtube&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#vimeo&#34;&gt;Vimeo&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#链接&#34;&gt;链接&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#标签和分类&#34;&gt;标签和分类&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#emojis&#34;&gt;Emojis&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#段落引用&#34;&gt;段落引用&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#高亮引用&#34;&gt;高亮引用&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#脚注&#34;&gt;脚注&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#嵌入文档&#34;&gt;嵌入文档&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#speaker-deck&#34;&gt;Speaker Deck&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#代码高亮&#34;&gt;代码高亮&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#高亮选项&#34;&gt;高亮选项&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#twitter-tweet&#34;&gt;Twitter tweet&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#github-gist&#34;&gt;GitHub gist&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#latex-数学公式&#34;&gt;LATEX 数学公式&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#多行方程式&#34;&gt;多行方程式&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#论文摘要&#34;&gt;论文摘要&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#表格&#34;&gt;表格&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#警报&#34;&gt;警报&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#目录&#34;&gt;目录&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
 &lt;p&gt;Academic支持使用Markdown、LaTeX数学公式和Hugo代码段编写内容。
 此外，可以使用HTML以实现高级样式。
 本文概述最常见的格式选项。&lt;/p&gt;
-&lt;h2 id=&#34;heading&#34;&gt;副标题&lt;/h2&gt;
+&lt;h2 id=&#34;副标题&#34;&gt;副标题&lt;/h2&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;## Heading 2
 ### Heading 3
 #### Heading 4
 ##### Heading 5
 ###### Heading 6
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;heading-1&#34;&gt;强调&lt;/h2&gt;
+&lt;h2 id=&#34;强调&#34;&gt;强调&lt;/h2&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 下划线内为斜体
 Italics with _underscores_.
 
@@ -1189,16 +1274,16 @@ Combined emphasis with **asterisks and _underscores_**.
 # 双波浪符内为删除线
 Strikethrough with ~~two tildes~~.
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;heading-2&#34;&gt;有序列表&lt;/h2&gt;
+&lt;h2 id=&#34;有序列表&#34;&gt;有序列表&lt;/h2&gt;
 &lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;1. First item
 2. Another item
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;heading-3&#34;&gt;无序列表&lt;/h2&gt;
+&lt;h2 id=&#34;无序列表&#34;&gt;无序列表&lt;/h2&gt;
 &lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;我个人更习惯用 -
 * First item
 * Another item
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;heading-4&#34;&gt;图片&lt;/h2&gt;
+&lt;h2 id=&#34;图片&#34;&gt;图片&lt;/h2&gt;
 &lt;p&gt;图片可以存放在你的媒体库&lt;code&gt;static/img&lt;/code&gt;或你的&lt;a href=&#34;https://gohugo.io/content-management/page-bundles/&#34;&gt;页面文件夹&lt;/a&gt;。
 使用以下任一方式即可引用图片：&lt;/p&gt;
 &lt;p&gt;假设图片来自你的&lt;code&gt;static/img&lt;/code&gt;媒体库：&lt;/p&gt;
@@ -1213,7 +1298,7 @@ Strikethrough with ~~two tildes~~.
 &lt;p&gt;一般图片：&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;![alternative text for search engines](/img/image.jpg)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;heading-5&#34;&gt;图片集&lt;/h2&gt;
+&lt;h2 id=&#34;图片集&#34;&gt;图片集&lt;/h2&gt;
 &lt;p&gt;为页面包增加一个图片集：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;在&lt;a href=&#34;https://gohugo.io/content-management/page-bundles/&#34;&gt;页面包&lt;/a&gt;(也就是你的页面文件夹)内创建图片集文件夹；&lt;/li&gt;
@@ -1248,9 +1333,9 @@ caption = &amp;quot;Dark theme&amp;quot;
 &lt;p&gt;在正文要显示的位置使用&lt;code&gt;{``{&amp;lt; gallery album=&amp;quot;1&amp;quot; &amp;gt;}``}&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id=&#34;heading-6&#34;&gt;视频&lt;/h2&gt;
+&lt;h2 id=&#34;视频&#34;&gt;视频&lt;/h2&gt;
 &lt;p&gt;页面可以添加以下几种类型的视频。&lt;/p&gt;
-&lt;h3 id=&#34;heading-7&#34;&gt;本地视频文件&lt;/h3&gt;
+&lt;h3 id=&#34;本地视频文件&#34;&gt;本地视频文件&lt;/h3&gt;
 &lt;p&gt;要添加视频，将它放在&lt;code&gt;static/img/&lt;/code&gt;媒体库或者页面文件夹内，使用以下任一方式即可引用。&lt;/p&gt;
 &lt;p&gt;位于&lt;code&gt;static/img/&lt;/code&gt;文件夹下的视频：&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;{{&amp;lt; video library=&amp;quot;1&amp;quot; src=&amp;quot;my_video.mp4&amp;quot; controls=&amp;quot;yes&amp;quot; &amp;gt;}}
@@ -1264,7 +1349,7 @@ caption = &amp;quot;Dark theme&amp;quot;
 &lt;h3 id=&#34;vimeo&#34;&gt;Vimeo&lt;/h3&gt;
 &lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;{{&amp;lt; vimeo 146022717 &amp;gt;}}
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;heading-8&#34;&gt;链接&lt;/h2&gt;
+&lt;h2 id=&#34;链接&#34;&gt;链接&lt;/h2&gt;
 &lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;[I&#39;m a link](https://www.google.com)
 [A post]({{&amp;lt; ref &amp;quot;post/hi.md&amp;quot; &amp;gt;}})
 [A publication]({{&amp;lt; ref &amp;quot;publication/hi.md&amp;quot; &amp;gt;}})
@@ -1275,29 +1360,29 @@ caption = &amp;quot;Dark theme&amp;quot;
 &lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;{{% staticref &amp;quot;files/cv.pdf&amp;quot; &amp;quot;newtab&amp;quot; %}}Download my CV{{% /staticref %}}
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;code&gt;staticref&lt;/code&gt;的&lt;code&gt;&amp;quot;newtab&amp;quot;&lt;/code&gt;参数将使链接在新页面打开。&lt;/p&gt;
-&lt;h3 id=&#34;heading-9&#34;&gt;标签和分类&lt;/h3&gt;
+&lt;h3 id=&#34;标签和分类&#34;&gt;标签和分类&lt;/h3&gt;
 &lt;p&gt;使用&lt;code&gt;{``{&amp;lt; list_tags &amp;gt;}``}&lt;/code&gt;生成标签链接列表，使用&lt;code&gt;{``{&amp;lt; list_categories &amp;gt;}``}&lt;/code&gt;生成分类链接列表。&lt;/p&gt;
 &lt;h2 id=&#34;emojis&#34;&gt;Emojis&lt;/h2&gt;
 &lt;p&gt;可用Emojis见&lt;a href=&#34;http://www.webpagefx.com/tools/emoji-cheat-sheet/&#34;&gt;Emoji cheat sheet&lt;/a&gt;。
 下面的这个示例在实际使用时需要把:和表情名之前的空格去掉：&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;I : heart : Academic : smile :
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;I ❤ Academic 😄&lt;/p&gt;
-&lt;h2 id=&#34;heading-10&#34;&gt;段落引用&lt;/h2&gt;
+&lt;p&gt;I ❤️ Academic 😄&lt;/p&gt;
+&lt;h2 id=&#34;段落引用&#34;&gt;段落引用&lt;/h2&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;&amp;gt; This is a blockquote.
 &lt;/code&gt;&lt;/pre&gt;
 &lt;blockquote&gt;
 &lt;p&gt;This is a blockquote.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&#34;heading-11&#34;&gt;高亮引用&lt;/h2&gt;
+&lt;h2 id=&#34;高亮引用&#34;&gt;高亮引用&lt;/h2&gt;
 &lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;This is a {{&amp;lt; hl &amp;gt;}}highlighted quote{{&amp;lt; /hl &amp;gt;}}.
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;This is a &lt;span class=&#34;markup-quote&#34;&gt;highlighted quote&lt;/span&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;heading-12&#34;&gt;脚注&lt;/h2&gt;
+&lt;h2 id=&#34;脚注&#34;&gt;脚注&lt;/h2&gt;
 &lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;I have more [^1] to say.
 [^1]: Footnote example.
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;heading-13&#34;&gt;嵌入文档&lt;/h2&gt;
+&lt;h2 id=&#34;嵌入文档&#34;&gt;嵌入文档&lt;/h2&gt;
 &lt;p&gt;下面几种类型的文档可以被嵌入到页面中。&lt;/p&gt;
 &lt;p&gt;要插入&lt;strong&gt;谷歌文档&lt;/strong&gt; (比如幻灯片)点击Google Docs中的 &lt;em&gt;File &amp;gt; Publish to web &amp;gt; Embed&lt;/em&gt; 并复制&lt;code&gt;src=&amp;quot;...&amp;quot;&lt;/code&gt;部分中的URL。
 之后粘贴到下面代码中：&lt;/p&gt;
@@ -1306,7 +1391,7 @@ caption = &amp;quot;Dark theme&amp;quot;
 &lt;h3 id=&#34;speaker-deck&#34;&gt;Speaker Deck&lt;/h3&gt;
 &lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;{{&amp;lt; speakerdeck 4e8126e72d853c0060001f97 &amp;gt;}}
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;heading-14&#34;&gt;代码高亮&lt;/h2&gt;
+&lt;h2 id=&#34;代码高亮&#34;&gt;代码高亮&lt;/h2&gt;
 &lt;p&gt;将语言的代码，比如&lt;code&gt;python&lt;/code&gt;，作为参数放在三个反引号之后：(打出来```就会被解析，只能加空格了)&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt; ` ` `python
  # Example of code highlighting
@@ -1320,7 +1405,7 @@ caption = &amp;quot;Dark theme&amp;quot;
 input_string_var = input(&amp;quot;Enter some data: &amp;quot;)
 print(&amp;quot;You entered: {}&amp;quot;.format(input_string_var))
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;heading-15&#34;&gt;高亮选项&lt;/h3&gt;
+&lt;h3 id=&#34;高亮选项&#34;&gt;高亮选项&lt;/h3&gt;
 &lt;p&gt;Academic主题使用&lt;a href=&#34;https://highlightjs.org/&#34;&gt;highlight.js&lt;/a&gt;作为高亮的来源，并且默认为所有页面启用。
 并且，有一些更细粒度的选项可以控制highlight.js的显示效果。&lt;/p&gt;
 &lt;p&gt;下表列出了highlight.js支持的一些选项，包含他们的类型和简短描述。
@@ -1360,7 +1445,7 @@ print(&amp;quot;You entered: {}&amp;quot;.format(input_string_var))
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h4 id=&#34;highlight&#34;&gt;&lt;code&gt;highlight&lt;/code&gt;选项&lt;/h4&gt;
+&lt;h4 id=&#34;highlight选项&#34;&gt;&lt;code&gt;highlight&lt;/code&gt;选项&lt;/h4&gt;
 &lt;p&gt;&lt;code&gt;highlight&lt;/code&gt;选项允许在全局或者特定页面启动/禁止语法高亮。
 如果没有明确指定的话，默认会认为你设置了&lt;code&gt;highlight = true&lt;/code&gt;。
 也就是说，highlight.js的javascript/css文件会出现在每一个页面文件中。
@@ -1400,7 +1485,7 @@ print(&amp;quot;You entered: {}&amp;quot;.format(input_string_var))
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h4 id=&#34;highlight-languages&#34;&gt;&lt;code&gt;highlight_languages&lt;/code&gt;选项&lt;/h4&gt;
+&lt;h4 id=&#34;highlight_languages选项&#34;&gt;&lt;code&gt;highlight_languages&lt;/code&gt;选项&lt;/h4&gt;
 &lt;p&gt;&lt;code&gt;highlight_languages&lt;/code&gt;选项允许你指定highlight.js支持的，但是不是默认支持的常见的语言。
 比如，你想在所有页面高亮Go和clojure语言，那就在&lt;code&gt;config.toml&lt;/code&gt;中设置&lt;code&gt;highlight_languages = [&amp;quot;go&amp;quot;, &amp;quot;clojure&amp;quot;]&lt;/code&gt;。
 另外，如果你想为页面只启用特定的语法高亮，那就去页面扉页设置&lt;code&gt;highlight_languages&lt;/code&gt;。&lt;/p&gt;
@@ -1411,7 +1496,7 @@ print(&amp;quot;You entered: {}&amp;quot;.format(input_string_var))
 要查看支持的语言，访问&lt;a href=&#34;https://cdnjs.com/libraries/highlight.js/&#34;&gt;cdnjs page&lt;/a&gt;页面并查找包含&amp;quot;languages&amp;quot;关键字的链接。&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;highlight_languages&lt;/code&gt;选项通过CDN提供了一种方便又容易的方式来满足附加语言的高亮需求。
 如果cdnjs提供的默认的文件不能满足你的需求，你可以通过&lt;a href=&#34;https://sourcethemes.com/academic/docs/customization/#add-scripts-js&#34;&gt;个性化指南&lt;/a&gt;中的方法来使用自己的javascript文件。&lt;/p&gt;
-&lt;h4 id=&#34;highlight-style&#34;&gt;&lt;code&gt;highlight_style&lt;/code&gt;选项&lt;/h4&gt;
+&lt;h4 id=&#34;highlight_style选项&#34;&gt;&lt;code&gt;highlight_style&lt;/code&gt;选项&lt;/h4&gt;
 &lt;p&gt;&lt;code&gt;highlight_style&lt;/code&gt;选项允许你使用备选的高亮样式。
 比如，如果你想使用solarized-dark样式，你可以在&lt;code&gt;config.toml&lt;/code&gt;中设置&lt;code&gt;highlight_style = &amp;quot;solarized-dark&amp;quot;&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;如果未设置&lt;code&gt;highlight_style&lt;/code&gt;，默认会使用Academic提供的或者在你的&lt;code&gt;static&lt;/code&gt;文件夹下的&lt;code&gt;/css/highlight.min.css&lt;/code&gt;。
@@ -1437,7 +1522,7 @@ Academic提供的默认样式和&lt;code&gt;github&lt;/code&gt;是一致的。&l
 &lt;h2 id=&#34;github-gist&#34;&gt;GitHub gist&lt;/h2&gt;
 &lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;{{&amp;lt; gist USERNAME GIST-ID &amp;gt;}}
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;latex-&#34;&gt;LATEX 数学公式&lt;/h2&gt;
+&lt;h2 id=&#34;latex-数学公式&#34;&gt;LATEX 数学公式&lt;/h2&gt;
 &lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;$$\left [ – \frac{\hbar^2}{2 m} \frac{\partial^2}{\partial x^2} + V \right ] \Psi = i \hbar \frac{\partial}{\partial t} \Psi$$
 &lt;/code&gt;&lt;/pre&gt;
 &lt;div&gt;
@@ -1449,21 +1534,21 @@ $$\left [ – \frac{\hbar^2}{2 m} \frac{\partial^2}{\partial x^2} + V \right ] \
 &lt;p&gt;This is inline: $\mathbf{y} = \mathbf{X}\boldsymbol\beta + \boldsymbol\varepsilon$&lt;/p&gt;
 &lt;p&gt;注意Markdown的特殊符号需要使用反斜杠转义，才能被识别为数学公式而非Markdown关键字。
 比如&lt;code&gt;*&lt;/code&gt;和&lt;code&gt;_&lt;/code&gt;应该被替换为&lt;code&gt;\*&lt;/code&gt;和&lt;code&gt;\_&lt;/code&gt;。&lt;/p&gt;
-&lt;h3 id=&#34;heading-16&#34;&gt;多行方程式&lt;/h3&gt;
+&lt;h3 id=&#34;多行方程式&#34;&gt;多行方程式&lt;/h3&gt;
 &lt;p&gt;标准LaTeX的双反斜杠换行应该被替换为6个反斜杠：&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;$$f(k;p\_0^\*) = \begin{cases} p\_0^\* &amp;amp; \text{if }k=1, \\\\\\
 1-p\_0^\* &amp;amp; \text {if }k=0.\end{cases}$$
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;$$f(k;p_0^*) = \begin{cases} p_0^* &amp;amp; \text{if }k=1, \\\&lt;br&gt;
 1-p_0^* &amp;amp; \text {if }k=0.\end{cases}$$&lt;/p&gt;
-&lt;h3 id=&#34;heading-17&#34;&gt;论文摘要&lt;/h3&gt;
+&lt;h3 id=&#34;论文摘要&#34;&gt;论文摘要&lt;/h3&gt;
 &lt;p&gt;由于Hugo和Academic会尝试解析摘要中的TOML, Markdown, 以及LaTeX内容，论文的&lt;code&gt;abstract&lt;/code&gt;和&lt;code&gt;abstract_short&lt;/code&gt;部分应当遵循下面两个方针：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;LaTeX的反斜杠&lt;code&gt;\&lt;/code&gt;应该被转义为双反斜杠，也就是&lt;code&gt;\\&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;LaTeX的下划线&lt;code&gt;_&lt;/code&gt;应该被转义为双反斜杠加下划线，也就是&lt;code&gt;\\_&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;因此，&lt;code&gt;abstract = &amp;quot;${O(d_{\max})}$&amp;quot;&lt;/code&gt;就会变成&lt;code&gt;abstract = &amp;quot;${O(d\\_{\\max})}$&amp;quot;&lt;/code&gt;。&lt;/p&gt;
-&lt;h2 id=&#34;heading-18&#34;&gt;表格&lt;/h2&gt;
+&lt;h2 id=&#34;表格&#34;&gt;表格&lt;/h2&gt;
 &lt;p&gt;代码：&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;| Command         | Description         |
 | --------------- | ------------------- |
@@ -1489,7 +1574,7 @@ $$\left [ – \frac{\hbar^2}{2 m} \frac{\partial^2}{\partial x^2} + V \right ] \
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h2 id=&#34;heading-19&#34;&gt;警报&lt;/h2&gt;
+&lt;h2 id=&#34;警报&#34;&gt;警报&lt;/h2&gt;
 &lt;p&gt;在你为文章添加提示、注意项、警告时，警报是一个非常有用的功能。
 尤其是对于教程性质的文章。
 使用对应的短代码以在文章中显示警报：&lt;/p&gt;
@@ -1500,7 +1585,7 @@ Here&#39;s a tip or note...
 &lt;p&gt;这会显示为如下 &lt;em&gt;注意&lt;/em&gt; 项：&lt;/p&gt;
 &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
-    Here&#39;s a tip or note&amp;hellip;
+    Here&amp;rsquo;s a tip or note&amp;hellip;
   &lt;/div&gt;
 &lt;/div&gt;
 &lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;{{% alert warning %}}
@@ -1510,10 +1595,10 @@ Here&#39;s some important information...
 &lt;p&gt;这会展示为如下 &lt;em&gt;警告&lt;/em&gt; 项：&lt;/p&gt;
 &lt;div class=&#34;alert alert-warning&#34;&gt;
   &lt;div&gt;
-    Here&#39;s some important information&amp;hellip;
+    Here&amp;rsquo;s some important information&amp;hellip;
   &lt;/div&gt;
 &lt;/div&gt;
-&lt;h2 id=&#34;heading-20&#34;&gt;目录&lt;/h2&gt;
+&lt;h2 id=&#34;目录&#34;&gt;目录&lt;/h2&gt;
 &lt;p&gt;目录对于长文章或者教程/文档可能特别有用，在你Markdown正文的任何位置使用&lt;code&gt;{``{% toc %}``}&lt;/code&gt;短代码自动生成目录。&lt;/p&gt;
 </description>
     </item>
@@ -1530,7 +1615,32 @@ Here&#39;s some important information...
   &lt;/div&gt;
 &lt;/div&gt;
 &lt;h2&gt;目录&lt;/h2&gt;
-HAHAHUGOSHORTCODE-TOC0-HBHB
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#精选图片&#34;&gt;精选图片&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#标题图片&#34;&gt;标题图片&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#数学公式和代码&#34;&gt;数学公式和代码&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#页面特性&#34;&gt;页面特性&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#创建一个出版物&#34;&gt;创建一个出版物&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#自动&#34;&gt;自动&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#手动&#34;&gt;手动&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#关联其它资源&#34;&gt;关联其它资源&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#创建博文&#34;&gt;创建博文&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#创建项目&#34;&gt;创建项目&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#创建演讲&#34;&gt;创建演讲&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#创建幻灯片&#34;&gt;创建幻灯片&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#创建课程或文档&#34;&gt;创建课程或文档&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#创建小部件页面&#34;&gt;创建小部件页面&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#创建其他页面eg-简历&#34;&gt;创建其他页面(e.g. 简历)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#管理列表页&#34;&gt;管理列表页&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#移除内容&#34;&gt;移除内容&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#查看站点更新&#34;&gt;查看站点更新&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#部署站点&#34;&gt;部署站点&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
 &lt;p&gt;这是一个使用Academic框架管理你的文章的简短指南。
 Academic提供的内容模板包括出版物、项目、宣讲、新闻/博客文章、以及小部件页。
 之后，你可能同样对&lt;a href=&#34;https://szthanatos.github.io/post/trans_writing_content.md&#34;&gt;使用Markdown、LaTeX数学公式和代码段进行创作&lt;/a&gt;感兴趣。&lt;/p&gt;
@@ -1539,7 +1649,7 @@ Academic提供的内容模板包括出版物、项目、宣讲、新闻/博客�
     Hugo V0.49 版本在使用本指南中的&lt;code&gt;hugo new&lt;/code&gt;命令时存在一个bug，请升级到V0.50及以上。
   &lt;/div&gt;
 &lt;/div&gt;
-&lt;h2 id=&#34;heading&#34;&gt;精选图片&lt;/h2&gt;
+&lt;h2 id=&#34;精选图片&#34;&gt;精选图片&lt;/h2&gt;
 &lt;p&gt;要在文章页显示一个精选图片，简单的将名为&lt;code&gt;featured.*&lt;/code&gt;(e.g. &lt;code&gt;featured.jpg&lt;/code&gt;)的图片文件拖拽到文章文件夹即可。&lt;/p&gt;
 &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
@@ -1566,7 +1676,7 @@ Academic提供的内容模板包括出版物、项目、宣讲、新闻/博客�
   # Show image only in page previews?
   preview_only = false
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;heading-1&#34;&gt;标题图片&lt;/h2&gt;
+&lt;h2 id=&#34;标题图片&#34;&gt;标题图片&lt;/h2&gt;
 &lt;p&gt;将下面的header参数添加到扉页的末尾，以在页面顶部展示一个占据全部宽度的标题图片。
 图片文件默认会从静态图片文件库&lt;code&gt;static/img/&lt;/code&gt;读取(所以不必写全)，所以下面例子的图片文件的完整路径是&lt;code&gt;static/img/header.png&lt;/code&gt;。
 标题参数作用和精选图一致。&lt;/p&gt;
@@ -1574,20 +1684,20 @@ Academic提供的内容模板包括出版物、项目、宣讲、新闻/博客�
   image = &amp;quot;header.png&amp;quot;
   caption = &amp;quot;Image credit: [**Academic**](https://github.com/gcushen/hugo-academic/)&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;heading-2&#34;&gt;数学公式和代码&lt;/h2&gt;
+&lt;h2 id=&#34;数学公式和代码&#34;&gt;数学公式和代码&lt;/h2&gt;
 &lt;p&gt;要在页面中启用&lt;strong&gt;LaTeX&lt;/strong&gt; 渲染数学公式，在页面的扉页中应该申明&lt;code&gt;math = true&lt;/code&gt;，如同示例网站的例子一样。
 或者，在&lt;code&gt;config.toml&lt;/code&gt;中设置&lt;code&gt;math = true&lt;/code&gt;，以在全局范围内允许数学公式渲染。&lt;/p&gt;
 &lt;p&gt;在&lt;code&gt;config.toml&lt;/code&gt;中设置&lt;code&gt;highlight = false&lt;/code&gt;以全局禁用代码高亮。你可以在需要代码高亮的页面的扉页单独设置&lt;code&gt;highlight = true&lt;/code&gt;。
 查看&lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/#code-highlighting&#34;&gt;code-highlighting docs&lt;/a&gt;以获取更多细节。&lt;/p&gt;
-&lt;h2 id=&#34;heading-3&#34;&gt;页面特性&lt;/h2&gt;
+&lt;h2 id=&#34;页面特性&#34;&gt;页面特性&lt;/h2&gt;
 &lt;p&gt;将下述参数添加到页面扉页以管理页面特性：&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;reading_time = false  # 显示估计阅读时间
 share = false  # 显示分享按钮
 profile = false  # 显示作者信息
 comments = false  # 显示评论区
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;heading-4&#34;&gt;创建一个出版物&lt;/h2&gt;
-&lt;h3 id=&#34;heading-5&#34;&gt;自动&lt;/h3&gt;
+&lt;h2 id=&#34;创建一个出版物&#34;&gt;创建一个出版物&lt;/h2&gt;
+&lt;h3 id=&#34;自动&#34;&gt;自动&lt;/h3&gt;
 &lt;p&gt;先进的文献管理工具可以帮助你将你的出版物转化为开源的BibTeX格式。
 如果你是新手的话我们推荐你使用流行的开源工具&lt;a href=&#34;https://www.zotero.org/&#34;&gt;Zotero&lt;/a&gt;来管理你的文献。&lt;/p&gt;
 &lt;p&gt;在你的文献管理工具中创建你自己的出版物列表并导出为&lt;code&gt;*.bib&lt;/code&gt;格式的BibTeX文件。&lt;/p&gt;
@@ -1604,7 +1714,7 @@ comments = false  # 显示评论区
 所以在发布你的站点之前你应该检查&lt;code&gt;publications&lt;/code&gt;文件夹下产生的内容。
 你同样可以看看下一章节&lt;code&gt;手动&lt;/code&gt;部分有关扉页参数的细节，以想办法增强展示效果。&lt;/p&gt;
 &lt;p&gt;想要支持这个工具或者提供建议/反馈，请查看&lt;a href=&#34;https://github.com/sourcethemes/academic-admin&#34;&gt;Academic admin tool项目主页&lt;/a&gt;。&lt;/p&gt;
-&lt;h3 id=&#34;heading-6&#34;&gt;手动&lt;/h3&gt;
+&lt;h3 id=&#34;手动&#34;&gt;手动&lt;/h3&gt;
 &lt;p&gt;另一种选择，使用命令手动的创建出版物：&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;hugo new --kind publication publication/&amp;lt;my-publication&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
@@ -1621,7 +1731,7 @@ comments = false  # 显示评论区
 内容会出现在你的出版物页之上。&lt;/p&gt;
 &lt;p&gt;要使访客能够阅读到你的作品，将作品的PDF链接填入&lt;code&gt;url_pdf&lt;/code&gt;，或者将作品PDF文件放置到出版物目录并统一为相同命名，这样会自动生成PDF的链接。
 举例，如果你的出版物说明位于&lt;code&gt;publication/photons/index.md&lt;/code&gt;，将PDF文件重命名并放到&lt;code&gt;publication/photons/photons.pdf&lt;/code&gt;。&lt;/p&gt;
-&lt;h3 id=&#34;heading-7&#34;&gt;关联其它资源&lt;/h3&gt;
+&lt;h3 id=&#34;关联其它资源&#34;&gt;关联其它资源&lt;/h3&gt;
 &lt;p&gt;使用&lt;code&gt;url_&lt;/code&gt;链接以指向本地/网络内容。
 要关联本地内容的话将之复制到出版物文件夹并使用例如&lt;code&gt;url_code = &amp;quot;code.zip&amp;quot;&lt;/code&gt;的方式添加引用。&lt;/p&gt;
 &lt;p&gt;你也可以将下面的代码块添加到扉页，以使用自定义链接按钮：&lt;/p&gt;
@@ -1633,7 +1743,7 @@ comments = false  # 显示评论区
     想要在扉页的参数中使用双引号或者反斜杠需要额外添加一个反斜杠，&lt;em&gt;例子懒得翻&lt;/em&gt;，更多信息请参阅&lt;a href=&#34;https://github.com/toml-lang/toml#user-content-string&#34;&gt;TOML文档&lt;/a&gt;。
   &lt;/div&gt;
 &lt;/div&gt;
-&lt;h2 id=&#34;heading-8&#34;&gt;创建博文&lt;/h2&gt;
+&lt;h2 id=&#34;创建博文&#34;&gt;创建博文&lt;/h2&gt;
 &lt;p&gt;要创建一篇新文章：&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;hugo new  --kind post post/my-article-name
 &lt;/code&gt;&lt;/pre&gt;
@@ -1646,20 +1756,20 @@ comments = false  # 显示评论区
 &lt;p&gt;在扉页内添加&lt;code&gt;summary&lt;/code&gt;参数以覆盖自动生成的摘要。&lt;/p&gt;
 &lt;p&gt;要为特定的文章禁止评论，在扉页添加&lt;code&gt;disable_comments = true&lt;/code&gt;参数。
 要全局的禁止评论的话，在&lt;code&gt;config.toml&lt;/code&gt;中设置&lt;code&gt;disqusShortname = &amp;quot;&amp;quot;&lt;/code&gt;或者&lt;code&gt;disable_comments = true&lt;/code&gt;。&lt;/p&gt;
-&lt;h2 id=&#34;heading-9&#34;&gt;创建项目&lt;/h2&gt;
+&lt;h2 id=&#34;创建项目&#34;&gt;创建项目&lt;/h2&gt;
 &lt;p&gt;要创建一个项目：&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;hugo new  --kind project project/my-project-name
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;之后编辑新生成的&lt;code&gt;content/project/my-project-name.md&lt;/code&gt;文件。
 在扉页将&lt;code&gt;external_link = &amp;quot;http://external-project.com&amp;quot;&lt;/code&gt;设置成已经存在的项目网址，
 或者也可以手动在正文中介绍项目的情况。&lt;/p&gt;
-&lt;h2 id=&#34;heading-10&#34;&gt;创建演讲&lt;/h2&gt;
+&lt;h2 id=&#34;创建演讲&#34;&gt;创建演讲&lt;/h2&gt;
 &lt;p&gt;要创建一个演讲：&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;hugo new  --kind talk talk/my-talk-name
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;然后用你的完整标题和内容填充新生成的&lt;code&gt;content/talk/my-talk-name.md&lt;/code&gt;文件。
 你会注意到演讲的很多参数和出版物是类似的。&lt;/p&gt;
-&lt;h2 id=&#34;heading-11&#34;&gt;创建幻灯片&lt;/h2&gt;
+&lt;h2 id=&#34;创建幻灯片&#34;&gt;创建幻灯片&lt;/h2&gt;
 &lt;p&gt;可以使用Markdown非常高效的创建幻灯片并通过你的网站分享给观众。
 甚至还包括演讲者笔记。&lt;/p&gt;
 &lt;p&gt;查看&lt;a href=&#34;https://themes.gohugo.io//theme/academic/slides/example-slides#/&#34;&gt;slides demo&lt;/a&gt;
@@ -1669,13 +1779,13 @@ comments = false  # 显示评论区
 &lt;p&gt;在演讲/出版物页面使用&lt;code&gt;url_slides&lt;/code&gt;参数来关联到幻灯片。
 比如，&lt;code&gt;url_slides = &amp;quot;slides/example-slides&amp;quot;&lt;/code&gt;可以关联到上面的示例站点。
 在&lt;a href=&#34;https://raw.githubusercontent.com/gcushen/hugo-academic/master/exampleSite/content/talk/example/index.md&#34;&gt;这里&lt;/a&gt;可以看到包含&lt;code&gt;url_slides&lt;/code&gt;的完整扉页的示例。&lt;/p&gt;
-&lt;h2 id=&#34;heading-12&#34;&gt;创建课程或文档&lt;/h2&gt;
+&lt;h2 id=&#34;创建课程或文档&#34;&gt;创建课程或文档&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;文档&lt;/em&gt; 是用来&lt;strong&gt;分享知识&lt;/strong&gt;的。常见例子包括在线课程、教程、软件文档以及知识库。&lt;/p&gt;
 &lt;p&gt;你现在阅读的这个页面(不是我翻译之后的这个)就是用_文档_的方式来展现Academic相关的。
 同样，这里也有一个&lt;a href=&#34;https://themes.gohugo.io//theme/academic/tutorial/&#34;&gt;在线课程&lt;/a&gt;的例子。&lt;/p&gt;
 &lt;p&gt;查看&lt;code&gt;themes/academic/exampleSite/content/tutorial/&lt;/code&gt;的示例以学习如何开始。&lt;/p&gt;
 &lt;p&gt;如果你是一名使用R语言的数据分析师/数据科学家(e.g. RStudio and RMarkdown)，我们推荐你阅读&lt;a href=&#34;https://github.com/sourcethemes/project-kickstart-r&#34;&gt;R boilerplate project on GitHub&lt;/a&gt;。&lt;/p&gt;
-&lt;h2 id=&#34;heading-13&#34;&gt;创建小部件页面&lt;/h2&gt;
+&lt;h2 id=&#34;创建小部件页面&#34;&gt;创建小部件页面&lt;/h2&gt;
 &lt;p&gt;你是否想利用Academic的小部件系统，创建一个和Academic主页类似的页面？&lt;/p&gt;
 &lt;p&gt;在你的&lt;code&gt;content&lt;/code&gt;文件夹下创建一个新的，以你的页面命名的文件夹。在这个例子中我们将创建&lt;code&gt;content/tutorials/&lt;/code&gt;文件夹以创建我们的tutorials页。&lt;/p&gt;
 &lt;p&gt;在新建的&lt;code&gt;content/tutorials/&lt;/code&gt;文件夹下创建一个名为&lt;code&gt;_index.md&lt;/code&gt;的文件，内容如下：&lt;/p&gt;
@@ -1687,13 +1797,13 @@ summary = &amp;quot;&amp;quot;  # Add a page description.
 +++
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;将你的小部件放入&lt;code&gt;content/tutorials/&lt;/code&gt;文件夹，可以通过复制&lt;code&gt;content/home/&lt;/code&gt;下的小部件或者从&lt;a href=&#34;https://github.com/gcushen/hugo-academic/tree/master/exampleSite/content/home&#34;&gt;Github&lt;/a&gt;上下载来实现。&lt;/p&gt;
-&lt;h2 id=&#34;eg-&#34;&gt;创建其他页面(e.g. 简历)&lt;/h2&gt;
+&lt;h2 id=&#34;创建其他页面eg-简历&#34;&gt;创建其他页面(e.g. 简历)&lt;/h2&gt;
 &lt;p&gt;其他类型内容的话，可以创建自己的自定义页面。
 例如，我们在&lt;code&gt;content&lt;/code&gt;文件夹下创建一个&lt;code&gt;cv.md&lt;/code&gt;简历页面。复制任意一个文章的扉页，根据需要进行调整，然后在下面编辑Markdown内容。
 再之后，您可以使用&lt;code&gt;[My CV]{``{&amp;lt; ref &amp;quot;cv.md&amp;quot; &amp;gt;}}&lt;/code&gt;代码将简历添加到任何现有页面的内容上。&lt;/p&gt;
 &lt;p&gt;或者，在上面的例子中，我们可以使用简历的PDF文件。为此，在&lt;code&gt;static&lt;/code&gt;文件夹中创建名为&lt;code&gt;files&lt;/code&gt;的文件夹，并将名为&lt;code&gt;cv.pdf&lt;/code&gt;的PDF文件移动到该位置。
 然后可以使用以下代码将PDF文件链接到你的任意内容中：&lt;code&gt;{``{% staticref &amp;quot;files/cv.pdf&amp;quot; %}}``下载我的简历``{``{% /staticref %}}&lt;/code&gt;。&lt;/p&gt;
-&lt;h2 id=&#34;heading-14&#34;&gt;管理列表页&lt;/h2&gt;
+&lt;h2 id=&#34;管理列表页&#34;&gt;管理列表页&lt;/h2&gt;
 &lt;p&gt;档案(archive，我理解的就是列表)页或者说节点页，是列出你所有内容的特殊页面。
 博客文章、出版物、演讲都会有列表页。
 如果存在一个小部件放不下的内容的话，主页上的小部件会自动链接到列表页。
@@ -1707,11 +1817,11 @@ summary = &amp;quot;&amp;quot;  # Add a page description.
 &lt;p&gt;之后，根据需要编辑每个&lt;code&gt;_index.md&lt;/code&gt;中的&lt;code&gt;title&lt;/code&gt;参数，并在扉页之后添加任何内容。
 你可能注意到&lt;code&gt;_index.md&lt;/code&gt;文件略有不同，其中一些具有可用于关联内容类型的特殊选项。
 例如，&lt;code&gt;publication/_index.md&lt;/code&gt;包含用于设置出版物列表页面上显示的列表的引用样式的选项。&lt;/p&gt;
-&lt;h2 id=&#34;heading-15&#34;&gt;移除内容&lt;/h2&gt;
+&lt;h2 id=&#34;移除内容&#34;&gt;移除内容&lt;/h2&gt;
 &lt;p&gt;通常来说，要移除任意内容，简单的从你的&lt;code&gt;content/post&lt;/code&gt;、&lt;code&gt;content/publication&lt;/code&gt;、&lt;code&gt;content/project&lt;/code&gt;或者&lt;code&gt;content/talk&lt;/code&gt;文件夹中删除对应页面文件即可。&lt;/p&gt;
-&lt;h2 id=&#34;heading-16&#34;&gt;查看站点更新&lt;/h2&gt;
+&lt;h2 id=&#34;查看站点更新&#34;&gt;查看站点更新&lt;/h2&gt;
 &lt;p&gt;在你对站点做出修改之后，你可以通过执行&lt;code&gt;hugo server&lt;/code&gt;并在浏览器中打开http://localhost:1313/ 来看到效果。&lt;/p&gt;
-&lt;h2 id=&#34;heading-17&#34;&gt;部署站点&lt;/h2&gt;
+&lt;h2 id=&#34;部署站点&#34;&gt;部署站点&lt;/h2&gt;
 &lt;p&gt;最后，你可以&lt;a href=&#34;https://sourcethemes.com/academic/docs/deployment/&#34;&gt;部署你的站点&lt;/a&gt;了。&lt;/p&gt;
 </description>
     </item>
@@ -1722,12 +1832,28 @@ summary = &amp;quot;&amp;quot;  # Add a page description.
       <pubDate>Tue, 01 Jan 2019 12:27:05 +0800</pubDate>
       <guid>https://szthanatos.github.io/post/tmux/</guid>
       <description>&lt;h2&gt;目录&lt;/h2&gt;
-HAHAHUGOSHORTCODE-TOC0-HBHB
-&lt;h2 id=&#34;heading&#34;&gt;简介&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#简介&#34;&gt;简介&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#安装tmux&#34;&gt;安装tmux&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#基础概念&#34;&gt;基础概念&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#配置&#34;&gt;配置&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#常用控制&#34;&gt;常用控制&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#会话&#34;&gt;会话&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#窗口&#34;&gt;窗口&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#窗格&#34;&gt;窗格&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#tpm插件&#34;&gt;tpm插件&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#鼠标操作&#34;&gt;鼠标操作&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;
 &lt;p&gt;Tmux是一个终端复用软件，默认的Linux终端一个会话只能干一件事，有了tmux就能在一个窗口同时管理多个前/后台程序了。&lt;/p&gt;
-&lt;h2 id=&#34;tmux&#34;&gt;安装tmux&lt;/h2&gt;
+&lt;h2 id=&#34;安装tmux&#34;&gt;安装tmux&lt;/h2&gt;
 &lt;p&gt;基础软件，跳过&lt;/p&gt;
-&lt;h2 id=&#34;heading-1&#34;&gt;基础概念&lt;/h2&gt;
+&lt;h2 id=&#34;基础概念&#34;&gt;基础概念&lt;/h2&gt;
 &lt;p&gt;见图&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://szthanatos.github.io/img/tmux.jpg&#34; alt=&#34;Tmux页面&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -1745,7 +1871,7 @@ HAHAHUGOSHORTCODE-TOC0-HBHB
 &lt;li&gt;&lt;code&gt;命令模式&lt;/code&gt;: （输入tmux 后接命令，或者在tmux内输入&lt;code&gt;※ + shift + :&lt;/code&gt;）也就是输入命令，但是执行的不是系统命令，而是tmux自身的命令；&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;一般模式&lt;/code&gt;:  正常打字；&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;heading-2&#34;&gt;配置&lt;/h2&gt;
+&lt;h2 id=&#34;配置&#34;&gt;配置&lt;/h2&gt;
 &lt;p&gt;和zsh一样，得先配置才能用的舒坦。下面是我个人用的配置文件。&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;Ctrl+b&lt;/code&gt;被我替换为&lt;code&gt;Ctrl+x&lt;/code&gt;，横竖分割窗格我分别设置为&lt;code&gt;-&lt;/code&gt;和&lt;code&gt;\&lt;/code&gt;，刚好一横一竖嘛，并且启用了tpm管理tmux插件。&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-properties&#34;&gt;#-- base --#
@@ -1823,13 +1949,13 @@ run &#39;/etc/.tmux/plugins/tpm/tpm&#39;
 &lt;li&gt;输入&lt;code&gt;tmux source-file ~/.tmux.conf&lt;/code&gt;载入配置；&lt;/li&gt;
 &lt;li&gt;进入tmux，输入&lt;code&gt;※ + U&lt;/code&gt;查看tpm插件更新，弹出页面默认打开命令模式，直接输入&lt;code&gt;all&lt;/code&gt;完成更新；&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id=&#34;heading-3&#34;&gt;常用控制&lt;/h2&gt;
+&lt;h2 id=&#34;常用控制&#34;&gt;常用控制&lt;/h2&gt;
 &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     注意，下列所有快捷键区分大小写。
   &lt;/div&gt;
 &lt;/div&gt;
-&lt;h3 id=&#34;heading-4&#34;&gt;会话&lt;/h3&gt;
+&lt;h3 id=&#34;会话&#34;&gt;会话&lt;/h3&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -1852,7 +1978,7 @@ run &#39;/etc/.tmux/plugins/tpm/tpm&#39;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h3 id=&#34;heading-5&#34;&gt;窗口&lt;/h3&gt;
+&lt;h3 id=&#34;窗口&#34;&gt;窗口&lt;/h3&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -1903,7 +2029,7 @@ run &#39;/etc/.tmux/plugins/tpm/tpm&#39;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h3 id=&#34;heading-6&#34;&gt;窗格&lt;/h3&gt;
+&lt;h3 id=&#34;窗格&#34;&gt;窗格&lt;/h3&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -1954,7 +2080,7 @@ run &#39;/etc/.tmux/plugins/tpm/tpm&#39;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h3 id=&#34;tpm&#34;&gt;tpm插件&lt;/h3&gt;
+&lt;h3 id=&#34;tpm插件&#34;&gt;tpm插件&lt;/h3&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -1973,7 +2099,7 @@ run &#39;/etc/.tmux/plugins/tpm/tpm&#39;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h2 id=&#34;heading-7&#34;&gt;鼠标操作&lt;/h2&gt;
+&lt;h2 id=&#34;鼠标操作&#34;&gt;鼠标操作&lt;/h2&gt;
 &lt;p&gt;鼠标按住窗格的分割线可以修改窗格大小；&lt;/p&gt;
 &lt;p&gt;如果你用&lt;code&gt;wsltty&lt;/code&gt;或者其他软件，发现右键/中键失效，记得按住修饰键(比如&lt;code&gt;Shift&lt;/code&gt;)再试。&lt;/p&gt;
 </description>
@@ -1985,12 +2111,27 @@ run &#39;/etc/.tmux/plugins/tpm/tpm&#39;
       <pubDate>Fri, 14 Dec 2018 09:35:32 +0800</pubDate>
       <guid>https://szthanatos.github.io/post/git/git_tips/</guid>
       <description>&lt;h2&gt;目录&lt;/h2&gt;
-HAHAHUGOSHORTCODE-TOC0-HBHB
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#deploy-keyssh-keygithub&#34;&gt;Deploy key/SSH key(github)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#更换git协议&#34;&gt;更换git协议&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#强制覆盖本地文件&#34;&gt;强制覆盖本地文件&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#撤销修改&#34;&gt;撤销修改&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#add之前撤销&#34;&gt;add之前撤销&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#commit之前撤销&#34;&gt;commit之前撤销&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#push之前撤销&#34;&gt;push之前撤销&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#删除历史提交记录&#34;&gt;删除历史提交记录&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#忽略文件权限&#34;&gt;忽略文件权限&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
 &lt;h2 id=&#34;deploy-keyssh-keygithub&#34;&gt;Deploy key/SSH key(github)&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;Deploy key&lt;/code&gt;是在&lt;code&gt;项目主页&lt;/code&gt;-&lt;code&gt;setting&lt;/code&gt;-&lt;code&gt;Delpoy keys&lt;/code&gt;下进行添加，如果勾选&lt;code&gt;Allow write access&lt;/code&gt;，则相当于具有对这个项目的读写权限(否则只能&lt;code&gt;clone&lt;/code&gt;不能&lt;code&gt;push&lt;/code&gt;)。&lt;strong&gt;作用范围是这个项目。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;SSH key&lt;/code&gt;是在你&lt;code&gt;个人主页&lt;/code&gt;-&lt;code&gt;Settings&lt;/code&gt;-&lt;code&gt;SSH and GPG keys&lt;/code&gt;下进行添加。&lt;strong&gt;作用范围是你的账户下的所有项目。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;同一个&lt;code&gt;公钥&lt;/code&gt;，只能作为整个账户的&lt;code&gt;SSH key&lt;/code&gt;，或者&lt;strong&gt;一个项目&lt;/strong&gt;的&lt;code&gt;Deploy key&lt;/code&gt;。想为一台机器授予多个项目的读写权限的话，需要通过&lt;code&gt;ssh-keygen&lt;/code&gt;生成多个密钥，分别作为不同项目的&lt;code&gt;Deploy key&lt;/code&gt;。&lt;/p&gt;
-&lt;h2 id=&#34;git&#34;&gt;更换git协议&lt;/h2&gt;
+&lt;h2 id=&#34;更换git协议&#34;&gt;更换git协议&lt;/h2&gt;
 &lt;p&gt;使用&lt;code&gt;http&lt;/code&gt;/&lt;code&gt;https&lt;/code&gt;协议连接仓库相比&lt;code&gt;ssh&lt;/code&gt;即不够安全，也会存在&lt;code&gt;push&lt;/code&gt;的时候必须输入用户名密码的问题。&lt;/p&gt;
 &lt;p&gt;使用&lt;code&gt;git remote -v&lt;/code&gt;可以查看项目使用的协议。&lt;/p&gt;
 &lt;p&gt;如果是新建的项目，推荐在一开始就使用&lt;code&gt;git@github.com:{USER}/{PROJECT}.git&lt;/code&gt;进行&lt;code&gt;clone&lt;/code&gt;。这样默认都是用&lt;code&gt;ssh&lt;/code&gt;了。&lt;/p&gt;
@@ -2005,30 +2146,30 @@ $ git remote -v
 origin  git@github.com:abc/bcd.git (fetch)
 origin  git@github.com:abc/bcd.git (push)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;heading&#34;&gt;强制覆盖本地文件&lt;/h2&gt;
+&lt;h2 id=&#34;强制覆盖本地文件&#34;&gt;强制覆盖本地文件&lt;/h2&gt;
 &lt;p&gt;啥都别说了，直接重来吧：&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git fetch --all  
 git reset --hard origin/master
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;heading-1&#34;&gt;撤销修改&lt;/h2&gt;
-&lt;h3 id=&#34;add&#34;&gt;add之前撤销&lt;/h3&gt;
+&lt;h2 id=&#34;撤销修改&#34;&gt;撤销修改&lt;/h2&gt;
+&lt;h3 id=&#34;add之前撤销&#34;&gt;add之前撤销&lt;/h3&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 单个文件
 git checkout FileName
 
 # 所有文件
 git checkout .
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;commit&#34;&gt;commit之前撤销&lt;/h3&gt;
+&lt;h3 id=&#34;commit之前撤销&#34;&gt;commit之前撤销&lt;/h3&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 取消暂存
 git reset HEAD FileName
 
 # 撤销修改
 git checkout FileName
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;push&#34;&gt;push之前撤销&lt;/h3&gt;
+&lt;h3 id=&#34;push之前撤销&#34;&gt;push之前撤销&lt;/h3&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git reset [--hard|soft|mixed] [commit|HEAD]
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;heading-2&#34;&gt;删除历史提交记录&lt;/h2&gt;
+&lt;h2 id=&#34;删除历史提交记录&#34;&gt;删除历史提交记录&lt;/h2&gt;
 &lt;p&gt;commit多了项目也会膨胀&amp;hellip;清了一干二净。&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 用orphan参数创建全新的分支
 git checkout --orphan {new_branch}
@@ -2048,7 +2189,7 @@ git branch -m {old_branch}
 # 强制提交变更
 git push -f origin {old_branch}
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;heading-3&#34;&gt;忽略文件权限&lt;/h2&gt;
+&lt;h2 id=&#34;忽略文件权限&#34;&gt;忽略文件权限&lt;/h2&gt;
 &lt;p&gt;文件在系统间转移的时候可能由于权限改变而使文件全都处于&amp;quot;modified&amp;quot;状态。（比如从linux到Windows，权限会从644变成755）可以以项目为单位设置忽略文件权限：&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git config core.filemode false
 &lt;/code&gt;&lt;/pre&gt;
@@ -2061,37 +2202,71 @@ git push -f origin {old_branch}
       <pubDate>Sun, 09 Dec 2018 16:34:42 +0800</pubDate>
       <guid>https://szthanatos.github.io/post/academic/academic_in_practice/</guid>
       <description>&lt;h2&gt;目录&lt;/h2&gt;
-HAHAHUGOSHORTCODE-TOC0-HBHB
-&lt;h2 id=&#34;hugo-&#34;&gt;Hugo 安装/更新&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#hugo-安装更新&#34;&gt;Hugo 安装/更新&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#安装更新&#34;&gt;安装/更新&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#常用命令&#34;&gt;常用命令&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#academic-安装更新&#34;&gt;Academic 安装/更新&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#通过netlify&#34;&gt;通过Netlify&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#通过git&#34;&gt;通过Git&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#部署到github-pages&#34;&gt;部署到Github Pages&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#原理&#34;&gt;原理&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#官方教程缩减版&#34;&gt;官方教程(缩减版)&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#脚本&#34;&gt;脚本&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#个性化配置&#34;&gt;个性化配置&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#configtoml主要配置项解释&#34;&gt;config.toml主要配置项解释&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#修改网站logo&#34;&gt;修改网站logo&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#给文章添加精选图&#34;&gt;给文章添加精选图&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#给文章添加头部背景&#34;&gt;给文章添加头部背景&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#目录&#34;&gt;目录&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#注意警告标识&#34;&gt;注意/警告标识&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#消除短代码效果&#34;&gt;消除短代码效果&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#修改模板&#34;&gt;修改模板&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;h2 id=&#34;hugo-安装更新&#34;&gt;Hugo 安装/更新&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;是使用&lt;code&gt;Go&lt;/code&gt;语言开发的静态站点生成器。不过无需准备&lt;code&gt;Go&lt;/code&gt;语言环境，可以直接通过二进制编译包进行跨平台部署。&lt;/p&gt;
 &lt;p&gt;以下均以Ubuntu18.0为例。&lt;/p&gt;
-&lt;h3 id=&#34;heading&#34;&gt;安装/更新&lt;/h3&gt;
+&lt;h3 id=&#34;安装更新&#34;&gt;安装/更新&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;前往&lt;a href=&#34;https://github.com/gohugoio/hugo/releases&#34;&gt;Github页面&lt;/a&gt;下载最新版本，这里我们下载&lt;code&gt;hugo_0.52_Linux-64bit.deb&lt;/code&gt;;&lt;/li&gt;
 &lt;li&gt;使用命令&lt;code&gt;dpkg -i hugo_0.52_Linux-64bit.deb&lt;/code&gt; 安装hugo;&lt;/li&gt;
 &lt;li&gt;更新即重复上面两步，覆盖安装即可;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;heading-1&#34;&gt;常用命令&lt;/h3&gt;
+&lt;h3 id=&#34;常用命令&#34;&gt;常用命令&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;&lt;code&gt;hugo&lt;/code&gt;&lt;/strong&gt;： 编译项目生成静态网站，默认位置在项目的&lt;code&gt;public&lt;/code&gt;目录下&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;code&gt;hugo server&lt;/code&gt;&lt;/strong&gt;： 启动你的网站服务，可以通过浏览器访问&lt;code&gt;http://127.0.0.1:1313/&lt;/code&gt;访问站点;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;code&gt;hugo new {folder}/{name}.md&lt;/code&gt;&lt;/strong&gt;: 创建新文章，使用&lt;code&gt;markdown&lt;/code&gt;进行排版，一般默认放在&lt;code&gt;post&lt;/code&gt;文件夹下；&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;基本没了，一般情况下用这三个命令就够了。&lt;/p&gt;
-&lt;h2 id=&#34;academic-&#34;&gt;Academic 安装/更新&lt;/h2&gt;
+&lt;h2 id=&#34;academic-安装更新&#34;&gt;Academic 安装/更新&lt;/h2&gt;
 &lt;p&gt;Academic是一个Hugo主题，从名字就可以知道这个主题比较学院派，适合科研/学术人员发布个人信息/介绍科研项目，当然，拿来做个人博客也是没问题的。&lt;/p&gt;
-&lt;h3 id=&#34;netlify&#34;&gt;通过Netlify&lt;/h3&gt;
+&lt;h3 id=&#34;通过netlify&#34;&gt;通过Netlify&lt;/h3&gt;
 &lt;p&gt;Academic推荐使用第三方博客管理平台&lt;a href=&#34;https://app.netlify.com/start/deploy?repository=https://github.com/sourcethemes/academic-kickstart&#34;&gt;Netlify&lt;/a&gt;安装，如果你没有域名或者没想建站，只是想自己使用，那我建议不使用它的服务——请直接跳到下一部分，否则跟随网站引导完成安装;&lt;/p&gt;
-&lt;h3 id=&#34;git&#34;&gt;通过Git&lt;/h3&gt;
-&lt;h4 id=&#34;heading-2&#34;&gt;安装&lt;/h4&gt;
+&lt;h3 id=&#34;通过git&#34;&gt;通过Git&lt;/h3&gt;
+&lt;h4 id=&#34;安装&#34;&gt;安装&lt;/h4&gt;
 &lt;ol&gt;
 &lt;li&gt;通过git安装的话，首先建议你在GitHub上fork成你自己的项目，默认的话，通过&lt;code&gt;git clone https://github.com/sourcethemes/academic-kickstart.git My_Website&lt;/code&gt;将代码克隆到本地文件夹&lt;code&gt;My_Website&lt;/code&gt; &lt;em&gt;(当然，更推荐使用ssh协议，更安全，也免于push时输入密码，这里暂时按官方的来)&lt;/em&gt; ;&lt;/li&gt;
 &lt;li&gt;进入文件夹，初始化项目：&lt;code&gt;git submodule update --init --recursive&lt;/code&gt;，完成安装;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h4 id=&#34;heading-3&#34;&gt;自动更新&lt;/h4&gt;
+&lt;h4 id=&#34;自动更新&#34;&gt;自动更新&lt;/h4&gt;
 &lt;p&gt;说是自动，还是需要手动执行一条命令：&lt;code&gt;git submodule update --remote --merge&lt;/code&gt;;&lt;/p&gt;
 &lt;p&gt;这么做的前提条件是你是&lt;code&gt;install&lt;/code&gt;的，也就是&lt;code&gt;git submodule update --init --recursive&lt;/code&gt;过的，而不是直接把&lt;code&gt;academic&lt;/code&gt;给clone到themes文件夹。&lt;/p&gt;
-&lt;h4 id=&#34;heading-4&#34;&gt;手动更新&lt;/h4&gt;
+&lt;h4 id=&#34;手动更新&#34;&gt;手动更新&lt;/h4&gt;
 &lt;p&gt;如果是clone到themes文件夹的话要这么更新：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;code&gt;cd themes/academic&lt;/code&gt;;&lt;/li&gt;
@@ -2100,13 +2275,13 @@ HAHAHUGOSHORTCODE-TOC0-HBHB
 &lt;li&gt;列出可用更新：&lt;code&gt;git log --pretty=oneline --abbrev-commit --decorate HEAD..upstream/master&lt;/code&gt;;&lt;/li&gt;
 &lt;li&gt;更新：&lt;code&gt;git pull upstream&lt;/code&gt;;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id=&#34;github-pages&#34;&gt;部署到Github Pages&lt;/h2&gt;
-&lt;h3 id=&#34;heading-5&#34;&gt;原理&lt;/h3&gt;
+&lt;h2 id=&#34;部署到github-pages&#34;&gt;部署到Github Pages&lt;/h2&gt;
+&lt;h3 id=&#34;原理&#34;&gt;原理&lt;/h3&gt;
 &lt;p&gt;网上介绍的办法很多，但核心其实就一句：&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;将&lt;code&gt;hugo&lt;/code&gt;命令生成的&lt;code&gt;public&lt;/code&gt;文件夹上传到GitHub pages项目下&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;public&lt;/code&gt;文件夹相当于编译完成的静态网站，你在本地打开其实就能看。换句话说，你每次手动将这个目录下的内容上传到你的GitHub page项目也是可以的。&lt;/p&gt;
 &lt;p&gt;然后为了达到这个目的，Academic给出的做法是利用&lt;code&gt;git submodule&lt;/code&gt;将你的&lt;code&gt;GitHub page&lt;/code&gt;项目作为&lt;code&gt;My_Website&lt;/code&gt;项目的子模块存放到&lt;code&gt;public&lt;/code&gt;目录。那么当你更新你的文章之后，只提交&lt;code&gt;public&lt;/code&gt;文件夹内的变更到&lt;code&gt;GitHub page&lt;/code&gt;项目即可。&lt;/p&gt;
-&lt;h3 id=&#34;heading-6&#34;&gt;官方教程(缩减版)&lt;/h3&gt;
+&lt;h3 id=&#34;官方教程缩减版&#34;&gt;官方教程(缩减版)&lt;/h3&gt;
 &lt;p&gt;&lt;em&gt;&lt;a href=&#34;https://sourcethemes.com/academic/docs/deployment/#github-pages&#34;&gt;原教程&lt;/a&gt;看这里；&lt;/em&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -2144,7 +2319,7 @@ git push origin master
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;实际上只有第六步是更新GitHub page，每次重复执行这一部分就行(如果你不把文章保存到&lt;code&gt;academic-kickstart&lt;/code&gt;的话)。&lt;/p&gt;
-&lt;h3 id=&#34;heading-7&#34;&gt;脚本&lt;/h3&gt;
+&lt;h3 id=&#34;脚本&#34;&gt;脚本&lt;/h3&gt;
 &lt;p&gt;&lt;code&gt;Hugo&lt;/code&gt;官方把上面步骤打包到了一个脚本：&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;#!/bin/bash
 
@@ -2255,7 +2430,7 @@ fi
 &lt;p&gt;&lt;code&gt;./deploy.sh push &amp;quot;{Your optional commit message}&amp;quot;&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;如果修改了多个文件，只想提交其中的一部分文件以保持commit的纯净，那就在mesaage后面附加你要提交的文件路径(不超过10个&amp;hellip;)：&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;./deploy.sh push &amp;quot;{Your optional commit message}&amp;quot; path1 path2...&lt;/code&gt;。&lt;/p&gt;
-&lt;h2 id=&#34;heading-8&#34;&gt;个性化配置&lt;/h2&gt;
+&lt;h2 id=&#34;个性化配置&#34;&gt;个性化配置&lt;/h2&gt;
 &lt;p&gt;项目目录结构大体如下：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;content目录&lt;/code&gt;： 网站内容，&lt;code&gt;home&lt;/code&gt;是你的主页的小控件，&lt;code&gt;post&lt;/code&gt;是默认文章存放位置&lt;/li&gt;
@@ -2265,7 +2440,7 @@ fi
 &lt;li&gt;&lt;code&gt;themes目录&lt;/code&gt;： 主题文件所在目录&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;config.toml&lt;/code&gt;: 全局配置文件&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;configtoml&#34;&gt;config.toml主要配置项解释&lt;/h3&gt;
+&lt;h3 id=&#34;configtoml主要配置项解释&#34;&gt;config.toml主要配置项解释&lt;/h3&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -2308,16 +2483,16 @@ fi
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h3 id=&#34;logo&#34;&gt;修改网站logo&lt;/h3&gt;
+&lt;h3 id=&#34;修改网站logo&#34;&gt;修改网站logo&lt;/h3&gt;
 &lt;p&gt;默认的logo是Academic的蓝色学位帽，想替换的话将你想用的logo保存为
 &lt;code&gt;icon.png&lt;/code&gt;(默认32&lt;em&gt;32像素，大了也没关系)
 和&lt;code&gt;icon-192.png&lt;/code&gt;(192&lt;/em&gt;192像素)，并放到项目的&lt;code&gt;static/img&lt;/code&gt;目录下&lt;/p&gt;
-&lt;h3 id=&#34;heading-9&#34;&gt;给文章添加精选图&lt;/h3&gt;
+&lt;h3 id=&#34;给文章添加精选图&#34;&gt;给文章添加精选图&lt;/h3&gt;
 &lt;p&gt;这个图片只能添加一个，名字必须是&lt;code&gt;featured.*&lt;/code&gt;(后缀jpg/png都行)，而且必须和文章放在同一个文件夹下。&lt;/p&gt;
 &lt;p&gt;所以一般做法是把文章&lt;code&gt;aaa.md&lt;/code&gt;改名为&lt;code&gt;index.md&lt;/code&gt;并新建一个&lt;code&gt;aaa&lt;/code&gt;目录，再和&lt;code&gt;featured.png&lt;/code&gt;图片一起扔进去。&lt;/p&gt;
 &lt;p&gt;显示的效果是在文章列表页，文章右侧有一个缩略图；打开文章，标题默认会居左，右边是精选图：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://szthanatos.github.io/img/featured_image_example.png&#34; alt=&#34;example&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;heading-10&#34;&gt;给文章添加头部背景&lt;/h3&gt;
+&lt;h3 id=&#34;给文章添加头部背景&#34;&gt;给文章添加头部背景&lt;/h3&gt;
 &lt;p&gt;这个是文章头部的横跨整个页面的大图，也就是文章头部这个黑底白字的大图。&lt;/p&gt;
 &lt;p&gt;这个的图片可以放到&lt;code&gt;static/img&lt;/code&gt;目录下，不过需要在你文件的&lt;code&gt;+++&lt;/code&gt;的部分添加如下代码：&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;[header]
@@ -2325,9 +2500,9 @@ fi
   caption = &amp;quot;标题说明&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;顺便一提，文章内引用&lt;code&gt;static/img&lt;/code&gt;下存储的图像的话，路径大致如此&lt;code&gt;![example](/img/image_abc.png)&lt;/code&gt;&lt;/p&gt;
-&lt;h3 id=&#34;heading-11&#34;&gt;目录&lt;/h3&gt;
+&lt;h3 id=&#34;目录&#34;&gt;目录&lt;/h3&gt;
 &lt;p&gt;使用&lt;code&gt;{``{% toc %}}&lt;/code&gt;加在文章的任何你想要的地方以自动生成目录&lt;/p&gt;
-&lt;h3 id=&#34;heading-12&#34;&gt;注意/警告标识&lt;/h3&gt;
+&lt;h3 id=&#34;注意警告标识&#34;&gt;注意/警告标识&lt;/h3&gt;
 &lt;p&gt;被&lt;code&gt;{``{% alert note %}}&lt;/code&gt;和&lt;code&gt;{``{% /alert %}}&lt;/code&gt;包裹起来的内容即为注意项：&lt;/p&gt;
 &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
@@ -2340,13 +2515,13 @@ fi
     警告内容blabla
   &lt;/div&gt;
 &lt;/div&gt;
-&lt;h3 id=&#34;heading-13&#34;&gt;消除短代码效果&lt;/h3&gt;
+&lt;h3 id=&#34;消除短代码效果&#34;&gt;消除短代码效果&lt;/h3&gt;
 &lt;p&gt;Hugo是基于Go的Template，所以所有以&lt;code&gt;{``{% %}}&lt;/code&gt;或者&lt;code&gt;{``{&amp;lt; &amp;gt;}}&lt;/code&gt;包裹的内容都会被解析为短代码块，而无法直接显示其代码。
 那么我是怎么解决的呢，分情况：&lt;/p&gt;
-&lt;h4 id=&#34;heading-14&#34;&gt;单行代码&lt;/h4&gt;
+&lt;h4 id=&#34;单行代码&#34;&gt;单行代码&lt;/h4&gt;
 &lt;p&gt;你看到的&lt;code&gt;{``{% toc %}}&lt;/code&gt;实际是由&lt;code&gt;`{`&lt;/code&gt;和&lt;code&gt;`{% toc %}}`&lt;/code&gt;组成的。&lt;/p&gt;
 &lt;p&gt;而上面打出的&lt;code&gt;`&lt;/code&gt;其实是&lt;code&gt;双反引号 空格 反引号 空格 双反引号&lt;/code&gt;，就不再嵌套了。。。&lt;/p&gt;
-&lt;h4 id=&#34;heading-15&#34;&gt;代码块&lt;/h4&gt;
+&lt;h4 id=&#34;代码块&#34;&gt;代码块&lt;/h4&gt;
 &lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;{{&amp;lt; figure library=&amp;quot;1&amp;quot; src=&amp;quot;image.jpg&amp;quot; title=&amp;quot;A caption&amp;quot; &amp;gt;}}
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;的本质是将&amp;lt;&amp;gt;或者%%内的内容用/**/注释掉：&lt;/p&gt;
@@ -2358,7 +2533,7 @@ fi
 里面要显示包含反引号格式的python代码块&amp;hellip;
   &lt;/div&gt;
 &lt;/div&gt;
-&lt;h3 id=&#34;heading-16&#34;&gt;修改模板&lt;/h3&gt;
+&lt;h3 id=&#34;修改模板&#34;&gt;修改模板&lt;/h3&gt;
 &lt;p&gt;比如你看到我每个文章结尾都有一个&lt;a href=&#34;http://creativecommons.org/licenses/by-sa/4.0/&#34;&gt;&lt;code&gt;CC4.0协议&lt;/code&gt;&lt;/a&gt;的标志，这个肯定不是一篇篇手动添加的，实际上我是自己写了一个License的Widget，插入到文章的模板里面实现的。&lt;/p&gt;
 &lt;div class=&#34;alert alert-warning&#34;&gt;
   &lt;div&gt;
@@ -2395,18 +2570,55 @@ fi
       <pubDate>Sun, 09 Dec 2018 16:19:27 +0800</pubDate>
       <guid>https://szthanatos.github.io/post/hbase_design/</guid>
       <description>&lt;h2&gt;目录&lt;/h2&gt;
-HAHAHUGOSHORTCODE-TOC0-HBHB
-&lt;h2 id=&#34;heading&#34;&gt;简介&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#简介&#34;&gt;简介&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#一般原则&#34;&gt;一般原则&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#命名空间namespace&#34;&gt;命名空间(NameSpace)&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#命名规范&#34;&gt;命名规范&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#示例&#34;&gt;示例&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#表table&#34;&gt;表(Table)&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#命名规范-1&#34;&gt;命名规范&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#示例-1&#34;&gt;示例&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#行键rowkey&#34;&gt;行键(Rowkey)&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#命名规范-2&#34;&gt;命名规范&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#示例-2&#34;&gt;示例&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#注意&#34;&gt;注意&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#列族columnfamily&#34;&gt;列族(ColumnFamily)&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#命名规范-3&#34;&gt;命名规范&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#示例-3&#34;&gt;示例&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#注意-1&#34;&gt;注意&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#列qualifier&#34;&gt;列(Qualifier)&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#命名规范-4&#34;&gt;命名规范&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#示例-4&#34;&gt;示例&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;
 &lt;p&gt;本指南是对在HBase进行字段设计而提供的指导性准则和建议。总体标准、设计方式参照&lt;a href=&#34;https://github.com/google/styleguide&#34;&gt;Google 开源项目风格指南&lt;/a&gt;以及现有项目经验。所有条目均为个人总结，&lt;strong&gt;并不是一份官方标准性质的指南&lt;/strong&gt; 。&lt;/p&gt;
 &lt;p&gt;HBase是建立在Hadoop文件系统（HDFS）之上的分布式、面向列的数据库。&lt;/p&gt;
-&lt;h2 id=&#34;heading-1&#34;&gt;一般原则&lt;/h2&gt;
+&lt;h2 id=&#34;一般原则&#34;&gt;一般原则&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;无论是表或者是列或者其他，都应该使用名词或者动宾短语以代表一类对象;&lt;/li&gt;
 &lt;li&gt;尽量避免使用(尤其是单独使用)例如&lt;code&gt;int&lt;/code&gt;、&lt;code&gt;join&lt;/code&gt;、&lt;code&gt;select&lt;/code&gt;等常见保留词;&lt;/li&gt;
 &lt;li&gt;HBase在性能和效率上更擅长处理“高而瘦”的表，而非“矮而胖”的表——以Excel类比，HBase应该尽可能设计成只有很少的列(瘦)而有非常多行(高)的模式;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;namespace&#34;&gt;命名空间(NameSpace)&lt;/h2&gt;
-&lt;h3 id=&#34;heading-2&#34;&gt;命名规范&lt;/h3&gt;
+&lt;h2 id=&#34;命名空间namespace&#34;&gt;命名空间(NameSpace)&lt;/h2&gt;
+&lt;h3 id=&#34;命名规范&#34;&gt;命名规范&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;采用英文单词、阿拉伯数字的组合形式，其中，单词必须大写，并且首字符必须为英文字符，不能是数字;&lt;/li&gt;
 &lt;li&gt;不建议用连接符（下划线）拼接多个单词，简单语义的可采用单个单词，复杂语义的可采用多个单词的首字母拼接;&lt;/li&gt;
@@ -2414,55 +2626,55 @@ HAHAHUGOSHORTCODE-TOC0-HBHB
 &lt;li&gt;命名空间一般可与项目名称、组织机构名称等保持一致;&lt;/li&gt;
 &lt;li&gt;一般情况下如果不指定命名空间，表会被放在默认(default)命名空间下;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;heading-3&#34;&gt;示例&lt;/h3&gt;
+&lt;h3 id=&#34;示例&#34;&gt;示例&lt;/h3&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;ZKR
 XJ917
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;table&#34;&gt;表(Table)&lt;/h2&gt;
-&lt;h3 id=&#34;heading-4&#34;&gt;命名规范&lt;/h3&gt;
+&lt;h2 id=&#34;表table&#34;&gt;表(Table)&lt;/h2&gt;
+&lt;h3 id=&#34;命名规范-1&#34;&gt;命名规范&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;采用英文单词、阿拉伯数字、连接符（_）的组合形式，其中，单词必须大写，并且首字符必须为英文字符，可用连接符拼接多个单词;&lt;/li&gt;
 &lt;li&gt;长度尽量限制在8~16字符之间;&lt;/li&gt;
 &lt;li&gt;尽量采用具有明确意义的英文单词，而不建议采用汉字的拼音字母或者拼音首字母组合;&lt;/li&gt;
 &lt;li&gt;无需以&lt;code&gt;TABLE&lt;/code&gt;结尾;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;heading-5&#34;&gt;示例&lt;/h3&gt;
+&lt;h3 id=&#34;示例-1&#34;&gt;示例&lt;/h3&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;USER_INFO
 WEIBO_USER_FANS
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;rowkey&#34;&gt;行键(Rowkey)&lt;/h2&gt;
-&lt;h3 id=&#34;heading-6&#34;&gt;命名规范&lt;/h3&gt;
+&lt;h2 id=&#34;行键rowkey&#34;&gt;行键(Rowkey)&lt;/h2&gt;
+&lt;h3 id=&#34;命名规范-2&#34;&gt;命名规范&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;采用英文单词、阿拉伯数字、非转义字符组合形式，不要求大小写，但首字符必须是英文字符或数字;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;heading-7&#34;&gt;示例&lt;/h3&gt;
+&lt;h3 id=&#34;示例-2&#34;&gt;示例&lt;/h3&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;123456-654321
 dftf3a3l3rv3qr
 s.taobo.com/faefavc
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;heading-8&#34;&gt;注意&lt;/h3&gt;
-&lt;h4 id=&#34;heading-9&#34;&gt;慎重将时间戳直接放入行键中&lt;/h4&gt;
+&lt;h3 id=&#34;注意&#34;&gt;注意&lt;/h3&gt;
+&lt;h4 id=&#34;慎重将时间戳直接放入行键中&#34;&gt;慎重将时间戳直接放入行键中&lt;/h4&gt;
 &lt;p&gt;对于同一条数据，HBase本身提供时间戳(TimeStamp)以在同一个RowKey下保存不同版本数据;
 对于整体，存放旧数据的区域随着时间戳增大可能不再写入，而存放新数据的区域始终保持高负荷，这样降低了HBase整体的读写能力。&lt;/p&gt;
 &lt;p&gt;一个推荐的方式是使用反向时间戳。&lt;/p&gt;
-&lt;h4 id=&#34;hashstring&#34;&gt;权衡hash和string的效果&lt;/h4&gt;
+&lt;h4 id=&#34;权衡hash和string的效果&#34;&gt;权衡hash和string的效果&lt;/h4&gt;
 &lt;p&gt;哈希化(一般特指单项哈希)的Rowkey能很好的避免热点问题，但是也会同时丢失直接使用String的RowKey的天然聚类和排序的能力。&lt;/p&gt;
-&lt;h2 id=&#34;columnfamily&#34;&gt;列族(ColumnFamily)&lt;/h2&gt;
-&lt;h3 id=&#34;heading-10&#34;&gt;命名规范&lt;/h3&gt;
+&lt;h2 id=&#34;列族columnfamily&#34;&gt;列族(ColumnFamily)&lt;/h2&gt;
+&lt;h3 id=&#34;命名规范-3&#34;&gt;命名规范&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;采用英文单词、阿拉伯数字的组合形式，其中，单词必须大写，并且首字符必须为英文字符，不能是数字;&lt;/li&gt;
 &lt;li&gt;长度尽量限制在1~6字符之间，过长的列族名称将占用更多的存储空间,它们不应该像在典型的 RDBMS 中一样具有自我记录和描述性;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;heading-11&#34;&gt;示例&lt;/h3&gt;
+&lt;h3 id=&#34;示例-3&#34;&gt;示例&lt;/h3&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;DATA
 D1 # data1
 WA # web args
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;heading-12&#34;&gt;注意&lt;/h3&gt;
-&lt;h4 id=&#34;1-3&#34;&gt;列族的数量应控制在1-3个&lt;/h4&gt;
+&lt;h3 id=&#34;注意-1&#34;&gt;注意&lt;/h3&gt;
+&lt;h4 id=&#34;列族的数量应控制在1-3个&#34;&gt;列族的数量应控制在1-3个&lt;/h4&gt;
 &lt;p&gt;HBase 表不应该被设计成模拟RDBMS表，列族的数量在满足需求的情况下应该尽可能少。在存储时，一个列族会存储成一个StoreFile，多个列族对应的多个文件在分裂时会对服务器造成更大的压力。&lt;/p&gt;
-&lt;h2 id=&#34;qualifier&#34;&gt;列(Qualifier)&lt;/h2&gt;
-&lt;h3 id=&#34;heading-13&#34;&gt;命名规范&lt;/h3&gt;
+&lt;h2 id=&#34;列qualifier&#34;&gt;列(Qualifier)&lt;/h2&gt;
+&lt;h3 id=&#34;命名规范-4&#34;&gt;命名规范&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;采用英文单词、阿拉伯数字、连接符（_）的组合形式，其中，单词必须&lt;strong&gt;小写&lt;/strong&gt;，并且首字符必须为英文字符，不能是数字，可用连接符拼接多个单词;&lt;/li&gt;
 &lt;li&gt;所有列名都应该是名词或者以&lt;code&gt;is&lt;/code&gt;开头的动宾短语(表示判断)，不应该使用其他词性单词;&lt;/li&gt;
@@ -2470,7 +2682,7 @@ WA # web args
 &lt;li&gt;长度尽量限制在1~16字符之间;&lt;/li&gt;
 &lt;li&gt;尽量采用具有明确意义的英文单词，而不建议采用汉字的拼音字母或者拼音首字母组合;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;heading-14&#34;&gt;示例&lt;/h3&gt;
+&lt;h3 id=&#34;示例-4&#34;&gt;示例&lt;/h3&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;user_name
 is_str
 sound_type
@@ -2484,12 +2696,30 @@ sound_type
       <pubDate>Wed, 05 Dec 2018 17:09:21 +0800</pubDate>
       <guid>https://szthanatos.github.io/post/palantir_intro/</guid>
       <description>&lt;h2&gt;目录&lt;/h2&gt;
-HAHAHUGOSHORTCODE-TOC0-HBHB
-&lt;h2 id=&#34;heading&#34;&gt;简介&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#简介&#34;&gt;简介&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#最新情况&#34;&gt;最新情况&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#创始人&#34;&gt;创始人&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#发展历程&#34;&gt;发展历程&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#产品内容&#34;&gt;产品内容&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#官方主页-home--palantirhttpswwwpalantircom&#34;&gt;官方主页： &lt;a href=&#34;https://www.palantir.com/&#34;&gt;Home | Palantir&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#产品线&#34;&gt;产品线&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#解决方案&#34;&gt;解决方案&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;
 &lt;p&gt;Palantir是全球第一大&lt;code&gt;大数据公司&lt;/code&gt;。曾经的全球四大独角兽之一（其它三家是Uber，Airbnb和小米）。中文名帕兰提尔，源于《指环王》中邪恶巫师萨鲁曼使用的可穿越时空、洞悉世间一切的水晶球(Palantiri)。主要客户为政府机构和金融机构。&lt;/p&gt;
 &lt;p&gt;最出名的案例是以大数据技术帮助美国军方成功定位和击毙基地组织首脑本·拉登，以及协助多家银行追回了纳斯达克前主席麦道夫Bernie Madoff的庞氏骗局中所隐藏起来的数十亿美元巨款。&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2 id=&#34;heading-1&#34;&gt;最新情况&lt;/h2&gt;
+&lt;h2 id=&#34;最新情况&#34;&gt;最新情况&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;2018年10月29日&lt;/strong&gt;，Palantir正在建立ICE的案例管理软件 —— &lt;a href=&#34;http://aldianews.com/articles/politics/immigration/technology-companies-are-ices-dark-allies/54287&#34;&gt;AL DIA News&lt;/a&gt;&lt;/p&gt;
@@ -2514,7 +2744,7 @@ HAHAHUGOSHORTCODE-TOC0-HBHB
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;h2 id=&#34;heading-2&#34;&gt;创始人&lt;/h2&gt;
+&lt;h2 id=&#34;创始人&#34;&gt;创始人&lt;/h2&gt;
 &lt;h4 id=&#34;peter-thiel&#34;&gt;Peter Thiel&lt;/h4&gt;
 &lt;p&gt;斯坦福本科及法学院JD的高材生，《从0到1》的作者。创立了Clarium Capital、Founders Fund、Valar Ventures、、Mithril Capital Management等多支基金。Paypal创始人之一并出任 CEO。2002年paypal被收购之后，以投资人身份投资包括Facebook、Asana、Quora、LinkedIn、Yelp、Yammer在内的诸多当今一线公司。号称硅谷创投教父。&lt;/p&gt;
 &lt;h4 id=&#34;alex-karp-ceo&#34;&gt;Alex Karp (CEO)&lt;/h4&gt;
@@ -2526,7 +2756,7 @@ HAHAHUGOSHORTCODE-TOC0-HBHB
 &lt;h4 id=&#34;nathan-gettings&#34;&gt;Nathan Gettings&lt;/h4&gt;
 &lt;p&gt;来自于PayPal的的高级工程师。在PayPal负责风险和研发的总监，曾以开发了反欺诈的系统而闻名于世。&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2 id=&#34;heading-3&#34;&gt;发展历程&lt;/h2&gt;
+&lt;h2 id=&#34;发展历程&#34;&gt;发展历程&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;2004年Palantir公司创立于加利福尼亚州帕洛阿尔托。创业初期Palantir并不被人看好，融资过程也是屡屡受阻，包括红杉资本，凯鹏华盈两大VC基金都不看好Palantir的发展。经过多次奔走博弈，最终，Palantir赢得了CIA的创投基金的2轮投资，从而走上了发展的正轨。&lt;/li&gt;
 &lt;li&gt;2004到2009年，Palantir主要业务还是服务于美国政府部门，提供情报分析，防欺诈、反恐等服务。&lt;/li&gt;
@@ -2544,9 +2774,9 @@ HAHAHUGOSHORTCODE-TOC0-HBHB
 &lt;li&gt;2018年10月，Palantir预备明年下半年上市，公司估值或将达410亿美元&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;h2 id=&#34;heading-4&#34;&gt;产品内容&lt;/h2&gt;
-&lt;h3 id=&#34;-home--palantirhttpswwwpalantircom&#34;&gt;官方主页： &lt;a href=&#34;https://www.palantir.com/&#34;&gt;Home | Palantir&lt;/a&gt;&lt;/h3&gt;
-&lt;h3 id=&#34;heading-5&#34;&gt;产品线&lt;/h3&gt;
+&lt;h2 id=&#34;产品内容&#34;&gt;产品内容&lt;/h2&gt;
+&lt;h3 id=&#34;官方主页-home--palantirhttpswwwpalantircom&#34;&gt;官方主页： &lt;a href=&#34;https://www.palantir.com/&#34;&gt;Home | Palantir&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;产品线&#34;&gt;产品线&lt;/h3&gt;
 &lt;p&gt;目前Palantir仅保留两条产品线：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -2566,7 +2796,7 @@ HAHAHUGOSHORTCODE-TOC0-HBHB
 &lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://www.palantir.com/palantir-foundry/&#34;&gt;Palantir Foundry&lt;/a&gt;&lt;/strong&gt; ：数据集成/分析平台，将后端的数据存储和前端的数据分析打通，让任何人都能连接到不同数据源轻松进行建模分析。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;heading-6&#34;&gt;解决方案&lt;/h3&gt;
+&lt;h3 id=&#34;解决方案&#34;&gt;解决方案&lt;/h3&gt;
 &lt;p&gt;Palantir面向以下领域直接提供解决方案：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://www.palantir.com/solutions/automotive&#34;&gt;汽车制造业&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
@@ -2699,7 +2929,7 @@ echo index-url = https://pypi.tuna.tsinghua.edu.cn/simple&amp;gt;&amp;gt;~/.pip/
 &lt;h3 id=&#34;nj-12345-usa&#34;&gt;NJ 12345, USA&lt;/h3&gt;
 &lt;p&gt;&lt;code&gt;NJ&lt;/code&gt;是新泽西的缩写，虽然哥谭给人的印象就是纽约（早于黑暗骑士的电影给人的感觉可能更像芝加哥），但新泽西的设定可以追溯到1974年的DC漫画惊奇世界(详见维基)，&lt;img src=&#34;https://szthanatos.github.io/img/gotham_local.jpg&#34; alt=&#34;哥谭位置&#34;&gt;
 &lt;code&gt;NJ 12345&lt;/code&gt;也是出自93年的&lt;code&gt;Batman: Shadow of the Bat&lt;/code&gt;里的那个驾驶证：&lt;code&gt;72 Faxcol Dr Gotham City, NJ 12345&lt;/code&gt;。&lt;/p&gt;
-&lt;h3 id=&#34;heading&#34;&gt;其他彩蛋&lt;/h3&gt;
+&lt;h3 id=&#34;其他彩蛋&#34;&gt;其他彩蛋&lt;/h3&gt;
 &lt;p&gt;其他的设定零零碎碎的，以后也会往里面填充更多内容啦。&lt;/p&gt;
 &lt;h4 id=&#34;star-war&#34;&gt;Star War&lt;/h4&gt;
 &lt;p&gt;比如我个人介绍的&lt;code&gt;Python Knight &amp;amp; Go Padawan&lt;/code&gt;，这里的&lt;code&gt;Knight&lt;/code&gt;显然和黑暗骑士什么的无关——Jedi！星战好像已经是老年人爱好了&amp;hellip;但当年真的迷过一段时间，桌面都是拿星战的设定集原画做的&amp;hellip;&lt;/p&gt;
@@ -2708,7 +2938,7 @@ echo index-url = https://pypi.tuna.tsinghua.edu.cn/simple&amp;gt;&amp;gt;~/.pip/
 &lt;code&gt;youngling&lt;/code&gt;是幼徒，&lt;code&gt;Padawan&lt;/code&gt;是学徒，&lt;code&gt;Knight&lt;/code&gt;是武士，&lt;code&gt;Master&lt;/code&gt;是大师，简单明了~&lt;/p&gt;
 &lt;p&gt;再有就是，&lt;code&gt;Kryptonitesaber&lt;/code&gt;什么的想想就很带感啊&amp;hellip;以后绝对要补充这方面设定的！&lt;/p&gt;
 &lt;p&gt;嗯&amp;hellip;上面都是写给自己看的，&lt;/p&gt;
-&lt;h1 id=&#34;p42&#34;&gt;陌生人，&lt;p&gt;欢迎翻阅氪石实验室42号档案柜。&lt;/h1&gt;
+&lt;h1 id=&#34;陌生人p欢迎翻阅氪石实验室42号档案柜&#34;&gt;陌生人，&lt;p&gt;欢迎翻阅氪石实验室42号档案柜。&lt;/h1&gt;
 &lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
 &lt;hr&gt;
 &lt;ol&gt;
@@ -2726,27 +2956,45 @@ echo index-url = https://pypi.tuna.tsinghua.edu.cn/simple&amp;gt;&amp;gt;~/.pip/
       <pubDate>Mon, 20 Aug 2018 10:49:50 +0800</pubDate>
       <guid>https://szthanatos.github.io/post/python/unit_testing/</guid>
       <description>&lt;h2&gt;目录&lt;/h2&gt;
-HAHAHUGOSHORTCODE-TOC0-HBHB
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#什么是单元测试&#34;&gt;什么是单元测试&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#为什么要写单元测试&#34;&gt;为什么要写单元测试&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#怎么写单元测试&#34;&gt;怎么写单元测试&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#原生测试框架unittestunittest2&#34;&gt;原生测试框架unittest/unittest2&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#第三方测试框架pytest&#34;&gt;第三方测试框架py.test&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#单元测试标准&#34;&gt;单元测试标准&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#代码覆盖指标&#34;&gt;代码覆盖指标&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#代码覆盖率&#34;&gt;代码覆盖率&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#小结&#34;&gt;小结&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
 &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     这是写给我组里的人看的，顺手粘过来
   &lt;/div&gt;
 &lt;/div&gt;
-&lt;h2 id=&#34;heading&#34;&gt;什么是单元测试&lt;/h2&gt;
+&lt;h2 id=&#34;什么是单元测试&#34;&gt;什么是单元测试&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;单元测试(Unit Testing)又称为模块测试，是针对程序模块（软件设计的最小单位）来进行正确性检验的测试工作。程序单元是应用的最小可测试部件。在过程化编程中，一个单元就是单个程序、函数、过程等；对于面向对象编程，最小单元就是方法，包括基类（超类）、抽象类、或者派生类（子类）中的方法。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;一句话概括，单元测试也就是校验代码中具体的类(甚至函数)的输出值是否符合预期。&lt;/p&gt;
-&lt;h2 id=&#34;heading-1&#34;&gt;为什么要写单元测试&lt;/h2&gt;
+&lt;h2 id=&#34;为什么要写单元测试&#34;&gt;为什么要写单元测试&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;“可能出错的事情最终一定会出错”&lt;/p&gt;
 &lt;p&gt;——墨菲定律&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;代码随着时间的累计而增长，出现意想不到的问题的可能性也在指数级上升。代码的正确与否不应该靠人来保证，因为人是会犯错并且一定犯错的。如果每次新功能上线时不能回答“所有功能都测试过了么”的问题，那么最终整个项目的可靠性都将被摧毁。单元测试的意义就在于让你能够回答这个问题，并且，回答的更自动化。&lt;/p&gt;
-&lt;h2 id=&#34;heading-2&#34;&gt;怎么写单元测试&lt;/h2&gt;
-&lt;h3 id=&#34;unittestunittest2&#34;&gt;原生测试框架unittest/unittest2&lt;/h3&gt;
+&lt;h2 id=&#34;怎么写单元测试&#34;&gt;怎么写单元测试&lt;/h2&gt;
+&lt;h3 id=&#34;原生测试框架unittestunittest2&#34;&gt;原生测试框架unittest/unittest2&lt;/h3&gt;
 &lt;p&gt;在python语境中，官方提供unittest标准库完成单元测试。&lt;/p&gt;
-&lt;h4 id=&#34;heading-3&#34;&gt;基础&lt;/h4&gt;
+&lt;h4 id=&#34;基础&#34;&gt;基础&lt;/h4&gt;
 &lt;p&gt;需要理解的概念有如下四个：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;test fixture&lt;/code&gt;：单元测试所需上下文环境，比如临时数据库/网络连接等；&lt;/li&gt;
@@ -2777,7 +3025,7 @@ class TestStringMethods(unittest.TestCase):
 if __name__ == &#39;__main__&#39;:
     unittest.main()
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h4 id=&#34;heading-4&#34;&gt;断言&lt;/h4&gt;
+&lt;h4 id=&#34;断言&#34;&gt;断言&lt;/h4&gt;
 &lt;p&gt;可以从上面的例子看出，单元测试判断结果是否符合预期的主要方式是通过断言(assert)  实现。
 以下是常见断言：&lt;/p&gt;
 &lt;table&gt;
@@ -2870,7 +3118,7 @@ if __name__ == &#39;__main__&#39;:
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h4 id=&#34;setup--teardown&#34;&gt;setUp 和 tearDown&lt;/h4&gt;
+&lt;h4 id=&#34;setup-和-teardown&#34;&gt;setUp 和 tearDown&lt;/h4&gt;
 &lt;p&gt;&lt;code&gt;test fixture&lt;/code&gt;是通过&lt;code&gt;setUp&lt;/code&gt; 和&lt;code&gt;tearDown&lt;/code&gt; 来具体实现的。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;setUp()方法&lt;/strong&gt;：
 在执行每个测试用例(test case)之前被执行，除了unittest.SkipTest和AssertionError以外的任何异常都会当做是error并终止当前测试用例；&lt;/p&gt;
@@ -2899,7 +3147,7 @@ class TestStringMethods(unittest.TestCase):
 1. tearDown here
 ok
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h4 id=&#34;heading-5&#34;&gt;缺点&lt;/h4&gt;
+&lt;h4 id=&#34;缺点&#34;&gt;缺点&lt;/h4&gt;
 &lt;p&gt;基本的一个单元测试可以用这四步概括：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;新建单元测试脚本&lt;/li&gt;
@@ -2915,7 +3163,7 @@ ok
 &lt;li&gt;最最关键和难以忍受的：unitunit内的命名规则和pep 8相悖&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;造成这些问题的原因一言以蔽之：python的测试框架是完全仿照Java实现的。&lt;/p&gt;
-&lt;h3 id=&#34;pytest&#34;&gt;第三方测试框架py.test&lt;/h3&gt;
+&lt;h3 id=&#34;第三方测试框架pytest&#34;&gt;第三方测试框架py.test&lt;/h3&gt;
 &lt;p&gt;实际上，通过使用py.test，我们可以非常pythonic的实现单元测试：&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# content of test_sample.py
 def inc(x):
@@ -2957,9 +3205,9 @@ test_sample.py:6: AssertionError
 &lt;li&gt;具有很多第三方插件，并且可以自定义扩展&lt;/li&gt;
 &lt;li&gt;方便的和持续集成工具集成&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;heading-6&#34;&gt;单元测试标准&lt;/h2&gt;
+&lt;h2 id=&#34;单元测试标准&#34;&gt;单元测试标准&lt;/h2&gt;
 &lt;p&gt;业界通常使用代码覆盖(率)来评判测试的好坏。&lt;/p&gt;
-&lt;h3 id=&#34;heading-7&#34;&gt;代码覆盖指标&lt;/h3&gt;
+&lt;h3 id=&#34;代码覆盖指标&#34;&gt;代码覆盖指标&lt;/h3&gt;
 &lt;p&gt;单独的一两个测试完全无法体现测试的优势。而对所有可能的情况编写单元测试既不现实也无必要。所以明确测试覆盖哪些指标非常重要。&lt;strong&gt;我们在此指定以下四个指标必须被覆盖：&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -3002,7 +3250,7 @@ test_sample.py:6: AssertionError
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;heading-8&#34;&gt;代码覆盖率&lt;/h3&gt;
+&lt;h3 id=&#34;代码覆盖率&#34;&gt;代码覆盖率&lt;/h3&gt;
 &lt;p&gt;在满足代码覆盖指标的基础上，只有保证一定的代码覆盖率才能保证测试的完整。满足代码覆盖指标相当于是“质”，而代码覆盖率则是保证“量”。&lt;strong&gt;目前要求代码覆盖率不应该低于75%&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;我们选定&lt;a href=&#34;https://pypi.org/project/coverage/&#34;&gt;coverage.py&lt;/a&gt;来统计代码覆盖率。由于主要使用py.test，需要额外安装&lt;a href=&#34;https://github.com/pytest-dev/pytest-cov&#34;&gt;pytest-cov&lt;/a&gt;插件。安装过程非常简单，对照文档直接pip安装即可，不多介绍。&lt;/p&gt;
 &lt;p&gt;完成安装后，使用py.test的时候增加&amp;ndash;cov=myproj参数即可。
@@ -3017,7 +3265,7 @@ myproj/feature4286      94      7    92%
 TOTAL                  353     20    94%
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;详细用法可参照&lt;a href=&#34;http://pytest-cov.readthedocs.io/en/latest/&#34;&gt;官方文档&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;heading-9&#34;&gt;小结&lt;/h2&gt;
+&lt;h2 id=&#34;小结&#34;&gt;小结&lt;/h2&gt;
 &lt;p&gt;总结一下，通过对单元测试的必要性、编写方法、评判标准等一系列的介绍，确立了以下三点：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;使用py.test+unittest编写单元测试，使用coverage统计、分析单元测试编写情况；&lt;/li&gt;
@@ -3145,18 +3393,18 @@ class PageProcess(object):
       <description>&lt;p&gt;对列表的去重很简单，&lt;code&gt;set()&lt;/code&gt;一下再&lt;code&gt;list()&lt;/code&gt;回来就可以了，但是如果要保留原始列表的顺序呢？&lt;/p&gt;
 &lt;p&gt;举例，对&lt;code&gt;[&amp;quot;b&amp;quot;, &amp;quot;b&amp;quot;, &amp;quot;c&amp;quot;, &amp;quot;a&amp;quot;, &amp;quot;c&amp;quot;, &amp;quot;b&amp;quot;, &amp;quot;a&amp;quot;, &amp;quot;b&amp;quot;]&lt;/code&gt;这个列表进行原序去重，得到结果应该是&lt;code&gt;[&#39;b&#39;, &#39;c&#39;, &#39;a&#39;]&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;有下面这几种写法：&lt;/p&gt;
-&lt;h4 id=&#34;heading&#34;&gt;二次排序&lt;/h4&gt;
+&lt;h4 id=&#34;二次排序&#34;&gt;二次排序&lt;/h4&gt;
 &lt;p&gt;也就是对去重结果再按原列表sort一次：&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def sort_1(list_in):
     return sorted(list(set(list_in)), key=list_in.index)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h4 id=&#34;heading-1&#34;&gt;匿名函数&lt;/h4&gt;
+&lt;h4 id=&#34;匿名函数&#34;&gt;匿名函数&lt;/h4&gt;
 &lt;p&gt;使用匿名函数将列表里不重复的元素累加到一个新列表中：&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def sort_2(list_in):
     return reduce(lambda x, y: x if y in x else x + [y], [[], ] + list_in)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h4 id=&#34;heading-2&#34;&gt;借用字典&lt;/h4&gt;
-&lt;h5 id=&#34;heading-3&#34;&gt;有序字典&lt;/h5&gt;
+&lt;h4 id=&#34;借用字典&#34;&gt;借用字典&lt;/h4&gt;
+&lt;h5 id=&#34;有序字典&#34;&gt;有序字典&lt;/h5&gt;
 &lt;p&gt;使用&lt;code&gt;OrderedDict&lt;/code&gt;排序：&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def sort_3(list_in):
     return list(collections.OrderedDict.fromkeys(list_in).keys())
@@ -3166,7 +3414,7 @@ class PageProcess(object):
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def sort_4(list_in):
     return list(collections.defaultdict.fromkeys(list_in).keys())
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h4 id=&#34;dict&#34;&gt;直接使用dict&lt;/h4&gt;
+&lt;h4 id=&#34;直接使用dict&#34;&gt;直接使用dict&lt;/h4&gt;
 &lt;p&gt;在python3.6之前， &lt;code&gt;dict&lt;/code&gt;的&lt;code&gt;key&lt;/code&gt;的顺序并不保证一定是插入顺序，所以只有在python3.6之后才可以直接用&lt;code&gt;dict&lt;/code&gt;实现这个操作；&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def sort_5(list_in):
     return list(dict.fromkeys(list_in).keys())

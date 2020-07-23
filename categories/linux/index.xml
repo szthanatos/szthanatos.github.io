@@ -7,7 +7,7 @@
     <description>Linux</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh-Hans</language><lastBuildDate>Fri, 15 Nov 2019 17:18:05 +0800</lastBuildDate>
     <image>
-      <url>https://szthanatos.github.io/img/icon-192.png</url>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Linux</title>
       <link>https://szthanatos.github.io/categories/linux/</link>
     </image>
@@ -17,9 +17,9 @@
       <link>https://szthanatos.github.io/post/ssh_speed_up/</link>
       <pubDate>Fri, 15 Nov 2019 17:18:05 +0800</pubDate>
       <guid>https://szthanatos.github.io/post/ssh_speed_up/</guid>
-      <description>&lt;h2 id=&#34;heading&#34;&gt;报错信息&lt;/h2&gt;
+      <description>&lt;h2 id=&#34;报错信息&#34;&gt;报错信息&lt;/h2&gt;
 &lt;p&gt;之前运维给做了几台测试服务器，远程连接的时候速度特别慢，ssh之后需要接近1分钟才能连上。&lt;/p&gt;
-&lt;h2 id=&#34;heading-1&#34;&gt;原因&lt;/h2&gt;
+&lt;h2 id=&#34;原因&#34;&gt;原因&lt;/h2&gt;
 &lt;p&gt;使用&lt;code&gt;ssh -v &amp;lt;服务器&amp;gt;&lt;/code&gt; 显示连接过程：&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ ssh -v 123.456.789.0
 OpenSSH_6.6.1, OpenSSL 1.0.1e-fips 11 Feb 2013
@@ -100,7 +100,7 @@ debug1: Next authentication method: password # 3
 &lt;p&gt;上面连接过程我也标出了0123，实际顺序的确如此。&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;gssapi&lt;/code&gt;的认证是基于&lt;code&gt;Kerberos&lt;/code&gt;的，没见到人用过，&lt;/p&gt;
 &lt;p&gt;另一方面，客户端反向DNS的过程也会在连接DNS服务器/查询客户端域名(没域名可就会一层层DNS查上去)上花费时间。&lt;/p&gt;
-&lt;h2 id=&#34;heading-2&#34;&gt;解决办法&lt;/h2&gt;
+&lt;h2 id=&#34;解决办法&#34;&gt;解决办法&lt;/h2&gt;
 &lt;p&gt;客户端，编辑&lt;code&gt;/etc/ssh/ssh_config&lt;/code&gt;文件：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;方式1：将&lt;code&gt;GSSAPIAuthentication&lt;/code&gt;改为no；&lt;/li&gt;

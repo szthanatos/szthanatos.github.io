@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.5.0">
+  <meta name="generator" content="Source Themes Academic 4.6.0">
 
   
 
@@ -28,7 +28,7 @@
   
     
   
-  <meta name="description" content="对列表的去重很简单，set()一下再list()回来就可以了，但是如果要保留原始列表的顺序呢？ 举例，对[&quot;b&quot;, &quot;b&quot;, &quot;c&quot;, &quot;a&quot;, &quot;c&quot;,">
+  <meta name="description" content="对列表的去重很简单，set()一下再list()回来就可以了">
 
   
   <link rel="alternate" hreflang="zh-Hans" href="https://szthanatos.github.io/post/python/unique_list_ordered/">
@@ -39,7 +39,7 @@
   
   
   
-  <meta name="theme-color" content="#2962ff">
+  <meta name="theme-color" content="#4169E1">
   
 
   
@@ -77,7 +77,7 @@
   
   
   
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CNoto+Sans+SC:400,400italic,700%7CInconsolata&display=swap">
   
 
   
@@ -115,8 +115,8 @@
   <meta property="og:site_name" content="Kryptonite Lab">
   <meta property="og:url" content="https://szthanatos.github.io/post/python/unique_list_ordered/">
   <meta property="og:title" content="列表原序去重性能测试 | Kryptonite Lab">
-  <meta property="og:description" content="对列表的去重很简单，set()一下再list()回来就可以了，但是如果要保留原始列表的顺序呢？ 举例，对[&quot;b&quot;, &quot;b&quot;, &quot;c&quot;, &quot;a&quot;, &quot;c&quot;,"><meta property="og:image" content="https://szthanatos.github.io/img/icon-192.png">
-  <meta property="twitter:image" content="https://szthanatos.github.io/img/icon-192.png"><meta property="og:locale" content="zh-Hans">
+  <meta property="og:description" content="对列表的去重很简单，set()一下再list()回来就可以了"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="zh-Hans">
   
     
       <meta property="article:published_time" content="2017-09-01T18:08:57&#43;08:00">
@@ -167,7 +167,7 @@
       "url": "https://szthanatos.github.io/img/icon-512.png"
     }
   },
-  "description": "对列表的去重很简单，set()一下再list()回来就可以了，但是如果要保留原始列表的顺序呢？ 举例，对[\u0026quot;b\u0026quot;, \u0026quot;b\u0026quot;, \u0026quot;c\u0026quot;, \u0026quot;a\u0026quot;, \u0026quot;c\u0026quot;,"
+  "description": "对列表的去重很简单，set()一下再list()回来就可以了"
 }
 </script>
 
@@ -224,24 +224,28 @@
 
 
   
-<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0 compensate-for-scrollbar" id="navbar-main">
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
+    
+    
       <a class="navbar-brand" href="/">Kryptonite Lab</a>
-      
-      <button type="button" class="navbar-toggler" data-toggle="collapse"
-              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="切换导航">
-        <span><i class="fas fa-bars"></i></span>
-      </button>
-      
+    
 
     
-    <div class="collapse navbar-collapse" id="navbar">
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="切换导航">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
 
       
-      
-      <ul class="navbar-nav ml-auto">
+      <ul class="navbar-nav d-md-inline-flex">
         
 
         
@@ -327,29 +331,31 @@
       
 
         
-
-        
-        <li class="nav-item">
-          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
-        </li>
-        
-
-        
-
-        
-        <li class="nav-item">
-          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
-        </li>
-        
-
       </ul>
-
     </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      <li class="nav-item">
+        <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+
+    </ul>
+
   </div>
 </nav>
 
 
-  <article class="article" itemscope itemtype="http://schema.org/Article">
+  <article class="article">
 
   
 
@@ -437,22 +443,22 @@
 
   <div class="article-container">
 
-    <div class="article-style" itemprop="articleBody">
+    <div class="article-style">
       <p>对列表的去重很简单，<code>set()</code>一下再<code>list()</code>回来就可以了，但是如果要保留原始列表的顺序呢？</p>
 <p>举例，对<code>[&quot;b&quot;, &quot;b&quot;, &quot;c&quot;, &quot;a&quot;, &quot;c&quot;, &quot;b&quot;, &quot;a&quot;, &quot;b&quot;]</code>这个列表进行原序去重，得到结果应该是<code>['b', 'c', 'a']</code>。</p>
 <p>有下面这几种写法：</p>
-<h4 id="heading">二次排序</h4>
+<h4 id="二次排序">二次排序</h4>
 <p>也就是对去重结果再按原列表sort一次：</p>
 <pre><code class="language-python">def sort_1(list_in):
     return sorted(list(set(list_in)), key=list_in.index)
 </code></pre>
-<h4 id="heading-1">匿名函数</h4>
+<h4 id="匿名函数">匿名函数</h4>
 <p>使用匿名函数将列表里不重复的元素累加到一个新列表中：</p>
 <pre><code class="language-python">def sort_2(list_in):
     return reduce(lambda x, y: x if y in x else x + [y], [[], ] + list_in)
 </code></pre>
-<h4 id="heading-2">借用字典</h4>
-<h5 id="heading-3">有序字典</h5>
+<h4 id="借用字典">借用字典</h4>
+<h5 id="有序字典">有序字典</h5>
 <p>使用<code>OrderedDict</code>排序：</p>
 <pre><code class="language-python">def sort_3(list_in):
     return list(collections.OrderedDict.fromkeys(list_in).keys())
@@ -462,7 +468,7 @@
 <pre><code class="language-python">def sort_4(list_in):
     return list(collections.defaultdict.fromkeys(list_in).keys())
 </code></pre>
-<h4 id="dict">直接使用dict</h4>
+<h4 id="直接使用dict">直接使用dict</h4>
 <p>在python3.6之前， <code>dict</code>的<code>key</code>的顺序并不保证一定是插入顺序，所以只有在python3.6之后才可以直接用<code>dict</code>实现这个操作；</p>
 <pre><code class="language-python">def sort_5(list_in):
     return list(dict.fromkeys(list_in).keys())
@@ -548,25 +554,6 @@ if __name__ == '__main__':
 
     
 
-
-
-
-    
-    <div class="hr-light"></div>
-
-    
-
-<div class="article-tags">
-  
-  <a class="badge badge-light" href="/tags/list/">list</a>
-  
-  <a class="badge badge-light" href="/tags/benchmark/">benchmark</a>
-  
-</div>
-
-
-    
-    
     <style type="text/css">
   div {
     margin: 0;
@@ -613,7 +600,108 @@ if __name__ == '__main__':
 
 
     
+    
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tags/list/">list</a>
+  
+  <a class="badge badge-light" href="/tags/benchmark/">benchmark</a>
+  
+</div>
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
       
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://szthanatos.github.io/post/python/unique_list_ordered/&amp;text=%e5%88%97%e8%a1%a8%e5%8e%9f%e5%ba%8f%e5%8e%bb%e9%87%8d%e6%80%a7%e8%83%bd%e6%b5%8b%e8%af%95" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://szthanatos.github.io/post/python/unique_list_ordered/&amp;t=%e5%88%97%e8%a1%a8%e5%8e%9f%e5%ba%8f%e5%8e%bb%e9%87%8d%e6%80%a7%e8%83%bd%e6%b5%8b%e8%af%95" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=%e5%88%97%e8%a1%a8%e5%8e%9f%e5%ba%8f%e5%8e%bb%e9%87%8d%e6%80%a7%e8%83%bd%e6%b5%8b%e8%af%95&amp;body=https://szthanatos.github.io/post/python/unique_list_ordered/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://szthanatos.github.io/post/python/unique_list_ordered/&amp;title=%e5%88%97%e8%a1%a8%e5%8e%9f%e5%ba%8f%e5%8e%bb%e9%87%8d%e6%80%a7%e8%83%bd%e6%b5%8b%e8%af%95" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://web.whatsapp.com/send?text=%e5%88%97%e8%a1%a8%e5%8e%9f%e5%ba%8f%e5%8e%bb%e9%87%8d%e6%80%a7%e8%83%bd%e6%b5%8b%e8%af%95%20https://szthanatos.github.io/post/python/unique_list_ordered/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://szthanatos.github.io/post/python/unique_list_ordered/&amp;title=%e5%88%97%e8%a1%a8%e5%8e%9f%e5%ba%8f%e5%8e%bb%e9%87%8d%e6%80%a7%e8%83%bd%e6%b5%8b%e8%af%95" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
 
 
 
@@ -655,13 +743,15 @@ if __name__ == '__main__':
 
 
 
-      
-      
-    
 
-    
 
-    
+
+
+
+
+  
+  
+
 
 
   </div>
@@ -693,8 +783,6 @@ if __name__ == '__main__':
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/javascript.min.js"></script>
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/html.min.js"></script>
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/r.min.js"></script>
         
       
 
@@ -774,7 +862,7 @@ if __name__ == '__main__':
     
     
     
-    <script src="/js/academic.min.d6bd04fdad2ad213aa8111c5a3b72fc5.js"></script>
+    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
 
     
 

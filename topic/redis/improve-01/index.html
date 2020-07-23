@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.5.0">
+  <meta name="generator" content="Source Themes Academic 4.6.0">
 
   
 
@@ -28,7 +28,7 @@
   
     
   
-  <meta name="description" content="数据结构 不同数据类型对应的操作的时间复杂度也不一样，选择合适的数据类型可以降低很多时间成本： String 命令 时间复杂度 SET key value [EX seconds] [PX milliseconds] [NX|XX] O(1) SETNX key value O(1) SETEX key seconds">
+  <meta name="description" content="数据结构 不同数据类型对应的操作的时间复杂度也不一样，选择合适">
 
   
   <link rel="alternate" hreflang="zh-Hans" href="https://szthanatos.github.io/topic/redis/improve-01/">
@@ -39,7 +39,7 @@
   
   
   
-  <meta name="theme-color" content="#2962ff">
+  <meta name="theme-color" content="#4169E1">
   
 
   
@@ -77,7 +77,7 @@
   
   
   
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CNoto+Sans+SC:400,400italic,700%7CInconsolata&display=swap">
   
 
   
@@ -115,8 +115,8 @@
   <meta property="og:site_name" content="Kryptonite Lab">
   <meta property="og:url" content="https://szthanatos.github.io/topic/redis/improve-01/">
   <meta property="og:title" content="优化指南-设计 | Kryptonite Lab">
-  <meta property="og:description" content="数据结构 不同数据类型对应的操作的时间复杂度也不一样，选择合适的数据类型可以降低很多时间成本： String 命令 时间复杂度 SET key value [EX seconds] [PX milliseconds] [NX|XX] O(1) SETNX key value O(1) SETEX key seconds"><meta property="og:image" content="https://szthanatos.github.io/img/icon-192.png">
-  <meta property="twitter:image" content="https://szthanatos.github.io/img/icon-192.png"><meta property="og:locale" content="zh-Hans">
+  <meta property="og:description" content="数据结构 不同数据类型对应的操作的时间复杂度也不一样，选择合适"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="zh-Hans">
   
     
       <meta property="article:published_time" content="2019-03-18T15:04:35&#43;08:00">
@@ -179,24 +179,28 @@
 
 
   
-<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0 compensate-for-scrollbar" id="navbar-main">
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
+    
+    
       <a class="navbar-brand" href="/">Kryptonite Lab</a>
-      
-      <button type="button" class="navbar-toggler" data-toggle="collapse"
-              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="切换导航">
-        <span><i class="fas fa-bars"></i></span>
-      </button>
-      
+    
 
     
-    <div class="collapse navbar-collapse" id="navbar">
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="切换导航">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
 
       
-      
-      <ul class="navbar-nav ml-auto">
+      <ul class="navbar-nav d-md-inline-flex">
         
 
         
@@ -282,24 +286,26 @@
       
 
         
-
-        
-        <li class="nav-item">
-          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
-        </li>
-        
-
-        
-
-        
-        <li class="nav-item">
-          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
-        </li>
-        
-
       </ul>
-
     </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      <li class="nav-item">
+        <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+
+    </ul>
+
   </div>
 </nav>
 
@@ -403,19 +409,19 @@
 
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#heading">数据结构</a>
+    <li><a href="#数据结构">数据结构</a>
       <ul>
         <li><a href="#string">String</a></li>
         <li><a href="#list">List</a></li>
         <li><a href="#hash">Hash</a></li>
         <li><a href="#set">Set</a></li>
         <li><a href="#zset">ZSet</a></li>
-        <li><a href="#heading-1">模拟类型</a></li>
+        <li><a href="#模拟类型">模拟类型</a></li>
       </ul>
     </li>
-    <li><a href="#heading-2">负载</a>
+    <li><a href="#负载">负载</a>
       <ul>
-        <li><a href="#--">集群倾斜 & 热点问题</a></li>
+        <li><a href="#集群倾斜--热点问题">集群倾斜 &amp; 热点问题</a></li>
       </ul>
     </li>
   </ul>
@@ -433,7 +439,7 @@
           <h1>优化指南-设计</h1>
 
           <div class="article-style">
-            <h2 id="heading">数据结构</h2>
+            <h2 id="数据结构">数据结构</h2>
 <p>不同数据类型对应的操作的时间复杂度也不一样，选择合适的数据类型可以降低很多时间成本：</p>
 <h3 id="string">String</h3>
 <table>
@@ -830,7 +836,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="heading-1">模拟类型</h3>
+<h3 id="模拟类型">模拟类型</h3>
 <p>除了直接使用redis数据类型，其他的一些常见数据结构也可以用固定操作模拟出来：</p>
 <ul>
 <li><strong>堆栈</strong>：lpush + lpop = Stack</li>
@@ -838,7 +844,7 @@
 <li><strong>有限集合</strong>：lpush + ltrim = Capped Collection</li>
 <li><strong>消息队列</strong><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>：lpush + brpop = Message Queue</li>
 </ul>
-<h2 id="heading-2">负载</h2>
+<h2 id="负载">负载</h2>
 <p>redis基本的逻辑存储单位是键(Key)对象，键底层的编码方式会随着键的类型/大小而改变：</p>
 <table>
 <thead>
@@ -917,7 +923,7 @@
 <p>所以简单的来说，String长度小于32字节，其他复合类型元素个数不超过512个(ZSet不超过128个)并且元素小于64字节或者是整数(Set)的时候，是redis认为的一个key的合理值，超过这个范围redis也是允许的，但是关注点就放在存储而不是性能上了。</p>
 <p>大键会拖累存储性能。尤其是在时间复杂度不是O(1)的操作上，性能损失是线性(eg: <code>LREM</code>)甚至指数(eg: <code>ZINTERSTORE</code>)上升的。</p>
 <p>过小(零碎)的键也不合适，它是对性能的一种浪费，比如要存放<code>用户: 用户信息</code>，直接将每个用户存为一个<code>String</code>，相比用<code>Hash</code>把所有用户存储在一个键上，想要实现<code>hgetall</code>这样的操作既复杂，效率也更低。</p>
-<h3 id="--">集群倾斜 &amp; 热点问题</h3>
+<h3 id="集群倾斜--热点问题">集群倾斜 &amp; 热点问题</h3>
 <p>在集群中，redis是划分出16384个哈希槽，然后将哈希槽平均(也可以手动指定)分配到集群节点上。键会通过<code>crc16</code>算法计算并将结果对16384取余，由此将键映射到编号为0~16383的哈希槽中。</p>
 <p>大键会造成集群倾斜，也就是大键所在节点的内存可能被占满了，而其他节点还空着。极端情况下如果一个键所占空间超过了节点分配的内存，那这个集群可能会永远<code>fail</code>下去——虽然有大量内存空着，但是没有一个节点能放下这个键了。</p>
 <p>大键越多，分布越不均匀，在集群中就越容易出现热点问题(另一种角度的倾斜)，简单来说，就是</p>
@@ -1042,8 +1048,6 @@
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/html.min.js"></script>
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/r.min.js"></script>
-        
       
 
       
@@ -1127,7 +1131,7 @@
     
     
     
-    <script src="/js/academic.min.d6bd04fdad2ad213aa8111c5a3b72fc5.js"></script>
+    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
 
     
 

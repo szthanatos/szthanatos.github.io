@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.5.0">
+  <meta name="generator" content="Source Themes Academic 4.6.0">
 
   
 
@@ -39,7 +39,7 @@
   
   
   
-  <meta name="theme-color" content="#2962ff">
+  <meta name="theme-color" content="#4169E1">
   
 
   
@@ -77,7 +77,7 @@
   
   
   
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CNoto+Sans+SC:400,400italic,700%7CInconsolata&display=swap">
   
 
   
@@ -117,8 +117,8 @@
   <meta property="og:site_name" content="Kryptonite Lab">
   <meta property="og:url" content="https://szthanatos.github.io/">
   <meta property="og:title" content="Kryptonite Lab">
-  <meta property="og:description" content="Python Knight &amp; Go Padawan"><meta property="og:image" content="https://szthanatos.github.io/img/icon-192.png">
-  <meta property="twitter:image" content="https://szthanatos.github.io/img/icon-192.png"><meta property="og:locale" content="zh-Hans">
+  <meta property="og:description" content="Python Knight &amp; Go Padawan"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="zh-Hans">
   
     <meta property="og:updated_time" content="2019-11-15T17:18:05&#43;08:00">
   
@@ -190,24 +190,28 @@
 
 
   
-<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0 compensate-for-scrollbar" id="navbar-main">
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
+    
+    
       <a class="navbar-brand" href="/">Kryptonite Lab</a>
-      
-      <button type="button" class="navbar-toggler" data-toggle="collapse"
-              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="切换导航">
-        <span><i class="fas fa-bars"></i></span>
-      </button>
-      
+    
 
     
-    <div class="collapse navbar-collapse" id="navbar">
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="切换导航">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
 
       
-      
-      <ul class="navbar-nav ml-auto">
+      <ul class="navbar-nav d-md-inline-flex">
         
 
         
@@ -293,24 +297,26 @@
       
 
         
-
-        
-        <li class="nav-item">
-          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
-        </li>
-        
-
-        
-
-        
-        <li class="nav-item">
-          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
-        </li>
-        
-
       </ul>
-
     </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      <li class="nav-item">
+        <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+
+    </ul>
+
   </div>
 </nav>
 
@@ -525,7 +531,7 @@
 
     
     <div class="article-style">
-      报错信息 之前运维给做了几台测试服务器，远程连接的时候速度特别慢，ssh之后需要接近1分钟才能连上。 原因 使用ssh -v &lt;服务器&gt; 显示
+      报错信息 之前运维给做了几台测试服务器，远程连接的时候速度特别
     </div>
     
 
@@ -614,7 +620,7 @@
 
     
     <div class="article-style">
-      目录 硬件需求 rancher ha推荐的架构是单独搭建一个K8s集群部署Rancher，然后再用这个Rancher去管理其他的K8s集群。 rancher集群
+      目录 硬件需求 0. 工具准备 1. 配置Nginx负载均衡 2. 使用RKE安
     </div>
     
 
@@ -699,7 +705,7 @@
 
     
     <div class="article-style">
-      目录 介绍 RancherOS是Rancher推出的一个轻量级的Linux内核操作系统，专为容器环境而设计。 按官网的说法，它具有如下特性： 官方说
+      目录 介绍 安装 使用 ros 系统服务 docker cloud-config 介绍 RancherOS是Ran
     </div>
     
 
@@ -784,7 +790,7 @@
 
     
     <div class="article-style">
-      目录 基本环境 底层数据库基于HBase，检索服务基于Elasticserach。 系统运行服务大致如下： [root@xnode208 ~] jps 21584 GremlinServer 27857 DataNode 23218 Jps 3251 HMaster …
+      目录 基本环境 安装 配置 基本用法 加载诸神图 一些基本操作 增操作 删操
     </div>
     
 
@@ -873,7 +879,7 @@
 
     
     <div class="article-style">
-      理解Git没有比从三棵树开始更好的了。 完整的话还是看git文档比较好，说的蛮清楚了。 三棵树和正向流程 树 用途 HEAD 上一次提交的快照，下一次提交的父
+      理解Git没有比从三棵树开始更好的了。 完整的话还是看git文
     </div>
     
 
@@ -1207,15 +1213,9 @@
       
       
         
-        
-        
-        
-        
-        
-        
         <li>
           <i class="fa-li fas fa-map-marker fa-2x" aria-hidden="true"></i>
-          <span id="person-address">Wayne Manor B3, 1007 Mountain Drive, Gotham, NJ, 12345, United States</span>
+          <span id="person-address">Wayne Manor B3, 1007 Mountain Drive, Gotham, NJ 12345</span>
         </li>
       
 
@@ -1245,7 +1245,7 @@
       <input id="map-provider" value="2">
       <input id="map-lat" value="42.7623333">
       <input id="map-lng" value="-83.2833007">
-      <input id="map-dir" value="Wayne Manor B3, 1007 Mountain Drive, Gotham, NJ, 12345, United States">
+      <input id="map-dir" value="Wayne Manor B3, 1007 Mountain Drive, Gotham, NJ 12345">
       <input id="map-zoom" value="15">
       <input id="map-api-key" value="">
     </div>
@@ -1286,8 +1286,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/javascript.min.js"></script>
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/html.min.js"></script>
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/r.min.js"></script>
         
       
 
@@ -1367,7 +1365,7 @@
     
     
     
-    <script src="/js/academic.min.d6bd04fdad2ad213aa8111c5a3b72fc5.js"></script>
+    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
 
     
 

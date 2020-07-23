@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.5.0">
+  <meta name="generator" content="Source Themes Academic 4.6.0">
 
   
 
@@ -28,7 +28,7 @@
   
     
   
-  <meta name="description" content="环境说明 当前版本 发布日期 下载地址 2.0 2018-07-30 官方2.0.0镜像 安装步骤 注意： 文中以 {} 包裹起来的内容需要自己替换，并非直接使用 0. 环境准备 基础环境 说明 Java">
+  <meta name="description" content="环境说明 当前版本 发布日期 下载地址 2.0 2018-07-30 官方2.0.0镜像 安装步">
 
   
   <link rel="alternate" hreflang="zh-Hans" href="https://szthanatos.github.io/topic/kafka/install/">
@@ -39,7 +39,7 @@
   
   
   
-  <meta name="theme-color" content="#2962ff">
+  <meta name="theme-color" content="#4169E1">
   
 
   
@@ -77,7 +77,7 @@
   
   
   
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CNoto+Sans+SC:400,400italic,700%7CInconsolata&display=swap">
   
 
   
@@ -115,8 +115,8 @@
   <meta property="og:site_name" content="Kryptonite Lab">
   <meta property="og:url" content="https://szthanatos.github.io/topic/kafka/install/">
   <meta property="og:title" content="Kafka -01- 安装配置 | Kryptonite Lab">
-  <meta property="og:description" content="环境说明 当前版本 发布日期 下载地址 2.0 2018-07-30 官方2.0.0镜像 安装步骤 注意： 文中以 {} 包裹起来的内容需要自己替换，并非直接使用 0. 环境准备 基础环境 说明 Java"><meta property="og:image" content="https://szthanatos.github.io/img/icon-192.png">
-  <meta property="twitter:image" content="https://szthanatos.github.io/img/icon-192.png"><meta property="og:locale" content="zh-Hans">
+  <meta property="og:description" content="环境说明 当前版本 发布日期 下载地址 2.0 2018-07-30 官方2.0.0镜像 安装步"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="zh-Hans">
   
     
       <meta property="article:published_time" content="2018-12-06T10:09:46&#43;08:00">
@@ -179,24 +179,28 @@
 
 
   
-<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0 compensate-for-scrollbar" id="navbar-main">
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
+    
+    
       <a class="navbar-brand" href="/">Kryptonite Lab</a>
-      
-      <button type="button" class="navbar-toggler" data-toggle="collapse"
-              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="切换导航">
-        <span><i class="fas fa-bars"></i></span>
-      </button>
-      
+    
 
     
-    <div class="collapse navbar-collapse" id="navbar">
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="切换导航">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
 
       
-      
-      <ul class="navbar-nav ml-auto">
+      <ul class="navbar-nav d-md-inline-flex">
         
 
         
@@ -282,24 +286,26 @@
       
 
         
-
-        
-        <li class="nav-item">
-          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
-        </li>
-        
-
-        
-
-        
-        <li class="nav-item">
-          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
-        </li>
-        
-
       </ul>
-
     </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      <li class="nav-item">
+        <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+
+    </ul>
+
   </div>
 </nav>
 
@@ -365,18 +371,18 @@
 
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#heading">环境说明</a></li>
-    <li><a href="#heading-1">安装步骤</a>
+    <li><a href="#环境说明">环境说明</a></li>
+    <li><a href="#安装步骤">安装步骤</a>
       <ul>
-        <li><a href="#0-">0. 环境准备</a></li>
-        <li><a href="#1-">1. 下载安装</a></li>
-        <li><a href="#2-">2. 配置集群参数</a></li>
-        <li><a href="#3-">3. 配置日志参数</a></li>
-        <li><a href="#4-jvm">4. 配置JVM参数</a></li>
-        <li><a href="#5-linux">5. 配置Linux参数</a></li>
+        <li><a href="#0-环境准备">0. 环境准备</a></li>
+        <li><a href="#1-下载安装">1. 下载安装</a></li>
+        <li><a href="#2-配置集群参数">2. 配置集群参数</a></li>
+        <li><a href="#3-配置日志参数">3. 配置日志参数</a></li>
+        <li><a href="#4-配置jvm参数">4. 配置JVM参数</a></li>
+        <li><a href="#5-配置linux参数">5. 配置Linux参数</a></li>
       </ul>
     </li>
-    <li><a href="#kafka20">Kafka2.0官方安装指南</a></li>
+    <li><a href="#kafka20官方安装指南">Kafka2.0官方安装指南</a></li>
   </ul>
 </nav>
 
@@ -392,7 +398,7 @@
           <h1>Kafka -01- 安装配置</h1>
 
           <div class="article-style">
-            <h2 id="heading">环境说明</h2>
+            <h2 id="环境说明">环境说明</h2>
 <table>
 <thead>
 <tr>
@@ -409,9 +415,9 @@
 </tr>
 </tbody>
 </table>
-<h2 id="heading-1">安装步骤</h2>
+<h2 id="安装步骤">安装步骤</h2>
 <p><em><strong>注意：</strong> 文中以 <code>{}</code> 包裹起来的内容需要自己替换，并非直接使用</em></p>
-<h3 id="0-">0. 环境准备</h3>
+<h3 id="0-环境准备">0. 环境准备</h3>
 <table>
 <thead>
 <tr>
@@ -442,12 +448,12 @@
 </tr>
 </tbody>
 </table>
-<h3 id="1-">1. 下载安装</h3>
+<h3 id="1-下载安装">1. 下载安装</h3>
 <p>下载最新版本Kafka，解压到指定目录，无需其他操作即完成安装。</p>
 <pre><code class="language-bash">tar -xzf kafka_2.11-2.0.0.tgz -C /home/tools
 cd kafka_2.11-2.0.0
 </code></pre>
-<h3 id="2-">2. 配置集群参数</h3>
+<h3 id="2-配置集群参数">2. 配置集群参数</h3>
 <p>修改<code>config/server.properties</code></p>
 <p>基本参数如下：</p>
 <pre><code class="language-bash"># broker唯一id，值为不重复正整数
@@ -505,7 +511,7 @@ delete.topic.enable=true
 # 是否允许程序自动创建Topic
 auto.create.topics.enable=false
 </code></pre>
-<h3 id="3-">3. 配置日志参数</h3>
+<h3 id="3-配置日志参数">3. 配置日志参数</h3>
 <p>修改<code>config/log4j.properties</code>的jog4j参数，提高Kafka操作日志（和数据日志区分）的日志级别，以降低日志输出相关资源占用。具体可更改配置如下：</p>
 <pre><code class="language-bash"># Kafka2.0默认只有controller是TRACE级别，可以改为INFO，其他INFO级别可以适当提升为WARN
 
@@ -543,7 +549,7 @@ log4j.additivity.state.change.logger=false
 log4j.logger.kafka.authorizer.logger=INFO, authorizerAppender
 log4j.additivity.kafka.authorizer.logger=false
 </code></pre>
-<h3 id="4-jvm">4. 配置JVM参数</h3>
+<h3 id="4-配置jvm参数">4. 配置JVM参数</h3>
 <p><em><strong>Warning</strong>：谨慎调试</em></p>
 <p>在<code>bin/kafka-server-start.sh</code>文件中调整参数如下：</p>
 <pre><code class="language-bash"># 在base_dir之后配置参数
@@ -559,7 +565,7 @@ export KAFKA_HEAP_OPTS=&quot;-Xms6g -Xmx6g -XX:MetaspaceSize=96m -XX:+UseG1GC -X
 </code></pre>
 <p><em>这个配置的集群实现了90%的GC中断时间不超过21毫秒，每秒钟新生代GC次数不超过一次</em></p>
 <p><em><strong>ps2：</strong> 上述环境的Java版本为JDK 1.8 u5</em></p>
-<h3 id="5-linux">5. 配置Linux参数</h3>
+<h3 id="5-配置linux参数">5. 配置Linux参数</h3>
 <p><em><strong>Warning</strong>：谨慎调试</em></p>
 <pre><code class="language-bash"># 调整系统所有进程一共可以打开的最大文件数：
 echo 'fs.file-max = 1024000' &gt;&gt; /etc/sysctl.conf
@@ -573,7 +579,7 @@ echo 'fs.file-max = 1024000' &gt;&gt; /etc/sysctl.conf
 <pre><code class="language-bash">echo 212992 &gt;&gt; /proc/sys/net/core/wmem_max
 echo 212992 &gt;&gt; /proc/sys/net/core/rmem_max
 </code></pre>
-<h2 id="kafka20">Kafka2.0官方安装指南</h2>
+<h2 id="kafka20官方安装指南">Kafka2.0官方安装指南</h2>
 <p><a href="https://kafka.apache.org/documentation/#quickstart">Quick Start</a></p>
 
           </div>
@@ -667,8 +673,6 @@ echo 212992 &gt;&gt; /proc/sys/net/core/rmem_max
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/html.min.js"></script>
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/r.min.js"></script>
-        
       
 
       
@@ -752,7 +756,7 @@ echo 212992 &gt;&gt; /proc/sys/net/core/rmem_max
     
     
     
-    <script src="/js/academic.min.d6bd04fdad2ad213aa8111c5a3b72fc5.js"></script>
+    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
 
     
 

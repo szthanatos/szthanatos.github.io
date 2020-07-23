@@ -7,7 +7,7 @@
     <description>os</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh-Hans</language><lastBuildDate>Sun, 01 Sep 2019 15:39:50 +0800</lastBuildDate>
     <image>
-      <url>https://szthanatos.github.io/img/icon-192.png</url>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>os</title>
       <link>https://szthanatos.github.io/tags/os/</link>
     </image>
@@ -18,8 +18,21 @@
       <pubDate>Sun, 01 Sep 2019 15:39:50 +0800</pubDate>
       <guid>https://szthanatos.github.io/post/rancheros/</guid>
       <description>&lt;h2&gt;目录&lt;/h2&gt;
-HAHAHUGOSHORTCODE-TOC0-HBHB
-&lt;h2 id=&#34;heading&#34;&gt;介绍&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#介绍&#34;&gt;介绍&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#安装&#34;&gt;安装&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#使用&#34;&gt;使用&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#ros&#34;&gt;ros&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#系统服务&#34;&gt;系统服务&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#docker&#34;&gt;docker&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#cloud-config&#34;&gt;cloud-config&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;RancherOS&lt;/code&gt;是Rancher推出的一个轻量级的Linux内核操作系统，专为容器环境而设计。&lt;/p&gt;
 &lt;p&gt;按官网的说法，它具有如下特性：&lt;/p&gt;
 &lt;table&gt;
@@ -63,7 +76,7 @@ HAHAHUGOSHORTCODE-TOC0-HBHB
 &lt;p&gt;RancherOS的架构也非常简单，除了内核，就是两个Docker。&lt;/p&gt;
 &lt;p&gt;一个系统级的Docker(&lt;code&gt;system-docker&lt;/code&gt;)接管了系统的绝大部分功能，比如在一般Linux上你会用&lt;code&gt;systemctl restart&lt;/code&gt;重启服务，在这里就是用&lt;code&gt;system-docker restart&lt;/code&gt;重启一个容器了。&lt;/p&gt;
 &lt;p&gt;用户级别的Docker也作为一个服务运行在&lt;code&gt;system-docker&lt;/code&gt;之上，也就是我们一般意义上跑应用的docker，正常使用。&lt;/p&gt;
-&lt;h2 id=&#34;heading-1&#34;&gt;安装&lt;/h2&gt;
+&lt;h2 id=&#34;安装&#34;&gt;安装&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;在&lt;a href=&#34;https://github.com/rancher/os/releases/&#34;&gt;RancherOS Gitlab页面&lt;/a&gt;下载对应版本镜像。&lt;/p&gt;
@@ -117,7 +130,7 @@ dns-nameservers     xxx.xxx.xxx.xxx
 &lt;p&gt;配置好执行&lt;code&gt;sudo ifup eth0&lt;/code&gt;即可连上网络。&lt;/p&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-&lt;h2 id=&#34;heading-2&#34;&gt;使用&lt;/h2&gt;
+&lt;h2 id=&#34;使用&#34;&gt;使用&lt;/h2&gt;
 &lt;p&gt;整个RancherOS自底向上分三个层面进行管理&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -239,7 +252,7 @@ OPTIONS:
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;控制的是随系统启动的服务，用法包括声明文件的写法基本和Docker Compose一样，把它理解成Docker Compose的替代品就对了。&lt;/p&gt;
 &lt;p&gt;别的命令不解释了&amp;hellip;&lt;/p&gt;
-&lt;h3 id=&#34;heading-3&#34;&gt;系统服务&lt;/h3&gt;
+&lt;h3 id=&#34;系统服务&#34;&gt;系统服务&lt;/h3&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ ros s list
 disabled amazon-ecs-agent
 disabled container-cron

@@ -2,8 +2,8 @@
   "name": "Kryptonite Lab",
   "short_name": "Kryptonite Lab",
   "lang": "zh-Hans",
-  "theme_color": "#2962ff",
-  "background_color": "#2962ff",
+  "theme_color": "#4169E1",
+  "background_color": "#4169E1",
   "icons": [{
     "src": "../img/icon-192.png",
     "sizes": "192x192",

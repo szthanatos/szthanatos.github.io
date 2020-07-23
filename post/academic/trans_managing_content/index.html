@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.5.0">
+  <meta name="generator" content="Source Themes Academic 4.6.0">
 
   
 
@@ -28,7 +28,7 @@
   
     
   
-  <meta name="description" content="本文是对Academic文档-Managing content章节的个人翻译，基于个人理解，不保证绝对准确。 原文见上方连接。 目录 这是一个使用A">
+  <meta name="description" content="本文是对Academic文档-Managing content">
 
   
   <link rel="alternate" hreflang="zh-Hans" href="https://szthanatos.github.io/post/academic/trans_managing_content/">
@@ -39,7 +39,7 @@
   
   
   
-  <meta name="theme-color" content="#2962ff">
+  <meta name="theme-color" content="#4169E1">
   
 
   
@@ -77,7 +77,7 @@
   
   
   
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CNoto+Sans+SC:400,400italic,700%7CInconsolata&display=swap">
   
 
   
@@ -115,8 +115,8 @@
   <meta property="og:site_name" content="Kryptonite Lab">
   <meta property="og:url" content="https://szthanatos.github.io/post/academic/trans_managing_content/">
   <meta property="og:title" content="(翻译)Academic文档-内容管理 | Kryptonite Lab">
-  <meta property="og:description" content="本文是对Academic文档-Managing content章节的个人翻译，基于个人理解，不保证绝对准确。 原文见上方连接。 目录 这是一个使用A"><meta property="og:image" content="https://szthanatos.github.io/img/icon-192.png">
-  <meta property="twitter:image" content="https://szthanatos.github.io/img/icon-192.png"><meta property="og:locale" content="zh-Hans">
+  <meta property="og:description" content="本文是对Academic文档-Managing content"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="zh-Hans">
   
     
       <meta property="article:published_time" content="2019-01-01T12:54:11&#43;08:00">
@@ -167,7 +167,7 @@
       "url": "https://szthanatos.github.io/img/icon-512.png"
     }
   },
-  "description": "本文是对Academic文档-Managing content章节的个人翻译，基于个人理解，不保证绝对准确。 原文见上方连接。 目录 这是一个使用A"
+  "description": "本文是对Academic文档-Managing content"
 }
 </script>
 
@@ -224,24 +224,28 @@
 
 
   
-<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0 compensate-for-scrollbar" id="navbar-main">
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
+    
+    
       <a class="navbar-brand" href="/">Kryptonite Lab</a>
-      
-      <button type="button" class="navbar-toggler" data-toggle="collapse"
-              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="切换导航">
-        <span><i class="fas fa-bars"></i></span>
-      </button>
-      
+    
 
     
-    <div class="collapse navbar-collapse" id="navbar">
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="切换导航">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
 
       
-      
-      <ul class="navbar-nav ml-auto">
+      <ul class="navbar-nav d-md-inline-flex">
         
 
         
@@ -327,29 +331,31 @@
       
 
         
-
-        
-        <li class="nav-item">
-          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
-        </li>
-        
-
-        
-
-        
-        <li class="nav-item">
-          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
-        </li>
-        
-
       </ul>
-
     </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      <li class="nav-item">
+        <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+
+    </ul>
+
   </div>
 </nav>
 
 
-  <article class="article" itemscope itemtype="http://schema.org/Article">
+  <article class="article">
 
   
 
@@ -437,7 +443,7 @@
 
   <div class="article-container">
 
-    <div class="article-style" itemprop="articleBody">
+    <div class="article-style">
       <div class="alert alert-note">
   <div>
     <p>本文是对<a href="https://sourcethemes.com/academic/docs/managing-content/">Academic文档-Managing content章节</a>的个人翻译，基于个人理解，不保证绝对准确。</p>
@@ -445,7 +451,32 @@
   </div>
 </div>
 <h2>目录</h2>
-
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#精选图片">精选图片</a></li>
+    <li><a href="#标题图片">标题图片</a></li>
+    <li><a href="#数学公式和代码">数学公式和代码</a></li>
+    <li><a href="#页面特性">页面特性</a></li>
+    <li><a href="#创建一个出版物">创建一个出版物</a>
+      <ul>
+        <li><a href="#自动">自动</a></li>
+        <li><a href="#手动">手动</a></li>
+        <li><a href="#关联其它资源">关联其它资源</a></li>
+      </ul>
+    </li>
+    <li><a href="#创建博文">创建博文</a></li>
+    <li><a href="#创建项目">创建项目</a></li>
+    <li><a href="#创建演讲">创建演讲</a></li>
+    <li><a href="#创建幻灯片">创建幻灯片</a></li>
+    <li><a href="#创建课程或文档">创建课程或文档</a></li>
+    <li><a href="#创建小部件页面">创建小部件页面</a></li>
+    <li><a href="#创建其他页面eg-简历">创建其他页面(e.g. 简历)</a></li>
+    <li><a href="#管理列表页">管理列表页</a></li>
+    <li><a href="#移除内容">移除内容</a></li>
+    <li><a href="#查看站点更新">查看站点更新</a></li>
+    <li><a href="#部署站点">部署站点</a></li>
+  </ul>
+</nav>
 <p>这是一个使用Academic框架管理你的文章的简短指南。
 Academic提供的内容模板包括出版物、项目、宣讲、新闻/博客文章、以及小部件页。
 之后，你可能同样对<a href="/post/trans_writing_content.md">使用Markdown、LaTeX数学公式和代码段进行创作</a>感兴趣。</p>
@@ -454,7 +485,7 @@ Academic提供的内容模板包括出版物、项目、宣讲、新闻/博客�
     Hugo V0.49 版本在使用本指南中的<code>hugo new</code>命令时存在一个bug，请升级到V0.50及以上。
   </div>
 </div>
-<h2 id="heading">精选图片</h2>
+<h2 id="精选图片">精选图片</h2>
 <p>要在文章页显示一个精选图片，简单的将名为<code>featured.*</code>(e.g. <code>featured.jpg</code>)的图片文件拖拽到文章文件夹即可。</p>
 <div class="alert alert-note">
   <div>
@@ -481,7 +512,7 @@ Academic提供的内容模板包括出版物、项目、宣讲、新闻/博客�
   # Show image only in page previews?
   preview_only = false
 </code></pre>
-<h2 id="heading-1">标题图片</h2>
+<h2 id="标题图片">标题图片</h2>
 <p>将下面的header参数添加到扉页的末尾，以在页面顶部展示一个占据全部宽度的标题图片。
 图片文件默认会从静态图片文件库<code>static/img/</code>读取(所以不必写全)，所以下面例子的图片文件的完整路径是<code>static/img/header.png</code>。
 标题参数作用和精选图一致。</p>
@@ -489,20 +520,20 @@ Academic提供的内容模板包括出版物、项目、宣讲、新闻/博客�
   image = &quot;header.png&quot;
   caption = &quot;Image credit: [**Academic**](https://github.com/gcushen/hugo-academic/)&quot;
 </code></pre>
-<h2 id="heading-2">数学公式和代码</h2>
+<h2 id="数学公式和代码">数学公式和代码</h2>
 <p>要在页面中启用<strong>LaTeX</strong> 渲染数学公式，在页面的扉页中应该申明<code>math = true</code>，如同示例网站的例子一样。
 或者，在<code>config.toml</code>中设置<code>math = true</code>，以在全局范围内允许数学公式渲染。</p>
 <p>在<code>config.toml</code>中设置<code>highlight = false</code>以全局禁用代码高亮。你可以在需要代码高亮的页面的扉页单独设置<code>highlight = true</code>。
 查看<a href="https://sourcethemes.com/academic/docs/writing-markdown-latex/#code-highlighting">code-highlighting docs</a>以获取更多细节。</p>
-<h2 id="heading-3">页面特性</h2>
+<h2 id="页面特性">页面特性</h2>
 <p>将下述参数添加到页面扉页以管理页面特性：</p>
 <pre><code class="language-markdown">reading_time = false  # 显示估计阅读时间
 share = false  # 显示分享按钮
 profile = false  # 显示作者信息
 comments = false  # 显示评论区
 </code></pre>
-<h2 id="heading-4">创建一个出版物</h2>
-<h3 id="heading-5">自动</h3>
+<h2 id="创建一个出版物">创建一个出版物</h2>
+<h3 id="自动">自动</h3>
 <p>先进的文献管理工具可以帮助你将你的出版物转化为开源的BibTeX格式。
 如果你是新手的话我们推荐你使用流行的开源工具<a href="https://www.zotero.org/">Zotero</a>来管理你的文献。</p>
 <p>在你的文献管理工具中创建你自己的出版物列表并导出为<code>*.bib</code>格式的BibTeX文件。</p>
@@ -519,7 +550,7 @@ comments = false  # 显示评论区
 所以在发布你的站点之前你应该检查<code>publications</code>文件夹下产生的内容。
 你同样可以看看下一章节<code>手动</code>部分有关扉页参数的细节，以想办法增强展示效果。</p>
 <p>想要支持这个工具或者提供建议/反馈，请查看<a href="https://github.com/sourcethemes/academic-admin">Academic admin tool项目主页</a>。</p>
-<h3 id="heading-6">手动</h3>
+<h3 id="手动">手动</h3>
 <p>另一种选择，使用命令手动的创建出版物：</p>
 <pre><code class="language-bash">hugo new --kind publication publication/&lt;my-publication&gt;
 </code></pre>
@@ -536,7 +567,7 @@ comments = false  # 显示评论区
 内容会出现在你的出版物页之上。</p>
 <p>要使访客能够阅读到你的作品，将作品的PDF链接填入<code>url_pdf</code>，或者将作品PDF文件放置到出版物目录并统一为相同命名，这样会自动生成PDF的链接。
 举例，如果你的出版物说明位于<code>publication/photons/index.md</code>，将PDF文件重命名并放到<code>publication/photons/photons.pdf</code>。</p>
-<h3 id="heading-7">关联其它资源</h3>
+<h3 id="关联其它资源">关联其它资源</h3>
 <p>使用<code>url_</code>链接以指向本地/网络内容。
 要关联本地内容的话将之复制到出版物文件夹并使用例如<code>url_code = &quot;code.zip&quot;</code>的方式添加引用。</p>
 <p>你也可以将下面的代码块添加到扉页，以使用自定义链接按钮：</p>
@@ -548,7 +579,7 @@ comments = false  # 显示评论区
     想要在扉页的参数中使用双引号或者反斜杠需要额外添加一个反斜杠，<em>例子懒得翻</em>，更多信息请参阅<a href="https://github.com/toml-lang/toml#user-content-string">TOML文档</a>。
   </div>
 </div>
-<h2 id="heading-8">创建博文</h2>
+<h2 id="创建博文">创建博文</h2>
 <p>要创建一篇新文章：</p>
 <pre><code class="language-bash">hugo new  --kind post post/my-article-name
 </code></pre>
@@ -561,20 +592,20 @@ comments = false  # 显示评论区
 <p>在扉页内添加<code>summary</code>参数以覆盖自动生成的摘要。</p>
 <p>要为特定的文章禁止评论，在扉页添加<code>disable_comments = true</code>参数。
 要全局的禁止评论的话，在<code>config.toml</code>中设置<code>disqusShortname = &quot;&quot;</code>或者<code>disable_comments = true</code>。</p>
-<h2 id="heading-9">创建项目</h2>
+<h2 id="创建项目">创建项目</h2>
 <p>要创建一个项目：</p>
 <pre><code class="language-bash">hugo new  --kind project project/my-project-name
 </code></pre>
 <p>之后编辑新生成的<code>content/project/my-project-name.md</code>文件。
 在扉页将<code>external_link = &quot;http://external-project.com&quot;</code>设置成已经存在的项目网址，
 或者也可以手动在正文中介绍项目的情况。</p>
-<h2 id="heading-10">创建演讲</h2>
+<h2 id="创建演讲">创建演讲</h2>
 <p>要创建一个演讲：</p>
 <pre><code class="language-bash">hugo new  --kind talk talk/my-talk-name
 </code></pre>
 <p>然后用你的完整标题和内容填充新生成的<code>content/talk/my-talk-name.md</code>文件。
 你会注意到演讲的很多参数和出版物是类似的。</p>
-<h2 id="heading-11">创建幻灯片</h2>
+<h2 id="创建幻灯片">创建幻灯片</h2>
 <p>可以使用Markdown非常高效的创建幻灯片并通过你的网站分享给观众。
 甚至还包括演讲者笔记。</p>
 <p>查看<a href="https://themes.gohugo.io//theme/academic/slides/example-slides#/">slides demo</a>
@@ -584,13 +615,13 @@ comments = false  # 显示评论区
 <p>在演讲/出版物页面使用<code>url_slides</code>参数来关联到幻灯片。
 比如，<code>url_slides = &quot;slides/example-slides&quot;</code>可以关联到上面的示例站点。
 在<a href="https://raw.githubusercontent.com/gcushen/hugo-academic/master/exampleSite/content/talk/example/index.md">这里</a>可以看到包含<code>url_slides</code>的完整扉页的示例。</p>
-<h2 id="heading-12">创建课程或文档</h2>
+<h2 id="创建课程或文档">创建课程或文档</h2>
 <p><em>文档</em> 是用来<strong>分享知识</strong>的。常见例子包括在线课程、教程、软件文档以及知识库。</p>
 <p>你现在阅读的这个页面(不是我翻译之后的这个)就是用_文档_的方式来展现Academic相关的。
 同样，这里也有一个<a href="https://themes.gohugo.io//theme/academic/tutorial/">在线课程</a>的例子。</p>
 <p>查看<code>themes/academic/exampleSite/content/tutorial/</code>的示例以学习如何开始。</p>
 <p>如果你是一名使用R语言的数据分析师/数据科学家(e.g. RStudio and RMarkdown)，我们推荐你阅读<a href="https://github.com/sourcethemes/project-kickstart-r">R boilerplate project on GitHub</a>。</p>
-<h2 id="heading-13">创建小部件页面</h2>
+<h2 id="创建小部件页面">创建小部件页面</h2>
 <p>你是否想利用Academic的小部件系统，创建一个和Academic主页类似的页面？</p>
 <p>在你的<code>content</code>文件夹下创建一个新的，以你的页面命名的文件夹。在这个例子中我们将创建<code>content/tutorials/</code>文件夹以创建我们的tutorials页。</p>
 <p>在新建的<code>content/tutorials/</code>文件夹下创建一个名为<code>_index.md</code>的文件，内容如下：</p>
@@ -602,13 +633,13 @@ summary = &quot;&quot;  # Add a page description.
 +++
 </code></pre>
 <p>将你的小部件放入<code>content/tutorials/</code>文件夹，可以通过复制<code>content/home/</code>下的小部件或者从<a href="https://github.com/gcushen/hugo-academic/tree/master/exampleSite/content/home">Github</a>上下载来实现。</p>
-<h2 id="eg-">创建其他页面(e.g. 简历)</h2>
+<h2 id="创建其他页面eg-简历">创建其他页面(e.g. 简历)</h2>
 <p>其他类型内容的话，可以创建自己的自定义页面。
 例如，我们在<code>content</code>文件夹下创建一个<code>cv.md</code>简历页面。复制任意一个文章的扉页，根据需要进行调整，然后在下面编辑Markdown内容。
 再之后，您可以使用<code>[My CV]{``{&lt; ref &quot;cv.md&quot; &gt;}}</code>代码将简历添加到任何现有页面的内容上。</p>
 <p>或者，在上面的例子中，我们可以使用简历的PDF文件。为此，在<code>static</code>文件夹中创建名为<code>files</code>的文件夹，并将名为<code>cv.pdf</code>的PDF文件移动到该位置。
 然后可以使用以下代码将PDF文件链接到你的任意内容中：<code>{``{% staticref &quot;files/cv.pdf&quot; %}}``下载我的简历``{``{% /staticref %}}</code>。</p>
-<h2 id="heading-14">管理列表页</h2>
+<h2 id="管理列表页">管理列表页</h2>
 <p>档案(archive，我理解的就是列表)页或者说节点页，是列出你所有内容的特殊页面。
 博客文章、出版物、演讲都会有列表页。
 如果存在一个小部件放不下的内容的话，主页上的小部件会自动链接到列表页。
@@ -622,38 +653,17 @@ summary = &quot;&quot;  # Add a page description.
 <p>之后，根据需要编辑每个<code>_index.md</code>中的<code>title</code>参数，并在扉页之后添加任何内容。
 你可能注意到<code>_index.md</code>文件略有不同，其中一些具有可用于关联内容类型的特殊选项。
 例如，<code>publication/_index.md</code>包含用于设置出版物列表页面上显示的列表的引用样式的选项。</p>
-<h2 id="heading-15">移除内容</h2>
+<h2 id="移除内容">移除内容</h2>
 <p>通常来说，要移除任意内容，简单的从你的<code>content/post</code>、<code>content/publication</code>、<code>content/project</code>或者<code>content/talk</code>文件夹中删除对应页面文件即可。</p>
-<h2 id="heading-16">查看站点更新</h2>
+<h2 id="查看站点更新">查看站点更新</h2>
 <p>在你对站点做出修改之后，你可以通过执行<code>hugo server</code>并在浏览器中打开http://localhost:1313/ 来看到效果。</p>
-<h2 id="heading-17">部署站点</h2>
+<h2 id="部署站点">部署站点</h2>
 <p>最后，你可以<a href="https://sourcethemes.com/academic/docs/deployment/">部署你的站点</a>了。</p>
 
     </div>
 
     
 
-
-
-
-    
-    <div class="hr-light"></div>
-
-    
-
-<div class="article-tags">
-  
-  <a class="badge badge-light" href="/tags/translation/">Translation</a>
-  
-  <a class="badge badge-light" href="/tags/academic/">Academic</a>
-  
-  <a class="badge badge-light" href="/tags/hugo/">Hugo</a>
-  
-</div>
-
-
-    
-    
     <style type="text/css">
   div {
     margin: 0;
@@ -700,7 +710,110 @@ summary = &quot;&quot;  # Add a page description.
 
 
     
+    
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tags/translation/">Translation</a>
+  
+  <a class="badge badge-light" href="/tags/academic/">Academic</a>
+  
+  <a class="badge badge-light" href="/tags/hugo/">Hugo</a>
+  
+</div>
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
       
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://szthanatos.github.io/post/academic/trans_managing_content/&amp;text=%28%e7%bf%bb%e8%af%91%29Academic%e6%96%87%e6%a1%a3-%e5%86%85%e5%ae%b9%e7%ae%a1%e7%90%86" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://szthanatos.github.io/post/academic/trans_managing_content/&amp;t=%28%e7%bf%bb%e8%af%91%29Academic%e6%96%87%e6%a1%a3-%e5%86%85%e5%ae%b9%e7%ae%a1%e7%90%86" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=%28%e7%bf%bb%e8%af%91%29Academic%e6%96%87%e6%a1%a3-%e5%86%85%e5%ae%b9%e7%ae%a1%e7%90%86&amp;body=https://szthanatos.github.io/post/academic/trans_managing_content/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://szthanatos.github.io/post/academic/trans_managing_content/&amp;title=%28%e7%bf%bb%e8%af%91%29Academic%e6%96%87%e6%a1%a3-%e5%86%85%e5%ae%b9%e7%ae%a1%e7%90%86" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://web.whatsapp.com/send?text=%28%e7%bf%bb%e8%af%91%29Academic%e6%96%87%e6%a1%a3-%e5%86%85%e5%ae%b9%e7%ae%a1%e7%90%86%20https://szthanatos.github.io/post/academic/trans_managing_content/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://szthanatos.github.io/post/academic/trans_managing_content/&amp;title=%28%e7%bf%bb%e8%af%91%29Academic%e6%96%87%e6%a1%a3-%e5%86%85%e5%ae%b9%e7%ae%a1%e7%90%86" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
 
 
 
@@ -742,23 +855,24 @@ summary = &quot;&quot;  # Add a page description.
 
 
 
-      
-      
-      <div class="article-widget">
-        <div class="hr-light"></div>
-        <h3>相关</h3>
-        <ul>
-          
-          <li><a href="/post/academic/academic_in_practice/">Academic实现Github Page个人博客</a></li>
-          
-        </ul>
-      </div>
-      
-    
 
-    
 
-    
+
+
+
+
+  
+  
+  <div class="article-widget content-widget-hr">
+    <h3>相关</h3>
+    <ul>
+      
+      <li><a href="/post/academic/academic_in_practice/">Academic实现Github Page个人博客</a></li>
+      
+    </ul>
+  </div>
+  
+
 
 
   </div>
@@ -790,8 +904,6 @@ summary = &quot;&quot;  # Add a page description.
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/javascript.min.js"></script>
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/html.min.js"></script>
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/r.min.js"></script>
         
       
 
@@ -871,7 +983,7 @@ summary = &quot;&quot;  # Add a page description.
     
     
     
-    <script src="/js/academic.min.d6bd04fdad2ad213aa8111c5a3b72fc5.js"></script>
+    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
 
     
 

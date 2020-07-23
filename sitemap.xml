@@ -118,6 +118,11 @@
   </url>
   
   <url>
+    <loc>https://szthanatos.github.io/topic/</loc>
+    <lastmod>2019-06-16T23:06:41+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://szthanatos.github.io/topic/redis/improve-02/</loc>
     <lastmod>2019-03-18T15:04:35+08:00</lastmod>
   </url>
@@ -173,22 +178,22 @@
   </url>
   
   <url>
-    <loc>https://szthanatos.github.io/categories/academic/</loc>
-    <lastmod>2019-01-01T12:54:29+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://szthanatos.github.io/tags/academic/</loc>
     <lastmod>2019-01-01T12:54:29+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://szthanatos.github.io/categories/hugo/</loc>
+    <loc>https://szthanatos.github.io/categories/academic/</loc>
     <lastmod>2019-01-01T12:54:29+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://szthanatos.github.io/tags/hugo/</loc>
+    <lastmod>2019-01-01T12:54:29+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://szthanatos.github.io/categories/hugo/</loc>
     <lastmod>2019-01-01T12:54:29+08:00</lastmod>
   </url>
   
@@ -330,27 +335,11 @@
   </url>
   
   <url>
-    <loc>https://szthanatos.github.io/academic-backup/</loc>
-  </url>
-  
-  <url>
     <loc>https://szthanatos.github.io/authors/</loc>
   </url>
   
   <url>
     <loc>https://szthanatos.github.io/publication_types/</loc>
-  </url>
-  
-  <url>
-    <loc>https://szthanatos.github.io/academic-backup/publication/</loc>
-  </url>
-  
-  <url>
-    <loc>https://szthanatos.github.io/academic-backup/talk/</loc>
-  </url>
-  
-  <url>
-    <loc>https://szthanatos.github.io/topic/</loc>
   </url>
   
 </urlset>

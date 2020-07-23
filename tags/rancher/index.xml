@@ -7,7 +7,7 @@
     <description>rancher</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh-Hans</language><lastBuildDate>Thu, 26 Sep 2019 22:58:39 +0800</lastBuildDate>
     <image>
-      <url>https://szthanatos.github.io/img/icon-192.png</url>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>rancher</title>
       <link>https://szthanatos.github.io/tags/rancher/</link>
     </image>
@@ -18,8 +18,19 @@
       <pubDate>Thu, 26 Sep 2019 22:58:39 +0800</pubDate>
       <guid>https://szthanatos.github.io/post/rancher_ha/</guid>
       <description>&lt;h2&gt;目录&lt;/h2&gt;
-HAHAHUGOSHORTCODE-TOC0-HBHB
-&lt;h2 id=&#34;heading&#34;&gt;硬件需求&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#硬件需求&#34;&gt;硬件需求&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#0-工具准备&#34;&gt;0. 工具准备&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#1-配置nginx负载均衡&#34;&gt;1. 配置Nginx负载均衡&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#2-使用rke安装k8s&#34;&gt;2. 使用RKE安装K8S&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#3-初始化helm&#34;&gt;3. 初始化helm&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#4-配置ca证书&#34;&gt;4. 配置ca证书&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#5-安装rancher&#34;&gt;5. 安装rancher&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#6-添加主机别名&#34;&gt;6. 添加主机别名&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;h2 id=&#34;硬件需求&#34;&gt;硬件需求&lt;/h2&gt;
 &lt;p&gt;rancher ha推荐的架构是单独搭建一个K8s集群部署Rancher，然后再用这个Rancher去管理其他的K8s集群。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://szthanatos.github.io/img/rancher2ha.png&#34; alt=&#34;推荐架构&#34;&gt;&lt;/p&gt;
 &lt;p&gt;rancher集群的配置和能管理的集群规模之间的关系如下：&lt;/p&gt;
@@ -106,7 +117,7 @@ HAHAHUGOSHORTCODE-TOC0-HBHB
 &lt;/table&gt;
 &lt;p&gt;一个负载均衡服务器，3个服务器组成K8S集群。&lt;/p&gt;
 &lt;p&gt;操作系统均为&lt;code&gt;RancherOS 1.54&lt;/code&gt;(&lt;code&gt;Console&lt;/code&gt;是&lt;code&gt;Ubuntu&lt;/code&gt;，因为&lt;code&gt;Longhorn&lt;/code&gt;只支持这个)，Docker版本&lt;code&gt;18.09&lt;/code&gt;。&lt;/p&gt;
-&lt;h2 id=&#34;0-&#34;&gt;0. 工具准备&lt;/h2&gt;
+&lt;h2 id=&#34;0-工具准备&#34;&gt;0. 工具准备&lt;/h2&gt;
 &lt;p&gt;在任意一节点(我这里都是在&lt;code&gt;server-01&lt;/code&gt;上)上准备以下工具：&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -156,7 +167,7 @@ sudo ln -s $(pwd)/linux-amd64/helm /usr/local/bin/helm
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;1-nginx&#34;&gt;1. 配置Nginx负载均衡&lt;/h2&gt;
+&lt;h2 id=&#34;1-配置nginx负载均衡&#34;&gt;1. 配置Nginx负载均衡&lt;/h2&gt;
 &lt;p&gt;在&lt;code&gt;loadbalance&lt;/code&gt;主机上编写nginx.conf配置文件：&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-conf&#34;&gt;worker_processes 4;
 worker_rlimit_nofile 40000;
@@ -199,7 +210,7 @@ stream {
        -v /nginx.conf:/etc/nginx/nginx.conf \
        nginx:1.14
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;2-rkek8s&#34;&gt;2. 使用RKE安装K8S&lt;/h2&gt;
+&lt;h2 id=&#34;2-使用rke安装k8s&#34;&gt;2. 使用RKE安装K8S&lt;/h2&gt;
 &lt;p&gt;三个作为rancher-server的服务器需要配置相互免密。&lt;code&gt;ssh-keygen&lt;/code&gt;生成密钥附加到&lt;code&gt;authorized_keys&lt;/code&gt;上，不赘述。&lt;/p&gt;
 &lt;p&gt;在&lt;code&gt;server-01&lt;/code&gt;节点，编写&lt;code&gt;rancher-cluster.yml&lt;/code&gt;，告诉rke要如何创建集群：&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;nodes:
@@ -233,7 +244,7 @@ services:
 &lt;p&gt;说明安装完毕。&lt;/p&gt;
 &lt;p&gt;K8S创建成功后会在根目录生成集群信息&lt;code&gt;rancher-cluster.rkestate&lt;/code&gt;和配置文件&lt;code&gt;kube_config_rancher-cluster.yml&lt;/code&gt;，&lt;/p&gt;
 &lt;p&gt;这两个文件包含访问K8S的凭据。&lt;/p&gt;
-&lt;h2 id=&#34;3-helm&#34;&gt;3. 初始化helm&lt;/h2&gt;
+&lt;h2 id=&#34;3-初始化helm&#34;&gt;3. 初始化helm&lt;/h2&gt;
 &lt;p&gt;helm是由客户端helm和服务端tiller组成，我们之前安装了helm可以调用helm命令了。&lt;/p&gt;
 &lt;p&gt;为了保存和管理helm软件包(helm charts)，我们还需要在本地启动一个服务端。&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 创建名为tiller的serviceaccount
@@ -256,7 +267,7 @@ helm init \
 kubectl -n kube-system rollout status deploy/tiller-deploy
 helm version
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;4-ca&#34;&gt;4. 配置ca证书&lt;/h2&gt;
+&lt;h2 id=&#34;4-配置ca证书&#34;&gt;4. 配置ca证书&lt;/h2&gt;
 &lt;p&gt;rancher支持三种来源的证书，rancher自生成/来自Let’s Encrypt的/来自文件的。&lt;/p&gt;
 &lt;p&gt;前两种都需要额外安装CERT-MANAGER。&lt;/p&gt;
 &lt;p&gt;这里我们采用第一种方式，依据&lt;a href=&#34;https://docs.cert-manager.io/en/latest/getting-started/install/kubernetes.html#installing-with-helm&#34;&gt;cert-manager官方文档&lt;/a&gt;：&lt;/p&gt;
@@ -282,7 +293,7 @@ helm install \
 &lt;p&gt;使用&lt;code&gt;kubectl get pods --namespace cert-manager&lt;/code&gt;测试是否安装成功，&lt;/p&gt;
 &lt;p&gt;应该能看到&lt;code&gt;cert-manager&lt;/code&gt;，&lt;code&gt;cert-manager-webhook&lt;/code&gt;，&lt;code&gt;cert-manager-cainjector&lt;/code&gt;运行中。&lt;/p&gt;
 &lt;p&gt;注意cert-manager使用的镜像来自&lt;code&gt;quay.io&lt;/code&gt;，可以编辑charts中的&lt;code&gt;values.yaml&lt;/code&gt;来修改镜像源，或者提前从国内源下载好镜像放到服务器上。&lt;/p&gt;
-&lt;h2 id=&#34;5-rancher&#34;&gt;5. 安装rancher&lt;/h2&gt;
+&lt;h2 id=&#34;5-安装rancher&#34;&gt;5. 安装rancher&lt;/h2&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 在helm中添加rancher源，建议使用stable
 helm repo add rancher-stable https://releases.rancher.com/server-charts/stable
 helm repo update
@@ -294,7 +305,7 @@ helm install rancher-stable/rancher \
   --set hostname=&amp;lt;你的域名&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;等待一段时间，可以运行&lt;code&gt;kubectl -n cattle-system rollout status deploy/rancher&lt;/code&gt;查看安装进度。&lt;/p&gt;
-&lt;h2 id=&#34;6-&#34;&gt;6. 添加主机别名&lt;/h2&gt;
+&lt;h2 id=&#34;6-添加主机别名&#34;&gt;6. 添加主机别名&lt;/h2&gt;
 &lt;p&gt;由于没有内部DNS服务器，我们还需要为Agent Pod添加主机别名(/etc/hosts)。&lt;/p&gt;
 &lt;p&gt;不然&lt;/p&gt;
 &lt;blockquote&gt;
@@ -397,8 +408,21 @@ patch  daemonsets cattle-node-agent --patch &#39;{
       <pubDate>Sun, 01 Sep 2019 15:39:50 +0800</pubDate>
       <guid>https://szthanatos.github.io/post/rancheros/</guid>
       <description>&lt;h2&gt;目录&lt;/h2&gt;
-HAHAHUGOSHORTCODE-TOC0-HBHB
-&lt;h2 id=&#34;heading&#34;&gt;介绍&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#介绍&#34;&gt;介绍&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#安装&#34;&gt;安装&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#使用&#34;&gt;使用&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#ros&#34;&gt;ros&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#系统服务&#34;&gt;系统服务&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#docker&#34;&gt;docker&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#cloud-config&#34;&gt;cloud-config&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;RancherOS&lt;/code&gt;是Rancher推出的一个轻量级的Linux内核操作系统，专为容器环境而设计。&lt;/p&gt;
 &lt;p&gt;按官网的说法，它具有如下特性：&lt;/p&gt;
 &lt;table&gt;
@@ -442,7 +466,7 @@ HAHAHUGOSHORTCODE-TOC0-HBHB
 &lt;p&gt;RancherOS的架构也非常简单，除了内核，就是两个Docker。&lt;/p&gt;
 &lt;p&gt;一个系统级的Docker(&lt;code&gt;system-docker&lt;/code&gt;)接管了系统的绝大部分功能，比如在一般Linux上你会用&lt;code&gt;systemctl restart&lt;/code&gt;重启服务，在这里就是用&lt;code&gt;system-docker restart&lt;/code&gt;重启一个容器了。&lt;/p&gt;
 &lt;p&gt;用户级别的Docker也作为一个服务运行在&lt;code&gt;system-docker&lt;/code&gt;之上，也就是我们一般意义上跑应用的docker，正常使用。&lt;/p&gt;
-&lt;h2 id=&#34;heading-1&#34;&gt;安装&lt;/h2&gt;
+&lt;h2 id=&#34;安装&#34;&gt;安装&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;在&lt;a href=&#34;https://github.com/rancher/os/releases/&#34;&gt;RancherOS Gitlab页面&lt;/a&gt;下载对应版本镜像。&lt;/p&gt;
@@ -496,7 +520,7 @@ dns-nameservers     xxx.xxx.xxx.xxx
 &lt;p&gt;配置好执行&lt;code&gt;sudo ifup eth0&lt;/code&gt;即可连上网络。&lt;/p&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-&lt;h2 id=&#34;heading-2&#34;&gt;使用&lt;/h2&gt;
+&lt;h2 id=&#34;使用&#34;&gt;使用&lt;/h2&gt;
 &lt;p&gt;整个RancherOS自底向上分三个层面进行管理&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -618,7 +642,7 @@ OPTIONS:
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;控制的是随系统启动的服务，用法包括声明文件的写法基本和Docker Compose一样，把它理解成Docker Compose的替代品就对了。&lt;/p&gt;
 &lt;p&gt;别的命令不解释了&amp;hellip;&lt;/p&gt;
-&lt;h3 id=&#34;heading-3&#34;&gt;系统服务&lt;/h3&gt;
+&lt;h3 id=&#34;系统服务&#34;&gt;系统服务&lt;/h3&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ ros s list
 disabled amazon-ecs-agent
 disabled container-cron

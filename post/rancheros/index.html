@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.5.0">
+  <meta name="generator" content="Source Themes Academic 4.6.0">
 
   
 
@@ -28,7 +28,7 @@
   
     
   
-  <meta name="description" content="目录 介绍 RancherOS是Rancher推出的一个轻量级的Linux内核操作系统，专为容器环境而设计。 按官网的说法，它具有如下特性： 官方说">
+  <meta name="description" content="目录 介绍 安装 使用 ros 系统服务 docker cloud-config 介绍 RancherOS是Ran">
 
   
   <link rel="alternate" hreflang="zh-Hans" href="https://szthanatos.github.io/post/rancheros/">
@@ -39,7 +39,7 @@
   
   
   
-  <meta name="theme-color" content="#2962ff">
+  <meta name="theme-color" content="#4169E1">
   
 
   
@@ -77,7 +77,7 @@
   
   
   
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CNoto+Sans+SC:400,400italic,700%7CInconsolata&display=swap">
   
 
   
@@ -115,8 +115,8 @@
   <meta property="og:site_name" content="Kryptonite Lab">
   <meta property="og:url" content="https://szthanatos.github.io/post/rancheros/">
   <meta property="og:title" content="RancherOS初步使用小结 | Kryptonite Lab">
-  <meta property="og:description" content="目录 介绍 RancherOS是Rancher推出的一个轻量级的Linux内核操作系统，专为容器环境而设计。 按官网的说法，它具有如下特性： 官方说"><meta property="og:image" content="https://szthanatos.github.io/img/icon-192.png">
-  <meta property="twitter:image" content="https://szthanatos.github.io/img/icon-192.png"><meta property="og:locale" content="zh-Hans">
+  <meta property="og:description" content="目录 介绍 安装 使用 ros 系统服务 docker cloud-config 介绍 RancherOS是Ran"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="zh-Hans">
   
     
       <meta property="article:published_time" content="2019-09-01T15:39:50&#43;08:00">
@@ -167,7 +167,7 @@
       "url": "https://szthanatos.github.io/img/icon-512.png"
     }
   },
-  "description": "目录 介绍 RancherOS是Rancher推出的一个轻量级的Linux内核操作系统，专为容器环境而设计。 按官网的说法，它具有如下特性： 官方说"
+  "description": "目录 介绍 安装 使用 ros 系统服务 docker cloud-config 介绍 RancherOS是Ran"
 }
 </script>
 
@@ -224,24 +224,28 @@
 
 
   
-<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0 compensate-for-scrollbar" id="navbar-main">
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
+    
+    
       <a class="navbar-brand" href="/">Kryptonite Lab</a>
-      
-      <button type="button" class="navbar-toggler" data-toggle="collapse"
-              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="切换导航">
-        <span><i class="fas fa-bars"></i></span>
-      </button>
-      
+    
 
     
-    <div class="collapse navbar-collapse" id="navbar">
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="切换导航">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
 
       
-      
-      <ul class="navbar-nav ml-auto">
+      <ul class="navbar-nav d-md-inline-flex">
         
 
         
@@ -327,29 +331,31 @@
       
 
         
-
-        
-        <li class="nav-item">
-          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
-        </li>
-        
-
-        
-
-        
-        <li class="nav-item">
-          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
-        </li>
-        
-
       </ul>
-
     </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      <li class="nav-item">
+        <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+
+    </ul>
+
   </div>
 </nav>
 
 
-  <article class="article" itemscope itemtype="http://schema.org/Article">
+  <article class="article">
 
   
 
@@ -433,10 +439,23 @@
 
   <div class="article-container">
 
-    <div class="article-style" itemprop="articleBody">
+    <div class="article-style">
       <h2>目录</h2>
-
-<h2 id="heading">介绍</h2>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#介绍">介绍</a></li>
+    <li><a href="#安装">安装</a></li>
+    <li><a href="#使用">使用</a>
+      <ul>
+        <li><a href="#ros">ros</a></li>
+        <li><a href="#系统服务">系统服务</a></li>
+        <li><a href="#docker">docker</a></li>
+      </ul>
+    </li>
+    <li><a href="#cloud-config">cloud-config</a></li>
+  </ul>
+</nav>
+<h2 id="介绍">介绍</h2>
 <p><code>RancherOS</code>是Rancher推出的一个轻量级的Linux内核操作系统，专为容器环境而设计。</p>
 <p>按官网的说法，它具有如下特性：</p>
 <table>
@@ -480,7 +499,7 @@
 <p>RancherOS的架构也非常简单，除了内核，就是两个Docker。</p>
 <p>一个系统级的Docker(<code>system-docker</code>)接管了系统的绝大部分功能，比如在一般Linux上你会用<code>systemctl restart</code>重启服务，在这里就是用<code>system-docker restart</code>重启一个容器了。</p>
 <p>用户级别的Docker也作为一个服务运行在<code>system-docker</code>之上，也就是我们一般意义上跑应用的docker，正常使用。</p>
-<h2 id="heading-1">安装</h2>
+<h2 id="安装">安装</h2>
 <ol>
 <li>
 <p>在<a href="https://github.com/rancher/os/releases/">RancherOS Gitlab页面</a>下载对应版本镜像。</p>
@@ -534,7 +553,7 @@ dns-nameservers     xxx.xxx.xxx.xxx
 <p>配置好执行<code>sudo ifup eth0</code>即可连上网络。</p>
   </div>
 </div>
-<h2 id="heading-2">使用</h2>
+<h2 id="使用">使用</h2>
 <p>整个RancherOS自底向上分三个层面进行管理</p>
 <table>
 <thead>
@@ -656,7 +675,7 @@ OPTIONS:
 </code></pre>
 <p>控制的是随系统启动的服务，用法包括声明文件的写法基本和Docker Compose一样，把它理解成Docker Compose的替代品就对了。</p>
 <p>别的命令不解释了&hellip;</p>
-<h3 id="heading-3">系统服务</h3>
+<h3 id="系统服务">系统服务</h3>
 <pre><code class="language-bash">$ ros s list
 disabled amazon-ecs-agent
 disabled container-cron
@@ -817,25 +836,6 @@ runcmd:
 
     
 
-
-
-
-    
-    <div class="hr-light"></div>
-
-    
-
-<div class="article-tags">
-  
-  <a class="badge badge-light" href="/tags/os/">os</a>
-  
-  <a class="badge badge-light" href="/tags/rancher/">rancher</a>
-  
-</div>
-
-
-    
-    
     <style type="text/css">
   div {
     margin: 0;
@@ -882,7 +882,108 @@ runcmd:
 
 
     
+    
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tags/os/">os</a>
+  
+  <a class="badge badge-light" href="/tags/rancher/">rancher</a>
+  
+</div>
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
       
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://szthanatos.github.io/post/rancheros/&amp;text=RancherOS%e5%88%9d%e6%ad%a5%e4%bd%bf%e7%94%a8%e5%b0%8f%e7%bb%93" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://szthanatos.github.io/post/rancheros/&amp;t=RancherOS%e5%88%9d%e6%ad%a5%e4%bd%bf%e7%94%a8%e5%b0%8f%e7%bb%93" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=RancherOS%e5%88%9d%e6%ad%a5%e4%bd%bf%e7%94%a8%e5%b0%8f%e7%bb%93&amp;body=https://szthanatos.github.io/post/rancheros/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://szthanatos.github.io/post/rancheros/&amp;title=RancherOS%e5%88%9d%e6%ad%a5%e4%bd%bf%e7%94%a8%e5%b0%8f%e7%bb%93" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://web.whatsapp.com/send?text=RancherOS%e5%88%9d%e6%ad%a5%e4%bd%bf%e7%94%a8%e5%b0%8f%e7%bb%93%20https://szthanatos.github.io/post/rancheros/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://szthanatos.github.io/post/rancheros/&amp;title=RancherOS%e5%88%9d%e6%ad%a5%e4%bd%bf%e7%94%a8%e5%b0%8f%e7%bb%93" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
 
 
 
@@ -924,13 +1025,15 @@ runcmd:
 
 
 
-      
-      
-    
 
-    
 
-    
+
+
+
+
+  
+  
+
 
 
   </div>
@@ -962,8 +1065,6 @@ runcmd:
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/javascript.min.js"></script>
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/html.min.js"></script>
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/r.min.js"></script>
         
       
 
@@ -1043,7 +1144,7 @@ runcmd:
     
     
     
-    <script src="/js/academic.min.d6bd04fdad2ad213aa8111c5a3b72fc5.js"></script>
+    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
 
     
 
