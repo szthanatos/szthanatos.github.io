@@ -520,7 +520,7 @@
 <p>默认配置文件为位于redis目录下的<code>redis.conf</code></p>
 <h3 id="最小配置">最小配置</h3>
 <p>一个最小的redis.conf配置如下：</p>
-<pre><code class="language-conf"># 节点监听的端口号
+<pre><code class="language-properties"># 节点监听的端口号
 port {your_port}
 # 是否以进程守护方式(后台)运行
 daemonize yes
@@ -534,7 +534,7 @@ pidfile /var/run/redis_{your_port}.pid
 <p>完成以上配置即可启动单节点redis。</p>
 <h3 id="集群配置">集群配置</h3>
 <p>集群需要在redis.conf中配置以下部分：</p>
-<pre><code class="language-conf"># 以集群模式启动
+<pre><code class="language-properties"># 以集群模式启动
 cluster-enabled yes
 # 集群配置存放的文件名，一般为node-端口号.conf
 cluster-config-file nodes-{port}.conf
@@ -763,7 +763,19 @@ ruby setup.rb
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/javascript.min.js"></script>
         
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/typescript.min.js"></script>
+        
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/html.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/powershell.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/properties.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/sql.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/yaml.min.js"></script>
         
       
 

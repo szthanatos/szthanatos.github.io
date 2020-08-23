@@ -273,7 +273,7 @@ sudo ln -s $(pwd)/linux-amd64/helm /usr/local/bin/helm
 &lt;/ul&gt;
 &lt;h2 id=&#34;1-配置nginx负载均衡&#34;&gt;1. 配置Nginx负载均衡&lt;/h2&gt;
 &lt;p&gt;在&lt;code&gt;loadbalance&lt;/code&gt;主机上编写nginx.conf配置文件：&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-conf&#34;&gt;worker_processes 4;
+&lt;pre&gt;&lt;code class=&#34;language-properties&#34;&gt;worker_processes 4;
 worker_rlimit_nofile 40000;
 
 events {

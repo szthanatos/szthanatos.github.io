@@ -592,7 +592,7 @@ sudo ln -s $(pwd)/linux-amd64/helm /usr/local/bin/helm
 </ul>
 <h2 id="1-配置nginx负载均衡">1. 配置Nginx负载均衡</h2>
 <p>在<code>loadbalance</code>主机上编写nginx.conf配置文件：</p>
-<pre><code class="language-conf">worker_processes 4;
+<pre><code class="language-properties">worker_processes 4;
 worker_rlimit_nofile 40000;
 
 events {
@@ -1062,7 +1062,19 @@ patch  daemonsets cattle-node-agent --patch '{
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/javascript.min.js"></script>
         
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/typescript.min.js"></script>
+        
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/html.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/powershell.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/properties.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/sql.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/yaml.min.js"></script>
         
       
 

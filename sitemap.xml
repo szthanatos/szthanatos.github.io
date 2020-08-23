@@ -23,6 +23,11 @@
   </url>
   
   <url>
+    <loc>https://szthanatos.github.io/topic/wsl2/</loc>
+    <lastmod>2018-09-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://szthanatos.github.io/topic/redis/install/</loc>
     <lastmod>2018-08-30T16:40:48+08:00</lastmod>
   </url>
@@ -30,6 +35,11 @@
   <url>
     <loc>https://szthanatos.github.io/topic/redis/</loc>
     <lastmod>2019-06-16T14:34:52+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://szthanatos.github.io/topic/wsl2/coding_with_wsl2_01/</loc>
+    <lastmod>2020-08-22T11:37:05+08:00</lastmod>
   </url>
   
   <url>
@@ -48,8 +58,38 @@
   </url>
   
   <url>
+    <loc>https://szthanatos.github.io/topic/wsl2/coding_with_wsl2_02/</loc>
+    <lastmod>2020-08-22T16:41:01+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://szthanatos.github.io/topic/redis/improve-00/</loc>
     <lastmod>2019-03-18T15:04:35+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://szthanatos.github.io/topic/wsl2/coding_with_wsl2_03/</loc>
+    <lastmod>2020-08-22T16:41:03+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://szthanatos.github.io/topic/wsl2/coding_with_wsl2_04/</loc>
+    <lastmod>2020-08-22T16:41:05+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://szthanatos.github.io/topic/wsl2/coding_with_wsl2_05/</loc>
+    <lastmod>2020-08-22T17:53:59+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://szthanatos.github.io/topic/wsl2/coding_with_wsl2_06/</loc>
+    <lastmod>2020-08-22T18:06:35+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://szthanatos.github.io/topic/wsl2/coding_with_wsl2_07/</loc>
+    <lastmod>2020-08-22T18:07:41+08:00</lastmod>
   </url>
   
   <url>
@@ -58,12 +98,17 @@
   </url>
   
   <url>
-    <loc>https://szthanatos.github.io/categories/</loc>
-    <lastmod>2019-11-15T17:18:05+08:00</lastmod>
+    <loc>https://szthanatos.github.io/</loc>
+    <lastmod>2020-08-22T18:07:41+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://szthanatos.github.io/</loc>
+    <loc>https://szthanatos.github.io/topic/</loc>
+    <lastmod>2020-08-22T18:07:41+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://szthanatos.github.io/categories/</loc>
     <lastmod>2019-11-15T17:18:05+08:00</lastmod>
   </url>
   
@@ -114,11 +159,6 @@
   
   <url>
     <loc>https://szthanatos.github.io/topic/redis/error-connection_reset/</loc>
-    <lastmod>2019-06-16T23:06:41+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://szthanatos.github.io/topic/</loc>
     <lastmod>2019-06-16T23:06:41+08:00</lastmod>
   </url>
   

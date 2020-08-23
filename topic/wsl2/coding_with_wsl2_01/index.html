@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.6.0">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Lex Wayne">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="什么是WSL 适用于 Linux 的 Windows 子系统可让开发人员按原样运行 GNU/Linux 环境 -">
+
+  
+  <link rel="alternate" hreflang="zh-Hans" href="https://szthanatos.github.io/topic/wsl2/coding_with_wsl2_01/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="#4169E1">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css" integrity="sha256-SHMGCYmST46SoyGgo4YR/9AlK1vf3ff84Aq9yK4hdqM=" crossorigin="anonymous">
+    
+
+    
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CNoto+Sans+SC:400,400italic,700%7CInconsolata&display=swap">
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.css">
+
+  
+
+
+
+
+  
+
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon-32.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="https://szthanatos.github.io/topic/wsl2/coding_with_wsl2_01/">
+
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="og:site_name" content="Kryptonite Lab">
+  <meta property="og:url" content="https://szthanatos.github.io/topic/wsl2/coding_with_wsl2_01/">
+  <meta property="og:title" content="开启WSL2 安装Ubuntu | Kryptonite Lab">
+  <meta property="og:description" content="什么是WSL 适用于 Linux 的 Windows 子系统可让开发人员按原样运行 GNU/Linux 环境 -"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="zh-Hans">
+  
+    
+      <meta property="article:published_time" content="2020-08-22T11:37:05&#43;08:00">
+    
+    <meta property="article:modified_time" content="2020-08-22T11:37:05&#43;08:00">
+  
+
+  
+
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>开启WSL2 安装Ubuntu | Kryptonite Lab</title>
+
+</head>
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>搜索</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="搜索..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+    
+    
+      <a class="navbar-brand" href="/">Kryptonite Lab</a>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="切换导航">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#hero"><span>主页</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>笔记</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="/topic/"><span>专题</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      <li class="nav-item">
+        <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  
+
+<div class="container-fluid docs">
+  <div class="row flex-xl-nowrap">
+    <div class="col-12 col-md-3 col-xl-2 docs-sidebar">
+      
+
+
+
+
+
+  
+
+
+
+
+<form class="docs-search d-flex align-items-center">
+  <button class="btn docs-toggle d-md-none p-0 mr-3" type="button" data-toggle="collapse" data-target="#docs-nav" aria-controls="docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    <span><i class="fas fa-bars"></i></span>
+  </button>
+
+  
+  <input name="q" type="search" class="form-control" placeholder="搜索..." autocomplete="off">
+  
+</form>
+
+<nav class="collapse docs-links" id="docs-nav">
+  
+
+  
+  
+  
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/topic/wsl2/">介绍</a>
+
+  </div>
+  
+  <div class="docs-toc-item active">
+    <a class="docs-toc-link" href="/topic/wsl2/coding_with_wsl2_01/">WSL配置</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/topic/wsl2/coding_with_wsl2_02/">终端配置</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/topic/wsl2/coding_with_wsl2_03/">Ubuntu配置</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/topic/wsl2/coding_with_wsl2_04/">Shell配置</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/topic/wsl2/coding_with_wsl2_05/">Tmux配置</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/topic/wsl2/coding_with_wsl2_06/">Python环境配置</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/topic/wsl2/coding_with_wsl2_07/">Docker环境配置</a>
+
+  </div>
+  
+  
+</nav>
+
+    </div>
+
+    
+    <div class="d-none d-xl-block col-xl-2 docs-toc">
+      <ul class="nav toc-top">
+        <li><a href="#" id="back_to_top" class="docs-toc-title">在本页</a></li>
+      </ul>
+
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#什么是wsl">什么是WSL</a></li>
+    <li><a href="#什么是-wsl-2">什么是 WSL 2</a></li>
+    <li><a href="#安装">安装</a>
+      <ul>
+        <li><a href="#启用windows-subsystem-linux">启用Windows-Subsystem-Linux</a></li>
+        <li><a href="#更新内核">更新内核</a></li>
+        <li><a href="#设置wsl默认版本">设置wsl默认版本</a></li>
+        <li><a href="#安装linux系统">安装Linux系统</a></li>
+      </ul>
+    </li>
+    <li><a href="#常用操作">常用操作</a>
+      <ul>
+        <li><a href="#wsl-命令">wsl 命令</a></li>
+        <li><a href="#网络">网络</a></li>
+        <li><a href="#文件系统">文件系统</a></li>
+      </ul>
+    </li>
+    <li><a href="#gpu">GPU</a></li>
+    <li><a href="#参考文档">参考文档</a></li>
+  </ul>
+</nav>
+
+      
+    </div>
+    
+
+    <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role="main">
+
+      <article class="article">
+
+        <div class="docs-article-container">
+          <h1>开启WSL2 安装Ubuntu</h1>
+
+          <div class="article-style">
+            <h2 id="什么是wsl">什么是WSL</h2>
+<blockquote>
+<p>适用于 Linux 的 Windows 子系统可让开发人员按原样运行 GNU/Linux 环境 - 包括大多数命令行工具、实用工具和应用程序 - 且不会产生传统虚拟机或双启动设置开销。</p>
+</blockquote>
+<p>然而现在出的Wsl2是基于Hyper-V虚拟机的&hellip;</p>
+<h2 id="什么是-wsl-2">什么是 WSL 2</h2>
+<blockquote>
+<p>WSL 2 是适用于 Linux 的 Windows 子系统体系结构的一个新版本，它支持适用于 Linux 的 Windows 子系统在 Windows 上运行 ELF64 Linux 二进制文件。 它的主要目标是提高文件系统性能，以及添加完全的系统调用兼容性。</p>
+</blockquote>
+<p><img src="https://raw.githubusercontent.com/szthanatos/image-host/master/wsl1-vs-wsl2.png?token=AAZJE7LDWNNOLQZEFZE54BC7ID77W" alt="wsl1 vs wsl2"></p>
+<p>wsl1其实感觉速度更快，和windows 共享网络，而且没有文件系统的限制。</p>
+<p>然而wsl1不是完整Linux 内核，不支持Docker。如果你只是要一个Linux 环境可以考虑使用wsl1 。</p>
+<h2 id="安装">安装</h2>
+<h3 id="启用windows-subsystem-linux">启用Windows-Subsystem-Linux</h3>
+<p>在<code>控制面板</code>-<code>程序</code>-启<code>用或关闭Windows 功能</code>中勾选<code>适用于Linux 的Windows 子系统</code> 以及 <code>虚拟机平台</code>(wsl2需要)</p>
+<p><img src="https://raw.githubusercontent.com/szthanatos/image-host/master/enable-wsl2.png" alt="启用wsl2"></p>
+<p>或者通过命令行（管理员身份）执行：</p>
+<pre><code class="language-powershell"># 适用于Linux 的Windows 子系统
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+
+# 虚拟机平台
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+</code></pre>
+<p>完成后需要重启电脑。</p>
+<h3 id="更新内核">更新内核</h3>
+<p>目前版本的Win10 需要手动更新Wsl2 内核，前往<a href="https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi">下载适用于 x64 计算机的最新 WSL2 Linux 内核</a> 下载msi文件手动更新。</p>
+<p><em>ARM平台前往<a href="https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_arm64.msi">下载适用于 ARM64 计算机的最新 WSL2 Linux 内核</a></em></p>
+<h3 id="设置wsl默认版本">设置wsl默认版本</h3>
+<p>通过命令行（管理员身份）执行：</p>
+<pre><code class="language-powershell">wsl --set-default-version 2
+</code></pre>
+<p>让未来的Linux都默认以Wsl2 形式安装。</p>
+<p>现有Wsl 虚拟机也可以通过：</p>
+<pre><code class="language-powershell"># 获取现有wsl版本信息
+wsl --list --verbose
+
+# 将现有发行版转化为制定版本
+wsl --set-version &lt;distribution name&gt; &lt;versionNumber&gt;
+</code></pre>
+<p>升级到Wsl2 。</p>
+<h3 id="安装linux系统">安装Linux系统</h3>
+<p>打开<a href="https://aka.ms/wslstore">Microsoft Store</a>，搜索wsl 即可获取可用Linux发行版。</p>
+<p>现在支持的发行版有：</p>
+<ul>
+<li>Ubuntu 16.04 LTS</li>
+<li>Ubuntu 18.04 LTS</li>
+<li>Ubuntu 20.04 LTS</li>
+<li>openSUSE Leap 15.1</li>
+<li>SUSE Linux Enterprise Server 12 SP5</li>
+<li>SUSE Linux Enterprise Server 15 SP1</li>
+<li>Kali Linux</li>
+<li>Debian GNU/Linux</li>
+<li>Fedora Remix for WSL</li>
+<li>Pengwin</li>
+<li>Pengwin Enterprise</li>
+<li>Alpine WSL</li>
+</ul>
+<p>下载完成后，点击图标进入，首次使用会需要几分钟执行安装。</p>
+<p>完成安装后，设置Ubuntu用户名（非root）及密码，正式开启Ubuntu系统。</p>
+<p><img src="https://docs.microsoft.com/zh-cn/windows/wsl/media/ubuntuinstall.png" alt="安装"></p>
+<h2 id="常用操作">常用操作</h2>
+<h3 id="wsl-命令">wsl 命令</h3>
+<ul>
+<li><code>wsl --shutdown</code>  立即终止所有正在运行的分发和 WSL 2 轻型工具虚拟机</li>
+<li><code>wsl -t &lt;分发版&gt;</code> 终止指定的发行版</li>
+<li><code>wsl -l -v</code> 列出分发版及其版本信息</li>
+<li><code>wsl --export &lt;分发版&gt; &lt;文件名&gt;</code>  将分发导出到 tar 文件</li>
+<li><code>wsl --import &lt;分发版&gt; &lt;安装位置&gt; &lt;文件名&gt; [选项]</code>  将指定的 tar 文件作为新分发进行导入</li>
+</ul>
+<p>注意，导入导出发行版会导致无法从Microsoft 应用管理中管理或更新。</p>
+<h3 id="网络">网络</h3>
+<p>WSL2 相当于独立虚拟机，而Wsl1 是和Windows 复用同一个网络的。</p>
+<p>然后和一般宿主机虚拟机略微相反，从Windows 可以通过<code>localhost</code>访问Wsl 上的服务，反之则不行。</p>
+<p>想要访问Windows 上的服务，可以使用命令</p>
+<pre><code class="language-bash">ip route | grep default | awk '{print $3}'
+</code></pre>
+<p>或者查询<code>/etc/resolv.conf</code>中的<code>nameserver</code>获取到Windows 宿主机的ip，</p>
+<p>然后通过ip访问。</p>
+<h3 id="文件系统">文件系统</h3>
+<p>Wsl1 的时候，文件目录位于</p>
+<ul>
+<li>Ubuntu: <code>%localappdata%\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs</code></li>
+<li>Ubuntu18.04: <code>%localappdata%\Packages\CanonicalGroupLimited.Ubuntu18.04onWindows_79rhkp1fndgsc\LocalState\rootfs</code></li>
+</ul>
+<p>Wsl2 可以直接通过<code>\\wsl$</code>在文件管理器中查看到网络位置上的Wsl 虚拟机，Ubuntu 就是<code>\\wsl$\Ubuntu</code>。</p>
+<p>或者你可以从Wsl2 中直接打开当前目录，直接在终端里调用<code>explorer.exe .</code>就行了，非常cool~</p>
+<p>Windows的磁盘在Wsl 中都表示为<code>/mnt/c|d|e...</code>，可以看，但是操作还是尽量拷贝到Wsl 目录下，因为性能损失巨大。</p>
+<h2 id="gpu">GPU</h2>
+<p>差不多能用：</p>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/windows/win32/direct3d12/gpu-cuda-in-wsl">在 WSL 2 中启用 NVIDIA CUDA</a></li>
+<li><a href="https://developer.nvidia.com/cuda/wsl">CUDA on Windows Subsystem for Linux (WSL) - Public Preview</a></li>
+</ul>
+<h2 id="参考文档">参考文档</h2>
+<ul>
+<li><a href="https://docs.microsoft.com/zh-cn/windows/wsl/">WSL 文档</a></li>
+<li><a href="https://docs.microsoft.com/zh-cn/windows/wsl/wsl2-faq">WSL 2 常见问题解答</a></li>
+</ul>
+
+          </div>
+
+          
+
+
+
+          
+          <div class="article-widget">
+            
+<div class="post-nav">
+  
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">下一页</div>
+    <a href="/topic/wsl2/coding_with_wsl2_02/" rel="prev">使用Windows-Terminal作为终端</a>
+  </div>
+  
+</div>
+
+          </div>
+          
+        </div>
+
+        <div class="body-footer">
+          <p>最近更新于 Aug 22, 2020</p>
+
+          
+
+<p class="edit-page">
+  <a href="https://github.com/gcushen/hugo-academic/edit/master/content/topic/wsl2/coding_with_wsl2_01.md">
+    <i class="fas fa-pen pr-2"></i>编辑本页
+  </a>
+</p>
+
+
+
+
+          
+
+        </div>
+
+      </article>
+
+      <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+  </p>
+</footer>
+
+
+    </main>
+  </div>
+</div>
+
+
+      
+
+    
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js" integrity="sha256-1zu+3BnLYV9LdiY85uXMzii3bdrkelyp37e0ZyTAQh0=" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/python.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/go.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/javascript.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/typescript.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/html.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/powershell.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/properties.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/sql.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/yaml.min.js"></script>
+        
+      
+
+      
+      
+    
+
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js" integrity="sha256-EErZamuLefUnbMBQbsEqu1USa+btR2oIlCpBJbyD4/g=" crossorigin="anonymous"></script>
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"没有找到结果","placeholder":"搜索...","results":"搜索结果"};
+      const content_type = {
+        'post': "文章",
+        'project': "项目",
+        'publication' : "出版物",
+        'talk' : "演讲"
+        };
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.1/anchor.min.js" integrity="sha256-pB/deHc9CGfFpJRjC43imB29Rse8tak+5eXqntO94ck=" crossorigin="anonymous"></script>
+    <script>
+      anchors.add();
+    </script>
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+
+    
+
+
+
+
+
+
+  
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">引用</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> 复制
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> 下载
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

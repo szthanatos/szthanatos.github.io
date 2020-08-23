@@ -89,7 +89,7 @@
 &lt;p&gt;默认配置文件为位于redis目录下的&lt;code&gt;redis.conf&lt;/code&gt;&lt;/p&gt;
 &lt;h3 id=&#34;最小配置&#34;&gt;最小配置&lt;/h3&gt;
 &lt;p&gt;一个最小的redis.conf配置如下：&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-conf&#34;&gt;# 节点监听的端口号
+&lt;pre&gt;&lt;code class=&#34;language-properties&#34;&gt;# 节点监听的端口号
 port {your_port}
 # 是否以进程守护方式(后台)运行
 daemonize yes
@@ -103,7 +103,7 @@ pidfile /var/run/redis_{your_port}.pid
 &lt;p&gt;完成以上配置即可启动单节点redis。&lt;/p&gt;
 &lt;h3 id=&#34;集群配置&#34;&gt;集群配置&lt;/h3&gt;
 &lt;p&gt;集群需要在redis.conf中配置以下部分：&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-conf&#34;&gt;# 以集群模式启动
+&lt;pre&gt;&lt;code class=&#34;language-properties&#34;&gt;# 以集群模式启动
 cluster-enabled yes
 # 集群配置存放的文件名，一般为node-端口号.conf
 cluster-config-file nodes-{port}.conf
