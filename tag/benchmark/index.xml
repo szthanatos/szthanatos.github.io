@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>benchmark | Kryptonite Lab</title>
+    <link>https://szthanatos.github.io/tag/benchmark/</link>
+      <atom:link href="https://szthanatos.github.io/tag/benchmark/index.xml" rel="self" type="application/rss+xml" />
+    <description>benchmark</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>zh-Hans</language><lastBuildDate>Fri, 01 Sep 2017 18:08:57 +0800</lastBuildDate>
+    <image>
+      <url>https://szthanatos.github.io/images/icon_hu38c28d6ecf464f8a293472d2a570e5b8_6181_512x512_fill_lanczos_center_2.png</url>
+      <title>benchmark</title>
+      <link>https://szthanatos.github.io/tag/benchmark/</link>
+    </image>
+    
+    <item>
+      <title>列表原序去重性能测试</title>
+      <link>https://szthanatos.github.io/post/python/unique_list_ordered/</link>
+      <pubDate>Fri, 01 Sep 2017 18:08:57 +0800</pubDate>
+      <guid>https://szthanatos.github.io/post/python/unique_list_ordered/</guid>
+      <description>&lt;p&gt;对列表的去重很简单，&lt;code&gt;set()&lt;/code&gt; 一下再 &lt;code&gt;list()&lt;/code&gt; 回来就可以了，但是如果要保留原始列表的顺序呢？&lt;/p&gt;
+&lt;p&gt;举例，对 &lt;code&gt;[&amp;quot;b&amp;quot;, &amp;quot;b&amp;quot;, &amp;quot;c&amp;quot;, &amp;quot;a&amp;quot;, &amp;quot;c&amp;quot;, &amp;quot;b&amp;quot;, &amp;quot;a&amp;quot;, &amp;quot;b&amp;quot;]&lt;/code&gt; 这个列表进行原序去重，得到结果应该是 &lt;code&gt;[&#39;b&#39;, &#39;c&#39;, &#39;a&#39;]&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;有下面这几种写法：&lt;/p&gt;
+&lt;h4 id=&#34;二次排序&#34;&gt;二次排序&lt;/h4&gt;
+&lt;p&gt;也就是对去重结果再按原列表 sort 一次：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def sort_1(list_in):
+    return sorted(list(set(list_in)), key=list_in.index)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;匿名函数&#34;&gt;匿名函数&lt;/h4&gt;
+&lt;p&gt;使用匿名函数将列表里不重复的元素累加到一个新列表中：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def sort_2(list_in):
+    return reduce(lambda x, y: x if y in x else x + [y], [[], ] + list_in)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;借用字典&#34;&gt;借用字典&lt;/h4&gt;
+&lt;h5 id=&#34;有序字典&#34;&gt;有序字典&lt;/h5&gt;
+&lt;p&gt;使用 &lt;code&gt;OrderedDict&lt;/code&gt; 排序：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def sort_3(list_in):
+    return list(collections.OrderedDict.fromkeys(list_in).keys())
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;defaultdict&#34;&gt;defaultdict&lt;/h4&gt;
+&lt;p&gt;类似的, 我们使用 &lt;code&gt;defaultdict&lt;/code&gt; 进行排序：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def sort_4(list_in):
+    return list(collections.defaultdict.fromkeys(list_in).keys())
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;直接使用-dict&#34;&gt;直接使用 dict&lt;/h4&gt;
+&lt;p&gt;在 python3.6 之前， &lt;code&gt;dict&lt;/code&gt; 的 &lt;code&gt;key&lt;/code&gt; 的顺序并不保证一定是插入顺序，所以只有在 python3.6 之后才可以直接用 &lt;code&gt;dict&lt;/code&gt; 实现这个操作；&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def sort_5(list_in):
+    return list(dict.fromkeys(list_in).keys())
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;完整性能测试代码如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# !/usr/bin/env python
+# encoding: utf-8
+
+from timeit import repeat
+from functools import reduce
+from collections import defaultdict, OrderedDict
+
+example = [&amp;quot;b&amp;quot;, &amp;quot;b&amp;quot;, &amp;quot;c&amp;quot;, &amp;quot;a&amp;quot;, &amp;quot;c&amp;quot;, &amp;quot;b&amp;quot;, &amp;quot;a&amp;quot;, &amp;quot;b&amp;quot;]
+
+
+def sort_1(list_in):
+    return sorted(list(set(list_in)), key=list_in.index)
+
+
+def sort_2(list_in):
+    return reduce(lambda x, y: x if y in x else x + [y], [[], ] + list_in)
+
+
+def sort_3(list_in):
+    return list(OrderedDict.fromkeys(list_in).keys())
+
+
+def sort_4(list_in):
+    return list(defaultdict.fromkeys(list_in).keys())
+
+
+def sort_5(list_in):
+    return list(dict.fromkeys(list_in).keys())
+
+
+if __name__ == &#39;__main__&#39;:
+    # time usage: t5&amp;lt; t4 &amp;lt; t3 &amp;lt; t2 &amp;lt; t1
+    result = {}
+    for i in range(1, 6):
+        result[&#39;sort_{}&#39;.format(i)] = repeat(&#39;sort_{}(example)&#39;.format(i),
+                                             &#39;from __main__ import sort_{}, example&#39;.format(i),
+                                             number=1000000,
+                                             repeat=5)
+    for k, v in result.items():
+        avg_v = round(sum(v) / len(v), 3)
+        print(k, avg_v)
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在我的苏菲婆上的结果仅供参考：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;排序&lt;/th&gt;
+&lt;th&gt;平均时间&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;sort_1&lt;/td&gt;
+&lt;td&gt;1.477&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;sort_2&lt;/td&gt;
+&lt;td&gt;1.305&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;sort_3&lt;/td&gt;
+&lt;td&gt;0.957&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;sort_4&lt;/td&gt;
+&lt;td&gt;0.734&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;sort_5&lt;/td&gt;
+&lt;td&gt;0.698&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;可见，python3.6 之后 dict 是最好的原序去重办法，3.6 之前用 defaultdict 吧。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

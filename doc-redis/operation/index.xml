@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>运维 | Kryptonite Lab</title>
+    <link>https://szthanatos.github.io/doc-redis/operation/</link>
+      <atom:link href="https://szthanatos.github.io/doc-redis/operation/index.xml" rel="self" type="application/rss+xml" />
+    <description>运维</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>zh-Hans</language><lastBuildDate>Sun, 09 Sep 2018 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://szthanatos.github.io/images/icon_hu38c28d6ecf464f8a293472d2a570e5b8_6181_512x512_fill_lanczos_center_2.png</url>
+      <title>运维</title>
+      <link>https://szthanatos.github.io/doc-redis/operation/</link>
+    </image>
+    
+    <item>
+      <title>Redis 单机 &amp; 集群安装</title>
+      <link>https://szthanatos.github.io/doc-redis/operation/install/</link>
+      <pubDate>Thu, 30 Aug 2018 16:40:48 +0800</pubDate>
+      <guid>https://szthanatos.github.io/doc-redis/operation/install/</guid>
+      <description>&lt;h2 id=&#34;版本&#34;&gt;版本&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;软件&lt;/th&gt;
+&lt;th&gt;版本&lt;/th&gt;
+&lt;th&gt;更新日期&lt;/th&gt;
+&lt;th&gt;备注&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;http://download.redis.io/releases/redis-4.0.11.tar.gz&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Redis&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;4.0.11&lt;/td&gt;
+&lt;td&gt;2018-08-03&lt;/td&gt;
+&lt;td&gt;必装&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://cache.ruby-lang.org/pub/ruby/2.5/ruby-2.5.1.tar.gz&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Ruby&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;2.5.1&lt;/td&gt;
+&lt;td&gt;2018-03-28&lt;/td&gt;
+&lt;td&gt;可选, 集群执行 rb 脚本的节点安装即可&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://rubygems.org/rubygems/rubygems-2.7.7.tgz&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;rubygem&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;2.7.7&lt;/td&gt;
+&lt;td&gt;2018-05-18&lt;/td&gt;
+&lt;td&gt;同上&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://rubygems.org/downloads/redis-4.0.2.gem&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;gem-redis&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;4.0.2&lt;/td&gt;
+&lt;td&gt;2018-08-13&lt;/td&gt;
+&lt;td&gt;同上&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;安装&#34;&gt;安装&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;以 CentOS 7 为例&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;从上述链接下载 redis 文件&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;安装环境依赖 &lt;code&gt;yum install -y gcc gcc-c++ tcl&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;tar -xvzf {redis.tar.gz}&lt;/code&gt; 解压&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;进入 redis 目录，执行 &lt;code&gt;make &amp;amp;&amp;amp; make install&lt;/code&gt; 进行安装&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;如果 make 出错，通过 make test 检查：&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;尝试只用单核运行：&lt;code&gt;taskset -c 1 sudo make test&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;更改 &lt;code&gt;tests/integration/replication-psync.tcl&lt;/code&gt; 文件, 把对应报错的那段代码中的 &lt;code&gt;after 100&lt;/code&gt; 改成 &lt;code&gt;after 500&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;完成单节点安装&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;配置&#34;&gt;配置&lt;/h2&gt;
+&lt;p&gt;默认配置文件为位于 redis 目录下的 &lt;code&gt;redis.conf&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;最小配置&#34;&gt;最小配置&lt;/h3&gt;
+&lt;p&gt;一个最小的 redis.conf 配置如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-properties&#34;&gt;# 节点监听的端口号
+port {your_port}
+# 是否以进程守护方式 (后台) 运行
+daemonize yes
+# 允许访问的 IP 地址，设置为 0.0.0.0 的时候可以从任意 IP 访问 redis，多个 ip 用逗号隔开
+bind {your_ip}
+# 工作目录，数据存放位置
+dir {your_dir}
+# 进程文件名称，固定为 redis_监听的端口号. pid
+pidfile /var/run/redis_{your_port}.pid
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;完成以上配置即可启动单节点 redis。&lt;/p&gt;
+&lt;h3 id=&#34;集群配置&#34;&gt;集群配置&lt;/h3&gt;
+&lt;p&gt;集群需要在 redis.conf 中配置以下部分：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-properties&#34;&gt;# 以集群模式启动
+cluster-enabled yes
+# 集群配置存放的文件名，一般为 node - 端口号. conf
+cluster-config-file nodes-{port}.conf
+# 集群超时
+cluster-node-timeout 15000
+# 是否启用 aof 方式持久化，建议开启
+appendonly yes
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;启动&#34;&gt;启动&lt;/h2&gt;
+&lt;h3 id=&#34;防火墙&#34;&gt;防火墙&lt;/h3&gt;
+&lt;p&gt;redis 需要使用指定端口号以及指定端口号 + 10000 进行通讯，以 6379 端口为例，如果开启了防火墙，需要执行：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;firewall-cmd --zone=public --add-port=6379/tcp --permanent
+firewall-cmd --zone=public --add-port=16379/tcp --permanent
+firewall-cmd --reload
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;单结点启动&#34;&gt;单结点启动&lt;/h3&gt;
+&lt;p&gt;执行&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;redis-server {dir}/redis.conf
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;启动 redis&lt;/p&gt;
+&lt;h3 id=&#34;集群启动&#34;&gt;集群启动&lt;/h3&gt;
+&lt;h4 id=&#34;ruby-环境&#34;&gt;ruby 环境&lt;/h4&gt;
+&lt;p&gt;redis 集群是通过 Ruby 编写的脚本进行联通的（但不需要在每隔节点都执行），所以集群中起码一个节点，应该具备 ruby 环境、rubygem 包管理软件、rubygem 中的 redis 包。&lt;/p&gt;
+&lt;p&gt;ruby 环境搭建过程如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;yum 安装 ruby 环境及包&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;yum -y install ruby ruby-devel rubygems
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;修改 ruby 源，使用国内镜像&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;gem sources --add https://gems.ruby-china.org/ --remove https://rubygems.org/
+# 如果修改失败将 https 换为 http 重试
+gem sources --add http://gems.ruby-china.org/ --remove http://rubygems.org/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;检查源列表，确保只有 gems.ruby-china.org&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;gem sources -l
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;安装 ruby 的 redis 包：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;gem install redis
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;联通集群&#34;&gt;联通集群&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;启动所有节点上的 redis 服务&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;进入 redis 安装路径下 src 文件夹，执行集群命令：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# --replicas 1 表示主从复制比例为 1:1，即一个主节点对应一个从节点
+./redis-trib.rb create --replicas 1 {node1_ip:port} {node2_ip:port} ...
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;默认会自动分配主从节点，确认的话输入 &lt;code&gt;yes&lt;/code&gt; 完成集群的创建&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;检查集群状态&#34;&gt;检查集群状态&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# -c 表示连接的是集群
+redis-cli -c -h {ip} -p {port}
+# 查看集群节点
+&amp;gt; cluster nodes
+# 查看集群信息
+&amp;gt; cluster info
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;相关命令&#34;&gt;相关命令&lt;/h2&gt;
+&lt;p&gt;除了使用 rb 脚本，其实可以直接在 redis 节点上 &lt;a href=&#34;https://szthanatos.github.io/post/redis/redis_command.md&#34;&gt;通过命令操作集群&lt;/a&gt;，个人更推荐这个做法。&lt;/p&gt;
+&lt;p&gt;主要用到的是&lt;/p&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    &lt;p&gt;谨慎使用 rb 脚本对 redis 进行修复，从来没修复成功过&amp;hellip;&lt;/p&gt;
+&lt;p&gt;它还会把你的哈希槽按顺序平均分配到所有节点上，本来可能是 A 节点管理 0-6000，B 节点 6001-12000&amp;hellip;fix 完了之后就成了 A 节点：1，3，5，7&amp;hellip; 终端都被坑到无法阅读了。&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;附注&#34;&gt;附注&lt;/h2&gt;
+&lt;h3 id=&#34;离线安装-redis-环境&#34;&gt;离线安装 redis 环境&lt;/h3&gt;
+&lt;p&gt;离线情况需要本地下载如下 rpm 包 (版本号以最新为准):&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cpp-4.8.5-16.el7.x86_64.rpm
+gcc-4.8.5-16.el7.x86_64.rpm
+gcc-c++-4.8.5-16.el7.x86_64.rpm
+glibc-2.17-196.el7.i686.rpm
+glibc-2.17-196.el7.x86_64.rpm
+glibc-common-2.17-196.el7.x86_64.rpm
+glibc-devel-2.17-196.el7.x86_64.rpm
+glibc-headers-2.17-196.el7.x86_64.rpm
+libgcc-4.8.5-16.el7.i686.rpm
+libgcc-4.8.5-16.el7.x86_64.rpm
+libgomp-4.8.5-16.el7.i686.rpm
+libgomp-4.8.5-16.el7.x86_64.rpm
+libstdc++-4.8.5-16.el7.i686.rpm
+libstdc++-4.8.5-16.el7.x86_64.rpm
+libstdc++-devel-4.8.5-16.el7.i686.rpm
+libstdc++-devel-4.8.5-16.el7.x86_64.rpm
+nspr-4.13.1-1.0.el7_3.x86_64.rpm
+nss-softokn-freebl-3.28.3-8.el7_4.i686.rpm
+nss-softokn-freebl-3.28.3-8.el7_4.x86_64.rpm
+tcl-8.5.13-8.el7.i686.rpm
+tcl-8.5.13-8.el7.x86_64.rpm
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;如果-gem-安装-redis-包时提示-ruby-版本太低&#34;&gt;如果 gem 安装 redis 包时，提示 ruby 版本太低&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;卸载 yum 过时的 ruby 环境&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;yum remove ruby ruby-devel rubygems
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;下载 &lt;a href=&#34;https://www.ruby-lang.org/en/downloads/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ruby&lt;/a&gt; 源码&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;解压，编译安装:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;tar -zxvf {latest_ruby.tar.gz}
+cd {latest_ruby}
+./configure
+make
+make install
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;下载 &lt;a href=&#34;https://rubygems.org/pages/download&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;gem&lt;/a&gt; 源码&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;解压，安装：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;tar -zxvf {latest_rubygem.tgz}
+cd {latest_rubygem}
+ruby setup.rb
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;重新 &lt;code&gt;gem install redis&lt;/code&gt; 或者离线下载 &lt;a href=&#34;https://rubygems.org/downloads/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;gem-redis&lt;/a&gt; 的包，本地安装&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

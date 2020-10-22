@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git | Kryptonite Lab</title>
+    <link>https://szthanatos.github.io/tag/git/</link>
+      <atom:link href="https://szthanatos.github.io/tag/git/index.xml" rel="self" type="application/rss+xml" />
+    <description>Git</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>zh-Hans</language><lastBuildDate>Sat, 05 Jan 2019 14:13:21 +0800</lastBuildDate>
+    <image>
+      <url>https://szthanatos.github.io/images/icon_hu38c28d6ecf464f8a293472d2a570e5b8_6181_512x512_fill_lanczos_center_2.png</url>
+      <title>Git</title>
+      <link>https://szthanatos.github.io/tag/git/</link>
+    </image>
+    
+    <item>
+      <title>Git三棵树和reset/checkout命令</title>
+      <link>https://szthanatos.github.io/post/git/git_trees/</link>
+      <pubDate>Sat, 05 Jan 2019 14:13:21 +0800</pubDate>
+      <guid>https://szthanatos.github.io/post/git/git_trees/</guid>
+      <description>&lt;p&gt;理解Git没有比从三棵树开始更好的了。&lt;/p&gt;
+&lt;p&gt;完整的话还是看&lt;a href=&#34;https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E9%87%8D%E7%BD%AE%E6%8F%AD%E5%AF%86&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;git文档&lt;/a&gt;比较好，说的蛮清楚了。&lt;/p&gt;
+&lt;h2 id=&#34;三棵树和正向流程&#34;&gt;三棵树和正向流程&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;树&lt;/th&gt;
+&lt;th&gt;用途&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;HEAD&lt;/td&gt;
+&lt;td&gt;上一次提交的快照，下一次提交的父结点&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Index&lt;/td&gt;
+&lt;td&gt;预期的下一次提交的快照&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Working Directory&lt;/td&gt;
+&lt;td&gt;沙盒&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;git的核心工作就是管理这三棵树。&lt;code&gt;git add&lt;/code&gt;就是把你工作目录(Working Directory)的修改提交到暂存区(Index)，&lt;code&gt;git commit&lt;/code&gt;就是把暂存区的内容同步到仓库里作为一个快照，并移动&lt;code&gt;HEAD&lt;/code&gt;指向新快照；&lt;img src=&#34;https://szthanatos.github.io/media/git_flow.gif&#34; alt=&#34;git_flow&#34;&gt;&lt;/p&gt;
+&lt;p&gt;额外说一下这个&lt;code&gt;HEAD指针&lt;/code&gt;，每一次commit都相当于在仓库(Repository)里生成一个快照，
+把N个快照想象成一个右进左出的队列(List)，再想象有一个指针，默认指向队首(最新快照)，告诉你当前到底用的是哪一个版本快照。&lt;/p&gt;
+&lt;h2 id=&#34;reset&#34;&gt;reset&lt;/h2&gt;
+&lt;p&gt;显然，&lt;code&gt;git reset&lt;/code&gt;就是对上述行为的反向操作。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;reset&lt;/code&gt;的本质其实是移动&lt;code&gt;HEAD&lt;/code&gt;指针指向哪个快照，而通过&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;--soft&lt;/code&gt;——只改变指针指向的快照；&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--mixed&lt;/code&gt;——移动指针的同时也把快照内容同步到暂存区；&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--hard&lt;/code&gt;——三棵树全同步为指针指向的快照；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;参数来&lt;strong&gt;递进的&lt;/strong&gt;控制改变是发生在哪几颗树上。&lt;img src=&#34;https://szthanatos.github.io/media/git_reflow.gif&#34; alt=&#34;git_reflow&#34;&gt;&lt;/p&gt;
+&lt;p&gt;再强调一遍，&lt;code&gt;reset&lt;/code&gt;的改变的是&lt;code&gt;HEAD&lt;/code&gt;指针，而不是文件。即使&lt;code&gt;git reset File&lt;/code&gt;的写法是有效的，但它的本质是&lt;code&gt;git reset --mixed HEAD File&lt;/code&gt;的缩写，即将&lt;code&gt;File&lt;/code&gt;从&lt;code&gt;HEAD&lt;/code&gt;指向的快照复制到索引中。&lt;code&gt;HEAD&lt;/code&gt;指针永远只能指向一个快照，但是快照是可以局部修改它里面的文件的。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;HEAD~&lt;/code&gt;表示前一个快照，&lt;code&gt;HEAD~2&lt;/code&gt;表示前两个，依此类推。&lt;/p&gt;
+&lt;h2 id=&#34;checkout&#34;&gt;checkout&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;checkout&lt;/code&gt;的本质就有所不同，它关心的是分支(branch)，它的主要作用是让&lt;code&gt;HEAD&lt;/code&gt;在不同分支间移动(默认三棵树都会更新)。&lt;/p&gt;
+&lt;p&gt;还是拿刚才那个队列举例，分支相当于是平行的一条队列，现在把他放在你脑子里之前那个队列的上方，
+由于&lt;code&gt;HEAD&lt;/code&gt;指针只能指向一个快照，所以这个时候它可能会在两个队列间“跳动”，&lt;code&gt;checkout&lt;/code&gt;就是控制指针上下移动的命令，而&lt;code&gt;reset&lt;/code&gt;则是控制指针在当前队列左右(前后)移动。&lt;img src=&#34;https://szthanatos.github.io/media/git_checkout.gif&#34; alt=&#34;git_chechout&#34;&gt;&lt;/p&gt;
+&lt;p&gt;同样的，&lt;code&gt;checkout&lt;/code&gt;后面也可以跟一个文件，和&lt;code&gt;git reset --hard [branch] file&lt;/code&gt;可能会产生的效果一样。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Git Tips</title>
+      <link>https://szthanatos.github.io/post/git/git_tips/</link>
+      <pubDate>Fri, 14 Dec 2018 09:35:32 +0800</pubDate>
+      <guid>https://szthanatos.github.io/post/git/git_tips/</guid>
+      <description>&lt;h2&gt;目录&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#deploy-keyssh-keygithub&#34;&gt;Deploy key/SSH key(github)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#更换-git-协议&#34;&gt;更换 git 协议&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#强制覆盖本地文件&#34;&gt;强制覆盖本地文件&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#撤销修改&#34;&gt;撤销修改&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#add-之前撤销&#34;&gt;add 之前撤销&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#commit-之前撤销&#34;&gt;commit 之前撤销&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#push-之前撤销&#34;&gt;push 之前撤销&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#删除历史提交记录&#34;&gt;删除历史提交记录&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#忽略文件权限&#34;&gt;忽略文件权限&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;h2 id=&#34;deploy-keyssh-keygithub&#34;&gt;Deploy key/SSH key(github)&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;Deploy key&lt;/code&gt; 是在 &lt;code&gt;项目主页&lt;/code&gt;-&lt;code&gt;setting&lt;/code&gt;-&lt;code&gt;Delpoy keys&lt;/code&gt; 下进行添加，如果勾选 &lt;code&gt;Allow write access&lt;/code&gt;，则相当于具有对这个项目的读写权限 (否则只能 &lt;code&gt;clone&lt;/code&gt; 不能 &lt;code&gt;push&lt;/code&gt;)。&lt;strong&gt;作用范围是这个项目。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;SSH key&lt;/code&gt; 是在你 &lt;code&gt;个人主页&lt;/code&gt;-&lt;code&gt;Settings&lt;/code&gt;-&lt;code&gt;SSH and GPG keys&lt;/code&gt; 下进行添加。&lt;strong&gt;作用范围是你的账户下的所有项目。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;同一个 &lt;code&gt;公钥&lt;/code&gt;，只能作为整个账户的 &lt;code&gt;SSH key&lt;/code&gt;，或者 &lt;strong&gt;一个项目&lt;/strong&gt; 的 &lt;code&gt;Deploy key&lt;/code&gt;。想为一台机器授予多个项目的读写权限的话，需要通过 &lt;code&gt;ssh-keygen&lt;/code&gt; 生成多个密钥，分别作为不同项目的 &lt;code&gt;Deploy key&lt;/code&gt;。&lt;/p&gt;
+&lt;h2 id=&#34;更换-git-协议&#34;&gt;更换 git 协议&lt;/h2&gt;
+&lt;p&gt;使用 &lt;code&gt;http&lt;/code&gt;/&lt;code&gt;https&lt;/code&gt; 协议连接仓库相比 &lt;code&gt;ssh&lt;/code&gt; 即不够安全，也会存在 &lt;code&gt;push&lt;/code&gt; 的时候必须输入用户名密码的问题。&lt;/p&gt;
+&lt;p&gt;使用 &lt;code&gt;git remote -v&lt;/code&gt; 可以查看项目使用的协议。&lt;/p&gt;
+&lt;p&gt;如果是新建的项目，推荐在一开始就使用 &lt;code&gt;git@github.com:{USER}/{PROJECT}.git&lt;/code&gt; 进行 &lt;code&gt;clone&lt;/code&gt;。这样默认都是用 &lt;code&gt;ssh&lt;/code&gt; 了。&lt;/p&gt;
+&lt;p&gt;如果是已有项目，使用 &lt;code&gt;git remote set-url {repository} {url}&lt;/code&gt; 更改。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ git remote -v
+origin  https://github.com/abc/bcd.git (fetch)
+origin  https://github.com/abc/bcd.git (push)
+
+$ git remote set-url origin git@github.com:abc/bcd.git
+
+$ git remote -v
+origin  git@github.com:abc/bcd.git (fetch)
+origin  git@github.com:abc/bcd.git (push)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;强制覆盖本地文件&#34;&gt;强制覆盖本地文件&lt;/h2&gt;
+&lt;p&gt;啥都别说了，直接重来吧：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git fetch --all
+git reset --hard origin/master
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;撤销修改&#34;&gt;撤销修改&lt;/h2&gt;
+&lt;h3 id=&#34;add-之前撤销&#34;&gt;add 之前撤销&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 单个文件
+git checkout FileName
+
+# 所有文件
+git checkout .
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;commit-之前撤销&#34;&gt;commit 之前撤销&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 取消暂存
+git reset HEAD FileName
+
+# 撤销修改
+git checkout FileName
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;push-之前撤销&#34;&gt;push 之前撤销&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git reset [--hard|soft|mixed] [commit|HEAD]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;删除历史提交记录&#34;&gt;删除历史提交记录&lt;/h2&gt;
+&lt;p&gt;commit 多了项目也会膨胀&amp;hellip; 清了一干二净。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 用 orphan 参数创建全新的分支
+git checkout --orphan {new_branch}
+
+# 添加所有文件
+git add -A
+
+# 提交
+git commit -am &amp;quot;commit message&amp;quot;
+
+# 删除原始分支
+git branch -D {old_branch}
+
+# 交换分支
+git branch -m {old_branch}
+
+# 强制提交变更
+git push -f origin {old_branch}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;忽略文件权限&#34;&gt;忽略文件权限&lt;/h2&gt;
+&lt;p&gt;文件在系统间转移的时候可能由于权限改变而使文件全都处于 &amp;ldquo;modified&amp;rdquo; 状态。（比如从 linux 到 Windows，权限会从 644 变成 755）可以以项目为单位设置忽略文件权限：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git config core.filemode false
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

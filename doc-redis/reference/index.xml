@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>参考文献 | Kryptonite Lab</title>
+    <link>https://szthanatos.github.io/doc-redis/reference/</link>
+      <atom:link href="https://szthanatos.github.io/doc-redis/reference/index.xml" rel="self" type="application/rss+xml" />
+    <description>参考文献</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>zh-Hans</language><lastBuildDate>Sun, 09 Sep 2018 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://szthanatos.github.io/images/icon_hu38c28d6ecf464f8a293472d2a570e5b8_6181_512x512_fill_lanczos_center_2.png</url>
+      <title>参考文献</title>
+      <link>https://szthanatos.github.io/doc-redis/reference/</link>
+    </image>
+    
+  </channel>
+</rss>

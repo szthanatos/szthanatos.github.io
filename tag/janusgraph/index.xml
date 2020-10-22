@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>janusgraph | Kryptonite Lab</title>
+    <link>https://szthanatos.github.io/tag/janusgraph/</link>
+      <atom:link href="https://szthanatos.github.io/tag/janusgraph/index.xml" rel="self" type="application/rss+xml" />
+    <description>janusgraph</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>zh-Hans</language><lastBuildDate>Sun, 17 Mar 2019 21:50:19 +0800</lastBuildDate>
+    <image>
+      <url>https://szthanatos.github.io/images/icon_hu38c28d6ecf464f8a293472d2a570e5b8_6181_512x512_fill_lanczos_center_2.png</url>
+      <title>janusgraph</title>
+      <link>https://szthanatos.github.io/tag/janusgraph/</link>
+    </image>
+    
+    <item>
+      <title>JanusGraph 搭建及简单使用</title>
+      <link>https://szthanatos.github.io/post/janusgraph/</link>
+      <pubDate>Sun, 17 Mar 2019 21:50:19 +0800</pubDate>
+      <guid>https://szthanatos.github.io/post/janusgraph/</guid>
+      <description>&lt;h2&gt;目录&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#基本环境&#34;&gt;基本环境&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#安装&#34;&gt;安装&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#配置&#34;&gt;配置&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#基本用法&#34;&gt;基本用法&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#加载诸神图&#34;&gt;加载诸神图&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#一些基本操作&#34;&gt;一些基本操作&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#增操作&#34;&gt;增操作&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#删操作&#34;&gt;删操作&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#查询&#34;&gt;查询&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;h2 id=&#34;基本环境&#34;&gt;基本环境&lt;/h2&gt;
+&lt;p&gt;底层数据库基于 HBase，检索服务基于 Elasticserach。&lt;/p&gt;
+&lt;p&gt;系统运行服务大致如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;[root@xnode208 ~] jps
+21584 GremlinServer
+27857 DataNode
+23218 Jps
+3251 HMaster
+27283 NameNode
+21707 Console
+17131 Elasticsearch
+29503 SecondaryNameNode
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;安装&#34;&gt;安装&lt;/h2&gt;
+&lt;p&gt;下载 &lt;a href=&#34;https://github.com/JanusGraph/janusgraph/releases/download/v0.2.2/janusgraph-0.2.2-hadoop2.zip&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;janusgraph0.22 安装包&lt;/a&gt; 并解压&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;wget https://github.com/JanusGraph/janusgraph/releases/download/v0.2.2/janusgraph-0.2.2-hadoop2.zip
+unzip janusgraph-0.2.2-hadoop2.zip
+cd janusgraph-0.2.2-hadoop2
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;配置&#34;&gt;配置&lt;/h2&gt;
+&lt;p&gt;在这里我们采用的是启动 gremlin-server 服务时，加载指定配置文件的方法创建图表，所以需要设置 gremlin-server 端以及图表的配置文件。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;创建 gremlin-server 端配置文件 &lt;code&gt;janusgraph-0.2.2-hadoop2/conf/gremlin-server/socket-gremlin-server.yaml&lt;/code&gt;，这里我们复制 gremlin 服务默认的配置文件，在此基础上进行修改&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cp conf/gremlin-server/gremlin-server.yaml conf/gremlin-server/socket-gremlin-server.yaml
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;修改 &lt;code&gt;socket-gremlin-server.yaml&lt;/code&gt;：在配置文件中添加 graphManager; 并在 graphs 项中添加 graph 键及其值，一个键值代表一个图表，值表示对图表的设置 (可添加多个图表，每一个图表都有自己的配置文件)，如：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;graphManager: org.janusgraph.graphdb.management.JanusGraphManager
+graphs: {
+  blablabla,
+  graph: conf/gremlin-server/socket-jg-hbase_fyk-server-configraph.properties
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;准备上述 &lt;code&gt;socket-gremlin-server.yaml&lt;/code&gt; 中对图表进行设置的 properties 文件，&lt;code&gt;conf/gremlin-server/socket-jg-hbase_fyk-server-configraph.properties&lt;/code&gt; 文件内容如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;gremlin.graph=org.janusgraph.core.JanusGraphFactory
+graph.graphname=graph
+
+storage.backend=hbase  # 设置我们本地启动的 hbase 作为底层数据库
+storage.hostname=127.0.0.1
+
+index.search.backend=elasticsearch  # 设置 Janus graph 自带的 es 作为我们的检索服务
+index.search.hostname=127.0.0.1
+
+cache.db-cache = true
+cache.db-cache-clean-wait = 20
+cache.db-cache-time = 180000
+cache.db-cache-size = 0.5
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;基本用法&#34;&gt;基本用法&lt;/h2&gt;
+&lt;p&gt;依次启动 hbase,elasticsearch 以及 gremlin-server，最后进入 gremlin.sh 客户端对图表进行操作&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;hbase&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;[root@xnode208 ~] start-hbase.sh
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;elasticsearch.(注：Janusgraph 自带的 elastic search 服务启动时为确保安全被禁止使用 root 用户)&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;[zkr@xnode208 ~] cd /usr/local/janusgraph-0.2.2-hadoop2
+[zkr@xnode208 elasticsearch] ./bin/elasticsearch
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;gremlin-server(启动成功后，会创建我们在配置文件中设计的图表)&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;[zkr@xnode208 janusgraph0.2] ./bin/gremlin-server.sh ./conf/gremlin-server/socket-gremlin-server.yaml
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;gremlin.sh(进入 gremlin 交互式客户端)&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;[root@xnode208 janusgraph0.2] ./bin/gremlin.sh
+gremlin&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;加载诸神图&#34;&gt;加载诸神图&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 连接 gremlin server
+gremlin&amp;gt; :remote connect tinkerpop.server conf/remote.yaml session
+==&amp;gt;Configured localhost/127.0.0.1:8182-[f6db862e-752c-48db-839b-1b5b16f1786a]
+gremlin&amp;gt; :remote console
+==&amp;gt;All scripts will now be sent to Gremlin Server - [localhost/127.0.0.1:8182]-[f6db862e-752c-48db-839b-1b5b16f1786a] - type &#39;:remote console&#39; to return to local mode
+
+# 加载诸神图到我们创建的空图表中
+gremlin&amp;gt; GraphOfTheGodsFactory.load(graph)
+==&amp;gt;null
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;示例数据描述了一部分希腊诸神以及他们居住的诸神殿的相关关系。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://szthanatos.github.io/media/graph-of-the-gods-2.png&#34; alt=&#34;graph-of-the-gods&#34;&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;符号&lt;/th&gt;
+&lt;th&gt;含义&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;粗体键&lt;/td&gt;
+&lt;td&gt;带索引的键&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;星标粗体键&lt;/td&gt;
+&lt;td&gt;具有唯一值的带索引的键&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;带下划线的键&lt;/td&gt;
+&lt;td&gt;以顶点为核心的带索引的键&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;空心箭头边&lt;/td&gt;
+&lt;td&gt;不能有多个指向的唯一边&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;尾部划线的边&lt;/td&gt;
+&lt;td&gt;单向边&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;在 JanusGraph 中，实体以顶点表示，关系以边表示，顶点和边都可以具有属性。&lt;/p&gt;
+&lt;h2 id=&#34;一些基本操作&#34;&gt;一些基本操作&lt;/h2&gt;
+&lt;h3 id=&#34;增操作&#34;&gt;增操作&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 添加顶点
+v1 = graph.addVertex(label, &#39;student&#39;);  # 创建第一个顶点 v1 并增加标签
+v2 = graph.addVertex();  # 创建第二个顶点没有标签
+
+# 为顶点添加属性
+v1.property(&#39;id&#39;, &#39;1&#39;);  # 为顶点 v1 添加 id 属性，值为 1
+v3 = graph.addVertex(label,&#39;girl&#39;,&#39;name&#39;,&#39;huahua&#39;);  # 创建第三个顶点并且增加标签，属性以及属性值
+v4 = graph.addVertex(label,&#39;boy&#39;,&#39;name&#39;,&#39;wuyanzu&#39;,&#39;age&#39;,18)  # 创建第四个顶点添加标签以及多个属性属性值
+
+# 添加边
+t1 = v1.addEdge(&#39;friends&#39;, v2);  # 为 v1 添加关系到 v2, 并定义这个关系为 t1
+t2 = v1.addEdge(&#39;boyfriend&#39;, v2);  # 两个顶点之间可以增加多种关系
+
+# 为边增加属性
+t1.property(&#39;reason&#39;,&#39;cool&#39;);  # 为 t1 增加属性
+v3.addEdge(&#39;boyfriend&#39;,v4,&#39;reason&#39;,&#39;because the reason&#39;);  # v3 添加关系到 v4 并且增加关系属性及属性值
+
+# 提交修改
+graph.tx().commit();
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;删操作&#34;&gt;删操作&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 清空
+g.V().drop();  # 删除所有点 / 图
+g.E().drop();  # 删除所有边
+graph1.close();
+JanusGraphFactory.drop(graph1);  # 清空图中的所有数据
+
+# 删除顶点
+pluto = g.V().has(&#39;name&#39;,&#39;pluto&#39;).next();g.V(pluto).drop().iterate();  # 删除 name 属性为 &amp;quot;pluto&amp;quot; 的顶点
+g.V().has(&#39;keys&#39;,&#39;ll&#39;).drop().iterate();  # 删除 keys 属性为 &amp;quot;ll&amp;quot; 的顶点
+g.V().hasLabel(&#39;student&#39;).has(&#39;name&#39;,&#39;ll&#39;).drop().iterate();  # 删除标签为 student，并且顶点属性 name 的值为 &amp;quot;ll&amp;quot; 的顶点
+
+# 删除边
+g.E().has(&#39;uuu&#39;,&#39;because the reason&#39;).drop().iterate();  # 删除边属性 uuu 的属性值为 because the reason 的边
+g.E().hasLabel(&#39;boyfriend&#39;).has(&#39;event&#39;,&#39;the reason&#39;).drop().iterate();  # 删除边标签为 boyfriend 并且边属性 event 的值为 the reason 的边
+
+# 删除顶点标签以及顶点属性
+g.V().hasLabel(&#39;girl&#39;).drop();  # 删除标签 girl 以及标签为 girl 的所有顶点
+g.V().properties(&#39;name&#39;).drop();  # 删除顶点属性 name
+
+# 删除边标签、边属性以及属性值
+g.E().hasLabel(&#39;boyfriend&#39;).drop();  # 删除边标签 boyfriend
+g.E().properties(&#39;uuu&#39;).drop();  # 删除边属性 uuu
+g.E().hasLabel(&amp;quot;friend&amp;quot;).properties().drop();  # 删除边标签为 friend 的所有属性以及属性值
+g.E().values(&#39;because the reason&#39;).drop();  # 删除边属性值为 because the reason 以及对应的属性
+
+
+graph.tx().commit();  # 提交
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;查询&#34;&gt;查询&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 设置 g=graph.traversal(), 方便查询
+gremlin&amp;gt; g = graph.traversal()
+==&amp;gt;graphtraversalsource[standardjanusgraph[hbase:[127.0.0.1]], standard]
+
+# 顶点标签查询
+g.V();  # 查看所有顶点 id
+g.V().label();  # 查看所有顶点标签
+g.V().hasLabel(&amp;quot;god&amp;quot;);  # 查看所有标签为 god 的顶点 id
+g.V().filter(label().is(&#39;god&#39;));  # 用 filter 查看所有标签为 god 的顶点 id
+g.V().has(&#39;name&#39;,&#39;hercules&#39;);  # 查看属性为 name, 值为 hercules 的顶点
+
+# 顶点属性及属性值查询
+g.V().valueMap();  # 遍历每个顶点的属性及属性值 (若没有展示空集)
+g.V().properties();  # 查看所有顶点的属性及属性值 (不展示空)
+g.V().hasLabel(&amp;quot;god&amp;quot;).values();  # 查看所有顶点标签为 god 的属性值
+g.V().hasLabel(&amp;quot;god&amp;quot;).properties();  # 查看顶点标签为 god 的所有顶点属性以及属性值
+g.V().values(&#39;id&#39;);  # 查看顶点属性为 id 的属性值
+g.V().properties(&#39;id&#39;)  # 查看顶点属性为 id 的属性及属性值
+
+# 边标签查询
+g.E();  # 查看所有顶点之间的边 顶点 id---&amp;gt; 边 ---&amp;gt; 顶点 id
+g.E().label();  # 查看所有边的标签 (关系)
+g.E().hasLabel(&amp;quot;battled&amp;quot;)  # 查看标签为 battled 的所有边
+g.E().filter(label().is(&#39;battled&#39;));  # 用 filter 查看标签为 battled 的所有边
+g.E().has(&#39;time&#39;,12);  # 查看属性 time 的值为 12 的所有边
+
+# 边属性及属性值查询
+g.E().valueMap();  # 遍历所有边属性及属性值
+g.E().properties();  # 查看所有边属性及属性值
+g.E().hasLabel(&amp;quot;battled&amp;quot;).values();  # 查看所有标签为 battled 的边属性值
+g.E().hasLabel(&amp;quot;battled&amp;quot;).properties();  # 查看所有标签为 battled 的边属性以及属性值
+g.E().values(&#39;reason&#39;);  # 查看边属性为 reason 的属性值
+g.E().properties(&#39;reason&#39;);  # 查看边属性为 reason 的属性及属性值
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

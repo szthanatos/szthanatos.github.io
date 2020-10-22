@@ -3,108 +3,143 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://szthanatos.github.io/topic/kafka/</loc>
+    <loc>https://szthanatos.github.io/doc-kafka/</loc>
     <lastmod>2019-01-15T15:40:52+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://szthanatos.github.io/topic/docker/</loc>
+    <loc>https://szthanatos.github.io/doc-docker/</loc>
     <lastmod>2018-09-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://szthanatos.github.io/topic/kafka/install/</loc>
-    <lastmod>2018-12-06T10:09:46+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://szthanatos.github.io/topic/docker/basis/</loc>
+    <loc>https://szthanatos.github.io/doc-docker/basis/</loc>
     <lastmod>2018-12-05T22:17:22+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://szthanatos.github.io/topic/wsl2/</loc>
+    <loc>https://szthanatos.github.io/doc-wsl2/</loc>
     <lastmod>2018-09-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://szthanatos.github.io/topic/redis/install/</loc>
-    <lastmod>2018-08-30T16:40:48+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://szthanatos.github.io/topic/redis/</loc>
+    <loc>https://szthanatos.github.io/doc-redis/</loc>
     <lastmod>2019-06-16T14:34:52+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://szthanatos.github.io/topic/wsl2/coding_with_wsl2_01/</loc>
-    <lastmod>2020-08-22T11:37:05+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://szthanatos.github.io/topic/kafka/update/</loc>
-    <lastmod>2018-12-09T15:19:52+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://szthanatos.github.io/topic/docker/ecology/</loc>
+    <loc>https://szthanatos.github.io/doc-docker/ecology/</loc>
     <lastmod>2018-12-06T10:06:06+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://szthanatos.github.io/topic/redis/cluster_command/</loc>
-    <lastmod>2018-08-30T21:26:18+08:00</lastmod>
+    <loc>https://szthanatos.github.io/doc-wsl2/coding_with_wsl2_01/</loc>
+    <lastmod>2020-08-22T11:37:05+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://szthanatos.github.io/topic/wsl2/coding_with_wsl2_02/</loc>
+    <loc>https://szthanatos.github.io/doc-kafka/install/</loc>
+    <lastmod>2018-12-06T10:09:46+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://szthanatos.github.io/doc-redis/design/</loc>
+    <lastmod>2018-09-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://szthanatos.github.io/doc-wsl2/coding_with_wsl2_02/</loc>
     <lastmod>2020-08-22T16:41:01+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://szthanatos.github.io/topic/redis/improve-00/</loc>
-    <lastmod>2019-03-18T15:04:35+08:00</lastmod>
+    <loc>https://szthanatos.github.io/doc-kafka/update/</loc>
+    <lastmod>2018-12-09T15:19:52+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://szthanatos.github.io/topic/wsl2/coding_with_wsl2_03/</loc>
+    <loc>https://szthanatos.github.io/doc-redis/usage/</loc>
+    <lastmod>2018-09-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://szthanatos.github.io/doc-redis/usage/cluster_command/</loc>
+    <lastmod>2018-08-30T21:26:18+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://szthanatos.github.io/doc-wsl2/coding_with_wsl2_03/</loc>
     <lastmod>2020-08-22T16:41:03+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://szthanatos.github.io/topic/wsl2/coding_with_wsl2_04/</loc>
+    <loc>https://szthanatos.github.io/doc-wsl2/coding_with_wsl2_04/</loc>
     <lastmod>2020-08-22T16:41:05+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://szthanatos.github.io/topic/wsl2/coding_with_wsl2_05/</loc>
-    <lastmod>2020-08-22T17:53:59+08:00</lastmod>
+    <loc>https://szthanatos.github.io/doc-redis/operation/</loc>
+    <lastmod>2018-09-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://szthanatos.github.io/topic/wsl2/coding_with_wsl2_06/</loc>
-    <lastmod>2020-08-22T18:06:35+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://szthanatos.github.io/topic/wsl2/coding_with_wsl2_07/</loc>
-    <lastmod>2020-08-22T18:07:41+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://szthanatos.github.io/topic/redis/error/</loc>
+    <loc>https://szthanatos.github.io/doc-redis/operation/install/</loc>
     <lastmod>2018-08-30T16:40:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://szthanatos.github.io/</loc>
+    <loc>https://szthanatos.github.io/doc-wsl2/coding_with_wsl2_05/</loc>
+    <lastmod>2020-08-22T17:53:59+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://szthanatos.github.io/doc-wsl2/coding_with_wsl2_06/</loc>
+    <lastmod>2020-08-22T18:06:35+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://szthanatos.github.io/doc-redis/advanced/</loc>
+    <lastmod>2019-03-18T15:04:35+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://szthanatos.github.io/doc-redis/advanced/improve-01/</loc>
+    <lastmod>2019-03-18T15:04:35+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://szthanatos.github.io/doc-redis/advanced/improve-02/</loc>
+    <lastmod>2019-03-18T15:04:35+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://szthanatos.github.io/doc-redis/advanced/improve-03/</loc>
+    <lastmod>2019-03-18T15:04:35+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://szthanatos.github.io/doc-wsl2/coding_with_wsl2_07/</loc>
     <lastmod>2020-08-22T18:07:41+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://szthanatos.github.io/topic/</loc>
-    <lastmod>2020-08-22T18:07:41+08:00</lastmod>
+    <loc>https://szthanatos.github.io/doc-wsl2/coding_with_wsl2_08/</loc>
+    <lastmod>2020-08-22T21:51:08+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://szthanatos.github.io/doc-redis/troubleshooting/</loc>
+    <lastmod>2018-08-30T16:40:48+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://szthanatos.github.io/doc-redis/reference/</loc>
+    <lastmod>2018-09-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://szthanatos.github.io/</loc>
+    <lastmod>2020-08-22T21:51:08+08:00</lastmod>
   </url>
   
   <url>
@@ -113,7 +148,7 @@
   </url>
   
   <url>
-    <loc>https://szthanatos.github.io/categories/linux/</loc>
+    <loc>https://szthanatos.github.io/category/linux/</loc>
     <lastmod>2019-11-15T17:18:05+08:00</lastmod>
   </url>
   
@@ -123,7 +158,7 @@
   </url>
   
   <url>
-    <loc>https://szthanatos.github.io/tags/ssh/</loc>
+    <loc>https://szthanatos.github.io/tag/ssh/</loc>
     <lastmod>2019-11-15T17:18:05+08:00</lastmod>
   </url>
   
@@ -138,7 +173,7 @@
   </url>
   
   <url>
-    <loc>https://szthanatos.github.io/tags/rancher/</loc>
+    <loc>https://szthanatos.github.io/tag/rancher/</loc>
     <lastmod>2019-09-26T22:58:39+08:00</lastmod>
   </url>
   
@@ -148,7 +183,7 @@
   </url>
   
   <url>
-    <loc>https://szthanatos.github.io/tags/os/</loc>
+    <loc>https://szthanatos.github.io/tag/os/</loc>
     <lastmod>2019-09-01T15:39:50+08:00</lastmod>
   </url>
   
@@ -158,32 +193,17 @@
   </url>
   
   <url>
-    <loc>https://szthanatos.github.io/topic/redis/error-connection_reset/</loc>
+    <loc>https://szthanatos.github.io/doc-redis/troubleshooting/connection_reset/</loc>
     <lastmod>2019-06-16T23:06:41+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://szthanatos.github.io/topic/redis/improve-02/</loc>
-    <lastmod>2019-03-18T15:04:35+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://szthanatos.github.io/topic/redis/improve-01/</loc>
-    <lastmod>2019-03-18T15:04:35+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://szthanatos.github.io/topic/redis/improve-03/</loc>
-    <lastmod>2019-03-18T15:04:35+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://szthanatos.github.io/tags/graphdb/</loc>
+    <loc>https://szthanatos.github.io/tag/graphdb/</loc>
     <lastmod>2019-03-17T21:50:19+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://szthanatos.github.io/tags/janusgraph/</loc>
+    <loc>https://szthanatos.github.io/tag/janusgraph/</loc>
     <lastmod>2019-03-17T21:50:19+08:00</lastmod>
   </url>
   
@@ -193,17 +213,17 @@
   </url>
   
   <url>
-    <loc>https://szthanatos.github.io/categories/kg/</loc>
+    <loc>https://szthanatos.github.io/category/kg/</loc>
     <lastmod>2019-03-17T21:50:19+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://szthanatos.github.io/tags/knowledge-graph/</loc>
+    <loc>https://szthanatos.github.io/tag/knowledge-graph/</loc>
     <lastmod>2019-03-17T21:50:19+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://szthanatos.github.io/tags/git/</loc>
+    <loc>https://szthanatos.github.io/tag/git/</loc>
     <lastmod>2019-01-05T14:13:21+08:00</lastmod>
   </url>
   
@@ -218,27 +238,27 @@
   </url>
   
   <url>
-    <loc>https://szthanatos.github.io/tags/academic/</loc>
+    <loc>https://szthanatos.github.io/tag/academic/</loc>
     <lastmod>2019-01-01T12:54:29+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://szthanatos.github.io/categories/academic/</loc>
+    <loc>https://szthanatos.github.io/category/academic/</loc>
     <lastmod>2019-01-01T12:54:29+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://szthanatos.github.io/tags/hugo/</loc>
+    <loc>https://szthanatos.github.io/tag/hugo/</loc>
     <lastmod>2019-01-01T12:54:29+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://szthanatos.github.io/categories/hugo/</loc>
+    <loc>https://szthanatos.github.io/category/hugo/</loc>
     <lastmod>2019-01-01T12:54:29+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://szthanatos.github.io/tags/translation/</loc>
+    <loc>https://szthanatos.github.io/tag/translation/</loc>
     <lastmod>2019-01-01T12:54:29+08:00</lastmod>
   </url>
   
@@ -248,7 +268,7 @@
   </url>
   
   <url>
-    <loc>https://szthanatos.github.io/tags/tmux/</loc>
+    <loc>https://szthanatos.github.io/tag/tmux/</loc>
     <lastmod>2019-01-01T12:27:05+08:00</lastmod>
   </url>
   
@@ -273,12 +293,12 @@
   </url>
   
   <url>
-    <loc>https://szthanatos.github.io/categories/database/</loc>
+    <loc>https://szthanatos.github.io/category/database/</loc>
     <lastmod>2018-12-09T16:19:27+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://szthanatos.github.io/tags/hbase/</loc>
+    <loc>https://szthanatos.github.io/tag/hbase/</loc>
     <lastmod>2018-12-09T16:19:27+08:00</lastmod>
   </url>
   
@@ -293,12 +313,12 @@
   </url>
   
   <url>
-    <loc>https://szthanatos.github.io/categories/python/</loc>
+    <loc>https://szthanatos.github.io/category/python/</loc>
     <lastmod>2018-12-01T15:59:04+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://szthanatos.github.io/tags/ubuntu/</loc>
+    <loc>https://szthanatos.github.io/tag/ubuntu/</loc>
     <lastmod>2018-12-01T15:59:04+08:00</lastmod>
   </url>
   
@@ -318,17 +338,17 @@
   </url>
   
   <url>
-    <loc>https://szthanatos.github.io/tags/unit-testing/</loc>
+    <loc>https://szthanatos.github.io/tag/unit-testing/</loc>
     <lastmod>2018-08-20T10:49:50+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://szthanatos.github.io/topic/redis/error-persist_on_disk/</loc>
+    <loc>https://szthanatos.github.io/doc-redis/troubleshooting/persist_on_disk/</loc>
     <lastmod>2018-05-18T11:42:50+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://szthanatos.github.io/tags/picklingerror/</loc>
+    <loc>https://szthanatos.github.io/tag/picklingerror/</loc>
     <lastmod>2018-03-20T16:16:15+08:00</lastmod>
   </url>
   
@@ -338,22 +358,22 @@
   </url>
   
   <url>
-    <loc>https://szthanatos.github.io/tags/%E5%A4%9A%E8%BF%9B%E7%A8%8B/</loc>
+    <loc>https://szthanatos.github.io/tag/%E5%A4%9A%E8%BF%9B%E7%A8%8B/</loc>
     <lastmod>2018-03-20T16:16:15+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://szthanatos.github.io/tags/%E5%BA%8F%E5%88%97%E5%8C%96/</loc>
+    <loc>https://szthanatos.github.io/tag/%E5%BA%8F%E5%88%97%E5%8C%96/</loc>
     <lastmod>2018-03-20T16:16:15+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://szthanatos.github.io/tags/benchmark/</loc>
+    <loc>https://szthanatos.github.io/tag/benchmark/</loc>
     <lastmod>2017-09-01T18:08:57+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://szthanatos.github.io/tags/list/</loc>
+    <loc>https://szthanatos.github.io/tag/list/</loc>
     <lastmod>2017-09-01T18:08:57+08:00</lastmod>
   </url>
   
@@ -363,23 +383,27 @@
   </url>
   
   <url>
-    <loc>https://szthanatos.github.io/authors/admin/</loc>
-  </url>
-  
-  <url>
-    <loc>https://szthanatos.github.io/authors/gpp/</loc>
-  </url>
-  
-  <url>
-    <loc>https://szthanatos.github.io/authors/sz/</loc>
-  </url>
-  
-  <url>
     <loc>https://szthanatos.github.io/authors/</loc>
   </url>
   
   <url>
+    <loc>https://szthanatos.github.io/author/lex-wayne/</loc>
+  </url>
+  
+  <url>
     <loc>https://szthanatos.github.io/publication_types/</loc>
+  </url>
+  
+  <url>
+    <loc>https://szthanatos.github.io/topic/</loc>
+  </url>
+  
+  <url>
+    <loc>https://szthanatos.github.io/author/%E8%8B%8F%E5%B1%95/</loc>
+  </url>
+  
+  <url>
+    <loc>https://szthanatos.github.io/author/%E9%83%AD%E6%9F%BF%E5%AD%90%E5%B0%8F%E5%8F%AF%E7%88%B1/</loc>
   </url>
   
 </urlset>

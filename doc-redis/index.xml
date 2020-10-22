@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Redis 30 分钟指北 | Kryptonite Lab</title>
+    <link>https://szthanatos.github.io/doc-redis/</link>
+      <atom:link href="https://szthanatos.github.io/doc-redis/index.xml" rel="self" type="application/rss+xml" />
+    <description>Redis 30 分钟指北</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>zh-Hans</language><lastBuildDate>Fri, 18 May 2018 11:42:50 +0800</lastBuildDate>
+    <image>
+      <url>https://szthanatos.github.io/images/icon_hu38c28d6ecf464f8a293472d2a570e5b8_6181_512x512_fill_lanczos_center_2.png</url>
+      <title>Redis 30 分钟指北</title>
+      <link>https://szthanatos.github.io/doc-redis/</link>
+    </image>
+    
+  </channel>
+</rss>

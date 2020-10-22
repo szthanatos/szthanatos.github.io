@@ -1,0 +1,1115 @@
+<!DOCTYPE html><html lang="zh-Hans" >
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  
+  
+  <meta name="generator" content="Wowchemy 4.8.0 for Hugo">
+  
+
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Lex Wayne">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="监控 为了发现前面所说的问题，需要开发 / 运维人员不断的监控 redis 运">
+
+  
+  <link rel="alternate" hreflang="zh-Hans" href="https://szthanatos.github.io/doc-redis/advanced/improve-03/">
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#4169E1">
+  
+
+  
+  
+
+  
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css" integrity="sha512-1xoFisiGdy9nvho8EgXuXvnpR5GAMSjFwp40gSRE3NwdUdIMIKuPa7bqoUhLD0O/5tPNhteAsE5XyyMi5reQVA==" crossorigin="anonymous">
+    
+
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.2/lazysizes.min.js" integrity="sha512-TmDwFLhg3UA4ZG0Eb4MIyT1O1Mb+Oww5kFG0uHqXsdbyZz9DcvYQhKpGgNkamAI6h2lGGZq2X8ftOJvF/XjTUg==" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+
+  
+
+  
+  
+  
+    
+      
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CNoto+Sans+SC:400,400italic,700%7CInconsolata:400,700&display=swap">
+    
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.css">
+
+  
+
+
+
+
+  
+
+
+  
+  
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/images/icon_hu38c28d6ecf464f8a293472d2a570e5b8_6181_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu38c28d6ecf464f8a293472d2a570e5b8_6181_192x192_fill_lanczos_center_2.png">
+
+  <link rel="canonical" href="https://szthanatos.github.io/doc-redis/advanced/improve-03/">
+
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="og:site_name" content="Kryptonite Lab">
+  <meta property="og:url" content="https://szthanatos.github.io/doc-redis/advanced/improve-03/">
+  <meta property="og:title" content="优化指南 - 运维 | Kryptonite Lab">
+  <meta property="og:description" content="监控 为了发现前面所说的问题，需要开发 / 运维人员不断的监控 redis 运"><meta property="og:image" content="https://szthanatos.github.io/images/icon_hu38c28d6ecf464f8a293472d2a570e5b8_6181_512x512_fill_lanczos_center_2.png">
+  <meta property="twitter:image" content="https://szthanatos.github.io/images/icon_hu38c28d6ecf464f8a293472d2a570e5b8_6181_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="zh-Hans">
+  
+    
+      <meta property="article:published_time" content="2019-03-18T15:04:35&#43;08:00">
+    
+    <meta property="article:modified_time" content="2019-03-18T15:04:35&#43;08:00">
+  
+
+  
+
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>优化指南 - 运维 | Kryptonite Lab</title>
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class=" ">
+
+  
+  
+  
+    <script>window.wcDarkLightEnabled = true;</script>
+  
+  
+    <script>const isSiteThemeDark = false;</script>
+  
+  
+  <script src="/js/load-theme.js"></script>
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>搜索</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="搜索..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Kryptonite Lab</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="切换导航">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Kryptonite Lab</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-end" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#hero"><span>主页</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>笔记</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/topic/"><span>专题</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="搜索"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>浅色</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>深色</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>自动</span>
+          </a>
+        </div>
+      </li>
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+
+  
+
+<div class="container-fluid docs">
+  <div class="row flex-xl-nowrap">
+    <div class="col-12 col-md-3 col-xl-2 docs-sidebar">
+      <form class="docs-search d-flex align-items-center">
+  <button class="btn docs-toggle d-md-none p-0 mr-3" type="button" data-toggle="collapse" data-target="#docs-nav" aria-controls="docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    <span><i class="fas fa-bars"></i></span>
+  </button>
+
+  
+  <input name="q" type="search" class="form-control" placeholder="搜索..." autocomplete="off">
+  
+</form>
+
+<nav class="collapse docs-links" id="docs-nav">
+  
+  
+  
+  
+  
+  
+  
+    
+    
+
+    
+    
+  
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <ul class="nav docs-sidenav">
+        <li class=""><a href="/doc-redis/">简介</a></li>
+    
+      
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/doc-redis/design/">设计</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/doc-redis/usage/">操作</a>
+    
+      
+        <ul class="nav docs-sidenav">
+      
+
+
+  <li class=""><a href="/doc-redis/usage/cluster_command/">集群相关命令</a></li>
+
+      
+        </ul>
+      
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/doc-redis/operation/">运维</a>
+    
+      
+        <ul class="nav docs-sidenav">
+      
+
+
+  <li class=""><a href="/doc-redis/operation/install/">单机 &amp; 集群安装</a></li>
+
+      
+        </ul>
+      
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/doc-redis/advanced/">优化指南</a>
+    
+      
+        <ul class="nav docs-sidenav">
+      
+
+
+  <li class=""><a href="/doc-redis/advanced/improve-01/">设计</a></li>
+
+
+
+  <li class=""><a href="/doc-redis/advanced/improve-02/">使用</a></li>
+
+
+
+  <li class="active"><a href="/doc-redis/advanced/improve-03/">运维</a></li>
+
+      
+        </ul>
+      
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/doc-redis/troubleshooting/">问题处理</a>
+    
+      
+        <ul class="nav docs-sidenav">
+      
+
+
+  <li class=""><a href="/doc-redis/troubleshooting/connection_reset/">connection reset by peer</a></li>
+
+
+
+  <li class=""><a href="/doc-redis/troubleshooting/persist_on_disk/">not able to persist on disk</a></li>
+
+      
+        </ul>
+      
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/doc-redis/reference/">参考文献</a>
+    
+
+    
+      </div>
+    
+
+      
+    
+
+    
+      </ul>
+    
+</nav>
+
+    </div>
+
+    
+    
+    <div class="d-none d-xl-block col-xl-2 docs-toc">
+      <ul class="nav toc-top">
+        <li><a href="#" id="back_to_top" class="docs-toc-title">在本页</a></li>
+      </ul>
+
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#监控">监控</a>
+      <ul>
+        <li><a href="#redis-cli-查询">redis-cli 查询</a></li>
+        <li><a href="#slowlog-命令">slowlog 命令</a></li>
+        <li><a href="#info-命令">info 命令</a></li>
+        <li><a href="#monitor-命令">monitor 命令</a></li>
+      </ul>
+    </li>
+    <li><a href="#部署">部署</a>
+      <ul>
+        <li><a href="#网络">网络</a></li>
+        <li><a href="#cpu">CPU</a></li>
+        <li><a href="#内存">内存</a></li>
+        <li><a href="#连接数">连接数</a></li>
+        <li><a href="#虚拟化">虚拟化</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+      
+    </div>
+    
+
+    <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role="main">
+
+      <article class="article">
+
+        <div class="docs-article-container">
+          <h1>优化指南 - 运维</h1>
+
+          <div class="article-style">
+            <h2 id="监控">监控</h2>
+<p>为了发现前面所说的问题，需要开发 / 运维人员不断的监控 redis 运行情况。</p>
+<h3 id="redis-cli-查询">redis-cli 查询</h3>
+<p>部分信息无法通过 redis 命令直接获取，但是可以通过 <code>redis-cli [参数]</code> 获取：</p>
+<p><code>–-bigkeys</code></p>
+<p>后台 scan 出每种数据类型中较大的 key</p>
+<p><code>--latency</code></p>
+<p>服务端响应延时</p>
+<h3 id="slowlog-命令">slowlog 命令</h3>
+<p>在客户端执行 <code>slowlog get [n]</code> 可以获取最慢的 n 条执行命令的记录</p>
+<h3 id="info-命令">info 命令</h3>
+<p>返回服务器信息，性能监测的时候注意其中的几个部分：</p>
+<p><strong>memory</strong>：<code>mem_fragmentation_ratio</code></p>
+<p>内存碎片率，<code>used_memory_rss</code>(系统分配内存总量) 和 <code>used_memory</code>(Redis 分配器分配的内存总量) 的比值。</p>
+<p>在 1-1.5 之间都是合理值，&lt;1 则说明内存已经占满，正在和硬盘进行内存交换，性能下降严重，&gt;1.5 则说明碎片过多需要清理了。</p>
+<p><strong>stats</strong>：<code>latest_fork_usec</code></p>
+<p>最近一次 fork 操作耗时</p>
+<p><strong>persistence</strong>：<code>aof_delayed_fsync</code></p>
+<p>被延迟的 fsync 调用数量</p>
+<p><strong>clients</strong>：<code>connected_clients</code>，<code>blocked_clients</code></p>
+<p>已连接客户端的数量和正在等待阻塞命令的客户端的数量</p>
+<h3 id="monitor-命令">monitor 命令</h3>
+<p>可以用来监测一个节点一段时间内执行的命令，从而统计出热点 key。但是 monitor 自己也是有内存占用的，所以不能频繁、持续的使用。</p>
+<h2 id="部署">部署</h2>
+<h3 id="网络">网络</h3>
+<p>影响 redis 性能的最主要因素是网络。</p>
+<p>按官方基准测试来说，对于 10kb 以内的数据，redis 的处理能力在 100000q/s 以上。</p>
+<p>那么假设每次 set/get 的 4kb 大小的字符串，这时占用的带宽就有 3.2 Gbit/s ，千兆网卡 (1 Gbit/s) 就不够用了，得换万兆网卡 (10 Gbit/s) 才能满足需求，可见想跑满 redis 的 CPU 计算力对网络的要求是很夸张的。</p>
+<p>当然，这个例子比较极端，redis 官方推荐的网络环境下每次传输的包最好不超过一个 <code>MTU</code>(大约 1500 bytes)。</p>
+<p>如果完全抛开网络因素，客户端服务端都在单机上时，使用 Unix 域套接字 (<code>Unix domain sockets</code>，也叫 <code>IPC(inter-precess communication) socket</code> 进程间通信套接字) 替换默认的 TCP/IP 连接方式，能额外再有 50% 的吞吐量提升(不过在大量使用 pipeline 的情况下就没差这么多了)。</p>
+<p>启用 Unix 域套接字需要在配置文件中取消注释：</p>
+<pre><code class="language-bash"># unixsocket 路径
+unixsocket /tmp/redis.sock
+
+# unixsocket 权限
+unixsocketperm 700
+</code></pre>
+<p>之后就可以在客户端使用指定方式连接了，以 python 客户端为例：</p>
+<pre><code class="language-python">import redis
+
+redis_connect = redis.Redis(unix_socket_path='/tmp/redis.sock')
+pass
+</code></pre>
+<h3 id="cpu">CPU</h3>
+<p>redis 更倾向于具有更大缓存而不是更多核的 CPU，在多核的情况下，redis 性能会受 NUMA 配置和进程所处位置的影响，指定客户端和服务器使用同一 CPU 的两个不同核心可以使从 L3 缓存获得的收益最大化。</p>
+<p>另外，redis 在 Inter 和 AMD 的 CPU 上的表现也有差别，在某些情况下在 AMD 的 CPU 上性能可能只有 Inter 的一半。</p>
+<h3 id="内存">内存</h3>
+<p>只有在面对大于 10KB 的数据的时候，内存频率 / 带宽才会影响 redis 性能，所以一般不用去考虑。内存大小只会影响能存放的数据量。</p>
+<h3 id="连接数">连接数</h3>
+<p>redis 可以在 60000 多个连接时维持 50000 q/s 的性能，但是根据官方测试，具有 30000 个连接的 redis 实例只能处理 100 个连接实例可实现的吞吐量的一半。</p>
+<h3 id="虚拟化">虚拟化</h3>
+<p>虚拟机中的 redis 性能肯定是低于实机上的，系统调用和中断上面浪费的太多。</p>
+
+          </div>
+
+          
+
+
+
+          
+          
+          <div class="article-widget">
+            
+<div class="post-nav">
+  
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">上一页</div>
+    <a href="/doc-redis/advanced/improve-02/" rel="next">优化指南 - 使用</a>
+  </div>
+  
+  
+</div>
+
+          </div>
+          
+        </div>
+
+        <div class="body-footer">
+          <p>最近更新于 Mar 18, 2019</p>
+
+          
+
+
+
+
+
+          
+
+          
+
+
+        </div>
+
+      </article>
+
+      <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    
+  </p>
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    Published with
+    <a href="https://wowchemy.com" target="_blank" rel="noopener">Wowchemy</a>  —
+    the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">
+    open source</a> website builder that empowers creators.
+    
+
+    
+  </p>
+</footer>
+
+
+    </main>
+  </div>
+</div>
+
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/python.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/go.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/javascript.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/typescript.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/powershell.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/properties.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/sql.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/dockerfile.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/yaml.min.js"></script>
+        
+      
+
+    
+
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.js" integrity="sha512-SeiQaaDh73yrb56sTW/RgVdi/mMqNeM2oBwubFHagc5BkixSpP1fvqF47mKzPGWYSSy4RwbBunrJBQ4Co8fRWA==" crossorigin="anonymous"></script>
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"没有找到结果","placeholder":"搜索...","results":"搜索结果"};
+      const content_type = {
+        'post': "文章",
+        'project': "项目",
+        'publication' : "出版物",
+        'talk' : "演讲",
+        'slides' : "演示文稿"
+        };
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.2/anchor.min.js" integrity="sha512-I7w3ZdSFzw5j3jU3ZkNikBNeIrl3i+hEuEdwNmqUJvwNcaBUNcijnP2gd9DtGlgVYDplfjGoD8vTNsID+lCjqg==" crossorigin="anonymous"></script>
+    <script>
+      anchors.add();
+    </script>
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/wowchemy.min.4c2bca31150ce93c5a5e43b8a50f22fd.js"></script>
+
+    <script>
+    ((window.gitter = {}).chat = {}).options = {
+        room: 'szthanatos\-github\-io/community'
+    };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+<style>
+    .gitter-chat-embed {
+        top: 70px;
+    }
+</style>
+
+
+
+
+  
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">引用</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> 复制
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> 下载
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

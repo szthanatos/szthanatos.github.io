@@ -1,0 +1,839 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>使用 WSL2 作为你的开发环境 | Kryptonite Lab</title>
+    <link>https://szthanatos.github.io/doc-wsl2/</link>
+      <atom:link href="https://szthanatos.github.io/doc-wsl2/index.xml" rel="self" type="application/rss+xml" />
+    <description>使用 WSL2 作为你的开发环境</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>zh-Hans</language><lastBuildDate>Sun, 09 Sep 2018 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://szthanatos.github.io/images/icon_hu38c28d6ecf464f8a293472d2a570e5b8_6181_512x512_fill_lanczos_center_2.png</url>
+      <title>使用 WSL2 作为你的开发环境</title>
+      <link>https://szthanatos.github.io/doc-wsl2/</link>
+    </image>
+    
+    <item>
+      <title>开启 WSL2 安装 Ubuntu</title>
+      <link>https://szthanatos.github.io/doc-wsl2/coding_with_wsl2_01/</link>
+      <pubDate>Sat, 22 Aug 2020 11:37:05 +0800</pubDate>
+      <guid>https://szthanatos.github.io/doc-wsl2/coding_with_wsl2_01/</guid>
+      <description>&lt;h2 id=&#34;什么是-wsl&#34;&gt;什么是 WSL&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;适用于 Linux 的 Windows 子系统可让开发人员按原样运行 GNU/Linux 环境 - 包括大多数命令行工具、实用工具和应用程序 - 且不会产生传统虚拟机或双启动设置开销。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;然而现在出的 Wsl2 是基于 Hyper-V 虚拟机的&amp;hellip;&lt;/p&gt;
+&lt;h2 id=&#34;什么是-wsl-2&#34;&gt;什么是 WSL 2&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;WSL 2 是适用于 Linux 的 Windows 子系统体系结构的一个新版本，它支持适用于 Linux 的 Windows 子系统在 Windows 上运行 ELF64 Linux 二进制文件。 它的主要目标是提高文件系统性能，以及添加完全的系统调用兼容性。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/szthanatos/image-host/master/wsl1-vs-wsl2.png?token=AAZJE7LDWNNOLQZEFZE54BC7ID77W&#34; alt=&#34;wsl1 vs wsl2&#34;&gt;&lt;/p&gt;
+&lt;p&gt;wsl1 其实感觉速度更快，和 windows 共享网络，而且没有文件系统的限制。&lt;/p&gt;
+&lt;p&gt;然而 wsl1 不是完整 Linux 内核，不支持 Docker。如果你只是要一个 Linux 环境可以考虑使用 wsl1 。&lt;/p&gt;
+&lt;h2 id=&#34;安装&#34;&gt;安装&lt;/h2&gt;
+&lt;h3 id=&#34;启用-windows-subsystem-linux&#34;&gt;启用 Windows-Subsystem-Linux&lt;/h3&gt;
+&lt;p&gt;在 &lt;code&gt;控制面板&lt;/code&gt;-&lt;code&gt;程序&lt;/code&gt;-  &lt;code&gt;启用或关闭 Windows 功能&lt;/code&gt; 中勾选 &lt;code&gt;适用于 Linux 的 Windows 子系统&lt;/code&gt; 以及 &lt;code&gt;虚拟机平台&lt;/code&gt;(wsl2 需要)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/szthanatos/image-host/master/enable-wsl2.png&#34; alt=&#34;启用 wsl2&#34;&gt;&lt;/p&gt;
+&lt;p&gt;或者通过命令行（管理员身份）执行：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-powershell&#34;&gt;# 适用于 Linux 的 Windows 子系统
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+
+# 虚拟机平台
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;完成后需要重启电脑。&lt;/p&gt;
+&lt;h3 id=&#34;更新内核&#34;&gt;更新内核&lt;/h3&gt;
+&lt;p&gt;目前版本的 Win10 需要手动更新 Wsl2 内核，前往 &lt;a href=&#34;https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;下载适用于 x64 计算机的最新 WSL2 Linux 内核&lt;/a&gt; 下载 msi 文件手动更新。&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;ARM 平台前往 &lt;a href=&#34;https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_arm64.msi&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;下载适用于 ARM64 计算机的最新 WSL2 Linux 内核&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;设置-wsl-默认版本&#34;&gt;设置 wsl 默认版本&lt;/h3&gt;
+&lt;p&gt;通过命令行（管理员身份）执行：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-powershell&#34;&gt;wsl --set-default-version 2
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;让未来的 Linux 都默认以 Wsl2 形式安装。&lt;/p&gt;
+&lt;p&gt;现有 Wsl 虚拟机也可以通过：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-powershell&#34;&gt;# 获取现有 wsl 版本信息
+wsl --list --verbose
+
+# 将现有发行版转化为制定版本
+wsl --set-version &amp;lt;distribution name&amp;gt; &amp;lt;versionNumber&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;升级到 Wsl2 。&lt;/p&gt;
+&lt;h3 id=&#34;安装-linux-系统&#34;&gt;安装 Linux 系统&lt;/h3&gt;
+&lt;p&gt;打开 &lt;a href=&#34;https://aka.ms/wslstore&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Microsoft Store&lt;/a&gt;，搜索 wsl 即可获取可用 Linux 发行版。&lt;/p&gt;
+&lt;p&gt;现在支持的发行版有：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Ubuntu 16.04 LTS&lt;/li&gt;
+&lt;li&gt;Ubuntu 18.04 LTS&lt;/li&gt;
+&lt;li&gt;Ubuntu 20.04 LTS&lt;/li&gt;
+&lt;li&gt;openSUSE Leap 15.1&lt;/li&gt;
+&lt;li&gt;SUSE Linux Enterprise Server 12 SP5&lt;/li&gt;
+&lt;li&gt;SUSE Linux Enterprise Server 15 SP1&lt;/li&gt;
+&lt;li&gt;Kali Linux&lt;/li&gt;
+&lt;li&gt;Debian GNU/Linux&lt;/li&gt;
+&lt;li&gt;Fedora Remix for WSL&lt;/li&gt;
+&lt;li&gt;Pengwin&lt;/li&gt;
+&lt;li&gt;Pengwin Enterprise&lt;/li&gt;
+&lt;li&gt;Alpine WSL&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;下载完成后，点击图标进入，首次使用会需要几分钟执行安装。&lt;/p&gt;
+&lt;p&gt;完成安装后，设置 Ubuntu 用户名（非 root）及密码，正式开启 Ubuntu 系统。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://docs.microsoft.com/zh-cn/windows/wsl/media/ubuntuinstall.png&#34; alt=&#34;安装&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;常用操作&#34;&gt;常用操作&lt;/h2&gt;
+&lt;h3 id=&#34;wsl-命令&#34;&gt;wsl 命令&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;wsl --shutdown&lt;/code&gt;  立即终止所有正在运行的分发和 WSL 2 轻型工具虚拟机&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;wsl -t &amp;lt;分发版&amp;gt;&lt;/code&gt; 终止指定的发行版&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;wsl -l -v&lt;/code&gt; 列出分发版及其版本信息&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;wsl --export &amp;lt;分发版&amp;gt; &amp;lt; 文件名 &amp;gt;&lt;/code&gt;  将分发导出到 tar 文件&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;wsl --import &amp;lt;分发版&amp;gt; &amp;lt; 安装位置 &amp;gt; &amp;lt; 文件名 &amp;gt; [选项]&lt;/code&gt;  将指定的 tar 文件作为新分发进行导入&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;注意，导入导出发行版会导致无法从 Microsoft 应用管理中管理或更新。&lt;/p&gt;
+&lt;h3 id=&#34;网络&#34;&gt;网络&lt;/h3&gt;
+&lt;p&gt;WSL2 相当于独立虚拟机，而 Wsl1 是和 Windows 复用同一个网络的。&lt;/p&gt;
+&lt;p&gt;然后和一般宿主机虚拟机略微相反，从 Windows 可以通过 &lt;code&gt;localhost&lt;/code&gt; 访问 Wsl 上的服务，反之则不行。&lt;/p&gt;
+&lt;p&gt;想要访问 Windows 上的服务，可以使用命令&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;ip route | grep default | awk &#39;{print $3}&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;或者查询 &lt;code&gt;/etc/resolv.conf&lt;/code&gt; 中的 &lt;code&gt;nameserver&lt;/code&gt; 获取到 Windows 宿主机的 ip，&lt;/p&gt;
+&lt;p&gt;然后通过 ip 访问。&lt;/p&gt;
+&lt;h3 id=&#34;文件系统&#34;&gt;文件系统&lt;/h3&gt;
+&lt;p&gt;Wsl1 的时候，文件目录位于&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Ubuntu: &lt;code&gt;%localappdata%\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Ubuntu18.04: &lt;code&gt;%localappdata%\Packages\CanonicalGroupLimited.Ubuntu18.04onWindows_79rhkp1fndgsc\LocalState\rootfs&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Wsl2 可以直接通过 &lt;code&gt;\\wsl$&lt;/code&gt; 在文件管理器中查看到网络位置上的 Wsl 虚拟机，Ubuntu 就是 &lt;code&gt;\\wsl$\Ubuntu&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;或者你可以从 Wsl2 中直接打开当前目录，直接在终端里调用 &lt;code&gt;explorer.exe .&lt;/code&gt; 就行了，非常 cool~&lt;/p&gt;
+&lt;p&gt;Windows 的磁盘在 Wsl 中都表示为 &lt;code&gt;/mnt/c|d|e...&lt;/code&gt;，可以看，但是操作还是尽量拷贝到 Wsl 目录下，因为性能损失巨大。&lt;/p&gt;
+&lt;h2 id=&#34;gpu&#34;&gt;GPU&lt;/h2&gt;
+&lt;p&gt;差不多能用：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/windows/win32/direct3d12/gpu-cuda-in-wsl&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;在 WSL 2 中启用 NVIDIA CUDA&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://developer.nvidia.com/cuda/wsl&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CUDA on Windows Subsystem for Linux (WSL) - Public Preview&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;参考文档&#34;&gt;参考文档&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.microsoft.com/zh-cn/windows/wsl/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;WSL 文档&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.microsoft.com/zh-cn/windows/wsl/wsl2-faq&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;WSL 2 常见问题解答&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>使用 Windows-Terminal 作为终端</title>
+      <link>https://szthanatos.github.io/doc-wsl2/coding_with_wsl2_02/</link>
+      <pubDate>Sat, 22 Aug 2020 16:41:01 +0800</pubDate>
+      <guid>https://szthanatos.github.io/doc-wsl2/coding_with_wsl2_02/</guid>
+      <description>&lt;p&gt;介绍就两个字，&lt;strong&gt;颜值&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/szthanatos/image-host/master/windows-terminal.PNG&#34; alt=&#34;颜值&#34;&gt;&lt;/p&gt;
+&lt;p&gt;安装方式同样是 &lt;a href=&#34;https://aka.ms/wslstore&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Microsoft Store&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;默认可以使用 &lt;code&gt;win+r&lt;/code&gt; 输入 &lt;code&gt;wt&lt;/code&gt; 呼出。&lt;/p&gt;
+&lt;p&gt;个人使用配置如下，版本号 &lt;code&gt;1.1.2233.0&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+    // 默认打开 Ubuntu
+    &amp;quot;defaultProfile&amp;quot;: &amp;quot;{2c4de342-38b7-51cf-b940-2309a097f518}&amp;quot;,
+
+    &amp;quot;copyOnSelect&amp;quot;: false,
+    &amp;quot;copyFormatting&amp;quot;: false,
+    &amp;quot;theme&amp;quot;: &amp;quot;dark&amp;quot;,
+
+    &amp;quot;profiles&amp;quot;: {
+        &amp;quot;defaults&amp;quot;: {
+            // 开启毛玻璃 (模糊) 效果
+            &amp;quot;useAcrylic&amp;quot;: true,
+            // 模糊系数 0(透明)-&amp;gt;1(不透明)
+            &amp;quot;acrylicOpacity&amp;quot;: 0.75,
+            // zsh Powerlevel10k 所用到的字体，详见 shell 配置章节
+            &amp;quot;fontFace&amp;quot;: &amp;quot;MesloLGS NF&amp;quot;,
+            // 必须显式设置字体大小，不然初次显示会不正常
+            &amp;quot;fontSize&amp;quot;: 12,
+            // 光标形状
+            &amp;quot;cursorShape&amp;quot;:&amp;quot;filledBox&amp;quot;
+        },
+        &amp;quot;list&amp;quot;: [
+            // ...
+            {
+                // 自己写的一个配色文件
+                &amp;quot;colorScheme&amp;quot;: &amp;quot;Sz-dark-material&amp;quot;,
+                &amp;quot;guid&amp;quot;: &amp;quot;{2c4de342-38b7-51cf-b940-2309a097f518}&amp;quot;,
+                &amp;quot;hidden&amp;quot;: false,
+                &amp;quot;name&amp;quot;: &amp;quot;Ubuntu&amp;quot;,
+                &amp;quot;source&amp;quot;: &amp;quot;Windows.Terminal.Wsl&amp;quot;,
+                // 将起始位置改为用户根目录
+                &amp;quot;startingDirectory&amp;quot;: &amp;quot;//wsl$/Ubuntu/home/sz/&amp;quot;
+            },
+            // ...
+        ]
+    },
+    &amp;quot;schemes&amp;quot;: [
+        {
+            // 仿 Solarized Dark 的一个配色
+            &amp;quot;background&amp;quot;: &amp;quot;#002B36&amp;quot;,
+            &amp;quot;black&amp;quot;: &amp;quot;#2C3E50&amp;quot;,
+            &amp;quot;blue&amp;quot;: &amp;quot;#396FE2&amp;quot;,
+            &amp;quot;brightBlack&amp;quot;: &amp;quot;#34495E&amp;quot;,
+            &amp;quot;brightBlue&amp;quot;: &amp;quot;#82AAFF&amp;quot;,
+            &amp;quot;brightCyan&amp;quot;: &amp;quot;#89DDFF&amp;quot;,
+            &amp;quot;brightGreen&amp;quot;: &amp;quot;#C3E88D&amp;quot;,
+            &amp;quot;brightPurple&amp;quot;: &amp;quot;#C792EA&amp;quot;,
+            &amp;quot;brightRed&amp;quot;: &amp;quot;#FF5370&amp;quot;,
+            &amp;quot;brightWhite&amp;quot;: &amp;quot;#FFFFFF&amp;quot;,
+            &amp;quot;brightYellow&amp;quot;: &amp;quot;#FFCB6B&amp;quot;,
+            &amp;quot;cyan&amp;quot;: &amp;quot;#2DDAFD&amp;quot;,
+            &amp;quot;foreground&amp;quot;: &amp;quot;#ECEFF1&amp;quot;,
+            &amp;quot;green&amp;quot;: &amp;quot;#9ECE58&amp;quot;,
+            &amp;quot;name&amp;quot;: &amp;quot;Sz-material&amp;quot;,
+            &amp;quot;purple&amp;quot;: &amp;quot;#BB80B3&amp;quot;,
+            &amp;quot;red&amp;quot;: &amp;quot;#E54B4B&amp;quot;,
+            &amp;quot;white&amp;quot;: &amp;quot;#D0D0D0&amp;quot;,
+            &amp;quot;yellow&amp;quot;: &amp;quot;#FAED70&amp;quot;
+        },
+        {
+            // Solarized + Campbell
+            &amp;quot;background&amp;quot;: &amp;quot;#0C0C0C&amp;quot;,
+            &amp;quot;black&amp;quot;: &amp;quot;#2C3E50&amp;quot;,
+            &amp;quot;blue&amp;quot;: &amp;quot;#396FE2&amp;quot;,
+            &amp;quot;brightBlack&amp;quot;: &amp;quot;#767676&amp;quot;,
+            &amp;quot;brightBlue&amp;quot;: &amp;quot;#82AAFF&amp;quot;,
+            &amp;quot;brightCyan&amp;quot;: &amp;quot;#89DDFF&amp;quot;,
+            &amp;quot;brightGreen&amp;quot;: &amp;quot;#C3E88D&amp;quot;,
+            &amp;quot;brightPurple&amp;quot;: &amp;quot;#C792EA&amp;quot;,
+            &amp;quot;brightRed&amp;quot;: &amp;quot;#FF5370&amp;quot;,
+            &amp;quot;brightWhite&amp;quot;: &amp;quot;#FFFFFF&amp;quot;,
+            &amp;quot;brightYellow&amp;quot;: &amp;quot;#FFCB6B&amp;quot;,
+            &amp;quot;cyan&amp;quot;: &amp;quot;#2DDAFD&amp;quot;,
+            &amp;quot;foreground&amp;quot;: &amp;quot;#ECEFF1&amp;quot;,
+            &amp;quot;green&amp;quot;: &amp;quot;#9ECE58&amp;quot;,
+            &amp;quot;name&amp;quot;: &amp;quot;Sz-dark-material&amp;quot;,
+            &amp;quot;purple&amp;quot;: &amp;quot;#BB80B3&amp;quot;,
+            &amp;quot;red&amp;quot;: &amp;quot;#E54B4B&amp;quot;,
+            &amp;quot;white&amp;quot;: &amp;quot;#D0D0D0&amp;quot;,
+            &amp;quot;yellow&amp;quot;: &amp;quot;#FAED70&amp;quot;
+        }
+    ],
+    // ...
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;其他设置详见 &lt;a href=&#34;https://docs.microsoft.com/zh-cn/windows/terminal/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;官方文档&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 易用性配置</title>
+      <link>https://szthanatos.github.io/doc-wsl2/coding_with_wsl2_03/</link>
+      <pubDate>Sat, 22 Aug 2020 16:41:03 +0800</pubDate>
+      <guid>https://szthanatos.github.io/doc-wsl2/coding_with_wsl2_03/</guid>
+      <description>&lt;h2 id=&#34;启用-root-用户&#34;&gt;启用 root 用户&lt;/h2&gt;
+&lt;p&gt;ubuntu 默认没有 root 密码，使用&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sudo passwd root
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;设置 root 密码&lt;/p&gt;
+&lt;h2 id=&#34;配置国内镜像源&#34;&gt;配置国内镜像源&lt;/h2&gt;
+&lt;p&gt;更换 &lt;code&gt;/etc/apt/sources.list&lt;/code&gt; 为:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-properties&#34;&gt;# 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal main restricted universe multiverse
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-updates main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-updates main restricted universe multiverse
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-backports main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-backports main restricted universe multiverse
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-security main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-security main restricted universe multiverse
+
+# 预发布软件源，不建议启用
+# deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-proposed main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-proposed main restricted universe multiverse
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;以使用 &lt;a href=&#34;https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;清华大学镜像源&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;注意我这里 Ubuntu 版本是 20.04(focal)。&lt;/p&gt;
+&lt;p&gt;关于 Ubuntu 源：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;按软件自由度区分：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;源&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;main&lt;/td&gt;
+&lt;td&gt;完全的自由软件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;restricted&lt;/td&gt;
+&lt;td&gt;不完全的自由软件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;universe&lt;/td&gt;
+&lt;td&gt;ubuntu 官方不提供支持与补丁，全靠社区支持&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;muitiverse&lt;/td&gt;
+&lt;td&gt;非自由软件，完全不提供支持和补丁&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;按使用目的区分：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;源&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;security&lt;/td&gt;
+&lt;td&gt;仅修复漏洞，并且尽可能少的改变软件包的行为，低风险&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;update&lt;/td&gt;
+&lt;td&gt;修复严重但不影响系统安全运行的漏洞，低风险&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;proposed&lt;/td&gt;
+&lt;td&gt;pre-update，仅建议提供测试和反馈的人进行安装&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;backports&lt;/td&gt;
+&lt;td&gt;不会由 Ubuntu-security-team 审查和更新 (但是可能对你有用)，存在风险&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;添加第三方源-可选&#34;&gt;添加第三方源 (可选)&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# git
+sudo add-apt-repository ppa:git-core/ppa
+
+# python
+sudo add-apt-repository ppa:deadsnakes/ppa
+
+# 更新
+sudo apt update
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;配置-ssh&#34;&gt;配置 ssh&lt;/h2&gt;
+&lt;p&gt;修改 &lt;code&gt;/etc/ssh/sshd_config&lt;/code&gt; 文件：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-properties&#34;&gt;# port 为大于 1024 的任意端口（不能是 22 是因为 WSL 和 win10 共用端口且 win10 的优先级更高，win10 内置 SSH Server For Windows 已经占用 22 端口, 大于 1024 是为了避开其他系统服务）
+Port 2333
+
+# 允许使用用户名密码方式访问
+PasswordAuthentication yes
+
+# (可选) 允许 root 访问 (任何认证方式 / 只允许 public key 认证方式 / 不允许任何认证方式)
+PermitRootLogin yes/without-password/no
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;保存，执行以下命令：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 生成密钥
+dpkg-reconfigure openssh-server
+
+# 重启 ssh
+sudo service ssh restart
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;完成 ssh 配置。&lt;/p&gt;
+&lt;p&gt;早期版本需要重装 &lt;code&gt;openssh-server&lt;/code&gt;，但是最近直接使用没发现问题。&lt;/p&gt;
+&lt;h2 id=&#34;开机自启后台服务-可选&#34;&gt;开机自启后台服务 (可选)&lt;/h2&gt;
+&lt;p&gt;在 Wsl 早期，想要使用 Wsl 上的 Python 解释器或者别的工具需要通过 &lt;code&gt;ssh&lt;/code&gt; 从宿主机连接，而 Wsl 没有 &lt;code&gt;Systemd&lt;/code&gt; 也没法开机自启。&lt;/p&gt;
+&lt;p&gt;通过计划任务实现开机启动 Wsl 上的 ssh 服务是一种刚需。&lt;/p&gt;
+&lt;p&gt;不过现在 Docker 也好，Pycharm 也好，都直接从软件层面支持 Wsl 了，需要 ssh 的场合不多（雾）。&lt;/p&gt;
+&lt;p&gt;不过 * 2，网上存在的教程都告诉你要在 Ubuntu 写个 shell 脚本，再在 Windows 下写个 vb 脚本，再去创建一个计划任务&amp;hellip;.&lt;/p&gt;
+&lt;p&gt;直接计划任务一句话搞定不香么？黑人问号. jpg&lt;/p&gt;
+&lt;p&gt;还是以 ssh 服务为例：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;root 身份编辑 &lt;code&gt;/etc/sudoers&lt;/code&gt; 文件，&lt;/p&gt;
+&lt;p&gt;在 &lt;code&gt;%sudo   ALL=(ALL:ALL) ALL&lt;/code&gt; 下新增一行&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;%sudo   ALL=(ALL) NOPASSWD: /usr/sbin/service ssh *&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;避免 sudo 启动 ssh 需要密码的问题。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在 windows 搜索栏搜索 &lt;code&gt;计划任务&lt;/code&gt;，或者快速运行窗口输入 &lt;code&gt;taskschd.msc&lt;/code&gt;，打开任务计划程序&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/szthanatos/image-host/master/task-scheduler.png&#34; alt=&#34;计划任务&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;创建任务，勾选 &lt;code&gt;隐藏&lt;/code&gt;，配置改为 win10&lt;/p&gt;
+&lt;p&gt;触发器选 &lt;code&gt;计算机启动时&lt;/code&gt; 或者 &lt;code&gt;当前用户登录时&lt;/code&gt;，可以配置延迟启动;&lt;/p&gt;
+&lt;p&gt;操作是 &lt;code&gt;启动程序&lt;/code&gt;，程序或脚本选 &lt;code&gt;C:\Windows\System32\wsl.exe&lt;/code&gt;，添加参数写 &lt;code&gt;-d Ubuntu -u {Ubuntu 用户名} sudo service ssh start&lt;/code&gt;；&lt;/p&gt;
+&lt;p&gt;(可选) 条件中取消勾选 &lt;code&gt;只有计算机在使用交流电时才启动此任务&lt;/code&gt;；&lt;/p&gt;
+&lt;p&gt;(可选) 设置中勾选 &lt;code&gt;允许按需允许任务&lt;/code&gt;；&lt;/p&gt;
+&lt;p&gt;完成&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;其他需要后台启动的服务类似配置。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>使用 Zsh 作为默认 shell</title>
+      <link>https://szthanatos.github.io/doc-wsl2/coding_with_wsl2_04/</link>
+      <pubDate>Sat, 22 Aug 2020 16:41:05 +0800</pubDate>
+      <guid>https://szthanatos.github.io/doc-wsl2/coding_with_wsl2_04/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;// TODO 吹一下 zsh&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;安装-zsh&#34;&gt;安装 zsh&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 安装 zsh
+sudo apt install zsh -y
+
+# 修改默认 shell 为 zsh
+sudo chsh -s /bin/zsh
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;重启 wsl，或者干脆重启电脑生效。&lt;/p&gt;
+&lt;h2 id=&#34;安装-oh-my-zsh&#34;&gt;安装 oh-my-zsh&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sh -c &amp;quot;$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;可能需要代理。&lt;/p&gt;
+&lt;h2 id=&#34;安装-zsh-插件&#34;&gt;安装 zsh 插件&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 安装 powerlevel10k 主题
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
+
+# 安装语法高亮 zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+# 安装自动建议 zsh-autosuggestions
+git clone git://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;从 win10 下载并安装以下字体，以获得 powerlevel10k 主题更好的显示效果：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/romkatv/powerlevel10k-media/master/prompt-styles-high-contrast.png&#34; alt=&#34;powerlevel10k&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;MesloLGS NF Regular.ttf&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;MesloLGS NF Bold.ttf&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;MesloLGS NF Italic.ttf&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;MesloLGS NF Bold Italic.ttf&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;配置-zsh&#34;&gt;配置 zsh&lt;/h2&gt;
+&lt;p&gt;在 &lt;code&gt;.zshrc&lt;/code&gt; 中编辑以下部分：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-properties&#34;&gt;# （可选）允许其他用户共用你的配置不弹出警告
+ZSH_DISABLE_COMPFIX=&amp;quot;true&amp;quot;
+
+# 默认情况下，zsh 会试图在低优先级运行后台任务，但是 Windows 不允许，所以将以下内容添加到. zshrc 文件开头可以改变 zsh 的行为
+case $(uname -a) in
+  *Microsoft*) unsetopt BG_NICE ;;
+esac
+
+# 启用 powerlevel10k 主题
+ZSH_THEME=&amp;quot;powerlevel10k/powerlevel10k&amp;quot;
+
+# 启用插件
+plugins=(
+  # 按 z+{模糊文件夹名称} 快速跳转
+  z
+  # git 补全
+  git
+  # 忘了加 sudo 的时候按两下 esc
+  sudo
+  # docker 补全
+  docker
+  docker-compose
+  # 按 x 解压任意类型压缩包
+  extract
+  # 彩色 man 手册
+  colored-man-pages
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+)
+
+# 配置终端颜色
+export TERM=&amp;quot;xterm-256color&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;输入 &lt;code&gt;source .zshrc&lt;/code&gt; 让配置生效，&lt;/p&gt;
+&lt;p&gt;输入 &lt;code&gt;p10k configure&lt;/code&gt; 配置 Powerlevel10k 主题设置。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/romkatv/powerlevel10k-media/master/configuration-wizard.gif&#34; alt=&#34;p10k configure&#34;&gt;&lt;/p&gt;
+&lt;p&gt;完成后，拷贝 &lt;code&gt;.zshrc&lt;/code&gt; 和 &lt;code&gt;.p10k.zsh&lt;/code&gt; 文件到 root 用户根目录下，让 root 也使用相同配置，当然也可以分别设置。&lt;/p&gt;
+&lt;h2 id=&#34;一键启用--停用代理&#34;&gt;一键启用 / 停用代理&lt;/h2&gt;
+&lt;p&gt;Linux 下配置代理本来就略麻烦，Wsl2 又是完整的虚拟机，每次重启内部网络都会重新生成&amp;hellip; 换句话说每次 Windows 和 Linux 的内网 IP 都在变化&amp;hellip;&lt;/p&gt;
+&lt;p&gt;不过还是能配置好的。&lt;/p&gt;
+&lt;p&gt;将以下内容加入到你的 &lt;code&gt;.zshrc&lt;/code&gt; 文件中，将 &lt;code&gt;20809&lt;/code&gt; 改为你的代理的端口：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;proxyon() {
+  local host_ip=$(cat /etc/resolv.conf |grep &amp;quot;nameserver&amp;quot; |cut -f 2 -d &amp;quot; &amp;quot;)
+  export ALL_PROXY=&amp;quot;http://${host_ip}:20809&amp;quot;
+  export all_proxy=&amp;quot;http://${host_ip}:20809&amp;quot;
+  echo -e &amp;quot;Acquire::http::Proxy \&amp;quot;http://${host_ip}:20809\&amp;quot;;&amp;quot; | sudo tee -a /etc/apt/apt.conf &amp;gt; /dev/null
+  echo -e &amp;quot;Acquire::https::Proxy \&amp;quot;http://${host_ip}:20809\&amp;quot;;&amp;quot; | sudo tee -a /etc/apt/apt.conf &amp;gt; /dev/null
+  curl ip.sb
+}
+
+proxyoff() {
+  unset ALL_PROXY
+  unset all_proxy
+  sudo sed -i -e &#39;/Acquire::http::Proxy/d&#39; /etc/apt/apt.conf
+  sudo sed -i -e &#39;/Acquire::https::Proxy/d&#39; /etc/apt/apt.conf
+  curl ip.sb
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;执行 &lt;code&gt;proxy&lt;/code&gt; 即可开启代理，&lt;code&gt;wget&lt;/code&gt;，&lt;code&gt;curl&lt;/code&gt;，&lt;code&gt;git&lt;/code&gt;，&lt;code&gt;apt&lt;/code&gt; 都会走代理。&lt;/p&gt;
+&lt;p&gt;执行 &lt;code&gt;unproxy&lt;/code&gt; 关闭。&lt;/p&gt;
+&lt;h2 id=&#34;参考&#34;&gt;参考&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://ohmyz.sh/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Oh My ZSH 官网&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/romkatv/powerlevel10k&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;powerlevel10k 项目主页&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>使用 tmux 复用终端</title>
+      <link>https://szthanatos.github.io/doc-wsl2/coding_with_wsl2_05/</link>
+      <pubDate>Sat, 22 Aug 2020 17:53:59 +0800</pubDate>
+      <guid>https://szthanatos.github.io/doc-wsl2/coding_with_wsl2_05/</guid>
+      <description>&lt;p&gt;Tmux 是一个终端复用软件。比如你开一个 terminal 窗口，相当于和本地的或远程的 Linux 建立了一次会话连接。&lt;/p&gt;
+&lt;p&gt;如果你想多做几件事，比如一个窗口运行服务，一个窗口运行客户端，对不起，你得再开一个窗口，再建立一个连接。&lt;/p&gt;
+&lt;p&gt;tmux 就是解决这个问题的工具，它可以让你的终端 (Terminal) 给复用 (mux) 了，在一次连接里面做无数多件不同的事情。&lt;/p&gt;
+&lt;p&gt;Ubuntu 自带 Tmux，无需额外安装。&lt;/p&gt;
+&lt;h2 id=&#34;概念&#34;&gt;概念&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/szthanatos/image-host/master/tmux.jpg&#34; alt=&#34;tmux&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Tmux 有这么几个概念：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Session：输入 tmux 后就创建了一个会话，一个会话是一组窗体的集合。&lt;/li&gt;
+&lt;li&gt;Window：会话中一个可见的窗口，你的屏幕一次只会看到一个窗口的内容。&lt;/li&gt;
+&lt;li&gt;Pane: 一个窗口可以分成多个窗格。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;使用 tmux 的过程可以分为：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;控制模式（按下或者按住前缀 (tmux-prefix)，默认 ctrl+b, 下文用※表示），也就是用快捷键执行动作；&lt;/li&gt;
+&lt;li&gt;命令模式（输入 tmux 后接命令），执行内部命令，好理解；&lt;/li&gt;
+&lt;li&gt;一般模式，就是把窗格内的东西当一般 terminal 用；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;配置&#34;&gt;配置&lt;/h2&gt;
+&lt;p&gt;添加配置文件 &lt;code&gt;.tmux.conf&lt;/code&gt;，内容如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-properties&#34;&gt;#-- base --#
+# (可选) 设置 zsh 为默认 shell
+set -g default-shell /bin/zsh
+
+#-- settings --#
+# 开启鼠标切换窗格，按住 shift 复制粘贴
+set -g mouse on
+# 窗口编号从 1 开始计数
+set -g base-index 1
+# 关掉某个窗口后，编号重排
+set -g renumber-windows on
+# 窗格编号从 1 开始计数
+set -g pane-base-index 1
+# PREFIX-Q 显示编号的驻留时长，单位 ms
+set -g display-panes-time 5000
+# 进入复制模式的时候使用 vi 键位（默认是 EMACS）
+setw -g mode-keys vi
+# 禁止活动进程修改窗口名
+# setw -g allow-rename off
+# 禁止自动命名新窗口
+setw -g automatic-rename off
+# 开启 256 colors 支持
+set -g default-terminal &amp;quot;tmux-256color&amp;quot;
+
+#-- bindkeys --#
+# 以下 3 行设置 ctrl+x 代替 ctrl+b 的快捷键
+set -g prefix C-x
+unbind C-b
+bind C-x send-prefix
+
+# 设置 tmux-prefix + \ 垂直分割窗格
+unbind %
+bind \\ split-window -h
+# 设置 tmux-prefix + - 水平分割窗格
+unbind &#39;&amp;quot;&#39;
+bind - split-window -v
+
+# 设置 ctrl+vim 方式切换窗格
+bind -n C-h select-pane -L
+bind -n C-j select-pane -D
+bind -n C-k select-pane -U
+bind -n C-l select-pane -R
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;有了这个配置文件立刻就能生效。&lt;/p&gt;
+&lt;h2 id=&#34;常用操作&#34;&gt;常用操作&lt;/h2&gt;
+&lt;p&gt;下面用 &lt;code&gt;※&lt;/code&gt; 代表 tmux 前缀，也就是 &lt;code&gt;ctrl+x&lt;/code&gt;，默认是 &lt;code&gt;ctrl+b&lt;/code&gt;。&lt;/p&gt;
+&lt;h3 id=&#34;鼠标&#34;&gt;鼠标&lt;/h3&gt;
+&lt;p&gt;tmux 中执行有些正常 terminal 中的鼠标操作需要按住 &lt;code&gt;shift&lt;/code&gt;，多试试。&lt;/p&gt;
+&lt;p&gt;窗格的分割线可以直接用鼠标拖动。&lt;/p&gt;
+&lt;h3 id=&#34;命令&#34;&gt;命令&lt;/h3&gt;
+&lt;h4 id=&#34;会话&#34;&gt;会话&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;tmux&lt;/code&gt; 新建无名称会话&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;tmux new -s demo&lt;/code&gt; 新建名称为 demo 的会话&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;tmux detach&lt;/code&gt; 断开当前会话，既※ + d&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;tmux a&lt;/code&gt; 默认进入第一个会话&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;tmux a -t demo&lt;/code&gt; 进入到名称为 demo 的会话&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;tmux list-session&lt;/code&gt; 查看所有会话&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;tmux ls&lt;/code&gt; 同上，简写&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;结束&#34;&gt;结束&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;tmux kill-server&lt;/code&gt; 关闭服务器，所有的会话都将关闭&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;tmux kill-session -t demo&lt;/code&gt; 关闭 demo 会话&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;tmux kill-window&lt;/code&gt; 关闭窗口&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;tmux kill-pane&lt;/code&gt; 关闭窗格&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;控制&#34;&gt;控制&lt;/h3&gt;
+&lt;h4 id=&#34;会话-session&#34;&gt;会话 (Session)&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;※ + d&lt;/code&gt; 休眠&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;※ + s&lt;/code&gt; 以菜单方式显示和选择会话&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;※ + L&lt;/code&gt; 切换回上一次的会话&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;窗口-windows&#34;&gt;窗口 (Windows)&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;※ + c&lt;/code&gt; 创建新窗口&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;※ + n&lt;/code&gt; 选择下一个窗口&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;※ + p&lt;/code&gt; 选择前一个窗口&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;※ + l&lt;/code&gt; 最近一次活跃窗口之间进行切换&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;※ + 0~9&lt;/code&gt; 选择几号窗口&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;※ + ,&lt;/code&gt; 重命名窗口&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;※ + .&lt;/code&gt; 更改窗口的编号，但只能更改成未使用的编号，所以要交换窗口的话，得更改多次进行交换&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;※ + &amp;amp;&lt;/code&gt; 关闭窗口&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;※ + w&lt;/code&gt; 以菜单方式显示及选择窗口&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;※ + f&lt;/code&gt; 在所有窗口中查找内容&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;窗格-pane&#34;&gt;窗格 (Pane)&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;※ + z&lt;/code&gt; 最大化 / 还原当前窗格&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;※ + &amp;quot;&lt;/code&gt; 模向分隔窗格，替换为了 -&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;※ + %&lt;/code&gt; 纵向分隔窗格，替换为了 \&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;※ + o&lt;/code&gt; 跳到下一个分隔窗格&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;※ + x&lt;/code&gt; 关闭窗格&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;※ + ;&lt;/code&gt; 切换到最后一个使用的窗格&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;※ + 上下键&lt;/code&gt; 上一个及下一个分隔窗格&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;※ + 空格键&lt;/code&gt; 切换窗格布局&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;tmux-插件&#34;&gt;tmux 插件&lt;/h2&gt;
+&lt;p&gt;之前还用过一段时间 Tmux 的插件，后来发现需要长期停留在 Tmux 的时候很少，所以后面没用了，&lt;/p&gt;
+&lt;p&gt;配置文件还是放出来留给有缘人：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-properties&#34;&gt;# plugins
+# tmux plugin manager 插件管理
+set -g @plugin &#39;tmux-plugins/tpm&#39;
+set -g @plugin &#39;tmux-plugins/tmux-sensible&#39;
+# 保存布局插件，tmux-prefix + ctrl+s/tmux-prefix + ctrl+r 保存 / 恢复
+set -g @plugin &#39;tmux-plugins/tmux-resurrect&#39;
+# 自动保存插件
+set -g @plugin &#39;tmux-plugins/tmux-continuum&#39;
+
+# tmux-resurrect 配置
+# 恢复 shell 的历史记录, 只有无前台任务运行的窗格 才能被保存
+set -g @resurrect-save-bash-history &#39;on&#39;
+# 恢复窗格内容, 目前使用该功能时，请确保 tmux 的 default-command 没有包含 &amp;amp;&amp;amp; 或者 || 操作符，
+# 否则将导致 bug。（查看 default-command 的值，请使用命令 tmux show -g default-command。）
+set -g @resurrect-capture-pane-contents &#39;on&#39;
+# 恢复 vim 会话
+set -g @resurrect-strategy-vim &#39;session&#39;
+
+# set -g @resurrect-save &#39;S&#39;
+# set -g @resurrect-restore &#39;R&#39;
+
+# tmux-continuum 配置
+# 开启自动恢复
+set -g @continuum-restore &#39;on&#39;
+# 设置备份间隔（分钟，0 为不自动备份）
+set -g @continuum-save-interval &#39;240&#39;
+# 状态栏查看备份状态
+# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+set -g status-right &#39;Continuum status: #{continuum_status}&#39;
+
+run &#39;/etc/.tmux/plugins/tpm/tpm&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;tpm 通过 git 安装：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;git clone https://github.com/tmux-plugins/tpm  /etc/.tmux/plugins/tpm
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;安装 tpm 后需要重新读取配置文件生效：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;进入 tmux，输入 &lt;code&gt;※ + :&lt;/code&gt; 进入命令模式；&lt;/li&gt;
+&lt;li&gt;再输入 &lt;code&gt;source-file ~/.tmux.conf&lt;/code&gt; 手动刷新配置文件；&lt;/li&gt;
+&lt;li&gt;最后输入 &lt;code&gt;※ + shift + u&lt;/code&gt; 进入 tpm 插件升级页面进行升级。&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>直接使用 Ubuntu Python 作为开发环境</title>
+      <link>https://szthanatos.github.io/doc-wsl2/coding_with_wsl2_06/</link>
+      <pubDate>Sat, 22 Aug 2020 18:06:35 +0800</pubDate>
+      <guid>https://szthanatos.github.io/doc-wsl2/coding_with_wsl2_06/</guid>
+      <description>&lt;p&gt;在前面的部分已经配置好了 Python 的死蛇源，所以现在已经可以使用 Ubuntu 作为 Python 基础环境了。&lt;/p&gt;
+&lt;h2 id=&#34;基本配置&#34;&gt;基本配置&lt;/h2&gt;
+&lt;p&gt;安装最新版本 Python：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sudo apt install python3.x
+sudo apt install python3.x-distutils
+sudo apt install python3-pip
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;修改 pypi 源，使用清华大学的镜像：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;pip install pip -U
+pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;pycharm-连接&#34;&gt;Pycharm 连接&lt;/h2&gt;
+&lt;p&gt;Pycharm 2019.1.X+ 版本已经支持直接连接 wsl 的 python 环境，无需通过 ssh&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/szthanatos/image-host/master/pycharm-wsl.png&#34; alt=&#34;pycharm 添加 wsl 解释器&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>使用 Docker 开发环境</title>
+      <link>https://szthanatos.github.io/doc-wsl2/coding_with_wsl2_07/</link>
+      <pubDate>Sat, 22 Aug 2020 18:07:41 +0800</pubDate>
+      <guid>https://szthanatos.github.io/doc-wsl2/coding_with_wsl2_07/</guid>
+      <description>&lt;p&gt;嗯，是的，其实可以直接在 Windows 下运行 Docker 而无需 Wsl。但是 Wsl2 会提供更好的性能——&lt;/p&gt;
+&lt;p&gt;如果开启 Wsl2，Docker 会默认把自己的文件系统迁移到 wsl 上（因为在 Win 下的本质也是开了个 Hyper-V 的虚拟机在运行）&lt;/p&gt;
+&lt;p&gt;——另一方面，咱们前面配好的终端环境也比 Windows 的终端好使&amp;hellip;&lt;/p&gt;
+&lt;p&gt;看到说 Powershell 好的人有，但是真拿它写东西的人好像没见到过&amp;hellip;&lt;/p&gt;
+&lt;p&gt;再一个是 Docker Desktop 可以访问到 Windows 下的文件，而如果直接在 wsl2 中安装 Docker 就没有这份福利了&amp;hellip;&lt;/p&gt;
+&lt;p&gt;所以 Docker Desktop + Wsl2 是最合适的一个组合。&lt;/p&gt;
+&lt;h2 id=&#34;安装&#34;&gt;安装&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;下载安装 &lt;a href=&#34;https://download.docker.com/win/edge/Docker%20Desktop%20Installer.exe&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Docker Desktop&lt;/a&gt; edge 版本&lt;/li&gt;
+&lt;li&gt;打开设置，检查 &lt;code&gt;General&lt;/code&gt; 中 &lt;code&gt;use the WSL2 base egine&lt;/code&gt; 应该是默认勾选的状态；&lt;/li&gt;
+&lt;li&gt;在 &lt;code&gt;Resources&lt;/code&gt;-&lt;code&gt;WSL INTEGRATION&lt;/code&gt; 中检查 &lt;code&gt;Enable integration with my default WSL Distro&lt;/code&gt; 应该是勾选状态，并将 Linux 发行版置为 &lt;code&gt;Enable&lt;/code&gt; 状态;&lt;/li&gt;
+&lt;li&gt;点击 &lt;code&gt;Apply &amp;amp; Restart&lt;/code&gt;，完成~&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Docker Desktop 重启之后，在任意终端 (Windows &amp;amp; Linux) 都可以执行 Docker 命令啦~&lt;/p&gt;
+&lt;h2 id=&#34;配置连接-docker&#34;&gt;配置连接 Docker&lt;/h2&gt;
+&lt;p&gt;在 &lt;code&gt;设置&lt;/code&gt;-&lt;code&gt;构建、执行、部署&lt;/code&gt; 下找到 &lt;code&gt;Docker&lt;/code&gt; 配置，可以直接连接 Docker for window：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/szthanatos/image-host/master/pycharm-docker.png&#34; alt=&#34;连接 docker&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;编写环境镜像&#34;&gt;编写环境镜像&lt;/h2&gt;
+&lt;h3 id=&#34;最简运行环境&#34;&gt;最简运行环境&lt;/h3&gt;
+&lt;p&gt;最简运行环境 Dockerfile 如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-dockerfile&#34;&gt;FROM python:3.8-buster
+LABEL author=&amp;quot;Lex Wayne&amp;quot;
+
+WORKDIR /app
+COPY . /app
+RUN pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple &amp;amp;&amp;amp;\
+    pip install -U pip &amp;amp;&amp;amp;\
+    pip install --no-warn-script-location -r /requirements.txt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;但是这种比较适用于稳定项目，因为每次更改都会需要重新生成镜像。&lt;/p&gt;
+&lt;p&gt;代码写到一半，新 &lt;code&gt;import&lt;/code&gt; 一个第三方包，还得先编辑 &lt;code&gt;requirements.txt&lt;/code&gt; ，重新生成镜像，才能有提示&amp;hellip;画面未免太美。&lt;/p&gt;
+&lt;h3 id=&#34;个人开发环境&#34;&gt;个人开发环境&lt;/h3&gt;
+&lt;p&gt;我惯用的开发环境 Dockerfile 如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-dockerfile&#34;&gt;FROM python:3.8-buster
+LABEL   version=&amp;quot;1.1&amp;quot; \
+        authors=&amp;quot;Lex Wayne&amp;quot; \
+
+ARG DEBIAN_FRONTEND=noninteractive
+
+RUN echo &amp;gt;/etc/apt/sources.list &amp;quot;\n\
+deb http://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free\n\
+deb http://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non-free\n\
+deb http://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free\n\
+deb http://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-free\n\
+    &amp;quot; &amp;amp;&amp;amp;\
+    apt-get update &amp;amp;&amp;amp;\
+    apt-get upgrade -y &amp;amp;&amp;amp;\
+    apt-get install -y sudo vim openssh-server openssh-client &amp;amp;&amp;amp;\
+    mkdir -p /var/run/sshd &amp;amp;&amp;amp;\
+    echo &#39;root:123456&#39; | chpasswd &amp;amp;&amp;amp;\
+    sed -i &#39;s/#PermitRootLogin prohibit-password/PermitRootLogin yes/&#39; /etc/ssh/sshd_config &amp;amp;&amp;amp;\
+    sed &#39;s@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g&#39; -i /etc/pam.d/sshd &amp;amp;&amp;amp;\
+    echo &amp;quot;export VISIBLE=now&amp;quot; &amp;gt;&amp;gt; /etc/profile
+
+RUN pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+
+EXPOSE 22
+
+CMD [&amp;quot;/usr/sbin/sshd&amp;quot;, &amp;quot;-D&amp;quot;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;使用时相当于后台长期运行一个 Linux 容器环境，通过 ssh 进行远程调试，默认密码 &lt;code&gt;123456&lt;/code&gt; 请修改掉。&lt;/p&gt;
+&lt;h2 id=&#34;运行-docker-容器&#34;&gt;运行 Docker 容器&lt;/h2&gt;
+&lt;p&gt;完成 Docker 配置后会在左下方底栏新增一个 &lt;code&gt;Services&lt;/code&gt;，没有的话从顶部 &lt;code&gt;视图&lt;/code&gt;-&lt;code&gt;工具窗口&lt;/code&gt; 中也能找到，&lt;/p&gt;
+&lt;p&gt;双击连接 Docker，右键运行环境容器；&lt;/p&gt;
+&lt;p&gt;点击侧边绿色三个箭头的图标即可使用 Dockerfile 部署。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/szthanatos/image-host/master/pycharm-dockerfile.png&#34; alt=&#34;dockerfile 部署&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;参考&#34;&gt;参考&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Docker 官方文档: &lt;a href=&#34;https://docs.docker.com/docker-for-windows/wsl/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Docker Desktop WSL 2 backend&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Vs Code 团队博客: &lt;a href=&#34;https://code.visualstudio.com/blogs/2020/03/02/docker-in-wsl2&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Using Docker in WSL 2&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Pycharm 易用性设置</title>
+      <link>https://szthanatos.github.io/doc-wsl2/coding_with_wsl2_08/</link>
+      <pubDate>Sat, 22 Aug 2020 21:51:08 +0800</pubDate>
+      <guid>https://szthanatos.github.io/doc-wsl2/coding_with_wsl2_08/</guid>
+      <description>&lt;h2 id=&#34;选项&#34;&gt;选项&lt;/h2&gt;
+&lt;h3 id=&#34;大小写敏感&#34;&gt;大小写敏感&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;File&lt;/code&gt; -&amp;gt; &lt;code&gt;Settings&lt;/code&gt; -&amp;gt; &lt;code&gt;Editor&lt;/code&gt; -&amp;gt; &lt;code&gt;General&lt;/code&gt; -&amp;gt; &lt;code&gt;Code Completion&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;取消后全小写也能自动补全，不过为了养成好习惯建议还是开首字母。&lt;/p&gt;
+&lt;h3 id=&#34;行分隔符&#34;&gt;行分隔符&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;File&lt;/code&gt; -&amp;gt; &lt;code&gt;Settings&lt;/code&gt; -&amp;gt; &lt;code&gt;Editor&lt;/code&gt; -&amp;gt; &lt;code&gt;Code Style&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Windows 下默认换行是 &lt;code&gt;CRLF&lt;/code&gt; 即 &lt;code&gt;\r\n&lt;/code&gt;，改成 Unix 的 &lt;code&gt;LF&lt;/code&gt;(&lt;code&gt;\n&lt;/code&gt;)&lt;/p&gt;
+&lt;h3 id=&#34;头部模板&#34;&gt;头部模板&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;File&lt;/code&gt; -&amp;gt; &lt;code&gt;Settings&lt;/code&gt; -&amp;gt; &lt;code&gt;Editor&lt;/code&gt; -&amp;gt; &lt;code&gt;File and Code Templates&lt;/code&gt; -&amp;gt; &lt;code&gt;Python Script&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;写入以下内容作为 Python 默认头部模板：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+&amp;quot;&amp;quot;&amp;quot;
+@Author : ${USER}
+@File   : ${NAME}.py
+@Project: ${PROJECT_NAME}
+@Time   : ${DATE} ${TIME}
+&amp;quot;&amp;quot;&amp;quot;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;${USER}&lt;/code&gt; 是系统用户名，你也可以写死。&lt;/p&gt;
+&lt;h3 id=&#34;鼠标缩放&#34;&gt;鼠标缩放&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;File&lt;/code&gt; -&amp;gt; &lt;code&gt;Settings&lt;/code&gt; -&amp;gt; &lt;code&gt;Editor&lt;/code&gt; -&amp;gt; &lt;code&gt;General&lt;/code&gt; -&amp;gt; &lt;code&gt;Change font size(Zoom) with Ctrl+Mouse Wheel&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;按住 &lt;code&gt;Ctrl&lt;/code&gt; 滚轮缩放。&lt;/p&gt;
+&lt;h2 id=&#34;插件&#34;&gt;插件&lt;/h2&gt;
+&lt;h3 id=&#34;市场插件&#34;&gt;市场插件&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;.env file support&lt;/code&gt;: .env 文件格式支持&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.ignore&lt;/code&gt;: git .ignore 模板&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Chinese (Simplified) Language Pack EAP&lt;/code&gt;: 汉化&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;CodeGlance&lt;/code&gt;: Sublime 式的小地图&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Key Promoter X&lt;/code&gt;: 使用功能时显示对应快捷键&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Rainbow Brackets&lt;/code&gt;: 不同层级括号不同颜色&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Requirement&lt;/code&gt;: 自动检查 Requirement 文件是否和实际环境匹配&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Translation&lt;/code&gt;: 翻译插件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;外部插件&#34;&gt;外部插件&lt;/h3&gt;
+&lt;p&gt;另外建议使用 &lt;a href=&#34;https://github.com/psf/black&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Black&lt;/a&gt; 让强制统一代码风格，多人协作的时候非常有用。&lt;/p&gt;
+&lt;p&gt;运行 Black 需要 Python 环境，到底放 Windows 还是 Wsl 还是 Docker 都行，看你有多骚了。&lt;/p&gt;
+&lt;p&gt;集成步骤直接按 &lt;a href=&#34;https://black.readthedocs.io/en/stable/editor_integration.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;文档&lt;/a&gt; 走就好。摘抄如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;pip install black&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;记录 Black 位置&lt;/p&gt;
+&lt;p&gt;Windows 下可能在 &lt;code&gt;C:\Users\{用户名}\AppData\Local\Programs\Python\{Python 版本}\Scripts\black.exe&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Linux 和 MacOS 可能在 &lt;code&gt;/usr/local/bin/black&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;File&lt;/code&gt; -&amp;gt; &lt;code&gt;Settings&lt;/code&gt; -&amp;gt; &lt;code&gt;Tools&lt;/code&gt; -&amp;gt; &lt;code&gt;External Tools&lt;/code&gt;，新建内容如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-txt&#34;&gt;Name: Black
+Description: Black is the uncompromising Python code formatter.
+Program: &amp;lt;第二步的位置&amp;gt;
+Arguments: &amp;quot;$FilePath$&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;建议取消 &lt;code&gt;Advanced Options&lt;/code&gt; 中的 &lt;code&gt;打开工具输出控制台&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;配置快捷键，我建议是直接替换 &lt;code&gt;Ctrl+Alt+l&lt;/code&gt; 格式化&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;监视文件更改自动执行，在 &lt;code&gt;File&lt;/code&gt; -&amp;gt; &lt;code&gt;Settings&lt;/code&gt; -&amp;gt; &lt;code&gt;Tools&lt;/code&gt; -&amp;gt; &lt;code&gt;File Watchers&lt;/code&gt; 下新建：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-txt&#34;&gt;Name: Black
+File type: Python
+Scope: Project Files
+Program: &amp;lt;第二步的位置&amp;gt;
+Arguments: $FilePath$
+Output paths to refresh: $FilePath$
+Working directory: $ProjectFileDir$
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;建议不勾选 &lt;code&gt;Advanced Options&lt;/code&gt; 中的 &lt;code&gt;Auto-save edited files to trigger the watcher&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;快捷键&#34;&gt;快捷键&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;File&lt;/code&gt; -&amp;gt; &lt;code&gt;Settings&lt;/code&gt; -&amp;gt; &lt;code&gt;Keymap&lt;/code&gt; -&amp;gt; &lt;code&gt;Editor Action&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;我用 Pycharm 默认键位很习惯，只加了:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;向左: &lt;code&gt;Ctrl + ;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;向右: &lt;code&gt;Ctrl +  Shift + ;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

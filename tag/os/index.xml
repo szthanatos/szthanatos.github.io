@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>os | Kryptonite Lab</title>
+    <link>https://szthanatos.github.io/tag/os/</link>
+      <atom:link href="https://szthanatos.github.io/tag/os/index.xml" rel="self" type="application/rss+xml" />
+    <description>os</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>zh-Hans</language><lastBuildDate>Sun, 01 Sep 2019 15:39:50 +0800</lastBuildDate>
+    <image>
+      <url>https://szthanatos.github.io/images/icon_hu38c28d6ecf464f8a293472d2a570e5b8_6181_512x512_fill_lanczos_center_2.png</url>
+      <title>os</title>
+      <link>https://szthanatos.github.io/tag/os/</link>
+    </image>
+    
+    <item>
+      <title>RancherOS 初步使用小结</title>
+      <link>https://szthanatos.github.io/post/rancheros/</link>
+      <pubDate>Sun, 01 Sep 2019 15:39:50 +0800</pubDate>
+      <guid>https://szthanatos.github.io/post/rancheros/</guid>
+      <description>&lt;h2&gt;目录&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#介绍&#34;&gt;介绍&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#安装&#34;&gt;安装&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#使用&#34;&gt;使用&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#ros&#34;&gt;ros&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#系统服务&#34;&gt;系统服务&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#docker&#34;&gt;docker&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#cloud-config&#34;&gt;cloud-config&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;RancherOS&lt;/code&gt; 是 Rancher 推出的一个轻量级的 Linux 内核操作系统，专为容器环境而设计。&lt;/p&gt;
+&lt;p&gt;按官网的说法，它具有如下特性：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;官方说法&lt;/th&gt;
+&lt;th&gt;瞎翻译&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Minimalist OS&lt;/td&gt;
+&lt;td&gt;极简系统 ——当前版本 (v1.5.4) 镜像也只有 146M，还内置了各类虚拟机工具和 N 个版本的 Docker 环境&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Comprehensive System Services&lt;/td&gt;
+&lt;td&gt;综合系统服务——所有的系统服务都可以通过 Compose 文件声明和启动&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Improved Security&lt;/td&gt;
+&lt;td&gt;更安全——没有额外的工具 / 代码，所有应用都跑在容器里，当然更安全&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Up-to-Date Version of Docker &amp;amp; Linux&lt;/td&gt;
+&lt;td&gt;集成最新的 Docker&amp;amp;Linux 发行版——装完系统直接就有 Docker 用，还是最新的，美滋滋&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Automated OS Configuration&lt;/td&gt;
+&lt;td&gt;自动化系统配置——使用 cloud-init 工具解析 &lt;code&gt;cloud-config&lt;/code&gt; 文件，统一管理系统级的所有配置，比如网络，docker 源&amp;hellip;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;24x7 Enterprise-level Support&lt;/td&gt;
+&lt;td&gt;不解释&amp;hellip;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;简单的来说，当我们开始使用容器化的方式来管理应用和服务的时候，我们自然而然的会发现，我们对操作系统其实没什么需求了
+——环境依赖和工具链由镜像提供，GUI 界面或者浏览器毫无作用，系统内置的各种工具也就是启动一个容器的事&amp;hellip;&lt;/p&gt;
+&lt;p&gt;把这些七七八八的都去掉，最后剩下：一个 Linux 内核 + Docker 环境 + 精简但是统一的配置管理 = RancherOS&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://szthanatos.github.io/media/rancheroshowitworks.png&#34; alt=&#34;RancherOS 架构&#34;&gt;&lt;/p&gt;
+&lt;p&gt;RancherOS 的架构也非常简单，除了内核，就是两个 Docker。&lt;/p&gt;
+&lt;p&gt;一个系统级的 Docker(&lt;code&gt;system-docker&lt;/code&gt;) 接管了系统的绝大部分功能，比如在一般 Linux 上你会用 &lt;code&gt;systemctl restart&lt;/code&gt; 重启服务，在这里就是用 &lt;code&gt;system-docker restart&lt;/code&gt; 重启一个容器了。&lt;/p&gt;
+&lt;p&gt;用户级别的 Docker 也作为一个服务运行在 &lt;code&gt;system-docker&lt;/code&gt; 之上，也就是我们一般意义上跑应用的 docker，正常使用。&lt;/p&gt;
+&lt;h2 id=&#34;安装&#34;&gt;安装&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;在 &lt;a href=&#34;https://github.com/rancher/os/releases/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RancherOS Gitlab 页面&lt;/a&gt; 下载对应版本镜像。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;新建虚拟机，加载 ISO 镜像，默认会以 &lt;code&gt;rancher&lt;/code&gt; 用户身份进入一个运行在内存之上的临时 RancherOS，所以建虚拟机的时候内存可以适当大一点，比如 2G&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;新建 / 上传一个 &lt;code&gt;cloud-config.yml&lt;/code&gt; 文件，主要内容就是写入你的 ssh 公钥，因为 RancherOS 安装之后就只能通过 ssh + 公钥的方式登陆 (是的，你在虚拟机控制台都进不去)，一个最简单的示例如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;# cloud-config
+ssh_authorized_keys:
+- ssh-rsa AAA...
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;没有其他配置了的话，&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo ros config valicate -i cloud-config.yml&lt;/code&gt; 校验没有格式错误，&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo ros install -c cloud-config.yml -d /dev/sda&lt;/code&gt; 将 RancherOS 安装到硬盘。&lt;/p&gt;
+&lt;p&gt;一路只有 2 个选项，是否要安装？Y，是否要重启？N，因为重启比你卸载光驱还快&amp;hellip; 直接就又进入一个新的临时 RancherOS 了&amp;hellip;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;手动 &lt;code&gt;sudo poweroff&lt;/code&gt;，卸载光驱，重启，看到熟悉的牛头 LOGO，恭喜完成~&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    &lt;p&gt;如果一定要为 rancher 设置一个密码的话，将安装命令替换为：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo ros install -c cloud-config.yml -d /dev/sda --append=rancher.password = 密码&lt;/code&gt;&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    &lt;p&gt;我遇到的一个情况，在 Vmware 上安装时，临时 RancherOS 默认没有网，
+需要手动配置网卡：&lt;/p&gt;
+&lt;p&gt;修改 &lt;code&gt;/etc/network/interfaces&lt;/code&gt; 文件，在末尾添加：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;auto eth0
+iface eth0 inet static
+# IP
+address             xxx.xxx.xxx.xxx
+# 子网掩码
+netmask             xxx.xxx.xxx.xxx
+# 广播地址 (可选)
+broadcast           xxx.xxx.xxx.xxx
+# 所在网段 (可选)
+network             xxx.xxx.xxx.xxx
+# 网关
+gateway             xxx.xxx.xxx.xxx
+# dns 服务器
+dns-nameservers     xxx.xxx.xxx.xxx
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;配置好执行 &lt;code&gt;sudo ifup eth0&lt;/code&gt; 即可连上网络。&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;使用&#34;&gt;使用&lt;/h2&gt;
+&lt;p&gt;整个 RancherOS 自底向上分三个层面进行管理&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;层面&lt;/th&gt;
+&lt;th&gt;工具&lt;/th&gt;
+&lt;th&gt;管理&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;系统管理&lt;/td&gt;
+&lt;td&gt;ros&lt;/td&gt;
+&lt;td&gt;cloud-config.yml&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;服务管理&lt;/td&gt;
+&lt;td&gt;system-docker&lt;/td&gt;
+&lt;td&gt;类 Compose 文件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;应用管理&lt;/td&gt;
+&lt;td&gt;docker&lt;/td&gt;
+&lt;td&gt;直接 run&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;ros&#34;&gt;ros&lt;/h3&gt;
+&lt;p&gt;ros 是对系统进行管理的工具，所以必须要以 root 权限执行，具体用法可以 help 看一下：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ sudo ros help
+NAME:
+   ros - Control and configure RancherOS
+built: &#39;2019-08-22T07:44:10Z&#39;
+
+USAGE:
+   ros [global options] command [command options] [arguments...]
+
+VERSION:
+   v1.5.4
+
+AUTHOR(S):
+   Rancher Labs, Inc.
+
+COMMANDS:
+     config, c   configure settings                               # 配置管理
+     console     manage which console container is used           # 切换命令行
+     engine      manage which Docker engine is used               # 切换 Docker 版本
+     service, s                                                   # 系统服务管理
+     os          operating system upgrade/downgrade               # 内核管理
+     tls         setup tls configuration                          # tls 管理
+     install     install RancherOS to disk                        # 安装系统
+     help, h     Shows a list of commands or help for one command
+
+GLOBAL OPTIONS:
+   --help, -h     show help
+   --version, -v  print the version
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;ros-config&#34;&gt;&lt;code&gt;ros config&lt;/code&gt;&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ ros config
+NAME:
+   ros config - configure settings
+
+USAGE:
+   ros config command [arguments...]
+
+COMMANDS:
+     get       get value                                            # 获取配置
+     set       set a value                                          # 设定配置
+     images    List Docker images for a configuration from a file   # 没用过
+     generate  Generate a configuration file from a template        # 没用过
+     export    export configuration                                 # 输出配置，比直接看 cloud-config.yml 全面
+     merge     merge configuration from stdin                       # 合并配置文件
+     syslinux  edit Syslinux boot global.cfg                        # 没用过
+     validate  validate configuration from stdin                    # 校验配置文件格式
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;所有面向系统的设置都是通过 &lt;code&gt;ros config&lt;/code&gt; 进行管理的，默认的配置存放在 &lt;code&gt;/var/lib/rancher/conf/cloud-config.yml&lt;/code&gt; 中。未记录的配置修改都会在重启后失效 (是的，&lt;code&gt;sudo passwd&lt;/code&gt; 也不能让你下次直接用户名密码登陆，不过有别的办法)&lt;/p&gt;
+&lt;p&gt;简单的修改配置可以直接执行 &lt;code&gt;ros config set &amp;lt;key&amp;gt; &amp;lt;value&amp;gt;&lt;/code&gt;，比如&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ros config set rancher.docker.tls true&lt;/code&gt;；&lt;/p&gt;
+&lt;p&gt;多个值写成列表，比如&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ros config set rancher.network.dns.nameservers &amp;quot;[&#39;8.8.8.8&#39;,&#39;8.8.4.4&#39;]&amp;quot;&lt;/code&gt;；&lt;/p&gt;
+&lt;p&gt;复杂一点的可以写一个小的 yml，然后执行 &lt;code&gt;ros config merge -i &amp;lt;文件&amp;gt;&lt;/code&gt; 进行合并，
+理论上也可以手动添加到 &lt;code&gt;/var/lib/rancher/conf/cloud-config.yml&lt;/code&gt; 中。
+但是个人不推荐这样做，因为现在版本的 cloud-config.yml 和 &lt;code&gt;ros config export&lt;/code&gt; 输出的不是一回事，待研究。&lt;/p&gt;
+&lt;h4 id=&#34;ros-service&#34;&gt;&lt;code&gt;ros service&lt;/code&gt;&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$  ros service
+NAME:
+   ros service -
+
+USAGE:
+   ros service command [command options] [arguments...]
+
+COMMANDS:
+     enable   turn on an service              # 启用服务
+     disable  turn off an service             # 禁止服务
+     list     list services and state         # 服务列表
+     delete   delete a service                # 删除服务
+     build    Build or rebuild services       # 构建 / 重构服务
+     create   Create services                 # 创建服务
+     up       Create and start containers     # 创建并启动服务
+     start    Start services                  # 启动服务
+     logs     View output from containers     # 查看服务日志
+     restart  Restart services                # 重启服务
+     stop     Stop services                   # 停止服务
+     rm       Delete services                 # 删除服务及镜像
+     pull     Pulls service images            # pull 服务镜像
+     kill     Kill containers                 # 杀死服务容器
+     ps       List containers                 # 列出服务容器
+
+OPTIONS:
+   --tls               Use TLS; implied by --tlsverify
+   --tlsverify         Use TLS and verify the remote [$DOCKER_TLS_VERIFY]
+   --tlscacert value   Trust certs signed only by this CA
+   --tlscert value     Path to TLS certificate file
+   --tlskey value      Path to TLS key file
+   --configdir value   Path to docker config dir, default ${HOME}/.docker
+   --verbose, --debug
+   --help, -h          show help
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;控制的是随系统启动的服务，用法包括声明文件的写法基本和 Docker Compose 一样，把它理解成 Docker Compose 的替代品就对了。&lt;/p&gt;
+&lt;p&gt;别的命令不解释了&amp;hellip;&lt;/p&gt;
+&lt;h3 id=&#34;系统服务&#34;&gt;系统服务&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ ros s list
+disabled amazon-ecs-agent
+disabled container-cron
+disabled open-iscsi
+disabled zfs
+disabled kernel-extras
+disabled kernel-headers
+disabled kernel-headers-system-docker
+enabled  open-vm-tools
+disabled hyperv-vm-tools
+disabled qemu-guest-agent
+disabled rancher-server
+disabled rancher-server-stable
+disabled amazon-metadata
+disabled volume-cifs
+disabled volume-efs
+disabled volume-nfs
+disabled modem-manager
+disabled waagent
+disabled virtualbox-tools
+disabled pingan-amc
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;上面说到系统级的服务都是用 &lt;code&gt;ros s&lt;/code&gt; 控制启停，而想要自定义一个系统级的服务的话:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;用 Docker Compose 语法编写服务的 &lt;code&gt;xxx.yml&lt;/code&gt; 文件，一般存放到 &lt;code&gt;/var/lib/rancher/conf/&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ros service enable /var/lib/rancher/conf/xxx.yml&lt;/code&gt; 启用该服务&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ros service up &amp;lt;serviceName&amp;gt;&lt;/code&gt; 启动服务，如果一个 Compose 里定义了多个服务，那么需要
+&lt;code&gt;ros service up &amp;lt;serviceName1&amp;gt; &amp;lt;serviceName2&amp;gt; &amp;lt;serviceName3&amp;gt; ...&lt;/code&gt; 来同时启动&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;docker&#34;&gt;docker&lt;/h3&gt;
+&lt;p&gt;没啥好说的&amp;hellip;Just use it.&lt;/p&gt;
+&lt;h2 id=&#34;cloud-config&#34;&gt;cloud-config&lt;/h2&gt;
+&lt;p&gt;额外说一下这个 cloud-config。&lt;/p&gt;
+&lt;p&gt;现有的公有云 / 虚拟化厂商大多支持 &lt;code&gt;cloud-init&lt;/code&gt; 工具进行系统配置初始化 (某种意义上的事实标准)。cloud-config 就是为 &lt;code&gt;cloud-init&lt;/code&gt; 服务的。RancherOS 在 &lt;code&gt;system-docker&lt;/code&gt; 中运行了一个 &lt;code&gt;cloud-init&lt;/code&gt; 容器，它会在启动时查找可能位置上的 cloud-config 文件并依此配置系统配置项。&lt;/p&gt;
+&lt;p&gt;cloud-config 的语法格式就是标准的 YAML 语法，一个我在用的、比较完整的 cloud-config 的示例如下：&lt;/p&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    使用时请删除掉中文注释&amp;hellip; 给别人演示的时候懒得删注释结果 validate 没问题，但是配置就是不生效&amp;hellip;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;# 主机名
+hostname: ros-test
+
+# 系统配置
+rancher:
+  # 替换控制台为 alpine，也可以是 ubuntu/centos/debian...
+  console: alpine
+
+  # 初始 Docker 源
+  bootstrap_docker:
+    registry_mirror: &amp;quot;http://dockerhub.azk8s.cn/&amp;quot;
+  # 系统 Docker 源
+  system_docker:
+    registry_mirror: &amp;quot;http://dockerhub.azk8s.cn/&amp;quot;
+  # 用户 Docker 源
+  docker:
+    registry_mirror: &amp;quot;http://dockerhub.azk8s.cn/&amp;quot;
+
+  # 网络
+  network:
+    interfaces:
+      eth0:
+        # IP 要是 CIDR 格式，要是和子网掩码对不上就上不了网
+        address: 192.168.0.1/24
+        # netmask: 255.255.255.0
+        # broadcast: 192.168.0.255
+        gateway: 192.168.0.254
+        mtu: 1500
+        dhcp: false
+    dns:
+      nameservers:
+        - 114.114.114.114
+        - 8.8.8.8
+
+  # # 扩容现有磁盘不要用 fdisk，除非你想把系统格式化了，用这个就能调整磁盘大小
+  # resize_device: /dev/sda
+
+# 可登录的机器公钥
+ssh_authorized_keys:
+  - ssh-rsa ...
+  - ssh-rsa ...
+
+# # 挂载新磁盘
+# mounts:
+# - [&amp;quot;/dev/vdb&amp;quot;, &amp;quot;/mnt/s&amp;quot;, &amp;quot;ext4&amp;quot;, &amp;quot;&amp;quot;]
+
+# 写文件
+write_files:
+  # 修改 apk 使用国内镜像
+  - path: /etc/apk/repositories
+    permissions: &amp;quot;0755&amp;quot;
+    owner: root
+    content: |
+      https://mirrors.ustc.edu.cn/alpine/latest-stable/main
+      https://mirrors.ustc.edu.cn/alpine/latest-stable/community
+
+  # 设置 CST 时区
+  - path: /etc/profile
+    permissions: &amp;quot;0755&amp;quot;
+    owner: root
+    content: |
+      export CHARSET=UTF-8
+      export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+      export PAGER=less
+      # 显示样式
+      export PS1=&amp;quot;\[\e[37m\][\[\e[32m\]\u\[\e[37m\]@\h \[\e[36m\]\w\[\e[0m\]]\\$&amp;quot;
+      # 时区
+      export TZ=&#39;CST-8&#39;
+      umask 022
+
+      for script in /etc/profile.d/*.sh ; do
+              if [-r $script] ; then
+                      . $script
+              fi
+      done
+
+  # 确保 ssh 连接时会读取. bashrc
+  - path: /home/rancher/.bash_profile
+    permissions: &amp;quot;0755&amp;quot;
+    owner: rancher
+    content: |
+      # If the shell is interactive and .bashrc exists, get the aliases and functions
+      if [[$- == *i* &amp;amp;&amp;amp; -f ~/.bashrc]]; then
+          . ~/.bashrc
+      fi
+
+  # 配置. bashrc
+  - path: /home/rancher/.bashrc
+    permissions: &amp;quot;0755&amp;quot;
+    owner: rancher
+    content: |
+      # .bashrc
+      # User specific aliases and functions
+      alias  d=&amp;quot;docker&amp;quot;
+      alias di=&amp;quot;docker image&amp;quot;
+      alias dc=&amp;quot;docker container&amp;quot;
+      alias dv=&amp;quot;docker volumn&amp;quot;
+      alias dn=&amp;quot;docker netwrok&amp;quot;
+
+      # Source global definitions
+      if [-f /etc/bashrc]; then
+              . /etc/bashrc
+      fi
+
+# 启动时执行命令
+runcmd:
+  #   # 两种写法
+  #   - [touch, /home/rancher/test1]
+  #   - echo &amp;quot;test&amp;quot; &amp;gt; /home/rancher/test2
+  # 开机更新 apk 源
+  - apk update
+  # 启动定时任务服务
+  - crond
+
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
