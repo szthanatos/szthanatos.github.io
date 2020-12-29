@@ -1,13 +1,19 @@
-<!DOCTYPE html>
-<html lang="zh-Hans">
+<!DOCTYPE html><html lang="zh-Hans" >
 
 <head>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  
+  
+  
+  <meta name="generator" content="Wowchemy 5.0.0-beta.1 for Hugo">
+  
 
+  
+
+  
   
 
   
@@ -28,13 +34,28 @@
   
     
   
-  <meta name="description" content="环境说明 当前版本 发布日期 下载地址 2.0 2018-07-30 官方2.0.0镜像 安装步">
+  <meta name="description" content="环境说明 当前版本 发布日期 下载地址 2.0 2018-07-30 官方 2.0.0 镜像 安装步骤 _** 注意">
 
   
   <link rel="alternate" hreflang="zh-Hans" href="https://szthanatos.github.io/topic/kafka/install/">
 
   
 
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
 
   
   
@@ -44,11 +65,14 @@
 
   
   
+
+  
+  
   
   
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
 
     
@@ -60,31 +84,161 @@
       
       
         
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/github.min.css" crossorigin="anonymous" title="hl-light">
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
         
       
     
 
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css" integrity="sha256-SHMGCYmST46SoyGgo4YR/9AlK1vf3ff84Aq9yK4hdqM=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css" integrity="sha512-1xoFisiGdy9nvho8EgXuXvnpR5GAMSjFwp40gSRE3NwdUdIMIKuPa7bqoUhLD0O/5tPNhteAsE5XyyMi5reQVA==" crossorigin="anonymous">
     
 
     
 
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.2/lazysizes.min.js" integrity="sha512-TmDwFLhg3UA4ZG0Eb4MIyT1O1Mb+Oww5kFG0uHqXsdbyZz9DcvYQhKpGgNkamAI6h2lGGZq2X8ftOJvF/XjTUg==" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+
   
 
   
   
   
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CNoto+Sans+SC:400,400italic,700%7CInconsolata&display=swap">
+    
+      
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CNoto+Sans+SC:400,400italic,700%7CInconsolata:400,700&display=swap">
+    
   
 
   
   
   
   
-  <link rel="stylesheet" href="/css/academic.css">
+  <link rel="stylesheet" href="/css/wowchemy.css">
 
   
 
@@ -93,15 +247,23 @@
 
   
 
+  
+
+
+  
+  
 
   
 
   <link rel="manifest" href="/index.webmanifest">
-  <link rel="icon" type="image/png" href="/img/icon-32.png">
-  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+  <link rel="icon" type="image/png" href="/images/icon_hu38c28d6ecf464f8a293472d2a570e5b8_6181_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu38c28d6ecf464f8a293472d2a570e5b8_6181_192x192_fill_lanczos_center_2.png">
 
   <link rel="canonical" href="https://szthanatos.github.io/topic/kafka/install/">
 
+  
+  
+  
   
   
   
@@ -115,8 +277,8 @@
   <meta property="og:site_name" content="Kryptonite Lab">
   <meta property="og:url" content="https://szthanatos.github.io/topic/kafka/install/">
   <meta property="og:title" content="Kafka -01- 安装配置 | Kryptonite Lab">
-  <meta property="og:description" content="环境说明 当前版本 发布日期 下载地址 2.0 2018-07-30 官方2.0.0镜像 安装步"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
-  <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="zh-Hans">
+  <meta property="og:description" content="环境说明 当前版本 发布日期 下载地址 2.0 2018-07-30 官方 2.0.0 镜像 安装步骤 _** 注意"><meta property="og:image" content="https://szthanatos.github.io/images/icon_hu38c28d6ecf464f8a293472d2a570e5b8_6181_512x512_fill_lanczos_center_2.png">
+  <meta property="twitter:image" content="https://szthanatos.github.io/images/icon_hu38c28d6ecf464f8a293472d2a570e5b8_6181_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="zh-Hans">
   
     
       <meta property="article:published_time" content="2018-12-06T10:09:46&#43;08:00">
@@ -144,7 +306,15 @@
 
 </head>
 
-<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper  ">
+
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.js"></script>
 
   <aside class="search-results" id="search">
   <div class="container">
@@ -162,7 +332,7 @@
       <div id="search-box">
         
         <input name="q" id="search-query" placeholder="搜索..." autocapitalize="off"
-        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control">
         
       </div>
 
@@ -178,14 +348,27 @@
 </aside>
 
 
-  
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Kryptonite Lab</a>
+    </div>
     
 
     
@@ -196,8 +379,14 @@
     
 
     
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Kryptonite Lab</a>
+    </div>
     
-    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-end" id="navbar-content">
 
       
       <ul class="navbar-nav d-md-inline-flex">
@@ -212,16 +401,24 @@
         
 
         
+
         
         
         
         
+
         
           
+            
+            
           
           
             
-          
+            
+            
+              
+            
+            
           
         
 
@@ -241,16 +438,24 @@
         
 
         
+
         
         
         
         
+
         
           
+            
+            
           
           
             
-          
+            
+            
+              
+            
+            
           
         
 
@@ -270,10 +475,18 @@
         
 
         
+
         
         
         
         
+
+        
+          
+            
+            
+          
+          
         
 
         <li class="nav-item">
@@ -291,14 +504,29 @@
 
     <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
       
+      
       <li class="nav-item">
-        <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        <a class="nav-link js-search" href="#" aria-label="搜索"><i class="fas fa-search" aria-hidden="true"></i></a>
       </li>
       
 
       
-      <li class="nav-item">
-        <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>浅色</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>深色</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>自动</span>
+          </a>
+        </div>
       </li>
       
 
@@ -310,23 +538,15 @@
 </nav>
 
 
-  
+  </div>
+
+  <div class="page-body">
+    
 
 <div class="container-fluid docs">
   <div class="row flex-xl-nowrap">
     <div class="col-12 col-md-3 col-xl-2 docs-sidebar">
-      
-
-
-
-
-
-  
-
-
-
-
-<form class="docs-search d-flex align-items-center">
+      <form class="docs-search d-flex align-items-center">
   <button class="btn docs-toggle d-md-none p-0 mr-3" type="button" data-toggle="collapse" data-target="#docs-nav" aria-controls="docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
     <span><i class="fas fa-bars"></i></span>
   </button>
@@ -338,31 +558,67 @@
 
 <nav class="collapse docs-links" id="docs-nav">
   
+  
+  
+  
+  
+  
 
   
   
-  
-  
-  <div class="docs-toc-item">
-    <a class="docs-toc-link" href="/topic/kafka/">Overview</a>
+    
 
-  </div>
-  
-  <div class="docs-toc-item active">
-    <a class="docs-toc-link" href="/topic/kafka/install/">安装配置</a>
+    
+      
 
-  </div>
-  
-  <div class="docs-toc-item">
-    <a class="docs-toc-link" href="/topic/kafka/update/">滚动升级</a>
+      
+      
+        
+          
+        
+      
 
-  </div>
+
   
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/topic/kafka/">Overview</a>
+    
+      
+        <ul class="nav docs-sidenav">
+      
+
+
+  <li class="active"><a href="/topic/kafka/install/">安装配置</a></li>
+
+
+
+  <li class=""><a href="/topic/kafka/update/">滚动升级</a></li>
+
+      
+        </ul>
+      
+    
+
+    
+      </div>
+    
+
+    
   
 </nav>
 
     </div>
 
+    
     
     <div class="d-none d-xl-block col-xl-2 docs-toc">
       <ul class="nav toc-top">
@@ -378,11 +634,11 @@
         <li><a href="#1-下载安装">1. 下载安装</a></li>
         <li><a href="#2-配置集群参数">2. 配置集群参数</a></li>
         <li><a href="#3-配置日志参数">3. 配置日志参数</a></li>
-        <li><a href="#4-配置jvm参数">4. 配置JVM参数</a></li>
-        <li><a href="#5-配置linux参数">5. 配置Linux参数</a></li>
+        <li><a href="#4-配置-jvm-参数">4. 配置 JVM 参数</a></li>
+        <li><a href="#5-配置-linux-参数">5. 配置 Linux 参数</a></li>
       </ul>
     </li>
-    <li><a href="#kafka20官方安装指南">Kafka2.0官方安装指南</a></li>
+    <li><a href="#kafka20-官方安装指南">Kafka2.0 官方安装指南</a></li>
   </ul>
 </nav>
 
@@ -411,12 +667,12 @@
 <tr>
 <td>2.0</td>
 <td>2018-07-30</td>
-<td><a href="https://www.apache.org/dyn/closer.cgi?path=/kafka/2.0.0/kafka_2.11-2.0.0.tgz">官方2.0.0镜像</a></td>
+<td><a href="https://www.apache.org/dyn/closer.cgi?path=/kafka/2.0.0/kafka_2.11-2.0.0.tgz" target="_blank" rel="noopener">官方 2.0.0 镜像</a></td>
 </tr>
 </tbody>
 </table>
 <h2 id="安装步骤">安装步骤</h2>
-<p><em><strong>注意：</strong> 文中以 <code>{}</code> 包裹起来的内容需要自己替换，并非直接使用</em></p>
+<p>_** 注意：** 文中以 <code>{}</code> 包裹起来的内容需要自己替换，并非直接使用_</p>
 <h3 id="0-环境准备">0. 环境准备</h3>
 <table>
 <thead>
@@ -428,11 +684,11 @@
 <tbody>
 <tr>
 <td><strong>Java</strong></td>
-<td>Java版本应该在8(jdk1.8)或以上，以更好的支持G1回收</td>
+<td>Java 版本应该在 8(jdk1.8) 或以上，以更好的支持 G1 回收</td>
 </tr>
 <tr>
 <td><strong>硬件参数</strong></td>
-<td>CPU: 英特尔至强E5-2650 v4 * 2 (共计24核)<br>Mem: DDR4内存-32GB * 8<br>Sto: 2000GB * 8 raid 0</td>
+<td>CPU: 英特尔至强 E5-2650 v4 <em>2 (共计 24 核) <br>Mem: DDR4 内存 - 32GB</em> 8 <br>Sto: 2000GB * 8 raid 0</td>
 </tr>
 <tr>
 <td><strong>文件路径</strong></td>
@@ -440,23 +696,23 @@
 </tr>
 <tr>
 <td><strong>数据存放位置</strong></td>
-<td>/home/sdb/kafka-logs,/home/sdc/kafka-logs,<br>/home/sdd/kafka-logs,/home/sde/kafka-logs,<br>/home/sdf/kafka-logs,/home/sdg/kafka-logs,<br>/home/sdh/kafka-logs,/home/sdi/kafka-logs</td>
+<td>/home/sdb/kafka-logs,/home/sdc/kafka-logs, <br>/home/sdd/kafka-logs,/home/sde/kafka-logs, <br>/home/sdf/kafka-logs,/home/sdg/kafka-logs, <br>/home/sdh/kafka-logs,/home/sdi/kafka-logs</td>
 </tr>
 <tr>
-<td><strong>zookeeper集群位置</strong></td>
+<td><strong>zookeeper 集群位置</strong></td>
 <td>10.10.20.83:2181,10.10.20.84:2181,10.10.20.85:2181</td>
 </tr>
 </tbody>
 </table>
 <h3 id="1-下载安装">1. 下载安装</h3>
-<p>下载最新版本Kafka，解压到指定目录，无需其他操作即完成安装。</p>
+<p>下载最新版本 Kafka，解压到指定目录，无需其他操作即完成安装。</p>
 <pre><code class="language-bash">tar -xzf kafka_2.11-2.0.0.tgz -C /home/tools
 cd kafka_2.11-2.0.0
 </code></pre>
 <h3 id="2-配置集群参数">2. 配置集群参数</h3>
-<p>修改<code>config/server.properties</code></p>
+<p>修改 <code>config/server.properties</code></p>
 <p>基本参数如下：</p>
-<pre><code class="language-bash"># broker唯一id，值为不重复正整数
+<pre><code class="language-bash"># broker 唯一 id，值为不重复正整数
 broker.id={n: int}
 
 # 服务监听地址
@@ -465,57 +721,57 @@ listeners=PLAINTEXT://{your.host}:9092
 # 日志存放位置列表，以逗号隔开
 log.dirs={data.storage.list}
 
-# zookeeper地址列表，以逗号隔开
+# zookeeper 地址列表，以逗号隔开
 zookeeper.connect={zookeeper.server.list}
 </code></pre>
 <p>优化参数配置如下：</p>
-<pre><code class="language-bash"># 消息处理线程数，建议数量为cpu核数加1
+<pre><code class="language-bash"># 消息处理线程数，建议数量为 cpu 核数加 1
 num.network.threads=25
 
-# 磁盘IO的线程数,建议为cpu核数2倍，最大不超过3倍
+# 磁盘 IO 的线程数, 建议为 cpu 核数 2 倍，最大不超过 3 倍
 num.io.threads=48
 
-# 拉取线程数，影响follower的I/O并发度，单位时间内leader持有更多请求，相应负载会增大
+# 拉取线程数，影响 follower 的 I/O 并发度，单位时间内 leader 持有更多请求，相应负载会增大
 num.replica.fetchers=2
 
 # 分区数量配置，根据业务情况修改
 num.partitions=16
 
-# 消息日志备份数，默认是1
+# 消息日志备份数，默认是 1
 default.replication.factor=2
 
-# 刷盘(写入文件到磁盘)间隔消息数，建议设为10000
+# 刷盘 (写入文件到磁盘) 间隔消息数，建议设为 10000
 log.flush.interval.messages=10000
 
-# 刷盘间隔毫秒数，建议1秒(1000)
+# 刷盘间隔毫秒数，建议 1 秒 (1000)
 log.flush.interval.ms=1000
 
 # 日志保留小时数
 log.retention.hours=48
 
-# 段文件大小，过小会产生很多小文件降低性能，过大会影响快速回收磁盘空间以及Kafka重启后的载入速度
+# 段文件大小，过小会产生很多小文件降低性能，过大会影响快速回收磁盘空间以及 Kafka 重启后的载入速度
 og.segment.bytes=1073741824
 
-# 最大字节数，默认1M，可以调到5M以上
+# 最大字节数，默认 1M，可以调到 5M 以上
 replica.fetch.max.bytes=5242880
 
-# 可接受数据大小，受限于java int类型的取值范围,超出后会报OOM异常
+# 可接受数据大小，受限于 java int 类型的取值范围, 超出后会报 OOM 异常
 socket.request.max.bytes=2147483600
 
-# 日志传输时候的压缩格式，可选择lz4, snappy, gzip,不压缩。建议打开压缩，可以提高传输性能
+# 日志传输时候的压缩格式，可选择 lz4, snappy, gzip, 不压缩。建议打开压缩，可以提高传输性能
 compression.type=snappy
 
-# 是否允许通过管理工具删除topic，默认是false
+# 是否允许通过管理工具删除 topic，默认是 false
 delete.topic.enable=true
 
-# 是否允许程序自动创建Topic
+# 是否允许程序自动创建 Topic
 auto.create.topics.enable=false
 </code></pre>
 <h3 id="3-配置日志参数">3. 配置日志参数</h3>
-<p>修改<code>config/log4j.properties</code>的jog4j参数，提高Kafka操作日志（和数据日志区分）的日志级别，以降低日志输出相关资源占用。具体可更改配置如下：</p>
-<pre><code class="language-bash"># Kafka2.0默认只有controller是TRACE级别，可以改为INFO，其他INFO级别可以适当提升为WARN
+<p>修改 <code>config/log4j.properties</code> 的 jog4j 参数，提高 Kafka 操作日志（和数据日志区分）的日志级别，以降低日志输出相关资源占用。具体可更改配置如下：</p>
+<pre><code class="language-bash"># Kafka2.0 默认只有 controller 是 TRACE 级别，可以改为 INFO，其他 INFO 级别可以适当提升为 WARN
 
-# zookeeper日志级别，
+# zookeeper 日志级别，
 log4j.logger.org.I0Itec.zkclient.ZkClient=INFO
 log4j.logger.org.apache.zookeeper=INFO
 
@@ -523,18 +779,18 @@ log4j.logger.org.apache.zookeeper=INFO
 log4j.logger.kafka=INFO
 log4j.logger.org.apache.kafka=INFO
 
-# request日志级别，只有当需要调试时才有必要输出
+# request 日志级别，只有当需要调试时才有必要输出
 log4j.logger.kafka.request.logger=WARN, requestAppender
 log4j.additivity.kafka.request.logger=false
 
-# 需要调试时解除以下三行注释，并将RequestChannel$设为TRACE
+# 需要调试时解除以下三行注释，并将 RequestChannel$ 设为 TRACE
 # log4j.logger.kafka.network.Processor=TRACE, requestAppender
 # log4j.logger.kafka.server.KafkaApis=TRACE, requestAppender
 # log4j.additivity.kafka.server.KafkaApis=false
 log4j.logger.kafka.network.RequestChannel$=WARN, requestAppender
 log4j.additivity.kafka.network.RequestChannel$=false
 
-# controller日志级别，默认为TRACE
+# controller 日志级别，默认为 TRACE
 log4j.logger.kafka.controller=INFO, controllerAppender
 log4j.additivity.kafka.controller=false
 
@@ -549,38 +805,38 @@ log4j.additivity.state.change.logger=false
 log4j.logger.kafka.authorizer.logger=INFO, authorizerAppender
 log4j.additivity.kafka.authorizer.logger=false
 </code></pre>
-<h3 id="4-配置jvm参数">4. 配置JVM参数</h3>
+<h3 id="4-配置-jvm-参数">4. 配置 JVM 参数</h3>
 <p><em><strong>Warning</strong>：谨慎调试</em></p>
-<p>在<code>bin/kafka-server-start.sh</code>文件中调整参数如下：</p>
-<pre><code class="language-bash"># 在base_dir之后配置参数
+<p>在 <code>bin/kafka-server-start.sh</code> 文件中调整参数如下：</p>
+<pre><code class="language-bash"># 在 base_dir 之后配置参数
 base_dir=$(dirname $0)
 
-export KAFKA_HEAP_OPTS=&quot;-Xms6g -Xmx6g -XX:MetaspaceSize=96m -XX:+UseG1GC -XX:MaxGCPauseMillis=20 -XX:InitiatingHeapOccupancyPercent=35 -XX:G1HeapRegionSize=16M -XX:MinMetaspaceFreeRatio=50 -XX:MaxMetaspaceFreeRatio=80&quot;  
+export KAFKA_HEAP_OPTS=&quot;-Xms6g -Xmx6g -XX:MetaspaceSize=96m -XX:+UseG1GC -XX:MaxGCPauseMillis=20 -XX:InitiatingHeapOccupancyPercent=35 -XX:G1HeapRegionSize=16M -XX:MinMetaspaceFreeRatio=50 -XX:MaxMetaspaceFreeRatio=80&quot;
 </code></pre>
-<p><em><strong>ps：</strong> 虽然看起来很激进，但是以上配置参照的是LinkIn高峰时期最繁忙的集群:</em></p>
+<p><em><strong>ps：</strong> 虽然看起来很激进，但是以上配置参照的是 LinkIn 高峰时期最繁忙的集群:</em></p>
 <pre><code class="language-properties">60 brokers
 50k partitions (replication factor 2)
 800k messages/sec in
 300 MB/sec inbound, 1 GB/sec+ outbound
 </code></pre>
-<p><em>这个配置的集群实现了90%的GC中断时间不超过21毫秒，每秒钟新生代GC次数不超过一次</em></p>
-<p><em><strong>ps2：</strong> 上述环境的Java版本为JDK 1.8 u5</em></p>
-<h3 id="5-配置linux参数">5. 配置Linux参数</h3>
+<p><em><strong>ps2：</strong> 这个配置的集群实现了 90% 的 GC 中断时间不超过 21 毫秒，每秒钟新生代 GC 次数不超过一次</em></p>
+<p><em><strong>ps3：</strong> 上述环境的 Java 版本为 JDK 1.8 u5</em></p>
+<h3 id="5-配置-linux-参数">5. 配置 Linux 参数</h3>
 <p><em><strong>Warning</strong>：谨慎调试</em></p>
 <pre><code class="language-bash"># 调整系统所有进程一共可以打开的最大文件数：
 echo 'fs.file-max = 1024000' &gt;&gt; /etc/sysctl.conf
 </code></pre>
-<p>以及<code>/etc/security/limits.conf</code>末尾增加：</p>
-<pre><code class="language-bash"># 设置当前user以及由它启动的进程的资源限制
+<p>以及 <code>/etc/security/limits.conf</code> 末尾增加：</p>
+<pre><code class="language-bash"># 设置当前 user 以及由它启动的进程的资源限制
 {user}      soft    nofile      1024000
 {user}      hard    nofile      1024000
 </code></pre>
-<p>增大socket buffer size，以提高吞吐性能</p>
+<p>增大 socket buffer size，以提高吞吐性能</p>
 <pre><code class="language-bash">echo 212992 &gt;&gt; /proc/sys/net/core/wmem_max
 echo 212992 &gt;&gt; /proc/sys/net/core/rmem_max
 </code></pre>
-<h2 id="kafka20官方安装指南">Kafka2.0官方安装指南</h2>
-<p><a href="https://kafka.apache.org/documentation/#quickstart">Quick Start</a></p>
+<h2 id="kafka20-官方安装指南">Kafka2.0 官方安装指南</h2>
+<p><a href="https://kafka.apache.org/documentation/#quickstart" target="_blank" rel="noopener">Quick Start</a></p>
 
           </div>
 
@@ -588,6 +844,7 @@ echo 212992 &gt;&gt; /proc/sys/net/core/rmem_max
 
 
 
+          
           
           <div class="article-widget">
             
@@ -611,16 +868,14 @@ echo 212992 &gt;&gt; /proc/sys/net/core/rmem_max
 
           
 
-<p class="edit-page">
-  <a href="https://github.com/gcushen/hugo-academic/edit/master/content/topic/kafka/install.md">
-    <i class="fas fa-pen pr-2"></i>编辑本页
-  </a>
-</p>
 
 
 
 
           
+
+          
+
 
         </div>
 
@@ -631,11 +886,24 @@ echo 212992 &gt;&gt; /proc/sys/net/core/rmem_max
 
   <p class="powered-by">
     
+  </p>
 
-    Powered by the
-    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
-    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+  
+  
 
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+    Published with
+    <a href="https://wowchemy.com" target="_blank" rel="noopener">Wowchemy</a>  —
+    the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">
+    open source</a> website builder that empowers creators.
     
   </p>
 </footer>
@@ -645,60 +913,91 @@ echo 212992 &gt;&gt; /proc/sys/net/core/rmem_max
   </div>
 </div>
 
+  </div>
+
+  <div class="page-footer">
+    
+    
+  </div>
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">引用</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> 复制
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> 下载
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
 
       
 
     
     
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 
-    
-    
-    
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      
+
       <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
 
       
 
       
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js" integrity="sha256-1zu+3BnLYV9LdiY85uXMzii3bdrkelyp37e0ZyTAQh0=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/python.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/python.min.js"></script>
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/go.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/go.min.js"></script>
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/javascript.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/javascript.min.js"></script>
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/typescript.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/typescript.min.js"></script>
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/html.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/powershell.min.js"></script>
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/powershell.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/properties.min.js"></script>
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/properties.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/sql.min.js"></script>
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/sql.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/dockerfile.min.js"></script>
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/yaml.min.js"></script>
         
       
 
-      
-      
     
 
     
     
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js" integrity="sha256-EErZamuLefUnbMBQbsEqu1USa+btR2oIlCpBJbyD4/g=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.js" integrity="sha512-SeiQaaDh73yrb56sTW/RgVdi/mMqNeM2oBwubFHagc5BkixSpP1fvqF47mKzPGWYSSy4RwbBunrJBQ4Co8fRWA==" crossorigin="anonymous"></script>
     
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -714,14 +1013,15 @@ echo 212992 &gt;&gt; /proc/sys/net/core/rmem_max
         'post': "文章",
         'project': "项目",
         'publication' : "出版物",
-        'talk' : "演讲"
+        'talk' : "演讲",
+        'slides' : "Slides"
         };
     </script>
     
 
     
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.1/anchor.min.js" integrity="sha256-pB/deHc9CGfFpJRjC43imB29Rse8tak+5eXqntO94ck=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.2/anchor.min.js" integrity="sha512-I7w3ZdSFzw5j3jU3ZkNikBNeIrl3i+hEuEdwNmqUJvwNcaBUNcijnP2gd9DtGlgVYDplfjGoD8vTNsID+lCjqg==" crossorigin="anonymous"></script>
     <script>
       anchors.add();
     </script>
@@ -753,6 +1053,13 @@ echo 212992 &gt;&gt; /proc/sys/net/core/rmem_max
 
     
     
+    
+
+    
+    
+
+    
+    
 
     
     
@@ -768,43 +1075,22 @@ echo 212992 &gt;&gt; /proc/sys/net/core/rmem_max
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/wowchemy.min.e70d9bcb02570fbace6fd086701a8d67.js"></script>
 
-    
+    <script>
+    ((window.gitter = {}).chat = {}).options = {
+        room: 'szthanatos\-github\-io/community'
+    };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+<style>
+    .gitter-chat-embed {
+        top: 70px;
+    }
+</style>
 
 
 
-
-
-
-  
-  
-
-  
-<div id="modal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">引用</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <pre><code class="tex hljs"></code></pre>
-      </div>
-      <div class="modal-footer">
-        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
-          <i class="fas fa-copy"></i> 复制
-        </a>
-        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
-          <i class="fas fa-download"></i> 下载
-        </a>
-        <div id="modal-error"></div>
-      </div>
-    </div>
-  </div>
-</div>
 
 </body>
 </html>

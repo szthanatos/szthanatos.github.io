@@ -1,0 +1,1303 @@
+<!DOCTYPE html><html lang="zh-Hans" >
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  
+  
+  <meta name="generator" content="Wowchemy 5.0.0-beta.1 for Hugo">
+  
+
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Lex Wayne">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="操作 批量操作 传统数据库也存在批量操作效率高于单次操作的情况，">
+
+  
+  <link rel="alternate" hreflang="zh-Hans" href="https://szthanatos.github.io/topic/redis/04-advanced/improve-02/">
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#4169E1">
+  
+
+  
+  
+
+  
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css" integrity="sha512-1xoFisiGdy9nvho8EgXuXvnpR5GAMSjFwp40gSRE3NwdUdIMIKuPa7bqoUhLD0O/5tPNhteAsE5XyyMi5reQVA==" crossorigin="anonymous">
+    
+
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.2/lazysizes.min.js" integrity="sha512-TmDwFLhg3UA4ZG0Eb4MIyT1O1Mb+Oww5kFG0uHqXsdbyZz9DcvYQhKpGgNkamAI6h2lGGZq2X8ftOJvF/XjTUg==" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+
+  
+
+  
+  
+  
+    
+      
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CNoto+Sans+SC:400,400italic,700%7CInconsolata:400,700&display=swap">
+    
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.css">
+
+  
+
+
+
+
+  
+
+  
+
+
+  
+  
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/images/icon_hu38c28d6ecf464f8a293472d2a570e5b8_6181_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu38c28d6ecf464f8a293472d2a570e5b8_6181_192x192_fill_lanczos_center_2.png">
+
+  <link rel="canonical" href="https://szthanatos.github.io/topic/redis/04-advanced/improve-02/">
+
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="og:site_name" content="Kryptonite Lab">
+  <meta property="og:url" content="https://szthanatos.github.io/topic/redis/04-advanced/improve-02/">
+  <meta property="og:title" content="优化指南 - 使用 | Kryptonite Lab">
+  <meta property="og:description" content="操作 批量操作 传统数据库也存在批量操作效率高于单次操作的情况，"><meta property="og:image" content="https://szthanatos.github.io/images/icon_hu38c28d6ecf464f8a293472d2a570e5b8_6181_512x512_fill_lanczos_center_2.png">
+  <meta property="twitter:image" content="https://szthanatos.github.io/images/icon_hu38c28d6ecf464f8a293472d2a570e5b8_6181_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="zh-Hans">
+  
+    
+      <meta property="article:published_time" content="2019-03-18T15:04:35&#43;08:00">
+    
+    <meta property="article:modified_time" content="2019-03-18T15:04:35&#43;08:00">
+  
+
+  
+
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>优化指南 - 使用 | Kryptonite Lab</title>
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper  ">
+
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.js"></script>
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>搜索</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="搜索..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Kryptonite Lab</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="切换导航">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Kryptonite Lab</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-end" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#hero"><span>主页</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>笔记</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="/topic/"><span>专题</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="搜索"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>浅色</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>深色</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>自动</span>
+          </a>
+        </div>
+      </li>
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  </div>
+
+  <div class="page-body">
+    
+
+<div class="container-fluid docs">
+  <div class="row flex-xl-nowrap">
+    <div class="col-12 col-md-3 col-xl-2 docs-sidebar">
+      <form class="docs-search d-flex align-items-center">
+  <button class="btn docs-toggle d-md-none p-0 mr-3" type="button" data-toggle="collapse" data-target="#docs-nav" aria-controls="docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    <span><i class="fas fa-bars"></i></span>
+  </button>
+
+  
+  <input name="q" type="search" class="form-control" placeholder="搜索..." autocomplete="off">
+  
+</form>
+
+<nav class="collapse docs-links" id="docs-nav">
+  
+  
+  
+  
+  
+  
+
+  
+  
+    
+
+    
+      
+
+      
+      
+        
+          
+        
+      
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/topic/redis/">简介</a>
+    
+      
+        <ul class="nav docs-sidenav">
+      
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/topic/redis/01-design/">设计</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/topic/redis/02-usage/">操作</a>
+    
+      
+        <ul class="nav docs-sidenav">
+      
+
+
+  <li class=""><a href="/topic/redis/02-usage/cluster_command/">集群相关命令</a></li>
+
+      
+        </ul>
+      
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/topic/redis/03-operation/">运维</a>
+    
+      
+        <ul class="nav docs-sidenav">
+      
+
+
+  <li class=""><a href="/topic/redis/03-operation/install/">单机 &amp; 集群安装</a></li>
+
+      
+        </ul>
+      
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/topic/redis/04-advanced/">优化指南</a>
+    
+      
+        <ul class="nav docs-sidenav">
+      
+
+
+  <li class=""><a href="/topic/redis/04-advanced/improve-01/">设计</a></li>
+
+
+
+  <li class="active"><a href="/topic/redis/04-advanced/improve-02/">使用</a></li>
+
+
+
+  <li class=""><a href="/topic/redis/04-advanced/improve-03/">运维</a></li>
+
+      
+        </ul>
+      
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/topic/redis/05-troubleshooting/">问题处理</a>
+    
+      
+        <ul class="nav docs-sidenav">
+      
+
+
+  <li class=""><a href="/topic/redis/05-troubleshooting/connection_reset/">connection reset by peer</a></li>
+
+
+
+  <li class=""><a href="/topic/redis/05-troubleshooting/persist_on_disk/">not able to persist on disk</a></li>
+
+      
+        </ul>
+      
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/topic/redis/06-reference/">参考文献</a>
+    
+
+    
+      </div>
+    
+
+      
+        </ul>
+      
+    
+
+    
+      </div>
+    
+
+    
+  
+</nav>
+
+    </div>
+
+    
+    
+    <div class="d-none d-xl-block col-xl-2 docs-toc">
+      <ul class="nav toc-top">
+        <li><a href="#" id="back_to_top" class="docs-toc-title">在本页</a></li>
+      </ul>
+
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#操作">操作</a>
+      <ul>
+        <li><a href="#批量操作">批量操作</a></li>
+        <li><a href="#减少阻塞">减少阻塞</a></li>
+      </ul>
+    </li>
+    <li><a href="#策略">策略</a>
+      <ul>
+        <li><a href="#过期回收">过期回收</a></li>
+        <li><a href="#持久化">持久化</a></li>
+        <li><a href="#内存清理">内存清理</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+      
+    </div>
+    
+
+    <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role="main">
+
+      <article class="article">
+
+        <div class="docs-article-container">
+          <h1>优化指南 - 使用</h1>
+
+          <div class="article-style">
+            <h2 id="操作">操作</h2>
+<h3 id="批量操作">批量操作</h3>
+<p>传统数据库也存在批量操作效率高于单次操作的情况，但是 redis 由于执行效率更高，批量操作带来的提升也更夸张。举个不是很恰当的例子，还是按 redis 每秒能处理 10k 请求来算——</p>
+<p>假设客户端和服务端不在同一机器，网络通信存在额外 1ms 延时：</p>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>时间</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1000 次 get</td>
+<td>1000 <em>1 + 1000</em> 0.01 = 1010  (ms)</td>
+</tr>
+<tr>
+<td>10 次 100 个键值对的 mget</td>
+<td>10 <em>(1</em> 1 + 100 * 0.01) = 20 (ms)</td>
+</tr>
+<tr>
+<td>1 次 1000 个键值对的 mget</td>
+<td>1 <em>1 + 1000</em> 0.01 = 11 (ms)</td>
+</tr>
+</tbody>
+</table>
+<p>如果一条条去执行，这时 redis 每秒只能处理 1000 / 1.01 ≈ 990 次请求，只发挥了实际计算力的 0.99%。</p>
+<h4 id="multi-action-vs-pipeline-vs-transaction">Multi-action vs Pipeline vs Transaction</h4>
+<p>批量操作有 3 种实现方式：</p>
+<p><strong><code>Multi-action</code></strong></p>
+<p>也就是 m 开头的命令，比如 <code>mget</code></p>
+<p><strong>优点</strong>：</p>
+<ul>
+<li>效率是最高的，因为它只需要解析一条命令</li>
+</ul>
+<p><strong>缺点</strong>：</p>
+<ul>
+<li>只能做一件事</li>
+<li>一次操作的 key 太多的话会导致 redis 实例的响应能力等比下降</li>
+<li>不具有原子性，存在部分成功部分失败的情况</li>
+</ul>
+<p><strong><code>Pipeline</code></strong></p>
+<p>管道式的操作</p>
+<p><strong>优点</strong>：</p>
+<ul>
+<li>可以处理多类数据</li>
+<li>可以将大量命令分解为多个包依次发送执行</li>
+<li>使用灵活</li>
+</ul>
+<p><strong>缺点</strong>：</p>
+<ul>
+<li>不保证事务，其他客户端发送的命令可能在 pipeline 执行期间被执行</li>
+<li>不具有原子性，存在部分成功部分失败的情况</li>
+</ul>
+<p><strong><code>Transaction</code></strong></p>
+<p>事务</p>
+<p><strong>优点</strong>：</p>
+<ul>
+<li>原子性，要么全执行要么不执行</li>
+<li>乐观锁</li>
+</ul>
+<p><strong>缺点</strong>：</p>
+<ul>
+<li>命令会被分批发送给服务端，最后统一执行，性能是最低的 (但还是远高于执行 n 次命令)</li>
+<li>随着竞争激烈程度的上升，乐观锁会导致性能相应下降</li>
+<li>在集群中，只有同属于一个哈希槽的键才能使用事务，多数客户端支持的不好</li>
+</ul>
+<p>另外，因为 Pipeline 是基于 redis 自定义的 RESP 协议实现的，而 Transaction 是命令实现，所以给了我们组合使用的机会。相比直接使用事务会快上一点点，没有太大区别。</p>
+<p>总的来说，实现批量执行的核心肯定是 Pipeline，请尽可能的使用。</p>
+<p>放上一组官方测试结果以供参考：</p>
+<pre><code class="language-bash"># Intel(R) Xeon(R) CPU E5520 @ 2.27GHz (with pipelining)
+$ ./redis-benchmark -r 1000000 -n 2000000 -t get,set,lpush,lpop -P 16 -q
+&gt; SET: 552028.75 requests per second
+&gt; GET: 707463.75 requests per second
+&gt; LPUSH: 767459.75 requests per second
+&gt; LPOP: 770119.38 requests per second
+
+# Intel(R) Xeon(R) CPU E5520 @ 2.27GHz (without pipelining)
+$ ./redis-benchmark -r 1000000 -n 2000000 -t get,set,lpush,lpop -q
+&gt; SET: 122556.53 requests per second
+&gt; GET: 123601.76 requests per second
+&gt; LPUSH: 136752.14 requests per second
+&gt; LPOP: 132424.03 requests per second
+</code></pre>
+<h3 id="减少阻塞">减少阻塞</h3>
+<p>另一方面，针对每条命令，由于 redis 是单进程单线程的模式，命令是依次执行的，想象一下星巴克排队，只要有一个客人堵在那，后面的不管买多买少都只能排着&hellip;</p>
+<p>可能造成阻塞的命令包括：</p>
+<ul>
+<li><code>del</code>，这个删除是在前台阻塞式的删除，在 redis4.0 以后应该使用 <code>unlink</code> 后台非阻塞的标记删除</li>
+<li><code>keys</code>、<code>hgetall</code>、<code>smembers</code>，这类返回所有结果的命令都会占用大量资源，都应该用 <code>scan</code>、<code>hscan</code>、<code>sscan</code> 等命令替换</li>
+<li><code>sinter</code>/<code>sunion</code>/<code>sdiff</code> 的结果如果会重复使用的话，用 <code>sinterstore</code>/<code>sunionstore</code>/<code>sdiffstore</code> 将结果保存起来</li>
+<li><code>sort</code>，可以先取到本地再排序</li>
+<li>能用 <code>mget</code>/<code>mhset</code> 的情况下就不要用 <code>get</code>/<code>set</code></li>
+<li>总之，所有时间复杂度大于 O(log n) 的操作都应该考虑有没有更低占用的实现</li>
+</ul>
+<p>除了命令本身，造成阻塞的原因还有：</p>
+<ul>
+<li>CPU 饱和：cpu 占用率 100% 了</li>
+<li>CPU 竞争：和其他服务竞争资源</li>
+<li>持久化带来的 IO 阻塞
+<ul>
+<li>fork 阻塞：rdb/aof 文件重写的时候 fork 出的子进程长时间不能完成，导致的主进程阻塞</li>
+<li>AOF 阻塞：数据变动剧烈的时候 fsync 持续写硬盘导致的</li>
+<li>HugePage 阻塞：如果 linux 内核里启用了 <code>transparent_hugepage</code>，会对内存和延迟带来很大影响</li>
+</ul>
+</li>
+<li>内存交换：物理内存不够用了，部分数据被写到 Linux 的虚拟内存，也就是 swap，但是内存和磁盘的读写速度起码差了 5 个量级</li>
+<li>网络问题</li>
+</ul>
+<p>这些就需要在使用过程中不断监测和发现了。</p>
+<h2 id="策略">策略</h2>
+<h3 id="过期回收">过期回收</h3>
+<p>随着时间增长，碎片化的无用 key 的数量也会持续上升，直到最终你的内存被垃圾 Key 占满。
+所以一个好习惯是给不需要持久存储 (redis 本身就不是用来持久化的) 的 Key 都加上过期时间。</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>EXPIRE &lt;KEY&gt; &lt;TTL&gt;</code></td>
+<td>将键的生存时间设为 ttl 秒</td>
+</tr>
+<tr>
+<td><code>PEXPIRE &lt;KEY&gt; &lt;TTL&gt;</code></td>
+<td>将键的生存时间设为 ttl 毫秒</td>
+</tr>
+<tr>
+<td><code>EXPIREAT &lt;KEY&gt; &lt;timestamp&gt;</code></td>
+<td>将键的过期时间设为 timestamp 所指定的秒数时间戳</td>
+</tr>
+<tr>
+<td><code>PEXPIREAT &lt;KEY&gt; &lt;timestamp&gt;</code></td>
+<td>将键的过期时间设为 timestamp 所指定的毫秒数时间戳.</td>
+</tr>
+</tbody>
+</table>
+<p>但是需要注意，过期键的内存空间默认并不会被立即回收。redis 的内存回收策略主要是这两个：</p>
+<ul>
+<li><strong>被动删除</strong>，读 / 写过期键时触发删除；</li>
+<li><strong>主动删除</strong>，每隔 100ms 检查 20 个带过期时间的键，如果有超过四分之一的键过期，则重复上面步骤；</li>
+</ul>
+<p>另外，设置 <code>maxmemory</code> 最大内存，可以在达到内存阈值的时候触发强制删除机制 (配置项 <code>maxmemory-policy</code>)：</p>
+<ul>
+<li><strong>noeviction</strong>，禁止强制删除，<strong>默认策略</strong>；</li>
+<li><strong>volatile-ttl</strong>，从带过期时间的键中删除最接近过期的；</li>
+<li><strong>volatile-lru</strong>，从带过期时间的键中删除最近最久未使用的 (<code>Least Recently Used</code>)；</li>
+<li><strong>volatile-lfu</strong>，从带过期时间的键中删除最近最少使用的 (<code>Least Frequently Used</code>)；</li>
+<li><strong>volatile-random</strong>，从带过期时间的键中随机删除；</li>
+<li><strong>allkeys-lru</strong>，从所有键中删除最近最久未使用的；</li>
+<li><strong>allkeys-lfu</strong>，从所有键中删除最近最少使用的；</li>
+<li><strong>allkeys-random</strong>，从带过期时间的键中随机删除；</li>
+</ul>
+<h3 id="持久化">持久化</h3>
+<p>redis 数据落到硬盘依赖两种持久化机制：RDB 和 AOF。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>RDB</th>
+<th>AOF</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>存储内容</strong></td>
+<td>数据</td>
+<td>写操作日志</td>
+</tr>
+<tr>
+<td><strong>性能影响</strong></td>
+<td>小</td>
+<td>大</td>
+</tr>
+<tr>
+<td><strong>恢复速度</strong></td>
+<td>高</td>
+<td>低</td>
+</tr>
+<tr>
+<td><strong>存储空间</strong></td>
+<td>小</td>
+<td>大</td>
+</tr>
+<tr>
+<td><strong>可读性</strong></td>
+<td>低</td>
+<td>高</td>
+</tr>
+<tr>
+<td><strong>安全程度</strong></td>
+<td>较低，保存频率低</td>
+<td>较高，保存频率高</td>
+</tr>
+<tr>
+<td><strong>默认开启</strong></td>
+<td>是</td>
+<td>否</td>
+</tr>
+<tr>
+<td><strong>存储策略</strong></td>
+<td><code>save 900 1</code>：九百秒内一次修改即保存 <br><code>save 300 10</code>：三百秒内十次修改即保存 &lt; br&gt;<code>save 60 10000</code>：六十秒内一万次修改即保存 &lt; br &gt; 允许自定义</td>
+<td><code>always</code>：逐条保存 &lt; br&gt;or<br><code>everysec</code>：每秒保存 &lt; br&gt;or<br><code>no</code>：系统自己决定什么时候保存</td>
+</tr>
+</tbody>
+</table>
+<p>RDB 的 save 策略配合大键有时候简直性能地狱。必要时请重写触发机制。</p>
+<p>AOF 的日志文件会膨胀的非常厉害，所以会定期重写。如果文件变动过于剧烈，你会发现 swap 比内存更先被吃干净。</p>
+<p>redis4.0 以后支持一个叫 <code>aof-use-rdb-preamble</code> 的参数，意思就是在重写 AOF 文件的时候，会把早期日志写成 RDB 格式，新增加的继续使用 AOF。这样一来可以替高重写和恢复的速度。某种意义上有了这个就不必单独开启 RDB 持久化了。</p>
+<h3 id="内存清理">内存清理</h3>
+<p>在 redis4.0 之后，可以通过将配置里的 <code>activedefrag</code> 设置为 <code>yes</code> 开启自动清理，或者通过 <code>memory purge</code> 命令手动清理。</p>
+
+          </div>
+
+          
+
+
+
+          
+          
+          <div class="article-widget">
+            
+<div class="post-nav">
+  
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">上一页</div>
+    <a href="/topic/redis/04-advanced/improve-01/" rel="next">优化指南 - 设计</a>
+  </div>
+  
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">下一页</div>
+    <a href="/topic/redis/04-advanced/improve-03/" rel="prev">优化指南 - 运维</a>
+  </div>
+  
+</div>
+
+          </div>
+          
+        </div>
+
+        <div class="body-footer">
+          <p>最近更新于 Mar 18, 2019</p>
+
+          
+
+
+
+
+
+          
+
+          
+
+
+        </div>
+
+      </article>
+
+      <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    
+  </p>
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+    Published with
+    <a href="https://wowchemy.com" target="_blank" rel="noopener">Wowchemy</a>  —
+    the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">
+    open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+
+    </main>
+  </div>
+</div>
+
+  </div>
+
+  <div class="page-footer">
+    
+    
+  </div>
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">引用</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> 复制
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> 下载
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+      
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/python.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/go.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/javascript.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/typescript.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/powershell.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/properties.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/sql.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/dockerfile.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/yaml.min.js"></script>
+        
+      
+
+    
+
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.js" integrity="sha512-SeiQaaDh73yrb56sTW/RgVdi/mMqNeM2oBwubFHagc5BkixSpP1fvqF47mKzPGWYSSy4RwbBunrJBQ4Co8fRWA==" crossorigin="anonymous"></script>
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"没有找到结果","placeholder":"搜索...","results":"搜索结果"};
+      const content_type = {
+        'post': "文章",
+        'project': "项目",
+        'publication' : "出版物",
+        'talk' : "演讲",
+        'slides' : "Slides"
+        };
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.2/anchor.min.js" integrity="sha512-I7w3ZdSFzw5j3jU3ZkNikBNeIrl3i+hEuEdwNmqUJvwNcaBUNcijnP2gd9DtGlgVYDplfjGoD8vTNsID+lCjqg==" crossorigin="anonymous"></script>
+    <script>
+      anchors.add();
+    </script>
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/wowchemy.min.e70d9bcb02570fbace6fd086701a8d67.js"></script>
+
+    <script>
+    ((window.gitter = {}).chat = {}).options = {
+        room: 'szthanatos\-github\-io/community'
+    };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+<style>
+    .gitter-chat-embed {
+        top: 70px;
+    }
+</style>
+
+
+
+
+</body>
+</html>

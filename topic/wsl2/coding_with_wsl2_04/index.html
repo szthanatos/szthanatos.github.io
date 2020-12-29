@@ -1,13 +1,19 @@
-<!DOCTYPE html>
-<html lang="zh-Hans">
+<!DOCTYPE html><html lang="zh-Hans" >
 
 <head>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  
+  
+  
+  <meta name="generator" content="Wowchemy 5.0.0-beta.1 for Hugo">
+  
 
+  
+
+  
   
 
   
@@ -28,13 +34,28 @@
   
     
   
-  <meta name="description" content="// TODO 吹一下zsh 安装zsh # 安装zsh sudo apt install zsh -y # 修改默认s">
+  <meta name="description" content="// TODO 吹一下 zsh 安装 zsh # 安装 zsh sudo apt install zsh -y # 修改默认 shell 为 zsh sudo chsh -s /bin/zsh">
 
   
   <link rel="alternate" hreflang="zh-Hans" href="https://szthanatos.github.io/topic/wsl2/coding_with_wsl2_04/">
 
   
 
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
 
   
   
@@ -44,11 +65,14 @@
 
   
   
+
+  
+  
   
   
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
 
     
@@ -60,31 +84,161 @@
       
       
         
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/github.min.css" crossorigin="anonymous" title="hl-light">
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
         
       
     
 
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css" integrity="sha256-SHMGCYmST46SoyGgo4YR/9AlK1vf3ff84Aq9yK4hdqM=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css" integrity="sha512-1xoFisiGdy9nvho8EgXuXvnpR5GAMSjFwp40gSRE3NwdUdIMIKuPa7bqoUhLD0O/5tPNhteAsE5XyyMi5reQVA==" crossorigin="anonymous">
     
 
     
 
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.2/lazysizes.min.js" integrity="sha512-TmDwFLhg3UA4ZG0Eb4MIyT1O1Mb+Oww5kFG0uHqXsdbyZz9DcvYQhKpGgNkamAI6h2lGGZq2X8ftOJvF/XjTUg==" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+
   
 
   
   
   
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CNoto+Sans+SC:400,400italic,700%7CInconsolata&display=swap">
+    
+      
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CNoto+Sans+SC:400,400italic,700%7CInconsolata:400,700&display=swap">
+    
   
 
   
   
   
   
-  <link rel="stylesheet" href="/css/academic.css">
+  <link rel="stylesheet" href="/css/wowchemy.css">
 
   
 
@@ -93,15 +247,23 @@
 
   
 
+  
+
+
+  
+  
 
   
 
   <link rel="manifest" href="/index.webmanifest">
-  <link rel="icon" type="image/png" href="/img/icon-32.png">
-  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+  <link rel="icon" type="image/png" href="/images/icon_hu38c28d6ecf464f8a293472d2a570e5b8_6181_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu38c28d6ecf464f8a293472d2a570e5b8_6181_192x192_fill_lanczos_center_2.png">
 
   <link rel="canonical" href="https://szthanatos.github.io/topic/wsl2/coding_with_wsl2_04/">
 
+  
+  
+  
   
   
   
@@ -114,9 +276,9 @@
   
   <meta property="og:site_name" content="Kryptonite Lab">
   <meta property="og:url" content="https://szthanatos.github.io/topic/wsl2/coding_with_wsl2_04/">
-  <meta property="og:title" content="使用Zsh作为默认shell | Kryptonite Lab">
-  <meta property="og:description" content="// TODO 吹一下zsh 安装zsh # 安装zsh sudo apt install zsh -y # 修改默认s"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
-  <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="zh-Hans">
+  <meta property="og:title" content="使用 Zsh 作为默认 shell | Kryptonite Lab">
+  <meta property="og:description" content="// TODO 吹一下 zsh 安装 zsh # 安装 zsh sudo apt install zsh -y # 修改默认 shell 为 zsh sudo chsh -s /bin/zsh"><meta property="og:image" content="https://szthanatos.github.io/images/icon_hu38c28d6ecf464f8a293472d2a570e5b8_6181_512x512_fill_lanczos_center_2.png">
+  <meta property="twitter:image" content="https://szthanatos.github.io/images/icon_hu38c28d6ecf464f8a293472d2a570e5b8_6181_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="zh-Hans">
   
     
       <meta property="article:published_time" content="2020-08-22T16:41:05&#43;08:00">
@@ -140,11 +302,19 @@
 
 
 
-  <title>使用Zsh作为默认shell | Kryptonite Lab</title>
+  <title>使用 Zsh 作为默认 shell | Kryptonite Lab</title>
 
 </head>
 
-<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper  ">
+
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.js"></script>
 
   <aside class="search-results" id="search">
   <div class="container">
@@ -162,7 +332,7 @@
       <div id="search-box">
         
         <input name="q" id="search-query" placeholder="搜索..." autocapitalize="off"
-        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control">
         
       </div>
 
@@ -178,14 +348,27 @@
 </aside>
 
 
-  
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Kryptonite Lab</a>
+    </div>
     
 
     
@@ -196,8 +379,14 @@
     
 
     
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Kryptonite Lab</a>
+    </div>
     
-    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-end" id="navbar-content">
 
       
       <ul class="navbar-nav d-md-inline-flex">
@@ -212,16 +401,24 @@
         
 
         
+
         
         
         
         
+
         
           
+            
+            
           
           
             
-          
+            
+            
+              
+            
+            
           
         
 
@@ -241,16 +438,24 @@
         
 
         
+
         
         
         
         
+
         
           
+            
+            
           
           
             
-          
+            
+            
+              
+            
+            
           
         
 
@@ -270,10 +475,18 @@
         
 
         
+
         
         
         
         
+
+        
+          
+            
+            
+          
+          
         
 
         <li class="nav-item">
@@ -291,14 +504,29 @@
 
     <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
       
+      
       <li class="nav-item">
-        <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        <a class="nav-link js-search" href="#" aria-label="搜索"><i class="fas fa-search" aria-hidden="true"></i></a>
       </li>
       
 
       
-      <li class="nav-item">
-        <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>浅色</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>深色</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>自动</span>
+          </a>
+        </div>
       </li>
       
 
@@ -310,23 +538,15 @@
 </nav>
 
 
-  
+  </div>
+
+  <div class="page-body">
+    
 
 <div class="container-fluid docs">
   <div class="row flex-xl-nowrap">
     <div class="col-12 col-md-3 col-xl-2 docs-sidebar">
-      
-
-
-
-
-
-  
-
-
-
-
-<form class="docs-search d-flex align-items-center">
+      <form class="docs-search d-flex align-items-center">
   <button class="btn docs-toggle d-md-none p-0 mr-3" type="button" data-toggle="collapse" data-target="#docs-nav" aria-controls="docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
     <span><i class="fas fa-bars"></i></span>
   </button>
@@ -338,56 +558,91 @@
 
 <nav class="collapse docs-links" id="docs-nav">
   
+  
+  
+  
+  
+  
 
   
   
-  
-  
-  <div class="docs-toc-item">
-    <a class="docs-toc-link" href="/topic/wsl2/">介绍</a>
+    
 
-  </div>
-  
-  <div class="docs-toc-item">
-    <a class="docs-toc-link" href="/topic/wsl2/coding_with_wsl2_01/">WSL配置</a>
+    
+      
 
-  </div>
-  
-  <div class="docs-toc-item">
-    <a class="docs-toc-link" href="/topic/wsl2/coding_with_wsl2_02/">终端配置</a>
+      
+      
+        
+          
+        
+      
 
-  </div>
-  
-  <div class="docs-toc-item">
-    <a class="docs-toc-link" href="/topic/wsl2/coding_with_wsl2_03/">Ubuntu配置</a>
 
-  </div>
   
-  <div class="docs-toc-item active">
-    <a class="docs-toc-link" href="/topic/wsl2/coding_with_wsl2_04/">Shell配置</a>
+    
+    
+    
+    
+      
+    
+    
 
-  </div>
-  
-  <div class="docs-toc-item">
-    <a class="docs-toc-link" href="/topic/wsl2/coding_with_wsl2_05/">Tmux配置</a>
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/topic/wsl2/">介绍</a>
+    
+      
+        <ul class="nav docs-sidenav">
+      
 
-  </div>
-  
-  <div class="docs-toc-item">
-    <a class="docs-toc-link" href="/topic/wsl2/coding_with_wsl2_06/">Python环境配置</a>
 
-  </div>
-  
-  <div class="docs-toc-item">
-    <a class="docs-toc-link" href="/topic/wsl2/coding_with_wsl2_07/">Docker环境配置</a>
+  <li class=""><a href="/topic/wsl2/coding_with_wsl2_01/">配置 WSL</a></li>
 
-  </div>
-  
+
+
+  <li class=""><a href="/topic/wsl2/coding_with_wsl2_02/">配置 Terminal</a></li>
+
+
+
+  <li class=""><a href="/topic/wsl2/coding_with_wsl2_03/">配置 Ubuntu</a></li>
+
+
+
+  <li class="active"><a href="/topic/wsl2/coding_with_wsl2_04/">配置 Shell</a></li>
+
+
+
+  <li class=""><a href="/topic/wsl2/coding_with_wsl2_05/">配置 Tmux</a></li>
+
+
+
+  <li class=""><a href="/topic/wsl2/coding_with_wsl2_06/">配置 Python 环境 (选)</a></li>
+
+
+
+  <li class=""><a href="/topic/wsl2/coding_with_wsl2_07/">配置 Docker 环境</a></li>
+
+
+
+  <li class=""><a href="/topic/wsl2/coding_with_wsl2_08/">配置 Pycharm</a></li>
+
+      
+        </ul>
+      
+    
+
+    
+      </div>
+    
+
+    
   
 </nav>
 
     </div>
 
+    
     
     <div class="d-none d-xl-block col-xl-2 docs-toc">
       <ul class="nav toc-top">
@@ -396,11 +651,11 @@
 
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#安装zsh">安装zsh</a></li>
-    <li><a href="#安装oh-my-zsh">安装oh-my-zsh</a></li>
-    <li><a href="#安装zsh插件">安装zsh插件</a></li>
-    <li><a href="#配置zsh">配置zsh</a></li>
-    <li><a href="#一键启用停用代理">一键启用/停用代理</a></li>
+    <li><a href="#安装-zsh">安装 zsh</a></li>
+    <li><a href="#安装-oh-my-zsh">安装 oh-my-zsh</a></li>
+    <li><a href="#安装-zsh-插件">安装 zsh 插件</a></li>
+    <li><a href="#配置-zsh">配置 zsh</a></li>
+    <li><a href="#一键启用--停用代理">一键启用 / 停用代理</a></li>
     <li><a href="#参考">参考</a></li>
   </ul>
 </nav>
@@ -414,67 +669,69 @@
       <article class="article">
 
         <div class="docs-article-container">
-          <h1>使用Zsh作为默认shell</h1>
+          <h1>使用 Zsh 作为默认 shell</h1>
 
           <div class="article-style">
-            <p>// TODO 吹一下zsh</p>
-<h2 id="安装zsh">安装zsh</h2>
-<pre><code class="language-bash"># 安装zsh
+            <blockquote>
+<p>// TODO 吹一下 zsh</p>
+</blockquote>
+<h2 id="安装-zsh">安装 zsh</h2>
+<pre><code class="language-bash"># 安装 zsh
 sudo apt install zsh -y
 
-# 修改默认shell为zsh
+# 修改默认 shell 为 zsh
 sudo chsh -s /bin/zsh
 </code></pre>
-<p>重启wsl，或者干脆重启电脑生效。</p>
-<h2 id="安装oh-my-zsh">安装oh-my-zsh</h2>
+<p>重启 wsl，或者干脆重启电脑生效。</p>
+<h2 id="安装-oh-my-zsh">安装 oh-my-zsh</h2>
 <pre><code class="language-bash">sh -c &quot;$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&quot;
 </code></pre>
 <p>可能需要代理。</p>
-<h2 id="安装zsh插件">安装zsh插件</h2>
-<pre><code class="language-bash"># 安装powerlevel10k主题
+<h2 id="安装-zsh-插件">安装 zsh 插件</h2>
+<pre><code class="language-bash"># 安装 powerlevel10k 主题
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
 
-# 安装语法高亮zsh-syntax-highlighting
+# 安装语法高亮 zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
-# 安装自动建议zsh-autosuggestions
+# 安装自动建议 zsh-autosuggestions
 git clone git://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 </code></pre>
-<p>从win10下载并安装以下字体，以获得powerlevel10k主题更好的显示效果：</p>
+<p>从 win10 下载并安装以下字体，以获得 powerlevel10k 主题更好的显示效果：</p>
 <p><img src="https://raw.githubusercontent.com/romkatv/powerlevel10k-media/master/prompt-styles-high-contrast.png" alt="powerlevel10k"></p>
 <ul>
-<li><a href="https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf">MesloLGS NF Regular.ttf</a></li>
-<li><a href="https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf">MesloLGS NF Bold.ttf</a></li>
-<li><a href="https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf">MesloLGS NF Italic.ttf</a></li>
-<li><a href="https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf">MesloLGS NF Bold Italic.ttf</a></li>
+<li><a href="https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf" target="_blank" rel="noopener">MesloLGS NF Regular.ttf</a></li>
+<li><a href="https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf" target="_blank" rel="noopener">MesloLGS NF Bold.ttf</a></li>
+<li><a href="https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf" target="_blank" rel="noopener">MesloLGS NF Italic.ttf</a></li>
+<li><a href="https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf" target="_blank" rel="noopener">MesloLGS NF Bold Italic.ttf</a></li>
 </ul>
-<h2 id="配置zsh">配置zsh</h2>
-<p>在<code>.zshrc</code>中编辑以下部分：</p>
+<h2 id="配置-zsh">配置 zsh</h2>
+<p>在 <code>.zshrc</code> 中编辑以下部分：</p>
 <pre><code class="language-properties"># （可选）允许其他用户共用你的配置不弹出警告
 ZSH_DISABLE_COMPFIX=&quot;true&quot;
 
-# 默认情况下，zsh会试图在低优先级运行后台任务，但是Windows不允许，所以将以下内容添加到.zshrc文件开头可以改变zsh的行为
+# 默认情况下，zsh 会试图在低优先级运行后台任务，但是 Windows 不允许，所以将以下内容添加到. zshrc 文件开头可以改变 zsh 的行为
 case $(uname -a) in
   *Microsoft*) unsetopt BG_NICE ;;
 esac
 
-# 启用powerlevel10k主题
+# 启用 powerlevel10k 主题
 ZSH_THEME=&quot;powerlevel10k/powerlevel10k&quot;
 
 # 启用插件
 plugins=(
-  # 按z+{模糊文件夹名称}快速跳转
+  # 按 z+{模糊文件夹名称} 快速跳转
   z
-  # git补全
+  # git 补全
   git
-  # 忘了加sudo的时候按两下esc
+  # 忘了加 sudo 的时候按两下 esc
   sudo
-  # docker补全
+  # docker 补全
   docker
   docker-compose
-  # 按x解压任意类型压缩包
+  # 按 x 解压任意类型压缩包
   extract
-  # 彩色man手册
+  # 彩色 man 手册
   colored-man-pages
   zsh-autosuggestions
   zsh-syntax-highlighting
@@ -483,15 +740,15 @@ plugins=(
 # 配置终端颜色
 export TERM=&quot;xterm-256color&quot;
 </code></pre>
-<p>输入<code>source .zshrc</code>让配置生效，</p>
-<p>输入<code>p10k configure</code>配置Powerlevel10k主题设置。</p>
+<p>输入 <code>source .zshrc</code> 让配置生效，</p>
+<p>输入 <code>p10k configure</code> 配置 Powerlevel10k 主题设置。</p>
 <p><img src="https://raw.githubusercontent.com/romkatv/powerlevel10k-media/master/configuration-wizard.gif" alt="p10k configure"></p>
-<p>完成后，拷贝<code>.zshrc</code>和<code>.p10k.zsh</code>文件到root用户根目录下，让root也使用相同配置，当然也可以分别设置。</p>
-<h2 id="一键启用停用代理">一键启用/停用代理</h2>
-<p>Linux下配置代理本来就略麻烦，Wsl2又是完整的虚拟机，每次重启内部网络都会重新生成&hellip;换句话说每次Windows 和Linux 的内网IP都在变化&hellip;</p>
+<p>完成后，拷贝 <code>.zshrc</code> 和 <code>.p10k.zsh</code> 文件到 root 用户根目录下，让 root 也使用相同配置，当然也可以分别设置。</p>
+<h2 id="一键启用--停用代理">一键启用 / 停用代理</h2>
+<p>Linux 下配置代理本来就略麻烦，Wsl2 又是完整的虚拟机，每次重启内部网络都会重新生成&hellip; 换句话说每次 Windows 和 Linux 的内网 IP 都在变化&hellip;</p>
 <p>不过还是能配置好的。</p>
-<p>将以下内容加入到你的<code>.zshrc</code>文件中，将<code>20809</code>改为你的代理的端口：</p>
-<pre><code class="language-shell">proxy() {
+<p>将以下内容加入到你的 <code>.zshrc</code> 文件中，将 <code>20809</code> 改为你的代理的端口：</p>
+<pre><code class="language-shell">proxyon() {
   local host_ip=$(cat /etc/resolv.conf |grep &quot;nameserver&quot; |cut -f 2 -d &quot; &quot;)
   export ALL_PROXY=&quot;http://${host_ip}:20809&quot;
   export all_proxy=&quot;http://${host_ip}:20809&quot;
@@ -500,7 +757,7 @@ export TERM=&quot;xterm-256color&quot;
   curl ip.sb
 }
 
-unproxy() {
+proxyoff() {
   unset ALL_PROXY
   unset all_proxy
   sudo sed -i -e '/Acquire::http::Proxy/d' /etc/apt/apt.conf
@@ -508,12 +765,12 @@ unproxy() {
   curl ip.sb
 }
 </code></pre>
-<p>执行<code>proxy</code>即可开启代理，<code>wget</code>，<code>curl</code>，<code>git</code>，<code>apt</code> 都会走代理。</p>
-<p>执行<code>unproxy</code>关闭。</p>
+<p>执行 <code>proxy</code> 即可开启代理，<code>wget</code>，<code>curl</code>，<code>git</code>，<code>apt</code> 都会走代理。</p>
+<p>执行 <code>unproxy</code> 关闭。</p>
 <h2 id="参考">参考</h2>
 <ul>
-<li><a href="https://ohmyz.sh/">Oh My ZSH官网</a></li>
-<li><a href="https://github.com/romkatv/powerlevel10k">powerlevel10k 项目主页</a></li>
+<li><a href="https://ohmyz.sh/" target="_blank" rel="noopener">Oh My ZSH 官网</a></li>
+<li><a href="https://github.com/romkatv/powerlevel10k" target="_blank" rel="noopener">powerlevel10k 项目主页</a></li>
 </ul>
 
           </div>
@@ -523,6 +780,7 @@ unproxy() {
 
 
           
+          
           <div class="article-widget">
             
 <div class="post-nav">
@@ -531,14 +789,14 @@ unproxy() {
   
   <div class="post-nav-item">
     <div class="meta-nav">上一页</div>
-    <a href="/topic/wsl2/coding_with_wsl2_03/" rel="next">Ubuntu易用性配置</a>
+    <a href="/topic/wsl2/coding_with_wsl2_03/" rel="next">Ubuntu 易用性配置</a>
   </div>
   
   
   
   <div class="post-nav-item">
     <div class="meta-nav">下一页</div>
-    <a href="/topic/wsl2/coding_with_wsl2_05/" rel="prev">使用tmux复用终端</a>
+    <a href="/topic/wsl2/coding_with_wsl2_05/" rel="prev">使用 tmux 复用终端</a>
   </div>
   
 </div>
@@ -552,16 +810,14 @@ unproxy() {
 
           
 
-<p class="edit-page">
-  <a href="https://github.com/gcushen/hugo-academic/edit/master/content/topic/wsl2/coding_with_wsl2_04.md">
-    <i class="fas fa-pen pr-2"></i>编辑本页
-  </a>
-</p>
 
 
 
 
           
+
+          
+
 
         </div>
 
@@ -572,11 +828,24 @@ unproxy() {
 
   <p class="powered-by">
     
+  </p>
 
-    Powered by the
-    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
-    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+  
+  
 
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+    Published with
+    <a href="https://wowchemy.com" target="_blank" rel="noopener">Wowchemy</a>  —
+    the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">
+    open source</a> website builder that empowers creators.
     
   </p>
 </footer>
@@ -586,60 +855,91 @@ unproxy() {
   </div>
 </div>
 
+  </div>
+
+  <div class="page-footer">
+    
+    
+  </div>
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">引用</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> 复制
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> 下载
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
 
       
 
     
     
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 
-    
-    
-    
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      
+
       <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
 
       
 
       
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js" integrity="sha256-1zu+3BnLYV9LdiY85uXMzii3bdrkelyp37e0ZyTAQh0=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/python.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/python.min.js"></script>
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/go.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/go.min.js"></script>
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/javascript.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/javascript.min.js"></script>
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/typescript.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/typescript.min.js"></script>
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/html.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/powershell.min.js"></script>
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/powershell.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/properties.min.js"></script>
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/properties.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/sql.min.js"></script>
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/sql.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/dockerfile.min.js"></script>
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/yaml.min.js"></script>
         
       
 
-      
-      
     
 
     
     
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js" integrity="sha256-EErZamuLefUnbMBQbsEqu1USa+btR2oIlCpBJbyD4/g=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.js" integrity="sha512-SeiQaaDh73yrb56sTW/RgVdi/mMqNeM2oBwubFHagc5BkixSpP1fvqF47mKzPGWYSSy4RwbBunrJBQ4Co8fRWA==" crossorigin="anonymous"></script>
     
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -655,14 +955,15 @@ unproxy() {
         'post': "文章",
         'project': "项目",
         'publication' : "出版物",
-        'talk' : "演讲"
+        'talk' : "演讲",
+        'slides' : "Slides"
         };
     </script>
     
 
     
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.1/anchor.min.js" integrity="sha256-pB/deHc9CGfFpJRjC43imB29Rse8tak+5eXqntO94ck=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.2/anchor.min.js" integrity="sha512-I7w3ZdSFzw5j3jU3ZkNikBNeIrl3i+hEuEdwNmqUJvwNcaBUNcijnP2gd9DtGlgVYDplfjGoD8vTNsID+lCjqg==" crossorigin="anonymous"></script>
     <script>
       anchors.add();
     </script>
@@ -694,6 +995,13 @@ unproxy() {
 
     
     
+    
+
+    
+    
+
+    
+    
 
     
     
@@ -709,43 +1017,22 @@ unproxy() {
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/wowchemy.min.e70d9bcb02570fbace6fd086701a8d67.js"></script>
 
-    
+    <script>
+    ((window.gitter = {}).chat = {}).options = {
+        room: 'szthanatos\-github\-io/community'
+    };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+<style>
+    .gitter-chat-embed {
+        top: 70px;
+    }
+</style>
 
 
 
-
-
-
-  
-  
-
-  
-<div id="modal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">引用</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <pre><code class="tex hljs"></code></pre>
-      </div>
-      <div class="modal-footer">
-        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
-          <i class="fas fa-copy"></i> 复制
-        </a>
-        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
-          <i class="fas fa-download"></i> 下载
-        </a>
-        <div id="modal-error"></div>
-      </div>
-    </div>
-  </div>
-</div>
 
 </body>
 </html>

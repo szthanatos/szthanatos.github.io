@@ -1,13 +1,19 @@
-<!DOCTYPE html>
-<html lang="zh-Hans">
+<!DOCTYPE html><html lang="zh-Hans" >
 
 <head>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  
+  
+  
+  <meta name="generator" content="Wowchemy 5.0.0-beta.1 for Hugo">
+  
 
+  
+
+  
   
 
   
@@ -28,13 +34,28 @@
   
     
   
-  <meta name="description" content="Tmux是一个终端复用软件。比如你开一个terminal窗口">
+  <meta name="description" content="Tmux 是一个终端复用软件。比如你开一个 terminal 窗口，相当于和本地的或远">
 
   
   <link rel="alternate" hreflang="zh-Hans" href="https://szthanatos.github.io/topic/wsl2/coding_with_wsl2_05/">
 
   
 
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
 
   
   
@@ -44,11 +65,14 @@
 
   
   
+
+  
+  
   
   
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
 
     
@@ -60,31 +84,161 @@
       
       
         
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/github.min.css" crossorigin="anonymous" title="hl-light">
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
         
       
     
 
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css" integrity="sha256-SHMGCYmST46SoyGgo4YR/9AlK1vf3ff84Aq9yK4hdqM=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css" integrity="sha512-1xoFisiGdy9nvho8EgXuXvnpR5GAMSjFwp40gSRE3NwdUdIMIKuPa7bqoUhLD0O/5tPNhteAsE5XyyMi5reQVA==" crossorigin="anonymous">
     
 
     
 
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.2/lazysizes.min.js" integrity="sha512-TmDwFLhg3UA4ZG0Eb4MIyT1O1Mb+Oww5kFG0uHqXsdbyZz9DcvYQhKpGgNkamAI6h2lGGZq2X8ftOJvF/XjTUg==" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+
   
 
   
   
   
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CNoto+Sans+SC:400,400italic,700%7CInconsolata&display=swap">
+    
+      
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CNoto+Sans+SC:400,400italic,700%7CInconsolata:400,700&display=swap">
+    
   
 
   
   
   
   
-  <link rel="stylesheet" href="/css/academic.css">
+  <link rel="stylesheet" href="/css/wowchemy.css">
 
   
 
@@ -93,15 +247,23 @@
 
   
 
+  
+
+
+  
+  
 
   
 
   <link rel="manifest" href="/index.webmanifest">
-  <link rel="icon" type="image/png" href="/img/icon-32.png">
-  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+  <link rel="icon" type="image/png" href="/images/icon_hu38c28d6ecf464f8a293472d2a570e5b8_6181_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu38c28d6ecf464f8a293472d2a570e5b8_6181_192x192_fill_lanczos_center_2.png">
 
   <link rel="canonical" href="https://szthanatos.github.io/topic/wsl2/coding_with_wsl2_05/">
 
+  
+  
+  
   
   
   
@@ -114,9 +276,9 @@
   
   <meta property="og:site_name" content="Kryptonite Lab">
   <meta property="og:url" content="https://szthanatos.github.io/topic/wsl2/coding_with_wsl2_05/">
-  <meta property="og:title" content="使用tmux复用终端 | Kryptonite Lab">
-  <meta property="og:description" content="Tmux是一个终端复用软件。比如你开一个terminal窗口"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
-  <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="zh-Hans">
+  <meta property="og:title" content="使用 tmux 复用终端 | Kryptonite Lab">
+  <meta property="og:description" content="Tmux 是一个终端复用软件。比如你开一个 terminal 窗口，相当于和本地的或远"><meta property="og:image" content="https://szthanatos.github.io/images/icon_hu38c28d6ecf464f8a293472d2a570e5b8_6181_512x512_fill_lanczos_center_2.png">
+  <meta property="twitter:image" content="https://szthanatos.github.io/images/icon_hu38c28d6ecf464f8a293472d2a570e5b8_6181_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="zh-Hans">
   
     
       <meta property="article:published_time" content="2020-08-22T17:53:59&#43;08:00">
@@ -140,11 +302,19 @@
 
 
 
-  <title>使用tmux复用终端 | Kryptonite Lab</title>
+  <title>使用 tmux 复用终端 | Kryptonite Lab</title>
 
 </head>
 
-<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper  ">
+
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.js"></script>
 
   <aside class="search-results" id="search">
   <div class="container">
@@ -162,7 +332,7 @@
       <div id="search-box">
         
         <input name="q" id="search-query" placeholder="搜索..." autocapitalize="off"
-        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control">
         
       </div>
 
@@ -178,14 +348,27 @@
 </aside>
 
 
-  
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Kryptonite Lab</a>
+    </div>
     
 
     
@@ -196,8 +379,14 @@
     
 
     
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Kryptonite Lab</a>
+    </div>
     
-    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-end" id="navbar-content">
 
       
       <ul class="navbar-nav d-md-inline-flex">
@@ -212,16 +401,24 @@
         
 
         
+
         
         
         
         
+
         
           
+            
+            
           
           
             
-          
+            
+            
+              
+            
+            
           
         
 
@@ -241,16 +438,24 @@
         
 
         
+
         
         
         
         
+
         
           
+            
+            
           
           
             
-          
+            
+            
+              
+            
+            
           
         
 
@@ -270,10 +475,18 @@
         
 
         
+
         
         
         
         
+
+        
+          
+            
+            
+          
+          
         
 
         <li class="nav-item">
@@ -291,14 +504,29 @@
 
     <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
       
+      
       <li class="nav-item">
-        <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        <a class="nav-link js-search" href="#" aria-label="搜索"><i class="fas fa-search" aria-hidden="true"></i></a>
       </li>
       
 
       
-      <li class="nav-item">
-        <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>浅色</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>深色</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>自动</span>
+          </a>
+        </div>
       </li>
       
 
@@ -310,23 +538,15 @@
 </nav>
 
 
-  
+  </div>
+
+  <div class="page-body">
+    
 
 <div class="container-fluid docs">
   <div class="row flex-xl-nowrap">
     <div class="col-12 col-md-3 col-xl-2 docs-sidebar">
-      
-
-
-
-
-
-  
-
-
-
-
-<form class="docs-search d-flex align-items-center">
+      <form class="docs-search d-flex align-items-center">
   <button class="btn docs-toggle d-md-none p-0 mr-3" type="button" data-toggle="collapse" data-target="#docs-nav" aria-controls="docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
     <span><i class="fas fa-bars"></i></span>
   </button>
@@ -338,56 +558,91 @@
 
 <nav class="collapse docs-links" id="docs-nav">
   
+  
+  
+  
+  
+  
 
   
   
-  
-  
-  <div class="docs-toc-item">
-    <a class="docs-toc-link" href="/topic/wsl2/">介绍</a>
+    
 
-  </div>
-  
-  <div class="docs-toc-item">
-    <a class="docs-toc-link" href="/topic/wsl2/coding_with_wsl2_01/">WSL配置</a>
+    
+      
 
-  </div>
-  
-  <div class="docs-toc-item">
-    <a class="docs-toc-link" href="/topic/wsl2/coding_with_wsl2_02/">终端配置</a>
+      
+      
+        
+          
+        
+      
 
-  </div>
-  
-  <div class="docs-toc-item">
-    <a class="docs-toc-link" href="/topic/wsl2/coding_with_wsl2_03/">Ubuntu配置</a>
 
-  </div>
   
-  <div class="docs-toc-item">
-    <a class="docs-toc-link" href="/topic/wsl2/coding_with_wsl2_04/">Shell配置</a>
+    
+    
+    
+    
+      
+    
+    
 
-  </div>
-  
-  <div class="docs-toc-item active">
-    <a class="docs-toc-link" href="/topic/wsl2/coding_with_wsl2_05/">Tmux配置</a>
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/topic/wsl2/">介绍</a>
+    
+      
+        <ul class="nav docs-sidenav">
+      
 
-  </div>
-  
-  <div class="docs-toc-item">
-    <a class="docs-toc-link" href="/topic/wsl2/coding_with_wsl2_06/">Python环境配置</a>
 
-  </div>
-  
-  <div class="docs-toc-item">
-    <a class="docs-toc-link" href="/topic/wsl2/coding_with_wsl2_07/">Docker环境配置</a>
+  <li class=""><a href="/topic/wsl2/coding_with_wsl2_01/">配置 WSL</a></li>
 
-  </div>
-  
+
+
+  <li class=""><a href="/topic/wsl2/coding_with_wsl2_02/">配置 Terminal</a></li>
+
+
+
+  <li class=""><a href="/topic/wsl2/coding_with_wsl2_03/">配置 Ubuntu</a></li>
+
+
+
+  <li class=""><a href="/topic/wsl2/coding_with_wsl2_04/">配置 Shell</a></li>
+
+
+
+  <li class="active"><a href="/topic/wsl2/coding_with_wsl2_05/">配置 Tmux</a></li>
+
+
+
+  <li class=""><a href="/topic/wsl2/coding_with_wsl2_06/">配置 Python 环境 (选)</a></li>
+
+
+
+  <li class=""><a href="/topic/wsl2/coding_with_wsl2_07/">配置 Docker 环境</a></li>
+
+
+
+  <li class=""><a href="/topic/wsl2/coding_with_wsl2_08/">配置 Pycharm</a></li>
+
+      
+        </ul>
+      
+    
+
+    
+      </div>
+    
+
+    
   
 </nav>
 
     </div>
 
+    
     
     <div class="d-none d-xl-block col-xl-2 docs-toc">
       <ul class="nav toc-top">
@@ -405,7 +660,7 @@
         <li><a href="#控制">控制</a></li>
       </ul>
     </li>
-    <li><a href="#tmux插件">tmux插件</a></li>
+    <li><a href="#tmux-插件">tmux 插件</a></li>
   </ul>
 </nav>
 
@@ -418,35 +673,35 @@
       <article class="article">
 
         <div class="docs-article-container">
-          <h1>使用tmux复用终端</h1>
+          <h1>使用 tmux 复用终端</h1>
 
           <div class="article-style">
-            <p>Tmux是一个终端复用软件。比如你开一个terminal窗口，相当于和本地的或远程的Linux建立了一次会话连接。</p>
+            <p>Tmux 是一个终端复用软件。比如你开一个 terminal 窗口，相当于和本地的或远程的 Linux 建立了一次会话连接。</p>
 <p>如果你想多做几件事，比如一个窗口运行服务，一个窗口运行客户端，对不起，你得再开一个窗口，再建立一个连接。</p>
-<p>tmux就是解决这个问题的工具，它可以让你的终端(Terminal)给复用(mux)了，在一次连接里面做无数多件不同的事情。</p>
-<p>Ubuntu自带Tmux，无需额外安装。</p>
+<p>tmux 就是解决这个问题的工具，它可以让你的终端 (Terminal) 给复用 (mux) 了，在一次连接里面做无数多件不同的事情。</p>
+<p>Ubuntu 自带 Tmux，无需额外安装。</p>
 <h2 id="概念">概念</h2>
 <p><img src="https://raw.githubusercontent.com/szthanatos/image-host/master/tmux.jpg" alt="tmux"></p>
-<p>Tmux有这么几个概念：</p>
+<p>Tmux 有这么几个概念：</p>
 <ul>
-<li>Session：输入tmux后就创建了一个会话，一个会话是一组窗体的集合。</li>
+<li>Session：输入 tmux 后就创建了一个会话，一个会话是一组窗体的集合。</li>
 <li>Window：会话中一个可见的窗口，你的屏幕一次只会看到一个窗口的内容。</li>
-<li>Pane:一个窗口可以分成多个窗格。</li>
+<li>Pane: 一个窗口可以分成多个窗格。</li>
 </ul>
-<p>使用tmux的过程可以分为：</p>
+<p>使用 tmux 的过程可以分为：</p>
 <ul>
-<li>控制模式（按下或者按住前缀(tmux-prefix)，默认ctrl+b, 下文用※表示），也就是用快捷键执行动作；</li>
-<li>命令模式（输入tmux 后接命令），执行内部命令，好理解；</li>
-<li>一般模式，就是把窗格内的东西当一般terminal用；</li>
+<li>控制模式（按下或者按住前缀 (tmux-prefix)，默认 ctrl+b, 下文用※表示），也就是用快捷键执行动作；</li>
+<li>命令模式（输入 tmux 后接命令），执行内部命令，好理解；</li>
+<li>一般模式，就是把窗格内的东西当一般 terminal 用；</li>
 </ul>
 <h2 id="配置">配置</h2>
-<p>添加配置文件<code>.tmux.conf</code>，内容如下：</p>
+<p>添加配置文件 <code>.tmux.conf</code>，内容如下：</p>
 <pre><code class="language-properties">#-- base --#
-# (可选)设置zsh为默认shell
+# (可选) 设置 zsh 为默认 shell
 set -g default-shell /bin/zsh
 
 #-- settings --#
-# 开启鼠标切换窗格，按住shift复制粘贴
+# 开启鼠标切换窗格，按住 shift 复制粘贴
 set -g mouse on
 # 窗口编号从 1 开始计数
 set -g base-index 1
@@ -462,23 +717,23 @@ setw -g mode-keys vi
 # setw -g allow-rename off
 # 禁止自动命名新窗口
 setw -g automatic-rename off
-# 开启256 colors支持
+# 开启 256 colors 支持
 set -g default-terminal &quot;tmux-256color&quot;
 
 #-- bindkeys --#
-# 以下3行设置ctrl+x代替ctrl+b的快捷键
+# 以下 3 行设置 ctrl+x 代替 ctrl+b 的快捷键
 set -g prefix C-x
 unbind C-b
 bind C-x send-prefix
 
-# 设置tmux-prefix + \垂直分割窗格
+# 设置 tmux-prefix + \ 垂直分割窗格
 unbind %
 bind \\ split-window -h
-# 设置tmux-prefix + -水平分割窗格
+# 设置 tmux-prefix + - 水平分割窗格
 unbind '&quot;'
 bind - split-window -v
 
-# 设置ctrl+vim方式切换窗格
+# 设置 ctrl+vim 方式切换窗格
 bind -n C-h select-pane -L
 bind -n C-j select-pane -D
 bind -n C-k select-pane -U
@@ -486,36 +741,36 @@ bind -n C-l select-pane -R
 </code></pre>
 <p>有了这个配置文件立刻就能生效。</p>
 <h2 id="常用操作">常用操作</h2>
-<p>下面用<code>※</code>代表tmux前缀，也就是<code>ctrl+x</code>，默认是<code>ctrl+b</code>。</p>
+<p>下面用 <code>※</code> 代表 tmux 前缀，也就是 <code>ctrl+x</code>，默认是 <code>ctrl+b</code>。</p>
 <h3 id="鼠标">鼠标</h3>
-<p>tmux中执行有些正常terminal中的鼠标操作需要按住<code>shift</code>，多试试。</p>
+<p>tmux 中执行有些正常 terminal 中的鼠标操作需要按住 <code>shift</code>，多试试。</p>
 <p>窗格的分割线可以直接用鼠标拖动。</p>
 <h3 id="命令">命令</h3>
 <h4 id="会话">会话</h4>
 <ul>
 <li><code>tmux</code> 新建无名称会话</li>
-<li><code>tmux new -s demo</code> 新建名称为demo的会话</li>
+<li><code>tmux new -s demo</code> 新建名称为 demo 的会话</li>
 <li><code>tmux detach</code> 断开当前会话，既※ + d</li>
 <li><code>tmux a</code> 默认进入第一个会话</li>
-<li><code>tmux a -t demo</code> 进入到名称为demo的会话</li>
+<li><code>tmux a -t demo</code> 进入到名称为 demo 的会话</li>
 <li><code>tmux list-session</code> 查看所有会话</li>
 <li><code>tmux ls</code> 同上，简写</li>
 </ul>
 <h4 id="结束">结束</h4>
 <ul>
 <li><code>tmux kill-server</code> 关闭服务器，所有的会话都将关闭</li>
-<li><code>tmux kill-session -t demo</code> 关闭demo会话</li>
+<li><code>tmux kill-session -t demo</code> 关闭 demo 会话</li>
 <li><code>tmux kill-window</code> 关闭窗口</li>
 <li><code>tmux kill-pane</code> 关闭窗格</li>
 </ul>
 <h3 id="控制">控制</h3>
-<h4 id="会话session">会话(Session)</h4>
+<h4 id="会话-session">会话 (Session)</h4>
 <ul>
 <li><code>※ + d</code> 休眠</li>
 <li><code>※ + s</code> 以菜单方式显示和选择会话</li>
 <li><code>※ + L</code> 切换回上一次的会话</li>
 </ul>
-<h4 id="窗口windows">窗口(Windows)</h4>
+<h4 id="窗口-windows">窗口 (Windows)</h4>
 <ul>
 <li><code>※ + c</code> 创建新窗口</li>
 <li><code>※ + n</code> 选择下一个窗口</li>
@@ -528,45 +783,45 @@ bind -n C-l select-pane -R
 <li><code>※ + w</code> 以菜单方式显示及选择窗口</li>
 <li><code>※ + f</code> 在所有窗口中查找内容</li>
 </ul>
-<h4 id="窗格pane">窗格(Pane)</h4>
+<h4 id="窗格-pane">窗格 (Pane)</h4>
 <ul>
-<li><code>※ + z</code> 最大化/还原当前窗格</li>
-<li><code>※ + &quot;</code> 模向分隔窗格，替换为了-</li>
-<li><code>※ + %</code> 纵向分隔窗格，替换为了\</li>
+<li><code>※ + z</code> 最大化 / 还原当前窗格</li>
+<li><code>※ + &quot;</code> 模向分隔窗格，替换为了 -</li>
+<li><code>※ + %</code> 纵向分隔窗格，替换为了 \</li>
 <li><code>※ + o</code> 跳到下一个分隔窗格</li>
 <li><code>※ + x</code> 关闭窗格</li>
 <li><code>※ + ;</code> 切换到最后一个使用的窗格</li>
 <li><code>※ + 上下键</code> 上一个及下一个分隔窗格</li>
 <li><code>※ + 空格键</code> 切换窗格布局</li>
 </ul>
-<h2 id="tmux插件">tmux插件</h2>
-<p>之前还用过一段时间Tmux的插件，后来发现需要长期停留在Tmux的时候很少，所以后面没用了，</p>
+<h2 id="tmux-插件">tmux 插件</h2>
+<p>之前还用过一段时间 Tmux 的插件，后来发现需要长期停留在 Tmux 的时候很少，所以后面没用了，</p>
 <p>配置文件还是放出来留给有缘人：</p>
 <pre><code class="language-properties"># plugins
 # tmux plugin manager 插件管理
 set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-sensible'
-# 保存布局插件，tmux-prefix + ctrl+s/tmux-prefix + ctrl+r保存/恢复
+# 保存布局插件，tmux-prefix + ctrl+s/tmux-prefix + ctrl+r 保存 / 恢复
 set -g @plugin 'tmux-plugins/tmux-resurrect'
 # 自动保存插件
 set -g @plugin 'tmux-plugins/tmux-continuum'
 
-# tmux-resurrect配置
-# 恢复shell的历史记录,只有无前台任务运行的窗格 才能被保存
+# tmux-resurrect 配置
+# 恢复 shell 的历史记录, 只有无前台任务运行的窗格 才能被保存
 set -g @resurrect-save-bash-history 'on'
-# 恢复窗格内容,目前使用该功能时，请确保tmux的default-command没有包含&amp;&amp; 或者||操作符，
-# 否则将导致bug。（查看default-command的值，请使用命令tmux show -g default-command。）
+# 恢复窗格内容, 目前使用该功能时，请确保 tmux 的 default-command 没有包含 &amp;&amp; 或者 || 操作符，
+# 否则将导致 bug。（查看 default-command 的值，请使用命令 tmux show -g default-command。）
 set -g @resurrect-capture-pane-contents 'on'
-# 恢复vim会话
+# 恢复 vim 会话
 set -g @resurrect-strategy-vim 'session'
 
 # set -g @resurrect-save 'S'
 # set -g @resurrect-restore 'R'
 
-# tmux-continuum配置
+# tmux-continuum 配置
 # 开启自动恢复
 set -g @continuum-restore 'on'
-# 设置备份间隔（分钟，0为不自动备份）
+# 设置备份间隔（分钟，0 为不自动备份）
 set -g @continuum-save-interval '240'
 # 状态栏查看备份状态
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
@@ -574,14 +829,14 @@ set -g status-right 'Continuum status: #{continuum_status}'
 
 run '/etc/.tmux/plugins/tpm/tpm'
 </code></pre>
-<p>tpm通过git安装：</p>
+<p>tpm 通过 git 安装：</p>
 <pre><code class="language-shell">git clone https://github.com/tmux-plugins/tpm  /etc/.tmux/plugins/tpm
 </code></pre>
-<p>安装tpm后需要重新读取配置文件生效：</p>
+<p>安装 tpm 后需要重新读取配置文件生效：</p>
 <ol>
-<li>进入tmux，输入<code>※ + :</code>进入命令模式；</li>
-<li>再输入<code>source-file ~/.tmux.conf</code>手动刷新配置文件；</li>
-<li>最后输入<code>※ + shift + u</code>进入tpm插件升级页面进行升级。</li>
+<li>进入 tmux，输入 <code>※ + :</code> 进入命令模式；</li>
+<li>再输入 <code>source-file ~/.tmux.conf</code> 手动刷新配置文件；</li>
+<li>最后输入 <code>※ + shift + u</code> 进入 tpm 插件升级页面进行升级。</li>
 </ol>
 
           </div>
@@ -591,6 +846,7 @@ run '/etc/.tmux/plugins/tpm/tpm'
 
 
           
+          
           <div class="article-widget">
             
 <div class="post-nav">
@@ -599,14 +855,14 @@ run '/etc/.tmux/plugins/tpm/tpm'
   
   <div class="post-nav-item">
     <div class="meta-nav">上一页</div>
-    <a href="/topic/wsl2/coding_with_wsl2_04/" rel="next">使用Zsh作为默认shell</a>
+    <a href="/topic/wsl2/coding_with_wsl2_04/" rel="next">使用 Zsh 作为默认 shell</a>
   </div>
   
   
   
   <div class="post-nav-item">
     <div class="meta-nav">下一页</div>
-    <a href="/topic/wsl2/coding_with_wsl2_06/" rel="prev">直接使用Ubuntu作为Python开发环境</a>
+    <a href="/topic/wsl2/coding_with_wsl2_06/" rel="prev">直接使用 Ubuntu Python 作为开发环境</a>
   </div>
   
 </div>
@@ -620,16 +876,14 @@ run '/etc/.tmux/plugins/tpm/tpm'
 
           
 
-<p class="edit-page">
-  <a href="https://github.com/gcushen/hugo-academic/edit/master/content/topic/wsl2/coding_with_wsl2_05.md">
-    <i class="fas fa-pen pr-2"></i>编辑本页
-  </a>
-</p>
 
 
 
 
           
+
+          
+
 
         </div>
 
@@ -640,11 +894,24 @@ run '/etc/.tmux/plugins/tpm/tpm'
 
   <p class="powered-by">
     
+  </p>
 
-    Powered by the
-    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
-    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+  
+  
 
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+    Published with
+    <a href="https://wowchemy.com" target="_blank" rel="noopener">Wowchemy</a>  —
+    the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">
+    open source</a> website builder that empowers creators.
     
   </p>
 </footer>
@@ -654,60 +921,91 @@ run '/etc/.tmux/plugins/tpm/tpm'
   </div>
 </div>
 
+  </div>
+
+  <div class="page-footer">
+    
+    
+  </div>
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">引用</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> 复制
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> 下载
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
 
       
 
     
     
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 
-    
-    
-    
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      
+
       <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
 
       
 
       
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js" integrity="sha256-1zu+3BnLYV9LdiY85uXMzii3bdrkelyp37e0ZyTAQh0=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/python.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/python.min.js"></script>
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/go.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/go.min.js"></script>
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/javascript.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/javascript.min.js"></script>
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/typescript.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/typescript.min.js"></script>
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/html.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/powershell.min.js"></script>
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/powershell.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/properties.min.js"></script>
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/properties.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/sql.min.js"></script>
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/sql.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/dockerfile.min.js"></script>
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/yaml.min.js"></script>
         
       
 
-      
-      
     
 
     
     
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js" integrity="sha256-EErZamuLefUnbMBQbsEqu1USa+btR2oIlCpBJbyD4/g=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.js" integrity="sha512-SeiQaaDh73yrb56sTW/RgVdi/mMqNeM2oBwubFHagc5BkixSpP1fvqF47mKzPGWYSSy4RwbBunrJBQ4Co8fRWA==" crossorigin="anonymous"></script>
     
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -723,14 +1021,15 @@ run '/etc/.tmux/plugins/tpm/tpm'
         'post': "文章",
         'project': "项目",
         'publication' : "出版物",
-        'talk' : "演讲"
+        'talk' : "演讲",
+        'slides' : "Slides"
         };
     </script>
     
 
     
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.1/anchor.min.js" integrity="sha256-pB/deHc9CGfFpJRjC43imB29Rse8tak+5eXqntO94ck=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.2/anchor.min.js" integrity="sha512-I7w3ZdSFzw5j3jU3ZkNikBNeIrl3i+hEuEdwNmqUJvwNcaBUNcijnP2gd9DtGlgVYDplfjGoD8vTNsID+lCjqg==" crossorigin="anonymous"></script>
     <script>
       anchors.add();
     </script>
@@ -762,6 +1061,13 @@ run '/etc/.tmux/plugins/tpm/tpm'
 
     
     
+    
+
+    
+    
+
+    
+    
 
     
     
@@ -777,43 +1083,22 @@ run '/etc/.tmux/plugins/tpm/tpm'
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/wowchemy.min.e70d9bcb02570fbace6fd086701a8d67.js"></script>
 
-    
+    <script>
+    ((window.gitter = {}).chat = {}).options = {
+        room: 'szthanatos\-github\-io/community'
+    };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+<style>
+    .gitter-chat-embed {
+        top: 70px;
+    }
+</style>
 
 
 
-
-
-
-  
-  
-
-  
-<div id="modal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">引用</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <pre><code class="tex hljs"></code></pre>
-      </div>
-      <div class="modal-footer">
-        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
-          <i class="fas fa-copy"></i> 复制
-        </a>
-        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
-          <i class="fas fa-download"></i> 下载
-        </a>
-        <div id="modal-error"></div>
-      </div>
-    </div>
-  </div>
-</div>
 
 </body>
 </html>

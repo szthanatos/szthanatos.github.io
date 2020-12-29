@@ -5,12 +5,93 @@
     <link>https://szthanatos.github.io/post/</link>
       <atom:link href="https://szthanatos.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>zh-Hans</language><lastBuildDate>Fri, 15 Nov 2019 17:18:05 +0800</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>zh-Hans</language><lastBuildDate>Mon, 28 Dec 2020 19:03:14 +0800</lastBuildDate>
     <image>
       <url>https://szthanatos.github.io/images/icon_hu38c28d6ecf464f8a293472d2a570e5b8_6181_512x512_fill_lanczos_center_2.png</url>
       <title>Posts</title>
       <link>https://szthanatos.github.io/post/</link>
     </image>
+    
+    <item>
+      <title>指北系列指南</title>
+      <link>https://szthanatos.github.io/post/incomplete-guide/</link>
+      <pubDate>Mon, 28 Dec 2020 19:03:14 +0800</pubDate>
+      <guid>https://szthanatos.github.io/post/incomplete-guide/</guid>
+      <description>&lt;p&gt;我觉得网上技术教程都很有坑。&lt;/p&gt;
+&lt;p&gt;比如官方文档。如果只想尽快使用上某种技术产品，入门章节一般都是实验级别的，不太够用，而其余章节就有点过于细节;&lt;/p&gt;
+&lt;p&gt;要么是零碎的个人笔记，基本只写自己关心的那一部分，叙述角度和内容都非常零散。&lt;/p&gt;
+&lt;p&gt;所以我到底想要什么样的教程呢？&lt;/p&gt;
+&lt;p&gt;对于我个人而言，我期望的是一个比个人笔记长，比官方文档短的一个教程，读起来不会太累；&lt;/p&gt;
+&lt;p&gt;内容可以不深入，但是要系统和全面，看完了能让读者有一个整体的概念；&lt;/p&gt;
+&lt;p&gt;而对于不同领域的知识，通过同样的叙述方式，降低认知负担，快速定位自己关心的部分；&lt;/p&gt;
+&lt;p&gt;教程都统一叫指北，不全面也不权威，和系统学习官方文档背道而驰，但是30分钟建立一个感性认识完全足够了。&lt;/p&gt;
+&lt;p&gt;所以我拟定了这样的一个思路：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://szthanatos.github.io/media/%E6%8C%87%E5%8C%97%E7%B3%BB%E5%88%97%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84.png&#34; alt=&#34;指北系列目录结构&#34;&gt;&lt;/p&gt;
+&lt;p&gt;作为我个人博客的指北专题的固定格式，&lt;/p&gt;
+&lt;p&gt;也期望通过这样的方式更好的帮助自己建立和分享知识体系。&lt;/p&gt;
+&lt;p&gt;生成目录的脚本如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;#!/bin/bash
+create_page(){
+    cat &amp;gt; ${1}/${2}.md &amp;lt;&amp;lt;EOF
+---
+title: 
+linktitle: ${3}
+summary: 
+date: $(date &#39;+%Y-%m-%d %H:%M:%S&#39;)
+lastmod: $(date &#39;+%Y-%m-%d %H:%M:%S&#39;)
+draft: false
+toc: true
+type: book
+weight: ${4}
+---
+EOF
+}
+
+doc_title=&amp;quot;$1&amp;quot;
+mkdir -p content/$1
+cd content/$1
+
+dir_list=( 
+    01-design 
+    02-useage 
+    03-operation 
+    04-advanced 
+    05-troubleshooting 
+    )
+
+for chapter in ${dir_list[*]}
+do
+    mkdir -p $chapter
+done
+
+# chapter
+create_page &amp;quot;${PWD}&amp;quot; _index &amp;quot;简介&amp;quot; 1
+create_page 01-design _index &amp;quot;设计&amp;quot; 10
+create_page 02-useage _index &amp;quot;使用&amp;quot; 40
+create_page 03-operation _index &amp;quot;运维&amp;quot; 70
+create_page 04-advanced _index &amp;quot;进阶&amp;quot; 100
+create_page 05-troubleshooting _index &amp;quot;排错&amp;quot; 130
+
+# page
+create_page 01-design concept &amp;quot;概念&amp;quot; 10
+create_page 01-design architecture &amp;quot;架构&amp;quot; 20
+create_page 01-design component &amp;quot;组件&amp;quot; 30
+create_page 02-useage install-and-config &amp;quot;安装/配置&amp;quot; 40
+create_page 02-useage operate &amp;quot;操作&amp;quot; 50
+create_page 02-useage example &amp;quot;用例&amp;quot; 60
+create_page 03-operation update-and-rollback &amp;quot;升级/降级&amp;quot; 70
+create_page 03-operation backup-and-restore &amp;quot;备份/恢复&amp;quot; 80
+create_page 03-operation observability &amp;quot;观测性&amp;quot; 90
+create_page 04-advanced optimize &amp;quot;优化&amp;quot; 100
+create_page 04-advanced trick&amp;quot;技巧&amp;quot; 110
+create_page 04-advanced reference &amp;quot;参考&amp;quot; 120
+
+cd ../../
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如果你也使用 &lt;code&gt;hugo&lt;/code&gt; 和 &lt;code&gt;wowchemy&lt;/code&gt;，那么在项目主目录执行 &lt;code&gt;./create_book.sh [文档名]&lt;/code&gt; 就会在 &lt;code&gt;content/[文档名]&lt;/code&gt; 下生成所有相关文件和文件夹，并配置好目录顺序。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>加速 ssh 连接</title>

@@ -5,7 +5,7 @@
     <link>https://szthanatos.github.io/</link>
       <atom:link href="https://szthanatos.github.io/index.xml" rel="self" type="application/rss+xml" />
     <description>Kryptonite Lab</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>zh-Hans</language><lastBuildDate>Sat, 22 Aug 2020 21:51:08 +0800</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>zh-Hans</language><lastBuildDate>Mon, 28 Dec 2020 19:03:14 +0800</lastBuildDate>
     <image>
       <url>https://szthanatos.github.io/images/icon_hu38c28d6ecf464f8a293472d2a570e5b8_6181_512x512_fill_lanczos_center_2.png</url>
       <title>Kryptonite Lab</title>
@@ -14,9 +14,9 @@
     
     <item>
       <title>Docker -01- 基本概念</title>
-      <link>https://szthanatos.github.io/doc-docker/basis/</link>
+      <link>https://szthanatos.github.io/topic/docker/basis/</link>
       <pubDate>Wed, 05 Dec 2018 22:17:22 +0800</pubDate>
-      <guid>https://szthanatos.github.io/doc-docker/basis/</guid>
+      <guid>https://szthanatos.github.io/topic/docker/basis/</guid>
       <description>&lt;h2 id=&#34;docker-简介&#34;&gt;Docker 简介&lt;/h2&gt;
 &lt;h3 id=&#34;什么是-docker&#34;&gt;什么是 Docker&lt;/h3&gt;
 &lt;p&gt;Docker 最初是 dotCloud 公司创始人 Solomon Hykes 在法国期间发起的一个公司内部项目，并于 2013 年 3 月以 Apache 2.0 授权协议开源，主要项目代码在 &lt;a href=&#34;https://github.com/moby/moby&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub&lt;/a&gt; 上进行维护，后来还加入了 Linux 基金会，并成立推动 &lt;a href=&#34;https://www.opencontainers.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;开放容器联盟（OCI）&lt;/a&gt;。&lt;/p&gt;
@@ -39,31 +39,31 @@
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th align=&#34;left&#34;&gt;特性&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;容器&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;虚拟机&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;特性&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;容器&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;虚拟机&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;启动&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;秒级&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;分钟级&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;启动&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;秒级&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;分钟级&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;硬盘使用&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;一般为 &lt;code&gt;MB&lt;/code&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;一般为 &lt;code&gt;GB&lt;/code&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;硬盘使用&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;一般为 &lt;code&gt;MB&lt;/code&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;一般为 &lt;code&gt;GB&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;性能&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;接近原生&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;弱于原生&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;性能&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;接近原生&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;弱于原生&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;系统支持量&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;单机支持上千个容器&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;一般几十个&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;系统支持量&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;单机支持上千个容器&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;一般几十个&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -511,22 +511,22 @@ docker run -it \
     
     <item>
       <title>Docker -02- 进阶生态</title>
-      <link>https://szthanatos.github.io/doc-docker/ecology/</link>
+      <link>https://szthanatos.github.io/topic/docker/ecology/</link>
       <pubDate>Thu, 06 Dec 2018 10:06:06 +0800</pubDate>
-      <guid>https://szthanatos.github.io/doc-docker/ecology/</guid>
+      <guid>https://szthanatos.github.io/topic/docker/ecology/</guid>
       <description></description>
     </item>
     
     <item>
       <title>开启 WSL2 安装 Ubuntu</title>
-      <link>https://szthanatos.github.io/doc-wsl2/coding_with_wsl2_01/</link>
+      <link>https://szthanatos.github.io/topic/wsl2/coding_with_wsl2_01/</link>
       <pubDate>Sat, 22 Aug 2020 11:37:05 +0800</pubDate>
-      <guid>https://szthanatos.github.io/doc-wsl2/coding_with_wsl2_01/</guid>
+      <guid>https://szthanatos.github.io/topic/wsl2/coding_with_wsl2_01/</guid>
       <description>&lt;h2 id=&#34;什么是-wsl&#34;&gt;什么是 WSL&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;适用于 Linux 的 Windows 子系统可让开发人员按原样运行 GNU/Linux 环境 - 包括大多数命令行工具、实用工具和应用程序 - 且不会产生传统虚拟机或双启动设置开销。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;然而现在出的 Wsl2 是基于 Hyper-V 虚拟机的&amp;hellip;&lt;/p&gt;
+&lt;p&gt;然而现在出的 WSL2 是基于 Hyper-V 虚拟机的&amp;hellip;&lt;/p&gt;
 &lt;h2 id=&#34;什么是-wsl-2&#34;&gt;什么是 WSL 2&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;WSL 2 是适用于 Linux 的 Windows 子系统体系结构的一个新版本，它支持适用于 Linux 的 Windows 子系统在 Windows 上运行 ELF64 Linux 二进制文件。 它的主要目标是提高文件系统性能，以及添加完全的系统调用兼容性。&lt;/p&gt;
@@ -547,21 +547,21 @@ dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /nores
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;完成后需要重启电脑。&lt;/p&gt;
 &lt;h3 id=&#34;更新内核&#34;&gt;更新内核&lt;/h3&gt;
-&lt;p&gt;目前版本的 Win10 需要手动更新 Wsl2 内核，前往 &lt;a href=&#34;https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;下载适用于 x64 计算机的最新 WSL2 Linux 内核&lt;/a&gt; 下载 msi 文件手动更新。&lt;/p&gt;
+&lt;p&gt;目前版本的 Win10 需要手动更新 WSL2 内核，前往 &lt;a href=&#34;https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;下载适用于 x64 计算机的最新 WSL2 Linux 内核&lt;/a&gt; 下载 msi 文件手动更新。&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;ARM 平台前往 &lt;a href=&#34;https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_arm64.msi&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;下载适用于 ARM64 计算机的最新 WSL2 Linux 内核&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;h3 id=&#34;设置-wsl-默认版本&#34;&gt;设置 wsl 默认版本&lt;/h3&gt;
 &lt;p&gt;通过命令行（管理员身份）执行：&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-powershell&#34;&gt;wsl --set-default-version 2
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;让未来的 Linux 都默认以 Wsl2 形式安装。&lt;/p&gt;
-&lt;p&gt;现有 Wsl 虚拟机也可以通过：&lt;/p&gt;
+&lt;p&gt;让未来的 Linux 都默认以 WSL2 形式安装。&lt;/p&gt;
+&lt;p&gt;现有 WSL 虚拟机也可以通过：&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-powershell&#34;&gt;# 获取现有 wsl 版本信息
 wsl --list --verbose
 
 # 将现有发行版转化为制定版本
 wsl --set-version &amp;lt;distribution name&amp;gt; &amp;lt;versionNumber&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;升级到 Wsl2 。&lt;/p&gt;
+&lt;p&gt;升级到 WSL2 。&lt;/p&gt;
 &lt;h3 id=&#34;安装-linux-系统&#34;&gt;安装 Linux 系统&lt;/h3&gt;
 &lt;p&gt;打开 &lt;a href=&#34;https://aka.ms/wslstore&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Microsoft Store&lt;/a&gt;，搜索 wsl 即可获取可用 Linux 发行版。&lt;/p&gt;
 &lt;p&gt;现在支持的发行版有：&lt;/p&gt;
@@ -582,6 +582,29 @@ wsl --set-version &amp;lt;distribution name&amp;gt; &amp;lt;versionNumber&amp;gt
 &lt;p&gt;下载完成后，点击图标进入，首次使用会需要几分钟执行安装。&lt;/p&gt;
 &lt;p&gt;完成安装后，设置 Ubuntu 用户名（非 root）及密码，正式开启 Ubuntu 系统。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://docs.microsoft.com/zh-cn/windows/wsl/media/ubuntuinstall.png&#34; alt=&#34;安装&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;移动安装位置可选&#34;&gt;移动安装位置（可选）&lt;/h2&gt;
+&lt;p&gt;目前 WSL 不支持设置安装路径，使用一段时间后体积会膨胀到 10G+ ，可以通过开源工具 &lt;a href=&#34;https://github.com/DDoSolitary/LxRunOffline&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LxRunOffline&lt;/a&gt; 实现将 Linux 安装到任意位置，或者将现有 Linux 子系统移动到任意位置。&lt;/p&gt;
+&lt;h3 id=&#34;安装-lxrunoffline&#34;&gt;安装 LxRunOffline&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://scoop.sh/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Scoop&lt;/a&gt; 是一个 Window 命令行包管理器，可以提供类似 apt/yum 的体验。&lt;/p&gt;
+&lt;p&gt;通过 Scoop 安装 LxRunOffline 方法如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-powershell&#34;&gt;# 在 Powershell 中执行
+set-executionpolicy remotesigned -scope currentuser
+iex (new-object net.webclient).downloadstring(&#39;https://get.scoop.sh&#39;)
+scoop bucket add extras
+scoop install lxrunoffline
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;或者你可以直接下载安装二进制文件，之后运行 &lt;code&gt;regsvr32 LxRunOfflineShellExt.dll&lt;/code&gt; 完成。&lt;/p&gt;
+&lt;h3 id=&#34;移动&#34;&gt;移动&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-powershell&#34;&gt;# 在 Powershell 中执行
+# 查看所有已安装的发行版
+lxrunoffline gd
+
+# 移动已存在发行版， 路径格式类似于 D:\wsl\Ubuntu-18.04
+LxRunOffline m -n &amp;lt;发行版名称&amp;gt; -d &amp;lt; 路径 &amp;gt;
+
+# 等待一段时间完成移动，查看发行版当前位置
+LxRunOffline di -n &amp;lt;发行版名称&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;常用操作&#34;&gt;常用操作&lt;/h2&gt;
 &lt;h3 id=&#34;wsl-命令&#34;&gt;wsl 命令&lt;/h3&gt;
 &lt;ul&gt;
@@ -593,22 +616,22 @@ wsl --set-version &amp;lt;distribution name&amp;gt; &amp;lt;versionNumber&amp;gt
 &lt;/ul&gt;
 &lt;p&gt;注意，导入导出发行版会导致无法从 Microsoft 应用管理中管理或更新。&lt;/p&gt;
 &lt;h3 id=&#34;网络&#34;&gt;网络&lt;/h3&gt;
-&lt;p&gt;WSL2 相当于独立虚拟机，而 Wsl1 是和 Windows 复用同一个网络的。&lt;/p&gt;
-&lt;p&gt;然后和一般宿主机虚拟机略微相反，从 Windows 可以通过 &lt;code&gt;localhost&lt;/code&gt; 访问 Wsl 上的服务，反之则不行。&lt;/p&gt;
+&lt;p&gt;WSL2 相当于独立虚拟机，而 WSL1 是和 Windows 复用同一个网络的。&lt;/p&gt;
+&lt;p&gt;然后和一般宿主机虚拟机略微相反，从 Windows 可以通过 &lt;code&gt;localhost&lt;/code&gt; 访问 WSL 上的服务，反之则不行。&lt;/p&gt;
 &lt;p&gt;想要访问 Windows 上的服务，可以使用命令&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;ip route | grep default | awk &#39;{print $3}&#39;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;或者查询 &lt;code&gt;/etc/resolv.conf&lt;/code&gt; 中的 &lt;code&gt;nameserver&lt;/code&gt; 获取到 Windows 宿主机的 ip，&lt;/p&gt;
 &lt;p&gt;然后通过 ip 访问。&lt;/p&gt;
 &lt;h3 id=&#34;文件系统&#34;&gt;文件系统&lt;/h3&gt;
-&lt;p&gt;Wsl1 的时候，文件目录位于&lt;/p&gt;
+&lt;p&gt;WSL1 的时候，文件目录位于&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Ubuntu: &lt;code&gt;%localappdata%\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;Ubuntu18.04: &lt;code&gt;%localappdata%\Packages\CanonicalGroupLimited.Ubuntu18.04onWindows_79rhkp1fndgsc\LocalState\rootfs&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Wsl2 可以直接通过 &lt;code&gt;\\wsl$&lt;/code&gt; 在文件管理器中查看到网络位置上的 Wsl 虚拟机，Ubuntu 就是 &lt;code&gt;\\wsl$\Ubuntu&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;或者你可以从 Wsl2 中直接打开当前目录，直接在终端里调用 &lt;code&gt;explorer.exe .&lt;/code&gt; 就行了，非常 cool~&lt;/p&gt;
-&lt;p&gt;Windows 的磁盘在 Wsl 中都表示为 &lt;code&gt;/mnt/c|d|e...&lt;/code&gt;，可以看，但是操作还是尽量拷贝到 Wsl 目录下，因为性能损失巨大。&lt;/p&gt;
+&lt;p&gt;WSL2 可以直接通过 &lt;code&gt;\\wsl$&lt;/code&gt; 在文件管理器中查看到网络位置上的 WSL 虚拟机，Ubuntu 就是 &lt;code&gt;\\wsl$\Ubuntu&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;或者你可以从 WSL2 中直接打开当前目录，直接在终端里调用 &lt;code&gt;explorer.exe .&lt;/code&gt; 就行了，非常 cool~&lt;/p&gt;
+&lt;p&gt;Windows 的磁盘在 WSL 中都表示为 &lt;code&gt;/mnt/c|d|e...&lt;/code&gt;，可以看，但是操作还是尽量拷贝到 WSL 目录下，因为性能损失巨大。&lt;/p&gt;
 &lt;h2 id=&#34;gpu&#34;&gt;GPU&lt;/h2&gt;
 &lt;p&gt;差不多能用：&lt;/p&gt;
 &lt;ul&gt;
@@ -625,9 +648,9 @@ wsl --set-version &amp;lt;distribution name&amp;gt; &amp;lt;versionNumber&amp;gt
     
     <item>
       <title>Kafka -01- 安装配置</title>
-      <link>https://szthanatos.github.io/doc-kafka/install/</link>
+      <link>https://szthanatos.github.io/topic/kafka/install/</link>
       <pubDate>Thu, 06 Dec 2018 10:09:46 +0800</pubDate>
-      <guid>https://szthanatos.github.io/doc-kafka/install/</guid>
+      <guid>https://szthanatos.github.io/topic/kafka/install/</guid>
       <description>&lt;h2 id=&#34;环境说明&#34;&gt;环境说明&lt;/h2&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -816,9 +839,9 @@ echo 212992 &amp;gt;&amp;gt; /proc/sys/net/core/rmem_max
     
     <item>
       <title>使用 Windows-Terminal 作为终端</title>
-      <link>https://szthanatos.github.io/doc-wsl2/coding_with_wsl2_02/</link>
+      <link>https://szthanatos.github.io/topic/wsl2/coding_with_wsl2_02/</link>
       <pubDate>Sat, 22 Aug 2020 16:41:01 +0800</pubDate>
-      <guid>https://szthanatos.github.io/doc-wsl2/coding_with_wsl2_02/</guid>
+      <guid>https://szthanatos.github.io/topic/wsl2/coding_with_wsl2_02/</guid>
       <description>&lt;p&gt;介绍就两个字，&lt;strong&gt;颜值&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/szthanatos/image-host/master/windows-terminal.PNG&#34; alt=&#34;颜值&#34;&gt;&lt;/p&gt;
 &lt;p&gt;安装方式同样是 &lt;a href=&#34;https://aka.ms/wslstore&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Microsoft Store&lt;/a&gt;。&lt;/p&gt;
@@ -915,9 +938,9 @@ echo 212992 &amp;gt;&amp;gt; /proc/sys/net/core/rmem_max
     
     <item>
       <title>Kafka -02- 滚动升级</title>
-      <link>https://szthanatos.github.io/doc-kafka/update/</link>
+      <link>https://szthanatos.github.io/topic/kafka/update/</link>
       <pubDate>Sun, 09 Dec 2018 15:19:52 +0800</pubDate>
-      <guid>https://szthanatos.github.io/doc-kafka/update/</guid>
+      <guid>https://szthanatos.github.io/topic/kafka/update/</guid>
       <description>&lt;h2 id=&#34;环境说明&#34;&gt;环境说明&lt;/h2&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -989,9 +1012,9 @@ echo 212992 &amp;gt;&amp;gt; /proc/sys/net/core/rmem_max
     
     <item>
       <title>Redis 集群相关命令</title>
-      <link>https://szthanatos.github.io/doc-redis/usage/cluster_command/</link>
+      <link>https://szthanatos.github.io/topic/redis/02-usage/cluster_command/</link>
       <pubDate>Thu, 30 Aug 2018 21:26:18 +0800</pubDate>
-      <guid>https://szthanatos.github.io/doc-redis/usage/cluster_command/</guid>
+      <guid>https://szthanatos.github.io/topic/redis/02-usage/cluster_command/</guid>
       <description>&lt;h2 id=&#34;集群信息&#34;&gt;集群信息&lt;/h2&gt;
 &lt;h3 id=&#34;节点信息&#34;&gt;节点信息&lt;/h3&gt;
 &lt;p&gt;集群节点相关信息可以通过 &lt;code&gt;cluster nodes&lt;/code&gt; 命令获取：&lt;/p&gt;
@@ -1244,9 +1267,9 @@ cluster_stats_messages_received:3112
     
     <item>
       <title>Ubuntu 易用性配置</title>
-      <link>https://szthanatos.github.io/doc-wsl2/coding_with_wsl2_03/</link>
+      <link>https://szthanatos.github.io/topic/wsl2/coding_with_wsl2_03/</link>
       <pubDate>Sat, 22 Aug 2020 16:41:03 +0800</pubDate>
-      <guid>https://szthanatos.github.io/doc-wsl2/coding_with_wsl2_03/</guid>
+      <guid>https://szthanatos.github.io/topic/wsl2/coding_with_wsl2_03/</guid>
       <description>&lt;h2 id=&#34;启用-root-用户&#34;&gt;启用 root 用户&lt;/h2&gt;
 &lt;p&gt;ubuntu 默认没有 root 密码，使用&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sudo passwd root
@@ -1394,9 +1417,9 @@ sudo service ssh restart
     
     <item>
       <title>使用 Zsh 作为默认 shell</title>
-      <link>https://szthanatos.github.io/doc-wsl2/coding_with_wsl2_04/</link>
+      <link>https://szthanatos.github.io/topic/wsl2/coding_with_wsl2_04/</link>
       <pubDate>Sat, 22 Aug 2020 16:41:05 +0800</pubDate>
-      <guid>https://szthanatos.github.io/doc-wsl2/coding_with_wsl2_04/</guid>
+      <guid>https://szthanatos.github.io/topic/wsl2/coding_with_wsl2_04/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;// TODO 吹一下 zsh&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -1502,9 +1525,9 @@ proxyoff() {
     
     <item>
       <title>Redis 单机 &amp; 集群安装</title>
-      <link>https://szthanatos.github.io/doc-redis/operation/install/</link>
+      <link>https://szthanatos.github.io/topic/redis/03-operation/install/</link>
       <pubDate>Thu, 30 Aug 2018 16:40:48 +0800</pubDate>
-      <guid>https://szthanatos.github.io/doc-redis/operation/install/</guid>
+      <guid>https://szthanatos.github.io/topic/redis/03-operation/install/</guid>
       <description>&lt;h2 id=&#34;版本&#34;&gt;版本&lt;/h2&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -1730,9 +1753,9 @@ ruby setup.rb
     
     <item>
       <title>使用 tmux 复用终端</title>
-      <link>https://szthanatos.github.io/doc-wsl2/coding_with_wsl2_05/</link>
+      <link>https://szthanatos.github.io/topic/wsl2/coding_with_wsl2_05/</link>
       <pubDate>Sat, 22 Aug 2020 17:53:59 +0800</pubDate>
-      <guid>https://szthanatos.github.io/doc-wsl2/coding_with_wsl2_05/</guid>
+      <guid>https://szthanatos.github.io/topic/wsl2/coding_with_wsl2_05/</guid>
       <description>&lt;p&gt;Tmux 是一个终端复用软件。比如你开一个 terminal 窗口，相当于和本地的或远程的 Linux 建立了一次会话连接。&lt;/p&gt;
 &lt;p&gt;如果你想多做几件事，比如一个窗口运行服务，一个窗口运行客户端，对不起，你得再开一个窗口，再建立一个连接。&lt;/p&gt;
 &lt;p&gt;tmux 就是解决这个问题的工具，它可以让你的终端 (Terminal) 给复用 (mux) 了，在一次连接里面做无数多件不同的事情。&lt;/p&gt;
@@ -1900,9 +1923,9 @@ run &#39;/etc/.tmux/plugins/tpm/tpm&#39;
     
     <item>
       <title>直接使用 Ubuntu Python 作为开发环境</title>
-      <link>https://szthanatos.github.io/doc-wsl2/coding_with_wsl2_06/</link>
+      <link>https://szthanatos.github.io/topic/wsl2/coding_with_wsl2_06/</link>
       <pubDate>Sat, 22 Aug 2020 18:06:35 +0800</pubDate>
-      <guid>https://szthanatos.github.io/doc-wsl2/coding_with_wsl2_06/</guid>
+      <guid>https://szthanatos.github.io/topic/wsl2/coding_with_wsl2_06/</guid>
       <description>&lt;p&gt;在前面的部分已经配置好了 Python 的死蛇源，所以现在已经可以使用 Ubuntu 作为 Python 基础环境了。&lt;/p&gt;
 &lt;h2 id=&#34;基本配置&#34;&gt;基本配置&lt;/h2&gt;
 &lt;p&gt;安装最新版本 Python：&lt;/p&gt;
@@ -1922,9 +1945,9 @@ pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
     
     <item>
       <title>优化指南 - 设计</title>
-      <link>https://szthanatos.github.io/doc-redis/advanced/improve-01/</link>
+      <link>https://szthanatos.github.io/topic/redis/04-advanced/improve-01/</link>
       <pubDate>Mon, 18 Mar 2019 15:04:35 +0800</pubDate>
-      <guid>https://szthanatos.github.io/doc-redis/advanced/improve-01/</guid>
+      <guid>https://szthanatos.github.io/topic/redis/04-advanced/improve-01/</guid>
       <description>&lt;h2 id=&#34;数据结构&#34;&gt;数据结构&lt;/h2&gt;
 &lt;p&gt;不同数据类型对应的操作的时间复杂度也不一样，选择合适的数据类型可以降低很多时间成本：&lt;/p&gt;
 &lt;h3 id=&#34;string&#34;&gt;String&lt;/h3&gt;
@@ -2440,9 +2463,9 @@ pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
     
     <item>
       <title>优化指南 - 使用</title>
-      <link>https://szthanatos.github.io/doc-redis/advanced/improve-02/</link>
+      <link>https://szthanatos.github.io/topic/redis/04-advanced/improve-02/</link>
       <pubDate>Mon, 18 Mar 2019 15:04:35 +0800</pubDate>
-      <guid>https://szthanatos.github.io/doc-redis/advanced/improve-02/</guid>
+      <guid>https://szthanatos.github.io/topic/redis/04-advanced/improve-02/</guid>
       <description>&lt;h2 id=&#34;操作&#34;&gt;操作&lt;/h2&gt;
 &lt;h3 id=&#34;批量操作&#34;&gt;批量操作&lt;/h3&gt;
 &lt;p&gt;传统数据库也存在批量操作效率高于单次操作的情况，但是 redis 由于执行效率更高，批量操作带来的提升也更夸张。举个不是很恰当的例子，还是按 redis 每秒能处理 10k 请求来算——&lt;/p&gt;
@@ -2662,9 +2685,9 @@ $ ./redis-benchmark -r 1000000 -n 2000000 -t get,set,lpush,lpop -q
     
     <item>
       <title>优化指南 - 运维</title>
-      <link>https://szthanatos.github.io/doc-redis/advanced/improve-03/</link>
+      <link>https://szthanatos.github.io/topic/redis/04-advanced/improve-03/</link>
       <pubDate>Mon, 18 Mar 2019 15:04:35 +0800</pubDate>
-      <guid>https://szthanatos.github.io/doc-redis/advanced/improve-03/</guid>
+      <guid>https://szthanatos.github.io/topic/redis/04-advanced/improve-03/</guid>
       <description>&lt;h2 id=&#34;监控&#34;&gt;监控&lt;/h2&gt;
 &lt;p&gt;为了发现前面所说的问题，需要开发 / 运维人员不断的监控 redis 运行情况。&lt;/p&gt;
 &lt;h3 id=&#34;redis-cli-查询&#34;&gt;redis-cli 查询&lt;/h3&gt;
@@ -2722,9 +2745,9 @@ pass
     
     <item>
       <title>使用 Docker 开发环境</title>
-      <link>https://szthanatos.github.io/doc-wsl2/coding_with_wsl2_07/</link>
+      <link>https://szthanatos.github.io/topic/wsl2/coding_with_wsl2_07/</link>
       <pubDate>Sat, 22 Aug 2020 18:07:41 +0800</pubDate>
-      <guid>https://szthanatos.github.io/doc-wsl2/coding_with_wsl2_07/</guid>
+      <guid>https://szthanatos.github.io/topic/wsl2/coding_with_wsl2_07/</guid>
       <description>&lt;p&gt;嗯，是的，其实可以直接在 Windows 下运行 Docker 而无需 Wsl。但是 Wsl2 会提供更好的性能——&lt;/p&gt;
 &lt;p&gt;如果开启 Wsl2，Docker 会默认把自己的文件系统迁移到 wsl 上（因为在 Win 下的本质也是开了个 Hyper-V 的虚拟机在运行）&lt;/p&gt;
 &lt;p&gt;——另一方面，咱们前面配好的终端环境也比 Windows 的终端好使&amp;hellip;&lt;/p&gt;
@@ -2801,9 +2824,9 @@ CMD [&amp;quot;/usr/sbin/sshd&amp;quot;, &amp;quot;-D&amp;quot;]
     
     <item>
       <title>Pycharm 易用性设置</title>
-      <link>https://szthanatos.github.io/doc-wsl2/coding_with_wsl2_08/</link>
+      <link>https://szthanatos.github.io/topic/wsl2/coding_with_wsl2_08/</link>
       <pubDate>Sat, 22 Aug 2020 21:51:08 +0800</pubDate>
-      <guid>https://szthanatos.github.io/doc-wsl2/coding_with_wsl2_08/</guid>
+      <guid>https://szthanatos.github.io/topic/wsl2/coding_with_wsl2_08/</guid>
       <description>&lt;h2 id=&#34;选项&#34;&gt;选项&lt;/h2&gt;
 &lt;h3 id=&#34;大小写敏感&#34;&gt;大小写敏感&lt;/h3&gt;
 &lt;p&gt;&lt;code&gt;File&lt;/code&gt; -&amp;gt; &lt;code&gt;Settings&lt;/code&gt; -&amp;gt; &lt;code&gt;Editor&lt;/code&gt; -&amp;gt; &lt;code&gt;General&lt;/code&gt; -&amp;gt; &lt;code&gt;Code Completion&lt;/code&gt;&lt;/p&gt;
@@ -2885,6 +2908,87 @@ Working directory: $ProjectFileDir$
 &lt;li&gt;向左: &lt;code&gt;Ctrl + ;&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;向右: &lt;code&gt;Ctrl +  Shift + ;&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>指北系列指南</title>
+      <link>https://szthanatos.github.io/post/incomplete-guide/</link>
+      <pubDate>Mon, 28 Dec 2020 19:03:14 +0800</pubDate>
+      <guid>https://szthanatos.github.io/post/incomplete-guide/</guid>
+      <description>&lt;p&gt;我觉得网上技术教程都很有坑。&lt;/p&gt;
+&lt;p&gt;比如官方文档。如果只想尽快使用上某种技术产品，入门章节一般都是实验级别的，不太够用，而其余章节就有点过于细节;&lt;/p&gt;
+&lt;p&gt;要么是零碎的个人笔记，基本只写自己关心的那一部分，叙述角度和内容都非常零散。&lt;/p&gt;
+&lt;p&gt;所以我到底想要什么样的教程呢？&lt;/p&gt;
+&lt;p&gt;对于我个人而言，我期望的是一个比个人笔记长，比官方文档短的一个教程，读起来不会太累；&lt;/p&gt;
+&lt;p&gt;内容可以不深入，但是要系统和全面，看完了能让读者有一个整体的概念；&lt;/p&gt;
+&lt;p&gt;而对于不同领域的知识，通过同样的叙述方式，降低认知负担，快速定位自己关心的部分；&lt;/p&gt;
+&lt;p&gt;教程都统一叫指北，不全面也不权威，和系统学习官方文档背道而驰，但是30分钟建立一个感性认识完全足够了。&lt;/p&gt;
+&lt;p&gt;所以我拟定了这样的一个思路：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://szthanatos.github.io/media/%E6%8C%87%E5%8C%97%E7%B3%BB%E5%88%97%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84.png&#34; alt=&#34;指北系列目录结构&#34;&gt;&lt;/p&gt;
+&lt;p&gt;作为我个人博客的指北专题的固定格式，&lt;/p&gt;
+&lt;p&gt;也期望通过这样的方式更好的帮助自己建立和分享知识体系。&lt;/p&gt;
+&lt;p&gt;生成目录的脚本如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;#!/bin/bash
+create_page(){
+    cat &amp;gt; ${1}/${2}.md &amp;lt;&amp;lt;EOF
+---
+title: 
+linktitle: ${3}
+summary: 
+date: $(date &#39;+%Y-%m-%d %H:%M:%S&#39;)
+lastmod: $(date &#39;+%Y-%m-%d %H:%M:%S&#39;)
+draft: false
+toc: true
+type: book
+weight: ${4}
+---
+EOF
+}
+
+doc_title=&amp;quot;$1&amp;quot;
+mkdir -p content/$1
+cd content/$1
+
+dir_list=( 
+    01-design 
+    02-useage 
+    03-operation 
+    04-advanced 
+    05-troubleshooting 
+    )
+
+for chapter in ${dir_list[*]}
+do
+    mkdir -p $chapter
+done
+
+# chapter
+create_page &amp;quot;${PWD}&amp;quot; _index &amp;quot;简介&amp;quot; 1
+create_page 01-design _index &amp;quot;设计&amp;quot; 10
+create_page 02-useage _index &amp;quot;使用&amp;quot; 40
+create_page 03-operation _index &amp;quot;运维&amp;quot; 70
+create_page 04-advanced _index &amp;quot;进阶&amp;quot; 100
+create_page 05-troubleshooting _index &amp;quot;排错&amp;quot; 130
+
+# page
+create_page 01-design concept &amp;quot;概念&amp;quot; 10
+create_page 01-design architecture &amp;quot;架构&amp;quot; 20
+create_page 01-design component &amp;quot;组件&amp;quot; 30
+create_page 02-useage install-and-config &amp;quot;安装/配置&amp;quot; 40
+create_page 02-useage operate &amp;quot;操作&amp;quot; 50
+create_page 02-useage example &amp;quot;用例&amp;quot; 60
+create_page 03-operation update-and-rollback &amp;quot;升级/降级&amp;quot; 70
+create_page 03-operation backup-and-restore &amp;quot;备份/恢复&amp;quot; 80
+create_page 03-operation observability &amp;quot;观测性&amp;quot; 90
+create_page 04-advanced optimize &amp;quot;优化&amp;quot; 100
+create_page 04-advanced trick&amp;quot;技巧&amp;quot; 110
+create_page 04-advanced reference &amp;quot;参考&amp;quot; 120
+
+cd ../../
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如果你也使用 &lt;code&gt;hugo&lt;/code&gt; 和 &lt;code&gt;wowchemy&lt;/code&gt;，那么在项目主目录执行 &lt;code&gt;./create_book.sh [文档名]&lt;/code&gt; 就会在 &lt;code&gt;content/[文档名]&lt;/code&gt; 下生成所有相关文件和文件夹，并配置好目录顺序。&lt;/p&gt;
 </description>
     </item>
     
@@ -3783,9 +3887,9 @@ runcmd:
     
     <item>
       <title>connection reset by peer</title>
-      <link>https://szthanatos.github.io/doc-redis/troubleshooting/connection_reset/</link>
+      <link>https://szthanatos.github.io/topic/redis/05-troubleshooting/connection_reset/</link>
       <pubDate>Sun, 16 Jun 2019 23:06:41 +0800</pubDate>
-      <guid>https://szthanatos.github.io/doc-redis/troubleshooting/connection_reset/</guid>
+      <guid>https://szthanatos.github.io/topic/redis/05-troubleshooting/connection_reset/</guid>
       <description>&lt;h2 id=&#34;报错信息&#34;&gt;报错信息&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Error: Connection reset by peer&lt;/p&gt;
@@ -6191,9 +6295,9 @@ TOTAL                  353     20    94%
     
     <item>
       <title>not able to persist on disk</title>
-      <link>https://szthanatos.github.io/doc-redis/troubleshooting/persist_on_disk/</link>
+      <link>https://szthanatos.github.io/topic/redis/05-troubleshooting/persist_on_disk/</link>
       <pubDate>Fri, 18 May 2018 11:42:50 +0800</pubDate>
-      <guid>https://szthanatos.github.io/doc-redis/troubleshooting/persist_on_disk/</guid>
+      <guid>https://szthanatos.github.io/topic/redis/05-troubleshooting/persist_on_disk/</guid>
       <description>&lt;h2 id=&#34;报错信息&#34;&gt;报错信息&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;MISCONF Redis is configured to save RDB snapshots, but it is currently not able to persist on disk.&lt;/p&gt;
