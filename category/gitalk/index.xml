@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gitalk | Kryptonite Lab</title>
+    <link>https://szthanatos.github.io/category/gitalk/</link>
+      <atom:link href="https://szthanatos.github.io/category/gitalk/index.xml" rel="self" type="application/rss+xml" />
+    <description>Gitalk</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>zh-Hans</language><copyright>© 2021 szthanatos</copyright><lastBuildDate>Wed, 17 Jun 2020 23:21:08 +0800</lastBuildDate>
+    <image>
+      <url>https://szthanatos.github.io/media/icon_hu638af3a55c65206eddec4e3c4c13a753_187410_512x512_fill_lanczos_center_2.png</url>
+      <title>Gitalk</title>
+      <link>https://szthanatos.github.io/category/gitalk/</link>
+    </image>
+    
+    <item>
+      <title>使用 Gitalk 作为 Academic 的评论插件</title>
+      <link>https://szthanatos.github.io/post/academic/gitalk_as_comments/</link>
+      <pubDate>Wed, 17 Jun 2020 23:21:08 +0800</pubDate>
+      <guid>https://szthanatos.github.io/post/academic/gitalk_as_comments/</guid>
+      <description>&lt;p&gt;Academic(Wowchemy) 作为我 GitHub Pages 博客主题，默认提供3种类型的评论(comments)插件：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Twitter——需要跳转到外部页面&lt;/li&gt;
+&lt;li&gt;Disqus——收费 or 广告&lt;/li&gt;
+&lt;li&gt;Commento——收费 or 自建&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;总之，都不完美。&lt;/p&gt;
+&lt;p&gt;所以我这边使用 &lt;a href=&#34;https://gitalk.github.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Gitalk&lt;/a&gt; ——一个基于 GitHub Issues 的开源评论系统，提供评论功能。&lt;/p&gt;
+&lt;p&gt;具体替换步骤如下：&lt;/p&gt;
+&lt;h2 id=&#34;0-开启评论功能&#34;&gt;0. 开启评论功能&lt;/h2&gt;
+&lt;p&gt;在项目 &lt;code&gt;config/_default/params.yaml&lt;/code&gt; 文件中，评论相关配置如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;comments:
+  provider: &#39;&#39;
+  commentable:
+    post: true
+    book: true
+    project: true
+    publication: true
+    event: true
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;1-获取-github-application-密钥对&#34;&gt;1. 获取 GitHub Application 密钥对&lt;/h2&gt;
+&lt;p&gt;点击链接 &lt;a href=&#34;https://github.com/settings/applications/new&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;创建 GitHub Application&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://i.loli.net/2021/06/17/vqWohkOplCwIx7N.png&#34; alt=&#34;创建 GitHub Application&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;保存好 &lt;code&gt;Client ID&lt;/code&gt; 和 &lt;code&gt;Client Secret&lt;/code&gt; 以待下一步使用。&lt;/p&gt;
+&lt;h2 id=&#34;2-创建-gitalk-插件&#34;&gt;2. 创建 Gitalk 插件&lt;/h2&gt;
+&lt;p&gt;创建 &lt;code&gt;gitalk.html&lt;/code&gt; 如下，放置到项目 &lt;code&gt;layouts/partials/comments/&lt;/code&gt; 目录下：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;div id=&amp;quot;gitalk-container&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+
+&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css&amp;quot;&amp;gt;
+&amp;lt;script src=&amp;quot;https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&amp;lt;script src=&amp;quot;https://cdn.jsdelivr.net/npm/blueimp-md5@2.18.0/js/md5.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&amp;lt;script&amp;gt;
+    var gitalk = new Gitalk({
+        clientID: &#39;【你的 Client ID】&#39;,
+        clientSecret: &#39;【你的 Client Secret】&#39;,
+        repo: &#39;【你的博客地址】&#39;,
+        owner: &#39;{{ .Site.Params.Gitalk.owner }}&#39;,   // GitHub repo 所有者
+        admin: [&#39;{{ .Site.Params.Gitalk.owner }}&#39;], // GitHub repo 所有者和合作者，对这个 repo 有写权限
+        id: md5(location.pathname),                 // 页面唯一标识，以 GitHub issue tag 形式存在
+        distractionFreeMode: false                  // 评论框的全屏遮罩效果
+    })
+    gitalk.render(&#39;gitalk-container&#39;)
+&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    注意这里使用的是 &lt;a href=&#34;https://cdn.jsdelivr.net&#34;&gt;jsdelivr&lt;/a&gt; 提供的 CDN 服务，你也可以选择更适合你情况的供应商。
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    &lt;p&gt;gitalk id 被设置为 MD5 化的 URL 的路径，这是因为 GitHub tag 限制长度不能超过50，如果路径过长会无法正确创建 issue；&lt;/p&gt;
+&lt;p&gt;不过这样会让 issue tag 都是一串串 MD5 码&amp;hellip;&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;3-覆盖原生评论插件&#34;&gt;3. 覆盖原生评论插件&lt;/h2&gt;
+&lt;p&gt;原生 &lt;a href=&#34;https://github.com/wowchemy/wowchemy-hugo-modules/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;academic 主题&lt;/a&gt;控制使用哪种评论的文件是
+&lt;code&gt;wowchemy-hugo-modules/wowchemy/layouts/partials/comments.html&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;我们在项目路径下直接创建 &lt;code&gt;layouts/partials/comments.html&lt;/code&gt; 覆盖它的效果：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;{{ if index site.Params.comments.commentable .Type | and (ne .Params.commentable false) | or .Params.commentable }}
+&amp;lt;section id=&amp;quot;comments&amp;quot;&amp;gt;
+    {{ partial &amp;quot;comments/gitalk&amp;quot; . }}
+&amp;lt;/section&amp;gt;
+{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这样只要是能评论的页面，就都会在底部出现评论框了。&lt;/p&gt;
+&lt;h2 id=&#34;4-初始化-issue&#34;&gt;4. 初始化 issue&lt;/h2&gt;
+&lt;p&gt;配置完成后，本地启动验证一下，出现下图效果就说明已经基本成功了。&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://i.loli.net/2021/06/18/dbYk1IVvtjDqazP.jpg&#34; alt=&#34;本地效果&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;当然，你现在点开 &lt;code&gt;使用 GitHub 登录&lt;/code&gt; 是没用的，因为项目在你本地。&lt;/p&gt;
+&lt;p&gt;Gitalk 不会自动创建 issue，手动初始化的方式就是部署完，在页面登录 GitHub 然后挨个点开你所有文章。&lt;/p&gt;
+&lt;p&gt;自动化方式可以网上搜一下相关教程，基本都需要 node 环境，我这边打算写个 Python 的&amp;hellip;立个 Flag &lt;code&gt;_(:з」∠)_&lt;/code&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

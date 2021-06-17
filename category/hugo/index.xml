@@ -5,12 +5,132 @@
     <link>https://szthanatos.github.io/category/hugo/</link>
       <atom:link href="https://szthanatos.github.io/category/hugo/index.xml" rel="self" type="application/rss+xml" />
     <description>Hugo</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>zh-Hans</language><copyright>© 2021 szthanatos</copyright><lastBuildDate>Tue, 01 Jan 2019 12:54:29 +0800</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>zh-Hans</language><copyright>© 2021 szthanatos</copyright><lastBuildDate>Wed, 17 Jun 2020 23:21:08 +0800</lastBuildDate>
     <image>
       <url>https://szthanatos.github.io/media/icon_hu638af3a55c65206eddec4e3c4c13a753_187410_512x512_fill_lanczos_center_2.png</url>
       <title>Hugo</title>
       <link>https://szthanatos.github.io/category/hugo/</link>
     </image>
+    
+    <item>
+      <title>使用 Gitalk 作为 Academic 的评论插件</title>
+      <link>https://szthanatos.github.io/post/academic/gitalk_as_comments/</link>
+      <pubDate>Wed, 17 Jun 2020 23:21:08 +0800</pubDate>
+      <guid>https://szthanatos.github.io/post/academic/gitalk_as_comments/</guid>
+      <description>&lt;p&gt;Academic(Wowchemy) 作为我 GitHub Pages 博客主题，默认提供3种类型的评论(comments)插件：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Twitter——需要跳转到外部页面&lt;/li&gt;
+&lt;li&gt;Disqus——收费 or 广告&lt;/li&gt;
+&lt;li&gt;Commento——收费 or 自建&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;总之，都不完美。&lt;/p&gt;
+&lt;p&gt;所以我这边使用 &lt;a href=&#34;https://gitalk.github.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Gitalk&lt;/a&gt; ——一个基于 GitHub Issues 的开源评论系统，提供评论功能。&lt;/p&gt;
+&lt;p&gt;具体替换步骤如下：&lt;/p&gt;
+&lt;h2 id=&#34;0-开启评论功能&#34;&gt;0. 开启评论功能&lt;/h2&gt;
+&lt;p&gt;在项目 &lt;code&gt;config/_default/params.yaml&lt;/code&gt; 文件中，评论相关配置如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;comments:
+  provider: &#39;&#39;
+  commentable:
+    post: true
+    book: true
+    project: true
+    publication: true
+    event: true
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;1-获取-github-application-密钥对&#34;&gt;1. 获取 GitHub Application 密钥对&lt;/h2&gt;
+&lt;p&gt;点击链接 &lt;a href=&#34;https://github.com/settings/applications/new&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;创建 GitHub Application&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://i.loli.net/2021/06/17/vqWohkOplCwIx7N.png&#34; alt=&#34;创建 GitHub Application&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;保存好 &lt;code&gt;Client ID&lt;/code&gt; 和 &lt;code&gt;Client Secret&lt;/code&gt; 以待下一步使用。&lt;/p&gt;
+&lt;h2 id=&#34;2-创建-gitalk-插件&#34;&gt;2. 创建 Gitalk 插件&lt;/h2&gt;
+&lt;p&gt;创建 &lt;code&gt;gitalk.html&lt;/code&gt; 如下，放置到项目 &lt;code&gt;layouts/partials/comments/&lt;/code&gt; 目录下：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;div id=&amp;quot;gitalk-container&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+
+&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css&amp;quot;&amp;gt;
+&amp;lt;script src=&amp;quot;https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&amp;lt;script src=&amp;quot;https://cdn.jsdelivr.net/npm/blueimp-md5@2.18.0/js/md5.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&amp;lt;script&amp;gt;
+    var gitalk = new Gitalk({
+        clientID: &#39;【你的 Client ID】&#39;,
+        clientSecret: &#39;【你的 Client Secret】&#39;,
+        repo: &#39;【你的博客地址】&#39;,
+        owner: &#39;{{ .Site.Params.Gitalk.owner }}&#39;,   // GitHub repo 所有者
+        admin: [&#39;{{ .Site.Params.Gitalk.owner }}&#39;], // GitHub repo 所有者和合作者，对这个 repo 有写权限
+        id: md5(location.pathname),                 // 页面唯一标识，以 GitHub issue tag 形式存在
+        distractionFreeMode: false                  // 评论框的全屏遮罩效果
+    })
+    gitalk.render(&#39;gitalk-container&#39;)
+&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    注意这里使用的是 &lt;a href=&#34;https://cdn.jsdelivr.net&#34;&gt;jsdelivr&lt;/a&gt; 提供的 CDN 服务，你也可以选择更适合你情况的供应商。
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    &lt;p&gt;gitalk id 被设置为 MD5 化的 URL 的路径，这是因为 GitHub tag 限制长度不能超过50，如果路径过长会无法正确创建 issue；&lt;/p&gt;
+&lt;p&gt;不过这样会让 issue tag 都是一串串 MD5 码&amp;hellip;&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;3-覆盖原生评论插件&#34;&gt;3. 覆盖原生评论插件&lt;/h2&gt;
+&lt;p&gt;原生 &lt;a href=&#34;https://github.com/wowchemy/wowchemy-hugo-modules/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;academic 主题&lt;/a&gt;控制使用哪种评论的文件是
+&lt;code&gt;wowchemy-hugo-modules/wowchemy/layouts/partials/comments.html&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;我们在项目路径下直接创建 &lt;code&gt;layouts/partials/comments.html&lt;/code&gt; 覆盖它的效果：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;{{ if index site.Params.comments.commentable .Type | and (ne .Params.commentable false) | or .Params.commentable }}
+&amp;lt;section id=&amp;quot;comments&amp;quot;&amp;gt;
+    {{ partial &amp;quot;comments/gitalk&amp;quot; . }}
+&amp;lt;/section&amp;gt;
+{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这样只要是能评论的页面，就都会在底部出现评论框了。&lt;/p&gt;
+&lt;h2 id=&#34;4-初始化-issue&#34;&gt;4. 初始化 issue&lt;/h2&gt;
+&lt;p&gt;配置完成后，本地启动验证一下，出现下图效果就说明已经基本成功了。&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://i.loli.net/2021/06/18/dbYk1IVvtjDqazP.jpg&#34; alt=&#34;本地效果&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;当然，你现在点开 &lt;code&gt;使用 GitHub 登录&lt;/code&gt; 是没用的，因为项目在你本地。&lt;/p&gt;
+&lt;p&gt;Gitalk 不会自动创建 issue，手动初始化的方式就是部署完，在页面登录 GitHub 然后挨个点开你所有文章。&lt;/p&gt;
+&lt;p&gt;自动化方式可以网上搜一下相关教程，基本都需要 node 环境，我这边打算写个 Python 的&amp;hellip;立个 Flag &lt;code&gt;_(:з」∠)_&lt;/code&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>(翻译)Academic 文档 - 内容编写</title>
@@ -647,6 +767,396 @@ summary = &amp;quot;&amp;quot;  # Add a page description.
 &lt;p&gt;在你对站点做出修改之后，你可以通过执行 &lt;code&gt;hugo server&lt;/code&gt; 并在浏览器中打开 &lt;a href=&#34;http://localhost:1313/&#34;&gt;http://localhost:1313/&lt;/a&gt; 来看到效果。&lt;/p&gt;
 &lt;h2 id=&#34;部署站点&#34;&gt;部署站点&lt;/h2&gt;
 &lt;p&gt;最后，你可以 &lt;a href=&#34;https://sourcethemes.com/academic/docs/deployment/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;部署你的站点&lt;/a&gt; 了。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Academic 实现 Github Page 个人博客</title>
+      <link>https://szthanatos.github.io/post/academic/academic_in_practice/</link>
+      <pubDate>Sun, 09 Dec 2018 16:34:42 +0800</pubDate>
+      <guid>https://szthanatos.github.io/post/academic/academic_in_practice/</guid>
+      <description>&lt;details class=&#34;toc-inpage d-print-none  &#34; open&gt;
+  &lt;summary class=&#34;font-weight-bold&#34;&gt;目录&lt;/summary&gt;
+  &lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#hugo-安装--更新&#34;&gt;Hugo 安装 / 更新&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#安装--更新&#34;&gt;安装 / 更新&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#常用命令&#34;&gt;常用命令&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#academic-安装--更新&#34;&gt;Academic 安装 / 更新&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#通过-netlify&#34;&gt;通过 Netlify&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#通过-git&#34;&gt;通过 Git&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#部署到-github-pages&#34;&gt;部署到 Github Pages&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#原理&#34;&gt;原理&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#官方教程-缩减版&#34;&gt;官方教程 (缩减版)&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#脚本&#34;&gt;脚本&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#个性化配置&#34;&gt;个性化配置&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#configtoml-主要配置项解释&#34;&gt;config.toml 主要配置项解释&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#修改网站-logo&#34;&gt;修改网站 logo&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#给文章添加精选图&#34;&gt;给文章添加精选图&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#给文章添加头部背景&#34;&gt;给文章添加头部背景&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#目录&#34;&gt;目录&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#注意--警告标识&#34;&gt;注意 / 警告标识&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#消除短代码效果&#34;&gt;消除短代码效果&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#修改模板&#34;&gt;修改模板&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;/details&gt;
+&lt;h2 id=&#34;hugo-安装--更新&#34;&gt;Hugo 安装 / 更新&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://gohugo.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hugo&lt;/a&gt; 是使用 &lt;code&gt;Go&lt;/code&gt; 语言开发的静态站点生成器。不过无需准备 &lt;code&gt;Go&lt;/code&gt; 语言环境，可以直接通过二进制编译包进行跨平台部署。&lt;/p&gt;
+&lt;p&gt;以下均以 Ubuntu18.0 为例。&lt;/p&gt;
+&lt;h3 id=&#34;安装--更新&#34;&gt;安装 / 更新&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;前往 &lt;a href=&#34;https://github.com/gohugoio/hugo/releases&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Github 页面&lt;/a&gt; 下载最新版本，这里我们下载 &lt;code&gt;hugo_0.52_Linux-64bit.deb&lt;/code&gt;;&lt;/li&gt;
+&lt;li&gt;使用命令 &lt;code&gt;dpkg -i hugo_0.52_Linux-64bit.deb&lt;/code&gt; 安装 hugo;&lt;/li&gt;
+&lt;li&gt;更新即重复上面两步，覆盖安装即可;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;常用命令&#34;&gt;常用命令&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;hugo&lt;/code&gt;&lt;/strong&gt;： 编译项目生成静态网站，默认位置在项目的 &lt;code&gt;public&lt;/code&gt; 目录下&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;hugo server&lt;/code&gt;&lt;/strong&gt;： 启动你的网站服务，可以通过浏览器访问 &lt;code&gt;http://127.0.0.1:1313/&lt;/code&gt; 访问站点;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;hugo new {folder}/{name}.md&lt;/code&gt;&lt;/strong&gt;: 创建新文章，使用 &lt;code&gt;markdown&lt;/code&gt; 进行排版，一般默认放在 &lt;code&gt;post&lt;/code&gt; 文件夹下；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;基本没了，一般情况下用这三个命令就够了。&lt;/p&gt;
+&lt;h2 id=&#34;academic-安装--更新&#34;&gt;Academic 安装 / 更新&lt;/h2&gt;
+&lt;p&gt;Academic 是一个 Hugo 主题，从名字就可以知道这个主题比较学院派，适合科研 / 学术人员发布个人信息 / 介绍科研项目，当然，拿来做个人博客也是没问题的。&lt;/p&gt;
+&lt;h3 id=&#34;通过-netlify&#34;&gt;通过 Netlify&lt;/h3&gt;
+&lt;p&gt;Academic 推荐使用第三方博客管理平台 &lt;a href=&#34;https://app.netlify.com/start/deploy?repository=https://github.com/sourcethemes/academic-kickstart&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Netlify&lt;/a&gt; 安装，如果你没有域名或者没想建站，只是想自己使用，那我建议不使用它的服务——请直接跳到下一部分，否则跟随网站引导完成安装;&lt;/p&gt;
+&lt;h3 id=&#34;通过-git&#34;&gt;通过 Git&lt;/h3&gt;
+&lt;h4 id=&#34;安装&#34;&gt;安装&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;通过 git 安装的话，首先建议你在 GitHub 上 fork 成你自己的项目，默认的话，通过 &lt;code&gt;git clone https://github.com/sourcethemes/academic-kickstart.git My_Website&lt;/code&gt; 将代码克隆到本地文件夹 &lt;code&gt;My_Website&lt;/code&gt; &lt;em&gt;(当然，更推荐使用 ssh 协议，更安全，也免于 push 时输入密码，这里暂时按官方的来)&lt;/em&gt; ;&lt;/li&gt;
+&lt;li&gt;进入文件夹，初始化项目：&lt;code&gt;git submodule update --init --recursive&lt;/code&gt;，完成安装;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;自动更新&#34;&gt;自动更新&lt;/h4&gt;
+&lt;p&gt;说是自动，还是需要手动执行一条命令：&lt;code&gt;git submodule update --remote --merge&lt;/code&gt;;&lt;/p&gt;
+&lt;p&gt;这么做的前提条件是你是 &lt;code&gt;install&lt;/code&gt; 的，也就是 &lt;code&gt;git submodule update --init --recursive&lt;/code&gt; 过的，而不是直接把 &lt;code&gt;academic&lt;/code&gt; 给 clone 到 themes 文件夹。&lt;/p&gt;
+&lt;h4 id=&#34;手动更新&#34;&gt;手动更新&lt;/h4&gt;
+&lt;p&gt;如果是 clone 到 themes 文件夹的话要这么更新：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;cd themes/academic&lt;/code&gt;;&lt;/li&gt;
+&lt;li&gt;将 &lt;code&gt;origin&lt;/code&gt; 仓库重命名为 &lt;code&gt;upstream&lt;/code&gt;：&lt;code&gt;git remote rename origin upstream&lt;/code&gt;;&lt;/li&gt;
+&lt;li&gt;将更新下载到本地：&lt;code&gt;git fetch upstream&lt;/code&gt;;&lt;/li&gt;
+&lt;li&gt;列出可用更新：&lt;code&gt;git log --pretty=oneline --abbrev-commit --decorate HEAD..upstream/master&lt;/code&gt;;&lt;/li&gt;
+&lt;li&gt;更新：&lt;code&gt;git pull upstream&lt;/code&gt;;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;部署到-github-pages&#34;&gt;部署到 Github Pages&lt;/h2&gt;
+&lt;h3 id=&#34;原理&#34;&gt;原理&lt;/h3&gt;
+&lt;p&gt;网上介绍的办法很多，但核心其实就一句：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;将 &lt;code&gt;hugo&lt;/code&gt; 命令生成的 &lt;code&gt;public&lt;/code&gt; 文件夹上传到 GitHub pages 项目下&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;public&lt;/code&gt; 文件夹相当于编译完成的静态网站，你在本地打开其实就能看。换句话说，你每次手动将这个目录下的内容上传到你的 GitHub page 项目也是可以的。&lt;/p&gt;
+&lt;p&gt;然后为了达到这个目的，Academic 给出的做法是利用 &lt;code&gt;git submodule&lt;/code&gt; 将你的 &lt;code&gt;GitHub page&lt;/code&gt; 项目作为 &lt;code&gt;My_Website&lt;/code&gt; 项目的子模块存放到 &lt;code&gt;public&lt;/code&gt; 目录。那么当你更新你的文章之后，只提交 &lt;code&gt;public&lt;/code&gt; 文件夹内的变更到 &lt;code&gt;GitHub page&lt;/code&gt; 项目即可。&lt;/p&gt;
+&lt;h3 id=&#34;官方教程-缩减版&#34;&gt;官方教程 (缩减版)&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;&lt;a href=&#34;https://sourcethemes.com/academic/docs/deployment/#github-pages&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;原教程&lt;/a&gt; 看这里；&lt;/em&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;在 GitHub 上创建两个项目，一个是 fork 的 &lt;a href=&#34;https://github.com/sourcethemes/academic-kickstart.git&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;academic-kickstart&lt;/a&gt;，也就是你前面 clone 到本地的 &lt;code&gt;My_Website&lt;/code&gt;，另一个即是以你用户名 / 组织名开头、以 &lt;code&gt;.github.io&lt;/code&gt; 结尾的 GitHub page 项目。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在 &lt;code&gt;My_Website&lt;/code&gt; 目录下执行 &lt;code&gt;git submodule update --init --recursive&lt;/code&gt; 将子模块更新到最新状态；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;将 &lt;code&gt;config.toml&lt;/code&gt; 中的 &lt;code&gt;baseurl&lt;/code&gt; 设置为你的 GitHub page 地址；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;(实质)&lt;/strong&gt; 删除 &lt;code&gt;public&lt;/code&gt; 文件夹 (如果有的话)，将 GitHub page 项目添加为子模块：&lt;code&gt;git submodule add -f -b master https://github.com/&amp;lt;USERNAME&amp;gt;/&amp;lt;USERNAME&amp;gt;.github.io.git public&lt;/code&gt;;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;这时候你的 &lt;code&gt;My_Website&lt;/code&gt; 项目实际上有两个子模块：作为主题依赖的 &lt;code&gt;themes/academic&lt;/code&gt; 和作为网站的 &lt;code&gt;&amp;lt;USERNAME&amp;gt;.github.io&lt;/code&gt;；&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;有意思的是一般是子模块 &lt;code&gt;themes/academic&lt;/code&gt; 更新了之后，你更新主项目 &lt;code&gt;My_Website&lt;/code&gt; 的依赖；&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;而你更新主项目 &lt;code&gt;My_Website&lt;/code&gt; 的文章之后，再会手动的更新子模块 &lt;code&gt;&amp;lt;USERNAME&amp;gt;.github.io&lt;/code&gt;，刚好反过来。&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;新增 / 编辑文章后，更新 &lt;code&gt;academic-kickstart&lt;/code&gt; 项目：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git add .
+git commit -m &amp;quot;Initial commit&amp;quot;
+git push -u origin master
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;更新 GitHub page 项目：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;hugo
+cd public
+git add .
+git commit -m &amp;quot;Build website&amp;quot;
+git push origin master
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;实际上只有第六步是更新 GitHub page，每次重复执行这一部分就行 (如果你不把文章保存到 &lt;code&gt;academic-kickstart&lt;/code&gt; 的话)。&lt;/p&gt;
+&lt;h3 id=&#34;脚本&#34;&gt;脚本&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;Hugo&lt;/code&gt; 官方把上面步骤打包到了一个脚本：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;#!/bin/bash
+
+echo -e &amp;quot;\033[0;32mDeploying updates to GitHub...\033[0m&amp;quot;
+
+# Build the project.
+hugo # if using a theme, replace with `hugo -t &amp;lt;YOURTHEME&amp;gt;`
+
+# Go To Public folder
+cd public
+# Add changes to git.
+git add .
+
+# Commit changes.
+msg=&amp;quot;rebuilding site `date`&amp;quot;
+if [$# -eq 1]
+  then msg=&amp;quot;$1&amp;quot;
+fi
+git commit -m &amp;quot;$msg&amp;quot;
+
+# Push source and build repos.
+git push origin master
+
+# Come Back up to the Project Root
+cd ..
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;实际上我们干脆连第五步也放进去呗：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;#!/bin/bash
+# Receive args.
+if [$1 = &amp;quot;push&amp;quot;]; then
+    if [$# -eq 1]; then
+        TIME_NOW=$(date +%T\ %F)
+        MSG=&amp;quot;Change something nobody knows at ${TIME_NOW}...&amp;quot;
+        EDITED_FILE=&amp;quot;.&amp;quot;
+
+    elif [$# -eq 2]; then
+        MSG=&amp;quot;$2&amp;quot;
+        EDITED_FILE=&amp;quot;.&amp;quot;
+
+    elif [$# -gt 2]; then
+        MSG=&amp;quot;$2&amp;quot;
+        shift 2
+        EDITED_FILE=&amp;quot;$*&amp;quot;
+
+    else
+        echo &amp;quot;WTF?&amp;quot;
+
+    fi
+
+    echo &amp;quot;\033[0;32m
+    ---------------------------
+    Deploying to GitHub Page...
+    ---------------------------
+    \033[0m&amp;quot;
+
+    # Build the project.
+    hugo # if using a theme, replace with `hugo -t &amp;lt;YOURTHEME&amp;gt;`
+
+    # Go To Public folder
+    cd public
+
+    # Add changes to git.
+    git add .
+
+    # Commit changes.
+    git commit -m &amp;quot;$MSG&amp;quot;
+
+    # Push source and build repos.
+    git push origin master
+
+    # Come Back up to the Project Root
+    cd ..
+
+    echo &amp;quot;\033[0;32m
+    -----------------------------
+    Updating content to GitHub...
+    -----------------------------
+    \033[0m&amp;quot;
+
+    # Add changes to git.
+    git add $EDITED_FILE
+
+    # Commit changes.
+    git commit -m &amp;quot;$MSG&amp;quot;
+
+    # Push source and build repos.
+    git push origin master
+
+elif [$1 = &amp;quot;pull&amp;quot;]; then
+
+    # Update main repo.
+    git pull
+
+    # Update submodule.
+    git submodule update
+
+    echo &amp;quot;Synchronize finish.&amp;quot;
+
+else
+    echo &amp;quot;Determine What you wanna do.&amp;quot;
+
+fi
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;将脚本保存为 &lt;code&gt;deploy.sh&lt;/code&gt;，放到项目根目录下，完成修改后执行 &lt;code&gt;./deploy.sh&lt;/code&gt; + &lt;code&gt;pull&lt;/code&gt;/&lt;code&gt;push&lt;/code&gt; 一键从服务器同步 / 提交 + 部署。&lt;/p&gt;
+&lt;p&gt;参数的第一个是你要执行的动作，从远程服务器 down 到本地的话就是 &lt;code&gt;./deploy.sh pull&lt;/code&gt;，不用接别的。&lt;/p&gt;
+&lt;p&gt;如果是要将更新上传到服务器并部署，那就执行 &lt;code&gt;./deploy.sh push&lt;/code&gt; + commit message，提交消息可以不写 (但最好还是写一下)：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;./deploy.sh push &amp;quot;{Your optional commit message}&amp;quot;&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;如果修改了多个文件，只想提交其中的一部分文件以保持 commit 的纯净，那就在 mesaage 后面附加你要提交的文件路径 (不超过 10 个&amp;hellip;)：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;./deploy.sh push &amp;quot;{Your optional commit message}&amp;quot; path1 path2...&lt;/code&gt;。&lt;/p&gt;
+&lt;h2 id=&#34;个性化配置&#34;&gt;个性化配置&lt;/h2&gt;
+&lt;p&gt;项目目录结构大体如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;content 目录&lt;/code&gt;： 网站内容，&lt;code&gt;home&lt;/code&gt; 是你的主页的小控件，&lt;code&gt;post&lt;/code&gt; 是默认文章存放位置&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;public 目录&lt;/code&gt;： 生成的静态页面&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;resouces 目录&lt;/code&gt;： JS 资源存放位置&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;static 目录&lt;/code&gt;： 静态资源存放位置&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;themes 目录&lt;/code&gt;： 主题文件所在目录&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;config.toml&lt;/code&gt;: 全局配置文件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;configtoml-主要配置项解释&#34;&gt;config.toml 主要配置项解释&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;配置项&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;baseurl&lt;/td&gt;
+&lt;td&gt;你的站点的 url，不设置这个你的文章 / 资源可能相互引用不到&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;title&lt;/td&gt;
+&lt;td&gt;网站标题&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;defaultContentLanguage&lt;/td&gt;
+&lt;td&gt;默认语言，中文的话填 &lt;code&gt;zh&lt;/code&gt;，在文件末尾还有一处配置要同时修改才行&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;hasCJKLanguage&lt;/td&gt;
+&lt;td&gt;是否有中 / 日 / 韩语&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;defaultContentLanguageInSubdir&lt;/td&gt;
+&lt;td&gt;目录是否允许用默认语言，&lt;code&gt;true&lt;/code&gt; 就对了&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;highlight_languages&lt;/td&gt;
+&lt;td&gt;语法高亮，支持的语言可以去 &lt;a href=&#34;https://cdnjs.com/libraries/highlight.js/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;highlight.js&lt;/a&gt; 查到&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;[[menu.main]]&lt;/td&gt;
+&lt;td&gt;这部分是你主页上标题栏显示的内容，&lt;code&gt;url&lt;/code&gt; 默认和你 &lt;code&gt;content/home&lt;/code&gt; 下的文件名对应&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Languages&lt;/td&gt;
+&lt;td&gt;添加中文支持的话，把 &lt;code&gt;[languages.zh]&lt;/code&gt; 部分解除注释，&lt;code&gt;languageCode&lt;/code&gt; 写 &lt;code&gt;&amp;quot;zh-cn&amp;quot;&lt;/code&gt;，添加其他语种的话，相同格式再写一组 &lt;code&gt;[languages.XX]&lt;/code&gt; 即可，支持的语言代码可以在 &lt;code&gt;themes\academic\i18n&lt;/code&gt; 查看&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;修改网站-logo&#34;&gt;修改网站 logo&lt;/h3&gt;
+&lt;p&gt;默认的 logo 是 Academic 的蓝色学位帽，想替换的话将你想用的 logo 保存为
+&lt;code&gt;icon.png&lt;/code&gt;(默认 32&lt;em&gt;32 像素，大了也没关系)
+和 &lt;code&gt;icon-192.png&lt;/code&gt;(192&lt;/em&gt;192 像素)，并放到项目的 &lt;code&gt;static/img&lt;/code&gt; 目录下&lt;/p&gt;
+&lt;h3 id=&#34;给文章添加精选图&#34;&gt;给文章添加精选图&lt;/h3&gt;
+&lt;p&gt;这个图片只能添加一个，名字必须是 &lt;code&gt;featured.*&lt;/code&gt;(后缀 jpg/png 都行)，而且必须和文章放在同一个文件夹下。&lt;/p&gt;
+&lt;p&gt;所以一般做法是把文章 &lt;code&gt;aaa.md&lt;/code&gt; 改名为 &lt;code&gt;index.md&lt;/code&gt; 并新建一个 &lt;code&gt;aaa&lt;/code&gt; 目录，再和 &lt;code&gt;featured.png&lt;/code&gt; 图片一起扔进去。&lt;/p&gt;
+&lt;p&gt;显示的效果是在文章列表页，文章右侧有一个缩略图；打开文章，标题默认会居左，右边是精选图：&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://i.loli.net/2021/06/17/w9J1YNL7zDE26od.png&#34; alt=&#34;example&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h3 id=&#34;给文章添加头部背景&#34;&gt;给文章添加头部背景&lt;/h3&gt;
+&lt;p&gt;这个是文章头部的横跨整个页面的大图，也就是文章头部这个黑底白字的大图。&lt;/p&gt;
+&lt;p&gt;这个的图片可以放到 &lt;code&gt;static/img&lt;/code&gt; 目录下，不过需要在你文件的 &lt;code&gt;+++&lt;/code&gt; 的部分添加如下代码：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;[header]
+  image = &amp;quot;img 名称&amp;quot;
+  caption = &amp;quot;标题说明&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;顺便一提，文章内引用 &lt;code&gt;static/img&lt;/code&gt; 下存储的图像的话，路径大致如此 &lt;code&gt;![example](/media/image_abc.png)&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;目录&#34;&gt;目录&lt;/h3&gt;
+&lt;p&gt;使用 &lt;code&gt;{``{% toc %}}&lt;/code&gt; 加在文章的任何你想要的地方以自动生成目录&lt;/p&gt;
+&lt;h3 id=&#34;注意--警告标识&#34;&gt;注意 / 警告标识&lt;/h3&gt;
+&lt;p&gt;被 &lt;code&gt;{``{% alert note %}}&lt;/code&gt; 和 &lt;code&gt;{``{% /alert %}}&lt;/code&gt; 包裹起来的内容即为注意项：&lt;/p&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    注意内容 blabla
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;被 &lt;code&gt;{``{% alert warning %}}&lt;/code&gt; 和 &lt;code&gt;{``{% /alert %}}&lt;/code&gt; 包裹起来的内容即为警告项：&lt;/p&gt;
+&lt;div class=&#34;alert alert-warning&#34;&gt;
+  &lt;div&gt;
+    警告内容 blabla
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h3 id=&#34;消除短代码效果&#34;&gt;消除短代码效果&lt;/h3&gt;
+&lt;p&gt;Hugo 是基于 Go 的 Template，所以所有以 &lt;code&gt;{``{% %}}&lt;/code&gt; 或者 &lt;code&gt;{``{&amp;lt; &amp;gt;}}&lt;/code&gt; 包裹的内容都会被解析为短代码块，而无法直接显示其代码。
+那么我是怎么解决的呢，分情况：&lt;/p&gt;
+&lt;h4 id=&#34;单行代码&#34;&gt;单行代码&lt;/h4&gt;
+&lt;p&gt;你看到的 &lt;code&gt;{``{% toc %}}&lt;/code&gt; 实际是由 &lt;code&gt;`{`&lt;/code&gt; 和 &lt;code&gt;`{% toc %}}`&lt;/code&gt; 组成的。&lt;/p&gt;
+&lt;p&gt;而上面打出的 &lt;code&gt;`&lt;/code&gt; 其实是 &lt;code&gt;双反引号 空格 反引号 空格 双反引号&lt;/code&gt;，就不再嵌套了。。。&lt;/p&gt;
+&lt;h4 id=&#34;代码块&#34;&gt;代码块&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;{{&amp;lt; figure library=&amp;quot;1&amp;quot; src=&amp;quot;image.jpg&amp;quot; title=&amp;quot;A caption&amp;quot; &amp;gt;}}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;的本质是将 &amp;lt;&amp;gt; 或者 %% 内的内容用 /**/ 注释掉：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;{``{&amp;lt;/* figure library=&amp;quot;1&amp;quot; src=&amp;quot;image.jpg&amp;quot; title=&amp;quot;A caption&amp;quot; */&amp;gt;}}&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    谁知道 Markdown 的代码块怎么嵌套&amp;hellip;
+比如外层一个 markdown 的代码块，
+里面要显示包含反引号格式的 python 代码块&amp;hellip;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h3 id=&#34;修改模板&#34;&gt;修改模板&lt;/h3&gt;
+&lt;p&gt;比如你看到我每个文章结尾都有一个 &lt;a href=&#34;http://creativecommons.org/licenses/by-sa/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;CC4.0 协议&lt;/code&gt;&lt;/a&gt; 的标志，这个肯定不是一篇篇手动添加的，实际上我是自己写了一个 License 的 Widget，插入到文章的模板里面实现的。&lt;/p&gt;
+&lt;div class=&#34;alert alert-warning&#34;&gt;
+  &lt;div&gt;
+    不要直接修改 &lt;code&gt;theme&lt;/code&gt; 里面的内容，否则更新主题的时候会非常尴尬。
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;正确的做法是在项目根目录建立 &lt;code&gt;layouts&lt;/code&gt; 文件夹，将你想修改的模板从 &lt;code&gt;themes/academic/layouts&lt;/code&gt; 拷贝过来再修改。&lt;/p&gt;
+&lt;p&gt;现在 Academic 主题的 layouts 大概是这样的：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;_default&lt;/code&gt;: 默认文章相关模板；&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;docs&lt;/code&gt;: 文档相关模板;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;home&lt;/code&gt;: 主页相关模板;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;partials&lt;/code&gt;: 小部件相关模板，页面头部 / 脚注 / 摘要等等的都在这;
+&lt;ul&gt;
+&lt;li&gt;额外的有一个 &lt;code&gt;widgets&lt;/code&gt; 文件夹，里面是主页的 widget 的模板；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;project&lt;/code&gt;: 项目相关模板;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;publication&lt;/code&gt;: 出版物相关模板;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;section&lt;/code&gt;: 摘要相关模板;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;shortcodes&lt;/code&gt;: Academic 提供的额外效果模板，你写的所有 &lt;code&gt;{``{%%}}&lt;/code&gt; 的内容效果都出自这里;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;slides&lt;/code&gt;: 幻灯片相关模板;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;talk&lt;/code&gt;: 宣讲相关模板;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;继续用我自己做例子，我新建了 &lt;code&gt;layouts/partials/license.html&lt;/code&gt;，把 CC 协议相关内容存了进去，
+接着，复制主题目录下的 &lt;code&gt;layouts/_default/single.html&lt;/code&gt; 到对应位置，在合适地方插入一句 &lt;code&gt;{{partial &amp;quot;license.html&amp;quot; .}}&lt;/code&gt;，表明我要在这里使用名为 &lt;code&gt;license.html&lt;/code&gt; 的 &lt;code&gt;partial&lt;/code&gt;。
+再之后就是你们看到的效果了。&lt;/p&gt;
 </description>
     </item>
     
