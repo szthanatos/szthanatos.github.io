@@ -43,6 +43,8 @@
 
 
 
+
+
   
 
 
@@ -68,9 +70,9 @@
   
     
     
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous" media="print" onload="this.media='all'">
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous" media="print" onload="this.media='all'">
 
     
     
@@ -798,13 +800,53 @@
 <blockquote>
 <p>WSL 2 是适用于 Linux 的 Windows 子系统体系结构的一个新版本，它支持适用于 Linux 的 Windows 子系统在 Windows 上运行 ELF64 Linux 二进制文件。 它的主要目标是提高文件系统性能，以及添加完全的系统调用兼容性。</p>
 </blockquote>
-<p><img src="https://raw.githubusercontent.com/szthanatos/image-host/master/wsl1-vs-wsl2.png?token=AAZJE7LDWNNOLQZEFZE54BC7ID77W" alt="wsl1 vs wsl2"></p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="https://i.loli.net/2021/06/17/zHdkqBjmfw6sbUr.png" alt="wsl1 vs wsl2" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
 <p>wsl1 其实感觉速度更快，和 windows 共享网络，而且没有文件系统的限制。</p>
 <p>然而 wsl1 不是完整 Linux 内核，不支持 Docker。如果你只是要一个 Linux 环境可以考虑使用 wsl1 。</p>
 <h2 id="安装">安装</h2>
 <h3 id="启用-windows-subsystem-linux">启用 Windows-Subsystem-Linux</h3>
 <p>在 <code>控制面板</code>-<code>程序</code>-  <code>启用或关闭 Windows 功能</code> 中勾选 <code>适用于 Linux 的 Windows 子系统</code> 以及 <code>虚拟机平台</code>(wsl2 需要)</p>
-<p><img src="https://raw.githubusercontent.com/szthanatos/image-host/master/enable-wsl2.png" alt="启用 wsl2"></p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="https://i.loli.net/2021/06/17/NOw3m5flE8Fd62C.png" alt="启用 wsl2" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
 <p>或者通过命令行（管理员身份）执行：</p>
 <pre><code class="language-powershell"># 适用于 Linux 的 Windows 子系统
 dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
@@ -848,7 +890,27 @@ wsl --set-version &lt;distribution name&gt; &lt;versionNumber&gt;
 </ul>
 <p>下载完成后，点击图标进入，首次使用会需要几分钟执行安装。</p>
 <p>完成安装后，设置 Ubuntu 用户名（非 root）及密码，正式开启 Ubuntu 系统。</p>
-<p><img src="https://docs.microsoft.com/zh-cn/windows/wsl/media/ubuntuinstall.png" alt="安装"></p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="https://docs.microsoft.com/zh-cn/windows/wsl/media/ubuntuinstall.png" alt="安装" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
 <h2 id="移动安装位置可选">移动安装位置（可选）</h2>
 <p>目前 WSL 不支持设置安装路径，使用一段时间后体积会膨胀到 10G+ ，可以通过开源工具 <a href="https://github.com/DDoSolitary/LxRunOffline" target="_blank" rel="noopener">LxRunOffline</a> 实现将 Linux 安装到任意位置，或者将现有 Linux 子系统移动到任意位置。</p>
 <h3 id="安装-lxrunoffline">安装 LxRunOffline</h3>

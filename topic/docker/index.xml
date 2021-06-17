@@ -22,8 +22,48 @@
 &lt;p&gt;Docker 最初是 dotCloud 公司创始人 Solomon Hykes 在法国期间发起的一个公司内部项目，并于 2013 年 3 月以 Apache 2.0 授权协议开源，主要项目代码在 &lt;a href=&#34;https://github.com/moby/moby&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub&lt;/a&gt; 上进行维护，后来还加入了 Linux 基金会，并成立推动 &lt;a href=&#34;https://www.opencontainers.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;开放容器联盟（OCI）&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;Docker 最初是在 Ubuntu 12.04 上以 &lt;a href=&#34;https://golang.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Go 语言&lt;/a&gt; 进行开发实现的, Red Hat 则从 RHEL 6.5 开始对 Docker 进行支持 (换句话说不支持 CentOS6.5 以下)。&lt;/p&gt;
 &lt;p&gt;Docker 是一种 &lt;strong&gt;容器化技术&lt;/strong&gt; ，类似虚拟机的概念，但不同的是传统虚拟机是在虚拟硬件的基础上，完整模拟一整个操作系统，而 Docker 是以单个应用（容器）为单位进行虚拟。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://szthanatos.github.io/media/virtualization.png&#34; alt=&#34;传统虚拟化&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://szthanatos.github.io/media/docker.png&#34; alt=&#34;Docker&#34;&gt;&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://i.loli.net/2021/06/17/PFhKS4M68AO7BVQ.png&#34; alt=&#34;传统虚拟化&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://i.loli.net/2021/06/17/a2Hp1ZVJoIA4Ocv.png&#34; alt=&#34;Docker&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
 &lt;h3 id=&#34;docker-特点&#34;&gt;Docker 特点&lt;/h3&gt;
 &lt;p&gt;Docker 具有以下特点：&lt;/p&gt;
 &lt;ul&gt;
@@ -104,7 +144,27 @@
 &lt;p&gt;类似 git 和 GitHub，官方提供 &lt;a href=&#34;https://hub.docker.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Docker Hub&lt;/a&gt;，作为默认的 Registry。用户也可以在本地搭建私有 Docker Registry。Docker 官方提供了 &lt;a href=&#34;https://store.docker.com/images/registry/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Docker Registry&lt;/a&gt; 镜像，可以直接使用做为私有 Registry 服务。&lt;/p&gt;
 &lt;h3 id=&#34;生命周期&#34;&gt;生命周期&lt;/h3&gt;
 &lt;p&gt;结合上面的概念，这里有一张图比较好的概括了整个 Docker 工作的生命周期（以及主要命令）。
-&lt;img src=&#34;https://szthanatos.github.io/media/period.png&#34; alt=&#34;生命周期&#34;&gt;&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://i.loli.net/2021/06/17/RIZ3S8jPrgBo5ve.png&#34; alt=&#34;生命周期&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
 &lt;h2 id=&#34;安装配置&#34;&gt;安装配置&lt;/h2&gt;
 &lt;p&gt;这里仅以 CentOS 安装 Docker CE 举例说明。详见 &lt;a href=&#34;https://docs.docker.com/engine/installation/linux/docker-ce/centos/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Docker 官方 CentOS 安装文档&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;准备工作&#34;&gt;准备工作&lt;/h3&gt;
@@ -226,7 +286,27 @@ sudo service docker start|stop
 &lt;h2 id=&#34;使用镜像&#34;&gt;使用镜像&lt;/h2&gt;
 &lt;h3 id=&#34;基本操作&#34;&gt;基本操作&lt;/h3&gt;
 &lt;p&gt;以 redis 为例，我们从 &lt;a href=&#34;https://hub.docker.com/explore/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Docker Hub&lt;/a&gt; 上获取官方镜像到本地：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://szthanatos.github.io/media/hub-redis.jpg&#34; alt=&#34;Docker hub redis&#34;&gt;&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://i.loli.net/2021/06/17/rxgkEdmeJuSHX38.jpg&#34; alt=&#34;Docker hub redis&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;docker pull redis
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;em&gt;ps1：&lt;/em&gt; 由于 redis 是官方源（Official），否则应该写完整的两段式仓库名 &lt;code&gt;&amp;lt;用户名&amp;gt;/&amp;lt; 软件名 &amp;gt;&lt;/code&gt;，例如 bitnami/redis。&lt;/p&gt;
@@ -457,7 +537,27 @@ docker volume inspect my-vol
 &lt;p&gt;挂载单独文件的方法类似。&lt;/p&gt;
 &lt;p&gt;需要注意，本地目录必须存在，否则会报错。&lt;/p&gt;
 &lt;h4 id=&#34;区别&#34;&gt;区别&lt;/h4&gt;
-&lt;p&gt;&lt;img src=&#34;https://szthanatos.github.io/media/types-of-mounts-volume.png&#34; alt=&#34;types of mounts volume&#34;&gt;&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://i.loli.net/2021/06/17/RdvIuVZhr6Jc5ax.png&#34; alt=&#34;types of mounts volume&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
 &lt;p&gt;Volumes 是由 Docker 创建和管理，存储在宿主机固定位置（在 linux 上是 / var/lib/docker/volumes/）。 &lt;strong&gt;非 Docker 应用程序不能改动这一位置的数据。&lt;/strong&gt; 一个数据卷可以同时被挂载到几个容器中。即使没有正在运行的容器使用这个数据卷，它依然不会清除。可以通过 &lt;code&gt;docker volume prune&lt;/code&gt; 清除不再使用的数据卷。&lt;/p&gt;
 &lt;p&gt;Bind mounts 的数据可以存放在宿主机的任何地方。 &lt;strong&gt;非 Docker 应用程序可以改变这些数据。&lt;/strong&gt;&lt;/p&gt;
 &lt;h3 id=&#34;使用网络&#34;&gt;使用网络&lt;/h3&gt;

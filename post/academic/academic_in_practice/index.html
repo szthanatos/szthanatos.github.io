@@ -43,6 +43,8 @@
 
 
 
+
+
   
 
 
@@ -68,9 +70,9 @@
   
     
     
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous" media="print" onload="this.media='all'">
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous" media="print" onload="this.media='all'">
 
     
     
@@ -291,16 +293,15 @@
   
   
     
-    
   
   
-  <meta property="twitter:card" content="summary" />
+  <meta property="twitter:card" content="summary_large_image" />
   
   <meta property="og:site_name" content="Kryptonite Lab" />
   <meta property="og:url" content="https://szthanatos.github.io/post/academic/academic_in_practice/" />
   <meta property="og:title" content="Academic 实现 Github Page 个人博客 | Kryptonite Lab" />
-  <meta property="og:description" content="目录 Hugo 安装 / 更新 安装 / 更新 常用命令 Academic 安装 / 更新 通过 Netlify 通过 Git 部" /><meta property="og:image" content="https://szthanatos.github.io/media/icon_hu638af3a55c65206eddec4e3c4c13a753_187410_512x512_fill_lanczos_center_2.png" />
-    <meta property="twitter:image" content="https://szthanatos.github.io/media/icon_hu638af3a55c65206eddec4e3c4c13a753_187410_512x512_fill_lanczos_center_2.png" /><meta property="og:locale" content="zh-Hans" />
+  <meta property="og:description" content="目录 Hugo 安装 / 更新 安装 / 更新 常用命令 Academic 安装 / 更新 通过 Netlify 通过 Git 部" /><meta property="og:image" content="https://szthanatos.github.io/post/academic/academic_in_practice/featured.jpg" />
+    <meta property="twitter:image" content="https://szthanatos.github.io/post/academic/academic_in_practice/featured.jpg" /><meta property="og:locale" content="zh-Hans" />
   
     
       <meta
@@ -335,6 +336,10 @@
     "@id": "https://szthanatos.github.io/post/academic/academic_in_practice/"
   },
   "headline": "Academic 实现 Github Page 个人博客",
+  
+  "image": [
+    "https://szthanatos.github.io/post/academic/academic_in_practice/featured.jpg"
+  ],
   
   "datePublished": "2018-12-09T16:34:42+08:00",
   "dateModified": "2018-12-09T16:34:42+08:00",
@@ -372,7 +377,7 @@
 </head>
 
 
-<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="698f7fbd0cc48ca529327ed5a4c640db" >
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="ffd2553692f145fd7a9a258d87788f48" >
 
   
   
@@ -631,18 +636,26 @@
 
 
 
-  
+
+
+
+
+
+
+
 
   
   
+    
   
+
+
 <div class="article-container pt-3">
   <h1>Academic 实现 Github Page 个人博客</h1>
 
   
 
   
-    
 
 
 <div class="article-metadata">
@@ -681,13 +694,20 @@
 
 </div>
 
-    
-
-
-
-
-
   
+
+
+
+
+
+</div>
+
+
+<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 240px;">
+  <div style="position: relative">
+    <img src="/post/academic/academic_in_practice/featured_hue3883ceaac1db3bbe95267c3ad443863_32462_720x0_resize_q75_lanczos.jpg" alt="" class="featured-image">
+    
+  </div>
 </div>
 
 
@@ -987,7 +1007,27 @@ fi
 <p>这个图片只能添加一个，名字必须是 <code>featured.*</code>(后缀 jpg/png 都行)，而且必须和文章放在同一个文件夹下。</p>
 <p>所以一般做法是把文章 <code>aaa.md</code> 改名为 <code>index.md</code> 并新建一个 <code>aaa</code> 目录，再和 <code>featured.png</code> 图片一起扔进去。</p>
 <p>显示的效果是在文章列表页，文章右侧有一个缩略图；打开文章，标题默认会居左，右边是精选图：</p>
-<p><img src="/media/featured_image_example.png" alt="example"></p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="https://i.loli.net/2021/06/17/w9J1YNL7zDE26od.png" alt="example" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
 <h3 id="给文章添加头部背景">给文章添加头部背景</h3>
 <p>这个是文章头部的横跨整个页面的大图，也就是文章头部这个黑底白字的大图。</p>
 <p>这个的图片可以放到 <code>static/img</code> 目录下，不过需要在你文件的 <code>+++</code> 的部分添加如下代码：</p>
@@ -1070,6 +1110,8 @@ fi
 <div class="article-tags">
   
   <a class="badge badge-light" href="/tag/hugo/">Hugo</a>
+  
+  <a class="badge badge-light" href="/tag/academic/">Academic</a>
   
 </div>
 

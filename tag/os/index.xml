@@ -74,7 +74,27 @@
 &lt;p&gt;简单的来说，当我们开始使用容器化的方式来管理应用和服务的时候，我们自然而然的会发现，我们对操作系统其实没什么需求了
 ——环境依赖和工具链由镜像提供，GUI 界面或者浏览器毫无作用，系统内置的各种工具也就是启动一个容器的事&amp;hellip;&lt;/p&gt;
 &lt;p&gt;把这些七七八八的都去掉，最后剩下：一个 Linux 内核 + Docker 环境 + 精简但是统一的配置管理 = RancherOS&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://szthanatos.github.io/media/rancheroshowitworks.png&#34; alt=&#34;RancherOS 架构&#34;&gt;&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://i.loli.net/2021/06/17/AZIUHLks7Jm1Mqc.png&#34; alt=&#34;RancherOS 架构&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
 &lt;p&gt;RancherOS 的架构也非常简单，除了内核，就是两个 Docker。&lt;/p&gt;
 &lt;p&gt;一个系统级的 Docker(&lt;code&gt;system-docker&lt;/code&gt;) 接管了系统的绝大部分功能，比如在一般 Linux 上你会用 &lt;code&gt;systemctl restart&lt;/code&gt; 重启服务，在这里就是用 &lt;code&gt;system-docker restart&lt;/code&gt; 重启一个容器了。&lt;/p&gt;
 &lt;p&gt;用户级别的 Docker 也作为一个服务运行在 &lt;code&gt;system-docker&lt;/code&gt; 之上，也就是我们一般意义上跑应用的 docker，正常使用。&lt;/p&gt;

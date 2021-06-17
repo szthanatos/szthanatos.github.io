@@ -22,8 +22,48 @@
 &lt;p&gt;Docker 最初是 dotCloud 公司创始人 Solomon Hykes 在法国期间发起的一个公司内部项目，并于 2013 年 3 月以 Apache 2.0 授权协议开源，主要项目代码在 &lt;a href=&#34;https://github.com/moby/moby&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub&lt;/a&gt; 上进行维护，后来还加入了 Linux 基金会，并成立推动 &lt;a href=&#34;https://www.opencontainers.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;开放容器联盟（OCI）&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;Docker 最初是在 Ubuntu 12.04 上以 &lt;a href=&#34;https://golang.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Go 语言&lt;/a&gt; 进行开发实现的, Red Hat 则从 RHEL 6.5 开始对 Docker 进行支持 (换句话说不支持 CentOS6.5 以下)。&lt;/p&gt;
 &lt;p&gt;Docker 是一种 &lt;strong&gt;容器化技术&lt;/strong&gt; ，类似虚拟机的概念，但不同的是传统虚拟机是在虚拟硬件的基础上，完整模拟一整个操作系统，而 Docker 是以单个应用（容器）为单位进行虚拟。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://szthanatos.github.io/media/virtualization.png&#34; alt=&#34;传统虚拟化&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://szthanatos.github.io/media/docker.png&#34; alt=&#34;Docker&#34;&gt;&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://i.loli.net/2021/06/17/PFhKS4M68AO7BVQ.png&#34; alt=&#34;传统虚拟化&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://i.loli.net/2021/06/17/a2Hp1ZVJoIA4Ocv.png&#34; alt=&#34;Docker&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
 &lt;h3 id=&#34;docker-特点&#34;&gt;Docker 特点&lt;/h3&gt;
 &lt;p&gt;Docker 具有以下特点：&lt;/p&gt;
 &lt;ul&gt;
@@ -104,7 +144,27 @@
 &lt;p&gt;类似 git 和 GitHub，官方提供 &lt;a href=&#34;https://hub.docker.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Docker Hub&lt;/a&gt;，作为默认的 Registry。用户也可以在本地搭建私有 Docker Registry。Docker 官方提供了 &lt;a href=&#34;https://store.docker.com/images/registry/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Docker Registry&lt;/a&gt; 镜像，可以直接使用做为私有 Registry 服务。&lt;/p&gt;
 &lt;h3 id=&#34;生命周期&#34;&gt;生命周期&lt;/h3&gt;
 &lt;p&gt;结合上面的概念，这里有一张图比较好的概括了整个 Docker 工作的生命周期（以及主要命令）。
-&lt;img src=&#34;https://szthanatos.github.io/media/period.png&#34; alt=&#34;生命周期&#34;&gt;&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://i.loli.net/2021/06/17/RIZ3S8jPrgBo5ve.png&#34; alt=&#34;生命周期&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
 &lt;h2 id=&#34;安装配置&#34;&gt;安装配置&lt;/h2&gt;
 &lt;p&gt;这里仅以 CentOS 安装 Docker CE 举例说明。详见 &lt;a href=&#34;https://docs.docker.com/engine/installation/linux/docker-ce/centos/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Docker 官方 CentOS 安装文档&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;准备工作&#34;&gt;准备工作&lt;/h3&gt;
@@ -226,7 +286,27 @@ sudo service docker start|stop
 &lt;h2 id=&#34;使用镜像&#34;&gt;使用镜像&lt;/h2&gt;
 &lt;h3 id=&#34;基本操作&#34;&gt;基本操作&lt;/h3&gt;
 &lt;p&gt;以 redis 为例，我们从 &lt;a href=&#34;https://hub.docker.com/explore/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Docker Hub&lt;/a&gt; 上获取官方镜像到本地：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://szthanatos.github.io/media/hub-redis.jpg&#34; alt=&#34;Docker hub redis&#34;&gt;&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://i.loli.net/2021/06/17/rxgkEdmeJuSHX38.jpg&#34; alt=&#34;Docker hub redis&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;docker pull redis
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;em&gt;ps1：&lt;/em&gt; 由于 redis 是官方源（Official），否则应该写完整的两段式仓库名 &lt;code&gt;&amp;lt;用户名&amp;gt;/&amp;lt; 软件名 &amp;gt;&lt;/code&gt;，例如 bitnami/redis。&lt;/p&gt;
@@ -457,7 +537,27 @@ docker volume inspect my-vol
 &lt;p&gt;挂载单独文件的方法类似。&lt;/p&gt;
 &lt;p&gt;需要注意，本地目录必须存在，否则会报错。&lt;/p&gt;
 &lt;h4 id=&#34;区别&#34;&gt;区别&lt;/h4&gt;
-&lt;p&gt;&lt;img src=&#34;https://szthanatos.github.io/media/types-of-mounts-volume.png&#34; alt=&#34;types of mounts volume&#34;&gt;&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://i.loli.net/2021/06/17/RdvIuVZhr6Jc5ax.png&#34; alt=&#34;types of mounts volume&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
 &lt;p&gt;Volumes 是由 Docker 创建和管理，存储在宿主机固定位置（在 linux 上是 / var/lib/docker/volumes/）。 &lt;strong&gt;非 Docker 应用程序不能改动这一位置的数据。&lt;/strong&gt; 一个数据卷可以同时被挂载到几个容器中。即使没有正在运行的容器使用这个数据卷，它依然不会清除。可以通过 &lt;code&gt;docker volume prune&lt;/code&gt; 清除不再使用的数据卷。&lt;/p&gt;
 &lt;p&gt;Bind mounts 的数据可以存放在宿主机的任何地方。 &lt;strong&gt;非 Docker 应用程序可以改变这些数据。&lt;/strong&gt;&lt;/p&gt;
 &lt;h3 id=&#34;使用网络&#34;&gt;使用网络&lt;/h3&gt;
@@ -531,13 +631,53 @@ docker run -it \
 &lt;blockquote&gt;
 &lt;p&gt;WSL 2 是适用于 Linux 的 Windows 子系统体系结构的一个新版本，它支持适用于 Linux 的 Windows 子系统在 Windows 上运行 ELF64 Linux 二进制文件。 它的主要目标是提高文件系统性能，以及添加完全的系统调用兼容性。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/szthanatos/image-host/master/wsl1-vs-wsl2.png?token=AAZJE7LDWNNOLQZEFZE54BC7ID77W&#34; alt=&#34;wsl1 vs wsl2&#34;&gt;&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://i.loli.net/2021/06/17/zHdkqBjmfw6sbUr.png&#34; alt=&#34;wsl1 vs wsl2&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
 &lt;p&gt;wsl1 其实感觉速度更快，和 windows 共享网络，而且没有文件系统的限制。&lt;/p&gt;
 &lt;p&gt;然而 wsl1 不是完整 Linux 内核，不支持 Docker。如果你只是要一个 Linux 环境可以考虑使用 wsl1 。&lt;/p&gt;
 &lt;h2 id=&#34;安装&#34;&gt;安装&lt;/h2&gt;
 &lt;h3 id=&#34;启用-windows-subsystem-linux&#34;&gt;启用 Windows-Subsystem-Linux&lt;/h3&gt;
 &lt;p&gt;在 &lt;code&gt;控制面板&lt;/code&gt;-&lt;code&gt;程序&lt;/code&gt;-  &lt;code&gt;启用或关闭 Windows 功能&lt;/code&gt; 中勾选 &lt;code&gt;适用于 Linux 的 Windows 子系统&lt;/code&gt; 以及 &lt;code&gt;虚拟机平台&lt;/code&gt;(wsl2 需要)&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/szthanatos/image-host/master/enable-wsl2.png&#34; alt=&#34;启用 wsl2&#34;&gt;&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://i.loli.net/2021/06/17/NOw3m5flE8Fd62C.png&#34; alt=&#34;启用 wsl2&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
 &lt;p&gt;或者通过命令行（管理员身份）执行：&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-powershell&#34;&gt;# 适用于 Linux 的 Windows 子系统
 dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
@@ -581,7 +721,27 @@ wsl --set-version &amp;lt;distribution name&amp;gt; &amp;lt;versionNumber&amp;gt
 &lt;/ul&gt;
 &lt;p&gt;下载完成后，点击图标进入，首次使用会需要几分钟执行安装。&lt;/p&gt;
 &lt;p&gt;完成安装后，设置 Ubuntu 用户名（非 root）及密码，正式开启 Ubuntu 系统。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://docs.microsoft.com/zh-cn/windows/wsl/media/ubuntuinstall.png&#34; alt=&#34;安装&#34;&gt;&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://docs.microsoft.com/zh-cn/windows/wsl/media/ubuntuinstall.png&#34; alt=&#34;安装&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
 &lt;h2 id=&#34;移动安装位置可选&#34;&gt;移动安装位置（可选）&lt;/h2&gt;
 &lt;p&gt;目前 WSL 不支持设置安装路径，使用一段时间后体积会膨胀到 10G+ ，可以通过开源工具 &lt;a href=&#34;https://github.com/DDoSolitary/LxRunOffline&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LxRunOffline&lt;/a&gt; 实现将 Linux 安装到任意位置，或者将现有 Linux 子系统移动到任意位置。&lt;/p&gt;
 &lt;h3 id=&#34;安装-lxrunoffline&#34;&gt;安装 LxRunOffline&lt;/h3&gt;
@@ -843,7 +1003,27 @@ echo 212992 &amp;gt;&amp;gt; /proc/sys/net/core/rmem_max
       <pubDate>Sat, 22 Aug 2020 16:41:01 +0800</pubDate>
       <guid>https://szthanatos.github.io/topic/wsl2/coding_with_wsl2_02/</guid>
       <description>&lt;p&gt;介绍就两个字，&lt;strong&gt;颜值&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/szthanatos/image-host/master/windows-terminal.PNG&#34; alt=&#34;颜值&#34;&gt;&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://i.loli.net/2021/06/17/rZRdWo21TfsFDvz.jpg&#34; alt=&#34;颜值&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
 &lt;p&gt;安装方式同样是 &lt;a href=&#34;https://aka.ms/wslstore&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Microsoft Store&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;默认可以使用 &lt;code&gt;win+r&lt;/code&gt; 输入 &lt;code&gt;wt&lt;/code&gt; 呼出。&lt;/p&gt;
 &lt;p&gt;个人使用配置如下，版本号 &lt;code&gt;1.1.2233.0&lt;/code&gt;&lt;/p&gt;
@@ -1400,7 +1580,27 @@ sudo service ssh restart
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;在 windows 搜索栏搜索 &lt;code&gt;计划任务&lt;/code&gt;，或者快速运行窗口输入 &lt;code&gt;taskschd.msc&lt;/code&gt;，打开任务计划程序&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/szthanatos/image-host/master/task-scheduler.png&#34; alt=&#34;计划任务&#34;&gt;&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://i.loli.net/2021/06/17/U6citdO2upQAW4R.png&#34; alt=&#34;计划任务&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;创建任务，勾选 &lt;code&gt;隐藏&lt;/code&gt;，配置改为 win10&lt;/p&gt;
@@ -1446,7 +1646,27 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 git clone git://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;从 win10 下载并安装以下字体，以获得 powerlevel10k 主题更好的显示效果：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/romkatv/powerlevel10k-media/master/prompt-styles-high-contrast.png&#34; alt=&#34;powerlevel10k&#34;&gt;&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://raw.githubusercontent.com/romkatv/powerlevel10k-media/master/prompt-styles-high-contrast.png&#34; alt=&#34;powerlevel10k&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;MesloLGS NF Regular.ttf&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;MesloLGS NF Bold.ttf&lt;/a&gt;&lt;/li&gt;
@@ -1490,7 +1710,27 @@ export TERM=&amp;quot;xterm-256color&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;输入 &lt;code&gt;source .zshrc&lt;/code&gt; 让配置生效，&lt;/p&gt;
 &lt;p&gt;输入 &lt;code&gt;p10k configure&lt;/code&gt; 配置 Powerlevel10k 主题设置。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/romkatv/powerlevel10k-media/master/configuration-wizard.gif&#34; alt=&#34;p10k configure&#34;&gt;&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://raw.githubusercontent.com/romkatv/powerlevel10k-media/master/configuration-wizard.gif&#34; alt=&#34;p10k configure&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
 &lt;p&gt;完成后，拷贝 &lt;code&gt;.zshrc&lt;/code&gt; 和 &lt;code&gt;.p10k.zsh&lt;/code&gt; 文件到 root 用户根目录下，让 root 也使用相同配置，当然也可以分别设置。&lt;/p&gt;
 &lt;h2 id=&#34;一键启用--停用代理&#34;&gt;一键启用 / 停用代理&lt;/h2&gt;
 &lt;p&gt;Linux 下配置代理本来就略麻烦，Wsl2 又是完整的虚拟机，每次重启内部网络都会重新生成&amp;hellip; 换句话说每次 Windows 和 Linux 的内网 IP 都在变化&amp;hellip;&lt;/p&gt;
@@ -1761,7 +2001,27 @@ ruby setup.rb
 &lt;p&gt;tmux 就是解决这个问题的工具，它可以让你的终端 (Terminal) 给复用 (mux) 了，在一次连接里面做无数多件不同的事情。&lt;/p&gt;
 &lt;p&gt;Ubuntu 自带 Tmux，无需额外安装。&lt;/p&gt;
 &lt;h2 id=&#34;概念&#34;&gt;概念&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/szthanatos/image-host/master/tmux.jpg&#34; alt=&#34;tmux&#34;&gt;&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://i.loli.net/2021/06/17/Yc5AbRow7niOevt.jpg&#34; alt=&#34;tmux&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
 &lt;p&gt;Tmux 有这么几个概念：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Session：输入 tmux 后就创建了一个会话，一个会话是一组窗体的集合。&lt;/li&gt;
@@ -1939,7 +2199,27 @@ pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;pycharm-连接&#34;&gt;Pycharm 连接&lt;/h2&gt;
 &lt;p&gt;Pycharm 2019.1.X+ 版本已经支持直接连接 wsl 的 python 环境，无需通过 ssh&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/szthanatos/image-host/master/pycharm-wsl.png&#34; alt=&#34;pycharm 添加 wsl 解释器&#34;&gt;&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://i.loli.net/2021/06/17/olEGLadJr9tCOH4.png&#34; alt=&#34;pycharm 添加 wsl 解释器&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
 </description>
     </item>
     
@@ -2764,7 +3044,27 @@ pass
 &lt;p&gt;Docker Desktop 重启之后，在任意终端 (Windows &amp;amp; Linux) 都可以执行 Docker 命令啦~&lt;/p&gt;
 &lt;h2 id=&#34;配置连接-docker&#34;&gt;配置连接 Docker&lt;/h2&gt;
 &lt;p&gt;在 &lt;code&gt;设置&lt;/code&gt;-&lt;code&gt;构建、执行、部署&lt;/code&gt; 下找到 &lt;code&gt;Docker&lt;/code&gt; 配置，可以直接连接 Docker for window：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/szthanatos/image-host/master/pycharm-docker.png&#34; alt=&#34;连接 docker&#34;&gt;&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://i.loli.net/2021/06/17/INkgm39Qu1EnjTl.png&#34; alt=&#34;连接 docker&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
 &lt;h2 id=&#34;编写环境镜像&#34;&gt;编写环境镜像&lt;/h2&gt;
 &lt;h3 id=&#34;最简运行环境&#34;&gt;最简运行环境&lt;/h3&gt;
 &lt;p&gt;最简运行环境 Dockerfile 如下：&lt;/p&gt;
@@ -2813,7 +3113,27 @@ CMD [&amp;quot;/usr/sbin/sshd&amp;quot;, &amp;quot;-D&amp;quot;]
 &lt;p&gt;完成 Docker 配置后会在左下方底栏新增一个 &lt;code&gt;Services&lt;/code&gt;，没有的话从顶部 &lt;code&gt;视图&lt;/code&gt;-&lt;code&gt;工具窗口&lt;/code&gt; 中也能找到，&lt;/p&gt;
 &lt;p&gt;双击连接 Docker，右键运行环境容器；&lt;/p&gt;
 &lt;p&gt;点击侧边绿色三个箭头的图标即可使用 Dockerfile 部署。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/szthanatos/image-host/master/pycharm-dockerfile.png&#34; alt=&#34;dockerfile 部署&#34;&gt;&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://i.loli.net/2021/06/17/zf5aFIpurCqyAQ6.png&#34; alt=&#34;dockerfile 部署&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
 &lt;h2 id=&#34;参考&#34;&gt;参考&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Docker 官方文档: &lt;a href=&#34;https://docs.docker.com/docker-for-windows/wsl/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Docker Desktop WSL 2 backend&lt;/a&gt;&lt;/li&gt;
@@ -2925,7 +3245,27 @@ Working directory: $ProjectFileDir$
 &lt;p&gt;而对于不同领域的知识，通过同样的叙述方式，降低认知负担，快速定位自己关心的部分；&lt;/p&gt;
 &lt;p&gt;教程都统一叫指北，不全面也不权威，和系统学习官方文档背道而驰，但是30分钟建立一个感性认识完全足够了。&lt;/p&gt;
 &lt;p&gt;所以我拟定了这样的一个思路：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://szthanatos.github.io/media/%E6%8C%87%E5%8C%97%E7%B3%BB%E5%88%97%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84.png&#34; alt=&#34;指北系列目录结构&#34;&gt;&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://i.loli.net/2021/06/17/hZ1TLXpDWY3v9UA.png&#34; alt=&#34;指北系列目录结构&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
 &lt;p&gt;作为我个人博客的指北专题的固定格式，&lt;/p&gt;
 &lt;p&gt;也期望通过这样的方式更好的帮助自己建立和分享知识体系。&lt;/p&gt;
 &lt;p&gt;生成目录的脚本如下：&lt;/p&gt;
@@ -3118,7 +3458,27 @@ debug1: Next authentication method: password # 3
 &lt;/details&gt;
 &lt;h2 id=&#34;硬件需求&#34;&gt;硬件需求&lt;/h2&gt;
 &lt;p&gt;rancher ha 推荐的架构是单独搭建一个 K8s 集群部署 Rancher，然后再用这个 Rancher 去管理其他的 K8s 集群。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://szthanatos.github.io/media/rancher2ha.png&#34; alt=&#34;推荐架构&#34;&gt;&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://i.loli.net/2021/06/17/lD9wLiNnOgrVhIs.png&#34; alt=&#34;推荐架构&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
 &lt;p&gt;rancher 集群的配置和能管理的集群规模之间的关系如下：&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -3550,7 +3910,27 @@ patch  daemonsets cattle-node-agent --patch &#39;{
 &lt;p&gt;简单的来说，当我们开始使用容器化的方式来管理应用和服务的时候，我们自然而然的会发现，我们对操作系统其实没什么需求了
 ——环境依赖和工具链由镜像提供，GUI 界面或者浏览器毫无作用，系统内置的各种工具也就是启动一个容器的事&amp;hellip;&lt;/p&gt;
 &lt;p&gt;把这些七七八八的都去掉，最后剩下：一个 Linux 内核 + Docker 环境 + 精简但是统一的配置管理 = RancherOS&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://szthanatos.github.io/media/rancheroshowitworks.png&#34; alt=&#34;RancherOS 架构&#34;&gt;&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://i.loli.net/2021/06/17/AZIUHLks7Jm1Mqc.png&#34; alt=&#34;RancherOS 架构&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
 &lt;p&gt;RancherOS 的架构也非常简单，除了内核，就是两个 Docker。&lt;/p&gt;
 &lt;p&gt;一个系统级的 Docker(&lt;code&gt;system-docker&lt;/code&gt;) 接管了系统的绝大部分功能，比如在一般 Linux 上你会用 &lt;code&gt;systemctl restart&lt;/code&gt; 重启服务，在这里就是用 &lt;code&gt;system-docker restart&lt;/code&gt; 重启一个容器了。&lt;/p&gt;
 &lt;p&gt;用户级别的 Docker 也作为一个服务运行在 &lt;code&gt;system-docker&lt;/code&gt; 之上，也就是我们一般意义上跑应用的 docker，正常使用。&lt;/p&gt;
@@ -4027,7 +4407,27 @@ gremlin&amp;gt; GraphOfTheGodsFactory.load(graph)
 ==&amp;gt;null
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;示例数据描述了一部分希腊诸神以及他们居住的诸神殿的相关关系。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://szthanatos.github.io/media/graph-of-the-gods-2.png&#34; alt=&#34;graph-of-the-gods&#34;&gt;&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://i.loli.net/2021/06/17/6bKJYdog2eClRBV.png&#34; alt=&#34;graph-of-the-gods&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -4178,7 +4578,27 @@ g.E().properties(&#39;reason&#39;);  # 查看边属性为 reason 的属性及属
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;git的核心工作就是管理这三棵树。&lt;code&gt;git add&lt;/code&gt;就是把你工作目录(Working Directory)的修改提交到暂存区(Index)，&lt;code&gt;git commit&lt;/code&gt;就是把暂存区的内容同步到仓库里作为一个快照，并移动&lt;code&gt;HEAD&lt;/code&gt;指向新快照；&lt;img src=&#34;https://szthanatos.github.io/media/git_flow.gif&#34; alt=&#34;git_flow&#34;&gt;&lt;/p&gt;
+&lt;p&gt;git的核心工作就是管理这三棵树。&lt;code&gt;git add&lt;/code&gt;就是把你工作目录(Working Directory)的修改提交到暂存区(Index)，&lt;code&gt;git commit&lt;/code&gt;就是把暂存区的内容同步到仓库里作为一个快照，并移动&lt;code&gt;HEAD&lt;/code&gt;指向新快照；
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://i.loli.net/2021/06/17/TC92Dm8Y4liM7Lc.gif&#34; alt=&#34;git_flow&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
 &lt;p&gt;额外说一下这个&lt;code&gt;HEAD指针&lt;/code&gt;，每一次commit都相当于在仓库(Repository)里生成一个快照，
 把N个快照想象成一个右进左出的队列(List)，再想象有一个指针，默认指向队首(最新快照)，告诉你当前到底用的是哪一个版本快照。&lt;/p&gt;
 &lt;h2 id=&#34;reset&#34;&gt;reset&lt;/h2&gt;
@@ -4189,13 +4609,53 @@ g.E().properties(&#39;reason&#39;);  # 查看边属性为 reason 的属性及属
 &lt;li&gt;&lt;code&gt;--mixed&lt;/code&gt;——移动指针的同时也把快照内容同步到暂存区；&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;--hard&lt;/code&gt;——三棵树全同步为指针指向的快照；&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;参数来&lt;strong&gt;递进的&lt;/strong&gt;控制改变是发生在哪几颗树上。&lt;img src=&#34;https://szthanatos.github.io/media/git_reflow.gif&#34; alt=&#34;git_reflow&#34;&gt;&lt;/p&gt;
+&lt;p&gt;参数来&lt;strong&gt;递进的&lt;/strong&gt;控制改变是发生在哪几颗树上。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://i.loli.net/2021/06/17/SeHiuWg5haKUvI4.gif&#34; alt=&#34;git_reflow&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
 &lt;p&gt;再强调一遍，&lt;code&gt;reset&lt;/code&gt;的改变的是&lt;code&gt;HEAD&lt;/code&gt;指针，而不是文件。即使&lt;code&gt;git reset File&lt;/code&gt;的写法是有效的，但它的本质是&lt;code&gt;git reset --mixed HEAD File&lt;/code&gt;的缩写，即将&lt;code&gt;File&lt;/code&gt;从&lt;code&gt;HEAD&lt;/code&gt;指向的快照复制到索引中。&lt;code&gt;HEAD&lt;/code&gt;指针永远只能指向一个快照，但是快照是可以局部修改它里面的文件的。&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;HEAD~&lt;/code&gt;表示前一个快照，&lt;code&gt;HEAD~2&lt;/code&gt;表示前两个，依此类推。&lt;/p&gt;
 &lt;h2 id=&#34;checkout&#34;&gt;checkout&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;checkout&lt;/code&gt;的本质就有所不同，它关心的是分支(branch)，它的主要作用是让&lt;code&gt;HEAD&lt;/code&gt;在不同分支间移动(默认三棵树都会更新)。&lt;/p&gt;
 &lt;p&gt;还是拿刚才那个队列举例，分支相当于是平行的一条队列，现在把他放在你脑子里之前那个队列的上方，
-由于&lt;code&gt;HEAD&lt;/code&gt;指针只能指向一个快照，所以这个时候它可能会在两个队列间“跳动”，&lt;code&gt;checkout&lt;/code&gt;就是控制指针上下移动的命令，而&lt;code&gt;reset&lt;/code&gt;则是控制指针在当前队列左右(前后)移动。&lt;img src=&#34;https://szthanatos.github.io/media/git_checkout.gif&#34; alt=&#34;git_chechout&#34;&gt;&lt;/p&gt;
+由于&lt;code&gt;HEAD&lt;/code&gt;指针只能指向一个快照，所以这个时候它可能会在两个队列间“跳动”，&lt;code&gt;checkout&lt;/code&gt;就是控制指针上下移动的命令，而&lt;code&gt;reset&lt;/code&gt;则是控制指针在当前队列左右(前后)移动。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://i.loli.net/2021/06/17/HdKsNMhfyAwclr2.gif&#34; alt=&#34;git_chechout&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
 &lt;p&gt;同样的，&lt;code&gt;checkout&lt;/code&gt;后面也可以跟一个文件，和&lt;code&gt;git reset --hard [branch] file&lt;/code&gt;可能会产生的效果一样。&lt;/p&gt;
 </description>
     </item>
@@ -4869,7 +5329,27 @@ summary = &amp;quot;&amp;quot;  # Add a page description.
 &lt;p&gt;基础软件，跳过&lt;/p&gt;
 &lt;h2 id=&#34;基础概念&#34;&gt;基础概念&lt;/h2&gt;
 &lt;p&gt;见图&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://szthanatos.github.io/media/tmux.jpg&#34; alt=&#34;Tmux 页面&#34;&gt;&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://i.loli.net/2021/06/17/Yc5AbRow7niOevt.jpg&#34; alt=&#34;Tmux 页面&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;Session&lt;/code&gt;：输入 tmux 后就创建了一个会话，一个会话是一组窗体的集合；&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;Window&lt;/code&gt;：会话中一个可见的窗口；&lt;/li&gt;
@@ -5517,7 +5997,27 @@ fi
 &lt;p&gt;这个图片只能添加一个，名字必须是 &lt;code&gt;featured.*&lt;/code&gt;(后缀 jpg/png 都行)，而且必须和文章放在同一个文件夹下。&lt;/p&gt;
 &lt;p&gt;所以一般做法是把文章 &lt;code&gt;aaa.md&lt;/code&gt; 改名为 &lt;code&gt;index.md&lt;/code&gt; 并新建一个 &lt;code&gt;aaa&lt;/code&gt; 目录，再和 &lt;code&gt;featured.png&lt;/code&gt; 图片一起扔进去。&lt;/p&gt;
 &lt;p&gt;显示的效果是在文章列表页，文章右侧有一个缩略图；打开文章，标题默认会居左，右边是精选图：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://szthanatos.github.io/media/featured_image_example.png&#34; alt=&#34;example&#34;&gt;&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://i.loli.net/2021/06/17/w9J1YNL7zDE26od.png&#34; alt=&#34;example&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
 &lt;h3 id=&#34;给文章添加头部背景&#34;&gt;给文章添加头部背景&lt;/h3&gt;
 &lt;p&gt;这个是文章头部的横跨整个页面的大图，也就是文章头部这个黑底白字的大图。&lt;/p&gt;
 &lt;p&gt;这个的图片可以放到 &lt;code&gt;static/img&lt;/code&gt; 目录下，不过需要在你文件的 &lt;code&gt;+++&lt;/code&gt; 的部分添加如下代码：&lt;/p&gt;
@@ -5944,13 +6444,53 @@ echo index-url = https://pypi.tuna.tsinghua.edu.cn/simple&amp;gt;&amp;gt;~/.pip/
 &lt;p&gt;脑洞扩展到 DCEU，嗯，超人，嗯，卢瑟，嗯，巴别塔&amp;hellip; 老爷不会只靠定情小氪石的，一定有后备方案，嗯，Lex Wayne，就这么定了。&lt;/p&gt;
 &lt;p&gt;顺理成章，细节设定就是严肃的考 (wan) 证(geng)啦。&lt;/p&gt;
 &lt;h2 id=&#34;kryptonite-lab&#34;&gt;Kryptonite Lab&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;https://szthanatos.github.io/media/kryptonite.jpg&#34; alt=&#34;kryptonite&#34;&gt;&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://i.loli.net/2021/06/17/TDOlof7tyQxKbp1.jpg&#34; alt=&#34;kryptonite&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
 &lt;p&gt;氪石实验室，没什么好说的，名字都是 Lex Wayne 了肯定患有氪石狂热啦 (雾！)，什么住在全是氪石的实验室啦，爱嚼氪石口香糖啦，肯定都是基本设定啦 (大雾！)。&lt;/p&gt;
 &lt;p&gt;42 这个倒和 DCEU 没关——《银河系漫游指南》里宇宙的终极答案啊！十六进制的 ASCII 码 &lt;code&gt;*&lt;/code&gt;，&lt;code&gt;&#39;the&lt;/code&gt;&lt;strong&gt;&lt;code&gt;Answer&lt;/code&gt;&lt;/strong&gt;&lt;code&gt;to&lt;/code&gt;&lt;strong&gt;&lt;code&gt;Life&lt;/code&gt;&lt;/strong&gt;&lt;code&gt;the&lt;/code&gt;&lt;strong&gt;&lt;code&gt;Universe&lt;/code&gt;&lt;/strong&gt;&lt;code&gt;and&lt;/code&gt;&lt;strong&gt;&lt;code&gt;Everything&lt;/code&gt;&lt;/strong&gt;&lt;code&gt;is&#39;&lt;/code&gt; 问题本身的长度，感觉没有更赞的了 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;。已经想好了，如果以后完善 Lab 的设定，里面的超算肯定叫深思 (Deep Thought)。&lt;/p&gt;
 &lt;h2 id=&#34;wayne-manor-b3-1007-mountain-drive-gotham-nj-12345-usa&#34;&gt;Wayne Manor B3, 1007 Mountain Drive, Gotham, NJ 12345, USA&lt;/h2&gt;
 &lt;p&gt;一段一段说，&lt;/p&gt;
 &lt;h3 id=&#34;wayne-manor-b3&#34;&gt;Wayne Manor B3&lt;/h3&gt;
-&lt;p&gt;地下三层取自这个蝙蝠洞的设计图：&lt;img src=&#34;https://szthanatos.github.io/media/batcave_design.jpg&#34; alt=&#34;蝙蝠洞设计图&#34;&gt;&lt;/p&gt;
+&lt;p&gt;地下三层取自这个蝙蝠洞的设计图：
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://i.loli.net/2021/06/17/3i6fd9STZNXqAhu.jpg&#34; alt=&#34;蝙蝠洞设计图&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
 &lt;p&gt;放大可以看到地下从上往下数分别是&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;-1 &lt;code&gt;Main Level&lt;/code&gt;&lt;/li&gt;
@@ -5961,17 +6501,97 @@ echo index-url = https://pypi.tuna.tsinghua.edu.cn/simple&amp;gt;&amp;gt;~/.pip/
 &lt;p&gt;&lt;code&gt;Sub Level 1&lt;/code&gt; 放的就是 &lt;code&gt;Labs/Workshops/Library&lt;/code&gt;。&lt;/p&gt;
 &lt;h3 id=&#34;1007-mountain-drive-gotham&#34;&gt;1007 Mountain Drive, Gotham&lt;/h3&gt;
 &lt;p&gt;韦恩庄园所在的 &lt;code&gt;1007 Mountain Drive&lt;/code&gt; 这个地址来源于 92-95 年的蝙蝠侠动画 &lt;code&gt;Batman: The Animated Series&lt;/code&gt; 第一季中的 &lt;code&gt;The Demon&#39;s Quest&lt;/code&gt; 故事，应该也是目前蝙蝠侠相关作品中唯一正面出现的庄园地址。&lt;/p&gt;
-&lt;p&gt;具体坐落在哥谭的什么位置可以参考 1999 年 Eliot R. Brown 制作的地图：&lt;img src=&#34;https://szthanatos.github.io/media/gotham-city-eliot.jpg&#34; alt=&#34;Eliot R. Brown 版本&#34;&gt;&lt;/p&gt;
-&lt;p&gt;而更新一点的设定可以参考诺兰的黑暗骑士的周边 &lt;a href=&#34;https://www.amazon.com/The-Dark-Knight-Manual-Documents/dp/1608871045?tag=thehuffingtop-20&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;《黑暗骑士手册》&lt;/a&gt;：&lt;img src=&#34;https://szthanatos.github.io/media/gotham-city-nolan.jpg&#34; alt=&#34;Nolan 版本&#34;&gt;&lt;/p&gt;
+&lt;p&gt;具体坐落在哥谭的什么位置可以参考 1999 年 Eliot R. Brown 制作的地图：
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://i.loli.net/2021/06/17/qjvyNKJxVUimHLM.jpg&#34; alt=&#34;Eliot R. Brown 版本&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;而更新一点的设定可以参考诺兰的黑暗骑士的周边 &lt;a href=&#34;https://www.amazon.com/The-Dark-Knight-Manual-Documents/dp/1608871045?tag=thehuffingtop-20&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;《黑暗骑士手册》&lt;/a&gt;：
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://i.loli.net/2021/06/17/rhy2FbWPexic7Cu.jpg&#34; alt=&#34;Nolan 版本&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
 &lt;p&gt;总之，都在右上角啦←_←。&lt;/p&gt;
 &lt;h3 id=&#34;nj-12345-usa&#34;&gt;NJ 12345, USA&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt;NJ&lt;/code&gt; 是新泽西的缩写，虽然哥谭给人的印象就是纽约（早于黑暗骑士的电影给人的感觉可能更像芝加哥），但新泽西的设定可以追溯到 1974 年的 DC 漫画惊奇世界 (详见维基)，&lt;img src=&#34;https://szthanatos.github.io/media/gotham_local.jpg&#34; alt=&#34;哥谭位置&#34;&gt;
+&lt;p&gt;&lt;code&gt;NJ&lt;/code&gt; 是新泽西的缩写，虽然哥谭给人的印象就是纽约（早于黑暗骑士的电影给人的感觉可能更像芝加哥），但新泽西的设定可以追溯到 1974 年的 DC 漫画惊奇世界 (详见维基)，
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://i.loli.net/2021/06/17/Q5Lcuzx4iKaXs3y.jpg&#34; alt=&#34;哥谭位置&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+
 &lt;code&gt;NJ 12345&lt;/code&gt; 也是出自 93 年的 &lt;code&gt;Batman: Shadow of the Bat&lt;/code&gt; 里的那个驾驶证：&lt;code&gt;72 Faxcol Dr Gotham City, NJ 12345&lt;/code&gt;。&lt;/p&gt;
 &lt;h3 id=&#34;其他彩蛋&#34;&gt;其他彩蛋&lt;/h3&gt;
 &lt;p&gt;其他的设定零零碎碎的，以后也会往里面填充更多内容啦。&lt;/p&gt;
 &lt;h4 id=&#34;star-war&#34;&gt;Star War&lt;/h4&gt;
 &lt;p&gt;比如我个人介绍的 &lt;code&gt;Python Knight &amp;amp; Go Padawan&lt;/code&gt;，这里的 &lt;code&gt;Knight&lt;/code&gt; 显然和黑暗骑士什么的无关——Jedi！星战好像已经是老年人爱好了&amp;hellip; 但当年真的迷过一段时间，桌面都是拿星战的设定集原画做的&amp;hellip;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://szthanatos.github.io/media/star_war_grievous_wheel_bike.jpg&#34; alt=&#34;wheel bike&#34;&gt;&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://i.loli.net/2021/06/17/eOlKCZAjxnLm16b.jpg&#34; alt=&#34;wheel bike&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
 &lt;p&gt;另一方面是一时想不到 DCEU 里面和等级相关的设定了&amp;hellip; 星战就很明确啊，
 &lt;code&gt;youngling&lt;/code&gt; 是幼徒，&lt;code&gt;Padawan&lt;/code&gt; 是学徒，&lt;code&gt;Knight&lt;/code&gt; 是武士，&lt;code&gt;Master&lt;/code&gt; 是大师，简单明了~&lt;/p&gt;
 &lt;p&gt;再有就是，&lt;code&gt;Kryptonitesaber&lt;/code&gt; 什么的想想就很带感啊&amp;hellip; 以后绝对要补充这方面设定的！&lt;/p&gt;

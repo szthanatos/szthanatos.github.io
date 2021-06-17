@@ -43,6 +43,8 @@
 
 
 
+
+
   
 
 
@@ -68,9 +70,9 @@
   
     
     
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous" media="print" onload="this.media='all'">
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous" media="print" onload="this.media='all'">
 
     
     
@@ -752,7 +754,27 @@
 <p>简单的来说，当我们开始使用容器化的方式来管理应用和服务的时候，我们自然而然的会发现，我们对操作系统其实没什么需求了
 ——环境依赖和工具链由镜像提供，GUI 界面或者浏览器毫无作用，系统内置的各种工具也就是启动一个容器的事&hellip;</p>
 <p>把这些七七八八的都去掉，最后剩下：一个 Linux 内核 + Docker 环境 + 精简但是统一的配置管理 = RancherOS</p>
-<p><img src="/media/rancheroshowitworks.png" alt="RancherOS 架构"></p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="https://i.loli.net/2021/06/17/AZIUHLks7Jm1Mqc.png" alt="RancherOS 架构" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
 <p>RancherOS 的架构也非常简单，除了内核，就是两个 Docker。</p>
 <p>一个系统级的 Docker(<code>system-docker</code>) 接管了系统的绝大部分功能，比如在一般 Linux 上你会用 <code>systemctl restart</code> 重启服务，在这里就是用 <code>system-docker restart</code> 重启一个容器了。</p>
 <p>用户级别的 Docker 也作为一个服务运行在 <code>system-docker</code> 之上，也就是我们一般意义上跑应用的 docker，正常使用。</p>

@@ -43,6 +43,8 @@
 
 
 
+
+
   
 
 
@@ -68,9 +70,9 @@
   
     
     
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous" media="print" onload="this.media='all'">
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous" media="print" onload="this.media='all'">
 
     
     
@@ -796,7 +798,27 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 git clone git://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 </code></pre>
 <p>从 win10 下载并安装以下字体，以获得 powerlevel10k 主题更好的显示效果：</p>
-<p><img src="https://raw.githubusercontent.com/romkatv/powerlevel10k-media/master/prompt-styles-high-contrast.png" alt="powerlevel10k"></p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="https://raw.githubusercontent.com/romkatv/powerlevel10k-media/master/prompt-styles-high-contrast.png" alt="powerlevel10k" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
 <ul>
 <li><a href="https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf" target="_blank" rel="noopener">MesloLGS NF Regular.ttf</a></li>
 <li><a href="https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf" target="_blank" rel="noopener">MesloLGS NF Bold.ttf</a></li>
@@ -840,7 +862,27 @@ export TERM=&quot;xterm-256color&quot;
 </code></pre>
 <p>输入 <code>source .zshrc</code> 让配置生效，</p>
 <p>输入 <code>p10k configure</code> 配置 Powerlevel10k 主题设置。</p>
-<p><img src="https://raw.githubusercontent.com/romkatv/powerlevel10k-media/master/configuration-wizard.gif" alt="p10k configure"></p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="https://raw.githubusercontent.com/romkatv/powerlevel10k-media/master/configuration-wizard.gif" alt="p10k configure" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
 <p>完成后，拷贝 <code>.zshrc</code> 和 <code>.p10k.zsh</code> 文件到 root 用户根目录下，让 root 也使用相同配置，当然也可以分别设置。</p>
 <h2 id="一键启用--停用代理">一键启用 / 停用代理</h2>
 <p>Linux 下配置代理本来就略麻烦，Wsl2 又是完整的虚拟机，每次重启内部网络都会重新生成&hellip; 换句话说每次 Windows 和 Linux 的内网 IP 都在变化&hellip;</p>
