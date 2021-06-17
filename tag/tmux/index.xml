@@ -5,9 +5,9 @@
     <link>https://szthanatos.github.io/tag/tmux/</link>
       <atom:link href="https://szthanatos.github.io/tag/tmux/index.xml" rel="self" type="application/rss+xml" />
     <description>Tmux</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>zh-Hans</language><lastBuildDate>Tue, 01 Jan 2019 12:27:05 +0800</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>zh-Hans</language><copyright>© 2021 szthanatos</copyright><lastBuildDate>Tue, 01 Jan 2019 12:27:05 +0800</lastBuildDate>
     <image>
-      <url>https://szthanatos.github.io/images/icon_hu38c28d6ecf464f8a293472d2a570e5b8_6181_512x512_fill_lanczos_center_2.png</url>
+      <url>https://szthanatos.github.io/media/icon_hu638af3a55c65206eddec4e3c4c13a753_187410_512x512_fill_lanczos_center_2.png</url>
       <title>Tmux</title>
       <link>https://szthanatos.github.io/tag/tmux/</link>
     </image>
@@ -17,8 +17,9 @@
       <link>https://szthanatos.github.io/post/tmux/</link>
       <pubDate>Tue, 01 Jan 2019 12:27:05 +0800</pubDate>
       <guid>https://szthanatos.github.io/post/tmux/</guid>
-      <description>&lt;h2&gt;目录&lt;/h2&gt;
-&lt;nav id=&#34;TableOfContents&#34;&gt;
+      <description>&lt;details class=&#34;toc-inpage d-print-none  &#34; open&gt;
+  &lt;summary class=&#34;font-weight-bold&#34;&gt;目录&lt;/summary&gt;
+  &lt;nav id=&#34;TableOfContents&#34;&gt;
   &lt;ul&gt;
     &lt;li&gt;&lt;a href=&#34;#简介&#34;&gt;简介&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&#34;#安装-tmux&#34;&gt;安装 tmux&lt;/a&gt;&lt;/li&gt;
@@ -35,6 +36,7 @@
     &lt;li&gt;&lt;a href=&#34;#鼠标操作&#34;&gt;鼠标操作&lt;/a&gt;&lt;/li&gt;
   &lt;/ul&gt;
 &lt;/nav&gt;
+&lt;/details&gt;
 &lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;
 &lt;p&gt;Tmux 是一个终端复用软件，默认的 Linux 终端一个会话只能干一件事，有了 tmux 就能在一个窗口同时管理多个前 / 后台程序了。&lt;/p&gt;
 &lt;h2 id=&#34;安装-tmux&#34;&gt;安装 tmux&lt;/h2&gt;

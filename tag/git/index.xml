@@ -5,9 +5,9 @@
     <link>https://szthanatos.github.io/tag/git/</link>
       <atom:link href="https://szthanatos.github.io/tag/git/index.xml" rel="self" type="application/rss+xml" />
     <description>Git</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>zh-Hans</language><lastBuildDate>Sat, 05 Jan 2019 14:13:21 +0800</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>zh-Hans</language><copyright>© 2021 szthanatos</copyright><lastBuildDate>Sat, 05 Jan 2019 14:13:21 +0800</lastBuildDate>
     <image>
-      <url>https://szthanatos.github.io/images/icon_hu38c28d6ecf464f8a293472d2a570e5b8_6181_512x512_fill_lanczos_center_2.png</url>
+      <url>https://szthanatos.github.io/media/icon_hu638af3a55c65206eddec4e3c4c13a753_187410_512x512_fill_lanczos_center_2.png</url>
       <title>Git</title>
       <link>https://szthanatos.github.io/tag/git/</link>
     </image>
@@ -69,8 +69,9 @@
       <link>https://szthanatos.github.io/post/git/git_tips/</link>
       <pubDate>Fri, 14 Dec 2018 09:35:32 +0800</pubDate>
       <guid>https://szthanatos.github.io/post/git/git_tips/</guid>
-      <description>&lt;h2&gt;目录&lt;/h2&gt;
-&lt;nav id=&#34;TableOfContents&#34;&gt;
+      <description>&lt;details class=&#34;toc-inpage d-print-none  &#34; open&gt;
+  &lt;summary class=&#34;font-weight-bold&#34;&gt;目录&lt;/summary&gt;
+  &lt;nav id=&#34;TableOfContents&#34;&gt;
   &lt;ul&gt;
     &lt;li&gt;&lt;a href=&#34;#deploy-keyssh-keygithub&#34;&gt;Deploy key/SSH key(github)&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&#34;#更换-git-协议&#34;&gt;更换 git 协议&lt;/a&gt;&lt;/li&gt;
@@ -86,6 +87,7 @@
     &lt;li&gt;&lt;a href=&#34;#忽略文件权限&#34;&gt;忽略文件权限&lt;/a&gt;&lt;/li&gt;
   &lt;/ul&gt;
 &lt;/nav&gt;
+&lt;/details&gt;
 &lt;h2 id=&#34;deploy-keyssh-keygithub&#34;&gt;Deploy key/SSH key(github)&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;Deploy key&lt;/code&gt; 是在 &lt;code&gt;项目主页&lt;/code&gt;-&lt;code&gt;setting&lt;/code&gt;-&lt;code&gt;Delpoy keys&lt;/code&gt; 下进行添加，如果勾选 &lt;code&gt;Allow write access&lt;/code&gt;，则相当于具有对这个项目的读写权限 (否则只能 &lt;code&gt;clone&lt;/code&gt; 不能 &lt;code&gt;push&lt;/code&gt;)。&lt;strong&gt;作用范围是这个项目。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;SSH key&lt;/code&gt; 是在你 &lt;code&gt;个人主页&lt;/code&gt;-&lt;code&gt;Settings&lt;/code&gt;-&lt;code&gt;SSH and GPG keys&lt;/code&gt; 下进行添加。&lt;strong&gt;作用范围是你的账户下的所有项目。&lt;/strong&gt;&lt;/p&gt;

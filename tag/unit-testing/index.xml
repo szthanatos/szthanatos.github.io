@@ -5,9 +5,9 @@
     <link>https://szthanatos.github.io/tag/unit-testing/</link>
       <atom:link href="https://szthanatos.github.io/tag/unit-testing/index.xml" rel="self" type="application/rss+xml" />
     <description>unit testing</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>zh-Hans</language><lastBuildDate>Mon, 20 Aug 2018 10:49:50 +0800</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>zh-Hans</language><copyright>© 2021 szthanatos</copyright><lastBuildDate>Mon, 20 Aug 2018 10:49:50 +0800</lastBuildDate>
     <image>
-      <url>https://szthanatos.github.io/images/icon_hu38c28d6ecf464f8a293472d2a570e5b8_6181_512x512_fill_lanczos_center_2.png</url>
+      <url>https://szthanatos.github.io/media/icon_hu638af3a55c65206eddec4e3c4c13a753_187410_512x512_fill_lanczos_center_2.png</url>
       <title>unit testing</title>
       <link>https://szthanatos.github.io/tag/unit-testing/</link>
     </image>
@@ -17,8 +17,9 @@
       <link>https://szthanatos.github.io/post/python/unit_testing/</link>
       <pubDate>Mon, 20 Aug 2018 10:49:50 +0800</pubDate>
       <guid>https://szthanatos.github.io/post/python/unit_testing/</guid>
-      <description>&lt;h2&gt;目录&lt;/h2&gt;
-&lt;nav id=&#34;TableOfContents&#34;&gt;
+      <description>&lt;details class=&#34;toc-inpage d-print-none  &#34; open&gt;
+  &lt;summary class=&#34;font-weight-bold&#34;&gt;目录&lt;/summary&gt;
+  &lt;nav id=&#34;TableOfContents&#34;&gt;
   &lt;ul&gt;
     &lt;li&gt;&lt;a href=&#34;#什么是单元测试&#34;&gt;什么是单元测试&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&#34;#为什么要写单元测试&#34;&gt;为什么要写单元测试&lt;/a&gt;&lt;/li&gt;
@@ -37,6 +38,7 @@
     &lt;li&gt;&lt;a href=&#34;#小结&#34;&gt;小结&lt;/a&gt;&lt;/li&gt;
   &lt;/ul&gt;
 &lt;/nav&gt;
+&lt;/details&gt;
 &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     这是写给我组里的人看的，顺手粘过来

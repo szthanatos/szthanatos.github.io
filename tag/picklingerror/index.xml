@@ -5,9 +5,9 @@
     <link>https://szthanatos.github.io/tag/picklingerror/</link>
       <atom:link href="https://szthanatos.github.io/tag/picklingerror/index.xml" rel="self" type="application/rss+xml" />
     <description>PicklingError</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>zh-Hans</language><lastBuildDate>Tue, 20 Mar 2018 16:16:15 +0800</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>zh-Hans</language><copyright>© 2021 szthanatos</copyright><lastBuildDate>Tue, 20 Mar 2018 16:16:15 +0800</lastBuildDate>
     <image>
-      <url>https://szthanatos.github.io/images/icon_hu38c28d6ecf464f8a293472d2a570e5b8_6181_512x512_fill_lanczos_center_2.png</url>
+      <url>https://szthanatos.github.io/media/icon_hu638af3a55c65206eddec4e3c4c13a753_187410_512x512_fill_lanczos_center_2.png</url>
       <title>PicklingError</title>
       <link>https://szthanatos.github.io/tag/picklingerror/</link>
     </image>
@@ -115,7 +115,7 @@ class PageProcess(object):
 &lt;hr&gt;
 &lt;ol&gt;
 &lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;英文这种语序 / 标点我老是搞不懂，这个 &lt;code&gt;containing only picklable objects&lt;/code&gt; 到底是指 dictionaries 还是前面全部，就当是全部吧 &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;英文这种语序 / 标点我老是搞不懂，这个 &lt;code&gt;containing only picklable objects&lt;/code&gt; 到底是指 dictionaries 还是前面全部，就当是全部吧&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;

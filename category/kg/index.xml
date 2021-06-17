@@ -5,9 +5,9 @@
     <link>https://szthanatos.github.io/category/kg/</link>
       <atom:link href="https://szthanatos.github.io/category/kg/index.xml" rel="self" type="application/rss+xml" />
     <description>KG</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>zh-Hans</language><lastBuildDate>Sun, 17 Mar 2019 21:50:19 +0800</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>zh-Hans</language><copyright>© 2021 szthanatos</copyright><lastBuildDate>Sun, 17 Mar 2019 21:50:19 +0800</lastBuildDate>
     <image>
-      <url>https://szthanatos.github.io/images/icon_hu38c28d6ecf464f8a293472d2a570e5b8_6181_512x512_fill_lanczos_center_2.png</url>
+      <url>https://szthanatos.github.io/media/icon_hu638af3a55c65206eddec4e3c4c13a753_187410_512x512_fill_lanczos_center_2.png</url>
       <title>KG</title>
       <link>https://szthanatos.github.io/category/kg/</link>
     </image>
@@ -17,8 +17,9 @@
       <link>https://szthanatos.github.io/post/janusgraph/</link>
       <pubDate>Sun, 17 Mar 2019 21:50:19 +0800</pubDate>
       <guid>https://szthanatos.github.io/post/janusgraph/</guid>
-      <description>&lt;h2&gt;目录&lt;/h2&gt;
-&lt;nav id=&#34;TableOfContents&#34;&gt;
+      <description>&lt;details class=&#34;toc-inpage d-print-none  &#34; open&gt;
+  &lt;summary class=&#34;font-weight-bold&#34;&gt;目录&lt;/summary&gt;
+  &lt;nav id=&#34;TableOfContents&#34;&gt;
   &lt;ul&gt;
     &lt;li&gt;&lt;a href=&#34;#基本环境&#34;&gt;基本环境&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&#34;#安装&#34;&gt;安装&lt;/a&gt;&lt;/li&gt;
@@ -34,6 +35,7 @@
     &lt;li&gt;&lt;a href=&#34;#查询&#34;&gt;查询&lt;/a&gt;&lt;/li&gt;
   &lt;/ul&gt;
 &lt;/nav&gt;
+&lt;/details&gt;
 &lt;h2 id=&#34;基本环境&#34;&gt;基本环境&lt;/h2&gt;
 &lt;p&gt;底层数据库基于 HBase，检索服务基于 Elasticserach。&lt;/p&gt;
 &lt;p&gt;系统运行服务大致如下：&lt;/p&gt;

@@ -5,9 +5,9 @@
     <link>https://szthanatos.github.io/tag/hbase/</link>
       <atom:link href="https://szthanatos.github.io/tag/hbase/index.xml" rel="self" type="application/rss+xml" />
     <description>HBase</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>zh-Hans</language><lastBuildDate>Sun, 09 Dec 2018 16:19:27 +0800</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>zh-Hans</language><copyright>© 2021 szthanatos</copyright><lastBuildDate>Sun, 09 Dec 2018 16:19:27 +0800</lastBuildDate>
     <image>
-      <url>https://szthanatos.github.io/images/icon_hu38c28d6ecf464f8a293472d2a570e5b8_6181_512x512_fill_lanczos_center_2.png</url>
+      <url>https://szthanatos.github.io/media/icon_hu638af3a55c65206eddec4e3c4c13a753_187410_512x512_fill_lanczos_center_2.png</url>
       <title>HBase</title>
       <link>https://szthanatos.github.io/tag/hbase/</link>
     </image>
@@ -17,8 +17,9 @@
       <link>https://szthanatos.github.io/post/hbase_design/</link>
       <pubDate>Sun, 09 Dec 2018 16:19:27 +0800</pubDate>
       <guid>https://szthanatos.github.io/post/hbase_design/</guid>
-      <description>&lt;h2&gt;目录&lt;/h2&gt;
-&lt;nav id=&#34;TableOfContents&#34;&gt;
+      <description>&lt;details class=&#34;toc-inpage d-print-none  &#34; open&gt;
+  &lt;summary class=&#34;font-weight-bold&#34;&gt;目录&lt;/summary&gt;
+  &lt;nav id=&#34;TableOfContents&#34;&gt;
   &lt;ul&gt;
     &lt;li&gt;&lt;a href=&#34;#简介&#34;&gt;简介&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&#34;#一般原则&#34;&gt;一般原则&lt;/a&gt;&lt;/li&gt;
@@ -56,6 +57,7 @@
     &lt;/li&gt;
   &lt;/ul&gt;
 &lt;/nav&gt;
+&lt;/details&gt;
 &lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;
 &lt;p&gt;本指南是对在 HBase 进行字段设计而提供的指导性准则和建议。总体标准、设计方式参照 &lt;a href=&#34;https://github.com/google/styleguide&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Google 开源项目风格指南&lt;/a&gt; 以及现有项目经验。所有条目均为个人总结，&lt;strong&gt;并不是一份官方标准性质的指南&lt;/strong&gt; 。&lt;/p&gt;
 &lt;p&gt;HBase 是建立在 Hadoop 文件系统（HDFS）之上的分布式、面向列的数据库。&lt;/p&gt;

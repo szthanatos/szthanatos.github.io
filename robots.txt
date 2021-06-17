@@ -1,0 +1,3 @@
+User-agent: *
+
+Sitemap: https://szthanatos.github.io/sitemap.xml

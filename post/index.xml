@@ -5,9 +5,9 @@
     <link>https://szthanatos.github.io/post/</link>
       <atom:link href="https://szthanatos.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>zh-Hans</language><lastBuildDate>Mon, 28 Dec 2020 19:03:14 +0800</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>zh-Hans</language><copyright>© 2021 szthanatos</copyright><lastBuildDate>Mon, 28 Dec 2020 19:03:14 +0800</lastBuildDate>
     <image>
-      <url>https://szthanatos.github.io/images/icon_hu38c28d6ecf464f8a293472d2a570e5b8_6181_512x512_fill_lanczos_center_2.png</url>
+      <url>https://szthanatos.github.io/media/icon_hu638af3a55c65206eddec4e3c4c13a753_187410_512x512_fill_lanczos_center_2.png</url>
       <title>Posts</title>
       <link>https://szthanatos.github.io/post/</link>
     </image>
@@ -202,8 +202,9 @@ debug1: Next authentication method: password # 3
       <link>https://szthanatos.github.io/post/rancher_ha/</link>
       <pubDate>Thu, 26 Sep 2019 22:58:39 +0800</pubDate>
       <guid>https://szthanatos.github.io/post/rancher_ha/</guid>
-      <description>&lt;h2&gt;目录&lt;/h2&gt;
-&lt;nav id=&#34;TableOfContents&#34;&gt;
+      <description>&lt;details class=&#34;toc-inpage d-print-none  &#34; open&gt;
+  &lt;summary class=&#34;font-weight-bold&#34;&gt;目录&lt;/summary&gt;
+  &lt;nav id=&#34;TableOfContents&#34;&gt;
   &lt;ul&gt;
     &lt;li&gt;&lt;a href=&#34;#硬件需求&#34;&gt;硬件需求&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&#34;#0-工具准备&#34;&gt;0. 工具准备&lt;/a&gt;&lt;/li&gt;
@@ -215,6 +216,7 @@ debug1: Next authentication method: password # 3
     &lt;li&gt;&lt;a href=&#34;#6-添加主机别名&#34;&gt;6. 添加主机别名&lt;/a&gt;&lt;/li&gt;
   &lt;/ul&gt;
 &lt;/nav&gt;
+&lt;/details&gt;
 &lt;h2 id=&#34;硬件需求&#34;&gt;硬件需求&lt;/h2&gt;
 &lt;p&gt;rancher ha 推荐的架构是单独搭建一个 K8s 集群部署 Rancher，然后再用这个 Rancher 去管理其他的 K8s 集群。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://szthanatos.github.io/media/rancher2ha.png&#34; alt=&#34;推荐架构&#34;&gt;&lt;/p&gt;
@@ -592,8 +594,9 @@ patch  daemonsets cattle-node-agent --patch &#39;{
       <link>https://szthanatos.github.io/post/rancheros/</link>
       <pubDate>Sun, 01 Sep 2019 15:39:50 +0800</pubDate>
       <guid>https://szthanatos.github.io/post/rancheros/</guid>
-      <description>&lt;h2&gt;目录&lt;/h2&gt;
-&lt;nav id=&#34;TableOfContents&#34;&gt;
+      <description>&lt;details class=&#34;toc-inpage d-print-none  &#34; open&gt;
+  &lt;summary class=&#34;font-weight-bold&#34;&gt;目录&lt;/summary&gt;
+  &lt;nav id=&#34;TableOfContents&#34;&gt;
   &lt;ul&gt;
     &lt;li&gt;&lt;a href=&#34;#介绍&#34;&gt;介绍&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&#34;#安装&#34;&gt;安装&lt;/a&gt;&lt;/li&gt;
@@ -607,6 +610,7 @@ patch  daemonsets cattle-node-agent --patch &#39;{
     &lt;li&gt;&lt;a href=&#34;#cloud-config&#34;&gt;cloud-config&lt;/a&gt;&lt;/li&gt;
   &lt;/ul&gt;
 &lt;/nav&gt;
+&lt;/details&gt;
 &lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;RancherOS&lt;/code&gt; 是 Rancher 推出的一个轻量级的 Linux 内核操作系统，专为容器环境而设计。&lt;/p&gt;
 &lt;p&gt;按官网的说法，它具有如下特性：&lt;/p&gt;
@@ -991,8 +995,9 @@ runcmd:
       <link>https://szthanatos.github.io/post/janusgraph/</link>
       <pubDate>Sun, 17 Mar 2019 21:50:19 +0800</pubDate>
       <guid>https://szthanatos.github.io/post/janusgraph/</guid>
-      <description>&lt;h2&gt;目录&lt;/h2&gt;
-&lt;nav id=&#34;TableOfContents&#34;&gt;
+      <description>&lt;details class=&#34;toc-inpage d-print-none  &#34; open&gt;
+  &lt;summary class=&#34;font-weight-bold&#34;&gt;目录&lt;/summary&gt;
+  &lt;nav id=&#34;TableOfContents&#34;&gt;
   &lt;ul&gt;
     &lt;li&gt;&lt;a href=&#34;#基本环境&#34;&gt;基本环境&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&#34;#安装&#34;&gt;安装&lt;/a&gt;&lt;/li&gt;
@@ -1008,6 +1013,7 @@ runcmd:
     &lt;li&gt;&lt;a href=&#34;#查询&#34;&gt;查询&lt;/a&gt;&lt;/li&gt;
   &lt;/ul&gt;
 &lt;/nav&gt;
+&lt;/details&gt;
 &lt;h2 id=&#34;基本环境&#34;&gt;基本环境&lt;/h2&gt;
 &lt;p&gt;底层数据库基于 HBase，检索服务基于 Elasticserach。&lt;/p&gt;
 &lt;p&gt;系统运行服务大致如下：&lt;/p&gt;
@@ -1284,8 +1290,9 @@ g.E().properties(&#39;reason&#39;);  # 查看边属性为 reason 的属性及属
 &lt;p&gt;原文见上方连接。&lt;/p&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-&lt;h2&gt;目录&lt;/h2&gt;
-&lt;nav id=&#34;TableOfContents&#34;&gt;
+&lt;details class=&#34;toc-inpage d-print-none  &#34; open&gt;
+  &lt;summary class=&#34;font-weight-bold&#34;&gt;目录&lt;/summary&gt;
+  &lt;nav id=&#34;TableOfContents&#34;&gt;
   &lt;ul&gt;
     &lt;li&gt;&lt;a href=&#34;#副标题&#34;&gt;副标题&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&#34;#强调&#34;&gt;强调&lt;/a&gt;&lt;/li&gt;
@@ -1332,6 +1339,7 @@ g.E().properties(&#39;reason&#39;);  # 查看边属性为 reason 的属性及属
     &lt;li&gt;&lt;a href=&#34;#目录&#34;&gt;目录&lt;/a&gt;&lt;/li&gt;
   &lt;/ul&gt;
 &lt;/nav&gt;
+&lt;/details&gt;
 &lt;p&gt;Academic 支持使用 Markdown、LaTeX 数学公式和 Hugo 代码段编写内容。
 此外，可以使用 HTML 以实现高级样式。
 本文概述最常见的格式选项。&lt;/p&gt;
@@ -1458,7 +1466,7 @@ caption = &amp;quot;Dark theme&amp;quot;
 &lt;h2 id=&#34;高亮引用&#34;&gt;高亮引用&lt;/h2&gt;
 &lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;This is a {{&amp;lt; hl&amp;gt;}}highlighted quote{{&amp;lt; /hl &amp;gt;}}.
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;This is a &lt;span class=&#34;markup-quote&#34;&gt;highlighted quote&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;This is a &lt;mark&gt;highlighted quote&lt;/mark&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;脚注&#34;&gt;脚注&lt;/h2&gt;
 &lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;I have more [^1] to say.
 [^1]: Footnote example.
@@ -1695,8 +1703,9 @@ Here&#39;s some important information...
 &lt;p&gt;原文见上方连接。&lt;/p&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-&lt;h2&gt;目录&lt;/h2&gt;
-&lt;nav id=&#34;TableOfContents&#34;&gt;
+&lt;details class=&#34;toc-inpage d-print-none  &#34; open&gt;
+  &lt;summary class=&#34;font-weight-bold&#34;&gt;目录&lt;/summary&gt;
+  &lt;nav id=&#34;TableOfContents&#34;&gt;
   &lt;ul&gt;
     &lt;li&gt;&lt;a href=&#34;#精选图片&#34;&gt;精选图片&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&#34;#标题图片&#34;&gt;标题图片&lt;/a&gt;&lt;/li&gt;
@@ -1722,6 +1731,7 @@ Here&#39;s some important information...
     &lt;li&gt;&lt;a href=&#34;#部署站点&#34;&gt;部署站点&lt;/a&gt;&lt;/li&gt;
   &lt;/ul&gt;
 &lt;/nav&gt;
+&lt;/details&gt;
 &lt;p&gt;这是一个使用 Academic 框架管理你的文章的简短指南。
 Academic 提供的内容模板包括出版物、项目、宣讲、新闻 / 博客文章、以及小部件页。
 之后，你可能同样对 &lt;a href=&#34;https://szthanatos.github.io/post/trans_writing_content.md&#34;&gt;使用 Markdown、LaTeX 数学公式和代码段进行创作&lt;/a&gt; 感兴趣。&lt;/p&gt;
@@ -1912,8 +1922,9 @@ summary = &amp;quot;&amp;quot;  # Add a page description.
       <link>https://szthanatos.github.io/post/tmux/</link>
       <pubDate>Tue, 01 Jan 2019 12:27:05 +0800</pubDate>
       <guid>https://szthanatos.github.io/post/tmux/</guid>
-      <description>&lt;h2&gt;目录&lt;/h2&gt;
-&lt;nav id=&#34;TableOfContents&#34;&gt;
+      <description>&lt;details class=&#34;toc-inpage d-print-none  &#34; open&gt;
+  &lt;summary class=&#34;font-weight-bold&#34;&gt;目录&lt;/summary&gt;
+  &lt;nav id=&#34;TableOfContents&#34;&gt;
   &lt;ul&gt;
     &lt;li&gt;&lt;a href=&#34;#简介&#34;&gt;简介&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&#34;#安装-tmux&#34;&gt;安装 tmux&lt;/a&gt;&lt;/li&gt;
@@ -1930,6 +1941,7 @@ summary = &amp;quot;&amp;quot;  # Add a page description.
     &lt;li&gt;&lt;a href=&#34;#鼠标操作&#34;&gt;鼠标操作&lt;/a&gt;&lt;/li&gt;
   &lt;/ul&gt;
 &lt;/nav&gt;
+&lt;/details&gt;
 &lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;
 &lt;p&gt;Tmux 是一个终端复用软件，默认的 Linux 终端一个会话只能干一件事，有了 tmux 就能在一个窗口同时管理多个前 / 后台程序了。&lt;/p&gt;
 &lt;h2 id=&#34;安装-tmux&#34;&gt;安装 tmux&lt;/h2&gt;
@@ -2191,8 +2203,9 @@ run &#39;/etc/.tmux/plugins/tpm/tpm&#39;
       <link>https://szthanatos.github.io/post/git/git_tips/</link>
       <pubDate>Fri, 14 Dec 2018 09:35:32 +0800</pubDate>
       <guid>https://szthanatos.github.io/post/git/git_tips/</guid>
-      <description>&lt;h2&gt;目录&lt;/h2&gt;
-&lt;nav id=&#34;TableOfContents&#34;&gt;
+      <description>&lt;details class=&#34;toc-inpage d-print-none  &#34; open&gt;
+  &lt;summary class=&#34;font-weight-bold&#34;&gt;目录&lt;/summary&gt;
+  &lt;nav id=&#34;TableOfContents&#34;&gt;
   &lt;ul&gt;
     &lt;li&gt;&lt;a href=&#34;#deploy-keyssh-keygithub&#34;&gt;Deploy key/SSH key(github)&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&#34;#更换-git-协议&#34;&gt;更换 git 协议&lt;/a&gt;&lt;/li&gt;
@@ -2208,6 +2221,7 @@ run &#39;/etc/.tmux/plugins/tpm/tpm&#39;
     &lt;li&gt;&lt;a href=&#34;#忽略文件权限&#34;&gt;忽略文件权限&lt;/a&gt;&lt;/li&gt;
   &lt;/ul&gt;
 &lt;/nav&gt;
+&lt;/details&gt;
 &lt;h2 id=&#34;deploy-keyssh-keygithub&#34;&gt;Deploy key/SSH key(github)&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;Deploy key&lt;/code&gt; 是在 &lt;code&gt;项目主页&lt;/code&gt;-&lt;code&gt;setting&lt;/code&gt;-&lt;code&gt;Delpoy keys&lt;/code&gt; 下进行添加，如果勾选 &lt;code&gt;Allow write access&lt;/code&gt;，则相当于具有对这个项目的读写权限 (否则只能 &lt;code&gt;clone&lt;/code&gt; 不能 &lt;code&gt;push&lt;/code&gt;)。&lt;strong&gt;作用范围是这个项目。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;SSH key&lt;/code&gt; 是在你 &lt;code&gt;个人主页&lt;/code&gt;-&lt;code&gt;Settings&lt;/code&gt;-&lt;code&gt;SSH and GPG keys&lt;/code&gt; 下进行添加。&lt;strong&gt;作用范围是你的账户下的所有项目。&lt;/strong&gt;&lt;/p&gt;
@@ -2282,8 +2296,9 @@ git push -f origin {old_branch}
       <link>https://szthanatos.github.io/post/academic/academic_in_practice/</link>
       <pubDate>Sun, 09 Dec 2018 16:34:42 +0800</pubDate>
       <guid>https://szthanatos.github.io/post/academic/academic_in_practice/</guid>
-      <description>&lt;h2&gt;目录&lt;/h2&gt;
-&lt;nav id=&#34;TableOfContents&#34;&gt;
+      <description>&lt;details class=&#34;toc-inpage d-print-none  &#34; open&gt;
+  &lt;summary class=&#34;font-weight-bold&#34;&gt;目录&lt;/summary&gt;
+  &lt;nav id=&#34;TableOfContents&#34;&gt;
   &lt;ul&gt;
     &lt;li&gt;&lt;a href=&#34;#hugo-安装--更新&#34;&gt;Hugo 安装 / 更新&lt;/a&gt;
       &lt;ul&gt;
@@ -2318,6 +2333,7 @@ git push -f origin {old_branch}
     &lt;/li&gt;
   &lt;/ul&gt;
 &lt;/nav&gt;
+&lt;/details&gt;
 &lt;h2 id=&#34;hugo-安装--更新&#34;&gt;Hugo 安装 / 更新&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://gohugo.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hugo&lt;/a&gt; 是使用 &lt;code&gt;Go&lt;/code&gt; 语言开发的静态站点生成器。不过无需准备 &lt;code&gt;Go&lt;/code&gt; 语言环境，可以直接通过二进制编译包进行跨平台部署。&lt;/p&gt;
 &lt;p&gt;以下均以 Ubuntu18.0 为例。&lt;/p&gt;
@@ -2650,8 +2666,9 @@ fi
       <link>https://szthanatos.github.io/post/hbase_design/</link>
       <pubDate>Sun, 09 Dec 2018 16:19:27 +0800</pubDate>
       <guid>https://szthanatos.github.io/post/hbase_design/</guid>
-      <description>&lt;h2&gt;目录&lt;/h2&gt;
-&lt;nav id=&#34;TableOfContents&#34;&gt;
+      <description>&lt;details class=&#34;toc-inpage d-print-none  &#34; open&gt;
+  &lt;summary class=&#34;font-weight-bold&#34;&gt;目录&lt;/summary&gt;
+  &lt;nav id=&#34;TableOfContents&#34;&gt;
   &lt;ul&gt;
     &lt;li&gt;&lt;a href=&#34;#简介&#34;&gt;简介&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&#34;#一般原则&#34;&gt;一般原则&lt;/a&gt;&lt;/li&gt;
@@ -2689,6 +2706,7 @@ fi
     &lt;/li&gt;
   &lt;/ul&gt;
 &lt;/nav&gt;
+&lt;/details&gt;
 &lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;
 &lt;p&gt;本指南是对在 HBase 进行字段设计而提供的指导性准则和建议。总体标准、设计方式参照 &lt;a href=&#34;https://github.com/google/styleguide&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Google 开源项目风格指南&lt;/a&gt; 以及现有项目经验。所有条目均为个人总结，&lt;strong&gt;并不是一份官方标准性质的指南&lt;/strong&gt; 。&lt;/p&gt;
 &lt;p&gt;HBase 是建立在 Hadoop 文件系统（HDFS）之上的分布式、面向列的数据库。&lt;/p&gt;
@@ -2776,8 +2794,9 @@ sound_type
       <link>https://szthanatos.github.io/post/palantir_intro/</link>
       <pubDate>Wed, 05 Dec 2018 17:09:21 +0800</pubDate>
       <guid>https://szthanatos.github.io/post/palantir_intro/</guid>
-      <description>&lt;h2&gt;目录&lt;/h2&gt;
-&lt;nav id=&#34;TableOfContents&#34;&gt;
+      <description>&lt;details class=&#34;toc-inpage d-print-none  &#34; open&gt;
+  &lt;summary class=&#34;font-weight-bold&#34;&gt;目录&lt;/summary&gt;
+  &lt;nav id=&#34;TableOfContents&#34;&gt;
   &lt;ul&gt;
     &lt;li&gt;&lt;a href=&#34;#简介&#34;&gt;简介&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&#34;#最新情况&#34;&gt;最新情况&lt;/a&gt;&lt;/li&gt;
@@ -2792,6 +2811,7 @@ sound_type
     &lt;/li&gt;
   &lt;/ul&gt;
 &lt;/nav&gt;
+&lt;/details&gt;
 &lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;
 &lt;p&gt;Palantir 是全球第一大 &lt;code&gt;大数据公司&lt;/code&gt;。曾经的全球四大独角兽之一（其它三家是 Uber，Airbnb 和小米）。中文名帕兰提尔，源于《指环王》中邪恶巫师萨鲁曼使用的可穿越时空、洞悉世间一切的水晶球 (Palantiri)。主要客户为政府机构和金融机构。&lt;/p&gt;
 &lt;p&gt;最出名的案例是以大数据技术帮助美国军方成功定位和击毙基地组织首脑本 · 拉登，以及协助多家银行追回了纳斯达克前主席麦道夫 Bernie Madoff 的庞氏骗局中所隐藏起来的数十亿美元巨款。&lt;/p&gt;
@@ -3032,7 +3052,7 @@ echo index-url = https://pypi.tuna.tsinghua.edu.cn/simple&amp;gt;&amp;gt;~/.pip/
 &lt;hr&gt;
 &lt;ol&gt;
 &lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;《蜘蛛侠: 平行宇宙》也是 42 的梗，大家真的是很爱 42 啊&amp;hellip; &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;《蜘蛛侠: 平行宇宙》也是 42 的梗，大家真的是很爱 42 啊&amp;hellip;&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
@@ -3044,8 +3064,9 @@ echo index-url = https://pypi.tuna.tsinghua.edu.cn/simple&amp;gt;&amp;gt;~/.pip/
       <link>https://szthanatos.github.io/post/python/unit_testing/</link>
       <pubDate>Mon, 20 Aug 2018 10:49:50 +0800</pubDate>
       <guid>https://szthanatos.github.io/post/python/unit_testing/</guid>
-      <description>&lt;h2&gt;目录&lt;/h2&gt;
-&lt;nav id=&#34;TableOfContents&#34;&gt;
+      <description>&lt;details class=&#34;toc-inpage d-print-none  &#34; open&gt;
+  &lt;summary class=&#34;font-weight-bold&#34;&gt;目录&lt;/summary&gt;
+  &lt;nav id=&#34;TableOfContents&#34;&gt;
   &lt;ul&gt;
     &lt;li&gt;&lt;a href=&#34;#什么是单元测试&#34;&gt;什么是单元测试&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&#34;#为什么要写单元测试&#34;&gt;为什么要写单元测试&lt;/a&gt;&lt;/li&gt;
@@ -3064,6 +3085,7 @@ echo index-url = https://pypi.tuna.tsinghua.edu.cn/simple&amp;gt;&amp;gt;~/.pip/
     &lt;li&gt;&lt;a href=&#34;#小结&#34;&gt;小结&lt;/a&gt;&lt;/li&gt;
   &lt;/ul&gt;
 &lt;/nav&gt;
+&lt;/details&gt;
 &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     这是写给我组里的人看的，顺手粘过来
@@ -3467,7 +3489,7 @@ class PageProcess(object):
 &lt;hr&gt;
 &lt;ol&gt;
 &lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;英文这种语序 / 标点我老是搞不懂，这个 &lt;code&gt;containing only picklable objects&lt;/code&gt; 到底是指 dictionaries 还是前面全部，就当是全部吧 &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;英文这种语序 / 标点我老是搞不懂，这个 &lt;code&gt;containing only picklable objects&lt;/code&gt; 到底是指 dictionaries 还是前面全部，就当是全部吧&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;

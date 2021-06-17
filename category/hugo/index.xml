@@ -5,9 +5,9 @@
     <link>https://szthanatos.github.io/category/hugo/</link>
       <atom:link href="https://szthanatos.github.io/category/hugo/index.xml" rel="self" type="application/rss+xml" />
     <description>Hugo</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>zh-Hans</language><lastBuildDate>Tue, 01 Jan 2019 12:54:29 +0800</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>zh-Hans</language><copyright>© 2021 szthanatos</copyright><lastBuildDate>Tue, 01 Jan 2019 12:54:29 +0800</lastBuildDate>
     <image>
-      <url>https://szthanatos.github.io/images/icon_hu38c28d6ecf464f8a293472d2a570e5b8_6181_512x512_fill_lanczos_center_2.png</url>
+      <url>https://szthanatos.github.io/media/icon_hu638af3a55c65206eddec4e3c4c13a753_187410_512x512_fill_lanczos_center_2.png</url>
       <title>Hugo</title>
       <link>https://szthanatos.github.io/category/hugo/</link>
     </image>
@@ -23,8 +23,9 @@
 &lt;p&gt;原文见上方连接。&lt;/p&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-&lt;h2&gt;目录&lt;/h2&gt;
-&lt;nav id=&#34;TableOfContents&#34;&gt;
+&lt;details class=&#34;toc-inpage d-print-none  &#34; open&gt;
+  &lt;summary class=&#34;font-weight-bold&#34;&gt;目录&lt;/summary&gt;
+  &lt;nav id=&#34;TableOfContents&#34;&gt;
   &lt;ul&gt;
     &lt;li&gt;&lt;a href=&#34;#副标题&#34;&gt;副标题&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&#34;#强调&#34;&gt;强调&lt;/a&gt;&lt;/li&gt;
@@ -71,6 +72,7 @@
     &lt;li&gt;&lt;a href=&#34;#目录&#34;&gt;目录&lt;/a&gt;&lt;/li&gt;
   &lt;/ul&gt;
 &lt;/nav&gt;
+&lt;/details&gt;
 &lt;p&gt;Academic 支持使用 Markdown、LaTeX 数学公式和 Hugo 代码段编写内容。
 此外，可以使用 HTML 以实现高级样式。
 本文概述最常见的格式选项。&lt;/p&gt;
@@ -197,7 +199,7 @@ caption = &amp;quot;Dark theme&amp;quot;
 &lt;h2 id=&#34;高亮引用&#34;&gt;高亮引用&lt;/h2&gt;
 &lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;This is a {{&amp;lt; hl&amp;gt;}}highlighted quote{{&amp;lt; /hl &amp;gt;}}.
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;This is a &lt;span class=&#34;markup-quote&#34;&gt;highlighted quote&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;This is a &lt;mark&gt;highlighted quote&lt;/mark&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;脚注&#34;&gt;脚注&lt;/h2&gt;
 &lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;I have more [^1] to say.
 [^1]: Footnote example.
@@ -434,8 +436,9 @@ Here&#39;s some important information...
 &lt;p&gt;原文见上方连接。&lt;/p&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-&lt;h2&gt;目录&lt;/h2&gt;
-&lt;nav id=&#34;TableOfContents&#34;&gt;
+&lt;details class=&#34;toc-inpage d-print-none  &#34; open&gt;
+  &lt;summary class=&#34;font-weight-bold&#34;&gt;目录&lt;/summary&gt;
+  &lt;nav id=&#34;TableOfContents&#34;&gt;
   &lt;ul&gt;
     &lt;li&gt;&lt;a href=&#34;#精选图片&#34;&gt;精选图片&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&#34;#标题图片&#34;&gt;标题图片&lt;/a&gt;&lt;/li&gt;
@@ -461,6 +464,7 @@ Here&#39;s some important information...
     &lt;li&gt;&lt;a href=&#34;#部署站点&#34;&gt;部署站点&lt;/a&gt;&lt;/li&gt;
   &lt;/ul&gt;
 &lt;/nav&gt;
+&lt;/details&gt;
 &lt;p&gt;这是一个使用 Academic 框架管理你的文章的简短指南。
 Academic 提供的内容模板包括出版物、项目、宣讲、新闻 / 博客文章、以及小部件页。
 之后，你可能同样对 &lt;a href=&#34;https://szthanatos.github.io/post/trans_writing_content.md&#34;&gt;使用 Markdown、LaTeX 数学公式和代码段进行创作&lt;/a&gt; 感兴趣。&lt;/p&gt;
