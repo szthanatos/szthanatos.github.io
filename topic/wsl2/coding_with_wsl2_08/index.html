@@ -903,8 +903,8 @@ Working directory: $ProjectFileDir$
     <div id="gitalk-container"></div>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js">
-</script>
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.18.0/js/md5.min.js"></script>
 <script>
     var gitalk = new Gitalk({
         clientID: '95c7518c2e13947a88a9',
@@ -912,7 +912,7 @@ Working directory: $ProjectFileDir$
         repo: 'szthanatos.github.io',
         owner: 'szthanatos',
         admin: 'szthanatos',
-        id: location.pathname,      
+        id: md5(location.pathname),      
         distractionFreeMode: false  
     })
     gitalk.render('gitalk-container')
