@@ -562,7 +562,37 @@
         
 
         <li class="nav-item">
-          <a class="nav-link " href="/topic"><span>专栏</span></a>
+          <a class="nav-link " href="/categories"><span>分类</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/series"><span>指北</span></a>
         </li>
 
         
@@ -618,9 +648,31 @@
   </div>
 
   <div class="page-body">
-    <article class="article">
+    
 
-  
+<div class="container-fluid docs">
+    <div class="row flex-xl-nowrap">
+        <div class="d-none d-xl-block col-12 col-xl-3 docs-toc">
+            
+
+            <ul class="nav toc-top">
+                <li><a href="#" id="back_to_top" class="docs-toc-title">在本页</a></li>
+            </ul>
+
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#报错信息">报错信息</a></li>
+    <li><a href="#原因">原因</a></li>
+    <li><a href="#解决办法">解决办法</a></li>
+  </ul>
+</nav>
+
+            
+        </div>
+
+        <main class="col-12 col-md-11 col-xl-10 py-md-3 pl-md-5 docs-content" role="main">
+            <article class="article">
+                
 
 
 
@@ -698,10 +750,10 @@
 
 
 
-  <div class="article-container">
+                <div class="article-container">
 
-    <div class="article-style">
-      <h2 id="报错信息">报错信息</h2>
+                    <div class="article-style">
+                        <h2 id="报错信息">报错信息</h2>
 <p>之前运维给做了几台测试服务器，远程连接的时候速度特别慢，ssh 之后需要接近 1 分钟才能连上。</p>
 <h2 id="原因">原因</h2>
 <p>使用 <code>ssh -v &lt;服务器&gt;</code> 显示连接过程：</p>
@@ -798,9 +850,9 @@ debug1: Next authentication method: password # 3
 </ol>
 <p>实际效果，关闭 <code>GSSAPIAuthentication</code> 让连接时间从 1 分钟下降到 8 秒左右，关闭 <code>UseDNS</code> 后几乎接近秒连。</p>
 
-    </div>
+                    </div>
 
-    
+                    
 
 
 
@@ -977,8 +1029,15 @@ debug1: Next authentication method: password # 3
 
 
 
-  </div>
-</article>
+                </div>
+            </article>
+
+        </main>
+
+    </div>
+</div>
+
+
   </div>
 
   <div class="page-footer">

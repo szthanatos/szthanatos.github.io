@@ -30,7 +30,7 @@
   
     
   
-  <meta name="description" content="目录 简介 一般原则 命名空间 (NameSpace) 命名规范 示例 表 (Table) 命名规范 示例 行键 (Rowkey)" />
+  <meta name="description" content="简介 本指南是对在 HBase 进行字段设计而提供的指导性准则和建议。总体" />
 
   
   <link rel="alternate" hreflang="zh-Hans" href="https://szthanatos.github.io/post/hbase_design/" />
@@ -301,7 +301,7 @@
   <meta property="og:site_name" content="Kryptonite Lab" />
   <meta property="og:url" content="https://szthanatos.github.io/post/hbase_design/" />
   <meta property="og:title" content="hbase 表设计风格指南 | Kryptonite Lab" />
-  <meta property="og:description" content="目录 简介 一般原则 命名空间 (NameSpace) 命名规范 示例 表 (Table) 命名规范 示例 行键 (Rowkey)" /><meta property="og:image" content="https://szthanatos.github.io/media/icon_hu638af3a55c65206eddec4e3c4c13a753_187410_512x512_fill_lanczos_center_2.png" />
+  <meta property="og:description" content="简介 本指南是对在 HBase 进行字段设计而提供的指导性准则和建议。总体" /><meta property="og:image" content="https://szthanatos.github.io/media/icon_hu638af3a55c65206eddec4e3c4c13a753_187410_512x512_fill_lanczos_center_2.png" />
     <meta property="twitter:image" content="https://szthanatos.github.io/media/icon_hu638af3a55c65206eddec4e3c4c13a753_187410_512x512_fill_lanczos_center_2.png" /><meta property="og:locale" content="zh-Hans" />
   
     
@@ -354,7 +354,7 @@
       "url": "https://szthanatos.github.io/media/icon_hu638af3a55c65206eddec4e3c4c13a753_187410_192x192_fill_lanczos_center_2.png"
     }
   },
-  "description": "目录 简介 一般原则 命名空间 (NameSpace) 命名规范 示例 表 (Table) 命名规范 示例 行键 (Rowkey)"
+  "description": "简介 本指南是对在 HBase 进行字段设计而提供的指导性准则和建议。总体"
 }
 </script>
 
@@ -562,7 +562,37 @@
         
 
         <li class="nav-item">
-          <a class="nav-link " href="/topic"><span>专栏</span></a>
+          <a class="nav-link " href="/categories"><span>分类</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/series"><span>指北</span></a>
         </li>
 
         
@@ -618,9 +648,62 @@
   </div>
 
   <div class="page-body">
-    <article class="article">
+    
 
-  
+<div class="container-fluid docs">
+    <div class="row flex-xl-nowrap">
+        <div class="d-none d-xl-block col-12 col-xl-3 docs-toc">
+            
+
+            <ul class="nav toc-top">
+                <li><a href="#" id="back_to_top" class="docs-toc-title">在本页</a></li>
+            </ul>
+
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#简介">简介</a></li>
+    <li><a href="#一般原则">一般原则</a></li>
+    <li><a href="#命名空间-namespace">命名空间 (NameSpace)</a>
+      <ul>
+        <li><a href="#命名规范">命名规范</a></li>
+        <li><a href="#示例">示例</a></li>
+      </ul>
+    </li>
+    <li><a href="#表-table">表 (Table)</a>
+      <ul>
+        <li><a href="#命名规范-1">命名规范</a></li>
+        <li><a href="#示例-1">示例</a></li>
+      </ul>
+    </li>
+    <li><a href="#行键-rowkey">行键 (Rowkey)</a>
+      <ul>
+        <li><a href="#命名规范-2">命名规范</a></li>
+        <li><a href="#示例-2">示例</a></li>
+        <li><a href="#注意">注意</a></li>
+      </ul>
+    </li>
+    <li><a href="#列族-columnfamily">列族 (ColumnFamily)</a>
+      <ul>
+        <li><a href="#命名规范-3">命名规范</a></li>
+        <li><a href="#示例-3">示例</a></li>
+        <li><a href="#注意-1">注意</a></li>
+      </ul>
+    </li>
+    <li><a href="#列-qualifier">列 (Qualifier)</a>
+      <ul>
+        <li><a href="#命名规范-4">命名规范</a></li>
+        <li><a href="#示例-4">示例</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+            
+        </div>
+
+        <main class="col-12 col-md-11 col-xl-10 py-md-3 pl-md-5 docs-content" role="main">
+            <article class="article">
+                
 
 
 
@@ -698,51 +781,10 @@
 
 
 
-  <div class="article-container">
+                <div class="article-container">
 
-    <div class="article-style">
-      <details class="toc-inpage d-print-none  " open>
-  <summary class="font-weight-bold">目录</summary>
-  <nav id="TableOfContents">
-  <ul>
-    <li><a href="#简介">简介</a></li>
-    <li><a href="#一般原则">一般原则</a></li>
-    <li><a href="#命名空间-namespace">命名空间 (NameSpace)</a>
-      <ul>
-        <li><a href="#命名规范">命名规范</a></li>
-        <li><a href="#示例">示例</a></li>
-      </ul>
-    </li>
-    <li><a href="#表-table">表 (Table)</a>
-      <ul>
-        <li><a href="#命名规范-1">命名规范</a></li>
-        <li><a href="#示例-1">示例</a></li>
-      </ul>
-    </li>
-    <li><a href="#行键-rowkey">行键 (Rowkey)</a>
-      <ul>
-        <li><a href="#命名规范-2">命名规范</a></li>
-        <li><a href="#示例-2">示例</a></li>
-        <li><a href="#注意">注意</a></li>
-      </ul>
-    </li>
-    <li><a href="#列族-columnfamily">列族 (ColumnFamily)</a>
-      <ul>
-        <li><a href="#命名规范-3">命名规范</a></li>
-        <li><a href="#示例-3">示例</a></li>
-        <li><a href="#注意-1">注意</a></li>
-      </ul>
-    </li>
-    <li><a href="#列-qualifier">列 (Qualifier)</a>
-      <ul>
-        <li><a href="#命名规范-4">命名规范</a></li>
-        <li><a href="#示例-4">示例</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-</details>
-<h2 id="简介">简介</h2>
+                    <div class="article-style">
+                        <h2 id="简介">简介</h2>
 <p>本指南是对在 HBase 进行字段设计而提供的指导性准则和建议。总体标准、设计方式参照 <a href="https://github.com/google/styleguide" target="_blank" rel="noopener">Google 开源项目风格指南</a> 以及现有项目经验。所有条目均为个人总结，<strong>并不是一份官方标准性质的指南</strong> 。</p>
 <p>HBase 是建立在 Hadoop 文件系统（HDFS）之上的分布式、面向列的数据库。</p>
 <h2 id="一般原则">一般原则</h2>
@@ -822,9 +864,9 @@ is_str
 sound_type
 </code></pre>
 
-    </div>
+                    </div>
 
-    
+                    
 
 
 
@@ -1001,8 +1043,15 @@ sound_type
 
 
 
-  </div>
-</article>
+                </div>
+            </article>
+
+        </main>
+
+    </div>
+</div>
+
+
   </div>
 
   <div class="page-footer">

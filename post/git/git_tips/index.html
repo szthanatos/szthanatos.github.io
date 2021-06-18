@@ -30,7 +30,7 @@
   
     
   
-  <meta name="description" content="目录 Deploy key/SSH key(github) 更换 git 协议 强制覆盖本地文件 撤销修改 add 之前撤销 commit 之前" />
+  <meta name="description" content="Deploy key/SSH key(github) Deploy key 是在 项目主页-setting-Delpoy keys 下进行" />
 
   
   <link rel="alternate" hreflang="zh-Hans" href="https://szthanatos.github.io/post/git/git_tips/" />
@@ -301,7 +301,7 @@
   <meta property="og:site_name" content="Kryptonite Lab" />
   <meta property="og:url" content="https://szthanatos.github.io/post/git/git_tips/" />
   <meta property="og:title" content="Git Tips | Kryptonite Lab" />
-  <meta property="og:description" content="目录 Deploy key/SSH key(github) 更换 git 协议 强制覆盖本地文件 撤销修改 add 之前撤销 commit 之前" /><meta property="og:image" content="https://szthanatos.github.io/media/icon_hu638af3a55c65206eddec4e3c4c13a753_187410_512x512_fill_lanczos_center_2.png" />
+  <meta property="og:description" content="Deploy key/SSH key(github) Deploy key 是在 项目主页-setting-Delpoy keys 下进行" /><meta property="og:image" content="https://szthanatos.github.io/media/icon_hu638af3a55c65206eddec4e3c4c13a753_187410_512x512_fill_lanczos_center_2.png" />
     <meta property="twitter:image" content="https://szthanatos.github.io/media/icon_hu638af3a55c65206eddec4e3c4c13a753_187410_512x512_fill_lanczos_center_2.png" /><meta property="og:locale" content="zh-Hans" />
   
     
@@ -354,7 +354,7 @@
       "url": "https://szthanatos.github.io/media/icon_hu638af3a55c65206eddec4e3c4c13a753_187410_192x192_fill_lanczos_center_2.png"
     }
   },
-  "description": "目录 Deploy key/SSH key(github) 更换 git 协议 强制覆盖本地文件 撤销修改 add 之前撤销 commit 之前"
+  "description": "Deploy key/SSH key(github) Deploy key 是在 项目主页-setting-Delpoy keys 下进行"
 }
 </script>
 
@@ -562,7 +562,37 @@
         
 
         <li class="nav-item">
-          <a class="nav-link " href="/topic"><span>专栏</span></a>
+          <a class="nav-link " href="/categories"><span>分类</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/series"><span>指北</span></a>
         </li>
 
         
@@ -618,9 +648,40 @@
   </div>
 
   <div class="page-body">
-    <article class="article">
+    
 
-  
+<div class="container-fluid docs">
+    <div class="row flex-xl-nowrap">
+        <div class="d-none d-xl-block col-12 col-xl-3 docs-toc">
+            
+
+            <ul class="nav toc-top">
+                <li><a href="#" id="back_to_top" class="docs-toc-title">在本页</a></li>
+            </ul>
+
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#deploy-keyssh-keygithub">Deploy key/SSH key(github)</a></li>
+    <li><a href="#更换-git-协议">更换 git 协议</a></li>
+    <li><a href="#强制覆盖本地文件">强制覆盖本地文件</a></li>
+    <li><a href="#撤销修改">撤销修改</a>
+      <ul>
+        <li><a href="#add-之前撤销">add 之前撤销</a></li>
+        <li><a href="#commit-之前撤销">commit 之前撤销</a></li>
+        <li><a href="#push-之前撤销">push 之前撤销</a></li>
+      </ul>
+    </li>
+    <li><a href="#删除历史提交记录">删除历史提交记录</a></li>
+    <li><a href="#忽略文件权限">忽略文件权限</a></li>
+  </ul>
+</nav>
+
+            
+        </div>
+
+        <main class="col-12 col-md-11 col-xl-10 py-md-3 pl-md-5 docs-content" role="main">
+            <article class="article">
+                
 
 
 
@@ -694,29 +755,10 @@
 
 
 
-  <div class="article-container">
+                <div class="article-container">
 
-    <div class="article-style">
-      <details class="toc-inpage d-print-none  " open>
-  <summary class="font-weight-bold">目录</summary>
-  <nav id="TableOfContents">
-  <ul>
-    <li><a href="#deploy-keyssh-keygithub">Deploy key/SSH key(github)</a></li>
-    <li><a href="#更换-git-协议">更换 git 协议</a></li>
-    <li><a href="#强制覆盖本地文件">强制覆盖本地文件</a></li>
-    <li><a href="#撤销修改">撤销修改</a>
-      <ul>
-        <li><a href="#add-之前撤销">add 之前撤销</a></li>
-        <li><a href="#commit-之前撤销">commit 之前撤销</a></li>
-        <li><a href="#push-之前撤销">push 之前撤销</a></li>
-      </ul>
-    </li>
-    <li><a href="#删除历史提交记录">删除历史提交记录</a></li>
-    <li><a href="#忽略文件权限">忽略文件权限</a></li>
-  </ul>
-</nav>
-</details>
-<h2 id="deploy-keyssh-keygithub">Deploy key/SSH key(github)</h2>
+                    <div class="article-style">
+                        <h2 id="deploy-keyssh-keygithub">Deploy key/SSH key(github)</h2>
 <p><code>Deploy key</code> 是在 <code>项目主页</code>-<code>setting</code>-<code>Delpoy keys</code> 下进行添加，如果勾选 <code>Allow write access</code>，则相当于具有对这个项目的读写权限 (否则只能 <code>clone</code> 不能 <code>push</code>)。<strong>作用范围是这个项目。</strong></p>
 <p><code>SSH key</code> 是在你 <code>个人主页</code>-<code>Settings</code>-<code>SSH and GPG keys</code> 下进行添加。<strong>作用范围是你的账户下的所有项目。</strong></p>
 <p>同一个 <code>公钥</code>，只能作为整个账户的 <code>SSH key</code>，或者 <strong>一个项目</strong> 的 <code>Deploy key</code>。想为一台机器授予多个项目的读写权限的话，需要通过 <code>ssh-keygen</code> 生成多个密钥，分别作为不同项目的 <code>Deploy key</code>。</p>
@@ -783,9 +825,9 @@ git push -f origin {old_branch}
 <pre><code class="language-bash">git config core.filemode false
 </code></pre>
 
-    </div>
+                    </div>
 
-    
+                    
 
 
 
@@ -971,8 +1013,15 @@ git push -f origin {old_branch}
 
 
 
-  </div>
-</article>
+                </div>
+            </article>
+
+        </main>
+
+    </div>
+</div>
+
+
   </div>
 
   <div class="page-footer">

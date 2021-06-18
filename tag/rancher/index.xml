@@ -17,22 +17,7 @@
       <link>https://szthanatos.github.io/post/rancher_ha/</link>
       <pubDate>Thu, 26 Sep 2019 22:58:39 +0800</pubDate>
       <guid>https://szthanatos.github.io/post/rancher_ha/</guid>
-      <description>&lt;details class=&#34;toc-inpage d-print-none  &#34; open&gt;
-  &lt;summary class=&#34;font-weight-bold&#34;&gt;目录&lt;/summary&gt;
-  &lt;nav id=&#34;TableOfContents&#34;&gt;
-  &lt;ul&gt;
-    &lt;li&gt;&lt;a href=&#34;#硬件需求&#34;&gt;硬件需求&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#0-工具准备&#34;&gt;0. 工具准备&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#1-配置-nginx-负载均衡&#34;&gt;1. 配置 Nginx 负载均衡&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#2-使用-rke-安装-k8s&#34;&gt;2. 使用 RKE 安装 K8S&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#3-初始化-helm&#34;&gt;3. 初始化 helm&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#4-配置-ca-证书&#34;&gt;4. 配置 ca 证书&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#5-安装-rancher&#34;&gt;5. 安装 rancher&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#6-添加主机别名&#34;&gt;6. 添加主机别名&lt;/a&gt;&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/nav&gt;
-&lt;/details&gt;
-&lt;h2 id=&#34;硬件需求&#34;&gt;硬件需求&lt;/h2&gt;
+      <description>&lt;h2 id=&#34;硬件需求&#34;&gt;硬件需求&lt;/h2&gt;
 &lt;p&gt;rancher ha 推荐的架构是单独搭建一个 K8s 集群部署 Rancher，然后再用这个 Rancher 去管理其他的 K8s 集群。&lt;/p&gt;
 &lt;p&gt;
 
@@ -429,24 +414,7 @@ patch  daemonsets cattle-node-agent --patch &#39;{
       <link>https://szthanatos.github.io/post/rancheros/</link>
       <pubDate>Sun, 01 Sep 2019 15:39:50 +0800</pubDate>
       <guid>https://szthanatos.github.io/post/rancheros/</guid>
-      <description>&lt;details class=&#34;toc-inpage d-print-none  &#34; open&gt;
-  &lt;summary class=&#34;font-weight-bold&#34;&gt;目录&lt;/summary&gt;
-  &lt;nav id=&#34;TableOfContents&#34;&gt;
-  &lt;ul&gt;
-    &lt;li&gt;&lt;a href=&#34;#介绍&#34;&gt;介绍&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#安装&#34;&gt;安装&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#使用&#34;&gt;使用&lt;/a&gt;
-      &lt;ul&gt;
-        &lt;li&gt;&lt;a href=&#34;#ros&#34;&gt;ros&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&#34;#系统服务&#34;&gt;系统服务&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&#34;#docker&#34;&gt;docker&lt;/a&gt;&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#cloud-config&#34;&gt;cloud-config&lt;/a&gt;&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/nav&gt;
-&lt;/details&gt;
-&lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
+      <description>&lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;RancherOS&lt;/code&gt; 是 Rancher 推出的一个轻量级的 Linux 内核操作系统，专为容器环境而设计。&lt;/p&gt;
 &lt;p&gt;按官网的说法，它具有如下特性：&lt;/p&gt;
 &lt;table&gt;

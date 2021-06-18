@@ -30,7 +30,7 @@
   
     
   
-  <meta name="description" content="目录 基本环境 安装 配置 基本用法 加载诸神图 一些基本操作 增操作 删操" />
+  <meta name="description" content="基本环境 底层数据库基于 HBase，检索服务基于 Elastic" />
 
   
   <link rel="alternate" hreflang="zh-Hans" href="https://szthanatos.github.io/post/janusgraph/" />
@@ -301,7 +301,7 @@
   <meta property="og:site_name" content="Kryptonite Lab" />
   <meta property="og:url" content="https://szthanatos.github.io/post/janusgraph/" />
   <meta property="og:title" content="JanusGraph 搭建及简单使用 | Kryptonite Lab" />
-  <meta property="og:description" content="目录 基本环境 安装 配置 基本用法 加载诸神图 一些基本操作 增操作 删操" /><meta property="og:image" content="https://szthanatos.github.io/media/icon_hu638af3a55c65206eddec4e3c4c13a753_187410_512x512_fill_lanczos_center_2.png" />
+  <meta property="og:description" content="基本环境 底层数据库基于 HBase，检索服务基于 Elastic" /><meta property="og:image" content="https://szthanatos.github.io/media/icon_hu638af3a55c65206eddec4e3c4c13a753_187410_512x512_fill_lanczos_center_2.png" />
     <meta property="twitter:image" content="https://szthanatos.github.io/media/icon_hu638af3a55c65206eddec4e3c4c13a753_187410_512x512_fill_lanczos_center_2.png" /><meta property="og:locale" content="zh-Hans" />
   
     
@@ -354,7 +354,7 @@
       "url": "https://szthanatos.github.io/media/icon_hu638af3a55c65206eddec4e3c4c13a753_187410_192x192_fill_lanczos_center_2.png"
     }
   },
-  "description": "目录 基本环境 安装 配置 基本用法 加载诸神图 一些基本操作 增操作 删操"
+  "description": "基本环境 底层数据库基于 HBase，检索服务基于 Elastic"
 }
 </script>
 
@@ -562,7 +562,37 @@
         
 
         <li class="nav-item">
-          <a class="nav-link " href="/topic"><span>专栏</span></a>
+          <a class="nav-link " href="/categories"><span>分类</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/series"><span>指北</span></a>
         </li>
 
         
@@ -618,9 +648,40 @@
   </div>
 
   <div class="page-body">
-    <article class="article">
+    
 
-  
+<div class="container-fluid docs">
+    <div class="row flex-xl-nowrap">
+        <div class="d-none d-xl-block col-12 col-xl-3 docs-toc">
+            
+
+            <ul class="nav toc-top">
+                <li><a href="#" id="back_to_top" class="docs-toc-title">在本页</a></li>
+            </ul>
+
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#基本环境">基本环境</a></li>
+    <li><a href="#安装">安装</a></li>
+    <li><a href="#配置">配置</a></li>
+    <li><a href="#基本用法">基本用法</a></li>
+    <li><a href="#加载诸神图">加载诸神图</a></li>
+    <li><a href="#一些基本操作">一些基本操作</a>
+      <ul>
+        <li><a href="#增操作">增操作</a></li>
+        <li><a href="#删操作">删操作</a></li>
+      </ul>
+    </li>
+    <li><a href="#查询">查询</a></li>
+  </ul>
+</nav>
+
+            
+        </div>
+
+        <main class="col-12 col-md-11 col-xl-10 py-md-3 pl-md-5 docs-content" role="main">
+            <article class="article">
+                
 
 
 
@@ -698,29 +759,10 @@
 
 
 
-  <div class="article-container">
+                <div class="article-container">
 
-    <div class="article-style">
-      <details class="toc-inpage d-print-none  " open>
-  <summary class="font-weight-bold">目录</summary>
-  <nav id="TableOfContents">
-  <ul>
-    <li><a href="#基本环境">基本环境</a></li>
-    <li><a href="#安装">安装</a></li>
-    <li><a href="#配置">配置</a></li>
-    <li><a href="#基本用法">基本用法</a></li>
-    <li><a href="#加载诸神图">加载诸神图</a></li>
-    <li><a href="#一些基本操作">一些基本操作</a>
-      <ul>
-        <li><a href="#增操作">增操作</a></li>
-        <li><a href="#删操作">删操作</a></li>
-      </ul>
-    </li>
-    <li><a href="#查询">查询</a></li>
-  </ul>
-</nav>
-</details>
-<h2 id="基本环境">基本环境</h2>
+                    <div class="article-style">
+                        <h2 id="基本环境">基本环境</h2>
 <p>底层数据库基于 HBase，检索服务基于 Elasticserach。</p>
 <p>系统运行服务大致如下：</p>
 <pre><code class="language-bash">[root@xnode208 ~] jps
@@ -951,9 +993,9 @@ g.E().values('reason');  # 查看边属性为 reason 的属性值
 g.E().properties('reason');  # 查看边属性为 reason 的属性及属性值
 </code></pre>
 
-    </div>
+                    </div>
 
-    
+                    
 
 
 
@@ -1134,8 +1176,15 @@ g.E().properties('reason');  # 查看边属性为 reason 的属性及属性值
 
 
 
-  </div>
-</article>
+                </div>
+            </article>
+
+        </main>
+
+    </div>
+</div>
+
+
   </div>
 
   <div class="page-footer">

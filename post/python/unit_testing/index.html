@@ -30,7 +30,7 @@
   
     
   
-  <meta name="description" content="目录 什么是单元测试 为什么要写单元测试 怎么写单元测试 原生测试框" />
+  <meta name="description" content="这是写给我组里的人看的，顺手粘过来 什么是单元测试 单元测试 (Unit Testing)" />
 
   
   <link rel="alternate" hreflang="zh-Hans" href="https://szthanatos.github.io/post/python/unit_testing/" />
@@ -301,7 +301,7 @@
   <meta property="og:site_name" content="Kryptonite Lab" />
   <meta property="og:url" content="https://szthanatos.github.io/post/python/unit_testing/" />
   <meta property="og:title" content="python 单元测试标准及实现 | Kryptonite Lab" />
-  <meta property="og:description" content="目录 什么是单元测试 为什么要写单元测试 怎么写单元测试 原生测试框" /><meta property="og:image" content="https://szthanatos.github.io/media/icon_hu638af3a55c65206eddec4e3c4c13a753_187410_512x512_fill_lanczos_center_2.png" />
+  <meta property="og:description" content="这是写给我组里的人看的，顺手粘过来 什么是单元测试 单元测试 (Unit Testing)" /><meta property="og:image" content="https://szthanatos.github.io/media/icon_hu638af3a55c65206eddec4e3c4c13a753_187410_512x512_fill_lanczos_center_2.png" />
     <meta property="twitter:image" content="https://szthanatos.github.io/media/icon_hu638af3a55c65206eddec4e3c4c13a753_187410_512x512_fill_lanczos_center_2.png" /><meta property="og:locale" content="zh-Hans" />
   
     
@@ -354,7 +354,7 @@
       "url": "https://szthanatos.github.io/media/icon_hu638af3a55c65206eddec4e3c4c13a753_187410_192x192_fill_lanczos_center_2.png"
     }
   },
-  "description": "目录 什么是单元测试 为什么要写单元测试 怎么写单元测试 原生测试框"
+  "description": "这是写给我组里的人看的，顺手粘过来 什么是单元测试 单元测试 (Unit Testing)"
 }
 </script>
 
@@ -562,7 +562,37 @@
         
 
         <li class="nav-item">
-          <a class="nav-link " href="/topic"><span>专栏</span></a>
+          <a class="nav-link " href="/categories"><span>分类</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/series"><span>指北</span></a>
         </li>
 
         
@@ -618,9 +648,43 @@
   </div>
 
   <div class="page-body">
-    <article class="article">
+    
 
-  
+<div class="container-fluid docs">
+    <div class="row flex-xl-nowrap">
+        <div class="d-none d-xl-block col-12 col-xl-3 docs-toc">
+            
+
+            <ul class="nav toc-top">
+                <li><a href="#" id="back_to_top" class="docs-toc-title">在本页</a></li>
+            </ul>
+
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#什么是单元测试">什么是单元测试</a></li>
+    <li><a href="#为什么要写单元测试">为什么要写单元测试</a></li>
+    <li><a href="#怎么写单元测试">怎么写单元测试</a>
+      <ul>
+        <li><a href="#原生测试框架-unittestunittest2">原生测试框架 unittest/unittest2</a></li>
+        <li><a href="#第三方测试框架-pytest">第三方测试框架 py.test</a></li>
+      </ul>
+    </li>
+    <li><a href="#单元测试标准">单元测试标准</a>
+      <ul>
+        <li><a href="#代码覆盖指标">代码覆盖指标</a></li>
+        <li><a href="#代码覆盖率">代码覆盖率</a></li>
+      </ul>
+    </li>
+    <li><a href="#小结">小结</a></li>
+  </ul>
+</nav>
+
+            
+        </div>
+
+        <main class="col-12 col-md-11 col-xl-10 py-md-3 pl-md-5 docs-content" role="main">
+            <article class="article">
+                
 
 
 
@@ -698,32 +762,10 @@
 
 
 
-  <div class="article-container">
+                <div class="article-container">
 
-    <div class="article-style">
-      <details class="toc-inpage d-print-none  " open>
-  <summary class="font-weight-bold">目录</summary>
-  <nav id="TableOfContents">
-  <ul>
-    <li><a href="#什么是单元测试">什么是单元测试</a></li>
-    <li><a href="#为什么要写单元测试">为什么要写单元测试</a></li>
-    <li><a href="#怎么写单元测试">怎么写单元测试</a>
-      <ul>
-        <li><a href="#原生测试框架-unittestunittest2">原生测试框架 unittest/unittest2</a></li>
-        <li><a href="#第三方测试框架-pytest">第三方测试框架 py.test</a></li>
-      </ul>
-    </li>
-    <li><a href="#单元测试标准">单元测试标准</a>
-      <ul>
-        <li><a href="#代码覆盖指标">代码覆盖指标</a></li>
-        <li><a href="#代码覆盖率">代码覆盖率</a></li>
-      </ul>
-    </li>
-    <li><a href="#小结">小结</a></li>
-  </ul>
-</nav>
-</details>
-<div class="alert alert-note">
+                    <div class="article-style">
+                        <div class="alert alert-note">
   <div>
     这是写给我组里的人看的，顺手粘过来
   </div>
@@ -1021,9 +1063,9 @@ TOTAL                  353     20    94%
 <li>在覆盖基本指标的基础上，需要达到 75% 的代码覆盖率；</li>
 </ul>
 
-    </div>
+                    </div>
 
-    
+                    
 
 
 
@@ -1200,8 +1242,15 @@ TOTAL                  353     20    94%
 
 
 
-  </div>
-</article>
+                </div>
+            </article>
+
+        </main>
+
+    </div>
+</div>
+
+
   </div>
 
   <div class="page-footer">

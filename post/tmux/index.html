@@ -30,7 +30,7 @@
   
     
   
-  <meta name="description" content="目录 简介 安装 tmux 基础概念 配置 常用控制 会话 窗口 窗格 tpm 插件 鼠标操作" />
+  <meta name="description" content="简介 Tmux 是一个终端复用软件，默认的 Linux 终端一个会话只能干一件事，" />
 
   
   <link rel="alternate" hreflang="zh-Hans" href="https://szthanatos.github.io/post/tmux/" />
@@ -301,7 +301,7 @@
   <meta property="og:site_name" content="Kryptonite Lab" />
   <meta property="og:url" content="https://szthanatos.github.io/post/tmux/" />
   <meta property="og:title" content="Tmux in 10 minutes | Kryptonite Lab" />
-  <meta property="og:description" content="目录 简介 安装 tmux 基础概念 配置 常用控制 会话 窗口 窗格 tpm 插件 鼠标操作" /><meta property="og:image" content="https://szthanatos.github.io/media/icon_hu638af3a55c65206eddec4e3c4c13a753_187410_512x512_fill_lanczos_center_2.png" />
+  <meta property="og:description" content="简介 Tmux 是一个终端复用软件，默认的 Linux 终端一个会话只能干一件事，" /><meta property="og:image" content="https://szthanatos.github.io/media/icon_hu638af3a55c65206eddec4e3c4c13a753_187410_512x512_fill_lanczos_center_2.png" />
     <meta property="twitter:image" content="https://szthanatos.github.io/media/icon_hu638af3a55c65206eddec4e3c4c13a753_187410_512x512_fill_lanczos_center_2.png" /><meta property="og:locale" content="zh-Hans" />
   
     
@@ -354,7 +354,7 @@
       "url": "https://szthanatos.github.io/media/icon_hu638af3a55c65206eddec4e3c4c13a753_187410_192x192_fill_lanczos_center_2.png"
     }
   },
-  "description": "目录 简介 安装 tmux 基础概念 配置 常用控制 会话 窗口 窗格 tpm 插件 鼠标操作"
+  "description": "简介 Tmux 是一个终端复用软件，默认的 Linux 终端一个会话只能干一件事，"
 }
 </script>
 
@@ -562,7 +562,37 @@
         
 
         <li class="nav-item">
-          <a class="nav-link " href="/topic"><span>专栏</span></a>
+          <a class="nav-link " href="/categories"><span>分类</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/series"><span>指北</span></a>
         </li>
 
         
@@ -618,9 +648,41 @@
   </div>
 
   <div class="page-body">
-    <article class="article">
+    
 
-  
+<div class="container-fluid docs">
+    <div class="row flex-xl-nowrap">
+        <div class="d-none d-xl-block col-12 col-xl-3 docs-toc">
+            
+
+            <ul class="nav toc-top">
+                <li><a href="#" id="back_to_top" class="docs-toc-title">在本页</a></li>
+            </ul>
+
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#简介">简介</a></li>
+    <li><a href="#安装-tmux">安装 tmux</a></li>
+    <li><a href="#基础概念">基础概念</a></li>
+    <li><a href="#配置">配置</a></li>
+    <li><a href="#常用控制">常用控制</a>
+      <ul>
+        <li><a href="#会话">会话</a></li>
+        <li><a href="#窗口">窗口</a></li>
+        <li><a href="#窗格">窗格</a></li>
+        <li><a href="#tpm-插件">tpm 插件</a></li>
+      </ul>
+    </li>
+    <li><a href="#鼠标操作">鼠标操作</a></li>
+  </ul>
+</nav>
+
+            
+        </div>
+
+        <main class="col-12 col-md-11 col-xl-10 py-md-3 pl-md-5 docs-content" role="main">
+            <article class="article">
+                
 
 
 
@@ -694,30 +756,10 @@
 
 
 
-  <div class="article-container">
+                <div class="article-container">
 
-    <div class="article-style">
-      <details class="toc-inpage d-print-none  " open>
-  <summary class="font-weight-bold">目录</summary>
-  <nav id="TableOfContents">
-  <ul>
-    <li><a href="#简介">简介</a></li>
-    <li><a href="#安装-tmux">安装 tmux</a></li>
-    <li><a href="#基础概念">基础概念</a></li>
-    <li><a href="#配置">配置</a></li>
-    <li><a href="#常用控制">常用控制</a>
-      <ul>
-        <li><a href="#会话">会话</a></li>
-        <li><a href="#窗口">窗口</a></li>
-        <li><a href="#窗格">窗格</a></li>
-        <li><a href="#tpm-插件">tpm 插件</a></li>
-      </ul>
-    </li>
-    <li><a href="#鼠标操作">鼠标操作</a></li>
-  </ul>
-</nav>
-</details>
-<h2 id="简介">简介</h2>
+                    <div class="article-style">
+                        <h2 id="简介">简介</h2>
 <p>Tmux 是一个终端复用软件，默认的 Linux 终端一个会话只能干一件事，有了 tmux 就能在一个窗口同时管理多个前 / 后台程序了。</p>
 <h2 id="安装-tmux">安装 tmux</h2>
 <p>基础软件，跳过</p>
@@ -991,9 +1033,9 @@ run '/etc/.tmux/plugins/tpm/tpm'
 <p>鼠标按住窗格的分割线可以修改窗格大小；</p>
 <p>如果你用 <code>wsltty</code> 或者其他软件，发现右键 / 中键失效，记得按住修饰键 (比如 <code>Shift</code>) 再试。</p>
 
-    </div>
+                    </div>
 
-    
+                    
 
 
 
@@ -1170,8 +1212,15 @@ run '/etc/.tmux/plugins/tpm/tpm'
 
 
 
-  </div>
-</article>
+                </div>
+            </article>
+
+        </main>
+
+    </div>
+</div>
+
+
   </div>
 
   <div class="page-footer">

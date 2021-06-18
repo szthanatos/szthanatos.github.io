@@ -565,7 +565,37 @@
         
 
         <li class="nav-item">
-          <a class="nav-link " href="/topic"><span>专栏</span></a>
+          <a class="nav-link " href="/categories"><span>分类</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/series"><span>指北</span></a>
         </li>
 
         
@@ -621,9 +651,33 @@
   </div>
 
   <div class="page-body">
-    <article class="article">
+    
 
-  
+<div class="container-fluid docs">
+    <div class="row flex-xl-nowrap">
+        <div class="d-none d-xl-block col-12 col-xl-3 docs-toc">
+            
+
+            <ul class="nav toc-top">
+                <li><a href="#" id="back_to_top" class="docs-toc-title">在本页</a></li>
+            </ul>
+
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#0-开启评论功能">0. 开启评论功能</a></li>
+    <li><a href="#1-获取-github-application-密钥对">1. 获取 GitHub Application 密钥对</a></li>
+    <li><a href="#2-创建-gitalk-插件">2. 创建 Gitalk 插件</a></li>
+    <li><a href="#3-覆盖原生评论插件">3. 覆盖原生评论插件</a></li>
+    <li><a href="#4-初始化-issue">4. 初始化 issue</a></li>
+  </ul>
+</nav>
+
+            
+        </div>
+
+        <main class="col-12 col-md-11 col-xl-10 py-md-3 pl-md-5 docs-content" role="main">
+            <article class="article">
+                
 
 
 
@@ -716,10 +770,10 @@
 
 
 
-  <div class="article-container">
+                <div class="article-container">
 
-    <div class="article-style">
-      <p>Academic(Wowchemy) 作为我 GitHub Pages 博客主题，默认提供3种类型的评论(comments)插件：</p>
+                    <div class="article-style">
+                        <p>Academic(Wowchemy) 作为我 GitHub Pages 博客主题，默认提供3种类型的评论(comments)插件：</p>
 <ul>
 <li>Twitter——需要跳转到外部页面</li>
 <li>Disqus——收费 or 广告</li>
@@ -832,9 +886,9 @@
 <p>Gitalk 不会自动创建 issue，手动初始化的方式就是部署完，在页面登录 GitHub 然后挨个点开你所有文章。</p>
 <p>自动化方式可以网上搜一下相关教程，基本都需要 node 环境，我这边打算写个 Python 的&hellip;立个 Flag <code>_(:з」∠)_</code></p>
 
-    </div>
+                    </div>
 
-    
+                    
 
 
 
@@ -1028,8 +1082,15 @@
 
 
 
-  </div>
-</article>
+                </div>
+            </article>
+
+        </main>
+
+    </div>
+</div>
+
+
   </div>
 
   <div class="page-footer">

@@ -88,29 +88,7 @@ echo index-url = https://pypi.tuna.tsinghua.edu.cn/simple&amp;gt;&amp;gt;~/.pip/
       <link>https://szthanatos.github.io/post/python/unit_testing/</link>
       <pubDate>Mon, 20 Aug 2018 10:49:50 +0800</pubDate>
       <guid>https://szthanatos.github.io/post/python/unit_testing/</guid>
-      <description>&lt;details class=&#34;toc-inpage d-print-none  &#34; open&gt;
-  &lt;summary class=&#34;font-weight-bold&#34;&gt;目录&lt;/summary&gt;
-  &lt;nav id=&#34;TableOfContents&#34;&gt;
-  &lt;ul&gt;
-    &lt;li&gt;&lt;a href=&#34;#什么是单元测试&#34;&gt;什么是单元测试&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#为什么要写单元测试&#34;&gt;为什么要写单元测试&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#怎么写单元测试&#34;&gt;怎么写单元测试&lt;/a&gt;
-      &lt;ul&gt;
-        &lt;li&gt;&lt;a href=&#34;#原生测试框架-unittestunittest2&#34;&gt;原生测试框架 unittest/unittest2&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&#34;#第三方测试框架-pytest&#34;&gt;第三方测试框架 py.test&lt;/a&gt;&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#单元测试标准&#34;&gt;单元测试标准&lt;/a&gt;
-      &lt;ul&gt;
-        &lt;li&gt;&lt;a href=&#34;#代码覆盖指标&#34;&gt;代码覆盖指标&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&#34;#代码覆盖率&#34;&gt;代码覆盖率&lt;/a&gt;&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#小结&#34;&gt;小结&lt;/a&gt;&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/nav&gt;
-&lt;/details&gt;
-&lt;div class=&#34;alert alert-note&#34;&gt;
+      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     这是写给我组里的人看的，顺手粘过来
   &lt;/div&gt;

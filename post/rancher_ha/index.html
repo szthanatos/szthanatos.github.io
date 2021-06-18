@@ -30,7 +30,7 @@
   
     
   
-  <meta name="description" content="目录 硬件需求 0. 工具准备 1. 配置 Nginx 负载均衡 2. 使用 RKE 安装 K8S 3. 初始化" />
+  <meta name="description" content="硬件需求 rancher ha 推荐的架构是单独搭建一个 K8s 集群部署 Rancher" />
 
   
   <link rel="alternate" hreflang="zh-Hans" href="https://szthanatos.github.io/post/rancher_ha/" />
@@ -301,7 +301,7 @@
   <meta property="og:site_name" content="Kryptonite Lab" />
   <meta property="og:url" content="https://szthanatos.github.io/post/rancher_ha/" />
   <meta property="og:title" content="基于 Rancher HA 搭建容器云平台 | Kryptonite Lab" />
-  <meta property="og:description" content="目录 硬件需求 0. 工具准备 1. 配置 Nginx 负载均衡 2. 使用 RKE 安装 K8S 3. 初始化" /><meta property="og:image" content="https://szthanatos.github.io/media/icon_hu638af3a55c65206eddec4e3c4c13a753_187410_512x512_fill_lanczos_center_2.png" />
+  <meta property="og:description" content="硬件需求 rancher ha 推荐的架构是单独搭建一个 K8s 集群部署 Rancher" /><meta property="og:image" content="https://szthanatos.github.io/media/icon_hu638af3a55c65206eddec4e3c4c13a753_187410_512x512_fill_lanczos_center_2.png" />
     <meta property="twitter:image" content="https://szthanatos.github.io/media/icon_hu638af3a55c65206eddec4e3c4c13a753_187410_512x512_fill_lanczos_center_2.png" /><meta property="og:locale" content="zh-Hans" />
   
     
@@ -354,7 +354,7 @@
       "url": "https://szthanatos.github.io/media/icon_hu638af3a55c65206eddec4e3c4c13a753_187410_192x192_fill_lanczos_center_2.png"
     }
   },
-  "description": "目录 硬件需求 0. 工具准备 1. 配置 Nginx 负载均衡 2. 使用 RKE 安装 K8S 3. 初始化"
+  "description": "硬件需求 rancher ha 推荐的架构是单独搭建一个 K8s 集群部署 Rancher"
 }
 </script>
 
@@ -562,7 +562,37 @@
         
 
         <li class="nav-item">
-          <a class="nav-link " href="/topic"><span>专栏</span></a>
+          <a class="nav-link " href="/categories"><span>分类</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/series"><span>指北</span></a>
         </li>
 
         
@@ -618,9 +648,36 @@
   </div>
 
   <div class="page-body">
-    <article class="article">
+    
 
-  
+<div class="container-fluid docs">
+    <div class="row flex-xl-nowrap">
+        <div class="d-none d-xl-block col-12 col-xl-3 docs-toc">
+            
+
+            <ul class="nav toc-top">
+                <li><a href="#" id="back_to_top" class="docs-toc-title">在本页</a></li>
+            </ul>
+
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#硬件需求">硬件需求</a></li>
+    <li><a href="#0-工具准备">0. 工具准备</a></li>
+    <li><a href="#1-配置-nginx-负载均衡">1. 配置 Nginx 负载均衡</a></li>
+    <li><a href="#2-使用-rke-安装-k8s">2. 使用 RKE 安装 K8S</a></li>
+    <li><a href="#3-初始化-helm">3. 初始化 helm</a></li>
+    <li><a href="#4-配置-ca-证书">4. 配置 ca 证书</a></li>
+    <li><a href="#5-安装-rancher">5. 安装 rancher</a></li>
+    <li><a href="#6-添加主机别名">6. 添加主机别名</a></li>
+  </ul>
+</nav>
+
+            
+        </div>
+
+        <main class="col-12 col-md-11 col-xl-10 py-md-3 pl-md-5 docs-content" role="main">
+            <article class="article">
+                
 
 
 
@@ -694,25 +751,10 @@
 
 
 
-  <div class="article-container">
+                <div class="article-container">
 
-    <div class="article-style">
-      <details class="toc-inpage d-print-none  " open>
-  <summary class="font-weight-bold">目录</summary>
-  <nav id="TableOfContents">
-  <ul>
-    <li><a href="#硬件需求">硬件需求</a></li>
-    <li><a href="#0-工具准备">0. 工具准备</a></li>
-    <li><a href="#1-配置-nginx-负载均衡">1. 配置 Nginx 负载均衡</a></li>
-    <li><a href="#2-使用-rke-安装-k8s">2. 使用 RKE 安装 K8S</a></li>
-    <li><a href="#3-初始化-helm">3. 初始化 helm</a></li>
-    <li><a href="#4-配置-ca-证书">4. 配置 ca 证书</a></li>
-    <li><a href="#5-安装-rancher">5. 安装 rancher</a></li>
-    <li><a href="#6-添加主机别名">6. 添加主机别名</a></li>
-  </ul>
-</nav>
-</details>
-<h2 id="硬件需求">硬件需求</h2>
+                    <div class="article-style">
+                        <h2 id="硬件需求">硬件需求</h2>
 <p>rancher ha 推荐的架构是单独搭建一个 K8s 集群部署 Rancher，然后再用这个 Rancher 去管理其他的 K8s 集群。</p>
 <p>
 
@@ -1102,9 +1144,9 @@ patch  daemonsets cattle-node-agent --patch '{
 </blockquote>
 <p>这几步花的时间比较长，需要耐心等待。安装过程到此结束。</p>
 
-    </div>
+                    </div>
 
-    
+                    
 
 
 
@@ -1290,8 +1332,15 @@ patch  daemonsets cattle-node-agent --patch '{
 
 
 
-  </div>
-</article>
+                </div>
+            </article>
+
+        </main>
+
+    </div>
+</div>
+
+
   </div>
 
   <div class="page-footer">

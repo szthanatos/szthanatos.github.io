@@ -562,7 +562,37 @@
         
 
         <li class="nav-item">
-          <a class="nav-link " href="/topic"><span>专栏</span></a>
+          <a class="nav-link " href="/categories"><span>分类</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/series"><span>指北</span></a>
         </li>
 
         
@@ -618,9 +648,33 @@
   </div>
 
   <div class="page-body">
-    <article class="article">
+    
 
-  
+<div class="container-fluid docs">
+    <div class="row flex-xl-nowrap">
+        <div class="d-none d-xl-block col-12 col-xl-3 docs-toc">
+            
+
+            <ul class="nav toc-top">
+                <li><a href="#" id="back_to_top" class="docs-toc-title">在本页</a></li>
+            </ul>
+
+            <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+            
+        </div>
+
+        <main class="col-12 col-md-11 col-xl-10 py-md-3 pl-md-5 docs-content" role="main">
+            <article class="article">
+                
 
 
 
@@ -698,10 +752,10 @@
 
 
 
-  <div class="article-container">
+                <div class="article-container">
 
-    <div class="article-style">
-      <p>对列表的去重很简单，<code>set()</code> 一下再 <code>list()</code> 回来就可以了，但是如果要保留原始列表的顺序呢？</p>
+                    <div class="article-style">
+                        <p>对列表的去重很简单，<code>set()</code> 一下再 <code>list()</code> 回来就可以了，但是如果要保留原始列表的顺序呢？</p>
 <p>举例，对 <code>[&quot;b&quot;, &quot;b&quot;, &quot;c&quot;, &quot;a&quot;, &quot;c&quot;, &quot;b&quot;, &quot;a&quot;, &quot;b&quot;]</code> 这个列表进行原序去重，得到结果应该是 <code>['b', 'c', 'a']</code>。</p>
 <p>有下面这几种写法：</p>
 <h4 id="二次排序">二次排序</h4>
@@ -807,9 +861,9 @@ if __name__ == '__main__':
 </table>
 <p>可见，python3.6 之后 dict 是最好的原序去重办法，3.6 之前用 defaultdict 吧。</p>
 
-    </div>
+                    </div>
 
-    
+                    
 
 
 
@@ -988,8 +1042,15 @@ if __name__ == '__main__':
 
 
 
-  </div>
-</article>
+                </div>
+            </article>
+
+        </main>
+
+    </div>
+</div>
+
+
   </div>
 
   <div class="page-footer">

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>设计 | Kryptonite Lab</title>
+    <link>https://szthanatos.github.io/series/redis/01-design/</link>
+      <atom:link href="https://szthanatos.github.io/series/redis/01-design/index.xml" rel="self" type="application/rss+xml" />
+    <description>设计</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>zh-Hans</language><copyright>© 2021 szthanatos</copyright><lastBuildDate>Sun, 09 Sep 2018 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://szthanatos.github.io/media/icon_hu638af3a55c65206eddec4e3c4c13a753_187410_512x512_fill_lanczos_center_2.png</url>
+      <title>设计</title>
+      <link>https://szthanatos.github.io/series/redis/01-design/</link>
+    </image>
+    
+  </channel>
+</rss>

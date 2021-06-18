@@ -30,7 +30,7 @@
   
     
   
-  <meta name="description" content="目录 Hugo 安装 / 更新 安装 / 更新 常用命令 Academic 安装 / 更新 通过 Netlify 通过 Git 部" />
+  <meta name="description" content="Hugo 安装 / 更新 Hugo 是使用 Go 语言开发的静态站点生成器。不过无需准备" />
 
   
   <link rel="alternate" hreflang="zh-Hans" href="https://szthanatos.github.io/post/academic/academic_in_practice/" />
@@ -300,7 +300,7 @@
   <meta property="og:site_name" content="Kryptonite Lab" />
   <meta property="og:url" content="https://szthanatos.github.io/post/academic/academic_in_practice/" />
   <meta property="og:title" content="Academic 实现 Github Page 个人博客 | Kryptonite Lab" />
-  <meta property="og:description" content="目录 Hugo 安装 / 更新 安装 / 更新 常用命令 Academic 安装 / 更新 通过 Netlify 通过 Git 部" /><meta property="og:image" content="https://szthanatos.github.io/post/academic/academic_in_practice/featured.jpg" />
+  <meta property="og:description" content="Hugo 安装 / 更新 Hugo 是使用 Go 语言开发的静态站点生成器。不过无需准备" /><meta property="og:image" content="https://szthanatos.github.io/post/academic/academic_in_practice/featured.jpg" />
     <meta property="twitter:image" content="https://szthanatos.github.io/post/academic/academic_in_practice/featured.jpg" /><meta property="og:locale" content="zh-Hans" />
   
     
@@ -357,7 +357,7 @@
       "url": "https://szthanatos.github.io/media/icon_hu638af3a55c65206eddec4e3c4c13a753_187410_192x192_fill_lanczos_center_2.png"
     }
   },
-  "description": "目录 Hugo 安装 / 更新 安装 / 更新 常用命令 Academic 安装 / 更新 通过 Netlify 通过 Git 部"
+  "description": "Hugo 安装 / 更新 Hugo 是使用 Go 语言开发的静态站点生成器。不过无需准备"
 }
 </script>
 
@@ -565,7 +565,37 @@
         
 
         <li class="nav-item">
-          <a class="nav-link " href="/topic"><span>专栏</span></a>
+          <a class="nav-link " href="/categories"><span>分类</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/series"><span>指北</span></a>
         </li>
 
         
@@ -621,9 +651,59 @@
   </div>
 
   <div class="page-body">
-    <article class="article">
+    
 
-  
+<div class="container-fluid docs">
+    <div class="row flex-xl-nowrap">
+        <div class="d-none d-xl-block col-12 col-xl-3 docs-toc">
+            
+
+            <ul class="nav toc-top">
+                <li><a href="#" id="back_to_top" class="docs-toc-title">在本页</a></li>
+            </ul>
+
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#hugo-安装--更新">Hugo 安装 / 更新</a>
+      <ul>
+        <li><a href="#安装--更新">安装 / 更新</a></li>
+        <li><a href="#常用命令">常用命令</a></li>
+      </ul>
+    </li>
+    <li><a href="#academic-安装--更新">Academic 安装 / 更新</a>
+      <ul>
+        <li><a href="#通过-netlify">通过 Netlify</a></li>
+        <li><a href="#通过-git">通过 Git</a></li>
+      </ul>
+    </li>
+    <li><a href="#部署到-github-pages">部署到 Github Pages</a>
+      <ul>
+        <li><a href="#原理">原理</a></li>
+        <li><a href="#官方教程-缩减版">官方教程 (缩减版)</a></li>
+        <li><a href="#脚本">脚本</a></li>
+      </ul>
+    </li>
+    <li><a href="#个性化配置">个性化配置</a>
+      <ul>
+        <li><a href="#configtoml-主要配置项解释">config.toml 主要配置项解释</a></li>
+        <li><a href="#修改网站-logo">修改网站 logo</a></li>
+        <li><a href="#给文章添加精选图">给文章添加精选图</a></li>
+        <li><a href="#给文章添加头部背景">给文章添加头部背景</a></li>
+        <li><a href="#目录">目录</a></li>
+        <li><a href="#注意--警告标识">注意 / 警告标识</a></li>
+        <li><a href="#消除短代码效果">消除短代码效果</a></li>
+        <li><a href="#修改模板">修改模板</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+            
+        </div>
+
+        <main class="col-12 col-md-11 col-xl-10 py-md-3 pl-md-5 docs-content" role="main">
+            <article class="article">
+                
 
 
 
@@ -716,48 +796,10 @@
 
 
 
-  <div class="article-container">
+                <div class="article-container">
 
-    <div class="article-style">
-      <details class="toc-inpage d-print-none  " open>
-  <summary class="font-weight-bold">目录</summary>
-  <nav id="TableOfContents">
-  <ul>
-    <li><a href="#hugo-安装--更新">Hugo 安装 / 更新</a>
-      <ul>
-        <li><a href="#安装--更新">安装 / 更新</a></li>
-        <li><a href="#常用命令">常用命令</a></li>
-      </ul>
-    </li>
-    <li><a href="#academic-安装--更新">Academic 安装 / 更新</a>
-      <ul>
-        <li><a href="#通过-netlify">通过 Netlify</a></li>
-        <li><a href="#通过-git">通过 Git</a></li>
-      </ul>
-    </li>
-    <li><a href="#部署到-github-pages">部署到 Github Pages</a>
-      <ul>
-        <li><a href="#原理">原理</a></li>
-        <li><a href="#官方教程-缩减版">官方教程 (缩减版)</a></li>
-        <li><a href="#脚本">脚本</a></li>
-      </ul>
-    </li>
-    <li><a href="#个性化配置">个性化配置</a>
-      <ul>
-        <li><a href="#configtoml-主要配置项解释">config.toml 主要配置项解释</a></li>
-        <li><a href="#修改网站-logo">修改网站 logo</a></li>
-        <li><a href="#给文章添加精选图">给文章添加精选图</a></li>
-        <li><a href="#给文章添加头部背景">给文章添加头部背景</a></li>
-        <li><a href="#目录">目录</a></li>
-        <li><a href="#注意--警告标识">注意 / 警告标识</a></li>
-        <li><a href="#消除短代码效果">消除短代码效果</a></li>
-        <li><a href="#修改模板">修改模板</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-</details>
-<h2 id="hugo-安装--更新">Hugo 安装 / 更新</h2>
+                    <div class="article-style">
+                        <h2 id="hugo-安装--更新">Hugo 安装 / 更新</h2>
 <p><a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 是使用 <code>Go</code> 语言开发的静态站点生成器。不过无需准备 <code>Go</code> 语言环境，可以直接通过二进制编译包进行跨平台部署。</p>
 <p>以下均以 Ubuntu18.0 为例。</p>
 <h3 id="安装--更新">安装 / 更新</h3>
@@ -1102,9 +1144,9 @@ fi
 接着，复制主题目录下的 <code>layouts/_default/single.html</code> 到对应位置，在合适地方插入一句 <code>{{partial &quot;license.html&quot; .}}</code>，表明我要在这里使用名为 <code>license.html</code> 的 <code>partial</code>。
 再之后就是你们看到的效果了。</p>
 
-    </div>
+                    </div>
 
-    
+                    
 
 
 
@@ -1296,8 +1338,15 @@ fi
 
 
 
-  </div>
-</article>
+                </div>
+            </article>
+
+        </main>
+
+    </div>
+</div>
+
+
   </div>
 
   <div class="page-footer">

@@ -13,107 +13,6 @@
     </image>
     
     <item>
-      <title>指北系列指南</title>
-      <link>https://szthanatos.github.io/post/incomplete-guide/</link>
-      <pubDate>Mon, 28 Dec 2020 19:03:14 +0800</pubDate>
-      <guid>https://szthanatos.github.io/post/incomplete-guide/</guid>
-      <description>&lt;p&gt;我觉得网上技术教程都很有坑。&lt;/p&gt;
-&lt;p&gt;比如官方文档。如果只想尽快使用上某种技术产品，入门章节一般都是实验级别的，不太够用，而其余章节就有点过于细节;&lt;/p&gt;
-&lt;p&gt;要么是零碎的个人笔记，基本只写自己关心的那一部分，叙述角度和内容都非常零散。&lt;/p&gt;
-&lt;p&gt;所以我到底想要什么样的教程呢？&lt;/p&gt;
-&lt;p&gt;对于我个人而言，我期望的是一个比个人笔记长，比官方文档短的一个教程，读起来不会太累；&lt;/p&gt;
-&lt;p&gt;内容可以不深入，但是要系统和全面，看完了能让读者有一个整体的概念；&lt;/p&gt;
-&lt;p&gt;而对于不同领域的知识，通过同样的叙述方式，降低认知负担，快速定位自己关心的部分；&lt;/p&gt;
-&lt;p&gt;教程都统一叫指北，不全面也不权威，和系统学习官方文档背道而驰，但是30分钟建立一个感性认识完全足够了。&lt;/p&gt;
-&lt;p&gt;所以我拟定了这样的一个思路：&lt;/p&gt;
-&lt;p&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  &gt;
-  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://i.loli.net/2021/06/17/hZ1TLXpDWY3v9UA.png&#34; alt=&#34;指北系列目录结构&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;/figure&gt;
-&lt;/p&gt;
-&lt;p&gt;作为我个人博客的指北专题的固定格式，&lt;/p&gt;
-&lt;p&gt;也期望通过这样的方式更好的帮助自己建立和分享知识体系。&lt;/p&gt;
-&lt;p&gt;生成目录的脚本如下：&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;#!/bin/bash
-create_page(){
-    cat &amp;gt; ${1}/${2}.md &amp;lt;&amp;lt;EOF
----
-title: 
-linktitle: ${3}
-summary: 
-date: $(date &#39;+%Y-%m-%d %H:%M:%S&#39;)
-lastmod: $(date &#39;+%Y-%m-%d %H:%M:%S&#39;)
-draft: false
-toc: true
-type: book
-weight: ${4}
----
-EOF
-}
-
-doc_title=&amp;quot;$1&amp;quot;
-mkdir -p content/$1
-cd content/$1
-
-dir_list=( 
-    01-design 
-    02-useage 
-    03-operation 
-    04-advanced 
-    05-troubleshooting 
-    )
-
-for chapter in ${dir_list[*]}
-do
-    mkdir -p $chapter
-done
-
-# chapter
-create_page &amp;quot;${PWD}&amp;quot; _index &amp;quot;简介&amp;quot; 1
-create_page 01-design _index &amp;quot;设计&amp;quot; 10
-create_page 02-useage _index &amp;quot;使用&amp;quot; 40
-create_page 03-operation _index &amp;quot;运维&amp;quot; 70
-create_page 04-advanced _index &amp;quot;进阶&amp;quot; 100
-create_page 05-troubleshooting _index &amp;quot;排错&amp;quot; 130
-
-# page
-create_page 01-design concept &amp;quot;概念&amp;quot; 10
-create_page 01-design architecture &amp;quot;架构&amp;quot; 20
-create_page 01-design component &amp;quot;组件&amp;quot; 30
-create_page 02-useage install-and-config &amp;quot;安装/配置&amp;quot; 40
-create_page 02-useage operate &amp;quot;操作&amp;quot; 50
-create_page 02-useage example &amp;quot;用例&amp;quot; 60
-create_page 03-operation update-and-rollback &amp;quot;升级/降级&amp;quot; 70
-create_page 03-operation backup-and-restore &amp;quot;备份/恢复&amp;quot; 80
-create_page 03-operation observability &amp;quot;观测性&amp;quot; 90
-create_page 04-advanced optimize &amp;quot;优化&amp;quot; 100
-create_page 04-advanced trick&amp;quot;技巧&amp;quot; 110
-create_page 04-advanced reference &amp;quot;参考&amp;quot; 120
-
-cd ../../
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;如果你也使用 &lt;code&gt;hugo&lt;/code&gt; 和 &lt;code&gt;wowchemy&lt;/code&gt;，那么在项目主目录执行 &lt;code&gt;./create_book.sh [文档名]&lt;/code&gt; 就会在 &lt;code&gt;content/[文档名]&lt;/code&gt; 下生成所有相关文件和文件夹，并配置好目录顺序。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>使用 Gitalk 作为 Academic 的评论插件</title>
       <link>https://szthanatos.github.io/post/academic/gitalk_as_comments/</link>
       <pubDate>Wed, 17 Jun 2020 23:21:08 +0800</pubDate>
@@ -342,22 +241,7 @@ debug1: Next authentication method: password # 3
       <link>https://szthanatos.github.io/post/rancher_ha/</link>
       <pubDate>Thu, 26 Sep 2019 22:58:39 +0800</pubDate>
       <guid>https://szthanatos.github.io/post/rancher_ha/</guid>
-      <description>&lt;details class=&#34;toc-inpage d-print-none  &#34; open&gt;
-  &lt;summary class=&#34;font-weight-bold&#34;&gt;目录&lt;/summary&gt;
-  &lt;nav id=&#34;TableOfContents&#34;&gt;
-  &lt;ul&gt;
-    &lt;li&gt;&lt;a href=&#34;#硬件需求&#34;&gt;硬件需求&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#0-工具准备&#34;&gt;0. 工具准备&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#1-配置-nginx-负载均衡&#34;&gt;1. 配置 Nginx 负载均衡&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#2-使用-rke-安装-k8s&#34;&gt;2. 使用 RKE 安装 K8S&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#3-初始化-helm&#34;&gt;3. 初始化 helm&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#4-配置-ca-证书&#34;&gt;4. 配置 ca 证书&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#5-安装-rancher&#34;&gt;5. 安装 rancher&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#6-添加主机别名&#34;&gt;6. 添加主机别名&lt;/a&gt;&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/nav&gt;
-&lt;/details&gt;
-&lt;h2 id=&#34;硬件需求&#34;&gt;硬件需求&lt;/h2&gt;
+      <description>&lt;h2 id=&#34;硬件需求&#34;&gt;硬件需求&lt;/h2&gt;
 &lt;p&gt;rancher ha 推荐的架构是单独搭建一个 K8s 集群部署 Rancher，然后再用这个 Rancher 去管理其他的 K8s 集群。&lt;/p&gt;
 &lt;p&gt;
 
@@ -754,24 +638,7 @@ patch  daemonsets cattle-node-agent --patch &#39;{
       <link>https://szthanatos.github.io/post/rancheros/</link>
       <pubDate>Sun, 01 Sep 2019 15:39:50 +0800</pubDate>
       <guid>https://szthanatos.github.io/post/rancheros/</guid>
-      <description>&lt;details class=&#34;toc-inpage d-print-none  &#34; open&gt;
-  &lt;summary class=&#34;font-weight-bold&#34;&gt;目录&lt;/summary&gt;
-  &lt;nav id=&#34;TableOfContents&#34;&gt;
-  &lt;ul&gt;
-    &lt;li&gt;&lt;a href=&#34;#介绍&#34;&gt;介绍&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#安装&#34;&gt;安装&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#使用&#34;&gt;使用&lt;/a&gt;
-      &lt;ul&gt;
-        &lt;li&gt;&lt;a href=&#34;#ros&#34;&gt;ros&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&#34;#系统服务&#34;&gt;系统服务&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&#34;#docker&#34;&gt;docker&lt;/a&gt;&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#cloud-config&#34;&gt;cloud-config&lt;/a&gt;&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/nav&gt;
-&lt;/details&gt;
-&lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
+      <description>&lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;RancherOS&lt;/code&gt; 是 Rancher 推出的一个轻量级的 Linux 内核操作系统，专为容器环境而设计。&lt;/p&gt;
 &lt;p&gt;按官网的说法，它具有如下特性：&lt;/p&gt;
 &lt;table&gt;
@@ -1175,26 +1042,7 @@ runcmd:
       <link>https://szthanatos.github.io/post/janusgraph/</link>
       <pubDate>Sun, 17 Mar 2019 21:50:19 +0800</pubDate>
       <guid>https://szthanatos.github.io/post/janusgraph/</guid>
-      <description>&lt;details class=&#34;toc-inpage d-print-none  &#34; open&gt;
-  &lt;summary class=&#34;font-weight-bold&#34;&gt;目录&lt;/summary&gt;
-  &lt;nav id=&#34;TableOfContents&#34;&gt;
-  &lt;ul&gt;
-    &lt;li&gt;&lt;a href=&#34;#基本环境&#34;&gt;基本环境&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#安装&#34;&gt;安装&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#配置&#34;&gt;配置&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#基本用法&#34;&gt;基本用法&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#加载诸神图&#34;&gt;加载诸神图&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#一些基本操作&#34;&gt;一些基本操作&lt;/a&gt;
-      &lt;ul&gt;
-        &lt;li&gt;&lt;a href=&#34;#增操作&#34;&gt;增操作&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&#34;#删操作&#34;&gt;删操作&lt;/a&gt;&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#查询&#34;&gt;查询&lt;/a&gt;&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/nav&gt;
-&lt;/details&gt;
-&lt;h2 id=&#34;基本环境&#34;&gt;基本环境&lt;/h2&gt;
+      <description>&lt;h2 id=&#34;基本环境&#34;&gt;基本环境&lt;/h2&gt;
 &lt;p&gt;底层数据库基于 HBase，检索服务基于 Elasticserach。&lt;/p&gt;
 &lt;p&gt;系统运行服务大致如下：&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;[root@xnode208 ~] jps
@@ -1550,56 +1398,6 @@ g.E().properties(&#39;reason&#39;);  # 查看边属性为 reason 的属性及属
 &lt;p&gt;原文见上方连接。&lt;/p&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-&lt;details class=&#34;toc-inpage d-print-none  &#34; open&gt;
-  &lt;summary class=&#34;font-weight-bold&#34;&gt;目录&lt;/summary&gt;
-  &lt;nav id=&#34;TableOfContents&#34;&gt;
-  &lt;ul&gt;
-    &lt;li&gt;&lt;a href=&#34;#副标题&#34;&gt;副标题&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#强调&#34;&gt;强调&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#有序列表&#34;&gt;有序列表&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#无序列表&#34;&gt;无序列表&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#图片&#34;&gt;图片&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#图片集&#34;&gt;图片集&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#视频&#34;&gt;视频&lt;/a&gt;
-      &lt;ul&gt;
-        &lt;li&gt;&lt;a href=&#34;#本地视频文件&#34;&gt;本地视频文件&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&#34;#youtube&#34;&gt;Youtube&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&#34;#vimeo&#34;&gt;Vimeo&lt;/a&gt;&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#链接&#34;&gt;链接&lt;/a&gt;
-      &lt;ul&gt;
-        &lt;li&gt;&lt;a href=&#34;#标签和分类&#34;&gt;标签和分类&lt;/a&gt;&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#emojis&#34;&gt;Emojis&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#段落引用&#34;&gt;段落引用&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#高亮引用&#34;&gt;高亮引用&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#脚注&#34;&gt;脚注&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#嵌入文档&#34;&gt;嵌入文档&lt;/a&gt;
-      &lt;ul&gt;
-        &lt;li&gt;&lt;a href=&#34;#speaker-deck&#34;&gt;Speaker Deck&lt;/a&gt;&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#代码高亮&#34;&gt;代码高亮&lt;/a&gt;
-      &lt;ul&gt;
-        &lt;li&gt;&lt;a href=&#34;#高亮选项&#34;&gt;高亮选项&lt;/a&gt;&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#twitter-tweet&#34;&gt;Twitter tweet&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#github-gist&#34;&gt;GitHub gist&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#latex-数学公式&#34;&gt;LATEX 数学公式&lt;/a&gt;
-      &lt;ul&gt;
-        &lt;li&gt;&lt;a href=&#34;#多行方程式&#34;&gt;多行方程式&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&#34;#论文摘要&#34;&gt;论文摘要&lt;/a&gt;&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#表格&#34;&gt;表格&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#警报&#34;&gt;警报&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#目录&#34;&gt;目录&lt;/a&gt;&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/nav&gt;
-&lt;/details&gt;
 &lt;p&gt;Academic 支持使用 Markdown、LaTeX 数学公式和 Hugo 代码段编写内容。
 此外，可以使用 HTML 以实现高级样式。
 本文概述最常见的格式选项。&lt;/p&gt;
@@ -1963,35 +1761,6 @@ Here&#39;s some important information...
 &lt;p&gt;原文见上方连接。&lt;/p&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-&lt;details class=&#34;toc-inpage d-print-none  &#34; open&gt;
-  &lt;summary class=&#34;font-weight-bold&#34;&gt;目录&lt;/summary&gt;
-  &lt;nav id=&#34;TableOfContents&#34;&gt;
-  &lt;ul&gt;
-    &lt;li&gt;&lt;a href=&#34;#精选图片&#34;&gt;精选图片&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#标题图片&#34;&gt;标题图片&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#数学公式和代码&#34;&gt;数学公式和代码&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#页面特性&#34;&gt;页面特性&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#创建一个出版物&#34;&gt;创建一个出版物&lt;/a&gt;
-      &lt;ul&gt;
-        &lt;li&gt;&lt;a href=&#34;#自动&#34;&gt;自动&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&#34;#手动&#34;&gt;手动&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&#34;#关联其它资源&#34;&gt;关联其它资源&lt;/a&gt;&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#创建博文&#34;&gt;创建博文&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#创建项目&#34;&gt;创建项目&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#创建演讲&#34;&gt;创建演讲&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#创建幻灯片&#34;&gt;创建幻灯片&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#创建课程或文档&#34;&gt;创建课程或文档&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#创建小部件页面&#34;&gt;创建小部件页面&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#创建其他页面-eg-简历&#34;&gt;创建其他页面 (e.g. 简历)&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#管理列表页&#34;&gt;管理列表页&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#移除内容&#34;&gt;移除内容&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#查看站点更新&#34;&gt;查看站点更新&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#部署站点&#34;&gt;部署站点&lt;/a&gt;&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/nav&gt;
-&lt;/details&gt;
 &lt;p&gt;这是一个使用 Academic 框架管理你的文章的简短指南。
 Academic 提供的内容模板包括出版物、项目、宣讲、新闻 / 博客文章、以及小部件页。
 之后，你可能同样对 &lt;a href=&#34;https://szthanatos.github.io/post/trans_writing_content.md&#34;&gt;使用 Markdown、LaTeX 数学公式和代码段进行创作&lt;/a&gt; 感兴趣。&lt;/p&gt;
@@ -2182,27 +1951,7 @@ summary = &amp;quot;&amp;quot;  # Add a page description.
       <link>https://szthanatos.github.io/post/tmux/</link>
       <pubDate>Tue, 01 Jan 2019 12:27:05 +0800</pubDate>
       <guid>https://szthanatos.github.io/post/tmux/</guid>
-      <description>&lt;details class=&#34;toc-inpage d-print-none  &#34; open&gt;
-  &lt;summary class=&#34;font-weight-bold&#34;&gt;目录&lt;/summary&gt;
-  &lt;nav id=&#34;TableOfContents&#34;&gt;
-  &lt;ul&gt;
-    &lt;li&gt;&lt;a href=&#34;#简介&#34;&gt;简介&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#安装-tmux&#34;&gt;安装 tmux&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#基础概念&#34;&gt;基础概念&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#配置&#34;&gt;配置&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#常用控制&#34;&gt;常用控制&lt;/a&gt;
-      &lt;ul&gt;
-        &lt;li&gt;&lt;a href=&#34;#会话&#34;&gt;会话&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&#34;#窗口&#34;&gt;窗口&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&#34;#窗格&#34;&gt;窗格&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&#34;#tpm-插件&#34;&gt;tpm 插件&lt;/a&gt;&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#鼠标操作&#34;&gt;鼠标操作&lt;/a&gt;&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/nav&gt;
-&lt;/details&gt;
-&lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;
+      <description>&lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;
 &lt;p&gt;Tmux 是一个终端复用软件，默认的 Linux 终端一个会话只能干一件事，有了 tmux 就能在一个窗口同时管理多个前 / 后台程序了。&lt;/p&gt;
 &lt;h2 id=&#34;安装-tmux&#34;&gt;安装 tmux&lt;/h2&gt;
 &lt;p&gt;基础软件，跳过&lt;/p&gt;
@@ -2483,26 +2232,7 @@ run &#39;/etc/.tmux/plugins/tpm/tpm&#39;
       <link>https://szthanatos.github.io/post/git/git_tips/</link>
       <pubDate>Fri, 14 Dec 2018 09:35:32 +0800</pubDate>
       <guid>https://szthanatos.github.io/post/git/git_tips/</guid>
-      <description>&lt;details class=&#34;toc-inpage d-print-none  &#34; open&gt;
-  &lt;summary class=&#34;font-weight-bold&#34;&gt;目录&lt;/summary&gt;
-  &lt;nav id=&#34;TableOfContents&#34;&gt;
-  &lt;ul&gt;
-    &lt;li&gt;&lt;a href=&#34;#deploy-keyssh-keygithub&#34;&gt;Deploy key/SSH key(github)&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#更换-git-协议&#34;&gt;更换 git 协议&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#强制覆盖本地文件&#34;&gt;强制覆盖本地文件&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#撤销修改&#34;&gt;撤销修改&lt;/a&gt;
-      &lt;ul&gt;
-        &lt;li&gt;&lt;a href=&#34;#add-之前撤销&#34;&gt;add 之前撤销&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&#34;#commit-之前撤销&#34;&gt;commit 之前撤销&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&#34;#push-之前撤销&#34;&gt;push 之前撤销&lt;/a&gt;&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#删除历史提交记录&#34;&gt;删除历史提交记录&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#忽略文件权限&#34;&gt;忽略文件权限&lt;/a&gt;&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/nav&gt;
-&lt;/details&gt;
-&lt;h2 id=&#34;deploy-keyssh-keygithub&#34;&gt;Deploy key/SSH key(github)&lt;/h2&gt;
+      <description>&lt;h2 id=&#34;deploy-keyssh-keygithub&#34;&gt;Deploy key/SSH key(github)&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;Deploy key&lt;/code&gt; 是在 &lt;code&gt;项目主页&lt;/code&gt;-&lt;code&gt;setting&lt;/code&gt;-&lt;code&gt;Delpoy keys&lt;/code&gt; 下进行添加，如果勾选 &lt;code&gt;Allow write access&lt;/code&gt;，则相当于具有对这个项目的读写权限 (否则只能 &lt;code&gt;clone&lt;/code&gt; 不能 &lt;code&gt;push&lt;/code&gt;)。&lt;strong&gt;作用范围是这个项目。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;SSH key&lt;/code&gt; 是在你 &lt;code&gt;个人主页&lt;/code&gt;-&lt;code&gt;Settings&lt;/code&gt;-&lt;code&gt;SSH and GPG keys&lt;/code&gt; 下进行添加。&lt;strong&gt;作用范围是你的账户下的所有项目。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;同一个 &lt;code&gt;公钥&lt;/code&gt;，只能作为整个账户的 &lt;code&gt;SSH key&lt;/code&gt;，或者 &lt;strong&gt;一个项目&lt;/strong&gt; 的 &lt;code&gt;Deploy key&lt;/code&gt;。想为一台机器授予多个项目的读写权限的话，需要通过 &lt;code&gt;ssh-keygen&lt;/code&gt; 生成多个密钥，分别作为不同项目的 &lt;code&gt;Deploy key&lt;/code&gt;。&lt;/p&gt;
@@ -2576,45 +2306,7 @@ git push -f origin {old_branch}
       <link>https://szthanatos.github.io/post/academic/academic_in_practice/</link>
       <pubDate>Sun, 09 Dec 2018 16:34:42 +0800</pubDate>
       <guid>https://szthanatos.github.io/post/academic/academic_in_practice/</guid>
-      <description>&lt;details class=&#34;toc-inpage d-print-none  &#34; open&gt;
-  &lt;summary class=&#34;font-weight-bold&#34;&gt;目录&lt;/summary&gt;
-  &lt;nav id=&#34;TableOfContents&#34;&gt;
-  &lt;ul&gt;
-    &lt;li&gt;&lt;a href=&#34;#hugo-安装--更新&#34;&gt;Hugo 安装 / 更新&lt;/a&gt;
-      &lt;ul&gt;
-        &lt;li&gt;&lt;a href=&#34;#安装--更新&#34;&gt;安装 / 更新&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&#34;#常用命令&#34;&gt;常用命令&lt;/a&gt;&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#academic-安装--更新&#34;&gt;Academic 安装 / 更新&lt;/a&gt;
-      &lt;ul&gt;
-        &lt;li&gt;&lt;a href=&#34;#通过-netlify&#34;&gt;通过 Netlify&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&#34;#通过-git&#34;&gt;通过 Git&lt;/a&gt;&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#部署到-github-pages&#34;&gt;部署到 Github Pages&lt;/a&gt;
-      &lt;ul&gt;
-        &lt;li&gt;&lt;a href=&#34;#原理&#34;&gt;原理&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&#34;#官方教程-缩减版&#34;&gt;官方教程 (缩减版)&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&#34;#脚本&#34;&gt;脚本&lt;/a&gt;&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#个性化配置&#34;&gt;个性化配置&lt;/a&gt;
-      &lt;ul&gt;
-        &lt;li&gt;&lt;a href=&#34;#configtoml-主要配置项解释&#34;&gt;config.toml 主要配置项解释&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&#34;#修改网站-logo&#34;&gt;修改网站 logo&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&#34;#给文章添加精选图&#34;&gt;给文章添加精选图&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&#34;#给文章添加头部背景&#34;&gt;给文章添加头部背景&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&#34;#目录&#34;&gt;目录&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&#34;#注意--警告标识&#34;&gt;注意 / 警告标识&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&#34;#消除短代码效果&#34;&gt;消除短代码效果&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&#34;#修改模板&#34;&gt;修改模板&lt;/a&gt;&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/nav&gt;
-&lt;/details&gt;
-&lt;h2 id=&#34;hugo-安装--更新&#34;&gt;Hugo 安装 / 更新&lt;/h2&gt;
+      <description>&lt;h2 id=&#34;hugo-安装--更新&#34;&gt;Hugo 安装 / 更新&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://gohugo.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hugo&lt;/a&gt; 是使用 &lt;code&gt;Go&lt;/code&gt; 语言开发的静态站点生成器。不过无需准备 &lt;code&gt;Go&lt;/code&gt; 语言环境，可以直接通过二进制编译包进行跨平台部署。&lt;/p&gt;
 &lt;p&gt;以下均以 Ubuntu18.0 为例。&lt;/p&gt;
 &lt;h3 id=&#34;安装--更新&#34;&gt;安装 / 更新&lt;/h3&gt;
@@ -2966,48 +2658,7 @@ fi
       <link>https://szthanatos.github.io/post/hbase_design/</link>
       <pubDate>Sun, 09 Dec 2018 16:19:27 +0800</pubDate>
       <guid>https://szthanatos.github.io/post/hbase_design/</guid>
-      <description>&lt;details class=&#34;toc-inpage d-print-none  &#34; open&gt;
-  &lt;summary class=&#34;font-weight-bold&#34;&gt;目录&lt;/summary&gt;
-  &lt;nav id=&#34;TableOfContents&#34;&gt;
-  &lt;ul&gt;
-    &lt;li&gt;&lt;a href=&#34;#简介&#34;&gt;简介&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#一般原则&#34;&gt;一般原则&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#命名空间-namespace&#34;&gt;命名空间 (NameSpace)&lt;/a&gt;
-      &lt;ul&gt;
-        &lt;li&gt;&lt;a href=&#34;#命名规范&#34;&gt;命名规范&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&#34;#示例&#34;&gt;示例&lt;/a&gt;&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#表-table&#34;&gt;表 (Table)&lt;/a&gt;
-      &lt;ul&gt;
-        &lt;li&gt;&lt;a href=&#34;#命名规范-1&#34;&gt;命名规范&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&#34;#示例-1&#34;&gt;示例&lt;/a&gt;&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#行键-rowkey&#34;&gt;行键 (Rowkey)&lt;/a&gt;
-      &lt;ul&gt;
-        &lt;li&gt;&lt;a href=&#34;#命名规范-2&#34;&gt;命名规范&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&#34;#示例-2&#34;&gt;示例&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&#34;#注意&#34;&gt;注意&lt;/a&gt;&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#列族-columnfamily&#34;&gt;列族 (ColumnFamily)&lt;/a&gt;
-      &lt;ul&gt;
-        &lt;li&gt;&lt;a href=&#34;#命名规范-3&#34;&gt;命名规范&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&#34;#示例-3&#34;&gt;示例&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&#34;#注意-1&#34;&gt;注意&lt;/a&gt;&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#列-qualifier&#34;&gt;列 (Qualifier)&lt;/a&gt;
-      &lt;ul&gt;
-        &lt;li&gt;&lt;a href=&#34;#命名规范-4&#34;&gt;命名规范&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&#34;#示例-4&#34;&gt;示例&lt;/a&gt;&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/nav&gt;
-&lt;/details&gt;
-&lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;
+      <description>&lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;
 &lt;p&gt;本指南是对在 HBase 进行字段设计而提供的指导性准则和建议。总体标准、设计方式参照 &lt;a href=&#34;https://github.com/google/styleguide&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Google 开源项目风格指南&lt;/a&gt; 以及现有项目经验。所有条目均为个人总结，&lt;strong&gt;并不是一份官方标准性质的指南&lt;/strong&gt; 。&lt;/p&gt;
 &lt;p&gt;HBase 是建立在 Hadoop 文件系统（HDFS）之上的分布式、面向列的数据库。&lt;/p&gt;
 &lt;h2 id=&#34;一般原则&#34;&gt;一般原则&lt;/h2&gt;
@@ -3094,25 +2745,7 @@ sound_type
       <link>https://szthanatos.github.io/post/palantir_intro/</link>
       <pubDate>Wed, 05 Dec 2018 17:09:21 +0800</pubDate>
       <guid>https://szthanatos.github.io/post/palantir_intro/</guid>
-      <description>&lt;details class=&#34;toc-inpage d-print-none  &#34; open&gt;
-  &lt;summary class=&#34;font-weight-bold&#34;&gt;目录&lt;/summary&gt;
-  &lt;nav id=&#34;TableOfContents&#34;&gt;
-  &lt;ul&gt;
-    &lt;li&gt;&lt;a href=&#34;#简介&#34;&gt;简介&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#最新情况&#34;&gt;最新情况&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#创始人&#34;&gt;创始人&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#发展历程&#34;&gt;发展历程&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#产品内容&#34;&gt;产品内容&lt;/a&gt;
-      &lt;ul&gt;
-        &lt;li&gt;&lt;a href=&#34;#官方主页-home--palantirhttpswwwpalantircom&#34;&gt;官方主页： &lt;a href=&#34;https://www.palantir.com/&#34;&gt;Home | Palantir&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&#34;#产品线&#34;&gt;产品线&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&#34;#解决方案&#34;&gt;解决方案&lt;/a&gt;&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/nav&gt;
-&lt;/details&gt;
-&lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;
+      <description>&lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;
 &lt;p&gt;Palantir 是全球第一大 &lt;code&gt;大数据公司&lt;/code&gt;。曾经的全球四大独角兽之一（其它三家是 Uber，Airbnb 和小米）。中文名帕兰提尔，源于《指环王》中邪恶巫师萨鲁曼使用的可穿越时空、洞悉世间一切的水晶球 (Palantiri)。主要客户为政府机构和金融机构。&lt;/p&gt;
 &lt;p&gt;最出名的案例是以大数据技术帮助美国军方成功定位和击毙基地组织首脑本 · 拉登，以及协助多家银行追回了纳斯达克前主席麦道夫 Bernie Madoff 的庞氏骗局中所隐藏起来的数十亿美元巨款。&lt;/p&gt;
 &lt;hr&gt;
@@ -3484,29 +3117,7 @@ echo index-url = https://pypi.tuna.tsinghua.edu.cn/simple&amp;gt;&amp;gt;~/.pip/
       <link>https://szthanatos.github.io/post/python/unit_testing/</link>
       <pubDate>Mon, 20 Aug 2018 10:49:50 +0800</pubDate>
       <guid>https://szthanatos.github.io/post/python/unit_testing/</guid>
-      <description>&lt;details class=&#34;toc-inpage d-print-none  &#34; open&gt;
-  &lt;summary class=&#34;font-weight-bold&#34;&gt;目录&lt;/summary&gt;
-  &lt;nav id=&#34;TableOfContents&#34;&gt;
-  &lt;ul&gt;
-    &lt;li&gt;&lt;a href=&#34;#什么是单元测试&#34;&gt;什么是单元测试&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#为什么要写单元测试&#34;&gt;为什么要写单元测试&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#怎么写单元测试&#34;&gt;怎么写单元测试&lt;/a&gt;
-      &lt;ul&gt;
-        &lt;li&gt;&lt;a href=&#34;#原生测试框架-unittestunittest2&#34;&gt;原生测试框架 unittest/unittest2&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&#34;#第三方测试框架-pytest&#34;&gt;第三方测试框架 py.test&lt;/a&gt;&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#单元测试标准&#34;&gt;单元测试标准&lt;/a&gt;
-      &lt;ul&gt;
-        &lt;li&gt;&lt;a href=&#34;#代码覆盖指标&#34;&gt;代码覆盖指标&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&#34;#代码覆盖率&#34;&gt;代码覆盖率&lt;/a&gt;&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#小结&#34;&gt;小结&lt;/a&gt;&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/nav&gt;
-&lt;/details&gt;
-&lt;div class=&#34;alert alert-note&#34;&gt;
+      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     这是写给我组里的人看的，顺手粘过来
   &lt;/div&gt;
