@@ -857,7 +857,7 @@ git clone git://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-
 </ul>
 <h2 id="配置-zsh">配置 zsh</h2>
 <p>在 <code>.zshrc</code> 中编辑以下部分：</p>
-<pre><code class="language-properties"># （可选）允许其他用户共用你的配置不弹出警告
+<pre><code class="language-shell"># （可选）允许其他用户共用你的配置不弹出警告
 ZSH_DISABLE_COMPFIX=&quot;true&quot;
 
 # 默认情况下，zsh 会试图在低优先级运行后台任务，但是 Windows 不允许，所以将以下内容添加到. zshrc 文件开头可以改变 zsh 的行为
@@ -889,6 +889,9 @@ plugins=(
 
 # 配置终端颜色
 export TERM=&quot;xterm-256color&quot;
+
+# 保存当前ip到 $IPADDRESS，免得每次都得打命令
+IPADDRESS=$(ip addr show eth0 | grep &quot;inet\b&quot; | awk '{print $2}' | cut -d/ -f1)
 </code></pre>
 <p>输入 <code>source .zshrc</code> 让配置生效，</p>
 <p>输入 <code>p10k configure</code> 配置 Powerlevel10k 主题设置。</p>
@@ -918,25 +921,29 @@ export TERM=&quot;xterm-256color&quot;
 <p>Linux 下配置代理本来就略麻烦，Wsl2 又是完整的虚拟机，每次重启内部网络都会重新生成&hellip; 换句话说每次 Windows 和 Linux 的内网 IP 都在变化&hellip;</p>
 <p>不过还是能配置好的。</p>
 <p>将以下内容加入到你的 <code>.zshrc</code> 文件中，将 <code>20809</code> 改为你的代理的端口：</p>
-<pre><code class="language-shell">proxyon() {
+<pre><code class="language-shell">proxy() {
   local host_ip=$(cat /etc/resolv.conf |grep &quot;nameserver&quot; |cut -f 2 -d &quot; &quot;)
   export ALL_PROXY=&quot;http://${host_ip}:20809&quot;
   export all_proxy=&quot;http://${host_ip}:20809&quot;
-  echo -e &quot;Acquire::http::Proxy \&quot;http://${host_ip}:20809\&quot;;&quot; | sudo tee -a /etc/apt/apt.conf &gt; /dev/null
+  echo -e &quot;Acquire::http::Proxy  \&quot;http://${host_ip}:20809\&quot;;&quot; | sudo tee -a /etc/apt/apt.conf &gt; /dev/null
   echo -e &quot;Acquire::https::Proxy \&quot;http://${host_ip}:20809\&quot;;&quot; | sudo tee -a /etc/apt/apt.conf &gt; /dev/null
+  git config --global http.proxy  http://${host_ip}:20809
+  git config --global https.proxy http://${host_ip}:20809
   curl ip.sb
 }
 
 proxyoff() {
   unset ALL_PROXY
   unset all_proxy
-  sudo sed -i -e '/Acquire::http::Proxy/d' /etc/apt/apt.conf
+  sudo sed -i -e '/Acquire::http::Proxy/d'  /etc/apt/apt.conf
   sudo sed -i -e '/Acquire::https::Proxy/d' /etc/apt/apt.conf
+  git config --global --unset http.proxy
+  git config --global --unset https.proxy
   curl ip.sb
 }
 </code></pre>
 <p>执行 <code>proxy</code> 即可开启代理，<code>wget</code>，<code>curl</code>，<code>git</code>，<code>apt</code> 都会走代理。</p>
-<p>执行 <code>unproxy</code> 关闭。</p>
+<p>执行 <code>proxyoff</code> 关闭。</p>
 <h2 id="参考">参考</h2>
 <ul>
 <li><a href="https://ohmyz.sh/" target="_blank" rel="noopener">Oh My ZSH 官网</a></li>
@@ -1157,6 +1164,10 @@ proxyoff() {
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/javascript.min.js"></script>
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/typescript.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/bash.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/shell.min.js"></script>
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/powershell.min.js"></script>
         

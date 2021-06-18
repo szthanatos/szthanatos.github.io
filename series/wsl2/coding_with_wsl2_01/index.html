@@ -743,13 +743,12 @@
         <li><a href="#启用-windows-subsystem-linux">启用 Windows-Subsystem-Linux</a></li>
         <li><a href="#更新内核">更新内核</a></li>
         <li><a href="#设置-wsl-默认版本">设置 wsl 默认版本</a></li>
-        <li><a href="#安装-linux-系统">安装 Linux 系统</a></li>
       </ul>
     </li>
-    <li><a href="#移动安装位置可选">移动安装位置（可选）</a>
+    <li><a href="#安装-linux-系统">安装 Linux 系统</a>
       <ul>
-        <li><a href="#安装-lxrunoffline">安装 LxRunOffline</a></li>
-        <li><a href="#移动">移动</a></li>
+        <li><a href="#a-微软商城安装">a. 微软商城安装</a></li>
+        <li><a href="#b-手动安装推荐">b. 手动安装(推荐)</a></li>
       </ul>
     </li>
     <li><a href="#常用操作">常用操作</a>
@@ -757,6 +756,13 @@
         <li><a href="#wsl-命令">wsl 命令</a></li>
         <li><a href="#网络">网络</a></li>
         <li><a href="#文件系统">文件系统</a></li>
+        <li><a href="#清理磁盘空间">清理磁盘空间</a></li>
+      </ul>
+    </li>
+    <li><a href="#移动安装位置可选">移动安装位置（可选）</a>
+      <ul>
+        <li><a href="#安装-lxrunoffline">安装 LxRunOffline</a></li>
+        <li><a href="#移动">移动</a></li>
       </ul>
     </li>
     <li><a href="#gpu">GPU</a></li>
@@ -901,7 +907,9 @@ wsl --list --verbose
 wsl --set-version &lt;distribution name&gt; &lt;versionNumber&gt;
 </code></pre>
 <p>升级到 WSL2 。</p>
-<h3 id="安装-linux-系统">安装 Linux 系统</h3>
+<h2 id="安装-linux-系统">安装 Linux 系统</h2>
+<p>当前有两种方式可选，通过微软商城一键安装或者通过wsl命令手动安装。</p>
+<h3 id="a-微软商城安装">a. 微软商城安装</h3>
 <p>打开 <a href="https://aka.ms/wslstore" target="_blank" rel="noopener">Microsoft Store</a>，搜索 wsl 即可获取可用 Linux 发行版。</p>
 <p>现在支持的发行版有：</p>
 <ul>
@@ -941,8 +949,117 @@ wsl --set-version &lt;distribution name&gt; &lt;versionNumber&gt;
     <div class="w-100" ><img src="https://docs.microsoft.com/zh-cn/windows/wsl/media/ubuntuinstall.png" alt="安装" loading="lazy" data-zoomable /></div>
   </div></figure>
 </p>
+<h3 id="b-手动安装推荐">b. 手动安装(推荐)</h3>
+<p>当前 Ubuntu 官方提供多个版本的镜像：</p>
+<ul>
+<li>Ubuntu Desktop——桌面版，带GUI界面和常用软件，大约3G；</li>
+<li>Ubuntu Server——服务器版，默认不带GUI，大约1G；</li>
+<li><code>Ubuntu Cloud</code>——云版，相比服务器版更精简，大约450M；</li>
+<li>Ubuntu Core——为树莓派等嵌入式设备打包的特殊版本，最轻，大约300M；</li>
+</ul>
+<p>这里我们选择云版镜像。</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="https://i.loli.net/2021/06/18/z5asZRPGOcJEFLj.jpg" alt="Ubuntu Cloud" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<p>前往 <a href="https://cloud-images.ubuntu.com/" target="_blank" rel="noopener">Ubuntu Cloud Images</a> 官方镜像站，
+下载镜像。</p>
+<p>以 <a href="http://cloud-images.ubuntu.com/focal/current/" target="_blank" rel="noopener">Ubuntu 20.10 LTS</a> 为例，
+以 <code>wsl</code>为关键字，找到 AMD 或 ARM 平台对应镜像文件，下载。</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="https://i.loli.net/2021/06/18/ujlh7mFHDa58AUv.jpg" alt="Ubuntu 20.10 LTS" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<p>之后通过命令</p>
+<pre><code class="language-powershell">wsl --import {名称} &quot;{安装位置}&quot; &quot;{镜像位置}&quot;
+</code></pre>
+<p>安装系统，注意路径的双引号不要省略。</p>
+<h2 id="常用操作">常用操作</h2>
+<h3 id="wsl-命令">wsl 命令</h3>
+<ul>
+<li><code>wsl --shutdown</code>  立即终止所有正在运行的发行版和 WSL 2 轻型工具虚拟机</li>
+<li><code>wsl -t &lt;发行版&gt;</code> 终止指定的发行版</li>
+<li><code>wsl -l</code> 列出发行版</li>
+<li><code>wsl -l -v</code> 列出发行版及其版本信息</li>
+<li><code>wsl -s &lt;发行版&gt;</code> 将发行版设为默认</li>
+<li><code>wsl --export &lt;发行版&gt; &lt;文件名&gt;</code>  将发行版导出到 tar 文件</li>
+<li><code>wsl --import &lt;发行版&gt; &lt;安装位置&gt; &lt;文件名&gt; [选项]</code>  将指定的 tar 文件作为新发行版进行导入</li>
+</ul>
+<p>注意，导入导出发行版会导致无法从 Microsoft 应用管理中管理或更新。</p>
+<h3 id="网络">网络</h3>
+<p>WSL2 相当于独立虚拟机，而 WSL1 是和 Windows 复用同一个网络的。</p>
+<p>然后和一般宿主机虚拟机略微相反，从 Windows 可以通过 <code>localhost</code> 访问 WSL 上的服务，反之则不行。</p>
+<p>想要访问 Windows 上的服务，可以使用命令</p>
+<pre><code class="language-bash">ip route | grep default | awk '{print $3}'
+</code></pre>
+<p>或者查询 <code>/etc/resolv.conf</code> 中的 <code>nameserver</code> 获取到 Windows 宿主机的 ip，</p>
+<p>然后通过 ip 访问。</p>
+<h3 id="文件系统">文件系统</h3>
+<p>WSL1 的时候，文件目录位于</p>
+<ul>
+<li>Ubuntu: <code>%localappdata%\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs</code></li>
+<li>Ubuntu18.04: <code>%localappdata%\Packages\CanonicalGroupLimited.Ubuntu18.04onWindows_79rhkp1fndgsc\LocalState\rootfs</code></li>
+</ul>
+<p>WSL2 可以直接通过 <code>\\wsl$</code> 在文件管理器中查看到网络位置上的 WSL 虚拟机，Ubuntu 就是 <code>\\wsl$\Ubuntu</code>。</p>
+<p>或者你可以从 WSL2 中直接打开当前目录，直接在终端里调用 <code>explorer.exe .</code> 就行了，非常 cool~</p>
+<p>Windows 的磁盘在 WSL 中都表示为 <code>/mnt/c|d|e...</code>，可以看，但是操作还是尽量拷贝到 WSL 目录下，因为性能损失巨大。</p>
+<h3 id="清理磁盘空间">清理磁盘空间</h3>
+<p>在 Linux 下回收文件系统上所有未使用的块：</p>
+<pre><code class="language-bash">sudo fstrim /
+</code></pre>
+<p>对于 Win10 专业版，使用如下命令压缩 WSL 虚拟机占用空间：</p>
+<pre><code class="language-powershell">wsl --shutdown
+optimize-vhd -Path &quot;{安装位置\ext4.vhdx}&quot; -Mode full
+</code></pre>
+<p>对于家庭版：</p>
+<pre><code class="language-powershell">wsl --shutdown
+diskpart
+# 打开新的 Diskpart 窗口
+select vdisk file=&quot;{安装位置\ext4.vhdx}&quot;
+attach vdisk readonly
+compact vdisk
+detach vdisk
+exit
+</code></pre>
 <h2 id="移动安装位置可选">移动安装位置（可选）</h2>
-<p>目前 WSL 不支持设置安装路径，使用一段时间后体积会膨胀到 10G+ ，可以通过开源工具 <a href="https://github.com/DDoSolitary/LxRunOffline" target="_blank" rel="noopener">LxRunOffline</a> 实现将 Linux 安装到任意位置，或者将现有 Linux 子系统移动到任意位置。</p>
+<p>通过商城安装的系统无法设置安装路径，使用一段时间后体积会膨胀到 10G+ ，
+可以通过开源工具 <a href="https://github.com/DDoSolitary/LxRunOffline" target="_blank" rel="noopener">LxRunOffline</a>
+实现将 Linux 安装到任意位置，或者将现有 Linux 子系统移动到任意位置。</p>
+<p>如果是命令行安装，直接 <code>wsl --export</code>， <code>wsl --import</code> 就好。</p>
 <h3 id="安装-lxrunoffline">安装 LxRunOffline</h3>
 <p><a href="https://scoop.sh/" target="_blank" rel="noopener">Scoop</a> 是一个 Window 命令行包管理器，可以提供类似 apt/yum 的体验。</p>
 <p>通过 Scoop 安装 LxRunOffline 方法如下：</p>
@@ -964,33 +1081,6 @@ LxRunOffline m -n &lt;发行版名称&gt; -d &lt; 路径 &gt;
 # 等待一段时间完成移动，查看发行版当前位置
 LxRunOffline di -n &lt;发行版名称&gt;
 </code></pre>
-<h2 id="常用操作">常用操作</h2>
-<h3 id="wsl-命令">wsl 命令</h3>
-<ul>
-<li><code>wsl --shutdown</code>  立即终止所有正在运行的分发和 WSL 2 轻型工具虚拟机</li>
-<li><code>wsl -t &lt;分发版&gt;</code> 终止指定的发行版</li>
-<li><code>wsl -l -v</code> 列出分发版及其版本信息</li>
-<li><code>wsl --export &lt;分发版&gt; &lt; 文件名 &gt;</code>  将分发导出到 tar 文件</li>
-<li><code>wsl --import &lt;分发版&gt; &lt; 安装位置 &gt; &lt; 文件名 &gt; [选项]</code>  将指定的 tar 文件作为新分发进行导入</li>
-</ul>
-<p>注意，导入导出发行版会导致无法从 Microsoft 应用管理中管理或更新。</p>
-<h3 id="网络">网络</h3>
-<p>WSL2 相当于独立虚拟机，而 WSL1 是和 Windows 复用同一个网络的。</p>
-<p>然后和一般宿主机虚拟机略微相反，从 Windows 可以通过 <code>localhost</code> 访问 WSL 上的服务，反之则不行。</p>
-<p>想要访问 Windows 上的服务，可以使用命令</p>
-<pre><code class="language-bash">ip route | grep default | awk '{print $3}'
-</code></pre>
-<p>或者查询 <code>/etc/resolv.conf</code> 中的 <code>nameserver</code> 获取到 Windows 宿主机的 ip，</p>
-<p>然后通过 ip 访问。</p>
-<h3 id="文件系统">文件系统</h3>
-<p>WSL1 的时候，文件目录位于</p>
-<ul>
-<li>Ubuntu: <code>%localappdata%\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs</code></li>
-<li>Ubuntu18.04: <code>%localappdata%\Packages\CanonicalGroupLimited.Ubuntu18.04onWindows_79rhkp1fndgsc\LocalState\rootfs</code></li>
-</ul>
-<p>WSL2 可以直接通过 <code>\\wsl$</code> 在文件管理器中查看到网络位置上的 WSL 虚拟机，Ubuntu 就是 <code>\\wsl$\Ubuntu</code>。</p>
-<p>或者你可以从 WSL2 中直接打开当前目录，直接在终端里调用 <code>explorer.exe .</code> 就行了，非常 cool~</p>
-<p>Windows 的磁盘在 WSL 中都表示为 <code>/mnt/c|d|e...</code>，可以看，但是操作还是尽量拷贝到 WSL 目录下，因为性能损失巨大。</p>
 <h2 id="gpu">GPU</h2>
 <p>差不多能用：</p>
 <ul>
@@ -1210,6 +1300,10 @@ LxRunOffline di -n &lt;发行版名称&gt;
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/javascript.min.js"></script>
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/typescript.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/bash.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/shell.min.js"></script>
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/powershell.min.js"></script>
         
